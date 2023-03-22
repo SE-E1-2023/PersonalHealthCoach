@@ -1,7 +1,7 @@
 Guideline pentru lucru pe branch-uri.
 
-Recomand sa va uitati la asta: https://www.youtube.com/watch?v=hwP7WQkmECE
-Si sa cititi putin asta: https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners
+- Recomand sa va uitati la asta: https://www.youtube.com/watch?v=hwP7WQkmECE
+- Si sa cititi putin asta: https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners
 
 Important:
   - pls nu faceti commit direct in branch-ul main.
