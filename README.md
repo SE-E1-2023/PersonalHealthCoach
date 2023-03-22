@@ -5,6 +5,6 @@ Si sa cititi putin asta: https://product.hubspot.com/blog/git-and-github-tutoria
 
 Important:
   - pls nu faceti commit direct in branch-ul main.
-  - cand faceti un task, faceti un branch bazat pe main (un fork). Dupa ce terminati task-ul, faceti un pull request (vezi in articol detalii)
+  - cand faceti un task, faceti un branch bazat pe main (un fork). Branch-ul e recomandat sa-l numiti intuitiv, dupa task (ex.: daca implementezi pagina de login pe front end, branch-ul tau o sa fie "feature/login-page"). Dupa ce terminati task-ul, faceti un pull request (vezi in articol detalii)
   - la pull request o sa primiti comentarii (fie de la lider, fie si de la ceilalti colegi) si stabiliti cum e mai ok sa fie facut
   - cand sunt rezolvate toate comentariile, se va face merge la pull request
