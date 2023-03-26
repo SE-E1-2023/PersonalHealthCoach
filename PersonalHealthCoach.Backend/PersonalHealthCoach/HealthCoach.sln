@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{CBF645
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Shared.Infrastructure", "Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj", "{EA8DDF31-5A9A-41C1-A392-F47246B8F315}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Shared.Core", "Shared\HealthCoach.Shared.Core\HealthCoach.Shared.Core.csproj", "{3D56A6EA-C0B9-4A9A-A868-3ADEC328B25B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Shared.Core", "Shared\HealthCoach.Shared.Core\HealthCoach.Shared.Core.csproj", "{3D56A6EA-C0B9-4A9A-A868-3ADEC328B25B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Shared.Web", "Shared\HealthCoach.Shared.Web\HealthCoach.Shared.Web.csproj", "{D2F1905F-813B-4444-9F2D-7FD63BFA8DBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Shared.Web", "Shared\HealthCoach.Shared.Web\HealthCoach.Shared.Web.csproj", "{D2F1905F-813B-4444-9F2D-7FD63BFA8DBE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Presentation", "01. Presentation", "{E2168CD7-F7FF-40E9-B28A-897BC9B2B1BB}"
 EndProject
@@ -19,7 +19,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Core", "03. Core", "{FE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99. Testing", "99. Testing", "{4FA5D4D2-A2CF-468E-B97E-90B53AE275A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Functions.Isolated", "Presentation\HealthCoach.Functions.Isolated\HealthCoach.Functions.Isolated.csproj", "{CAD63576-454A-4EC8-99FA-3E60C15D5694}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Functions.Isolated", "Presentation\HealthCoach.Functions.Isolated\HealthCoach.Functions.Isolated.csproj", "{CAD63576-454A-4EC8-99FA-3E60C15D5694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Infrastructure", "Infrastructure\HealthCoach.Infrastructure\HealthCoach.Infrastructure.csproj", "{19007A7E-0E09-4D74-8607-3F9CE1897248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Core.Domain", "Core\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj", "{C1CA8F43-5F82-4F5C-BA67-C7C0A237B914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Core.Business", "Core\HealthCoach.Core.Business\HealthCoach.Core.Business.csproj", "{87816C34-5356-4D2C-8100-3D3989525760}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Core.Domain.Tests", "Testing\HealthCoach.Core.Domain.Tests\HealthCoach.Core.Domain.Tests.csproj", "{6BC7B1C8-9182-47A3-9985-291E7B2B5AE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Core.Business.Tests", "Testing\HealthCoach.Core.Business.Tests\HealthCoach.Core.Business.Tests.csproj", "{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +53,26 @@ Global
 		{CAD63576-454A-4EC8-99FA-3E60C15D5694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAD63576-454A-4EC8-99FA-3E60C15D5694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAD63576-454A-4EC8-99FA-3E60C15D5694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19007A7E-0E09-4D74-8607-3F9CE1897248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19007A7E-0E09-4D74-8607-3F9CE1897248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19007A7E-0E09-4D74-8607-3F9CE1897248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19007A7E-0E09-4D74-8607-3F9CE1897248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1CA8F43-5F82-4F5C-BA67-C7C0A237B914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1CA8F43-5F82-4F5C-BA67-C7C0A237B914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1CA8F43-5F82-4F5C-BA67-C7C0A237B914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1CA8F43-5F82-4F5C-BA67-C7C0A237B914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87816C34-5356-4D2C-8100-3D3989525760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87816C34-5356-4D2C-8100-3D3989525760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87816C34-5356-4D2C-8100-3D3989525760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87816C34-5356-4D2C-8100-3D3989525760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BC7B1C8-9182-47A3-9985-291E7B2B5AE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC7B1C8-9182-47A3-9985-291E7B2B5AE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC7B1C8-9182-47A3-9985-291E7B2B5AE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC7B1C8-9182-47A3-9985-291E7B2B5AE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +82,11 @@ Global
 		{3D56A6EA-C0B9-4A9A-A868-3ADEC328B25B} = {CBF645CE-C581-4995-AC67-65E6226F57F1}
 		{D2F1905F-813B-4444-9F2D-7FD63BFA8DBE} = {CBF645CE-C581-4995-AC67-65E6226F57F1}
 		{CAD63576-454A-4EC8-99FA-3E60C15D5694} = {E2168CD7-F7FF-40E9-B28A-897BC9B2B1BB}
+		{19007A7E-0E09-4D74-8607-3F9CE1897248} = {00CEB25E-C5BC-499A-8D3D-AFEB7FFAC28E}
+		{C1CA8F43-5F82-4F5C-BA67-C7C0A237B914} = {FED23E47-F2E5-4B55-BCC4-492B2CD96480}
+		{87816C34-5356-4D2C-8100-3D3989525760} = {FED23E47-F2E5-4B55-BCC4-492B2CD96480}
+		{6BC7B1C8-9182-47A3-9985-291E7B2B5AE7} = {4FA5D4D2-A2CF-468E-B97E-90B53AE275A3}
+		{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0} = {4FA5D4D2-A2CF-468E-B97E-90B53AE275A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5322EA3E-2B90-45C6-8E47-8CA0DA2C9788}

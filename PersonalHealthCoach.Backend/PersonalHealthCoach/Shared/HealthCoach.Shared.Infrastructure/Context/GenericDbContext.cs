@@ -25,7 +25,7 @@ public sealed class GenericDbContext : DbContext
         var aggregateRootType = typeof(AggregateRoot);
         var assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
 
-        var domainAssembly = "CarManagement.Domain";
+        var domainAssembly = "HealthCoach.Core.Domain";
         if (!assemblies.Any(a => a.GetName().Name == domainAssembly))
         {
             assemblies.Add(Assembly.Load(domainAssembly));
