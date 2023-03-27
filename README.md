@@ -1,3 +1,11 @@
+Iteratia 1 (saptamana 6): 
+* Front-end:
+  - se va implementa pagina de sign-up si se va implementa si pagina de sign-in, care vor comunica cu backend.
+* Back-end:
+  - functionalitate de sign-up, sign-in, se va implementa modalitate de comunicare cu serviciul de AI
+* AI:
+  - modalitate de comunicare cu backend
+
 Guideline pentru lucru pe branch-uri.
 
 - Recomand sa va uitati la asta: https://www.youtube.com/watch?v=hwP7WQkmECE
