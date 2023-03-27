@@ -2,6 +2,7 @@ Iteratia 1 (saptamanile 6 si 7):
 * Front-end:
   - sign-up si sign-in devin aceeasi chestie. doar se va introduce o adresa de mail pe baza careia se va oferi acces
   - pagina de date personale (vizualizare si editare in acelasi)
+  - pagina de vizualizare a progresului (cum se schimba datele personale in timp)
 * Back-end:
   - functionalitate de user account, comunicare cu ai, update personal data
 * AI:
