@@ -1,10 +1,12 @@
-Iteratia 1 (saptamana 6): 
+Iteratia 1 (saptamanile 6 si 7): 
 * Front-end:
-  - se va implementa pagina de sign-up si se va implementa si pagina de sign-in, care vor comunica cu backend.
+  - sign-up si sign-in devin aceeasi chestie. doar se va introduce o adresa de mail pe baza careia se va oferi acces
+  - pagina de date personale (vizualizare si editare in acelasi)
 * Back-end:
-  - functionalitate de sign-up, sign-in, se va implementa modalitate de comunicare cu serviciul de AI
+  - functionalitate de user account, comunicare cu ai, update personal data
 * AI:
-  - modalitate de comunicare cu backend
+  - modalitate de comunicare cu backend. AI va returna un raspusn calculat random pe baza dataset-ului de mai jos
+  - json dataset cu mancare si alte date tip facts
 
 Guideline pentru lucru pe branch-uri.
 
