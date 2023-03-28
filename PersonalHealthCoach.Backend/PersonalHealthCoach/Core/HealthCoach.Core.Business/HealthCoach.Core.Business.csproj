@@ -13,4 +13,14 @@
 		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.1.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="User\Commands\" />
+	  <Folder Include="User\CommandHandlers\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj" />
+	  <ProjectReference Include="..\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj" />
+	</ItemGroup>
+
 </Project>

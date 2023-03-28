@@ -24,6 +24,7 @@
 		<ProjectReference Include="..\..\Core\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj" />
 		<ProjectReference Include="..\..\Infrastructure\HealthCoach.Infrastructure\HealthCoach.Infrastructure.csproj" />
 	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Web\HealthCoach.Shared.Web.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="host.json">
