@@ -8,8 +8,7 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddHealthCoachAppBusiness(this IServiceCollection services)
     {
-        var assembly = Assembly.GetExecutingAssembly();
-        return services.AddMediatR(assembly);
+        return services.AddMediatR(typeof(BusinessAssembly));
     }
 
     private static class BusinessAssembly { }

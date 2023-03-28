@@ -23,4 +23,13 @@
 		</PackageReference>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Factories\User\" />
+	  <Folder Include="User\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Core\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj" />
+	</ItemGroup>
+
 </Project>

@@ -21,6 +21,6 @@ public sealed class UserFunctions
     {
         return await request.DeserializeBodyPayload<CreateUserCommand>()
             .Bind(c => mediator.Send(c))
-            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result));
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 }

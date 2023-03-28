@@ -7,7 +7,7 @@ using Errors = HealthCoach.Core.Business.BusinessErrors.User.Create;
 
 namespace HealthCoach.Core.Business;
 
-public sealed class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Result<User>>
+internal class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Result<User>>
 {
     private readonly IRepository repository;
     private readonly IEfQueryProvider queryProvider;

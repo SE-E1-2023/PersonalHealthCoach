@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Core;
+using EmailValidation;
 
 using Errors = HealthCoach.Core.Domain.DomainErrors.User.Create;
 
@@ -9,7 +10,7 @@ public sealed class User : AggregateRoot
 {
     public User() { }
 
-    public User(string name, string firstName, string emailAddress)
+    private User(string name, string firstName, string emailAddress)
     {
         this.Name = name;
         this.FirstName = firstName;
@@ -20,7 +21,9 @@ public sealed class User : AggregateRoot
     {
         var nameResult = name.EnsureNotNullOrEmpty(Errors.NameNullOrEmpty);
         var firstNameResult = firstName.EnsureNotNullOrEmpty(Errors.FirstNameNullOrEmpty);
-        var emailAddressResult = emailAddress.EnsureNotNullOrEmpty(Errors.EmailAddressNullOrEmpty);
+        var emailAddressResult = emailAddress
+            .EnsureNotNullOrEmpty(Errors.EmailAddressNullOrEmpty)
+            .Ensure(e => EmailValidator.Validate(e), Errors.InvalidEmailAddressFormat);
 
         return Result.FirstFailureOrSuccess(nameResult, firstNameResult, emailAddressResult)
             .Map(() => new User(name, firstName, emailAddress));
