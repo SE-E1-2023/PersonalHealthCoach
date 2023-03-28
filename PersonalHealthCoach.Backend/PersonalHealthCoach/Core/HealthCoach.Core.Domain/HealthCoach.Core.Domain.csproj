@@ -14,4 +14,8 @@
 	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Core\HealthCoach.Shared.Core.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="User\" />
+	</ItemGroup>
+
 </Project>
