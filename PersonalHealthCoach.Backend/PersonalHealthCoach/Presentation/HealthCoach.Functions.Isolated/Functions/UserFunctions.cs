@@ -17,7 +17,7 @@ public sealed class UserFunctions
     }
 
     [Function(nameof(CreateUser))]
-    public async Task<HttpResponseData> CreateUser([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "users")] HttpRequestData request)
+    public async Task<HttpResponseData> CreateUser([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users")] HttpRequestData request)
     {
         return await request.DeserializeBodyPayload<CreateUserCommand>()
             .Bind(c => mediator.Send(c))
