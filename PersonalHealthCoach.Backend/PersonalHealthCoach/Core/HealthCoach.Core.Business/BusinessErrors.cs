@@ -10,5 +10,12 @@ public static class BusinessErrors
 
             public const string EmailAddressAlreadyInUse = $"{Prefix}.{nameof(EmailAddressAlreadyInUse)}";
         }
+
+        public static class Get
+        {
+            private const string Prefix = $"{nameof(User)}.{nameof(Get)}";
+
+            public const string EmailAddressDoesntExist = $"{Prefix}.{nameof(EmailAddressDoesntExist)}";
+        }
     }
 }

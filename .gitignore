@@ -394,5 +394,9 @@ yarn-error.log
 # User specific bazel settings
 .bazelrc.user
 appsettings.private.json
+
+#compiled stuff
 /PersonalHealthCoach.Backend/PersonalHealthCoach/Shared/HealthCoach.Shared.Infrastructure/Migrations
+
+#user specific credentials
 /PersonalHealthCoach.Backend/PersonalHealthCoach/Presentation/HealthCoach.Functions.Isolated/local.settings.json
