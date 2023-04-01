@@ -25,10 +25,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="User\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\..\Core\HealthCoach.Core.Business\HealthCoach.Core.Business.csproj" />
 	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj" />
 	  <ProjectReference Include="..\HealthCoach.Core.Domain.Tests\HealthCoach.Core.Domain.Tests.csproj" />
