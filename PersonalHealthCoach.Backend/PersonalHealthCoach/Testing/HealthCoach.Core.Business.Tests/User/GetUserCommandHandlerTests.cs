@@ -3,6 +3,7 @@ using HealthCoach.Core.Domain;
 using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
 using Moq;
+using System.Collections.Generic;
 using Xunit;
 
 namespace HealthCoach.Core.Business.Tests;
@@ -17,9 +18,12 @@ public class GetUserCommandHandlerTests
     {
         //Arrange
         var command = new GetUserCommand("email_de_test_ce_nu_exista@gmail.com");
+        queryProviderMock
+            .Setup(x => x.Query<User>())
+            .Returns(new List<User>().AsQueryable());
 
         //Act
-        var result = Sut().Handle(command, CancellationToken.None).Result;
+        var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -30,13 +34,18 @@ public class GetUserCommandHandlerTests
     public void When_UserDoesExist_Then_ShouldSucceed()
     {
         //Arrange
-        var command = new GetUserCommand("test@gmail.com");
+        var user = UsersFactory.Any();
+        var command = new GetUserCommand(user.EmailAddress);
+        queryProviderMock
+            .Setup(x => x.Query<User>())
+            .Returns(new List<User> { user }.AsQueryable());
 
         //Act
         var result = Sut().Handle(command, CancellationToken.None).Result;
 
         //Assert
         result.IsSuccess.Should().BeTrue();
+        result.Value.Should().Be(user.Id);
     }
 
     private GetUserCommandHandler Sut() => new(
