@@ -11,4 +11,14 @@ public static class BusinessErrors
             public const string EmailAddressAlreadyInUse = $"{Prefix}.{nameof(EmailAddressAlreadyInUse)}";
         }
     }
+
+    public static class PersonalData
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(PersonalData)}.{nameof(Create)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+        }
+    }
 }
