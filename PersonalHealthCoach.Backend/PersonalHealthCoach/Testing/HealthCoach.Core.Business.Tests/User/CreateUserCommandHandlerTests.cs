@@ -23,7 +23,7 @@ public class CreateUserCommandHandlerTests
             .Returns(new List<User>{ user }.AsQueryable());
 
         //Act
-        var result = Sut().Handle(command, CancellationToken.None).Result;
+        var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -37,9 +37,12 @@ public class CreateUserCommandHandlerTests
     {
         //Arrange
         var command = Command() with { EmailAddress = "this is definitely a bad email address" };
+        queryProviderMock
+            .Setup(x => x.Query<User>())
+            .Returns(new List<User>() { }.AsQueryable());
 
         //Act
-        var result = Sut().Handle(command, CancellationToken.None).Result;
+        var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
 
         //Assert
         result.IsFailure.Should().BeTrue();
