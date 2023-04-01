@@ -23,4 +23,12 @@ public sealed class UserFunctions
             .Bind(c => mediator.Send(c))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
+
+    [Function(nameof(GetUser))]
+    public async Task<HttpResponseData> GetUser([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users")] HttpRequestData request)
+    {
+        return await request.DeserializeBodyPayload<GetUserCommand>()
+            .Bind(c => mediator.Send(c))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+    }
 }
