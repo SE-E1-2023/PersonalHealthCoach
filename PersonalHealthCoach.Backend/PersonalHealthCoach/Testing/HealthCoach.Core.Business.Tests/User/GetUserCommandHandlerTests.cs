@@ -48,7 +48,6 @@ public class GetUserCommandHandlerTests
     }
 
     private GetUserCommandHandler Sut() => new(
-        repositoryMock.Object,
         queryProviderMock.Object
     );
 }

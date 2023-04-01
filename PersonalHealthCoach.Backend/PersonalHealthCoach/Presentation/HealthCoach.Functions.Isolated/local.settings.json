@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Host": {
+    "CORS": "*"
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=localhost;Port=5432;Database=HealthCoachDev;Username=postgres;Password=Pass4Postgres1!"
+  }
+}

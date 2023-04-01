@@ -10,12 +10,10 @@ namespace HealthCoach.Core.Business;
 
 public class GetUserCommandHandler : IRequestHandler<GetUserCommand, Result<Guid>>
 {
-    private readonly IRepository repository;
     private readonly IEfQueryProvider queryProvider;
 
-    public GetUserCommandHandler(IRepository repository, IEfQueryProvider queryProvider)
+    public GetUserCommandHandler(IEfQueryProvider queryProvider)
     {
-        this.repository = repository;
         this.queryProvider = queryProvider;
     }
 
