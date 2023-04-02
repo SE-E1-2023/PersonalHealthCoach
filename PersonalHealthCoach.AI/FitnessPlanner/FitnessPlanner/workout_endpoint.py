@@ -3,10 +3,13 @@ from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
 import json
 
+import os
+abspath = os.path.dirname(__file__)
+
 # Function to load the workout data from a JSON file based on the workout_id
 def load_workout(workout_id):
     print(workout_id)
-    filename = f"./workouts/workout#{workout_id}.json"
+    filename = f"{abspath}/workouts/workout#{workout_id}.json"
     with open(filename, "r") as f:
         workout_data = json.load(f)
     return workout_data
@@ -42,7 +45,6 @@ def process_data():
     try:
         workout_data = load_workout(workout_id)
     except FileNotFoundError:
-        print("saois")
         abort(404)  # Not Found
 
     # You can process the received data here and create a response
@@ -52,3 +54,4 @@ def process_data():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
+

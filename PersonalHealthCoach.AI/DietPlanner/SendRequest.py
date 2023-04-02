@@ -1,7 +1,15 @@
 import importlib
-import GetApiKey as gk
+#import GetApiKey as gk
 import requests
 import random
+
+import os
+abspath = os.path.dirname(__file__)
+import sys
+sys.path.append(abspath)
+gk = importlib.import_module("GetApiKey")
+
+
 def getMeal(input):
     mealTypes=["breakfast","launch","diner"]
     key = gk.LeastUsedKey().getMinKey()

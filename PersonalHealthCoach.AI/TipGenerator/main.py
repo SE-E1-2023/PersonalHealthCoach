@@ -1,14 +1,17 @@
 import json
 import random
 
+import os
+abspath = os.path.dirname(__file__)
+
 class TipGenerator:
-    def __init__(self, tips_file, profile_file):
+    def __init__(self, tips_file, profile_json):
         with open(tips_file) as f:
             self.tips_data = json.load(f)
         
         """with open(profile_file) as f:
             self.profile_data = json.load(f)"""
-        self.profile_data = profile_file
+        self.profile_data = profile_json
     
     def calculate_bmi(self):
         height = self.profile_data['Height']
@@ -80,7 +83,7 @@ class TipGenerator:
         return tip_dict
     
 def tip(input):
-    tips_file = 'tips.json'
+    tips_file = f"{abspath}/tips.json"
     generator = TipGenerator(tips_file, input)
 
     return generator.generate_tip()

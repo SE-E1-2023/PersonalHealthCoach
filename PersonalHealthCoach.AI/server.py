@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, abort
 #from collections import OrderedDict
 import json
 
@@ -9,15 +9,21 @@ def functionWrapper(fn):
         incoming = request.get_data()
         print(incoming)
         if incoming != b'':
-            dict = json.loads(incoming) #object_pairs_hook=OrderedDict
+            try:
+                dict = json.loads(incoming) #object_pairs_hook=OrderedDict
+            except json.decoder.JSONDecodeError:
+                abort(400)
         else:
             dict = {}
             
         if (dict != None):
             response = fn(dict)
-            return json.dumps(response)
+            if response != None:
+                return json.dumps(response)
+            else :
+                abort(400)
         else :
-            return "Too Bad"
+            abort(400)
     return fun
 
 
