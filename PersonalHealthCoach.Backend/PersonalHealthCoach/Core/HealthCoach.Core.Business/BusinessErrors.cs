@@ -18,4 +18,14 @@ public static class BusinessErrors
             public const string EmailAddressDoesntExist = $"{Prefix}.{nameof(EmailAddressDoesntExist)}";
         }
     }
+
+    public static class PersonalData
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(PersonalData)}.{nameof(Create)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+        }
+    }
 }

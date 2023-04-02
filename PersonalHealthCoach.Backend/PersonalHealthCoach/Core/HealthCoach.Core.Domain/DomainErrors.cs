@@ -14,4 +14,22 @@ public static class DomainErrors
             public const string InvalidEmailAddressFormat = $"{Prefix}.{nameof(Domain.User.EmailAddress)}.{nameof(InvalidEmailAddressFormat)}";
         }
     }
+
+    public static class PersonalData
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(PersonalData)}.{nameof(Create)}";
+
+            public const string DateOfBirthNull = $"{Prefix}.{nameof(Domain.PersonalData.DateOfBirth)}.{nameof(DateOfBirthNull)}";
+            public const string UserNotOldEnough = $"{Prefix}.{nameof(Domain.PersonalData.DateOfBirth)}.{nameof(UserNotOldEnough)}";
+            
+            public const string InvalidWeight = $"{Prefix}.{nameof(Domain.PersonalData.Weight)}.{nameof(InvalidWeight)}";
+
+            public const string InvalidHeight = $"{Prefix}.{nameof(Domain.PersonalData.Height)}.{nameof(InvalidHeight)}";
+
+            public const string GoalIsNullOrEmpty = $"{Prefix}.{nameof(Domain.PersonalData.Goal)}.{nameof(GoalIsNullOrEmpty)}";
+            public const string GoalIsUnrecognized = $"{Prefix}.{nameof(Domain.PersonalData.Goal)}.{nameof(GoalIsUnrecognized)}";
+        }
+    }
 }

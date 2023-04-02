@@ -45,7 +45,4 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Functions\" />
-	</ItemGroup>
 </Project>

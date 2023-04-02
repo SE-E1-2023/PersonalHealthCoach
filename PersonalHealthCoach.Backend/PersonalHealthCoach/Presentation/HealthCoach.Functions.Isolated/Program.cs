@@ -19,6 +19,7 @@ var host = new HostBuilder()
     .ConfigureHealthCoachAppServices()
     .Build();
 
+
 host.Run();
 
 static class HostBuilderExtensions
