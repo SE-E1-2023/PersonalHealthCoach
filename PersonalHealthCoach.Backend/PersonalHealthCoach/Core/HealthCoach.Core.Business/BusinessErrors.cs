@@ -27,6 +27,12 @@ public static class BusinessErrors
 
             public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
         }
+        public static class Get
+        {
+            private const string Prefix = $"{nameof(PersonalData)}.{nameof(Get)}";
+
+            public const string PersonalDataNotFound = $"{Prefix}.{nameof(PersonalDataNotFound)}";
+        }
     }
 
     public static class FitnessPlan
