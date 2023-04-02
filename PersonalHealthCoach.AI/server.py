@@ -20,7 +20,7 @@ def functionWrapper(fn):
             return "Too Bad"
     return fun
 
-modules = ["TipGenerator", "DietPlanner", "FitnessPlanner"]
+modules = ["TipGenerator", "DietPlanner"]
 
 for module in modules:
     try:
@@ -29,6 +29,9 @@ for module in modules:
     except ModuleNotFoundError:
         print(f"Module {module} not imported")
         pass
+
+import FitnessPlanner.FitnessPlanner.workout_endpoint
+app.add_url_rule("/FitnessPlanner", "FitnessPlanner", FitnessPlanner.FitnessPlanner.workout_endpoint.process_data , None, methods=['POST'])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='8000', debug=True)

@@ -1,0 +1,37 @@
+{
+  "workout": [
+    {
+      "exercise": "Push-ups",
+      "type": "Strength",
+      "rep_range": "10-15",
+      "sets": 3,
+      "rest_time": "1-2 minutes"
+    },
+    {
+      "exercise": "Squats",
+      "type": "Strength",
+      "rep_range": "10-15",
+      "sets": 3,
+      "rest_time": "1-2 minutes"
+    },
+    {
+      "exercise": "Lunges",
+      "type": "Strength",
+      "rep_range": "10-15",
+      "sets": 3,
+      "rest_time": "1-2 minutes"
+    },
+    {
+      "exercise": "Plank",
+      "type": "Core",
+      "time": "30-60 seconds",
+      "sets": 3,
+      "rest_time": "1-2 minutes"
+    },
+    {
+      "exercise": "Jumping Jacks",
+      "type": "Cardio",
+      "time": "5-10 minutes"
+    }
+  ]
+}

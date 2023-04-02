@@ -5,7 +5,8 @@ import json
 
 # Function to load the workout data from a JSON file based on the workout_id
 def load_workout(workout_id):
-    filename = f"workout#{workout_id}.json"
+    print(workout_id)
+    filename = f"./workouts/workout#{workout_id}.json"
     with open(filename, "r") as f:
         workout_data = json.load(f)
     return workout_data
@@ -29,17 +30,19 @@ def ip_whitelist(allowed_ips):
 allowed_ips = ['127.0.0.1']
 
 # Route to handle requests and return workout data based on the provided workout_id
-@app.route('/api', methods=['POST'])
-@ip_whitelist(allowed_ips)
+#@app.route('/api', methods=['POST'])
+#@ip_whitelist(allowed_ips)
 def process_data():
     data = request.json
-    
+    print(data)
     workout_id = data.get("workout_id")
+    print(workout_id)
     if not workout_id:
         abort(400)  # Bad Request
     try:
         workout_data = load_workout(workout_id)
     except FileNotFoundError:
+        print("saois")
         abort(404)  # Not Found
 
     # You can process the received data here and create a response
