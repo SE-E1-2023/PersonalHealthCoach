@@ -15,7 +15,14 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Web\HealthCoach.Shared.Web.csproj" />
 	  <ProjectReference Include="..\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="PersonalPlans\FitnessPlan\Api\Commands\" />
+	  <Folder Include="PersonalPlans\FitnessPlan\Commands\" />
+	  <Folder Include="PersonalPlans\FitnessPlan\CommandHandlers\" />
 	</ItemGroup>
 
 </Project>
