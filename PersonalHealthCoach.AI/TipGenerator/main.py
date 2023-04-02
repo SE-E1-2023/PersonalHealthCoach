@@ -6,8 +6,9 @@ class TipGenerator:
         with open(tips_file) as f:
             self.tips_data = json.load(f)
         
-        with open(profile_file) as f:
-            self.profile_data = json.load(f)
+        """with open(profile_file) as f:
+            self.profile_data = json.load(f)"""
+        self.profile_data = profile_file
     
     def calculate_bmi(self):
         height = self.profile_data['Height']
@@ -78,21 +79,22 @@ class TipGenerator:
         
         return tip_dict
     
-    def main(input):
-        tips_file = 'tips.json'
-        generator = TipGenerator(tips_file, input)
+def tip(input):
+    tips_file = 'tips.json'
+    generator = TipGenerator(tips_file, input)
 
-        return json.dumps(generator.generate_tip())
+    return generator.generate_tip()
     
 tips_file = 'tips.json'
 profile_file = 'profile.json'
 generator = TipGenerator(tips_file, profile_file)
+"""
 tip = generator.generate_tip()
 tip_json = json.dumps(tip)
 print(tip_json)
 
 bmi_category = generator.calculate_bmi()
-print(bmi_category)
+print(bmi_category)"""
     
     
 

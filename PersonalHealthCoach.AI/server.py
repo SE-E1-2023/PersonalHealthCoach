@@ -20,7 +20,7 @@ def functionWrapper(fn):
             return "Too Bad"
     return fun
 
-modules = ["TipGenerator", "DietPlanner"]
+modules = ["DietPlanner"]
 
 for module in modules:
     try:
@@ -32,6 +32,8 @@ for module in modules:
 
 import FitnessPlanner.FitnessPlanner.workout_endpoint
 app.add_url_rule("/FitnessPlanner", "FitnessPlanner", FitnessPlanner.FitnessPlanner.workout_endpoint.process_data , None, methods=['POST'])
+import TipGenerator.main
+app.add_url_rule("/TipGenerator", "TipGenerator", functionWrapper(TipGenerator.main.tip) , None, methods=['POST'])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='8000', debug=True)
