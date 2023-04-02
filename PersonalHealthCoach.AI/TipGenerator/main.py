@@ -84,11 +84,12 @@ def tip(input):
     generator = TipGenerator(tips_file, input)
 
     return generator.generate_tip()
-    
+
+"""    
 tips_file = 'tips.json'
 profile_file = 'profile.json'
 generator = TipGenerator(tips_file, profile_file)
-"""
+
 tip = generator.generate_tip()
 tip_json = json.dumps(tip)
 print(tip_json)
