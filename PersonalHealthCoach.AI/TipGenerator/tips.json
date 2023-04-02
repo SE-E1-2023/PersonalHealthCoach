@@ -1,0 +1,107 @@
+{
+    "First time in app": [
+        "Set achievable goals",
+        "Start small and gradually increase the intensity and duration of your workouts",
+        "Track your progress and celebrate your successes"
+    ],
+    "Lose weight": {
+        "general": [
+            "Track your food intake to ensure you're in a calorie deficit.",
+            "Get enough sleep to avoid hormone imbalances that can lead to weight gain.",
+            "Reduce stress levels to prevent emotional eating.",
+            "Find a support system to keep you motivated and accountable.",
+            "Be patient and consistent - weight loss takes time and effort."
+          ],
+        "diet": [
+            "Eat more protein and fiber to stay full longer.",
+            "Drink plenty of water to help reduce cravings.",
+            "Try eating smaller, more frequent meals throughout the day.",
+            "Avoid sugary drinks and processed foods.",
+            "Plan your meals and snacks ahead of time to avoid impulsive eating."
+        ],
+        "fitness": [
+            "Incorporate more cardio into your workout routine.",
+            "Do high-intensity interval training (HIIT) to burn more calories in less time.",
+            "Lift weights to build muscle and increase metabolism.",
+            "Add resistance training to tone your body and burn more calories.",
+            "Take the stairs instead of the elevator to burn extra calories."
+        ]
+    },
+    "Gain muscular mass": {
+        "general": [
+            "Be consistent with your workout routine and nutrition plan.",
+            "Track your progress to make sure you're making gains.",
+            "Gradually increase the weight and reps you lift to continue challenging your muscles.",
+            "Take rest days to allow your muscles to recover and grow.",
+            "Get enough sleep to support muscle growth and recovery."
+          ],
+        "diet": [
+            "Eat more protein to support muscle growth.",
+            "Consume enough calories to maintain a calorie surplus.",
+            "Include healthy fats in your diet to support hormone production.",
+            "Eat carbohydrates to fuel your workouts and replenish glycogen stores.",
+            "Drink plenty of water to support muscle function and recovery."
+        ],
+        "fitness": [
+            "Lift weights with heavy resistance to promote muscle growth.",
+            "Focus on compound exercises that work multiple muscle groups.",
+            "Increase training volume and intensity gradually to avoid injury.",
+            "Rest for 48-72 hours between workouts to allow for muscle recovery."
+        ]
+    },
+    "Improve overall health": {
+        "general": [
+            "Get regular check-ups with your healthcare provider.",
+            "Reduce stress levels to prevent chronic disease.",
+            "Practice good sleep hygiene to support overall health.",
+            "Find a physical activity you enjoy to stay active.",
+            "Avoid smoking and limit alcohol consumption."
+          ],
+        "diet": [
+            "Eat a variety of fruits and vegetables for essential vitamins and minerals.",
+            "Choose lean protein sources such as chicken, fish, and legumes.",
+            "Limit your intake of processed foods and sugary drinks.",
+            "Include healthy fats such as avocados, nuts, and seeds in your diet.",
+            "Eat complex carbohydrates such as whole grains, fruits, and vegetables."
+        ],
+        "fitness": [
+            "Get at least 150 minutes of moderate-intensity aerobic exercise per week.",
+            "Incorporate strength training exercises to maintain muscle mass and bone density.",
+            "Stretch regularly to improve flexibility and prevent injury.",
+            "Try low-impact activities such as swimming or cycling to reduce joint stress.",
+            "Make sure to get enough rest and recovery between workouts."
+        ]
+    },
+    "Improve cardiovascular health": {
+        "diet": [
+            
+        ],
+        "fitness": [
+            
+        ]
+    },
+    "Increase strength": {
+        "diet": [
+            
+        ],
+        "fitness": [
+            
+        ]
+    },
+    "Increase endurance": {
+        "diet": [
+            
+        ],
+        "fitness": [
+            
+        ]
+    },
+    "Maintain weigth": {
+        "diet": [
+            
+        ],
+        "fitness": [
+            
+        ]
+    }
+}
