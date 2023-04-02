@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Shared.Web;
 
@@ -30,28 +31,28 @@ public class HealthCoachHttpClient : IHttpClient
         return this;
     }
 
-    public async Task<TResult> Post<TRequest, TResult>(TRequest request) where TRequest : class where TResult : class
+    public async Task<Result<TResult>> Post<TRequest, TResult>(TRequest request) where TRequest : class where TResult : class
     {
         var response = await httpClient.PostAsJsonAsync(Route, request);
 
         if (!response.IsSuccessStatusCode)
         {
-            throw new HttpRequestException($"Request failed with status code {response.StatusCode}");
+            return Result.Failure<TResult>($"Request failed with status code {response.StatusCode}");
         }
 
-        return await response.Content.ReadFromJsonAsync<TResult>();
+        return Result.Success(await response.Content.ReadFromJsonAsync<TResult>());
     }
 
-    public async Task<TResult> Get<TResult>() where TResult : class
+    public async Task<Result<TResult>> Get<TResult>() where TResult : class
     {
         var response = await httpClient.GetAsync(Route);
 
         if (!response.IsSuccessStatusCode)
         {
-            throw new HttpRequestException($"Request failed with status code {response.StatusCode}");
+            return Result.Failure<TResult>($"Request failed with status code {response.StatusCode}");
         }
 
-        return await response.Content.ReadFromJsonAsync<TResult>();
+        return Result.Success(await response.Content.ReadFromJsonAsync<TResult>());
     }
 
     public string BaseUrl { get; private init; }
