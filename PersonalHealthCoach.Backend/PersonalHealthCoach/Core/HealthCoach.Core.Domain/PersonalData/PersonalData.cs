@@ -19,7 +19,7 @@ public class PersonalData : AggregateRoot
         string goal,
         List<string> unwantedExercises)
     {
-        UsedId = userId;
+        UserId = userId;
         DateOfBirth = (DateTime)dateOfBirth;
         Weight = weight;
         Height = height;
@@ -42,7 +42,7 @@ public class PersonalData : AggregateRoot
     {
         var dateOfBirthResult = dateOfBirth
             .EnsureNotNull(Errors.DateOfBirthNull)
-            .Ensure(d => d >= PersonalDataConstants.MinimumDateOfBirth, Errors.UserNotOldEnough);
+            .Ensure(d => d <= PersonalDataConstants.MinimumDateOfBirth, Errors.UserNotOldEnough);
 
         var weightResult = Result.SuccessIf(weight > 0, Errors.InvalidWeight);
 
@@ -56,7 +56,7 @@ public class PersonalData : AggregateRoot
             .Map(() => new PersonalData(userId, dateOfBirth, weight, height, medicalHistory, currentIllnesses, goal, unwantedExercises));
     }
 
-    public Guid UsedId { get; private set; }
+    public Guid UserId { get; private set; }
 
     public DateTime DateOfBirth { get; private set; }
 
