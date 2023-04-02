@@ -6,9 +6,8 @@ public sealed class Exercise : Entity
 {
     public Exercise() { }
 
-    public Exercise(Guid id, string name, string repRange, string restTime, int sets, string type)
+    public Exercise(string name, string repRange, string restTime, int sets, string type)
     {
-        Id = id;
         Name = name;
         RepRange = repRange;
         RestTime = restTime;
@@ -17,15 +16,17 @@ public sealed class Exercise : Entity
     }
 
     public static Exercise Create(string name, string repRange, string restTime, int sets, string type)
-        => new(Guid.NewGuid(), name, repRange, restTime, sets, type);
+        => new(name, repRange, restTime, sets, type);
 
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
-    public string RepRange { get; set; }
+    public string? RepRange { get; set; }
 
-    public string RestTime { get; set; }
+    public string? RestTime { get; set; }
 
-    public int Sets { get; set; }
+    public int? Sets { get; set; }
 
-    public string Type { get; set; }
+    public string? Type { get; set; }
+
+    public FitnessPlan FitnessPlan { get; set; }
 }

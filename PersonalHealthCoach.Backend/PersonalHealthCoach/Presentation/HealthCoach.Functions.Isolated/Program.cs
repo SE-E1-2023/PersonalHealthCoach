@@ -40,8 +40,7 @@ static class HostBuilderExtensions
         var configuration = services.BuildServiceProvider().GetService<IConfiguration>();
 
         var connectionString = configuration.GetConnectionString("DefaultConnection");
-        services.AddDbContext<GenericDbContext>(options =>
-            options.UseNpgsql(connectionString));
+        services.AddDbContext<GenericDbContext>(options => options.UseNpgsql(connectionString));
 
         return services;
     }

@@ -29,26 +29,22 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("FitnessPlanId")
+                    b.Property<Guid>("FitnessPlanId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("RepRange")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("RestTime")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Sets")
+                    b.Property<int?>("Sets")
                         .HasColumnType("integer");
 
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -142,9 +138,13 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             modelBuilder.Entity("HealthCoach.Core.Business.Exercise", b =>
                 {
-                    b.HasOne("HealthCoach.Core.Business.FitnessPlan", null)
+                    b.HasOne("HealthCoach.Core.Business.FitnessPlan", "FitnessPlan")
                         .WithMany("Exercises")
-                        .HasForeignKey("FitnessPlanId");
+                        .HasForeignKey("FitnessPlanId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FitnessPlan");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Business.FitnessPlan", b =>

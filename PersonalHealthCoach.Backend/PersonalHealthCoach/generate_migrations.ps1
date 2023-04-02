@@ -9,3 +9,6 @@ Set-Location -Path "..\"
 
 # Generate migration
 dotnet ef migrations add $migrationName --startup-project $startupProject --project $project
+
+# Go back above
+Set-Location -Path "PersonalHealthCoach"

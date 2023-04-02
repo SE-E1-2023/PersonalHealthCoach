@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
 using HealthCoach.Core.Domain;
+using HealthCoach.Shared.Core;
 using HealthCoach.Shared.Infrastructure;
 using HealthCoach.Shared.Web;
 using MediatR;
-
+using Microsoft.EntityFrameworkCore;
 using Errors = HealthCoach.Core.Business.BusinessErrors.FitnessPlan.Create;
 using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.AI;
 
@@ -27,14 +28,23 @@ internal sealed class CreateFitnessPlanCommandHandler : IRequestHandler<CreateFi
     public async Task<Result<FitnessPlan>> Handle(CreateFitnessPlanCommand request, CancellationToken cancellationToken)
     {
         var userResult = await repository.Load<User>(request.UserId).ToResult(Errors.UserNotFound);
+        var dataResult = queryProvider
+            .Query<PersonalData>()
+            .OrderByDescending(p => p.CreatedAt)
+            .FirstOrDefault(e => e.UserId == request.UserId)
+            .EnsureNotNull(Errors.PersonalDataNotFound);
 
-        return await userResult
-            .Map(_ => new RequestFitnessPlanCommand(1))
+        var testPlans = queryProvider
+            .Query<FitnessPlan>()
+            .Where(p => p.UserId == request.UserId)
+            .ToList();
+
+        return await Result.FirstFailureOrSuccess(userResult, dataResult)
+            .Map(() => new RequestFitnessPlanCommand(1))
             .Bind(async command => await httpClient.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(command))
-            // .Bind(c => new RequestFitnessPlanCommandResponse)
             .Bind(response => FitnessPlan.Create(
                 request.UserId,
-                response.workout.Select(e => Exercise.Create(e.exercise, e.rep_range, e.rest_time, e.sets, e.type)).ToList()))
+                response.workout.workout.Select(e => Exercise.Create(e.exercise, e.rep_range, e.rest_time, e.sets, e.type)).ToList()))
             .Tap(p => repository.Store(p));
     }
 }

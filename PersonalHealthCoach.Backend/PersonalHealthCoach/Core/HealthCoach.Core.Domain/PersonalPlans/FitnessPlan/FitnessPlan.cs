@@ -8,14 +8,14 @@ public sealed class FitnessPlan : AggregateRoot
 {
     public FitnessPlan() { }
 
-    public FitnessPlan(Guid userId, IReadOnlyCollection<Exercise> exercises) : this()
+    public FitnessPlan(Guid userId, ICollection<Exercise> exercises) : this()
     {
         UserId = userId;
         Exercises = exercises;
         CreatedAt = TimeProvider.Instance().UtcNow;
     }
 
-    public static Result<FitnessPlan> Create(Guid userId, IReadOnlyCollection<Exercise> exercises)
+    public static Result<FitnessPlan> Create(Guid userId, List<Exercise> exercises)
     {
         var exercisesResult = Result.SuccessIf(exercises.Any(), DomainErrors.FitnessPlan.Create.NoExercises);
 
@@ -25,7 +25,7 @@ public sealed class FitnessPlan : AggregateRoot
 
     public Guid UserId { get; private set; }
 
-    public IReadOnlyCollection<Exercise> Exercises { get; private set; }
+    public ICollection<Exercise> Exercises { get; private set; }
 
     public DateTime CreatedAt { get; private set; }
 }

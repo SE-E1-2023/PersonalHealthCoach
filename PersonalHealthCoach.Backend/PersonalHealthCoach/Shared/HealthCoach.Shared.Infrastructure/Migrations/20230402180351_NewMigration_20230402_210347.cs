@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class NewMigration_20230402_184612 : Migration
+    public partial class NewMigration_20230402_210347 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -64,12 +64,12 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    RepRange = table.Column<string>(type: "text", nullable: false),
-                    RestTime = table.Column<string>(type: "text", nullable: false),
-                    Sets = table.Column<int>(type: "integer", nullable: false),
-                    Type = table.Column<string>(type: "text", nullable: false),
-                    FitnessPlanId = table.Column<Guid>(type: "uuid", nullable: true)
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    RepRange = table.Column<string>(type: "text", nullable: true),
+                    RestTime = table.Column<string>(type: "text", nullable: true),
+                    Sets = table.Column<int>(type: "integer", nullable: true),
+                    Type = table.Column<string>(type: "text", nullable: true),
+                    FitnessPlanId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,7 +78,8 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         name: "FK_Exercise_FitnessPlan_FitnessPlanId",
                         column: x => x.FitnessPlanId,
                         principalTable: "FitnessPlan",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
