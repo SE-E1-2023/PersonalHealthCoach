@@ -1,5 +1,4 @@
-﻿
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 using FluentAssertions;
 using HealthCoach.Core.Domain;
 using HealthCoach.Core.Domain.Tests;
@@ -15,7 +14,7 @@ public class AddPersonalDataCommandHandlerTests
     private readonly Mock<IRepository> repositoryMock = new();
 
     [Fact]
-    public void When_UserDoesNotExits_Then_ShouldFail()
+    public void When_UserDoesNotExist_Then_ShouldFail()
     {
         var command = Command();
         repositoryMock.Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(Maybe<User>.None);

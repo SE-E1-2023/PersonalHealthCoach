@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using HealthCoach.Core.Domain;
+using HealthCoach.Shared.Core;
 using HealthCoach.Shared.Infrastructure;
 using MediatR;
 using Errors = HealthCoach.Core.Business.BusinessErrors.User.Get;
@@ -17,8 +18,10 @@ public class GetUserCommandHandler : IRequestHandler<GetUserCommand, Result<Guid
 
     public async Task<Result<Guid>> Handle(GetUserCommand request, CancellationToken cancellationToken)
     {
-        var user = queryProvider.Query<User>().FirstOrDefault(u => u.EmailAddress == request.EmailAddress);
-
-        return user is not null ? Result.Success(user.Id) : Result.Failure<Guid>(Errors.EmailAddressDoesntExist);
+        return queryProvider
+            .Query<User>()
+            .FirstOrDefault(u => u.EmailAddress == request.EmailAddress)
+            .EnsureNotNull(Errors.EmailAddressDoesntExist)
+            .Map(u => u.Id);
     }
 }

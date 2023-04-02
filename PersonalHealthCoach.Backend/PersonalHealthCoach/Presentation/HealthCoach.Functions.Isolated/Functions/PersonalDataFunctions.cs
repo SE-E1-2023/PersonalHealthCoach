@@ -18,18 +18,11 @@ public sealed class PersonalDataFunctions
     }
 
     [Function(nameof(AddPersonalData))]
-    public async Task<HttpResponseData> AddPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/personal-data")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> AddPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{UserId}/personal-data")] HttpRequestData request, Guid id)
     {
         var command = await request
             .DeserializeBodyPayload<AddPersonalDataCommand>()
-            .Map(c => new AddPersonalDataCommand(id,
-                c.DateOfBirth,
-                c.Weight,
-                c.Height,
-                c.MedicalHistory,
-                c.CurrentIllnesses,
-                c.Goal,
-                c.UnwantedExercises));
+            .Map(c => c with { UserId = id });
 
         return await command
             .Bind(c => mediator.Send(c))
@@ -37,11 +30,11 @@ public sealed class PersonalDataFunctions
     }
 
     [Function(nameof(RetrieveLatestPersonalData))]
-    public async Task<HttpResponseData> RetrieveLatestPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/user/{id}/data/personal/latest")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> RetrieveLatestPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/user/{UserId}/data/personal/latest")] HttpRequestData request, Guid id)
     {
         var command = await request
             .DeserializeBodyPayload<RetrieveLatestPersonalDataCommand>()
-            .Map(c => new RetrieveLatestPersonalDataCommand(id));
+            .Map(c => c with { UserId = id });
 
         return await command
             .Bind(c => mediator.Send(c))

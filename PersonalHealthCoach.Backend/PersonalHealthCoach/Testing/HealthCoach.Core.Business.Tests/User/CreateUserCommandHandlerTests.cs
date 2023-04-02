@@ -39,7 +39,7 @@ public class CreateUserCommandHandlerTests
         var command = Command() with { EmailAddress = "this is definitely a bad email address" };
         queryProviderMock
             .Setup(x => x.Query<User>())
-            .Returns(new List<User>() { }.AsQueryable());
+            .Returns(new List<User>().AsQueryable());
 
         //Act
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();

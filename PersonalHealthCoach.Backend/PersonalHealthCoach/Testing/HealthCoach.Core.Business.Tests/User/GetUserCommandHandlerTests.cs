@@ -9,7 +9,6 @@ namespace HealthCoach.Core.Business.Tests;
 
 public class GetUserCommandHandlerTests
 {
-    private readonly Mock<IRepository> repositoryMock = new();
     private readonly Mock<IEfQueryProvider> queryProviderMock = new();
 
     [Fact]
