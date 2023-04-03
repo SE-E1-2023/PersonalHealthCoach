@@ -1,6 +1,6 @@
 ﻿using HealthCoach.Shared.Core;
 
-namespace HealthCoach.Core.Business;
+namespace HealthCoach.Core.Domain;
 
 public sealed class Exercise : AggregateRoot
 {
@@ -27,6 +27,4 @@ public sealed class Exercise : AggregateRoot
     public int? Sets { get; set; }
 
     public string? Type { get; set; }
-
-    public FitnessPlan FitnessPlan { get; set; }
 }

@@ -28,16 +28,12 @@ internal sealed class CreateFitnessPlanCommandHandler : IRequestHandler<CreateFi
     public async Task<Result<FitnessPlan>> Handle(CreateFitnessPlanCommand request, CancellationToken cancellationToken)
     {
         var userResult = await repository.Load<User>(request.UserId).ToResult(Errors.UserNotFound);
+        
         var dataResult = queryProvider
             .Query<PersonalData>()
             .OrderByDescending(p => p.CreatedAt)
             .FirstOrDefault(e => e.UserId == request.UserId)
             .EnsureNotNull(Errors.PersonalDataNotFound);
-
-        var testPlans = queryProvider
-            .Query<FitnessPlan>()
-            .Where(p => p.UserId == request.UserId)
-            .ToList();
 
         return await Result.FirstFailureOrSuccess(userResult, dataResult)
             .Map(() => new RequestFitnessPlanCommand(1))

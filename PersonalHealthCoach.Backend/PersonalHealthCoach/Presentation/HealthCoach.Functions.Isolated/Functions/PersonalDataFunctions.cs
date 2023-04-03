@@ -17,7 +17,7 @@ public sealed class PersonalDataFunctions
     }
 
     [Function(nameof(AddPersonalData))]
-    public async Task<HttpResponseData> AddPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/personal-data")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> AddPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/data/personal")] HttpRequestData request, Guid id)
     {
         var command = await request
             .DeserializeBodyPayload<AddPersonalDataCommand>()

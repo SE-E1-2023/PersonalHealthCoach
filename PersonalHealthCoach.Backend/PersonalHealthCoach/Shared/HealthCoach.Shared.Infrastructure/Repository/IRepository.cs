@@ -1,5 +1,5 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Core;
+﻿using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Shared.Infrastructure;
 

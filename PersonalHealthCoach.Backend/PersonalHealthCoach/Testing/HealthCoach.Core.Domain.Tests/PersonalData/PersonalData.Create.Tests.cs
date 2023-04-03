@@ -82,7 +82,7 @@ public partial class PersonalDataTests
     public void Given_Create_When_GoalIsUnrecognized_Then_ShouldFail()
     {
         //Arrange
-        var badGoal = PersonalDataConstants.AllowedGoals.First().PadRight(10, 'a');
+        var badGoal = PersonalDataConstants.AllowedGoals.First() + "bad";
 
         //Act
         var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, badGoal, null);

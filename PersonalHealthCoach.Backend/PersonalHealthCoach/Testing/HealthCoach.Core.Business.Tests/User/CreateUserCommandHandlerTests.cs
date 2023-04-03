@@ -1,9 +1,9 @@
-﻿using FluentAssertions;
+﻿using Moq;
+using Xunit;
+using FluentAssertions;
 using HealthCoach.Core.Domain;
 using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
-using Moq;
-using Xunit;
 
 namespace HealthCoach.Core.Business.Tests;
 

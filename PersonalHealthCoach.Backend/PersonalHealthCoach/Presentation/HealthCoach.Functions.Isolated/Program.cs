@@ -50,6 +50,13 @@ static class HostBuilderExtensions
         var factory = new GenericDbContextFactory();
         await using var dbContext = factory.CreateDbContext(args: null);
 
-        await dbContext.Database.MigrateAsync();
+        try
+        {
+            await dbContext.Database.MigrateAsync();
+        }
+        catch (Npgsql.NpgsqlException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }

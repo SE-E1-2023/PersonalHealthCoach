@@ -1,11 +1,11 @@
-﻿using CSharpFunctionalExtensions;
+﻿using Moq;
+using Xunit;
 using FluentAssertions;
 using HealthCoach.Core.Domain;
-using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
+using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
-using Moq;
-using Xunit;
 
 namespace HealthCoach.Core.Business.Tests;
 
@@ -82,7 +82,7 @@ public class AddPersonalDataCommandHandlerTests
         170,
         null,
         null,
-        "Slabire",
+        PersonalDataConstants.AllowedGoals.First(),
         null);
 
     private AddPersonalDataCommandHandler Sut() => new(repositoryMock.Object);

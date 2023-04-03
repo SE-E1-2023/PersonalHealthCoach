@@ -19,10 +19,4 @@
 	  <ProjectReference Include="..\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="PersonalPlans\FitnessPlan\Api\Commands\" />
-	  <Folder Include="PersonalPlans\FitnessPlan\Commands\" />
-	  <Folder Include="PersonalPlans\FitnessPlan\CommandHandlers\" />
-	</ItemGroup>
-
 </Project>
