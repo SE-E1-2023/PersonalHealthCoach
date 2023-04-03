@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace HealthCoach.Core.Domain.Tests;
 
-namespace HealthCoach.Core.Domain.Tests.Factories
+public static class PersonalDataFactory
 {
-    public static class PersonalDataFactory
-    {
-        public static PersonalData Any() => PersonalData.Create(Guid.NewGuid(),
+    public static PersonalData Any() => PersonalData.Create(Guid.NewGuid(),
         PersonalDataConstants.MinimumDateOfBirth,
         70,
         170,
         null,
         null,
-        "Slabire",
+        PersonalDataConstants.AllowedGoals.First(),
         null).Value;
 
-    }
+    public static PersonalData WithUserId(Guid userId) => PersonalData.Create(userId,
+        PersonalDataConstants.MinimumDateOfBirth,
+        70,
+        170,
+        null,
+        null,
+        PersonalDataConstants.AllowedGoals.First(),
+        null).Value;
 }

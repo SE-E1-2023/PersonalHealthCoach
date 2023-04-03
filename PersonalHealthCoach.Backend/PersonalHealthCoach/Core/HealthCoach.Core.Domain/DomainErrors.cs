@@ -32,4 +32,14 @@ public static class DomainErrors
             public const string GoalIsUnrecognized = $"{Prefix}.{nameof(Domain.PersonalData.Goal)}.{nameof(GoalIsUnrecognized)}";
         }
     }
+
+    public static class FitnessPlan
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(FitnessPlan)}.{nameof(Create)}";
+
+            public const string NoExercises = $"{Prefix}.{nameof(NoExercises)}";
+        }
+    }
 }

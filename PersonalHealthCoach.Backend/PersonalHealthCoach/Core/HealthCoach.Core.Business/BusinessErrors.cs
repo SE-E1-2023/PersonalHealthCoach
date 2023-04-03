@@ -35,4 +35,14 @@ public static class BusinessErrors
         }
     }
 
+    public static class FitnessPlan
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(FitnessPlan)}.{nameof(Create)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+            public const string PersonalDataNotFound = $"{Prefix}.{nameof(PersonalDataNotFound)}";
+        }
+    }
 }

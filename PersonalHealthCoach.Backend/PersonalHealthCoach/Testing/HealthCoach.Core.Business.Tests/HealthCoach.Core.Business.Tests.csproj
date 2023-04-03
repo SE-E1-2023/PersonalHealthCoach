@@ -30,4 +30,8 @@
 	  <ProjectReference Include="..\HealthCoach.Core.Domain.Tests\HealthCoach.Core.Domain.Tests.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="PersonalPlans\Fitness\" />
+	</ItemGroup>
+
 </Project>

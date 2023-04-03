@@ -12,9 +12,9 @@ public sealed class ApiResult
         Value = value;
     }
 
-    internal static ApiResult From(Result result) => new ApiResult(result.IsFailure, result.IsSuccess, result.IsFailure ? result.Error : string.Empty);
+    internal static ApiResult From(Result result) => new(result.IsFailure, result.IsSuccess, result.IsFailure ? result.Error : string.Empty);
 
-    internal static ApiResult From<T>(Result<T> result) => new ApiResult(result.IsFailure, result.IsSuccess, result.IsFailure ? result.Error : string.Empty, result.IsSuccess ? (object)result.Value : null);
+    internal static ApiResult From<T>(Result<T> result) => new(result.IsFailure, result.IsSuccess, result.IsFailure ? result.Error : string.Empty, result.IsSuccess ? (object)result.Value : null);
 
     public bool IsFailure { get; private set; }
 

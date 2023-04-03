@@ -23,6 +23,54 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("FitnessPlanId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("RepRange")
+                        .HasColumnType("text");
+
+                    b.Property<string>("RestTime")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("Sets")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FitnessPlanId");
+
+                    b.ToTable("Exercise");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.FitnessPlan", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FitnessPlan");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.PersonalData", b =>
                 {
                     b.Property<Guid>("Id")
@@ -30,14 +78,14 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<List<string>>("CurrentIllnesses")
                         .IsRequired()
                         .HasColumnType("text[]");
 
                     b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Goal")
                         .IsRequired()
@@ -54,7 +102,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text[]");
 
-                    b.Property<Guid>("UsedId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
                     b.Property<float>("Weight")
@@ -86,6 +134,18 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>
+                {
+                    b.HasOne("HealthCoach.Core.Domain.FitnessPlan", null)
+                        .WithMany("Exercises")
+                        .HasForeignKey("FitnessPlanId");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.FitnessPlan", b =>
+                {
+                    b.Navigation("Exercises");
                 });
 #pragma warning restore 612, 618
         }
