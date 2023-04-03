@@ -73,35 +73,94 @@
         ]
     },
     "Improve cardiovascular health": {
+        "general": [
+            "Consult with your healthcare provider before starting a new exercise program, especially if you have a history of heart disease or other cardiovascular conditions.",
+            "Monitor your heart rate during exercise to ensure you're working at an appropriate intensity level.",
+            "Gradually increase the duration and intensity of your aerobic workouts over time to improve cardiovascular fitness.",
+            "Incorporate both steady-state and interval training into your routine to challenge your heart and lungs in different ways.",
+            "Don't forget to warm up and cool down properly before and after exercise."
+          ],
         "diet": [
-            
+            "Consume plenty of fruits, vegetables, and whole grains for their heart-healthy nutrients and fiber.",
+            "Choose lean sources of protein such as fish and chicken to reduce saturated fat intake.",
+            "Limit your intake of sodium and processed foods, which can contribute to high blood pressure.",
+            "Eat healthy fats such as avocados, nuts, and olive oil to help maintain healthy cholesterol levels.",
+            "Avoid sugary drinks and excessive alcohol consumption."
         ],
         "fitness": [
-            
+            "Incorporate aerobic exercise such as running, cycling, or swimming to improve cardiovascular health.",
+            "Aim for at least 150 minutes of moderate-intensity exercise per week.",
+            "Mix in high-intensity interval training (HIIT) to increase heart rate variability and challenge your cardiovascular system.",
+            "Consider adding in resistance training to improve overall fitness and reduce the risk of injury."
         ]
     },
     "Increase strength": {
+        "general": [
+            "Set specific strength goals, such as lifting a certain weight or completing a certain number of reps.",
+            "Be consistent with your workouts, focusing on progressive overload to gradually increase your strength.",
+            "Incorporate compound exercises that work multiple muscle groups to maximize your strength gains.",
+            "Make sure to include rest days to allow for muscle recovery.",
+            "Consider working with a personal trainer or strength coach to help you design an effective program."
+        ],
         "diet": [
-            
+            "Consume plenty of protein to support muscle growth and repair.",
+            "Choose complex carbohydrates such as whole grains, fruits, and vegetables to provide sustained energy for your workouts.",
+            "Eat healthy fats such as avocados, nuts, and seeds to support overall health.",
+            "Avoid processed foods and sugary drinks, which can interfere with muscle growth and recovery.",
+            "Drink plenty of water to stay hydrated and support muscle function."
         ],
         "fitness": [
-            
+            "Focus on heavy lifting with low reps to build maximal strength.",
+            "Incorporate both free weights and machines to target different muscle groups.",
+            "Make sure to use proper form and technique to prevent injury.",
+            "Consider working with a spotter or using safety equipment when lifting heavy weights.",
+            "Include rest days to allow for muscle recovery."
         ]
     },
     "Increase endurance": {
+        "general": [
+            "Set specific endurance goals, such as completing a certain distance or time in a race.",
+            "Be consistent with your workouts, gradually increasing the duration and intensity of your training over time.",
+            "Consider cross-training with other activities such as swimming or cycling to reduce the risk of injury and improve overall fitness.",
+            "Make sure to include rest days to allow for recovery.",
+            "Don't forget to warm up and cool down properly before and after exercise."
+        ],
         "diet": [
-            
+            "Consume plenty of carbohydrates to fuel your workouts and replenish glycogen stores.",
+            "Choose lean sources of protein to support muscle recovery.",
+            "Eat healthy fats such as avocados, nuts, and seeds to support overall health.",
+            "Avoid sugary drinks and processed foods, which can interfere with endurance performance.",
+            "Drink plenty of water to stay hydrated and support exercise performance."
         ],
         "fitness": [
-            
+            "Engage in aerobic activities that elevate your heart rate such as running, cycling, swimming, or rowing. Start with a moderate intensity and gradually increase the duration and intensity of the exercise over time.",
+            "Incorporate HIIT into your workout routine by alternating periods of high-intensity exercise with periods of rest or low-intensity exercise. This type of training has been shown to improve cardiovascular health and endurance.",
+            "Build muscular endurance by incorporating strength training into your routine. This can include bodyweight exercises such as push-ups, lunges, and squats or using resistance bands, weights or machines.",
+            "Consistent training is key to building endurance. Make exercise a regular part of your routine and gradually increase the intensity and duration of your workouts.",
+            "Allow your body time to rest and recover between workouts to avoid overtraining and injury. Incorporate stretching and foam rolling into your routine to reduce soreness and improve flexibility."
         ]
     },
     "Maintain weigth": {
-        "diet": [
-            
-        ],
-        "fitness": [
-            
-        ]
+        "general": [
+            "Continue tracking your food intake and monitoring your weight to stay on track.",
+            "Stay active by engaging in regular physical activity, such as walking, running, or weight lifting.",
+            "Focus on developing healthy habits that you can maintain long-term, rather than going on fad diets or extreme exercise programs.",
+            "Find a support system to keep you accountable and motivated.",
+            "Be mindful of portion sizes and avoid overeating."
+            ],
+            "diet": [
+            "Continue to eat a balanced diet with plenty of fruits, vegetables, whole grains, lean protein, and healthy fats.",
+            "Limit your intake of processed foods, sugary drinks, and snacks.",
+            "Choose nutrient-dense foods that provide a lot of nutrients for fewer calories, such as leafy greens, berries, and nuts.",
+            "Drink plenty of water and avoid drinking excessive alcohol.",
+            "Be mindful of portion sizes and practice intuitive eating to listen to your body's hunger and fullness cues."
+            ],
+            "fitness": [
+            "Maintain a regular exercise routine that includes both cardio and strength training.",
+            "Vary your workouts to keep things interesting and challenge your body in different ways.",
+            "Set new fitness goals to keep you motivated and focused, such as running a 5K or completing a challenging hike.",
+            "Find a workout buddy or join a fitness group to stay accountable and motivated.",
+            "Don't forget to include rest days in your routine to allow your muscles to recover and prevent injury."
+            ]
     }
 }
