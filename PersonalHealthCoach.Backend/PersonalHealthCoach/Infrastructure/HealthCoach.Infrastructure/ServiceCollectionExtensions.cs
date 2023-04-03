@@ -1,5 +1,5 @@
-﻿using HealthCoach.Shared.Infrastructure;
-using HealthCoach.Shared.Web;
+﻿using HealthCoach.Shared.Web;
+using HealthCoach.Shared.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace HealthCoach.Infrastructure;

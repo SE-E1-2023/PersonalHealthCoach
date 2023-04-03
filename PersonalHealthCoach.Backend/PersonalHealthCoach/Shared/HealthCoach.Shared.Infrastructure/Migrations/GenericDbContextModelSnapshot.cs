@@ -29,7 +29,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("FitnessPlanId")
+                    b.Property<Guid?>("FitnessPlanId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
@@ -138,13 +138,9 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             modelBuilder.Entity("HealthCoach.Core.Business.Exercise", b =>
                 {
-                    b.HasOne("HealthCoach.Core.Business.FitnessPlan", "FitnessPlan")
+                    b.HasOne("HealthCoach.Core.Business.FitnessPlan", null)
                         .WithMany("Exercises")
-                        .HasForeignKey("FitnessPlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("FitnessPlan");
+                        .HasForeignKey("FitnessPlanId");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Business.FitnessPlan", b =>

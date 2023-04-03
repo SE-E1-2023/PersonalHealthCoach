@@ -1,10 +1,10 @@
-﻿using CSharpFunctionalExtensions;
+﻿using MediatR;
+using HealthCoach.Shared.Web;
 using HealthCoach.Core.Domain;
 using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
-using HealthCoach.Shared.Web;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
+
 using Errors = HealthCoach.Core.Business.BusinessErrors.FitnessPlan.Create;
 using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.AI;
 
@@ -20,7 +20,7 @@ internal sealed class CreateFitnessPlanCommandHandler : IRequestHandler<CreateFi
     {
         this.repository = repository;
         this.queryProvider = queryProvider;
-        this.httpClient = httpClientFactory
+        httpClient = httpClientFactory
             .OnBaseUrl(AIApi.BaseUrl)
             .OnRoute(AIApi.FitnessPlanner);
     }

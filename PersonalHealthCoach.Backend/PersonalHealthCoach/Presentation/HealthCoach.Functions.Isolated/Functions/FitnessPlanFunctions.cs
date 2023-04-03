@@ -1,6 +1,6 @@
-﻿using HealthCoach.Core.Business;
+﻿using MediatR;
 using HealthCoach.Shared.Web;
-using MediatR;
+using HealthCoach.Core.Business;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 
@@ -16,7 +16,7 @@ public sealed class FitnessPlanFunctions
     }
 
     [Function(nameof(CreateFitnessPlan))]
-    public async Task<HttpResponseData> CreateFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/user/{UserId}/plans/fitness")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> CreateFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/user/{id}/plans/fitness")] HttpRequestData request, Guid id)
     {
         return await mediator
             .Send(new CreateFitnessPlanCommand(id))

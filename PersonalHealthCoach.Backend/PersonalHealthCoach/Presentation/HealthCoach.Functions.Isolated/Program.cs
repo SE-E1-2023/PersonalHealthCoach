@@ -2,10 +2,10 @@
 using HealthCoach.Infrastructure;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using HealthCoach.Shared.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using HealthCoach.Shared.Infrastructure;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 await HostBuilderExtensions.CreateAndApplyMigrationAsync();
 

@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     [DbContext(typeof(GenericDbContext))]
-    [Migration("20230402180351_NewMigration_20230402_210347")]
-    partial class NewMigration_20230402_210347
+    [Migration("20230403101643_NewMigration_20230403_131639")]
+    partial class NewMigration_20230403_131639
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,7 +32,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("FitnessPlanId")
+                    b.Property<Guid?>("FitnessPlanId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
@@ -141,13 +141,9 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             modelBuilder.Entity("HealthCoach.Core.Business.Exercise", b =>
                 {
-                    b.HasOne("HealthCoach.Core.Business.FitnessPlan", "FitnessPlan")
+                    b.HasOne("HealthCoach.Core.Business.FitnessPlan", null)
                         .WithMany("Exercises")
-                        .HasForeignKey("FitnessPlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("FitnessPlan");
+                        .HasForeignKey("FitnessPlanId");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Business.FitnessPlan", b =>

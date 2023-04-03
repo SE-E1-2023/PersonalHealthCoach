@@ -1,7 +1,7 @@
-﻿using CSharpFunctionalExtensions;
+﻿using MediatR;
 using HealthCoach.Core.Domain;
-using MediatR;
+using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Core.Business;
 
-public record RetrieveLatestPersonalDataCommand(Guid UserId): IRequest<Result<PersonalData>>;
+public record RetrieveLatestPersonalDataCommand(Guid UserId) : IRequest<Result<PersonalData>>;

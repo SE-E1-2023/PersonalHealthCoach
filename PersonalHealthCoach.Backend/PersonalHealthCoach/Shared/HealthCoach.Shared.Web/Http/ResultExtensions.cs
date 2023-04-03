@@ -1,6 +1,6 @@
-﻿using CSharpFunctionalExtensions;
+﻿using System.Net;
+using CSharpFunctionalExtensions;
 using Microsoft.Azure.Functions.Worker.Http;
-using System.Net;
 
 namespace HealthCoach.Shared.Web;
 

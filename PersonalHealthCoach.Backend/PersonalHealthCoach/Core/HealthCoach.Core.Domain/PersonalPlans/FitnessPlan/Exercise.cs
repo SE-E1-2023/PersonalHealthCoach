@@ -1,8 +1,8 @@
-﻿using Entity = HealthCoach.Shared.Core.Entity;
+﻿using HealthCoach.Shared.Core;
 
 namespace HealthCoach.Core.Business;
 
-public sealed class Exercise : Entity
+public sealed class Exercise : AggregateRoot
 {
     public Exercise() { }
 

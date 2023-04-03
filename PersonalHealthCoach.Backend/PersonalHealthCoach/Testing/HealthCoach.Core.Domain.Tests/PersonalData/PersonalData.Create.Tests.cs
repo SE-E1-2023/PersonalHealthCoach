@@ -1,7 +1,6 @@
-﻿
+﻿using Xunit;
 using FluentAssertions;
 using HealthCoach.Shared.Core;
-using Xunit;
 
 namespace HealthCoach.Core.Domain.Tests;
 public partial class PersonalDataTests

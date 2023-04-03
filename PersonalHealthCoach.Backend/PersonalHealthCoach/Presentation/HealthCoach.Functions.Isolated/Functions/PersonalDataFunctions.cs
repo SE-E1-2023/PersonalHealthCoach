@@ -1,8 +1,7 @@
-﻿
-using CSharpFunctionalExtensions;
-using HealthCoach.Core.Business;
+﻿using MediatR;
 using HealthCoach.Shared.Web;
-using MediatR;
+using HealthCoach.Core.Business;
+using CSharpFunctionalExtensions;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 
@@ -18,7 +17,7 @@ public sealed class PersonalDataFunctions
     }
 
     [Function(nameof(AddPersonalData))]
-    public async Task<HttpResponseData> AddPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{UserId}/personal-data")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> AddPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/personal-data")] HttpRequestData request, Guid id)
     {
         var command = await request
             .DeserializeBodyPayload<AddPersonalDataCommand>()
@@ -30,14 +29,9 @@ public sealed class PersonalDataFunctions
     }
 
     [Function(nameof(RetrieveLatestPersonalData))]
-    public async Task<HttpResponseData> RetrieveLatestPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/user/{UserId}/data/personal/latest")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> RetrieveLatestPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/user/{id}/data/personal/latest")] HttpRequestData request, Guid id)
     {
-        var command = await request
-            .DeserializeBodyPayload<RetrieveLatestPersonalDataCommand>()
-            .Map(c => c with { UserId = id });
-
-        return await command
-            .Bind(c => mediator.Send(c))
+        return await mediator.Send(new RetrieveLatestPersonalDataCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 }

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class NewMigration_20230402_210347 : Migration
+    public partial class NewMigration_20230403_131639 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -69,7 +69,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     RestTime = table.Column<string>(type: "text", nullable: true),
                     Sets = table.Column<int>(type: "integer", nullable: true),
                     Type = table.Column<string>(type: "text", nullable: true),
-                    FitnessPlanId = table.Column<Guid>(type: "uuid", nullable: false)
+                    FitnessPlanId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -78,8 +78,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         name: "FK_Exercise_FitnessPlan_FitnessPlanId",
                         column: x => x.FitnessPlanId,
                         principalTable: "FitnessPlan",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
