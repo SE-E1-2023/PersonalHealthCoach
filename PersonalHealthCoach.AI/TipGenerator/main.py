@@ -33,52 +33,55 @@ class TipGenerator:
     def generate_tip(self, tip_type=None):
         objective = self.profile_data['Objective']
 
-        if 'Diseases' in self.profile_data:
-            if objective == 'Lose weight':
-                general_tips = self.tips_data['Lose weight']['general']
-                diet_tips = self.tips_data['Lose weight']['diet']
-                fitness_tips = self.tips_data['Lose weight']['fitness']
-            elif objective == 'Gain muscular mass':
-                general_tips = self.tips_data['Gain muscular mass']['general']
-                diet_tips = self.tips_data['Gain muscular mass']['diet']
-                fitness_tips = self.tips_data['Gain muscular mass']['fitness']
-            elif objective == 'Improve overall health':
-                general_tips = self.tips_data['Improve overall health']['general']
-                diet_tips = self.tips_data['Improve overall health']['diet']
-                fitness_tips = self.tips_data['Improve overall health']['fitness']
-            elif objective == 'Improve cardiovascular health':
-                general_tips = self.tips_data['Improve cardiovascular health']['general']
-                diet_tips = self.tips_data['Improve cardiovascular health']['diet']
-                fitness_tips = self.tips_data['Improve cardiovascular health']['fitness']
-            elif objective == 'Increase strength':
-                general_tips = self.tips_data['Increase strength']['general']
-                diet_tips = self.tips_data['Increase strength']['diet']
-                fitness_tips = self.tips_data['Increase strength']['fitness']
-            elif objective == 'Increase endurance':
-                general_tips = self.tips_data['Increase endurance']['general']
-                diet_tips = self.tips_data['Increase endurance']['diet']
-                fitness_tips = self.tips_data['Increase endurance']['fitness']
-            elif objective == 'Maintain weigth':
-                general_tips = self.tips_data['Maintain weigth']['general']
-                diet_tips = self.tips_data['Maintain weigth']['diet']
-                fitness_tips = self.tips_data['Maintain weigth']['fitness']
-            
-            if tip_type is None:
-                tip_type = random.choice(['general','diet', 'fitness'])
-            
-            if tip_type == 'general':
-                tip = random.choice(general_tips)
-            elif tip_type == 'diet':
-                tip = random.choice(diet_tips)
-            else:
-                tip = random.choice(fitness_tips)
-            
-            tip_dict = {'tip_type': tip_type, 'tip': tip}
-        
+        if objective == 'Lose weight':
+            general_tips = self.tips_data['Lose weight']['general']
+            diet_tips = self.tips_data['Lose weight']['diet']
+            fitness_tips = self.tips_data['Lose weight']['fitness']
+        elif objective == 'Gain muscular mass':
+            general_tips = self.tips_data['Gain muscular mass']['general']
+            diet_tips = self.tips_data['Gain muscular mass']['diet']
+            fitness_tips = self.tips_data['Gain muscular mass']['fitness']
+        elif objective == 'Improve overall health':
+            general_tips = self.tips_data['Improve overall health']['general']
+            diet_tips = self.tips_data['Improve overall health']['diet']
+            fitness_tips = self.tips_data['Improve overall health']['fitness']
+        elif objective == 'Improve cardiovascular health':
+            general_tips = self.tips_data['Improve cardiovascular health']['general']
+            diet_tips = self.tips_data['Improve cardiovascular health']['diet']
+            fitness_tips = self.tips_data['Improve cardiovascular health']['fitness']
+        elif objective == 'Increase strength':
+            general_tips = self.tips_data['Increase strength']['general']
+            diet_tips = self.tips_data['Increase strength']['diet']
+            fitness_tips = self.tips_data['Increase strength']['fitness']
+        elif objective == 'Increase endurance':
+            general_tips = self.tips_data['Increase endurance']['general']
+            diet_tips = self.tips_data['Increase endurance']['diet']
+            fitness_tips = self.tips_data['Increase endurance']['fitness']
+        elif objective == 'Maintain weigth':
+            general_tips = self.tips_data['Maintain weigth']['general']
+            diet_tips = self.tips_data['Maintain weigth']['diet']
+            fitness_tips = self.tips_data['Maintain weigth']['fitness']
         else:
-            first_time_tip = self.tips_data['First time in app']
-            tip = random.choice(first_time_tip)
-            tip_dict = {'tip_type': 'First time in app', 'tip': tip}
+            objective = 'Maintain weigth'
+            general_tips = self.tips_data['Maintain weigth']['general']
+            diet_tips = self.tips_data['Maintain weigth']['diet']
+            fitness_tips = self.tips_data['Maintain weigth']['fitness']
+        
+        if tip_type is None:
+            tip_type = random.choice(['general','diet', 'fitness'])
+        
+        if tip_type == 'general':
+            tip = random.choice(general_tips)
+        elif tip_type == 'diet':
+            tip = random.choice(diet_tips)
+        else:
+            tip = random.choice(fitness_tips)
+        
+        tip_dict = {'tip_type': tip_type, 'tip': tip}
+
+        # first_time_tip = self.tips_data['First time in app']
+        # tip = random.choice(first_time_tip)
+        # tip_dict = {'tip_type': 'First time in app', 'tip': tip}
         
         return tip_dict
     
