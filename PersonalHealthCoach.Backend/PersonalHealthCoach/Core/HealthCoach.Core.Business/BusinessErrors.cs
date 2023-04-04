@@ -32,7 +32,7 @@ public static class BusinessErrors
         {
             private const string Prefix = $"{nameof(PersonalData)}.{nameof(Get)}";
 
-            public const string UserIdNotFound = $"{Prefix}.{nameof(UserIdNotFound)}";
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
             public const string PersonalDataNotFound = $"{Prefix}.{nameof(PersonalDataNotFound)}";
         }
     }
