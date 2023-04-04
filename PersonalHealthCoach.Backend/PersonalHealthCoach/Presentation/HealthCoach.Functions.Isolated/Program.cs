@@ -2,10 +2,10 @@
 using HealthCoach.Infrastructure;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using HealthCoach.Shared.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using HealthCoach.Shared.Infrastructure;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 await HostBuilderExtensions.CreateAndApplyMigrationAsync();
 
@@ -40,8 +40,7 @@ static class HostBuilderExtensions
         var configuration = services.BuildServiceProvider().GetService<IConfiguration>();
 
         var connectionString = configuration.GetConnectionString("DefaultConnection");
-        services.AddDbContext<GenericDbContext>(options =>
-            options.UseNpgsql(connectionString));
+        services.AddDbContext<GenericDbContext>(options => options.UseNpgsql(connectionString));
 
         return services;
     }
@@ -51,6 +50,13 @@ static class HostBuilderExtensions
         var factory = new GenericDbContextFactory();
         await using var dbContext = factory.CreateDbContext(args: null);
 
-        await dbContext.Database.MigrateAsync();
+        try
+        {
+            await dbContext.Database.MigrateAsync();
+        }
+        catch (Npgsql.NpgsqlException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }

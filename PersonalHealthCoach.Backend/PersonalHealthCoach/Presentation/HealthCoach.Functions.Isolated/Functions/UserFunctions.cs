@@ -1,7 +1,7 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Core.Business;
+﻿using MediatR;
 using HealthCoach.Shared.Web;
-using MediatR;
+using HealthCoach.Core.Business;
+using CSharpFunctionalExtensions;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 
@@ -24,8 +24,8 @@ public sealed class UserFunctions
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 
-    [Function(nameof(GetUser))]
-    public async Task<HttpResponseData> GetUser([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users")] HttpRequestData request)
+    [Function(nameof(GetUserByEmailAddress))]
+    public async Task<HttpResponseData> GetUserByEmailAddress([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users")] HttpRequestData request)
     {
         return await request.DeserializeBodyPayload<GetUserCommand>()
             .Bind(c => mediator.Send(c))

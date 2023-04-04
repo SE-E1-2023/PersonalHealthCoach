@@ -1,0 +1,12 @@
+﻿using CSharpFunctionalExtensions;
+
+namespace HealthCoach.Shared.Web;
+
+public interface IHttpClient
+{
+    public IHttpClient OnRoute(string route);
+
+    public Task<Result<TResult>> Post<TRequest, TResult>(TRequest request) where TRequest : class where TResult : class;
+
+    public Task<Result<TResult>> Get<TResult>() where TResult : class;
+}

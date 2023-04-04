@@ -1,7 +1,7 @@
-﻿using CSharpFunctionalExtensions;
+﻿using MediatR;
 using HealthCoach.Core.Domain;
+using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
-using MediatR;
 
 using Errors = HealthCoach.Core.Business.BusinessErrors.User.Create;
 

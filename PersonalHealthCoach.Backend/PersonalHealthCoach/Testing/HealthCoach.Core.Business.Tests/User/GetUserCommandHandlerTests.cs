@@ -1,15 +1,14 @@
-﻿using FluentAssertions;
+﻿using Moq;
+using Xunit;
+using FluentAssertions;
 using HealthCoach.Core.Domain;
 using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
-using Moq;
-using Xunit;
 
 namespace HealthCoach.Core.Business.Tests;
 
 public class GetUserCommandHandlerTests
 {
-    private readonly Mock<IRepository> repositoryMock = new();
     private readonly Mock<IEfQueryProvider> queryProviderMock = new();
 
     [Fact]
