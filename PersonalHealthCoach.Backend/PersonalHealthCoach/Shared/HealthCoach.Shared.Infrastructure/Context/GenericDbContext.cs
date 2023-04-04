@@ -1,6 +1,6 @@
-﻿using HealthCoach.Shared.Core;
+﻿using System.Reflection;
+using HealthCoach.Shared.Core;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 namespace HealthCoach.Shared.Infrastructure;
 

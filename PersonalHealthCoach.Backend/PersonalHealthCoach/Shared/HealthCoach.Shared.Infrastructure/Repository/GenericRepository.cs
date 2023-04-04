@@ -1,5 +1,5 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Core;
+﻿using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace HealthCoach.Shared.Infrastructure;
@@ -33,5 +33,4 @@ public sealed class GenericRepository : IRepository
 
         await dbContext.SaveChangesAsync();
     }
-
 }

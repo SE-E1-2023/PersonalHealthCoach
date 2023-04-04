@@ -1,9 +1,9 @@
-﻿using FluentAssertions;
+﻿using Moq;
+using Xunit;
+using FluentAssertions;
 using HealthCoach.Core.Domain;
 using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
-using Moq;
-using Xunit;
 
 namespace HealthCoach.Core.Business.Tests;
 
@@ -39,7 +39,7 @@ public class CreateUserCommandHandlerTests
         var command = Command() with { EmailAddress = "this is definitely a bad email address" };
         queryProviderMock
             .Setup(x => x.Query<User>())
-            .Returns(new List<User>() { }.AsQueryable());
+            .Returns(new List<User>().AsQueryable());
 
         //Act
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();

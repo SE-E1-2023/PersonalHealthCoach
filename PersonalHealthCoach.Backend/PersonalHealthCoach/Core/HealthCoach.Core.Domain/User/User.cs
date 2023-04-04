@@ -1,6 +1,6 @@
-﻿using CSharpFunctionalExtensions;
+﻿using EmailValidation;
 using HealthCoach.Shared.Core;
-using EmailValidation;
+using CSharpFunctionalExtensions;
 
 using Errors = HealthCoach.Core.Domain.DomainErrors.User.Create;
 

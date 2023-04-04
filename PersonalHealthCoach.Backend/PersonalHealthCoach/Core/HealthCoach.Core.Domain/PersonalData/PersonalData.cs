@@ -1,5 +1,5 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Core;
+﻿using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 
 using Errors = HealthCoach.Core.Domain.DomainErrors.PersonalData.Create;
 
@@ -50,7 +50,7 @@ public class PersonalData : AggregateRoot
 
         var goalResult = goal
             .EnsureNotNullOrEmpty(Errors.GoalIsNullOrEmpty)
-            .Ensure(g => PersonalDataConstants.AllowedGoals.Contains(g), Errors.GoalIsUnrecognized);
+            .Ensure(g => PersonalDataConstants.AllowedGoals.Any(a => a.Equals(g)), Errors.GoalIsUnrecognized);
 
         return Result.FirstFailureOrSuccess(dateOfBirthResult, weightResult, heightResult, goalResult)
             .Map(() => new PersonalData(userId, dateOfBirth, weight, height, medicalHistory, currentIllnesses, goal, unwantedExercises));

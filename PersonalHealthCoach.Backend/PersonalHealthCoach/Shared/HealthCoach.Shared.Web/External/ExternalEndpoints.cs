@@ -4,10 +4,10 @@ public static class ExternalEndpoints
 {
     public static class AI
     {
-        private const string BaseUrl = "http://localhost:8000";
+        public const string BaseUrl = "http://localhost:8000";
 
-        public const string TipGenerator = $"{BaseUrl}/{nameof(TipGenerator)}";
-        public const string DietPlanner = $"{BaseUrl}/{nameof(DietPlanner)}";
-        public const string ExercisePlanner = $"{BaseUrl}/{nameof(ExercisePlanner)}";
+        public const string TipGenerator = $"{nameof(TipGenerator)}";
+        public const string DietPlanner = $"{nameof(DietPlanner)}";
+        public const string FitnessPlanner = $"{nameof(FitnessPlanner)}";
     }
 }
