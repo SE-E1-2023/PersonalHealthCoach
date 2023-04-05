@@ -29,7 +29,7 @@ public sealed class PersonalDataFunctions
     }
 
     [Function(nameof(RetrieveLatestPersonalData))]
-    public async Task<HttpResponseData> RetrieveLatestPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/user/{id}/data/personal/latest")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> RetrieveLatestPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/data/personal/latest")] HttpRequestData request, Guid id)
     {
         return await mediator.Send(new RetrieveLatestPersonalDataCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
