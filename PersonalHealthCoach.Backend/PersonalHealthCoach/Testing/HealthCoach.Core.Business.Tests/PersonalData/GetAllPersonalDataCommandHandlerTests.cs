@@ -1,9 +1,11 @@
-﻿using FluentAssertions;
+﻿using CSharpFunctionalExtensions;
+using FluentAssertions;
 using HealthCoach.Core.Domain;
 using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
 using Moq;
 using Xunit;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace HealthCoach.Core.Business.Tests;
 
@@ -17,6 +19,7 @@ public class GetAllPersonalDataCommandHandlerTests
     {
         var command = new GetAllPersonalDataCommand(Guid.NewGuid());
 
+        repositoryMock.Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(Maybe<User>.None);
         queryProviderMock.Setup(x => x.Query<PersonalData>()).Returns(new List<PersonalData>().AsQueryable());
 
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
@@ -26,20 +29,35 @@ public class GetAllPersonalDataCommandHandlerTests
     }
 
     [Fact]
+    public void When_PersonalDataDoesNotExist_Then_ShoudFail()
+    {
+        var command = new GetAllPersonalDataCommand(Guid.NewGuid());
+        var user = UsersFactory.Any();
+
+        repositoryMock.Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(user);
+        queryProviderMock.Setup(x => x.Query<PersonalData>()).Returns(new List<PersonalData>().AsQueryable());
+
+
+        var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Should().Be(BusinessErrors.PersonalData.Get.PersonalDataNotFound);
+    }
+
+    [Fact]
     public void When_NotViolatingConstraints_Then_ShouldSucceed()
     {
         //var personalData = PersonalDataFactory.Any();
         var personalDataList = new List<PersonalData>();
-        Guid guid = Guid.NewGuid();
         var user = UsersFactory.Any();
 
         foreach (int value in Enumerable.Range(1, 5))
-            personalDataList.Add(PersonalDataFactory.WithUserId(guid));
+            personalDataList.Add(PersonalDataFactory.WithUserId(user.Id));
 
-        var command = new GetAllPersonalDataCommand(guid);
+        var command = new GetAllPersonalDataCommand(user.Id);
 
-        repositoryMock.Setup(r => r.Load<User>(guid)).ReturnsAsync(user);
-        queryProviderMock.Setup(x => x.Query<User>()).Returns(new List<User> { user }.AsQueryable());
+        repositoryMock.Setup(r => r.Load<User>(user.Id)).ReturnsAsync(user);
+        queryProviderMock.Setup(x => x.Query<PersonalData>()).Returns(personalDataList.AsQueryable());
 
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
 
