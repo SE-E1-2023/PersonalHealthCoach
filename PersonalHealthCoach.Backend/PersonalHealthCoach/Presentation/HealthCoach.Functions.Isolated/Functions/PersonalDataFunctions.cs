@@ -28,6 +28,15 @@ public sealed class PersonalDataFunctions
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 
+    [Function(nameof(GetAllPersonalData))]
+    public async Task<HttpResponseData> GetAllPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/data/personal")] HttpRequestData request, Guid id)
+    {
+        var command = new GetAllPersonalDataCommand(id);
+
+        return await mediator.Send(command)
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+    }
+
     [Function(nameof(RetrieveLatestPersonalData))]
     public async Task<HttpResponseData> RetrieveLatestPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/data/personal/latest")] HttpRequestData request, Guid id)
     {
