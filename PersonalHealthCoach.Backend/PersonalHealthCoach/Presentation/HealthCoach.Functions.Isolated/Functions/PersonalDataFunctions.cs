@@ -31,10 +31,6 @@ public sealed class PersonalDataFunctions
     [Function(nameof(GetAllPersonalData))]
     public async Task<HttpResponseData> GetAllPersonalData([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/data/personal")] HttpRequestData request, Guid id)
     {
-        //var command = await request
-        //    .DeserializeBodyPayload<GetAllPersonalDataCommand>()
-        //    .Map(c => new GetAllPersonalDataCommand(id));
-
         var command = new GetAllPersonalDataCommand(id);
 
         return await mediator.Send(command)

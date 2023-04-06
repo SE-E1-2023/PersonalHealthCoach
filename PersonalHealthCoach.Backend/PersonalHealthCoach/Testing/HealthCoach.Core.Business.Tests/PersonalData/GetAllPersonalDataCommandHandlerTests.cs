@@ -5,7 +5,6 @@ using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
 using Moq;
 using Xunit;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace HealthCoach.Core.Business.Tests;
 
@@ -47,7 +46,6 @@ public class GetAllPersonalDataCommandHandlerTests
     [Fact]
     public void When_NotViolatingConstraints_Then_ShouldSucceed()
     {
-        //var personalData = PersonalDataFactory.Any();
         var personalDataList = new List<PersonalData>();
         var user = UsersFactory.Any();
 
