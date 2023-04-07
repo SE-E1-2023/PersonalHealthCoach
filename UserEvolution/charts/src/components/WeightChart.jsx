@@ -46,6 +46,9 @@ const WeightChart = ({ weightData }) => {
       },
     };
 
+    if(window.outerWidth>1024){
+      Chart.defaults.font.size=15;
+      }else Chart.defaults.font.size=7;
     const chart = new Chart(chartRef.current, chartConfig);
 
     const resizeObserver = new ResizeObserver(() => {
