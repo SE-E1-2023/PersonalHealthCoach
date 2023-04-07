@@ -15,7 +15,7 @@
   position: relative;
   width: 80vw;
   border-radius: 20px;
-  margin-left: 10vw;
+  margin-left: 10vw
 }
 #chart-container-3 {
   background-color: lavenderblush;
@@ -28,11 +28,16 @@
 }
 h2{
   text-align: center;
-  font-size:   4.5vw;
+  font-size:   16px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-style: italic;
   color: darkslategrey;
 
+}
+@media (min-width:1024px){
+  h2{
+    font-size: 50px;;
+  }
 }
 .bar{
   text-align: center;
