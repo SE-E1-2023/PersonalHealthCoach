@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using System.Text.Json;
 using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Shared.Web;
@@ -6,7 +7,11 @@ namespace HealthCoach.Shared.Web;
 public class HealthCoachHttpClient : IHttpClient
 {
     private readonly HttpClient httpClient;
-    
+    private readonly JsonSerializerOptions jsonSerializerOptions = new()
+    {
+        PropertyNameCaseInsensitive = true
+    };
+
     private HealthCoachHttpClient() { }
 
     public HealthCoachHttpClient(string baseUrl)
@@ -33,7 +38,7 @@ public class HealthCoachHttpClient : IHttpClient
 
     public async Task<Result<TResult>> Post<TRequest, TResult>(TRequest request) where TRequest : class where TResult : class
     {
-        var response = await httpClient.PostAsJsonAsync(Route, request);
+        var response = await httpClient.PostAsJsonAsync(Route, request, jsonSerializerOptions);
 
         if (!response.IsSuccessStatusCode)
         {
