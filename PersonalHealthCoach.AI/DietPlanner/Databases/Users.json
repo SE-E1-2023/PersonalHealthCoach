@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "idUser": "1",
+      "idDiet": 2,
+      "idBreakfast": -1,
+      "idDrink": -1,
+      "idMainCourse": -1,
+      "idSideDish": -1,
+      "idSnack": -1,
+      "idSoup": -1
+    }
+  ]
+}

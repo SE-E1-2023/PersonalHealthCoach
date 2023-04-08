@@ -1,0 +1,12 @@
+{
+    "idClient" : "1",
+    "birthDate":"30121997",
+    "weight":"69.420",
+    "height" : "1.9",
+    "lifestyle": "7",
+    "muscleMass": "5",
+    "sex":"M",
+    "alergis" : ["nut","milk"],
+    "dietType" : "gluten free",
+    "goal" : "weight loss"
+}

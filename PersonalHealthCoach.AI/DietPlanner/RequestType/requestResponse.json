@@ -1,0 +1,24 @@
+{
+  "diet": {
+    "id": 2,
+    "name": "Gluten free diet",
+    "use": "weight loss",
+    "tag": [
+      "gluten free"
+    ],
+    "do": [
+      "Fruits and vegetables",
+      "Beans, seeds, legumes and nuts in their natural, unprocessed forms",
+      "Eggs",
+      "Lean, nonprocessed meats, fish and poultry",
+      "Most low-fat dairy products",
+      "Gluten-free grains (now and then) like quinoa, brown rice, oats, and amaranth"
+    ],
+    "donot": [
+      "Beer, ale, porter, stout (usually contain barley)",
+      "Breads",
+      "Candies",
+      "Seasoned snack foods, such as potato and tortilla chips"
+    ]
+  }
+}

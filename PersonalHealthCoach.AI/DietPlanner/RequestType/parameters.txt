@@ -1,0 +1,10 @@
+"idClient" : "123456",      - stringu care il aveti voi in baza de date ca id
+"dataNastere":"30121997",   --DDMMYYYY sau orice alt tip pe care il aveti voi in baza de date
+"greutate":"69.420",        --greutate client ,float
+"inaltime" : "1.9",         --inaltimea clientului
+"lifestyle": "7",           --how active is the person 1(sedimentary) 10(athlete) default 5
+"muscleMass": "5",          --how much muscle mass does a person have 1(skinny) 10(bodyBuilder) default 5
+"sex":"M",                  --Sex un string din : "M", "F", "N" --N prrefer sa nu spun/orice alt ceva
+"alergis" : ["nut","milk"], -- o lista cu alergiile clientului
+"dietType" : "vegan",       -- Tip de dieta din : "vegan", "vegetarian", "dairyFree", "glutenFree"
+"goal" : "weight loss"      -- tre sa stabilim exact toate goalurile clientilor 
