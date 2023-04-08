@@ -41,5 +41,18 @@ public static class DomainErrors
 
             public const string NoExercises = $"{Prefix}.{nameof(NoExercises)}";
         }
+
+    }
+
+    public static class PersonalTip
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(PersonalTip)}.{nameof(Create)}";
+
+            public const string TipTypeNullOrEmpty = $"{Prefix}.{nameof(TipTypeNullOrEmpty)}";
+
+            public const string TipNullOrEmpty = $"{Prefix}.{nameof(TipNullOrEmpty)}";
+        }
     }
 }

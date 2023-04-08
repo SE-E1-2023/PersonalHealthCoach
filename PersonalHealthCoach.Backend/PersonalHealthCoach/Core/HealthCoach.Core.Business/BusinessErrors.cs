@@ -47,4 +47,15 @@ public static class BusinessErrors
             public const string PersonalDataNotFound = $"{Prefix}.{nameof(PersonalDataNotFound)}";
         }
     }
+
+    public static class PersonalTip
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(PersonalTip)}.{nameof(Create)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+            public const string PersonalDataNotFound = $"{Prefix}.{nameof(PersonalDataNotFound)}";
+        }
+    }
 }
