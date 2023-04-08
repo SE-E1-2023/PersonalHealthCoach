@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     [DbContext(typeof(GenericDbContext))]
-    [Migration("20230403130900_NewMigration_20230403_160855")]
-    partial class NewMigration_20230403_160855
+    [Migration("20230408124944_NewMigration_20230408_154937")]
+    partial class NewMigration_20230408_154937
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
