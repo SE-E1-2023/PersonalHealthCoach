@@ -58,6 +58,4 @@ public static class BusinessErrors
             public const string PersonalDataNotFound = $"{Prefix}.{nameof(PersonalDataNotFound)}";
         }
     }
-
-
 }

@@ -50,12 +50,9 @@ public static class DomainErrors
         {
             private const string Prefix = $"{nameof(PersonalTip)}.{nameof(Create)}";
 
-            public const string NoUserId = $"{Prefix}.{nameof(NoUserId)}";
+            public const string TipTypeNullOrEmpty = $"{Prefix}.{nameof(TipTypeNullOrEmpty)}";
 
-            public const string NoTipType = $"{Prefix}.{nameof(NoTipType)}";
-
-            public const string NoTip = $"{Prefix}.{nameof(NoTip)}";
-
+            public const string TipNullOrEmpty = $"{Prefix}.{nameof(TipNullOrEmpty)}";
         }
     }
 }

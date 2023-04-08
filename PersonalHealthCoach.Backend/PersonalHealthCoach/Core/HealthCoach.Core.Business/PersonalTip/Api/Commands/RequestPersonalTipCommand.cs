@@ -1,6 +1,4 @@
-﻿
+﻿namespace HealthCoach.Core.Business;
 
-namespace HealthCoach.Core.Business
-{
-    internal sealed record RequestPersonalTipCommand(string Objective);
-}
+internal sealed record RequestPersonalTipCommand(string Objective);
+
