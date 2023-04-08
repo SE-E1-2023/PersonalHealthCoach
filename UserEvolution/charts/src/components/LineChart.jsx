@@ -18,6 +18,7 @@ const LineChart = ({ activityData }) => {
           tension: 0.2,
           backgroundColor: 'rgba(0,0,0,0)', // set background color to transparent
           borderColor: 'lightblue',
+          borderWidth:2,
           pointRadius: 0, // hide the points
         },
       ],
