@@ -1,3 +1,13 @@
+$currentDirectory = Get-Location
+
+$functionsPath = Join-Path $currentDirectory "Presentation\HealthCoach.Functions.Isolated\HealthCoach.Functions.Isolated.csproj"
+$sharedCorePath = Join-Path $currentDirectory "Shared\HealthCoach.Shared.Core\HealthCoach.Shared.Core.csproj"
+$sharedInfrastructurePath = Join-Path $currentDirectory "Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj"
+$sharedWebPath = Join-Path $currentDirectory "Shared\HealthCoach.Shared.Web\HealthCoach.Shared.Web.csproj"
+$infrastructurePath = Join-Path $currentDirectory "Infrastructure\HealthCoach.Infrastructure\HealthCoach.Infrastructure.csproj"
+$domainPath = Join-Path $currentDirectory "Core\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj"
+$businessPath = Join-Path $currentDirectory "Core\HealthCoach.Core.Business\HealthCoach.Core.Business.csproj"
+
 # 1. Check if the PostgreSQL server service is running
 $serviceName = "postgresql-x64-15" # Replace with your PostgreSQL service name
 $serviceStatus = Get-Service -Name $serviceName -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Status
@@ -9,18 +19,10 @@ if ($serviceStatus -eq "Running") {
     exit
 }
 
-# # 2. Build the project
+# 2. Run the database migrations
+dotnet ef database update --startup-project $functionsPath --project $sharedInfrastructurePath
 
-$currentDirectory = Get-Location
-
-$functionsPath = Join-Path $currentDirectory "Presentation\HealthCoach.Functions.Isolated\HealthCoach.Functions.Isolated.csproj"
-$sharedCorePath = Join-Path $currentDirectory "Shared\HealthCoach.Shared.Core\HealthCoach.Shared.Core.csproj"
-$sharedInfrastructurePath = Join-Path $currentDirectory "Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj"
-$sharedWebPath = Join-Path $currentDirectory "Shared\HealthCoach.Shared.Web\HealthCoach.Shared.Web.csproj"
-$infrastructurePath = Join-Path $currentDirectory "Infrastructure\HealthCoach.Infrastructure\HealthCoach.Infrastructure.csproj"
-$domainPath = Join-Path $currentDirectory "Core\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj"
-$businessPath = Join-Path $currentDirectory "Core\HealthCoach.Core.Business\HealthCoach.Core.Business.csproj"
-
+# 3. Build the project
 $buildDirectory = Join-Path $currentDirectory "app\build" # Replace with your build directory
 $publishDirectory = Join-Path $currentDirectory "app\publish" # Replace with your publish directory
 
@@ -58,7 +60,7 @@ if ($LASTEXITCODE -eq 0) {
     exit
 }
 
-# 3. Run the project
+# 4. Run the project
 Push-Location -Path $publishDirectory # Set the working directory to the project directory
 
 # run the dotnet project from the publish directory
