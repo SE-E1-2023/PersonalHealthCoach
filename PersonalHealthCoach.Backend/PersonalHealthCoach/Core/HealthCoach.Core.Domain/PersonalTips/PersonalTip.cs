@@ -23,7 +23,7 @@ public class PersonalTip : AggregateRoot
         var tipResult = tipText.EnsureNotNullOrEmpty(DomainErrors.PersonalTip.Create.TipNullOrEmpty);
 
         return Result.FirstFailureOrSuccess(typeResult, tipResult)
-        .Map(() => new PersonalTip(userId,typeResult.Value, tipResult.Value));
+        .Map(() => new PersonalTip(userId,type, tipText));
     }
 
     public Guid UserId { get; private set; }
