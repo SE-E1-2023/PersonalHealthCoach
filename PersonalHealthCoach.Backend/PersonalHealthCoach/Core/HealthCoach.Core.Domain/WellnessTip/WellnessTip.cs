@@ -17,7 +17,7 @@ public class WellnessTip : AggregateRoot
     {
         var tipResult = tipText.EnsureNotNullOrEmpty(DomainErrors.WellnessTip.Create.TipNullOrEmpty);
 
-        return ResultExtensions.Map<WellnessTip>(tipResult, () => new WellnessTip(tipText));
+        return tipResult.Map((t) => new WellnessTip(t));
     }
 
 
