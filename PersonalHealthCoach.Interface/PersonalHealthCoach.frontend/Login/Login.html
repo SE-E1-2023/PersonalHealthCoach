@@ -30,20 +30,34 @@
                 form.addEventListener('submit', async (e) => {
                   e.preventDefault();
                   const email = form.email.value;
-                  const response = await fetch('http://localhost:7071/api/v1/users', {
-                    method: 'GET',
-                    headers: {
-                      'Content-Type': 'application/json'
-                    }
-                  });
-                  const data = await response.json();
-                  if (response.ok && data.email === email) {
-                    window.location.href = 'test-successful-login.html';
-                  } else {
+                  try {
+                    const response = await fetch('http://localhost:7071/api/v1/users', {
+                      method: 'GET',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({
+                        EmailAddress: email
+                      })
+                    });
+                    console.log(response); //testing for errors
+                    const data = await response.json();
+                    console.log(data); //testing for errors
+
+                    if (response.ok && data.EmailAddress === email) {
+                     window.location.href = 'test-successful-login.html';
+                        } else {
+                     window.location.href = 'test-unsuccessful-login.html';
+                        }
+                  } catch (error) {
+                    console.log(error);
                     window.location.href = 'test-unsuccessful-login.html';
                   }
                 });
-              </script>           
+              </script>
+              
+              
+                 
     </div>
 </body>
 </html>
