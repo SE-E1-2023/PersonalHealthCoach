@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class NewMigration_20230408_154937 : Migration
+    public partial class NewMigration_20230409_144512 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -46,6 +46,20 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PersonalTip",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Type = table.Column<string>(type: "text", nullable: true),
+                    TipText = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PersonalTip", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "User",
                 columns: table => new
                 {
@@ -57,6 +71,18 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "WellnessTip",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    TipText = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WellnessTip", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -97,7 +123,13 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 name: "PersonalData");
 
             migrationBuilder.DropTable(
+                name: "PersonalTip");
+
+            migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "WellnessTip");
 
             migrationBuilder.DropTable(
                 name: "FitnessPlan");
