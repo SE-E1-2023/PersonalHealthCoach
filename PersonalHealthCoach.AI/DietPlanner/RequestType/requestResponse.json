@@ -4,7 +4,7 @@
     "name": "Gluten free diet",
     "use": "weight loss",
     "tag": [
-      "gluten free"
+      "glutenFree"
     ],
     "do": [
       "Fruits and vegetables",
@@ -20,5 +20,108 @@
       "Candies",
       "Seasoned snack foods, such as potato and tortilla chips"
     ]
+  },
+  "breakfast": {
+    "id": 658130,
+    "title": "Red, White & Blue Smoothie",
+    "image": "https://spoonacular.com/recipeImages/658130-312x231.jpg",
+    "ingredients": [
+      "blueberries",
+      "chia seed",
+      "tablespoons allergy friendly non-dairy milk",
+      "maca powder",
+      "allergy friendly protein powder",
+      "raspberries",
+      "raspberry preserves [optional]",
+      "tea [or tea]"
+    ],
+    "kcal": 693.31
+  },
+  "drink": {
+    "id": 663845,
+    "title": "TROPICAL BANANA GREEN SMOOTHIE",
+    "image": "https://spoonacular.com/recipeImages/663845-312x231.jpg",
+    "ingredients": [
+      "pineapple",
+      "coconut water",
+      "blueberries",
+      "protein powder",
+      "spinach"
+    ],
+    "kcal": 214.51
+  },
+  "mainCourse": {
+    "id": 636589,
+    "title": "Butternut Squash Frittata",
+    "image": "https://spoonacular.com/recipeImages/636589-312x231.jpg",
+    "ingredients": [
+      "butternut squash",
+      "goat cheese",
+      "liquid egg substitute",
+      "non-fat milk",
+      "bell pepper"
+    ],
+    "kcal": 464.73
+  },
+  "sideDish": {
+    "id": 659109,
+    "title": "Salmon Quinoa Risotto",
+    "image": "https://spoonacular.com/recipeImages/659109-312x231.jpg",
+    "ingredients": [
+      "quinoa",
+      "onion",
+      "kale",
+      "garlic cloves",
+      "olive oil",
+      "poached salmon",
+      "vegetable stock",
+      "salt",
+      "bell pepper"
+    ],
+    "kcal": 437.06
+  },
+  "soup": {
+    "id": 664419,
+    "title": "Vegan Colcannon Soup",
+    "image": "https://spoonacular.com/recipeImages/664419-312x231.jpg",
+    "ingredients": [
+      "extra virgin olive oil",
+      "leeks",
+      "garlic",
+      "celery",
+      "russet potatoes",
+      "savoy cabbage",
+      "kale",
+      "vegetable broth",
+      "kosher salt",
+      "pepper",
+      "juice of lemon"
+    ],
+    "kcal": 202.64
+  },
+  "snack": {
+    "id": 660395,
+    "title": "Smokey Rainbow Chili",
+    "image": "https://spoonacular.com/recipeImages/660395-312x231.jpg",
+    "ingredients": [
+      "olive oil",
+      "zucchini",
+      "bell pepper",
+      "orange bell pepper",
+      "jalapeno pepper",
+      "garlic",
+      "onion",
+      "stewed tomatoes",
+      "tomato paste",
+      "black beans",
+      "kernel corn",
+      "kidney beans",
+      "paprika",
+      "chili powder",
+      "oregano",
+      "ground pepper",
+      "cayenne pepper"
+    ],
+    "kcal": 218.08
   }
 }

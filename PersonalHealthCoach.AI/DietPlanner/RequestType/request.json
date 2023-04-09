@@ -6,7 +6,7 @@
     "lifestyle": "7",
     "muscleMass": "5",
     "sex":"M",
-    "alergis" : ["nut","milk"],
-    "dietType" : "gluten free",
+    "alergies" : ["nut","milk"],
+    "dietType" : ["glutenFree"],
     "goal" : "weight loss"
 }
