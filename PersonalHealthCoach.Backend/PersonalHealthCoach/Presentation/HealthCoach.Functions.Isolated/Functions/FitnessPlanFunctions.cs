@@ -22,4 +22,13 @@ public sealed class FitnessPlanFunctions
             .Send(new CreateFitnessPlanCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
+
+    [Function(nameof(GetLatestFitnessPlan))]
+    public async Task<HttpResponseData> GetLatestFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/user/{id}/plans/fitness/latest")] HttpRequestData request, Guid id)
+    {
+        return await mediator
+            .Send(new GetLatestFitnessPlanCommand(id))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+    }
+
 }
