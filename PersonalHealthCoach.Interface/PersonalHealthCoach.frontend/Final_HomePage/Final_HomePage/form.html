@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Personal Data Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+<body>
+	<div class="container">
+		<h2 class="top-header">Personal Data Form</h2>
+		<p>The * fields are necessary.</p>
+		<form>
+			<div class="field">
+				<center><label for="name">Username</label></center>
+				<input type="text" id="user" name="name" class="input">
+			</div>
+			<div class="field">
+				<center><label>Height(cm)*</label></center>
+				<input type="number" id="height" name="height" class="input" required>
+			</div>
+			<div class="field">
+				<center><label>Weight(kg)*</label></center>
+				<input type="number" id="weight" name="weight" class="input" required>
+			</div>
+			<div class="field">
+				<center><label>Date of birth*</label></center>
+				<input type="date" id="birthdate" name="birthdate" class="input" required>
+			</div>
+			<div class="field">
+				<center><label>Food Preferences</label></center>
+				<input type="text" id="food-preferences" name="food-preferences" class="input">
+			</div>
+			<div class="field">
+				<center><label>Medical Conditions</label></center>
+				<input type="text" id="medical-conditions" name="medical-conditions" class="input">
+			</div>
+			<div class="field">
+				<center><label>Allergies</label></center>
+				<input type="text" id="allergies" name="allergies" class="input">
+			</div>
+			<div class="submit">
+				<input type="submit" value="Submit" class="submit">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
