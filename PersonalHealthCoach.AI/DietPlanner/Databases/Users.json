@@ -2,13 +2,13 @@
   "users": [
     {
       "idUser": "1",
-      "idDiet": 2,
-      "idBreakfast": 658130,
-      "idDrink": 663845,
-      "idMainCourse": 636589,
-      "idSideDish": 659109,
-      "idSnack": 664419,
-      "idSoup": 660395
+      "idDiet": 7,
+      "idBreakfast": 644044,
+      "idDrink": 644044,
+      "idMainCourse": 644813,
+      "idSideDish": 1096309,
+      "idSnack": 649560,
+      "idSoup": 639910
     }
   ]
 }

@@ -94,13 +94,13 @@ def getMeal(info,idMeal,path):
     minHealthiness = 0
     maxHealthiness = 100
     if (info["goal"] == "weight loss"):
-        minHealthiness = 30
+        minHealthiness = 20
     if (info["goal"] == "weight gain"):
-        maxHealthiness = 30
+        maxHealthiness = 20
     data = d["meals"]
     goodData = []
     good = True
-    for meal in data:
+    for meal in data: 
         good = True
         for problem in info["dietType"]:
             if meal[problem] == False:
@@ -113,9 +113,6 @@ def getMeal(info,idMeal,path):
         if good:
             goodData.append(meal)
     dataReturn={}
-    print(path)
-    print(len(goodData))
-    print(len(d["meals"]))
     if (len(goodData)) == 1 :
         dataReturn["id"] = goodData[0]["id"]
         dataReturn["title"] = goodData[0]["title"]

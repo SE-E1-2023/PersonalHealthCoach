@@ -1,9 +1,9 @@
 {
     "diets":[
-        {   "id" : 1,
+        {   "id":1,
             "name" : "Pegan diet",
             "use" : "weight loss",
-            "tag" : [],
+            "tag" : ["dairyFree"],
             "do":[
             "Fruits",
             "Vegetables, mostly those that have low starch or rank low on the glycemic index, such as broccoli, carrots, peas, and tomatoes",
@@ -21,7 +21,7 @@
             "Anything with preservatives or artificial colors, flavors, or sweeteners"
         ]
         },
-        {   "id" : 2,
+        {   "id":2,
             "name" : "Gluten free diet",
             "use" : "weight loss",
             "tag" : ["glutenFree"],
@@ -40,7 +40,7 @@
             "Seasoned snack foods, such as potato and tortilla chips"
         ]
         },
-        {   "id" : 3,
+        {   "id":3,
             "name" : "Francese diet",
             "use" : "weight loss",
             "tag" : [],
@@ -54,7 +54,280 @@
             "donot":[
         ]
         },
-        {   "id" : 4,
+        {   "id":4,
+            "name" : "Intermittent fasting",
+            "use" : "weight loss",
+            "tag" : [],
+            "do":[
+            "Fruit, vegetables, legumes (e.g. lentils and beans), nuts and whole grains (e.g. unprocessed maize, millet, oats, wheat and brown rice).",
+            "At least 400 g (i.e. five portions) of fruit and vegetables per day (2), excluding potatoes, sweet potatoes, cassava and other starchy roots.",
+            "Less than 5  g of salt (equivalent to about one teaspoon) per day (8).  Salt should be iodized.",
+            "Less than 10% of total energy intake from free sugars (2, 7), which is equivalent to 50 g (or about 12 level teaspoons) for a person of healthy body weight consuming about 2000 calories per day, but ideally is less than 5% of total energy intake for additional health benefits (7). Free sugars are all sugars added to foods or drinks by the manufacturer, cook or consumer, as well as sugars naturally present in honey, syrups, fruit juices and fruit juice concentrates.",
+            "Less than 30% of total energy intake from fats (1, 2, 3). Unsaturated fats (found in fish, avocado and nuts, and in sunflower, soybean, canola and olive oils) are preferable to saturated fats (found in fatty meat, butter, palm and coconut oil, cream, cheese, ghee and lard) and trans-fats of all kinds, including both industrially-produced trans-fats (found in baked and fried foods, and pre-packaged snacks and foods, such as frozen pizza, pies, cookies, biscuits, wafers, and cooking oils and spreads) and ruminant trans-fats (found in meat and dairy foods from ruminant animals, such as cows, sheep, goats and camels)."
+        ],
+            "donot":[
+        ]
+        },
+        {   "id":5,
+            "name" : "Mediterranean Diet",
+            "use" : "weight loss",
+            "tag" : [],
+            "do":[
+            "Fruits", "vegetables",
+            "Nuts, seeds, and nut butters",
+            "Eggs",
+            "Poultry(chicken, duck, turkey)",
+            "Whole grains(oats, brown rice, rye, barley, corn)",
+            "Fish and seafood",
+            "Most low-fat dairy products(cheese, yogurt, milk)",
+            "Herbs and spices(garlic, basil, mint, rosemary, sage, nutmeg, cinnamon, pepper)"
+        ],
+            "donot":[
+            "Added sugar(soda, candies, ice cream, table sugar, syrup, and baked goods)",
+            "Refined grains(white bread, pasta, tortillas, chips, crackers)",
+            "Trans fats(margarine, fried foods, and other processed foods)",
+            "Processed meat(processed sausages, hot dogs, deli meats, beef jerkys)",
+            "Refined oils(soybean oil, canola oil, cottonseed oil, grapeseed oil)",
+            "Highly processed foods(fast food, convenience meals, microwave popcorn, granola bars)"
+        ]
+        },
+        {   "id":6,
+            "name" : "Volumetrics Diet",
+            "use" : "weight loss",
+            "tag" : ["dairyFree"],
+            "do":[
+            "Fresh fruits", "Fresh or frozen vegetables",
+            "Beans and legumes",
+            "Whole grains",
+            "Fiber-rich breakfast cereals",
+            "Low-fat fish",
+            "Poultry without skin",
+            "Lean meats",
+            "Minimal added sugars",
+            "Water (rather than sugary drinks)"
+        ],
+            "donot":[
+        ]
+        },
+        {   "id":7,
+            "name" : "Pescatarian Diet",
+            "use" : "weight loss",
+            "tag" : ["glutenFree"],
+            "do":[
+            "Fresh fish (salmon, cod, sardines, pollock, and catfish)",
+            "Fresh shellfish (clams, crab, oysters, shrimp, and scallops)",
+            "Canned fish (salmon, tuna, mackerel, sardines)",
+            "Canned shellfish (clams, crab, oysters, shrimp, and scallops)",
+            "Frozen seafood (fish sticks, salmon, trout, herring, and shrimp)",
+            "Vegetables","Fruits",
+            "Legumes (including kidney beans, peas, and pinto beans)",
+            "Legume products (including hummus and tofu)",
+            "Cereals and whole grains (including corn, rice, oats, bulgar wheat, and amaranth)",
+            "Gluten-free pseudo grains (such as buckwheat and quinoa)",
+            "Nuts and nut butters",
+            "Seeds, such as flaxseeds, hemp seeds, and chia",
+            "Eggs and dairy (if lacto-ovo-vegetarian)"
+        ],
+            "donot":[
+            "Chicken",
+            "Beef",
+            "Turkey",
+            "Pork",
+            "Lamb",
+            "Wild game"
+        ]
+        },
+        {   "id":8,
+            "name" : "TLC Diet",
+            "use" : "weight loss",
+            "tag" : ["vegetarian"],
+            "do":[
+            "Vegetables",
+            "Fruit",
+            "Whole grains",
+            "Legumes",
+            "Nuts and seeds",
+            "Low-fat dairy products",
+            "Lean cuts of skinless meat",
+            "Some vegetable oils and margarines"
+        ],
+            "donot":[
+            "Fatty cuts of meat",
+            "Processed meats",
+            "Fried and processed foods",
+            "Egg yolks",
+            "Full-fat dairy products",
+            "Excess salt and sugar",
+            "Large amounts of alcohol"
+        ]
+        },
+        {   "id":10,
+            "name" : "MIND Diet",
+            "use" : "weight loss",
+            "tag" : [],
+            "do":[
+            "Green, leafy vegetables(kale, spinach, cooked greens, and salads)",
+            "All other vegetables",
+            "Berries(strawberries, blueberries, raspberries, blackberrie)",
+            "Nuts",
+            "Olive oils",
+            "Whole grains(oatmeal, quinoa, brown rice, whole wheat pasta, 100% whole wheat bread)",
+            "Fish(salmon, sardines, trout, tuna, mackerel)",
+            "Beans(beans, lentils, soybeans)",
+            "Poultry(chicken or turkey)",
+            "Wine(red wine:one glass daily)"
+        ],
+            "donot":[
+            "Butter and margarine",
+            "Cheese",
+            "Red meat(beef, pork, lamb)",
+            "Fried food",
+            "Full-fat dairy products",
+            "Pastries and sweets(ice cream, cookies, brownies, snack cakes, doughnuts, candy)"
+        ]
+        },
+        {   "id":11,
+            "name" : "Dr. Weil’s Anti-Inflammatory Diet",
+            "use" : "weight loss",
+            "tag" : [],
+            "do":[
+            "Dark, leafy greens such as spinach or kale",
+            "Cruciferous vegetables such as cabbage and broccoli",
+            "Berries(strawberries, blueberries, raspberries, blackberrie)",
+            "Black beans",
+            "Lentils",
+            "Whole grains, such as brown rice and quinoa",
+            "Wild Alaskan salmon",
+            "Edamame",
+            "Asian and wild mushrooms",
+            "Tea, including green tea"
+        ],
+            "donot":[
+            "Butter and margarine",
+            "processed foods",
+            "foods with added sugar or salt)",
+            "unhealthful oils",
+            "processed carbs",
+            "processed snack foods",
+            "premade desserts",
+            "excess alcohol"
+        ]
+        },
+        {   "id":12,
+            "name" : "Ornish Diet",
+            "use" : "weight loss",
+            "tag" : ["vegetarian"],
+            "do":[
+            "Fruits and vegetables",
+            "Legumes",
+            "Soy products",
+            "Black beans",
+            "Whole grains, like brown rice and whole wheat",
+            "Non-fat dairy",
+            "Egg whites",
+            "Tofu",
+            "Tempeh",
+            "Non-fat yogurt and cheese"
+        ],
+            "donot":[
+            "meat",
+            "seafood",
+            "foods with added sugar or salt)",
+            "unhealthful oils",
+            "processed carbs",
+            "poultry",
+            "processed snack foods",
+            "egg yolks",
+            "excess alcohol"
+        ]
+        },
+        {   "id":13,
+            "name" : "Paleo Diet",
+            "use" : "weight loss",
+            "tag" : ["dairyFree"],
+            "do":[
+            "Fruits",
+            "Vegetables",
+            "Legumes",
+            "Nuts and seeds",
+            "Eggs",
+            "Lean meats, especially grass-fed animals or wild game",
+            "Fish(salmon, mackerel, albacore tuna)",
+            "Oils from fruits and nuts, such as olive oil or walnut oil"
+        ],
+            "donot":[
+            "Grains(wheat, oats and barley)",
+            "Legumes(beans, lentils, peanuts)",
+            "Dairy products(milk, cheese)",
+            "Refined and added sugar",
+            "Added salt",
+            "poultry",
+            "Starchy vegetables(corn, jicama, peas and white potatoes)",
+            "Highly processed foods(chips, cookies)"
+        ]
+        },
+        {   "id":14,
+            "name" : "Keto Diet",
+            "use" : "weight loss",
+            "tag" : [],
+            "do":[
+            "Fish and Seafood(Salmon, sardines, mackerel, albacore tuna)",
+            "Low-Carb Veggies(Broccoli, cauliflower, green beans, bell peppers, zucchini, spinach)",
+            "Cheese",
+            "Plain Greek Yogurt and Cottage Cheese",
+            "Avocados",
+            "Meat and Poultry",
+            "Eggs",
+            "Nuts, Seeds and Healthy Oils(Almonds, Brazil nuts, Cashews, Pecans, Pistachios, Chia seeds)",
+            "Berries(strawberries, blueberries, raspberries, blackberrie)",
+            "Unsweetened Coffee and Tea"
+        ],
+            "donot":[
+            "Grains",
+            "Starchy vegetables and high-sugar fruits",
+            "Sweetened yogurt",
+            "Juices",
+            "Honey, syrup or sugar in any form",
+            "Chips and crackers",
+            "Baked goods including gluten-free baked goods"
+        ]
+        },
+        {   "id":15,
+            "name" : "Sirtfood Diet",
+            "use" : "weight loss",
+            "tag" : ["vegan"],
+            "do":[
+            "Arugula",
+            "Buckwheat",
+            "Capers",
+            "Celery",
+            "Chilies",
+            "Cocoa",
+            "Coffee",
+            "Extra virgin olive oil",
+            "Garlic",
+            "Green tea",
+            "Kale",
+            "Medjool dates",
+            "Parsley",
+            "Red endive",
+            "Red onion",
+            "Red wine",
+            "Soy",
+            "Strawberries",
+            "Turmeric",
+            "Walnuts"
+        ],
+            "donot":[
+            "processed foods",
+            "foods high in sugar",
+            "baked goods/desserts",
+            "fats other than extra-virgin olive oil",
+            "fatty cuts of meat",
+            "fish that are high in mercury"
+        ]
+      },
+      {   "id" : 16,
             "name" : "Intermittent fasting",
             "use" : "weight loss",
             "tag" : ["vegan","vegetarian","gluten free","dairy free","lactose free"],
@@ -66,20 +339,6 @@
             "The Warrior Diet involves eating very little, usually just a few servings of raw fruit and vegetables, during a 20-hourTrusted Source fasting window, then eating one large meal at night. The eating window is usually only around 4 hours."
         ],
             "donot":[ "eat"
-        ]
-        },
-        {   "id" : 5,
-            "name" : "Intermittent fasting",
-            "use" : "weight loss",
-            "tag" : [],
-            "do":[
-            "The rules for this diet are simple. A person needs to decide on and adhere to a 12-hour fasting window every day.",
-            "Fasting for 16 hours a day, leaving an eating window of 8 hours, is called the 16:8 method or the Leangains diet.",
-            "People following the 5:2 diet eat standard amounts of healthful food for 5 days and reduce calorie intake on the other 2 days.",
-            "For some people, alternate day fasting means a complete avoidance of solid foods on fasting days, while other people allow up to 500 calories. On feeding days, people often choose to eat as much as they want.",
-            "The Warrior Diet involves eating very little, usually just a few servings of raw fruit and vegetables, during a 20-hourTrusted Source fasting window, then eating one large meal at night. The eating window is usually only around 4 hours."
-        ],
-            "donot":[
         ]
         }
     ]

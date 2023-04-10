@@ -1,127 +1,143 @@
 {
   "diet": {
-    "id": 2,
-    "name": "Gluten free diet",
+    "id": 7,
+    "name": "Pescatarian Diet",
     "use": "weight loss",
     "tag": [
       "glutenFree"
     ],
     "do": [
-      "Fruits and vegetables",
-      "Beans, seeds, legumes and nuts in their natural, unprocessed forms",
-      "Eggs",
-      "Lean, nonprocessed meats, fish and poultry",
-      "Most low-fat dairy products",
-      "Gluten-free grains (now and then) like quinoa, brown rice, oats, and amaranth"
+      "Fresh fish (salmon, cod, sardines, pollock, and catfish)",
+      "Fresh shellfish (clams, crab, oysters, shrimp, and scallops)",
+      "Canned fish (salmon, tuna, mackerel, sardines)",
+      "Canned shellfish (clams, crab, oysters, shrimp, and scallops)",
+      "Frozen seafood (fish sticks, salmon, trout, herring, and shrimp)",
+      "Vegetables",
+      "Fruits",
+      "Legumes (including kidney beans, peas, and pinto beans)",
+      "Legume products (including hummus and tofu)",
+      "Cereals and whole grains (including corn, rice, oats, bulgar wheat, and amaranth)",
+      "Gluten-free pseudo grains (such as buckwheat and quinoa)",
+      "Nuts and nut butters",
+      "Seeds, such as flaxseeds, hemp seeds, and chia",
+      "Eggs and dairy (if lacto-ovo-vegetarian)"
     ],
     "donot": [
-      "Beer, ale, porter, stout (usually contain barley)",
-      "Breads",
-      "Candies",
-      "Seasoned snack foods, such as potato and tortilla chips"
+      "Chicken",
+      "Beef",
+      "Turkey",
+      "Pork",
+      "Lamb",
+      "Wild game"
     ]
   },
   "breakfast": {
-    "id": 658130,
-    "title": "Red, White & Blue Smoothie",
-    "image": "https://spoonacular.com/recipeImages/658130-312x231.jpg",
+    "id": 644044,
+    "title": "Protein Strawberry Smoothie",
+    "image": "https://spoonacular.com/recipeImages/644044-312x231.jpg",
     "ingredients": [
-      "blueberries",
-      "chia seed",
-      "tablespoons allergy friendly non-dairy milk",
-      "maca powder",
-      "allergy friendly protein powder",
-      "raspberries",
-      "raspberry preserves [optional]",
-      "tea [or tea]"
+      "almond milk",
+      "banana",
+      "greek yogurt",
+      "honey",
+      "ice",
+      "strawberries"
     ],
-    "kcal": 693.31
+    "kcal": 387.73
   },
   "drink": {
-    "id": 663845,
-    "title": "TROPICAL BANANA GREEN SMOOTHIE",
-    "image": "https://spoonacular.com/recipeImages/663845-312x231.jpg",
+    "id": 644044,
+    "title": "Protein Strawberry Smoothie",
+    "image": "https://spoonacular.com/recipeImages/644044-312x231.jpg",
     "ingredients": [
-      "pineapple",
-      "coconut water",
-      "blueberries",
-      "protein powder",
-      "spinach"
+      "almond milk",
+      "banana",
+      "greek yogurt",
+      "honey",
+      "ice",
+      "strawberries"
     ],
-    "kcal": 214.51
+    "kcal": 387.73
   },
   "mainCourse": {
-    "id": 636589,
-    "title": "Butternut Squash Frittata",
-    "image": "https://spoonacular.com/recipeImages/636589-312x231.jpg",
+    "id": 644813,
+    "title": "Gluten Free Coconut Chicken Salad",
+    "image": "https://spoonacular.com/recipeImages/644813-312x231.jpg",
     "ingredients": [
-      "butternut squash",
-      "goat cheese",
-      "liquid egg substitute",
-      "non-fat milk",
-      "bell pepper"
+      "chicken tenderloins",
+      "egg",
+      "salt",
+      "water",
+      "coconut flakes",
+      "onion",
+      "cashews",
+      "weight lettuce",
+      "tomatoes",
+      "extra virgin olive oil",
+      "veganaise",
+      "agave nectar",
+      "mustard",
+      "poppy seeds",
+      "worcestershire sauce"
     ],
-    "kcal": 464.73
+    "kcal": 868.17
   },
   "sideDish": {
-    "id": 659109,
-    "title": "Salmon Quinoa Risotto",
-    "image": "https://spoonacular.com/recipeImages/659109-312x231.jpg",
+    "id": 1096309,
+    "title": "Roasted Brussels Sprouts with glazed pancetta and pecans",
+    "image": "https://spoonacular.com/recipeImages/1096309-312x231.jpg",
     "ingredients": [
-      "quinoa",
-      "onion",
-      "kale",
-      "garlic cloves",
+      "brussels sprouts",
+      "canola oil",
+      "maple syrup",
+      "brown sugar",
+      "gf df pancetta",
+      "rosemary",
+      "shallot",
+      "pecan bits",
       "olive oil",
-      "poached salmon",
-      "vegetable stock",
-      "salt",
-      "bell pepper"
+      "kosher salt and pepper"
     ],
-    "kcal": 437.06
+    "kcal": 494.15
   },
   "soup": {
-    "id": 664419,
-    "title": "Vegan Colcannon Soup",
-    "image": "https://spoonacular.com/recipeImages/664419-312x231.jpg",
+    "id": 649560,
+    "title": "Lemon Chickpea & Tomato Stew",
+    "image": "https://spoonacular.com/recipeImages/649560-312x231.jpg",
     "ingredients": [
-      "extra virgin olive oil",
-      "leeks",
-      "garlic",
-      "celery",
-      "russet potatoes",
-      "savoy cabbage",
-      "kale",
-      "vegetable broth",
-      "kosher salt",
+      "bay leaves- broken",
+      "chickpeas",
+      "chicken broth",
       "pepper",
-      "juice of lemon"
+      "garlic",
+      "garlic cloves",
+      "jalapeno chili",
+      "lemon zest",
+      "olive oil",
+      "oregano",
+      "salt& pepper",
+      "shallot",
+      "spinach loosely",
+      "oven tomatoes"
     ],
-    "kcal": 202.64
+    "kcal": 362.54
   },
   "snack": {
-    "id": 660395,
-    "title": "Smokey Rainbow Chili",
-    "image": "https://spoonacular.com/recipeImages/660395-312x231.jpg",
+    "id": 639910,
+    "title": "Cold Fennel and Zucchini Noodle Side Salad",
+    "image": "https://spoonacular.com/recipeImages/639910-312x231.jpg",
     "ingredients": [
-      "olive oil",
-      "zucchini",
-      "bell pepper",
-      "orange bell pepper",
+      "cilantro",
+      "extra virgin olive oil",
+      "bulb fennel",
+      "green onion",
       "jalapeno pepper",
-      "garlic",
-      "onion",
-      "stewed tomatoes",
-      "tomato paste",
-      "black beans",
-      "kernel corn",
-      "kidney beans",
-      "paprika",
-      "chili powder",
-      "oregano",
-      "ground pepper",
-      "cayenne pepper"
+      "kosher salt and ground pepper",
+      "limes",
+      "bell pepper",
+      "rice vinegar",
+      "zucchini"
     ],
-    "kcal": 218.08
+    "kcal": 103.07
   }
 }
