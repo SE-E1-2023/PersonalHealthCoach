@@ -190,30 +190,11 @@ class TipGenerator:
 
 #Cosmin start
         disease = self.profile_data['Disease']
-        if disease == 'Respiratory Conditions':
-            general_tips.extend(self.tips_data['Diseases']['Respiratory Conditions']['general'])
-            diet_tips.extend(self.tips_data['Diseases']['Respiratory Conditions']['diet'])
-            fitness_tips.extend(self.tips_data['Diseases']['Respiratory Conditions']['fitness'])
-        elif disease == 'Diabetes':
-            general_tips.extend(self.tips_data['Diseases']['Diabetes']['general'])
-            diet_tips.extend(self.tips_data['Diseases']['Diabetes']['diet'])
-            fitness_tips.extend(self.tips_data['Diseases']['Diabetes']['fitness'])
-        elif disease == 'Mind disease':
-            general_tips.extend(self.tips_data['Diseases']['Mind disease']['general'])
-            diet_tips.extend(self.tips_data['Diseases']['Mind disease']['diet'])
-            fitness_tips.extend(self.tips_data['Diseases']['Mind disease']['fitness'])            
-        elif disease == 'High Blood Pressure':
-            general_tips.extend(self.tips_data['Diseases']['High Blood Pressure']['general'])
-            diet_tips.extend(self.tips_data['Diseases']['High Blood Pressure']['diet'])
-            fitness_tips.extend(self.tips_data['Diseases']['High Blood Pressure']['fitness'])
-        elif disease == 'Osteoporosis':
-            general_tips.extend(self.tips_data['Diseases']['Osteoporosis']['general'])
-            diet_tips.extend(self.tips_data['Diseases']['Osteoporosis']['diet'])
-            fitness_tips.extend(self.tips_data['Diseases']['Osteoporosis']['fitness'])    
-        elif disease == 'Cancer':
-            general_tips.extend(self.tips_data['Diseases']['Cancer']['general'])
-            diet_tips.extend(self.tips_data['Diseases']['Cancer']['diet'])
-            fitness_tips.extend(self.tips_data['Diseases']['Cancer']['fitness'])
+        for diseases in  disease: 
+            general_tips.extend(self.tips_data['Diseases'][disease]['general'])
+            diet_tips.extend(self.tips_data['Diseases'][disease]['diet'])
+            fitness_tips.extend(self.tips_data['Diseases'][disease]['fitness'])
+        
 #Cosmin finnish
         
 
