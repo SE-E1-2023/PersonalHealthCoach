@@ -54,26 +54,7 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
 
         for exercise_type, num in exercise_goal.items():
             type_exercises = organized_exercises.get(exercise_type, [])
-            if type_exercises:
-                if num > len(type_exercises):
-                    selected_exercises.extend(type_exercises)
-                else:
-                    selected_exercises.extend(random.sample(type_exercises, num))
-
-                # ne asiguram ca grupele majore de muschi sunt targetate
-        targeted_groups = set()
-
-        for muscle_group_data in main_muscle_groups["major_muscle_groups"]:
-            sub_groups = muscle_group_data["sub_groups"]
-            exercises_for_group = [e for e in selected_exercises if e["main_muscle"] in sub_groups]
-
-            if not exercises_for_group:
-                for sub_group in sub_groups:
-                    sub_group_exercises = [e for e in available_exercises if e["main_muscle"] == sub_group and e["type"] in exercises_for_goal]
-                    if sub_group_exercises:
-                        exercises_for_group.append(random.choice(sub_group_exercises))
-                        break
-            targeted_groups.update([e["main_muscle"] for e in exercises_for_group])
+            selected_exercises.extend(random.sample(type_exercises, num))
 
         # adaugam exercitiile
         for exercise in selected_exercises:
