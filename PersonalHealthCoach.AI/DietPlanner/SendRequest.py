@@ -4,7 +4,7 @@ import requests
 import random
 
 import os
-from KeyFunctions.GetApiKey import *
+#from KeyFunctions.GetApiKey import *
 
 abspath = os.path.dirname(__file__)
 import sys
@@ -23,7 +23,7 @@ def getMeal(input):
         r=requests.get(baseApi)
     except:
         return ("Connection Error")
-    UpdateKey(key,r.headers["X-API-Quota-Left"])   
+    gk.UpdateKey(key,r.headers["X-API-Quota-Left"])   
     result = r.json()
     print (result)
     return result["results"][0]["title"]

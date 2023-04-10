@@ -1,15 +1,24 @@
 import requests
 
-url = 'http://localhost:8000/FitnessPlanner'
+url = 'http://localhost:8000/TipGenerator'
 
 while True:
     workout_id = input("Enter workout ID: ")
-    data = {"workout_id": workout_id}
+    data = {    "Name": "Alex",
+    "ID" : "38284",
+    "Age": 30,
+    "Height" : 182,
+    "Weight" : 60,
+    "Sex" : "M",
+    "Objective" : "Maintain weight",
+    "Disease" : "Cancer",
+    "Level of activity" : "Moderately active"
+    }
     try:
         response = requests.post(url, json=data)
 
         print("Response status code: {}\n".format(response.status_code))
-        workout=response.json()["workout"]
+        workout=response.json()
         print(workout)
         print("\n")
     except: 
