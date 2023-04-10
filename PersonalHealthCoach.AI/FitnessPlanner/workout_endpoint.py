@@ -1,16 +1,21 @@
 from flask import Flask, request, jsonify
 import json
-
+import os
+import importlib
+abspath = os.path.dirname(__file__)
+import sys
+sys.path.append(abspath)
+gk = importlib.import_module("generate_workout")
 
 from generate_workout import generate_workouts
 
-with open(r'Data\\main_muscle_groups.json', 'r') as f:
+with open(f'{abspath}\\data\\main_muscle_groups.json', 'r') as f:
         main_muscle_groups = json.load(f)
 
-with open(r'Data\\types_of_exercises_for_goals.json', 'r') as f:
+with open(f'{abspath}\\data\\types_of_exercises_for_goals.json', 'r') as f:
         exercise_types = json.load(f)
 
-with open(r'Data\\exercise_database.json', 'r') as f:
+with open(f'{abspath}\\data\\exercise_database.json', 'r') as f:
         exercise_database = json.load(f)
 
 
@@ -20,7 +25,7 @@ app = Flask(__name__)
 def generate_workout_endpoint():
     user_data = request.json
     
-    workouts = generate_workouts(user_data, exercise_database, main_muscle_groups, exercise_types)
+    workouts = gk.generate_workouts(user_data, exercise_database, main_muscle_groups, exercise_types)
 
     return jsonify(workouts)
 

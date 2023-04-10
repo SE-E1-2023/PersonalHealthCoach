@@ -2,8 +2,11 @@ import json
 import random
 
 import os
-from unittest.mock import MagicMock
 abspath = os.path.dirname(__file__)
+import sys
+sys.path.append(abspath)
+from unittest.mock import MagicMock
+
 
 class TipGenerator:
     def __init__(self, tips_file, profile_json):
@@ -185,6 +188,35 @@ class TipGenerator:
         diet_tips = self.tips_data[objective]['diet']
         fitness_tips = self.tips_data[objective]['fitness']
 
+#Cosmin start
+        disease = self.profile_data['Disease']
+        if disease == 'Respiratory Conditions':
+            general_tips.extend(self.tips_data['Diseases']['Respiratory Conditions']['general'])
+            diet_tips.extend(self.tips_data['Diseases']['Respiratory Conditions']['diet'])
+            fitness_tips.extend(self.tips_data['Diseases']['Respiratory Conditions']['fitness'])
+        elif disease == 'Diabetes':
+            general_tips.extend(self.tips_data['Diseases']['Diabetes']['general'])
+            diet_tips.extend(self.tips_data['Diseases']['Diabetes']['diet'])
+            fitness_tips.extend(self.tips_data['Diseases']['Diabetes']['fitness'])
+        elif disease == 'Mind disease':
+            general_tips.extend(self.tips_data['Diseases']['Mind disease']['general'])
+            diet_tips.extend(self.tips_data['Diseases']['Mind disease']['diet'])
+            fitness_tips.extend(self.tips_data['Diseases']['Mind disease']['fitness'])            
+        elif disease == 'High Blood Pressure':
+            general_tips.extend(self.tips_data['Diseases']['High Blood Pressure']['general'])
+            diet_tips.extend(self.tips_data['Diseases']['High Blood Pressure']['diet'])
+            fitness_tips.extend(self.tips_data['Diseases']['High Blood Pressure']['fitness'])
+        elif disease == 'Osteoporosis':
+            general_tips.extend(self.tips_data['Diseases']['Osteoporosis']['general'])
+            diet_tips.extend(self.tips_data['Diseases']['Osteoporosis']['diet'])
+            fitness_tips.extend(self.tips_data['Diseases']['Osteoporosis']['fitness'])    
+        elif disease == 'Cancer':
+            general_tips.extend(self.tips_data['Diseases']['Cancer']['general'])
+            diet_tips.extend(self.tips_data['Diseases']['Cancer']['diet'])
+            fitness_tips.extend(self.tips_data['Diseases']['Cancer']['fitness'])
+#Cosmin finnish
+        
+
         if tip_type is None:
             tip_type = random.choice(['general','diet', 'fitness'])
         
@@ -197,6 +229,7 @@ class TipGenerator:
         
         tip_dict = {'tip_type': tip_type, 'tip': tip}
         return tip_dict   
+    
 
 def tip(input):
     tips_file = f"{abspath}/tips.json"
@@ -247,8 +280,8 @@ def test_generate_amr_tip():
 
     print('All test passed.')
 
-tips_file = 'tips.json'
-profile_file = 'profile.json'
+tips_file = f'{abspath}\\tips.json'
+profile_file = f'{abspath}\\profile.json'
 generator = TipGenerator(tips_file, profile_file)
 
 """    
