@@ -41,7 +41,6 @@ public static class DomainErrors
 
             public const string NoExercises = $"{Prefix}.{nameof(NoExercises)}";
         }
-
     }
 
     public static class PersonalTip
@@ -51,8 +50,19 @@ public static class DomainErrors
             private const string Prefix = $"{nameof(PersonalTip)}.{nameof(Create)}";
 
             public const string TipTypeNullOrEmpty = $"{Prefix}.{nameof(TipTypeNullOrEmpty)}";
-
             public const string TipNullOrEmpty = $"{Prefix}.{nameof(TipNullOrEmpty)}";
+        }
+    }
+
+    public static class Report
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(Report)}.{nameof(Create)}";
+
+            public const string TargetNullOrEmpty = $"{Prefix}.{nameof(TargetNullOrEmpty)}";
+            public const string InvalidTarget = $"{Prefix}.{nameof(InvalidTarget)}";
+            public const string ReasonNullOrEmpty = $"{Prefix}.{nameof(ReasonNullOrEmpty)}";
         }
     }
 }
