@@ -1,9 +1,5 @@
-﻿using System.Data.Common;
-using System.Security.Cryptography;
-using HealthCoach.Core.Domain;
+﻿using HealthCoach.Core.Domain;
 using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Core;
-using Microsoft.EntityFrameworkCore;
 using HealthCoach.Shared.Infrastructure;
 
 namespace HealthCoach.Core.Business;
@@ -53,7 +49,6 @@ public class DbPopulationService
 
     private async Task PopulatePersonalData()
     {
-        
         var users = queryProvider.Query<User>().ToList();
         var personalDataList = new List<Result<PersonalData>>
         {
@@ -187,8 +182,8 @@ public class DbPopulationService
         var dbPersonalData = queryProvider.Query<PersonalData>().ToList();
         foreach (var user in users)
         {
-            var userdata = dbPersonalData.Where(p => p.UserId == user.Id).ToList();
-            if (userdata.Count > 15)
+            var userData = dbPersonalData.Where(p => p.UserId == user.Id).ToList();
+            if (userData.Count > 15)
             {
                 continue;
             }
@@ -210,7 +205,7 @@ public class DbPopulationService
 
     private async Task PopulateWellnessTips()
     {
-        var WellnessTipList = new List<Result<WellnessTip>>
+        var wellnessTipList = new List<Result<WellnessTip>>
         {
             WellnessTip.Create("Your body goes quite a few hours without hydration as you sleep. Drinking a full glass of water in the morning can aid digestion, flush out toxins, enhance skin health and give you an energy boost."),
             WellnessTip.Create("Wake up and do something that inspires you like journaling, walking in nature, or other hobbies. Whether it’s productive or relaxing, beginning your morning on the right foot can cultivate a positive mindset and set the tone for the entire day."),
@@ -233,18 +228,14 @@ public class DbPopulationService
         };
 
         var dbWellnessTipList = queryProvider.Query<WellnessTip>().ToList();
-
-        foreach(var tip in WellnessTipList)
+        foreach(var tip in wellnessTipList)
         {
-
-            if(tip.IsSuccess && dbWellnessTipList.Any(db_tip => db_tip.TipText == tip.Value.TipText))
+            if(tip.IsSuccess && dbWellnessTipList.Any(dbTip => dbTip.TipText == tip.Value.TipText))
             {
                 continue;
             }
 
-            await tip.Tap(p => repository.Store(p));
-            
+            await tip.Tap(t => repository.Store(t));
         }
     }
-
 }

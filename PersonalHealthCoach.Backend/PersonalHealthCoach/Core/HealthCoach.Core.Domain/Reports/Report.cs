@@ -19,7 +19,7 @@ public sealed class Report : AggregateRoot
     {
         var targetResult = target
             .EnsureNotNullOrEmpty(DomainErrors.Report.Create.TargetNullOrEmpty)
-            .Ensure()
+            .Ensure(t => ReportConstants.AllowedTargets.Contains(t), DomainErrors.Report.Create.InvalidTarget);
         var reasonResult = reason.EnsureNotNullOrEmpty(DomainErrors.Report.Create.ReasonNullOrEmpty);
 
         return Result.FirstFailureOrSuccess(targetResult, reasonResult)
