@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class NewMigration_20230409_144512 : Migration
+    public partial class NewMigration_20230421_171453 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -57,6 +57,22 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PersonalTip", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Report",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    TargetId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Target = table.Column<string>(type: "text", nullable: false),
+                    Reason = table.Column<string>(type: "text", nullable: false),
+                    ReportedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    SolvedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Report", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -124,6 +140,9 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "PersonalTip");
+
+            migrationBuilder.DropTable(
+                name: "Report");
 
             migrationBuilder.DropTable(
                 name: "User");

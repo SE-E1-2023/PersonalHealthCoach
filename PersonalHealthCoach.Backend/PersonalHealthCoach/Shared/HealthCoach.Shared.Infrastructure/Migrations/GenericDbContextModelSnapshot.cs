@@ -133,6 +133,34 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.ToTable("PersonalTip");
                 });
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.Report", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("ReportedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("SolvedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Target")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("TargetId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Report");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.User", b =>
                 {
                     b.Property<Guid>("Id")

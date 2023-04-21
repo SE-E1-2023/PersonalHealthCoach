@@ -8,7 +8,7 @@ public class WellnessTip : AggregateRoot
 {
     public WellnessTip() { }
 
-    public WellnessTip(string tipText)
+    private WellnessTip(string tipText)
     {
         TipText = tipText;
     }
@@ -19,7 +19,6 @@ public class WellnessTip : AggregateRoot
 
         return tipResult.Map(t => new WellnessTip(t));
     }
-
 
     public string TipText { get; private set; }
 }
