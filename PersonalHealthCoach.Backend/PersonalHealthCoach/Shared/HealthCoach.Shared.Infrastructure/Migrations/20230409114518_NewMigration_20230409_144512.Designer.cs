@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     [DbContext(typeof(GenericDbContext))]
-    [Migration("20230407130656_NewMigration_20230407_160648")]
-    partial class NewMigration_20230407_160648
+    [Migration("20230409114518_NewMigration_20230409_144512")]
+    partial class NewMigration_20230409_144512
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -157,6 +157,21 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.WellnessTip", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("TipText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WellnessTip");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>

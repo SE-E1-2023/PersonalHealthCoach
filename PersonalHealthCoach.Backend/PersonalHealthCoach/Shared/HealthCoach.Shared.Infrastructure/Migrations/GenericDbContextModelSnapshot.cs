@@ -156,6 +156,21 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.WellnessTip", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("TipText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WellnessTip");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>
                 {
                     b.HasOne("HealthCoach.Core.Domain.FitnessPlan", null)

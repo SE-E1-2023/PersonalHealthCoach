@@ -65,4 +65,14 @@ public static class DomainErrors
             public const string ReasonNullOrEmpty = $"{Prefix}.{nameof(ReasonNullOrEmpty)}";
         }
     }
+
+    public static class WellnessTip
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(PersonalTip)}.{nameof(Create)}";
+
+            public const string TipNullOrEmpty = $"{Prefix}.{nameof(TipNullOrEmpty)}";
+        }
+    }
 }

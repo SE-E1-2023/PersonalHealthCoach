@@ -8,7 +8,7 @@ using Errors = HealthCoach.Core.Business.BusinessErrors.PersonalData.Get;
 
 namespace HealthCoach.Core.Business;
 
-public class RetrieveLatestPersonalDataCommandHandler : IRequestHandler<RetrieveLatestPersonalDataCommand, Result<PersonalData>>
+internal class RetrieveLatestPersonalDataCommandHandler : IRequestHandler<RetrieveLatestPersonalDataCommand, Result<PersonalData>>
 {
     private readonly IEfQueryProvider queryProvider;
     
