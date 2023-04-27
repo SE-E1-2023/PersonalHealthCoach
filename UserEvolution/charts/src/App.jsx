@@ -6,6 +6,7 @@ import SleepChart from './components/SleepChart';
 import StressChart from './components/StressChart';
 import BpmChart from './components/BpmChart';
 import SpO2Chart from './components/SpO2Chart';
+import filljson from './components/filljson.jsx';
 import './App.css';
 
 const App = () => {
@@ -43,7 +44,7 @@ const App = () => {
       }
     };
     fetchActivityData();
-
+    filljson();
     const fetchWeightData = async () => {
       try {
         const response = await fetch('./src/components/weight.json');
