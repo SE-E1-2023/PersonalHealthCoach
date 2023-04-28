@@ -1,9 +1,10 @@
 import requests
 
-url = 'http://localhost:8000/TipGenerator'
+url = 'http://localhost:8000/FitnessPlanner'
 
-while True:
-    workout_id = input("Enter workout ID: ")
+def test_params():
+    #workout_id = input("Enter workout ID: ")
+    workout_id = 1
     data = {    "Name": "Alex",
     "ID" : "38284",
     "Age": 30,
