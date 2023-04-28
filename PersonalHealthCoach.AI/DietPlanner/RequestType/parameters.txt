@@ -1,5 +1,5 @@
 "idClient" : "123456",      - stringu care il aveti voi in baza de date ca id
-"dataNastere":"30121997",   --DDMMYYYY sau orice alt tip pe care il aveti voi in baza de date
+"dataNastere":"30121997",   --DDMMYYYY sau orice alt tip pe care il aveti voi in baza de date facem noi preprocesarea
 "greutate":"69.420",        --greutate client ,float
 "inaltime" : "1.9",         --inaltimea clientului
 "lifestyle": "7",           --how active is the person 1(sedimentary) 10(athlete) default 5
@@ -8,3 +8,11 @@
 "alergis" : ["nut","milk"], -- o lista cu alergiile clientului
 "dietType" : "vegan",       -- Tip de dieta din : "vegan", "vegetarian", "dairyFree", "glutenFree"
 "goal" : "weight loss"      -- tre sa stabilim exact toate goalurile clientilor 
+
+
+
+Response:
+    diet - nume,la ce e folositoare , ce trebuie sa faci si ce nu
+    6 felori de mancare
+    "NOP" -- int in caz de NO OUTPUT, trebuie ignorat ce e in fisier , poate o sa fie folosit ca un cod de erroare
+             0- totul ok :: nu 0 = nu bun

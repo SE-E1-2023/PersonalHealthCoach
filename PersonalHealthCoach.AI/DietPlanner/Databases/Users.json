@@ -9,6 +9,26 @@
       "idSideDish": 1096309,
       "idSnack": 649560,
       "idSoup": 639910
+    },
+    {
+      "idUser": "3",
+      "idDiet": 7,
+      "idBreakfast": 1096276,
+      "idDrink": 800780,
+      "idMainCourse": 660680,
+      "idSideDish": 661925,
+      "idSnack": 1096220,
+      "idSoup": 651823
+    },
+    {
+      "idUser": "4",
+      "idDiet": 16,
+      "idBreakfast": 1096176,
+      "idDrink": 1095729,
+      "idMainCourse": 642610,
+      "idSideDish": 664472,
+      "idSnack": 631834,
+      "idSoup": 664526
     }
   ]
 }

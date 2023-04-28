@@ -1,143 +1,126 @@
 {
   "diet": {
-    "id": 7,
-    "name": "Pescatarian Diet",
+    "id": 16,
+    "name": "Intermittent fasting",
     "use": "weight loss",
     "tag": [
-      "glutenFree"
+      "vegan",
+      "vegetarian",
+      "glutenFree",
+      "dairyFree"
     ],
     "do": [
-      "Fresh fish (salmon, cod, sardines, pollock, and catfish)",
-      "Fresh shellfish (clams, crab, oysters, shrimp, and scallops)",
-      "Canned fish (salmon, tuna, mackerel, sardines)",
-      "Canned shellfish (clams, crab, oysters, shrimp, and scallops)",
-      "Frozen seafood (fish sticks, salmon, trout, herring, and shrimp)",
-      "Vegetables",
-      "Fruits",
-      "Legumes (including kidney beans, peas, and pinto beans)",
-      "Legume products (including hummus and tofu)",
-      "Cereals and whole grains (including corn, rice, oats, bulgar wheat, and amaranth)",
-      "Gluten-free pseudo grains (such as buckwheat and quinoa)",
-      "Nuts and nut butters",
-      "Seeds, such as flaxseeds, hemp seeds, and chia",
-      "Eggs and dairy (if lacto-ovo-vegetarian)"
+      "The rules for this diet are simple. A person needs to decide on and adhere to a 12-hour fasting window every day.",
+      "Fasting for 16 hours a day, leaving an eating window of 8 hours, is called the 16:8 method or the Leangains diet.",
+      "People following the 5:2 diet eat standard amounts of healthful food for 5 days and reduce calorie intake on the other 2 days.",
+      "For some people, alternate day fasting means a complete avoidance of solid foods on fasting days, while other people allow up to 500 calories. On feeding days, people often choose to eat as much as they want.",
+      "The Warrior Diet involves eating very little, usually just a few servings of raw fruit and vegetables, during a 20-hourTrusted Source fasting window, then eating one large meal at night. The eating window is usually only around 4 hours."
     ],
     "donot": [
-      "Chicken",
-      "Beef",
-      "Turkey",
-      "Pork",
-      "Lamb",
-      "Wild game"
+      "eat"
     ]
   },
   "breakfast": {
-    "id": 644044,
-    "title": "Protein Strawberry Smoothie",
-    "image": "https://spoonacular.com/recipeImages/644044-312x231.jpg",
+    "id": 1096176,
+    "title": "Mango, Persimmon Smoothie with Cranberries",
+    "image": "https://spoonacular.com/recipeImages/1096176-312x231.jpg",
     "ingredients": [
-      "almond milk",
-      "banana",
-      "greek yogurt",
-      "honey",
-      "ice",
-      "strawberries"
+      "cranberries",
+      "mango",
+      "persimmon"
     ],
-    "kcal": 387.73
+    "kcal": 298.46
   },
   "drink": {
-    "id": 644044,
-    "title": "Protein Strawberry Smoothie",
-    "image": "https://spoonacular.com/recipeImages/644044-312x231.jpg",
+    "id": 1095729,
+    "title": "Immunity Booster Beet, Carrot & Orange Juice",
+    "image": "https://spoonacular.com/recipeImages/1095729-312x231.jpg",
     "ingredients": [
-      "almond milk",
-      "banana",
-      "greek yogurt",
-      "honey",
-      "ice",
-      "strawberries"
+      "beet",
+      "carrots",
+      "oranges"
     ],
-    "kcal": 387.73
+    "kcal": 161.9
   },
   "mainCourse": {
-    "id": 644813,
-    "title": "Gluten Free Coconut Chicken Salad",
-    "image": "https://spoonacular.com/recipeImages/644813-312x231.jpg",
+    "id": 642610,
+    "title": "Farm Fresh Vegetable Stew",
+    "image": "https://spoonacular.com/recipeImages/642610-312x231.jpg",
     "ingredients": [
-      "chicken tenderloins",
-      "egg",
-      "salt",
-      "water",
-      "coconut flakes",
-      "onion",
-      "cashews",
-      "weight lettuce",
-      "tomatoes",
       "extra virgin olive oil",
-      "veganaise",
-      "agave nectar",
-      "mustard",
-      "poppy seeds",
-      "worcestershire sauce"
+      "garlic",
+      "onions",
+      "peppers",
+      "carrots",
+      "celery",
+      "eggplant",
+      "green beans",
+      "squash",
+      "zucchini",
+      "tomatoes",
+      "thyme leaves",
+      "cumin",
+      "kosher salt",
+      "oregano",
+      "kidney beans",
+      "brown lentils"
     ],
-    "kcal": 868.17
+    "kcal": 263.57
   },
   "sideDish": {
-    "id": 1096309,
-    "title": "Roasted Brussels Sprouts with glazed pancetta and pecans",
-    "image": "https://spoonacular.com/recipeImages/1096309-312x231.jpg",
+    "id": 664472,
+    "title": "Vegan Potato Salad",
+    "image": "https://spoonacular.com/recipeImages/664472-312x231.jpg",
     "ingredients": [
-      "brussels sprouts",
-      "canola oil",
-      "maple syrup",
-      "brown sugar",
-      "gf df pancetta",
-      "rosemary",
-      "shallot",
-      "pecan bits",
-      "olive oil",
-      "kosher salt and pepper"
+      "basil",
+      "bok choy",
+      "bragg's liquid aminos",
+      "carrots",
+      "dijon mustard",
+      "garlic powder",
+      "green onions",
+      "oregano",
+      "paprika",
+      "russet potatoes",
+      "sea salt and pepper",
+      "vegenaise"
     ],
-    "kcal": 494.15
+    "kcal": 398.01
   },
   "soup": {
-    "id": 649560,
-    "title": "Lemon Chickpea & Tomato Stew",
-    "image": "https://spoonacular.com/recipeImages/649560-312x231.jpg",
+    "id": 631834,
+    "title": "10-Minute Bean Stew",
+    "image": "https://spoonacular.com/recipeImages/631834-312x231.jpg",
     "ingredients": [
-      "bay leaves- broken",
-      "chickpeas",
-      "chicken broth",
-      "pepper",
-      "garlic",
-      "garlic cloves",
-      "jalapeno chili",
-      "lemon zest",
-      "olive oil",
-      "oregano",
-      "salt& pepper",
-      "shallot",
-      "spinach loosely",
-      "oven tomatoes"
+      "cherry tomatoes",
+      "juice of lemon",
+      "thyme",
+      "tomato puree",
+      "canned tomatoes",
+      "kidney beans",
+      "garlic gloves",
+      "salt & pepper",
+      "optional: spinach"
     ],
-    "kcal": 362.54
+    "kcal": 356.73
   },
   "snack": {
-    "id": 639910,
-    "title": "Cold Fennel and Zucchini Noodle Side Salad",
-    "image": "https://spoonacular.com/recipeImages/639910-312x231.jpg",
+    "id": 664526,
+    "title": "Vegetable Bulgur Pilaf",
+    "image": "https://spoonacular.com/recipeImages/664526-312x231.jpg",
     "ingredients": [
-      "cilantro",
-      "extra virgin olive oil",
-      "bulb fennel",
-      "green onion",
-      "jalapeno pepper",
-      "kosher salt and ground pepper",
-      "limes",
-      "bell pepper",
-      "rice vinegar",
-      "zucchini"
+      "bulgur",
+      "onions",
+      "tomatoes",
+      "potato",
+      "zucchini",
+      "chili pepper",
+      "stock",
+      "olive oil",
+      "dill",
+      "salt"
     ],
-    "kcal": 103.07
-  }
+    "kcal": 317.81
+  },
+  "NOP": 0
 }

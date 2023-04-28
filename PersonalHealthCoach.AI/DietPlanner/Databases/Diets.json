@@ -330,7 +330,7 @@
       {   "id" : 16,
             "name" : "Intermittent fasting",
             "use" : "weight loss",
-            "tag" : ["vegan","vegetarian","gluten free","dairy free","lactose free"],
+            "tag" : ["vegan","vegetarian","glutenFree","dairyFree"],
             "do":[
             "The rules for this diet are simple. A person needs to decide on and adhere to a 12-hour fasting window every day.",
             "Fasting for 16 hours a day, leaving an eating window of 8 hours, is called the 16:8 method or the Leangains diet.",

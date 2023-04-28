@@ -1,5 +1,5 @@
 {
-    "idClient" : "1",
+    "idClient" : "4",
     "birthDate":"30121997",
     "weight":"69.42",
     "height" : "1.9",
@@ -7,6 +7,6 @@
     "muscleMass": "5",
     "sex":"M",
     "alergies" : ["nut","milk"],
-    "dietType" : ["glutenFree"],
+    "dietType" : ["vegan"],
     "goal" : "weight loss"
 }

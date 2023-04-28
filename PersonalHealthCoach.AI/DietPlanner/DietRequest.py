@@ -38,7 +38,9 @@ def knownUser(input):
     response = {}
     response["diet"]= newDiet(input["dietType"],users["users"][userIndex]["idDiet"])
     if len(response["diet"]) == 0:
-        return {}
+        r={}
+        r["NOP"] = 1   
+        return r
     users["users"][userIndex]["idDiet"] = response["diet"]["id"]
     response["breakfast"] = getMeal(input,users["users"][userIndex]["idBreakfast"],"Breakfast.json")
     response["drink"] = getMeal(input,users["users"][userIndex]["idDrink"],"Drink.json")
@@ -53,7 +55,8 @@ def knownUser(input):
     users["users"][userIndex]["idSnack"] = response["soup"]["id"]
     users["users"][userIndex]["idSoup"] = response["snack"]["id"]
     with open (f"{abspath}/Databases/Users.json","w") as file:
-        json.dump(users,file,indent=2)
+        json.dump(users,file,indent=2) 
+    response["NOP"] = 0
     return response
 
 
@@ -71,7 +74,7 @@ def unknownUser(input):
     u["users"].append(userData)
     with open (f"{abspath}/Databases/Users.json","w") as file:
         json.dump(u,file,indent=2)
-    knownUser(input)
+    return knownUser(input)
 
 
 def getDiet(input):
@@ -100,7 +103,7 @@ def getMeal(info,idMeal,path):
     data = d["meals"]
     goodData = []
     good = True
-    for meal in data: 
+    for meal in data:
         good = True
         for problem in info["dietType"]:
             if meal[problem] == False:
@@ -130,10 +133,7 @@ def getMeal(info,idMeal,path):
             dataReturn["kcal"] = goodData[index]["nutrition"][0]["amount"]
             return dataReturn
         
-    return null
         
-
-
 
 def testFunction():
     # astea is pentru debughing, nu au traba cu programul mare
@@ -145,5 +145,5 @@ def testFunction():
     with open (f"{abspath}/RequestType/requestResponse.json","w") as file:
         json.dump(diet,file, indent=2)
 
-print(testFunction())
+testFunction()
 
