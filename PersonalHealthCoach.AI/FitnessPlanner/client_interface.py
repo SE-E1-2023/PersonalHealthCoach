@@ -16,12 +16,12 @@ url = f'http://{server_ip}:{server_port}/generate-workout'
 """
 user_data = {
     "pro_user": True,
-    "goal": "Improve cardiovascular health",
+    "goal": "Lose fat",
     "workouts_per_week": 1,
     "equipment_available": {
         "Other": False,
         "Machine": False,
-        "Barbell": False,
+        "Barbell": True,
         "Dumbbell": True,
         "Kettlebells": False,
         "Cable": False,
