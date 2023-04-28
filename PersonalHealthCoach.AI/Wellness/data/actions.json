@@ -1,0 +1,22 @@
+{
+    {
+        "Action": "Meditation",
+        "Description": "Take a moment",
+        "Tags": ["Spiritual", "Emotional", "Environmental"]
+    },
+    {
+        "Action": "Light sport",
+        "Description": "Do something",
+        "Tags": ["Spiritual", "Emotional", "Environmental", "Physical"]
+    },
+    {
+        "Action": "Take a walk",
+        "Description": "Just go",
+        "Tags": ["Spiritual", "Emotional", "Environmental"]
+    },
+    {
+        "Action": "TEMPLATE TITLE",
+        "Description": "TEMPLATE DESCRIPTION",
+        "Tags": ["Physical", "Mental", "Emotional", "Spiritual", "Social", "Environmental"]
+    }
+}
