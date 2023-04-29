@@ -12,4 +12,7 @@ public record AddPersonalDataCommand(
     List<string> MedicalHistory,
     List<string> CurrentIllnesses,
     string Goal, 
-    List<string> UnwantedExercises) : IRequest<Result<PersonalData>>;
+    List<string> UnwantedExercises,
+    int? DailySteps,
+    double? HoursOfSleep,
+    string Gender) : IRequest<Result<PersonalData>>;

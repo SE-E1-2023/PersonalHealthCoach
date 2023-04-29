@@ -18,4 +18,10 @@ public static class PersonalDataConstants
         "Increase endurance",
         "Maintain weigth"
     };
+
+    public static IReadOnlyCollection<string> AllowedGenders => new List<string>
+    {
+        "M",
+        "F"
+    };
 }
