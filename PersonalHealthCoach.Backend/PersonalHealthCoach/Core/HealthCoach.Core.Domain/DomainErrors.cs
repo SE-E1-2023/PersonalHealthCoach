@@ -25,8 +25,10 @@ public static class DomainErrors
             public const string UserNotOldEnough = $"{Prefix}.{nameof(Domain.PersonalData.DateOfBirth)}.{nameof(UserNotOldEnough)}";
             
             public const string InvalidWeight = $"{Prefix}.{nameof(Domain.PersonalData.Weight)}.{nameof(InvalidWeight)}";
-
             public const string InvalidHeight = $"{Prefix}.{nameof(Domain.PersonalData.Height)}.{nameof(InvalidHeight)}";
+            public const string InvalidDailySteps = $"{Prefix}.{nameof(Domain.PersonalData.DailySteps)}.{nameof(InvalidDailySteps)}";
+            public const string InvalidHoursOfSleep = $"{Prefix}.{nameof(Domain.PersonalData.HoursOfSleep)}.{nameof(InvalidHoursOfSleep)}";
+            public const string InvalidGender = $"{Prefix}.{nameof(Domain.PersonalData.Gender)}.{nameof(InvalidGender)}";
 
             public const string GoalIsNullOrEmpty = $"{Prefix}.{nameof(Domain.PersonalData.Goal)}.{nameof(GoalIsNullOrEmpty)}";
             public const string GoalIsUnrecognized = $"{Prefix}.{nameof(Domain.PersonalData.Goal)}.{nameof(GoalIsUnrecognized)}";

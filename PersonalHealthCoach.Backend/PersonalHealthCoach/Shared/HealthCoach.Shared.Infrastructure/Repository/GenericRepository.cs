@@ -33,4 +33,10 @@ public sealed class GenericRepository : IRepository
 
         await dbContext.SaveChangesAsync();
     }
+
+    public async Task Delete<TAggregateRoot>(TAggregateRoot aggregateRoot) where TAggregateRoot : AggregateRoot
+    {
+        dbContext.Set<TAggregateRoot>().Remove(aggregateRoot);
+        await dbContext.SaveChangesAsync();
+    }
 }

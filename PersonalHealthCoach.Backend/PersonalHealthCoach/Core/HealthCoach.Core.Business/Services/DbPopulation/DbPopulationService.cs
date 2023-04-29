@@ -17,9 +17,33 @@ public class DbPopulationService
 
     public async Task PopulateDb()
     {
+        await DeleteAllFromDatabase();
+
         await PopulateUsers();
         await PopulatePersonalData();
         await PopulateWellnessTips();
+    }
+
+    private async Task DeleteAllFromDatabase()
+    {
+        var users = queryProvider.Query<User>().ToList();
+        var personalData = queryProvider.Query<PersonalData>().ToList();
+        var wellnessTips = queryProvider.Query<WellnessTip>().ToList();
+
+        foreach (var user in users)
+        {
+            await repository.Delete(user);
+        }
+
+        foreach (var data in personalData)
+        {
+            await repository.Delete(data);
+        }
+
+        foreach (var tip in wellnessTips)
+        {
+            await repository.Delete(tip);
+        }
     }
 
     private async Task PopulateUsers()
@@ -52,130 +76,129 @@ public class DbPopulationService
         var users = queryProvider.Query<User>().ToList();
         var personalDataList = new List<Result<PersonalData>>
         {
-            PersonalData.Create(users[0].Id,PersonalDataConstants.MinimumDateOfBirth,70.0f,175f,
+            PersonalData.Create(users[0].Id, PersonalDataConstants.MinimumDateOfBirth, 70.0f, 175f,
                 new List<string> {"Asthma", "Allergies", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Weight lifting", "Cycling"}),
+                new List<string> { "Weight lifting", "Cycling"}, 10000, 8.5, "M"),
             //multiple personal data for the same user
             PersonalData.Create(users[0].Id,PersonalDataConstants.MinimumDateOfBirth,75.0f,175f,
                 new List<string> {"Asthma", "Allergies", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Weight lifting", "Cycling"}),
+                new List<string> { "Weight lifting", "Cycling"}, 100200, 4.5, "M"),
             PersonalData.Create(users[0].Id,PersonalDataConstants.MinimumDateOfBirth,80.0f,175f,
                 new List<string> {"Asthma", "Allergies", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Weight lifting", "Cycling"}),
+                new List<string> { "Weight lifting", "Cycling"}, 16543, 12, "M"),
             PersonalData.Create(users[0].Id,PersonalDataConstants.MinimumDateOfBirth,85.0f,175f,
                 new List<string> {"Asthma", "Allergies", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Weight lifting", "Cycling"}),
+                new List<string> { "Weight lifting", "Cycling"}, 1000, 8.5, "M"),
             PersonalData.Create(users[0].Id,PersonalDataConstants.MinimumDateOfBirth,85.5f,175f,
                 new List<string> {"Asthma", "Allergies", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Weight lifting", "Cycling"}),
+                new List<string> { "Weight lifting", "Cycling"}, 20000, 9, "M"),
 
 
             PersonalData.Create(users[1].Id,PersonalDataConstants.MinimumDateOfBirth,75.5f,185f,
                 new List<string> {"High blood pressure"},
                 new List<string> {"Cancer"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running"}),
+                new List<string> {"Running"}, 20000, 9, "M"),
             PersonalData.Create(users[1].Id,PersonalDataConstants.MinimumDateOfBirth,70.0f,185f,
                 new List<string> {"High blood pressure"},
                 new List<string> {"Cancer"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running"}),
+                new List<string> {"Running"}, 10000, 9, "M"),
             PersonalData.Create(users[1].Id,PersonalDataConstants.MinimumDateOfBirth,65.5f,185f,
                 new List<string> {"High blood pressure"},
                 new List<string> {"Cancer"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running"}),
+                new List<string> {"Running"}, 2000, 9, "M"),
             PersonalData.Create(users[1].Id,PersonalDataConstants.MinimumDateOfBirth,60.0f,185f,
                 new List<string> {"High blood pressure"},
                 new List<string> {"Cancer"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running"}),
+                new List<string> {"Running"}, 20000, 9, "M"),
 
 
             PersonalData.Create(users[2].Id,PersonalDataConstants.MinimumDateOfBirth,80.0f,165f,
                 new List<string> { "Diabetes", "Depression", "High blood pressure"},
                 new List<string> {"Back pain"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Swimming"}),
+                new List<string> {"Running", "Swimming"}, 2000, 5, "F"),
             PersonalData.Create(users[2].Id,PersonalDataConstants.MinimumDateOfBirth,75.5f,165f,
                 new List<string> { "Diabetes", "Depression", "High blood pressure"},
                 new List<string> {"Back pain"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Swimming"}),
+                new List<string> {"Running", "Swimming"}, 12000, 9, "F"),
             PersonalData.Create(users[2].Id,PersonalDataConstants.MinimumDateOfBirth,70.5f,165f,
                 new List<string> { "Diabetes", "Depression", "High blood pressure"},
                 new List<string> {"Back pain"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Swimming"}),
+                new List<string> {"Running", "Swimming"}, 7000, 9, "F"),
             PersonalData.Create(users[2].Id,PersonalDataConstants.MinimumDateOfBirth,75.5f,165f,
                 new List<string> { "Diabetes", "Depression", "High blood pressure"},
                 new List<string> {"Back pain"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Swimming"}),
+                new List<string> {"Running", "Swimming"}, 12000, 5, "F"),
             PersonalData.Create(users[2].Id,PersonalDataConstants.MinimumDateOfBirth,75.0f,165f,
                 new List<string> { "Diabetes", "Depression", "High blood pressure"},
                 new List<string> {"Back pain"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Swimming"}),
+                new List<string> {"Running", "Swimming"}, 10000, 10, "F"),
 
 
             PersonalData.Create(users[3].Id,PersonalDataConstants.MinimumDateOfBirth,85.5f,175f,
                 new List<string> {"Asthma", "Diabetes", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Boxing", "Cycling"}),
+                new List<string> { "Boxing", "Cycling"}, 10000, 10, "F"),
             PersonalData.Create(users[3].Id,PersonalDataConstants.MinimumDateOfBirth,80.5f,175f,
                 new List<string> {"Asthma", "Diabetes", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Boxing", "Cycling"}),
+                new List<string> { "Boxing", "Cycling"}, 12000, 10, "F"),
             PersonalData.Create(users[3].Id,PersonalDataConstants.MinimumDateOfBirth,80.0f,175f,
                 new List<string> {"Asthma", "Diabetes", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Boxing", "Cycling"}),
+                new List<string> { "Boxing", "Cycling"}, 13200, 10, "F"),
             PersonalData.Create(users[3].Id,PersonalDataConstants.MinimumDateOfBirth,80.0f,175f,
                 new List<string> {"Asthma", "Diabetes", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Boxing", "Cycling"}),
+                new List<string> { "Boxing", "Cycling"}, 10020, 10, "F"),
             PersonalData.Create(users[3].Id,PersonalDataConstants.MinimumDateOfBirth,80.5f,175f,
                 new List<string> {"Asthma", "Diabetes", "High blood pressure"},
                 new List<string> {"Anxiety"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Boxing", "Cycling"}),
+                new List<string> { "Boxing", "Cycling"}, 20000, 10, "F"),
 
 
             PersonalData.Create(users[4].Id,PersonalDataConstants.MinimumDateOfBirth,75.5f,155f,
                 new List<string> { "Depression", "Allergies", "High blood pressure"},
                 new List<string> {"Cancer"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Weight lifting"}),
+                new List<string> {"Running", "Weight lifting"}, 20000, 9, "M"),
             PersonalData.Create(users[4].Id,PersonalDataConstants.MinimumDateOfBirth,80.5f,155f,
                 new List<string> { "Depression", "Allergies", "High blood pressure"},
                 new List<string> {"Cancer"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Weight lifting"}),
+                new List<string> {"Running", "Weight lifting"}, 20000, 9, "M"),
             PersonalData.Create(users[4].Id,PersonalDataConstants.MinimumDateOfBirth,75.5f,155f,
                 new List<string> { "Depression", "Allergies", "High blood pressure"},
                 new List<string> {"Cancer"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Weight lifting"}),
+                new List<string> {"Running", "Weight lifting"}, 10000, 9, "M"),
             PersonalData.Create(users[4].Id,PersonalDataConstants.MinimumDateOfBirth,75.0f,155f,
                 new List<string> { "Depression", "Allergies", "High blood pressure"},
                 new List<string> {"Cancer"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Weight lifting"}),
+                new List<string> {"Running", "Weight lifting"}, 20000, 9, "M"),
             PersonalData.Create(users[4].Id,PersonalDataConstants.MinimumDateOfBirth,75.5f,155f,
                 new List<string> { "Depression", "Allergies", "High blood pressure"},
                 new List<string> {"Cancer"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> {"Running", "Weight lifting"}),
+                new List<string> {"Running", "Weight lifting"}, 20000, 9, "M"),
 
 
             PersonalData.Create(users[5].Id,PersonalDataConstants.MinimumDateOfBirth,80.5f,195f,
-                new List<string> {"Asthma", "Allergies"},
-                new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Boxing", "Cycling"}),
+                            new List<string> {"Asthma", "Allergies"},
+                            new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
+                            new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
             PersonalData.Create(users[5].Id,PersonalDataConstants.MinimumDateOfBirth,75.5f,195f,
                             new List<string> {"Asthma", "Allergies"},
                             new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                            new List<string> { "Boxing", "Cycling"}),
+                            new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
             PersonalData.Create(users[5].Id,PersonalDataConstants.MinimumDateOfBirth,80.5f,195f,
                             new List<string> {"Asthma", "Allergies"},
                             new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                            new List<string> { "Boxing", "Cycling"}),
+                            new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
             PersonalData.Create(users[5].Id,PersonalDataConstants.MinimumDateOfBirth,80.0f,195f,
                             new List<string> {"Asthma", "Allergies"},
                             new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                            new List<string> { "Boxing", "Cycling"})
-
+                            new List<string> { "Boxing", "Cycling"}, 12000, 6, "M")
         };
 
         // Query the db for each PersonalData class and check if the objects above exist and if not, add just the missing ones
