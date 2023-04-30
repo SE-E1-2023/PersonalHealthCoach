@@ -24,7 +24,12 @@ def functionWrapper(fn):
             print("Dict is none")
             abort(503)
         
-        response = fn(dictionary)
+        try:
+            response = fn(dictionary)
+        except:
+            print("Internal exception")
+            abort(422)
+        
         if response is None:
             print("No response")
             abort(422)
