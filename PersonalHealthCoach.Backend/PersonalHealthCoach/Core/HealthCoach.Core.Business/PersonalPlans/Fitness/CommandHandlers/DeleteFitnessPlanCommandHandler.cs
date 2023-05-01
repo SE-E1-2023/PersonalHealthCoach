@@ -5,6 +5,7 @@ using HealthCoach.Core.Domain;
 using MediatR;
 
 using Errors = HealthCoach.Core.Business.BusinessErrors.FitnessPlan.Get;
+using HealthCoach.Shared.Core;
 
 namespace HealthCoach.Core.Business;
 
@@ -13,7 +14,7 @@ internal sealed class DeleteFitnessPlanCommandHandler : IRequestHandler<DeleteFi
     private readonly IRepository repository;
     private readonly IEfQueryProvider queryProvider;
 
-    public DeleteFitnessPlanCommandHandler(IRepository repository, IEfQueryProvider queryProvider, IHttpClientFactory httpClientFactory)
+    public DeleteFitnessPlanCommandHandler(IRepository repository, IEfQueryProvider queryProvider)
     {
         this.repository = repository;
         this.queryProvider = queryProvider;
@@ -21,41 +22,16 @@ internal sealed class DeleteFitnessPlanCommandHandler : IRequestHandler<DeleteFi
 
     public async Task<Result<FitnessPlan>> Handle(DeleteFitnessPlanCommand request, CancellationToken cancellationToken)
     {
-        var planResult = await repository.Load<FitnessPlan>(request.PlanId).ToResult(Errors.FitnessPlanNotFound);
-        //var exerciseList = planResult.Value.Exercises;
-        //var exerciseList = await repository.Load<Exercise>(planResult.Value.Exercises).ToResult(planResult.Value.Exercises);
-        //var exerciseList = queryProvider.Query<Exercise>().Where(ex => ex.FitnessPlanId == request.PlanId).ToArray();
+        var planResult = queryProvider.Query<FitnessPlan>().FirstOrDefault(p => p.Id == request.PlanId).EnsureNotNull(Errors.FitnessPlanNotFound);
 
-        planResult.Tap(f =>
+        await planResult.Tap(async f =>
         {
-            foreach (var ex in f.Exercises)
+            foreach (var ex in f!.Exercises)
             {
-                repository.Delete(ex);
+                await repository.Delete(ex);
             }
         });
 
-        return await planResult.Tap(p => repository.Delete(p));
-
-        //foreach (var item in planResult)
-        //{
-        //    await repository.Delete(item);
-        //}
-
-        //var exercises = planResult.Tap(r => r.Exercises.ToList());
-        //Console.WriteLine(planResult.Value.Exercises);
-        //foreach (var item in exercises)
-        //{
-        //    //await repository.Delete(item);
-        //    Console.WriteLine(item.Name);
-        //}
-        //return null;
-
-        //return await Result.FirstFailureOrSuccess(userResult, dataResult)
-        //    .Map(() => new RequestFitnessPlanCommand(1))
-        //    .Bind(async command => await httpClient.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(command))
-        //    .Bind(response => FitnessPlan.Create(
-        //        request.UserId,
-        //        response.workout.workout.Select(e => Exercise.Create(e.exercise, e.rep_range, e.rest_time, e.sets, e.type)).ToList()))
-        //    .Tap(p => repository.Store(p));
+        return await planResult.Tap(p => repository.Delete(p!));
     }
 }
