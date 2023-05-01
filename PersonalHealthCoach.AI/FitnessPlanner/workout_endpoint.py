@@ -21,13 +21,11 @@ with open(f'{abspath}\\data\\exercise_database.json', 'r') as f:
 
 app = Flask(__name__)
 
-@app.route('/generate-workout', methods=['POST'])
-def generate_workout_endpoint():
-    user_data = request.json
-    
+#@app.route('/generate-workout', methods=['POST'])
+def generate_workout_endpoint(user_data):    
+    #user_data = request.json
     workouts = gk.generate_workouts(user_data, exercise_database, main_muscle_groups, exercise_types)
-
-    return jsonify(workouts)
+    return workouts
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0', port=5000)

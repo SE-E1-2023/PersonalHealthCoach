@@ -149,7 +149,6 @@ def getMeal(info,idMeal,path):
 
 
 def getMultipleMeals(info):
-
     match info["requestType"]:
         case "soup":
             path = "Soup.json"
