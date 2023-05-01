@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using HealthCoach.Shared.Web;
 using HealthCoach.Core.Business;
 using Microsoft.Azure.Functions.Worker;
@@ -42,5 +42,13 @@ public sealed class FitnessPlanFunctions
         return await command
             .Bind(c => mediator.Send(c))
             .ToResponseData(request);
+    }
+
+    [Function(nameof(DeleteFitnessPlan))]
+    public async Task<HttpResponseData> DeleteFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Delete, Route = "v1/api/plans/fitness/{id}")] HttpRequestData request, Guid id)
+    {
+        return await mediator
+            .Send(new DeleteFitnessPlanCommand(id))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 }
