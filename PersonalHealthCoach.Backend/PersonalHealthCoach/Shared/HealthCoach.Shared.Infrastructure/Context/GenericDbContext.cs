@@ -9,8 +9,6 @@ public sealed class GenericDbContext : DbContext
     public GenericDbContext(DbContextOptions<GenericDbContext> options) : base(options) 
     {
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-
-        InitializeDatabase();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -46,7 +44,7 @@ public sealed class GenericDbContext : DbContext
         return aggregateRootTypes;
     }
 
-    private void InitializeDatabase()
+    public void InitializeDatabase()
     {
         Database.EnsureDeleted();
         Database.EnsureCreated();
