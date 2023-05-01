@@ -92,4 +92,15 @@ public static class BusinessErrors
             public const string TipDoesNotExist = $"{Prefix}.{nameof(TipDoesNotExist)}";
         }
     }
+
+    public static class DietPlan
+    {
+        public static class Report
+        {
+            private const string Prefix = $"{nameof(DietPlan)}.{nameof(Report)}";
+
+            public const string ReportAlreadyExists = $"{Prefix}.{nameof(ReportAlreadyExists)}";
+            public const string DietPlanDoesNotExist = $"{Prefix}.{nameof(DietPlanDoesNotExist)}";
+        }
+    }
 }
