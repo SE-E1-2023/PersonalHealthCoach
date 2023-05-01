@@ -74,4 +74,14 @@ public static class BusinessErrors
             public const string PersonalTipDoesNotExist = $"{Prefix}.{nameof(PersonalTipDoesNotExist)}";
         }
     }
+
+    public static class WellnessTip
+    {
+        public static class GetRandomTip
+        {
+            private const string Prefix = $"{nameof(WellnessTip)}.{nameof(GetRandomTip)}";
+
+            public const string TipDoesNotExist = $"{Prefix}.{nameof(TipDoesNotExist)}";
+        }
+    }
 }
