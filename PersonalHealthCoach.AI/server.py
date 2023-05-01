@@ -1,11 +1,14 @@
 from flask import Flask, jsonify, request, abort
 #from collections import OrderedDict
 import json
+import traceback
 
 app = Flask(__name__)
 
 def functionWrapper(fn):
     def fun():
+        dictionary = None
+
         if not request.is_json:
             print("not JSON MIME type")
             abort(400)
@@ -14,7 +17,10 @@ def functionWrapper(fn):
         print("\n=====\nIncoming:\n" + incoming.__str__())
 
         try:
-            dictionary = json.loads(incoming)
+            if type(incoming) is not dict:
+                dictionary = json.loads(incoming)
+            else:
+                dictionary = incoming
         except json.decoder.JSONDecodeError as e:
             print(e.pos, e.msg)
             print("JSON decode error")
@@ -26,8 +32,9 @@ def functionWrapper(fn):
         
         try:
             response = fn(dictionary)
-        except:
-            print("Internal exception")
+        except Exception as e:
+            print("Internal exception: ", e )
+            #traceback.print_exc()
             abort(422)
         
         if response is None:

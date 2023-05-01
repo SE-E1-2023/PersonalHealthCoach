@@ -145,5 +145,5 @@ def testFunction():
     with open (f"{abspath}/RequestType/requestResponse.json","w") as file:
         json.dump(diet,file, indent=2)
 
-testFunction()
+#testFunction()
 
