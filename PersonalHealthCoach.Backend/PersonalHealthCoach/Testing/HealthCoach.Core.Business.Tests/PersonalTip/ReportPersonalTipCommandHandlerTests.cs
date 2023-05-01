@@ -35,11 +35,11 @@ public class ReportPersonalTipCommandHandlerTests
     {
         //Arrange
         var personalTip = PersonalTipFactory.Any();
-        var report = ReportFactory.Any();
+        var report = ReportFactory.WithTargetId(personalTip.Id);
         var command = Command() with { PersonalTipId = report.TargetId };
 
         repositoryMock.Setup(r => r.Load<PersonalTip>(command.PersonalTipId)).ReturnsAsync(personalTip);
-        queryProviderMock.Setup(q => q.Query<Report>()).Returns(new List<Report>() { report }.AsQueryable());
+        queryProviderMock.Setup(q => q.Query<Report>()).Returns(new List<Report> { report }.AsQueryable());
 
         //Act
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
@@ -56,7 +56,7 @@ public class ReportPersonalTipCommandHandlerTests
     {
         //Arrange
         var personalTip = PersonalTipFactory.Any();
-        var command = Command();
+        var command = Command() with { Reason = string.Empty };
 
         repositoryMock.Setup(r => r.Load<PersonalTip>(command.PersonalTipId)).ReturnsAsync(personalTip);
         queryProviderMock.Setup(q => q.Query<Report>()).Returns(new List<Report>().AsQueryable());
@@ -76,7 +76,7 @@ public class ReportPersonalTipCommandHandlerTests
     {
         //Arrange
         var personalTip = PersonalTipFactory.Any();
-        var command = Command() with { Reason="reason" };
+        var command = Command() with { Reason = "reason" };
 
         repositoryMock.Setup(r => r.Load<PersonalTip>(command.PersonalTipId)).ReturnsAsync(personalTip);
         queryProviderMock.Setup(q => q.Query<Report>()).Returns(new List<Report>().AsQueryable());
@@ -90,7 +90,7 @@ public class ReportPersonalTipCommandHandlerTests
         repositoryMock.Verify(r => r.Store(It.IsAny<Report>()), Times.Once);
     }
 
-    private static ReportPersonalTipCommand Command() => new(Guid.NewGuid(), "");
+    private static ReportPersonalTipCommand Command() => new(Guid.NewGuid(), "report reason");
 
     private ReportPersonalTipCommandHandler Sut() => new(repositoryMock.Object, queryProviderMock.Object);
 }

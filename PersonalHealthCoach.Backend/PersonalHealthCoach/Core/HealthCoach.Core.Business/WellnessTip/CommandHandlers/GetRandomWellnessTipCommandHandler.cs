@@ -1,17 +1,14 @@
-﻿using CSharpFunctionalExtensions;
+﻿using MediatR;
 using HealthCoach.Core.Domain;
 using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System;
-
 
 using Errors = HealthCoach.Core.Business.BusinessErrors.WellnessTip.GetRandomTip;
 
 namespace HealthCoach.Core.Business;
 
-public class GetRandomWellnessTipCommandHandler : IRequestHandler<GetRandomWellnessTipCommand, Result<WellnessTip>>
+internal sealed class GetRandomWellnessTipCommandHandler : IRequestHandler<GetRandomWellnessTipCommand, Result<WellnessTip>>
 {
     private readonly IEfQueryProvider queryProvider;
 
@@ -19,11 +16,12 @@ public class GetRandomWellnessTipCommandHandler : IRequestHandler<GetRandomWelln
     {
         this.queryProvider = queryProvider;
     }
+    
     public async Task<Result<WellnessTip>> Handle(GetRandomWellnessTipCommand request, CancellationToken cancellationToken)
     {
         var tips = queryProvider.Query<WellnessTip>();
-        int rowsNumber = tips.Count();
-        int randomNumber = new System.Random().Next(rowsNumber);
+        var rowsNumber = tips.Count();
+        var randomNumber = new Random().Next(rowsNumber);
 
         return tips
             .Skip(randomNumber)

@@ -1,16 +1,8 @@
-﻿using HealthCoach.Core.Business;
+﻿using MediatR;
 using HealthCoach.Shared.Web;
-using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.Azure.Functions.Worker;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CSharpFunctionalExtensions;
-using MediatR;
 using HealthCoach.Core.Domain;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
 
 namespace HealthCoach.Functions.Isolated;
 
@@ -26,7 +18,8 @@ public sealed class GeneralWellnessTipFunctions
     [Function(nameof(GetRandomGeneralWellnessTip))]
     public async Task<HttpResponseData> GetRandomGeneralWellnessTip([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/tips/general")] HttpRequestData request)
     {
-        return await mediator.Send(new GetRandomWellnessTipCommand())
+        return await mediator
+            .Send(new GetRandomWellnessTipCommand())
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 

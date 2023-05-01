@@ -1,15 +1,14 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Infrastructure;
-using HealthCoach.Shared.Web;
+﻿using MediatR;
+using HealthCoach.Shared.Core;
 using HealthCoach.Core.Domain;
-using MediatR;
+using CSharpFunctionalExtensions;
+using HealthCoach.Shared.Infrastructure;
 
 using Errors = HealthCoach.Core.Business.BusinessErrors.FitnessPlan.Get;
-using HealthCoach.Shared.Core;
 
 namespace HealthCoach.Core.Business;
 
-internal sealed class DeleteFitnessPlanCommandHandler : IRequestHandler<DeleteFitnessPlanCommand, Result<FitnessPlan>>
+internal sealed class DeleteFitnessPlanCommandHandler : IRequestHandler<DeleteFitnessPlanCommand, Result>
 {
     private readonly IRepository repository;
     private readonly IEfQueryProvider queryProvider;
@@ -20,9 +19,12 @@ internal sealed class DeleteFitnessPlanCommandHandler : IRequestHandler<DeleteFi
         this.queryProvider = queryProvider;
     }
 
-    public async Task<Result<FitnessPlan>> Handle(DeleteFitnessPlanCommand request, CancellationToken cancellationToken)
+    public async Task<Result> Handle(DeleteFitnessPlanCommand request, CancellationToken cancellationToken)
     {
-        var planResult = queryProvider.Query<FitnessPlan>().FirstOrDefault(p => p.Id == request.PlanId).EnsureNotNull(Errors.FitnessPlanNotFound);
+        var planResult = queryProvider
+            .Query<FitnessPlan>()
+            .FirstOrDefault(p => p.Id == request.FitnessPlanId)
+            .EnsureNotNull(Errors.FitnessPlanNotFound);
 
         await planResult.Tap(async f =>
         {
@@ -32,6 +34,7 @@ internal sealed class DeleteFitnessPlanCommandHandler : IRequestHandler<DeleteFi
             }
         });
 
-        return await planResult.Tap(p => repository.Delete(p!));
+        return await planResult
+            .Tap(p => repository.Delete(p!));
     }
 }

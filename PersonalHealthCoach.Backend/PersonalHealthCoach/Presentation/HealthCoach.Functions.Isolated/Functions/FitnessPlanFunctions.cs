@@ -33,7 +33,7 @@ public sealed class FitnessPlanFunctions
     }
 
     [Function(nameof(ReportFitnessPlan))]
-    public async Task<HttpResponseData> ReportFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/api/plans/fitness/{id}/report")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> ReportFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/plans/fitness/{id}/report")] HttpRequestData request, Guid id)
     {
         var command = await request
             .DeserializeBodyPayload<ReportFitnessPlanCommand>()
@@ -45,10 +45,10 @@ public sealed class FitnessPlanFunctions
     }
 
     [Function(nameof(DeleteFitnessPlan))]
-    public async Task<HttpResponseData> DeleteFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Delete, Route = "v1/api/plans/fitness/{id}")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> DeleteFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Delete, Route = "v1/plans/fitness/{id}")] HttpRequestData request, Guid id)
     {
         return await mediator
             .Send(new DeleteFitnessPlanCommand(id))
-            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+            .ToResponseData(request);
     }
 }
