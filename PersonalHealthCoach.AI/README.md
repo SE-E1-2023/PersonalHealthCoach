@@ -55,7 +55,7 @@ JSON Properties:
 
 Each workout has a fixed number of 8 exercises.
 
-The response is a json with an excercise list as follows:
+The response is a json with a workout plan as the following:
 ```
 {
   "workout1": [
