@@ -45,7 +45,7 @@ class TestStringMethods(unittest.TestCase):
         "dietType" : ["vegan"],
         "goal" : "weight loss"
         }
-        result = tu.get_response("DietPlanner",input)
+        result = tu.get_response("DietPlanner",input).json()
         
         self.assertEqual(result["NOP"], 10)
     def test_negative2(self):
@@ -55,7 +55,7 @@ class TestStringMethods(unittest.TestCase):
         "dietType" : ["vegan"],
         "goal" : "weight loss"
         }
-        result = tu.get_response("DietPlanner",input)
+        result = tu.get_response("DietPlanner",input).json()
         
         self.assertEqual(result["NOP"], 11)
     def test_negative3(self):
@@ -65,7 +65,7 @@ class TestStringMethods(unittest.TestCase):
         "dietType" : ["vegan"],
         "goal" : "weight loss"
         }
-        result = tu.get_response("DietPlanner",input)
+        result = tu.get_response("DietPlanner",input).json()
         
         self.assertEqual(result["NOP"], 12)
     def test_negative4(self):
@@ -75,7 +75,7 @@ class TestStringMethods(unittest.TestCase):
         "alergies" : ["nut","milk"],
         "goal" : "weight loss"
         }
-        result = tu.get_response("DietPlanner",input)
+        result = tu.get_response("DietPlanner",input).json()
         
         self.assertEqual(result["NOP"], 13)
     def test_negative5(self):
@@ -85,7 +85,7 @@ class TestStringMethods(unittest.TestCase):
         "alergies" : ["nut","milk"],
         "dietType" : ["vegan"],
         }
-        result = tu.get_response("DietPlanner",input)
+        result = tu.get_response("DietPlanner",input).json()
         
         self.assertEqual(result["NOP"], 14)
     def test_pozitive(self):
@@ -96,7 +96,7 @@ class TestStringMethods(unittest.TestCase):
         "dietType" : ["vegan"],
         "goal" : "weight loss"
         }
-        result = tu.get_response("DietPlanner",input)
+        result = tu.get_response("DietPlanner",input).json()
         self.assertEqual(result["NOP"], 0)
     def test_negative6(self):
         input = {
@@ -106,7 +106,7 @@ class TestStringMethods(unittest.TestCase):
         "dietType" : ["vegan","vegetarian","diaryFree"],
         "goal" : "weight loss"
         }
-        result = tu.get_response("DietPlanner",input)
+        result = tu.get_response("DietPlanner",input).json()
         self.assertEqual(result["NOP"], 1)
     def test_pozitive2(self):
         input = {
@@ -116,7 +116,7 @@ class TestStringMethods(unittest.TestCase):
         "dietType" : ["vegan"],
         "goal" : "weight loss"
         }
-        result = tu.get_response("DietPlanner",input)
+        result = tu.get_response("DietPlanner",input).json()
         self.assertEqual(result["NOP"],0)
     def test_negative7(self):
         input = {
@@ -126,7 +126,7 @@ class TestStringMethods(unittest.TestCase):
         "dietType" : ["vegan","vegetarian","dieryFree","glutenFree"],
         "goal" : "weight loss"
         }       
-        result = tu.get_response("DietPlanner",input)
+        result = tu.get_response("DietPlanner",input).json()
         self.assertEqual(result["NOP"],1)
 
 def autoTest(): 
@@ -138,7 +138,7 @@ def testFunction():
     with open (f"{abspath}/RequestType/request.json","r") as file:
         inp = json.load(file)
 
-    diet = tu.get_response("DietPlanner",input)
+    diet = tu.get_response("DietPlanner",inp).json()
 
     with open (f"{abspath}/RequestType/requestResponse.json","w") as file:
         json.dump(diet,file, indent=2)
