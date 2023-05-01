@@ -180,6 +180,68 @@
       "tomatoes"
     ],
     "kcal": 716.7
+<<<<<<< HEAD
+=======
+  },
+  "sideDish": {
+    "id": 639807,
+    "title": "Coconut Rice and Carrot Sambal",
+    "image": "https://spoonacular.com/recipeImages/639807-312x231.jpg",
+    "ingredients": [
+      "carrot",
+      "coconut chutney",
+      "coconut oil",
+      "curry leaves",
+      "chilli",
+      "mustard seeds",
+      "oil",
+      "rice",
+      "water"
+    ],
+    "kcal": 759.81
+  },
+  "soup": {
+    "id": 652417,
+    "title": "Moroccan chickpea and lentil stew",
+    "image": "https://spoonacular.com/recipeImages/652417-312x231.jpg",
+    "ingredients": [
+      "broccoli",
+      "chickpeas",
+      "carrots",
+      "celery stalks",
+      "lentils",
+      "couscous",
+      "cilantro",
+      "ground cinnamon",
+      "ground cumin",
+      "ground turmeric",
+      "lemon juice",
+      "olive oil",
+      "paprika",
+      "salt and pepper",
+      "tomato paste",
+      "water"
+    ],
+    "kcal": 465.63
+  },
+  "snack": {
+    "id": 639910,
+    "title": "Cold Fennel and Zucchini Noodle Side Salad",
+    "image": "https://spoonacular.com/recipeImages/639910-312x231.jpg",
+    "ingredients": [
+      "cilantro",
+      "extra virgin olive oil",
+      "bulb fennel",
+      "green onion",
+      "jalapeno pepper",
+      "kosher salt and ground pepper",
+      "limes",
+      "bell pepper",
+      "rice vinegar",
+      "zucchini"
+    ],
+    "kcal": 103.07
+>>>>>>> dc1dbc7692406f9f67b7d2e1a6278ebc9ab7bb43
   },
   "sideDish": {
     "id": 639807,

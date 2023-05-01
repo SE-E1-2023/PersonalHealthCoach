@@ -193,6 +193,7 @@ def getMultipleMeals(info):
     toReturn = []
     n= min(len(goodData),5)
 
+<<<<<<< HEAD
     for i in range(n):
         toReturn.append(goodData[i])
 
@@ -204,4 +205,7 @@ def getMultipleMeals(info):
         di["NOP"] = 1 
     return di
     
+=======
+#testFunction()
+>>>>>>> dc1dbc7692406f9f67b7d2e1a6278ebc9ab7bb43
 
