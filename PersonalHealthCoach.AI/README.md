@@ -45,7 +45,11 @@ goal: ["Lose fat", "Increase muscle mass", "Body recomposition", "Improve cardio
 
 workouts_per_week: [1,7]
 
-pro_user:True|False
+pro_user: True|False
+
+Other|Machine|...: True|False
+
+Each workout has a fixed number of 8 exercises.
 
 The response is a json with an excercise list as follows:
 ```
