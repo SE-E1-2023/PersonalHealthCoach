@@ -21,12 +21,12 @@ public class GetRandomWellnessTipCommandHandler : IRequestHandler<GetRandomWelln
     }
     public async Task<Result<WellnessTip>> Handle(GetRandomWellnessTipCommand request, CancellationToken cancellationToken)
     {
-        int rows_number = queryProvider.Query<WellnessTip>().Count();
-        int random_numb = new System.Random().Next(rows_number);
+        var tips = queryProvider.Query<WellnessTip>();
+        int rowsNumber = tips.Count();
+        int randomNumber = new System.Random().Next(rowsNumber);
 
-        return queryProvider
-        .Query<WellnessTip>()
-            .Skip(random_numb)
+        return tips
+            .Skip(randomNumber)
             .Take(1)
             .First()
             .EnsureNotNull(Errors.TipDoesNotExist)!;
