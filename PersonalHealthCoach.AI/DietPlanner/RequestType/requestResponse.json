@@ -1,126 +1,119 @@
 {
-  "diet": {
-    "id": 16,
-    "name": "Intermittent fasting",
-    "use": "weight loss",
-    "tag": [
-      "vegan",
-      "vegetarian",
-      "glutenFree",
-      "dairyFree"
-    ],
-    "do": [
-      "The rules for this diet are simple. A person needs to decide on and adhere to a 12-hour fasting window every day.",
-      "Fasting for 16 hours a day, leaving an eating window of 8 hours, is called the 16:8 method or the Leangains diet.",
-      "People following the 5:2 diet eat standard amounts of healthful food for 5 days and reduce calorie intake on the other 2 days.",
-      "For some people, alternate day fasting means a complete avoidance of solid foods on fasting days, while other people allow up to 500 calories. On feeding days, people often choose to eat as much as they want.",
-      "The Warrior Diet involves eating very little, usually just a few servings of raw fruit and vegetables, during a 20-hourTrusted Source fasting window, then eating one large meal at night. The eating window is usually only around 4 hours."
-    ],
-    "donot": [
-      "eat"
-    ]
-  },
-  "breakfast": {
-    "id": 1096176,
-    "title": "Mango, Persimmon Smoothie with Cranberries",
-    "image": "https://spoonacular.com/recipeImages/1096176-312x231.jpg",
-    "ingredients": [
-      "cranberries",
-      "mango",
-      "persimmon"
-    ],
-    "kcal": 298.46
-  },
-  "drink": {
-    "id": 1095729,
-    "title": "Immunity Booster Beet, Carrot & Orange Juice",
-    "image": "https://spoonacular.com/recipeImages/1095729-312x231.jpg",
-    "ingredients": [
-      "beet",
-      "carrots",
-      "oranges"
-    ],
-    "kcal": 161.9
-  },
-  "mainCourse": {
-    "id": 642610,
-    "title": "Farm Fresh Vegetable Stew",
-    "image": "https://spoonacular.com/recipeImages/642610-312x231.jpg",
-    "ingredients": [
-      "extra virgin olive oil",
-      "garlic",
-      "onions",
-      "peppers",
-      "carrots",
-      "celery",
-      "eggplant",
-      "green beans",
-      "squash",
-      "zucchini",
-      "tomatoes",
-      "thyme leaves",
-      "cumin",
-      "kosher salt",
-      "oregano",
-      "kidney beans",
-      "brown lentils"
-    ],
-    "kcal": 263.57
-  },
-  "sideDish": {
-    "id": 664472,
-    "title": "Vegan Potato Salad",
-    "image": "https://spoonacular.com/recipeImages/664472-312x231.jpg",
-    "ingredients": [
-      "basil",
-      "bok choy",
-      "bragg's liquid aminos",
-      "carrots",
-      "dijon mustard",
-      "garlic powder",
-      "green onions",
-      "oregano",
-      "paprika",
-      "russet potatoes",
-      "sea salt and pepper",
-      "vegenaise"
-    ],
-    "kcal": 398.01
-  },
-  "soup": {
-    "id": 631834,
-    "title": "10-Minute Bean Stew",
-    "image": "https://spoonacular.com/recipeImages/631834-312x231.jpg",
-    "ingredients": [
-      "cherry tomatoes",
-      "juice of lemon",
-      "thyme",
-      "tomato puree",
-      "canned tomatoes",
-      "kidney beans",
-      "garlic gloves",
-      "salt & pepper",
-      "optional: spinach"
-    ],
-    "kcal": 356.73
-  },
-  "snack": {
-    "id": 664526,
-    "title": "Vegetable Bulgur Pilaf",
-    "image": "https://spoonacular.com/recipeImages/664526-312x231.jpg",
-    "ingredients": [
-      "bulgur",
-      "onions",
-      "tomatoes",
-      "potato",
-      "zucchini",
-      "chili pepper",
-      "stock",
-      "olive oil",
-      "dill",
-      "salt"
-    ],
-    "kcal": 317.81
-  },
+  "recipies": [
+    {
+      "id": 663846,
+      "title": "Tropical Butternut Squash Soup",
+      "vegetarian": true,
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "healthScore": 21,
+      "image": "https://spoonacular.com/recipeImages/663846-312x231.jpg",
+      "ingredients": [
+        "butternut squash",
+        "coconut milk",
+        "cayenne pepper",
+        "lime",
+        "lime zest",
+        "salt",
+        "vegetable broth"
+      ],
+      "kcal": 109.8
+    },
+    {
+      "id": 641387,
+      "title": "Delicious Creamy Lentils and Chestnuts Soup",
+      "vegetarian": true,
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "healthScore": 100,
+      "image": "https://spoonacular.com/recipeImages/641387-312x231.jpg",
+      "ingredients": [
+        "bay leaf",
+        "roasted chestnuts",
+        "garlic",
+        "lentils",
+        "olive oil",
+        "onion",
+        "potato",
+        "roma tomatoes",
+        "salt and pepper"
+      ],
+      "kcal": 451.99
+    },
+    {
+      "id": 716406,
+      "title": "Asparagus and Pea Soup: Real Convenience Food",
+      "vegetarian": true,
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "healthScore": 100,
+      "image": "https://spoonacular.com/recipeImages/716406-312x231.jpg",
+      "ingredients": [
+        "asparagus",
+        "evoo",
+        "garlic",
+        "onion",
+        "peas",
+        "vegetable broth"
+      ],
+      "kcal": 217.43
+    },
+    {
+      "id": 1424143,
+      "title": "Lemon Rosemary Chickpea Soup",
+      "vegetarian": true,
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "healthScore": 32,
+      "image": "https://spoonacular.com/recipeImages/1424143-312x231.jpg",
+      "ingredients": [
+        "olive oil",
+        "rosemary",
+        "garlic",
+        "pepper flakes",
+        "chickpeas",
+        "vegetable broth",
+        "lemon"
+      ],
+      "kcal": 362.61
+    },
+    {
+      "id": 637297,
+      "title": "Cauliflower Chickpea Stew",
+      "vegetarian": true,
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "healthScore": 90,
+      "image": "https://spoonacular.com/recipeImages/637297-312x231.jpg",
+      "ingredients": [
+        "olive oil",
+        "brown rice",
+        "twice amount of water",
+        "garlic gloves",
+        "tumeric",
+        "salt & pepper",
+        "onion",
+        "canned tomatoes",
+        "tomato puree",
+        "garlic gloves",
+        "cm ginger",
+        "chili",
+        "cinnamon",
+        "garam masala",
+        "paprika",
+        "sweet potatoes",
+        "juice of lemon",
+        "water",
+        "cauliflower",
+        "chickpeas"
+      ],
+      "kcal": 455.29
+    }
+  ],
   "NOP": 0
 }

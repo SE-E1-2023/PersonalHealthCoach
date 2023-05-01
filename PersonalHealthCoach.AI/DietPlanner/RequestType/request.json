@@ -1,12 +1,7 @@
 {
     "idClient" : "4",
-    "birthDate":"30121997",
-    "weight":"69.42",
-    "height" : "1.9",
-    "lifestyle": "7",
-    "muscleMass": "5",
-    "sex":"M",
+    "requestType" : "soup",
     "alergies" : ["nut","milk"],
-    "dietType" : ["vegan"],
+    "dietType" : ["vegan","vegetarian","diaryFree"],
     "goal" : "weight loss"
 }

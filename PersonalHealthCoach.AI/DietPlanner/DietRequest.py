@@ -3,6 +3,7 @@ import json
 
 import os
 import random
+
 abspath = os.path.dirname(__file__)
 
 def matchingDiet(diet):
@@ -10,7 +11,6 @@ def matchingDiet(diet):
         data = json.load(file)
     usefulData = []
     for d in data["diets"]:
-       
         check = True
         for element in diet:
             if element not in d["tag"]:
@@ -41,6 +41,7 @@ def knownUser(input):
         r={}
         r["NOP"] = 1   
         return r
+    
     users["users"][userIndex]["idDiet"] = response["diet"]["id"]
     response["breakfast"] = getMeal(input,users["users"][userIndex]["idBreakfast"],"Breakfast.json")
     response["drink"] = getMeal(input,users["users"][userIndex]["idDrink"],"Drink.json")
@@ -81,6 +82,14 @@ def getDiet(input):
     with open (f"{abspath}/Databases/Users.json","r") as file:
         users = json.load(file)
     good = 0
+    fields = ["idClient","requestType","alergies","dietType","goal"]
+    for element in fields:
+        if element not in input.keys():
+            toReturn={}
+            toReturn["NOP"] = 10 + fields.index(element)
+            return toReturn
+    if input["requestType"] != "diet":
+        return getMultipleMeals(input)
     returnedRequest={}
     for user in users["users"]:
         if input["idClient"] == user["idUser"]:
@@ -100,6 +109,8 @@ def getMeal(info,idMeal,path):
         minHealthiness = 20
     if (info["goal"] == "weight gain"):
         maxHealthiness = 20
+    if (info["goal"] == "weight mentain"):
+        minHealthiness == 10  
     data = d["meals"]
     goodData = []
     good = True
@@ -135,15 +146,63 @@ def getMeal(info,idMeal,path):
         
         
 
-def testFunction():
-    # astea is pentru debughing, nu au traba cu programul mare
-    with open (f"{abspath}/RequestType/request.json","r") as file:
-        inp = json.load(file)
 
-    diet = getDiet(inp)
 
-    with open (f"{abspath}/RequestType/requestResponse.json","w") as file:
-        json.dump(diet,file, indent=2)
+def getMultipleMeals(info):
 
-testFunction()
+    match info["requestType"]:
+        case "soup":
+            path = "Soup.json"
+        case "breakfast":
+            path = "Breakfast.json"
+        case "drink":
+            path = "Drink.json"
+        case "mainCouse":
+            path = "MainCourse.json"
+        case "sideDish":
+            path = "SideDish.json"
+        case "snack":
+            path = "Snack.json"
+        case _:
+            return
+    with open (f"{abspath}/Databases/{path}","r") as file:
+        d = json.load(file)
+    minHealthiness = 0
+    maxHealthiness = 100
+    if (info["goal"] == "weight loss"):
+        minHealthiness = 20
+    if (info["goal"] == "weight gain"):
+        maxHealthiness = 20
+    data = d["meals"]
+    goodData = []
+    good = True
+    for meal in data:
+        good = True
+        for problem in info["dietType"]:
+            if meal[problem] == False:
+                good = False
+        for alergi in info["alergies"]:
+            if alergi in meal["ingredients"] : 
+                good = False
+        if meal["healthScore"] < minHealthiness or meal["healthScore"] > maxHealthiness :
+            good = False
+        if good:
+            meal["kcal"] = meal["nutrition"][0]["amount"]
+            del meal["nutrition"]
+            goodData.append(meal)
+    random.shuffle(goodData)
+    toReturn = []
+    n= min(len(goodData),5)
+
+    for i in range(n):
+        toReturn.append(goodData[i])
+
+    di = {}
+    di["recipies"] = toReturn
+    if n != 0:
+        di["NOP"] = 0
+    else :
+        di["NOP"] = 1 
+    return di
+    
 

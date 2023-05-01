@@ -10,9 +10,18 @@
 "goal" : "weight loss"      -- tre sa stabilim exact toate goalurile clientilor 
 
 
-
 Response:
     diet - nume,la ce e folositoare , ce trebuie sa faci si ce nu
     6 felori de mancare
     "NOP" -- int in caz de NO OUTPUT, trebuie ignorat ce e in fisier , poate o sa fie folosit ca un cod de erroare
              0- totul ok :: nu 0 = nu bun
+
+
+!!!IMP!!!
+am adaugat un nou field "RequestType"
+
+valori posibile:
+    diet : primiti raspunsul ca mai sus
+    soup/breakfast/drink/mainCourse/sideDish/snack/soup : primiti 5 sau mai putine de acel tip de
+                                                         mancare.
+
