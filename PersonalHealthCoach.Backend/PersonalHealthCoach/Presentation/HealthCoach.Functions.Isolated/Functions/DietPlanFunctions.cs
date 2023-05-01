@@ -30,4 +30,12 @@ public class DietPlanFunctions
             .ToResponseData(request);
     }
 
+    [Function(nameof(DeleteDietPlan))]
+    public async Task<HttpResponseData> DeleteDietPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Delete, Route = "v1/plans/diet/{id}")] HttpRequestData request, Guid id)
+    {
+        return await mediator
+            .Send(new DeleteDietPlanCommand(id))
+            .ToResponseData(request);
+    }
 }
+
