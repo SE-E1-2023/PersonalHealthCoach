@@ -49,6 +49,6 @@ public sealed class FitnessPlanFunctions
     {
         return await mediator
             .Send(new DeleteFitnessPlanCommand(id))
-            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+            .ToResponseData(request);
     }
 }
