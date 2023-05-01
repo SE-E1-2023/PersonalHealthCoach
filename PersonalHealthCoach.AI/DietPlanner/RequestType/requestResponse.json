@@ -1,307 +1,122 @@
 {
-<<<<<<< HEAD
   "recipies": [
     {
-      "id": 663846,
-      "title": "Tropical Butternut Squash Soup",
-      "vegetarian": true,
-      "dairyFree": true,
-      "glutenFree": true,
-      "vegan": true,
-      "healthScore": 21,
-      "image": "https://spoonacular.com/recipeImages/663846-312x231.jpg",
-      "ingredients": [
-        "butternut squash",
-        "coconut milk",
-        "cayenne pepper",
-        "lime",
-        "lime zest",
-        "salt",
-        "vegetable broth"
-      ],
-      "kcal": 109.8
-    },
-    {
-      "id": 641387,
-      "title": "Delicious Creamy Lentils and Chestnuts Soup",
+      "id": 649886,
+      "title": "Lemony Greek Lentil Soup",
       "vegetarian": true,
       "dairyFree": true,
       "glutenFree": true,
       "vegan": true,
       "healthScore": 100,
-      "image": "https://spoonacular.com/recipeImages/641387-312x231.jpg",
+      "image": "https://spoonacular.com/recipeImages/649886-312x231.jpg",
+      "ingredients": [
+        "brown lentils",
+        "carrot",
+        "water",
+        "thyme",
+        "lemon juice",
+        "basil",
+        "thyme",
+        "oregano",
+        "pepper",
+        "salt",
+        "onion",
+        "garlic",
+        "olive oil",
+        "canned tomatoes"
+      ],
+      "kcal": 368.09
+    },
+    {
+      "id": 660109,
+      "title": "Simple lentil soup",
+      "vegetarian": true,
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "healthScore": 39,
+      "image": "https://spoonacular.com/recipeImages/660109-312x231.jpg",
       "ingredients": [
         "bay leaf",
-        "roasted chestnuts",
         "garlic",
         "lentils",
         "olive oil",
         "onion",
-        "potato",
-        "roma tomatoes",
-        "salt and pepper"
-      ],
-      "kcal": 451.99
-    },
-    {
-      "id": 716406,
-      "title": "Asparagus and Pea Soup: Real Convenience Food",
-      "vegetarian": true,
-      "dairyFree": true,
-      "glutenFree": true,
-      "vegan": true,
-      "healthScore": 100,
-      "image": "https://spoonacular.com/recipeImages/716406-312x231.jpg",
-      "ingredients": [
-        "asparagus",
-        "evoo",
-        "garlic",
-        "onion",
-        "peas",
-        "vegetable broth"
-      ],
-      "kcal": 217.43
-    },
-    {
-      "id": 1424143,
-      "title": "Lemon Rosemary Chickpea Soup",
-      "vegetarian": true,
-      "dairyFree": true,
-      "glutenFree": true,
-      "vegan": true,
-      "healthScore": 32,
-      "image": "https://spoonacular.com/recipeImages/1424143-312x231.jpg",
-      "ingredients": [
-        "olive oil",
-        "rosemary",
-        "garlic",
-        "pepper flakes",
-        "chickpeas",
-        "vegetable broth",
-        "lemon"
-      ],
-      "kcal": 362.61
-    },
-    {
-      "id": 637297,
-      "title": "Cauliflower Chickpea Stew",
-      "vegetarian": true,
-      "dairyFree": true,
-      "glutenFree": true,
-      "vegan": true,
-      "healthScore": 90,
-      "image": "https://spoonacular.com/recipeImages/637297-312x231.jpg",
-      "ingredients": [
-        "olive oil",
-        "brown rice",
-        "twice amount of water",
-        "garlic gloves",
-        "tumeric",
         "salt & pepper",
-        "onion",
-        "canned tomatoes",
-        "tomato puree",
-        "garlic gloves",
-        "cm ginger",
-        "chili",
-        "cinnamon",
-        "garam masala",
-        "paprika",
-        "sweet potatoes",
-        "juice of lemon",
-        "water",
-        "cauliflower",
-        "chickpeas"
+        "tomato",
+        "vinegar",
+        "water"
       ],
-      "kcal": 455.29
+      "kcal": 261.7
+    },
+    {
+      "id": 631834,
+      "title": "10-Minute Bean Stew",
+      "vegetarian": true,
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "healthScore": 75,
+      "image": "https://spoonacular.com/recipeImages/631834-312x231.jpg",
+      "ingredients": [
+        "cherry tomatoes",
+        "juice of lemon",
+        "thyme",
+        "tomato puree",
+        "canned tomatoes",
+        "kidney beans",
+        "garlic gloves",
+        "salt & pepper",
+        "optional: spinach"
+      ],
+      "kcal": 356.73
+    },
+    {
+      "id": 1096231,
+      "title": "Slow Cooker Healthy Sweet Potato Soup with Coconut and Pistachios",
+      "vegetarian": true,
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "healthScore": 20,
+      "image": "https://spoonacular.com/recipeImages/1096231-312x231.jpg",
+      "ingredients": [
+        "sweet potatoes",
+        "onion",
+        "celery",
+        "carrot sticks",
+        "garlic cloves",
+        "kettle & fire chicken bone broth",
+        "salt",
+        "ground pepper",
+        "coconut milk",
+        "pistachio nuts"
+      ],
+      "kcal": 427.28
+    },
+    {
+      "id": 636602,
+      "title": "Butternut Squash Soup (In Half An Hour!)",
+      "vegetarian": true,
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "healthScore": 86,
+      "image": "https://spoonacular.com/recipeImages/636602-312x231.jpg",
+      "ingredients": [
+        "butternut squash",
+        "black-eyed peas",
+        "collard greens",
+        "quinoa",
+        "kombu",
+        "nutmeg",
+        "olive oil",
+        "salt and pepper",
+        "vegetable broth",
+        "onions"
+      ],
+      "kcal": 251.7
     }
   ],
-=======
-  "diet": {
-    "id": 16,
-    "name": "Intermittent fasting",
-    "use": "weight loss",
-    "tag": [
-      "vegan",
-      "vegetarian",
-      "glutenFree",
-      "dairyFree"
-    ],
-    "do": [
-      "The rules for this diet are simple. A person needs to decide on and adhere to a 12-hour fasting window every day.",
-      "Fasting for 16 hours a day, leaving an eating window of 8 hours, is called the 16:8 method or the Leangains diet.",
-      "People following the 5:2 diet eat standard amounts of healthful food for 5 days and reduce calorie intake on the other 2 days.",
-      "For some people, alternate day fasting means a complete avoidance of solid foods on fasting days, while other people allow up to 500 calories. On feeding days, people often choose to eat as much as they want.",
-      "The Warrior Diet involves eating very little, usually just a few servings of raw fruit and vegetables, during a 20-hourTrusted Source fasting window, then eating one large meal at night. The eating window is usually only around 4 hours."
-    ],
-    "donot": [
-      "eat"
-    ]
-  },
-  "breakfast": {
-    "id": 659604,
-    "title": "Scrambled tofu with rocket",
-    "image": "https://spoonacular.com/recipeImages/659604-312x231.jpg",
-    "ingredients": [
-      "tofu",
-      "coconut oil",
-      "cumin seeds",
-      "onion",
-      "tomato",
-      "turmeric",
-      "chilli",
-      "rocket leaves",
-      "salt and pepper"
-    ],
-    "kcal": 236.51
-  },
-  "drink": {
-    "id": 1096176,
-    "title": "Mango, Persimmon Smoothie with Cranberries",
-    "image": "https://spoonacular.com/recipeImages/1096176-312x231.jpg",
-    "ingredients": [
-      "cranberries",
-      "mango",
-      "persimmon"
-    ],
-    "kcal": 298.46
-  },
-  "mainCourse": {
-    "id": 642121,
-    "title": "Easy Tabouleh",
-    "image": "https://spoonacular.com/recipeImages/642121-312x231.jpg",
-    "ingredients": [
-      "bulgur",
-      "cucumbers",
-      "flat leaf parsley",
-      "lemon juice from a lemon",
-      "olive oil",
-      "salt",
-      "tomatoes"
-    ],
-    "kcal": 716.7
-<<<<<<< HEAD
-=======
-  },
-  "sideDish": {
-    "id": 639807,
-    "title": "Coconut Rice and Carrot Sambal",
-    "image": "https://spoonacular.com/recipeImages/639807-312x231.jpg",
-    "ingredients": [
-      "carrot",
-      "coconut chutney",
-      "coconut oil",
-      "curry leaves",
-      "chilli",
-      "mustard seeds",
-      "oil",
-      "rice",
-      "water"
-    ],
-    "kcal": 759.81
-  },
-  "soup": {
-    "id": 652417,
-    "title": "Moroccan chickpea and lentil stew",
-    "image": "https://spoonacular.com/recipeImages/652417-312x231.jpg",
-    "ingredients": [
-      "broccoli",
-      "chickpeas",
-      "carrots",
-      "celery stalks",
-      "lentils",
-      "couscous",
-      "cilantro",
-      "ground cinnamon",
-      "ground cumin",
-      "ground turmeric",
-      "lemon juice",
-      "olive oil",
-      "paprika",
-      "salt and pepper",
-      "tomato paste",
-      "water"
-    ],
-    "kcal": 465.63
-  },
-  "snack": {
-    "id": 639910,
-    "title": "Cold Fennel and Zucchini Noodle Side Salad",
-    "image": "https://spoonacular.com/recipeImages/639910-312x231.jpg",
-    "ingredients": [
-      "cilantro",
-      "extra virgin olive oil",
-      "bulb fennel",
-      "green onion",
-      "jalapeno pepper",
-      "kosher salt and ground pepper",
-      "limes",
-      "bell pepper",
-      "rice vinegar",
-      "zucchini"
-    ],
-    "kcal": 103.07
->>>>>>> dc1dbc7692406f9f67b7d2e1a6278ebc9ab7bb43
-  },
-  "sideDish": {
-    "id": 639807,
-    "title": "Coconut Rice and Carrot Sambal",
-    "image": "https://spoonacular.com/recipeImages/639807-312x231.jpg",
-    "ingredients": [
-      "carrot",
-      "coconut chutney",
-      "coconut oil",
-      "curry leaves",
-      "chilli",
-      "mustard seeds",
-      "oil",
-      "rice",
-      "water"
-    ],
-    "kcal": 759.81
-  },
-  "soup": {
-    "id": 652417,
-    "title": "Moroccan chickpea and lentil stew",
-    "image": "https://spoonacular.com/recipeImages/652417-312x231.jpg",
-    "ingredients": [
-      "broccoli",
-      "chickpeas",
-      "carrots",
-      "celery stalks",
-      "lentils",
-      "couscous",
-      "cilantro",
-      "ground cinnamon",
-      "ground cumin",
-      "ground turmeric",
-      "lemon juice",
-      "olive oil",
-      "paprika",
-      "salt and pepper",
-      "tomato paste",
-      "water"
-    ],
-    "kcal": 465.63
-  },
-  "snack": {
-    "id": 639910,
-    "title": "Cold Fennel and Zucchini Noodle Side Salad",
-    "image": "https://spoonacular.com/recipeImages/639910-312x231.jpg",
-    "ingredients": [
-      "cilantro",
-      "extra virgin olive oil",
-      "bulb fennel",
-      "green onion",
-      "jalapeno pepper",
-      "kosher salt and ground pepper",
-      "limes",
-      "bell pepper",
-      "rice vinegar",
-      "zucchini"
-    ],
-    "kcal": 103.07
-  },
->>>>>>> dc1dbc7692406f9f67b7d2e1a6278ebc9ab7bb43
   "NOP": 0
 }

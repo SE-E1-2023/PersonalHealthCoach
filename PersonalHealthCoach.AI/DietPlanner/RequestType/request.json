@@ -2,6 +2,6 @@
     "idClient" : "4",
     "requestType" : "soup",
     "alergies" : ["nut","milk"],
-    "dietType" : ["vegan","vegetarian","diaryFree"],
+    "dietType" : ["vegan"],
     "goal" : "weight loss"
 }
