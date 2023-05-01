@@ -103,16 +103,18 @@ level_stats = calculate_statistics(level_dict, other_dicts_level)
 for level, exercises in level_dict.items():
     level_stats[level]['score_distribution']['average_score'] = sum(exercise['score'] for exercise in exercises) / len(exercises)
 
-with open(r'.\\Data\\Statistics\\type_statistics.json', 'w') as f:
+import os
+
+with open(os.path.join(os.path.join(os.path.join('.',"Data"), "Statistics"), 'type_statistics.json'), 'w') as f:
     json.dump(type_stats, f, indent=2)
 
-with open(r'.\\Data\\Statistics\\main_muscle_statistics.json', 'w') as f:
+with open(os.path.join(os.path.join(os.path.join('.',"Data"), "Statistics"), 'main_muscle_statistics.json'), 'w') as f:
     json.dump(main_muscle_stats, f, indent=2)
 
-with open(r'.\\Data\\Statistics\\level_statistics.json', 'w') as f:
+with open(os.path.join(os.path.join(os.path.join('.',"Data"), "Statistics"), 'level_statistics.json'), 'w') as f:
     json.dump(level_stats, f, indent=2)
 
-with open(r'.\\Data\\Statistics\\equipment_statistics.json', 'w') as f:
+with open(os.path.join(os.path.join(os.path.join('.',"Data"), "Statistics"), 'equipment_statistics.json'), 'w') as f:
     json.dump(equipment_stats, f, indent=2)
 
 

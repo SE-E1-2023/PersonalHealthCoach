@@ -9,13 +9,13 @@ gk = importlib.import_module("generate_workout")
 
 from generate_workout import generate_workouts
 
-with open(f'{abspath}\\data\\main_muscle_groups.json', 'r') as f:
+with open(os.path.join(os.path.join(abspath,"data"), "main_muscle_groups.json"), 'r') as f:
         main_muscle_groups = json.load(f)
 
-with open(f'{abspath}\\data\\types_of_exercises_for_goals.json', 'r') as f:
+with open(os.path.join(os.path.join(abspath,"data"), "types_of_exercises_for_goals.json"), 'r') as f:
         exercise_types = json.load(f)
 
-with open(f'{abspath}\\data\\exercise_database.json', 'r') as f:
+with open(os.path.join(os.path.join(abspath,"data"), "exercise_database.json"), 'r') as f:
         exercise_database = json.load(f)
 
 

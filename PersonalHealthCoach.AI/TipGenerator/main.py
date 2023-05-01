@@ -261,8 +261,8 @@ def test_generate_amr_tip():
 
     print('All test passed.')
 
-tips_file = f'{abspath}\\tips.json'
-profile_file = f'{abspath}\\profile.json'
+tips_file = os.path.join(abspath, 'tips.json')
+profile_file =  os.path.join(abspath, 'profile.json')
 generator = TipGenerator(tips_file, profile_file)
 
 """    

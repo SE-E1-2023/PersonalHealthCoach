@@ -15,7 +15,7 @@ def test_no_params():
     assert response.status_code != 500
 
 def test_example():
-    with open (f"{abspath}/../DietPlanner/RequestType/request.json","r") as file:
+    with open (os.path.join(os.path.join(os.path.join(os.path.join(abspath,".."),"DietPlanner"), "RequestType"), "request.json"),"r") as file:
         inp = json.load(file)
 
     print(tu.get_response("DietPlanner",inp).content)
@@ -29,7 +29,7 @@ def test_example():
     diet = json.loads(response.content)
     
 
-    with open (f"{abspath}/../DietPlanner/RequestType/requestResponse.json","w") as file:
+    with open (os.path.join(os.path.join(os.path.join(os.path.join(abspath,".."),"DietPlanner"), "RequestType"), "requestResponse.json"),"w") as file:
         json.dump(diet,file, indent=2)
 
 #test_example()
@@ -135,13 +135,14 @@ def autoTest():
 
 def testFunction():
     # astea is pentru debughing, nu au traba cu programul mare
-    with open (f"{abspath}/RequestType/request.json","r") as file:
+    with open (os.path.join(os.path.join(os.path.join(os.path.join(abspath, ".."), "DietPlanner") ,"RequestType"),"request.json"),"r") as file:
         inp = json.load(file)
 
     diet = tu.get_response("DietPlanner",inp).json()
 
-    with open (f"{abspath}/RequestType/requestResponse.json","w") as file:
+    with open (os.path.join(os.path.join(os.path.join(os.path.join(abspath, ".."), "DietPlanner"), "RequestType"),"requestResponse.json"),"w") as file:
         json.dump(diet,file, indent=2)
+
 
 
 #testFunction()

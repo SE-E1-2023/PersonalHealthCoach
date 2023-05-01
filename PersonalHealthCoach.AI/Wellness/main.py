@@ -7,7 +7,7 @@ ABSPATH = os.path.dirname(__file__)
 import logging
 wellness_logger = logging.getLogger(__name__)
 wellness_logger.setLevel(logging.DEBUG)
-wellness_logger.addHandler(logging.FileHandler(ABSPATH + '/wellness.log'))
+wellness_logger.addHandler(logging.FileHandler(os.path.join(ABSPATH, 'wellness.log')))
 """
 Source: https://globalwellnessinstitute.org/what-is-wellness/
 
@@ -21,7 +21,7 @@ Environmental: Fostering positive interrelationships between planetary health an
 WELLNESS_CATEGORIES = ["Physical", "Mental",
                        "Emotional", "Spiritual", "Social", "Environmental"]
 
-WELLNESS_ACTIONS_FILE = ABSPATH + "/data/actions.json"
+WELLNESS_ACTIONS_FILE = os.path.join(os.path.join(ABSPATH, 'data'), 'actions.json')
 
 
 class category_choice:

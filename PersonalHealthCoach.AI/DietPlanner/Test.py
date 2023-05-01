@@ -109,12 +109,12 @@ def autoTest():
 
 def testFunction():
     # astea is pentru debughing, nu au traba cu programul mare
-    with open (f"{abspath}/RequestType/request.json","r") as file:
+    with open (os.path.join(os.path.join(abspath,"RequestType"),"request.json"),"r") as file:
         inp = json.load(file)
 
     diet = getDiet(inp)
 
-    with open (f"{abspath}/RequestType/requestResponse.json","w") as file:
+    with open (os.path.join(os.path.join(abspath,"RequestType"),"requestResponse.json"),"w") as file:
         json.dump(diet,file, indent=2)
 
 

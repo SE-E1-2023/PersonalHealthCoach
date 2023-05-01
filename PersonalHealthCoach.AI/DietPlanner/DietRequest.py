@@ -7,7 +7,7 @@ import random
 abspath = os.path.dirname(__file__)
 
 def matchingDiet(diet):
-    with open (f"{abspath}/Databases/Diets.json","r") as file:
+    with open (os.path.join(os.path.join(abspath,"Databases"),"Diets.json"),"r") as file:
         data = json.load(file)
     usefulData = []
     for d in data["diets"]:
@@ -28,7 +28,7 @@ def newDiet(dietType,id):
         return dietData[0]
     return {}
 def knownUser(input):
-    with open (f"{abspath}/Databases/Users.json","r") as file:
+    with open (os.path.join(os.path.join(abspath,"Databases"),"Users.json"),"r") as file:
         users = json.load(file)
     userIndex = -1
     for usr in users["users"]:
@@ -63,7 +63,7 @@ def knownUser(input):
 
 def unknownUser(input):
     userData={"idUser":input["idClient"]}
-    with open (f"{abspath}/Databases/Users.json","r") as file:
+    with open (os.path.join(os.path.join(abspath,"Databases"),"Users.json"),"r") as file:
         u = json.load(file)
     userData["idDiet"]=-1
     userData["idBreakfast"]=-1
@@ -73,13 +73,13 @@ def unknownUser(input):
     userData["idSnack"]=-1
     userData["idSoup"]=-1
     u["users"].append(userData)
-    with open (f"{abspath}/Databases/Users.json","w") as file:
+    with open (os.path.join(os.path.join(abspath,"Databases"),"Users.json"),"w") as file:
         json.dump(u,file,indent=2)
     return knownUser(input)
 
 
 def getDiet(input):
-    with open (f"{abspath}/Databases/Users.json","r") as file:
+    with open (os.path.join(os.path.join(abspath,"Databases"),"Users.json"),"r") as file:
         users = json.load(file)
     good = 0
     fields = ["idClient","requestType","alergies","dietType","goal"]
@@ -101,7 +101,7 @@ def getDiet(input):
     return returnedRequest
 
 def getMeal(info,idMeal,path):
-    with open (f"{abspath}/Databases/{path}","r") as file:
+    with open (os.path.join(os.path.join(abspath, "Databases"), path),"r") as file:
         d = json.load(file)
     minHealthiness = 0
     maxHealthiness = 100
@@ -164,7 +164,7 @@ def getMultipleMeals(info):
             path = "Snack.json"
         case _:
             return
-    with open (f"{abspath}/Databases/{path}","r") as file:
+    with open (os.path.join(os.path.join(abspath,"Databases"),path),"r") as file:
         d = json.load(file)
     minHealthiness = 0
     maxHealthiness = 100
