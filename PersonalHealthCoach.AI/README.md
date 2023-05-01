@@ -39,7 +39,11 @@ Recieves a json with the following format:
     }
 }
 ```
-Note: Goal will be a string from this list: ["Lose fat", "Increase muscle mass", "Body recomposition", "Improve cardiovascular health", "Increase strength",  "Increase endurance", "Overall health"]
+Notes: 
+
+goal: ["Lose fat", "Increase muscle mass", "Body recomposition", "Improve cardiovascular health", "Increase strength",  "Increase endurance", "Overall health"]
+workouts_per_week: [1,7]
+pro_user:True|False
 
 The response is a json with an excercise list as follows:
 ```
