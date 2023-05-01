@@ -18,6 +18,11 @@ class TipGenerator:
         self.profile_data = profile_json
     
     def calculate_bmr(self):
+        
+#test if these fields are present in our dictionary
+        if {'Height', 'Weight', 'Age', 'Sex'} <= self.profile_data.keys():
+            return None
+        
         height = self.profile_data['Height']
         weight = self.profile_data['Weight']
         age = self.profile_data['Age']
@@ -30,6 +35,11 @@ class TipGenerator:
         return bmr
     
     def calculate_amr(self):
+
+#test if these fields are present in our dictionary
+        if {'Level of activity'} <= self.profile_data.keys():
+            return None
+
         bmr = generator.calculate_bmr()
         level_of_activity = self.profile_data['Level of activity']
 
@@ -46,6 +56,11 @@ class TipGenerator:
         return int(amr)
     
     def generate_amr_tip(self):
+        
+#test if these fields are present in our dictionary
+        if {'Objective'} <= self.profile_data.keys():
+            return None
+
         objective = self.profile_data['Objective']
         amr = generator.calculate_amr()
         tip = 'You burn ' + str(amr) + ' calories during a typical day.'
@@ -67,6 +82,11 @@ class TipGenerator:
         return tip_dict
 
     def generate_bmi_tip(self):
+
+#test if these fields are present in our dictionary
+        if {'Height', 'Weight', 'Objective'} <= self.profile_data.keys():
+            return None
+        
         height = self.profile_data['Height']
         weight = self.profile_data['Weight']
         objective = self.profile_data['Objective']
@@ -173,6 +193,11 @@ class TipGenerator:
         return tip_dict
 
     def generate_level_of_activity_tip(self):
+
+#test if these fields are present in our dictionary
+        if {'Level of activity', 'Objective'} <= self.profile_data.keys():
+            return None
+
         level_of_activity = self.profile_data['Level of activity']
         objective = self.profile_data['Objective']
 
@@ -182,6 +207,11 @@ class TipGenerator:
         return tip_dict
 
     def generate_tip(self, tip_type=None):
+
+#test if these fields are present in our dictionary
+        if {'Objective'} <= self.profile_data.keys():
+            return None
+
         objective = self.profile_data['Objective']
 
         general_tips = self.tips_data[objective]['general']
@@ -261,8 +291,8 @@ def test_generate_amr_tip():
 
     print('All test passed.')
 
-tips_file = os.path.join(abspath, 'tips.json')
-profile_file =  os.path.join(abspath, 'profile.json')
+tips_file = f'{abspath}\\tips.json'
+profile_file = f'{abspath}\\profile.json'
 generator = TipGenerator(tips_file, profile_file)
 
 """    
