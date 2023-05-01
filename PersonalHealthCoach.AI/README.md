@@ -39,15 +39,19 @@ Recieves a json with the following format:
     }
 }
 ```
-Notes: 
+JSON Properties:
 
-goal: ["Lose fat", "Increase muscle mass", "Body recomposition", "Improve cardiovascular health", "Increase strength",  "Increase endurance", "Overall health"]
-
-workouts_per_week: [1,7]
-
-pro_user: True|False
-
-Other|Machine|...: True|False
+    pro_user: true | false
+    goal: Choose one of the following goals:
+        "Lose fat"
+        "Increase muscle mass"
+        "Body recomposition"
+        "Improve cardiovascular health"
+        "Increase strength"
+        "Increase endurance"
+        "Overall health"
+    workouts_per_week: Integer between 1 and 7 (inclusive)
+    equipment_available: Specify the availability of each equipment type with True | False
 
 Each workout has a fixed number of 8 exercises.
 
