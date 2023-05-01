@@ -27,4 +27,6 @@ public sealed class Exercise : AggregateRoot
     public int? Sets { get; set; }
 
     public string? Type { get; set; }
+
+    public Guid? FitnessPlanId { get; set; }
 }

@@ -19,11 +19,11 @@ var host = new HostBuilder()
     .ConfigureHealthCoachAppServices()
     .Build();
 
-using (var scope = host.Services.CreateScope())
-{
-    var databaseSeeder = scope.ServiceProvider.GetRequiredService<DbPopulationService>();
-    await databaseSeeder.PopulateDb();
-}
+//using (var scope = host.Services.CreateScope())
+//{
+//    var databaseSeeder = scope.ServiceProvider.GetRequiredService<DbPopulationService>();
+//    await databaseSeeder.PopulateDb();
+//}
 
 host.Run();
 
