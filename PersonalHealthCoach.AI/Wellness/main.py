@@ -24,22 +24,28 @@ WELLNESS_CATEGORIES = ["Physical", "Mental",
 WELLNESS_ACTIONS_FILE = ABSPATH + "/data/actions.json"
 
 
-def normalize_dict(d):
-    suma = sum(d.values())
-    for i in d:
-        d[i] = d[i] / suma
-
-
 class category_choice:
     def __init__(self, category_strs):
         self.scores = dict.fromkeys(category_strs, 0)
-        self.multiplier = dict.fromkeys(category_strs, 1)
 
-    def inc(self, category, score):
-        if category in self.scores:
-            self.scores[category] += score * self.multiplier[category]
-        else:
-            raise Exception(json.dumps(category, indent=2) + " not in category list")
+    def normalize_score(self):
+        minimum = min(self.scores.values())
+        maximum = max(self.scores.values())
+        if (maximum - minimum) != 0:
+            for i in self.scores:
+                self.scores[i] =  (self.scores[i] - minimum) / (maximum - minimum)
+
+        suma = sum(self.scores.values())
+        if suma == 0:
+            suma = len(self.scores)
+
+        if all([(x == 0) for x in self.scores.values()]):
+            for i in self.scores:
+                self.scores[i] = 1
+
+        for i in self.scores:
+            self.scores[i] = self.scores[i] / suma
+        print(self.scores)
 
     def sum_scores(self):
         return sum(self.scores.values())
@@ -84,16 +90,14 @@ class category_choice:
     def compute_priorities(self, input):
         if "StressLevel" in input:
             if input["StressLevel"] > 0.7:
-                self.inc("Physical", 2)
+                self.scores["Physical"] += 2
 
-        #self.inc("Mental", 1)
-        #self.inc("Emotional", 2)
-        #self.inc("Physical", 2)
-        if all([(x == 0) for x in self.scores.values()]):
-            for i in self.scores.keys():
-                self.scores[i] = 1
+        if "Diseases" in input:
+            for disease in input["Diseases"]:
+                if disease == "Osteoporosis":
+                    self.scores["Physical"] -= 10
         
-        normalize_dict(self.scores)
+        self.normalize_score()
 
 
 def compute_category_score(query, entry):
@@ -164,22 +168,15 @@ def format_response(action, query):
     del rsp['Rules']
     #TODO replace {?} in text with parameter calls
     rsp["Action"].pop("Parameters", None)
-    rsp["Multipliers"] = query['Multipliers']
     return rsp
 
 
 def get(dictionary):
     wellness_scores = category_choice(WELLNESS_CATEGORIES)
 
-    if "Multipliers" in dictionary:
-        for i in WELLNESS_CATEGORIES:
-            if i in dictionary["Multipliers"]:
-                wellness_scores.multiplier[i] = dictionary["Multipliers"][i]
-
     if "Categories" in dictionary:
         # load requested categories
-        if dictionary["Categories"] in WELLNESS_CATEGORIES and\
-                isinstance(dictionary["Categories"], list) and\
+        if isinstance(dictionary["Categories"], list) and\
                 all((isinstance(v, str) and v in WELLNESS_CATEGORIES) for v in dictionary["Categories"].values()):
             categories = dictionary["Categories"]
         else:
@@ -187,9 +184,8 @@ def get(dictionary):
     else:
         categories = wellness_scores.select_categories(dictionary, prob=0.7)
 
-    # add selected Categories and new Multipliers to query
+    # add selected Categories to query
     dictionary['Categories'] = categories
-    dictionary['Multipliers'] = wellness_scores.multiplier
 
     recommendation = choose_action(dictionary)
 

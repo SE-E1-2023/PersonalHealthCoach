@@ -12,15 +12,13 @@ Recieves a json which must contain at least an 'Objective' field, it's value amo
 Recieves a JSON with:
 The user's data - will generate a response which best fits the data given, if none are given then a general response will generated
 "Categories" - optional, used to select only wellness tips that pertain to a subset of the specified categories
-"Multipliers" - optional, assiged multipliers for each category (specific configuration for each user), updated multipliers will be returned
 
-Returns a JSON with the fields "Categories", the updated "Multipliers", and "Action", which contains "Title" and "Description".
+Returns a JSON with the fields "Categories" and "Action", which contains "Title" and "Description".
 
 ```
 Example Input:
 {
-  "Diseases": ['Osteoporosis'],
-  'Multipliers': {'Emotional': 1, 'Environmental': 1, 'Mental': 1, 'Physical': 1, 'Social': 1, 'Spiritual': 1}
+  "Diseases": ['Osteoporosis']
 }
 Example Output:
 {
@@ -28,8 +26,7 @@ Example Output:
     'Description': 'Take a moment to focus on what's around you. Try to empty your mind, be present in the moment, and percieve the world around you.', 
     'Title': 'Meditation'
   }, 
-  'Categories': ['Spiritual', 'Emotional', 'Mental'],
-  'Multipliers': {'Emotional': 1, 'Environmental': 1, 'Mental': 1, 'Physical': 0.7, 'Social': 1, 'Spiritual': 1}
+  'Categories': ['Spiritual', 'Emotional', 'Mental']
 }
 ```
 ```
@@ -41,8 +38,7 @@ Example Output:
     'Description': 'Go outside in nature or in a park. Sunlight helps raise your energy levels. You can also try meditation.', 
     'Title': 'Go for a walk in nature'
   }, 
-  'Categories': ['Physical', 'Spiritual', 'Environmental'], 
-  'Multipliers': {'Emotional': 1, 'Environmental': 1, 'Mental': 1, 'Physical': 1, 'Social': 1, 'Spiritual': 1}
+  'Categories': ['Physical', 'Spiritual', 'Environmental']
 }
 ```
 
