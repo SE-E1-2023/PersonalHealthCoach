@@ -31,4 +31,12 @@ public sealed class FitnessPlanFunctions
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 
+    [Function(nameof(DeleteFitnessPlan))]
+    public async Task<HttpResponseData> DeleteFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Delete, Route = "v1/api/plans/fitness/{id}")] HttpRequestData request, Guid id)
+    {
+        return await mediator
+            .Send(new DeleteFitnessPlanCommand(id))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+    }
+
 }
