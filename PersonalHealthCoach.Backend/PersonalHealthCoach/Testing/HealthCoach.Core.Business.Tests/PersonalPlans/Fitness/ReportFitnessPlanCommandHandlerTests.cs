@@ -8,37 +8,37 @@ using Xunit;
 
 namespace HealthCoach.Core.Business.Tests;
 
-public class ReportPersonalTipCommandHandlerTests
+public class ReportFitnessPlanCommandHandlerTests
 {
     private readonly Mock<IRepository> repositoryMock = new();
     private readonly Mock<IEfQueryProvider> queryProviderMock = new();
 
     [Fact]
-    public void When_PersonalTipDoesNotExist_Then_ShouldFail()
+    public void When_FitnessPlanDoesNotExist_Then_ShouldFail()
     {
         //Arrange
         var command = Command();
-        repositoryMock.Setup(r => r.Load<PersonalTip>(command.PersonalTipId)).ReturnsAsync(Maybe<PersonalTip>.None);
+        repositoryMock.Setup(r => r.Load<FitnessPlan>(command.FitnessPlanId)).ReturnsAsync(Maybe<FitnessPlan>.None);
 
         //Act
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
 
         //Assert
         result.IsFailure.Should().BeTrue();
-        result.Error.Should().Be(BusinessErrors.PersonalTip.Report.PersonalTipDoesNotExist);
+        result.Error.Should().Be(BusinessErrors.FitnessPlan.Report.FitnessPlanDoesNotExist);
 
         repositoryMock.Verify(r => r.Store(It.IsAny<Report>()), Times.Never);
     }
 
     [Fact]
-    public void When_PersonalTipExistsAndReportAlreadyExists_Then_ShouldFail()
+    public void When_FitnessPlanExistsAndReportAlreadyExists_Then_ShouldFail()
     {
         //Arrange
-        var personalTip = PersonalTipFactory.Any();
+        var fitnessPlan = PlansFactory.FitnessPlans.Any();
         var report = ReportFactory.Any();
-        var command = Command() with { PersonalTipId = report.TargetId };
+        var command = Command() with { FitnessPlanId = report.TargetId };
 
-        repositoryMock.Setup(r => r.Load<PersonalTip>(command.PersonalTipId)).ReturnsAsync(personalTip);
+        repositoryMock.Setup(r => r.Load<FitnessPlan>(command.FitnessPlanId)).ReturnsAsync(fitnessPlan);
         queryProviderMock.Setup(q => q.Query<Report>()).Returns(new List<Report>() { report }.AsQueryable());
 
         //Act
@@ -46,7 +46,7 @@ public class ReportPersonalTipCommandHandlerTests
 
         //Assert
         result.IsFailure.Should().BeTrue();
-        result.Error.Should().Be(BusinessErrors.PersonalTip.Report.ReportAlreadyExists);
+        result.Error.Should().Be(BusinessErrors.FitnessPlan.Report.ReportAlreadyExists);
 
         repositoryMock.Verify(r => r.Store(It.IsAny<Report>()), Times.Never);
     }
@@ -55,10 +55,10 @@ public class ReportPersonalTipCommandHandlerTests
     public void When_DomainFails_Then_ShouldFail()
     {
         //Arrange
-        var personalTip = PersonalTipFactory.Any();
+        var fitnessPlan = PlansFactory.FitnessPlans.Any();
         var command = Command();
 
-        repositoryMock.Setup(r => r.Load<PersonalTip>(command.PersonalTipId)).ReturnsAsync(personalTip);
+        repositoryMock.Setup(r => r.Load<FitnessPlan>(command.FitnessPlanId)).ReturnsAsync(fitnessPlan);
         queryProviderMock.Setup(q => q.Query<Report>()).Returns(new List<Report>().AsQueryable());
 
         //Act
@@ -75,10 +75,10 @@ public class ReportPersonalTipCommandHandlerTests
     public void When_DomainSucceeds_Then_ShouldSucceed()
     {
         //Arrange
-        var personalTip = PersonalTipFactory.Any();
-        var command = Command() with { Reason="reason" };
+        var fitnessPlan = PlansFactory.FitnessPlans.Any();
+        var command = Command() with { Reason = "reason" };
 
-        repositoryMock.Setup(r => r.Load<PersonalTip>(command.PersonalTipId)).ReturnsAsync(personalTip);
+        repositoryMock.Setup(r => r.Load<FitnessPlan>(command.FitnessPlanId)).ReturnsAsync(fitnessPlan);
         queryProviderMock.Setup(q => q.Query<Report>()).Returns(new List<Report>().AsQueryable());
 
         //Act
@@ -90,7 +90,7 @@ public class ReportPersonalTipCommandHandlerTests
         repositoryMock.Verify(r => r.Store(It.IsAny<Report>()), Times.Once);
     }
 
-    private static ReportPersonalTipCommand Command() => new(Guid.NewGuid(), "");
+    private static ReportFitnessPlanCommand Command() => new(Guid.NewGuid(), "");
 
-    private ReportPersonalTipCommandHandler Sut() => new(repositoryMock.Object, queryProviderMock.Object);
+    private ReportFitnessPlanCommandHandler Sut() => new(repositoryMock.Object, queryProviderMock.Object);
 }

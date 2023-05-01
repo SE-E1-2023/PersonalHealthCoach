@@ -54,6 +54,14 @@ public static class BusinessErrors
             public const string FitnessPlanNotFound = $"{Prefix}.{nameof(FitnessPlanNotFound)}";
 
         }
+
+        public static class Report
+        {
+            private const string Prefix = $"{nameof(FitnessPlan)}.{nameof(Report)}";
+
+            public const string ReportAlreadyExists = $"{Prefix}.{nameof(ReportAlreadyExists)}";
+            public const string FitnessPlanDoesNotExist = $"{Prefix}.{nameof(FitnessPlanDoesNotExist)}";
+        }
     }
 
     public static class PersonalTip
