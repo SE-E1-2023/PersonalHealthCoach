@@ -2,6 +2,7 @@
 using HealthCoach.Core.Domain;
 using HealthCoach.Shared.Infrastructure;
 using MediatR;
+
 using Errors = HealthCoach.Core.Business.BusinessErrors.FitnessPlan.Report;
 
 namespace HealthCoach.Core.Business;
