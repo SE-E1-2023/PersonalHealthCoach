@@ -1,5 +1,5 @@
 # Endpoints
-All endpoints are currently situated at ```http://localhost:8000```, with the API suffixes ```/TipGenerator, /DietPlanner, /FitnessPlanner``` respectively. They all respond only to the ```POST``` method.
+All endpoints are currently situated at ```http://localhost:8000```, with the API suffixes ```/TipGenerator, /Wellness, /DietPlanner, /FitnessPlanner``` respectively. They all respond only to the ```POST``` method.
 ## TipGenerator
 Recieves a json which must contain at least an 'Objective' field, it's value among ```['Lose weight', 'Gain muscular mass', 'Improve overall health', 'Improve cardiovascular health', 'Increase strength', 'Increase endurance', 'Maintain weigth']```. The response is a json with the following format:
 ```
@@ -8,6 +8,44 @@ Recieves a json which must contain at least an 'Objective' field, it's value amo
     'tip': 'Gradually increase the weight and reps you lift to continue challenging your muscles.'
 }
 ```
+## Wellness
+Recieves a JSON with:
+The user's data - will generate a response which best fits the data given, if none are given then a general response will generated
+"Categories" - optional, used to select only wellness tips that pertain to a subset of the specified categories
+"Multipliers" - optional, assiged multipliers for each category (specific configuration for each user), updated multipliers will be returned
+
+Returns a JSON with the fields "Categories", the updated "Multipliers", and "Action", which contains "Title" and "Description".
+
+```
+Example Input:
+{
+  "Diseases": ['Osteoporosis'],
+  'Multipliers': {'Emotional': 1, 'Environmental': 1, 'Mental': 1, 'Physical': 1, 'Social': 1, 'Spiritual': 1}
+}
+Example Output:
+{
+  'Action': {
+    'Description': 'Take a moment to focus on what's around you. Try to empty your mind, be present in the moment, and percieve the world around you.', 
+    'Title': 'Meditation'
+  }, 
+  'Categories': ['Spiritual', 'Emotional', 'Mental'],
+  'Multipliers': {'Emotional': 1, 'Environmental': 1, 'Mental': 1, 'Physical': 0.7, 'Social': 1, 'Spiritual': 1}
+}
+```
+```
+Example Input:
+{}
+Example Output:
+{
+  'Action': {
+    'Description': 'Go outside in nature or in a park. Sunlight helps raise your energy levels. You can also try meditation.', 
+    'Title': 'Go for a walk in nature'
+  }, 
+  'Categories': ['Physical', 'Spiritual', 'Environmental'], 
+  'Multipliers': {'Emotional': 1, 'Environmental': 1, 'Mental': 1, 'Physical': 1, 'Social': 1, 'Spiritual': 1}
+}
+```
+
 ## DietPlanner
 Currenty recieves no arguments, and returns a string with the name of a meal.
 
