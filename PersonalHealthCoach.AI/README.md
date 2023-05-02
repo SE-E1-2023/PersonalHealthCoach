@@ -336,8 +336,6 @@ Recieves a json with the following format:
 ```
 ```
 JSON Properties:
-
-    status :  200  | 400
     
     pro_user: true | false
     
@@ -354,7 +352,7 @@ JSON Properties:
 
 Each workout has a fixed number of 8 exercises.
 ```
-The response is a json with a workout plan as the following:
+The response is a json with a workout plan as the following ( status :  200 | 400):
 ```
 {
   "status": 200,
