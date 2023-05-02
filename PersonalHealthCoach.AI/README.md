@@ -334,9 +334,13 @@ Recieves a json with the following format:
     }
 }
 ```
+```
 JSON Properties:
+
     status :  200  | 400
+    
     pro_user: true | false
+    
     goal: Choose one of the following goals:
         "Lose fat"
         "Increase muscle mass"
@@ -349,7 +353,7 @@ JSON Properties:
     equipment_available: Specify the availability of each equipment type with True | False
 
 Each workout has a fixed number of 8 exercises.
-
+```
 The response is a json with a workout plan as the following:
 ```
 {
