@@ -1,40 +1,163 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: rgb(196,192,223);
+    background: radial-gradient(circle, rgba(196,192,223,1) 0%, rgba(255,255,255,1) 92%);
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.ceva{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    background: rgb(163,205,250);
+    background: linear-gradient(100deg, rgba(163,205,250,1) 21%, rgba(156,207,208,1) 55%);
+    justify-content: space-between;
+    display: flex;
+    border-bottom: 1px solid #166a8a;
+    padding: 10px;
+    width: auto;
+    align-items: center;
+    box-shadow: 0px 5px 10px #166a8a;
+    border-radius: 35px;
 
-    
-    header {
-        background-color: rgba(255, 255, 255, 0.5);
-        justify-content: space-between;
+  }
+  img{
+    border-radius: 15%;
+  }
+  .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: oblique;
+    text-decoration: none;
+    color: #323232;
+  }
+  .help-myaccount {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .help,
+  .myaccount {
+    list-style: none;
+    margin: 0 10px;
+  }
+  
+  .help a,
+  .myaccount a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #1bc4be, #220dc0);
+    color: #ffffff;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .help a:hover,
+  .myaccount a:hover {
+    background: linear-gradient(45deg, #220dc0, #0b349b, #1a69ae, #74d0f1, #1a69ae, #0b349b, #220dc0);
+    background-size: 300% 300%;
+    animation: gradient 2s ease infinite; 
+    box-shadow: 0px 5px 10px rgba(48, 3, 172, 0.2);
+    transform: translateY(-2px);
+  }
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%; 
+    }
+    50% {
+        background-position: 100% 50%; 
+    }
+    100% {
+        background-position: 0% 50%; 
+    }
+    }
+
+    main {
         display: flex;
-        border-bottom: 1px solid #000000;
-        padding: 10px;
-        width: auto;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        box-shadow: 0px 5px 10px #00070c;
-        border-radius: 5px;
-    
-      }
-      .logo a {
-        font-size: 24px;
-        font-weight: bold;
-        text-decoration: none;
-        color: #323232;
+        height: calc(50vh - 50px);
         
       }
-      .help-myaccount {
+      .welcome {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-      }
-      .help,
-      .myaccount {
-        list-style: none;
-        margin: 0 10px;
+        margin-top: 50px;
       }
       
-      .help a,
-      .myaccount a {
+      .welcome h1 {
+        font-size: 80px;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 250px;
+        margin-bottom: 20px;
+        color: #272932;
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      .features {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: 30px;
+      }
+       .fitness{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 130px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .nutrition{
+        position: absolute;
+        top: 50%;
+        left: 14%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 130px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .wellness{
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 130px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      .features a {
         display: inline-block;
         padding: 10px 20px;
-        background: linear-gradient(45deg, #1bc4be, #220dc0);
+        padding-top: 30px;
         color: #ffffff;
         border-radius: 30px;
         border: none;
@@ -42,76 +165,12 @@
         cursor: pointer;
         font-size: 20px;
         text-decoration: none;
+        margin: 0 70px;
       }
       
-      .help a:hover,
-      .myaccount a:hover {
-        background: linear-gradient(45deg, #220dc0, #0b349b, #1a69ae, #74d0f1, #1a69ae, #0b349b, #220dc0);
-        background-size: 300% 300%;
-        animation: gradient 2s ease infinite; 
-        box-shadow: 0px 5px 10px rgba(48, 3, 172, 0.2);
-        transform: translateY(-2px);
+      .features a:hover {
+        transform:scale(1.2);
       }
-      @keyframes gradient {
-        0% {
-            background-position: 0% 50%; 
-        }
-        50% {
-            background-position: 100% 50%; 
-        }
-        100% {
-            background-position: 0% 50%; 
-        }
-        }
-        main {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: calc(50vh - 50px);
-          }
-          .welcome {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px;
-          }
-          
-          .welcome h1 {
-            font-size: 80px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-          }
-          
-          .features {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
-          }
-          
-          .features a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #1bc4be, #220dc0);
-            color: #ffffff;
-            border-radius: 30px;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            font-size: 20px;
-            text-decoration: none;
-            margin: 0 50px;
-          }
-          
-          .features a:hover {
-            background: linear-gradient(45deg, #220dc0, #0b349b, #1a69ae, #74d0f1, #1a69ae, #0b349b, #220dc0);
-            background-size: 300% 300%;
-            animation: gradient 2s ease infinite; 
-            box-shadow: 0px 5px 10px rgba(48, 3, 172, 0.2);
-            transform: translateY(-2px);
-          }
-          .personal-tip{
-            margin-top: 50px;
-          }
+      .personal-tip{
+        margin-top: 50px;
+      }
