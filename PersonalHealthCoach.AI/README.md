@@ -475,9 +475,12 @@ The response is a json with a workout plan as the following ( status :  200 | 40
     ]
   }
 } 
-```or when there is a problem:
-```{
+```
+or when there is a problem:
+```
+{
         "status": 400,
         "message": "The number of workouts per week must be greater than 0 and less than 7"
         }
+        
  ```
