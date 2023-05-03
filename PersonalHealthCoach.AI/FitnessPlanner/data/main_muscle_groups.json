@@ -1,0 +1,36 @@
+{
+    "major_muscle_groups": [
+        {
+            "group_name": "Upper Body",
+            "sub_groups": [
+                "Shoulders",
+                "Chest",
+                "Lats",
+                "Middle Back",
+                "Biceps",
+                "Triceps",
+                "Forearms",
+                "Neck",
+                "Traps",
+                "Lower Back"
+            ]
+        },
+        {
+            "group_name": "Lower Body",
+            "sub_groups": [
+                "Quadriceps",
+                "Hamstrings",
+                "Glutes",
+                "Calves"
+            ]
+        },
+        {
+            "group_name": "Core",
+            "sub_groups": [
+                "Abdominals",
+                "Adductors",
+                "Abductors"
+            ]
+        }
+    ]
+}

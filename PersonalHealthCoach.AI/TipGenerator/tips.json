@@ -1,10 +1,12 @@
 {
-    "First time in app": [
-        "Set achievable goals",
-        "Start small and gradually increase the intensity and duration of your workouts",
-        "Track your progress and celebrate your successes"
-    ],
     "Lose weight": {
+        "level of activity":{
+            "Sedentary": "Your objective is to lose weight, but your level of activity is Sedentary, which means that you exercise very little or not at all. To achieve your goal, you'll have to change this and become a lot more active. For example, you can start having long walks and then you can even try running. Also, respect your diet plan because your activity is in vain if you don't eat properly.",
+            "Lightly active": "Your objective is to lose weight, but your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you'll have to become more active. You may try to exercise constantly 3 days/week and then raise it to 4 days/week. Also, take care of what you eat so that your effort to lose weight will not be in vain.",
+            "Moderately active": "Your level of activity is Moderatly active, which is a good one. To achieve your goal of losing weight, it may be enough to just continue what you do, respect your diet plan and be patient. If you want to see faster changes, you may try to increase the number of exercise days from 3-5 to 6-7 days/week.",
+            "Active": "Your level of activity is Active, which is a very good one. To achieve your goal of losing weight, just continue what you do, respect your diet plan and be patient, the changes will come. If you want to increase this level even more, you can try to increase the hardness of your exercises.",
+            "Very active": "Your level of activity is Very active, which is excellent. To achieve your goal of losing weight, just continue what you do and the changes will come. However, take care not to get injured while exercising so much."
+        },
         "general": [
             "Track your food intake to ensure you're in a calorie deficit.",
             "Get enough sleep to avoid hormone imbalances that can lead to weight gain.",
@@ -28,6 +30,13 @@
         ]
     },
     "Gain muscular mass": {
+        "level of activity":{
+            "Sedentary": "Your objective is to gain muscular mass, but your level of activity is Sedentary, which means that you exercise very little or not at all. To achieve your goal, you'll have to change this and become a lot more active. You can't gain muscular mass without exercising. For example, you can start doing some push-ups at home when you have free time.",
+            "Lightly active": "Your objective is to gain muscular mass, but your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you'll have exercise more. You may try to exercise constantly 4 days/week. Also, make sure that your meals consist mostly of proteins.",
+            "Moderately active": "Your level of activity is Moderatly active, which is a good one. To achieve your goal of gainin muscular mass, it may be enough to just continue what you do, eat a lot of proteins daily and be patient. If you want to see faster changes, you may try to increase the number of exercise days from 3-5 to 6-7 days/week.",
+            "Active": "Your level of activity is Active, which is a very good one. To achieve your goal of gaining muscular mass, just continue what you do, eat a lot of proteins and be patient, the changes will come. If you want to increase this level even more, you can try to increase the hardness of your exercises. However, sometimes it may help to take a break on certain days to give the muscles time to recover.",
+            "Very active": "Your level of activity is Very active, which is excellent. To achieve your goal of gaining muscular mass, just continue what you do and the changes will come. However, sometimes it may help to take a break on certain days to give the muscles time to recover. "
+        },
         "general": [
             "Be consistent with your workout routine and nutrition plan.",
             "Track your progress to make sure you're making gains.",
@@ -50,6 +59,13 @@
         ]
     },
     "Improve overall health": {
+        "level of activity":{
+            "Sedentary": "Your objective is to improve your overall health, but your level of activity is Sedentary, which means that you exercise very little or not at all. To achieve your goal and live a more healthy life, you'll have to change this and become a more active person. For example, you can start taking long walks or even try jogging.",
+            "Lightly active": "Your objective is to improve your overall health and your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you can try raising a little bit the number of exercise days and also, make sure that you eat properly.",
+            "Moderately active": "Your level of activity is Moderatly active, which is a good one. Living a healthy life should be possible with this level of activity, but you'll also have to take care of what you eat.",
+            "Active": "Your level of activity is Active, which is a very good one. With this level of activity, you can be sure that you are living a healthy life.",
+            "Very active": "Your level of activity is Very active, which is excellent. This level of activity puts you in the category of performance athletes."
+        },
         "general": [
             "Get regular check-ups with your healthcare provider.",
             "Reduce stress levels to prevent chronic disease.",
@@ -73,35 +89,213 @@
         ]
     },
     "Improve cardiovascular health": {
+        "level of activity":{
+            "Sedentary": "Your objective is to improve your cardiovascular health, but your level of activity is Sedentary, which means that you exercise very little or not at all. To improve your cardiovascular system, you'll have to exercise more. The best and easiest cardio workout is running so you can start with that.",
+            "Lightly active": "Your objective is to improve your cardiovascular overall health and your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you can try raising a little bit the number of exercise days and try to focus on cardio workouts.",
+            "Moderately active": "Your level of activity is Moderatly active, which is a good one. Living a healthy life should be possible with this level of activity and to improve your cardiovascular system, you may just try to focus on cardio workouts.",
+            "Active": "Your level of activity is Active, which is a very good one. With this level of activity, you can be sure that your cardiovascular system is more than fine.",
+            "Very active": "Your level of activity is Very active, which is excellent. This level of activity puts you in the category of performance athletes."
+        },
+        "general": [
+            "Consult with your healthcare provider before starting a new exercise program, especially if you have a history of heart disease or other cardiovascular conditions.",
+            "Monitor your heart rate during exercise to ensure you're working at an appropriate intensity level.",
+            "Gradually increase the duration and intensity of your aerobic workouts over time to improve cardiovascular fitness.",
+            "Incorporate both steady-state and interval training into your routine to challenge your heart and lungs in different ways.",
+            "Don't forget to warm up and cool down properly before and after exercise."
+          ],
         "diet": [
-            
+            "Consume plenty of fruits, vegetables, and whole grains for their heart-healthy nutrients and fiber.",
+            "Choose lean sources of protein such as fish and chicken to reduce saturated fat intake.",
+            "Limit your intake of sodium and processed foods, which can contribute to high blood pressure.",
+            "Eat healthy fats such as avocados, nuts, and olive oil to help maintain healthy cholesterol levels.",
+            "Avoid sugary drinks and excessive alcohol consumption."
         ],
         "fitness": [
-            
-        ]
-    },
-    "Increase strength": {
-        "diet": [
-            
-        ],
-        "fitness": [
-            
+            "Incorporate aerobic exercise such as running, cycling, or swimming to improve cardiovascular health.",
+            "Aim for at least 150 minutes of moderate-intensity exercise per week.",
+            "Mix in high-intensity interval training (HIIT) to increase heart rate variability and challenge your cardiovascular system.",
+            "Consider adding in resistance training to improve overall fitness and reduce the risk of injury."
         ]
     },
     "Increase endurance": {
+        "level of activity":{
+            "Sedentary": "Your objective is to increase your endurance, but your level of activity is Sedentary, which means that you exercise very little or not at all. To achieve your objective, you'll have to change this a lot because you can't increase endurance without constancly exercising.For the beggining, try to increase your resistence with jogging.",
+            "Lightly active": "Your objective is to increase your endurance and your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you should try to raise a little bit this number and exercise harder.",
+            "Moderately active": "Your level of activity is Moderatly active, which is a good one. To achieve your goal, you should focus on hard exercises and be patient because endurance takes time to improve.",
+            "Active": "Your level of activity is Active, which is a very good one. This means that you exercise 6-7 days/week, which means that your endurance should be just fine. If you want to go to the next level, you may just try harder workouts.",
+            "Very active": "Your level of activity is Very active, which is excellent. This level of activity puts you in the category of performance athletes, so your endurance should be already very good."
+        },
+        "general": [
+            "Set specific endurance goals, such as completing a certain distance or time in a race.",
+            "Be consistent with your workouts, gradually increasing the duration and intensity of your training over time.",
+            "Consider cross-training with other activities such as swimming or cycling to reduce the risk of injury and improve overall fitness.",
+            "Make sure to include rest days to allow for recovery.",
+            "Don't forget to warm up and cool down properly before and after exercise."
+        ],
         "diet": [
-            
+            "Consume plenty of carbohydrates to fuel your workouts and replenish glycogen stores.",
+            "Choose lean sources of protein to support muscle recovery.",
+            "Eat healthy fats such as avocados, nuts, and seeds to support overall health.",
+            "Avoid sugary drinks and processed foods, which can interfere with endurance performance.",
+            "Drink plenty of water to stay hydrated and support exercise performance."
         ],
         "fitness": [
-            
+            "Engage in aerobic activities that elevate your heart rate such as running, cycling, swimming, or rowing. Start with a moderate intensity and gradually increase the duration and intensity of the exercise over time.",
+            "Incorporate HIIT into your workout routine by alternating periods of high-intensity exercise with periods of rest or low-intensity exercise. This type of training has been shown to improve cardiovascular health and endurance.",
+            "Build muscular endurance by incorporating strength training into your routine. This can include bodyweight exercises such as push-ups, lunges, and squats or using resistance bands, weights or machines.",
+            "Consistent training is key to building endurance. Make exercise a regular part of your routine and gradually increase the intensity and duration of your workouts.",
+            "Allow your body time to rest and recover between workouts to avoid overtraining and injury. Incorporate stretching and foam rolling into your routine to reduce soreness and improve flexibility."
         ]
     },
-    "Maintain weigth": {
-        "diet": [
-            
-        ],
-        "fitness": [
-            
-        ]
+    "Maintain weight": {
+        "level of activity":{
+            "Sedentary": "Your objective is to maintain your weight, but your level of activity is Sedentary, which means that you exercise very little or not at all. It may not be a problem for you now, but over time the body will no longer help you maintain your weight without physical activity. You can start easily with some long walks or even jogging. Also, another important part is what you eat, so make sure you do it properly.",
+            "Lightly active": "Your objective is to maintain your weight, and your level of activity is Lightly active, which means that you exercise 1–3 days/week. That should be enough to keep your weight as you want it, although it is recommended to try to exercise a little more. Also, another important part is what you eat, so make sure you do it properly.",
+            "Moderately active": "Your level of activity is Moderatly active, which is a good one. To maintain your weight, it's enough to just continue what you do and eat properly.",
+            "Active": "Your level of activity is Active, which is a very good one. To maintain your weight just continue what you do and make sure you eat properly.",
+            "Very active": "Your level of activity is Very active, which is excellent. To maintain your weight just continue what you do and make sure you eat properly. "
+        },
+        "general": [
+            "Continue tracking your food intake and monitoring your weight to stay on track.",
+            "Stay active by engaging in regular physical activity, such as walking, running, or weight lifting.",
+            "Focus on developing healthy habits that you can maintain long-term, rather than going on fad diets or extreme exercise programs.",
+            "Find a support system to keep you accountable and motivated.",
+            "Be mindful of portion sizes and avoid overeating."
+            ],
+            "diet": [
+            "Continue to eat a balanced diet with plenty of fruits, vegetables, whole grains, lean protein, and healthy fats.",
+            "Limit your intake of processed foods, sugary drinks, and snacks.",
+            "Choose nutrient-dense foods that provide a lot of nutrients for fewer calories, such as leafy greens, berries, and nuts.",
+            "Drink plenty of water and avoid drinking excessive alcohol.",
+            "Be mindful of portion sizes and practice intuitive eating to listen to your body's hunger and fullness cues."
+            ],
+            "fitness": [
+            "Maintain a regular exercise routine that includes both cardio and strength training.",
+            "Vary your workouts to keep things interesting and challenge your body in different ways.",
+            "Set new fitness goals to keep you motivated and focused, such as running a 5K or completing a challenging hike.",
+            "Find a workout buddy or join a fitness group to stay accountable and motivated.",
+            "Don't forget to include rest days in your routine to allow your muscles to recover and prevent injury."
+            ]
+    },
+    "Diseases": {
+        "Respiratory Conditions":{
+            "general":[
+                "Being physically active can help keep your lungs healthy.",
+                "Over time cigarette smoke destroys lung tissue and may trigger changes that grow into cancer.",
+                "Go outside and get some fresh air! Just remember to practice sun safety and protect your skin from UV radiation.",
+                "Staying properly hydrated is important for your overall health.",
+                "Like physical activity, breathing exercises can strengthen your lungs, improve lung function, increase lung capacity, and help clean your lungs."
+            ],
+            "diet":[
+                "We found that higher omega-3 intake was associated with diminished harmful effect of indoor air pollution exposure on the children’s respiratory symptoms - Nadia Hansel, pulmonologist.",
+                "Vitamins like A, C, D and E help protect you against colds, flu and other chest infections by improving your immune system. Try eating more fruits!",
+                "Control the sodium (salt) in your diet. If you find that difficult, you may try using herbs or no-salt spices to flavor your food.",
+                "If you find yourself short of breath try eating more slowly. Take small bites and chew your food slowly, breathing deeply while chewing.",
+                "if you find yourself not having an appetite, try eating small, frequent meals and snacks instead. Don't force yourself."
+                
+            ],
+            "fitness":[
+                "If you feel out of breath, take a break. Don't force yourself.",
+                "Participate in activities you enjoyed before you were diagnosed. You may need to modify them, but they can still be enjoyed.",
+                "It is generally safe for people with COPD to exercise but you should not exercise if you: have a fever or infection, feel nauseated, have chest pain, are out of oxygen, have increased shortness of breath or worsening of other COPD-related symptoms, feel dizzy, weak or unsteady",
+                "Take slow breaths and pace yourself. ",
+                "Light stretching is a great way to stay mobile and avoid over exertion."
+            ]
+        },
+        "Diabetes" : {
+            "general":[
+                "Exercise 5 days a week.",
+                "Be active 30 minutes a day.",
+                "Know your pills and insulins, understand how they work and take the right doses at the right times.",
+                "Quit smoking. This is a generally good tip.",
+                "Check your blood pressure, cholesterol, eyes, feet and teeth. When you notice something that doesn't feel right, seek help."
+            ],
+            "diet" : [
+                "Eat more fruit and veggies.",
+                "Choose healthier fats.",
+                "Cut down on added sugar.",
+                "If you want a snack, choose yoghurts, unsalted nuts, seeds, fruits and vegetables instead of crisps, chips, biscuits and chocolates.",
+                "If you take insulin or other diabetes medications, it’s also not a good idea to drink on an empty stomach."
+            ],
+            "fitness" : [
+                "Find a partner. It’s more fun when someone else is counting on you to show up.",
+                "Start small. If you’re not already physically active you should begin slowly and work your way up to the desired level.",
+                "After your activity, check to see how it has affected your blood glucose level.",
+                "After being physically active, check your feet for sores, blisters, irritation, cuts, or other injuries. Call your health care provider if an injury doesn’t begin to heal after 2 days."
+            ]
+        },
+        "Mind disease" : {
+            "general":[
+                "A healthy body leads to a healthy mind. Keep that in mind.",
+                "Avoid alcohol and recreational drugs. ",
+                "Make sleep a priority."
+
+            ],
+            "diet" : [
+                "Eat well, so you may have the strength to see another day. Who knows what tommorow's got in store for us.",
+                "Try to cook from scratch and use fresh foods whenever you can.",
+                "Try eating regular meals. It helps with mental health."
+            ],
+            "fitness" : [
+                "Start small, then progressively add difficulty to your workouts. Celebrating small accomplishments builds excitement and momentum.",
+                "Stay Realistic. You’re not a Tesla Roadster — you can’t go from zero to 60 in two seconds flat.",
+                "Find a workout buddy or join a fitness group to stay accountable and motivated.",
+                "Get a healthy dose of sunlight by heading outdoors for a walk from time to time."
+            ]
+        },
+                
+        "High Blood Pressure" : {
+            "general":[
+                "Stop smoking! Now that is a generally good tip!",
+                "Are you overweight? You might want to change that...",
+                "Sleep deprivation is one of the main causes of a lot of chronic diseases. Keep that in mind."
+            ],
+            "diet" : [
+                "Reduce the amount of salt you eat and have a generally healthy diet.",
+                "Cut back on alcohol.",
+                "Try cutting down on your caffeine intake."
+            ],
+            "fitness" : [
+                "Ten minutes of brisk or moderate walking three times a day can help with most chronic diseases.",
+                "Slowly build up to 30-60 minutes of exercise a day.",
+                "Go for a ‘little and often’ routine.",
+                "Always warm up and cool down."
+            ]
+        },        
+        "Osteoporosis" : {
+            "general":[
+                "Avoid smoking and limit alcohol consumption.",
+                "Get some sun – exposure of some skin to the sun needs to occur on most days of the week to allow enough vitamin D production."
+            ],
+            "diet" : [
+                "Eat foods that support bone health. Get enough calcium, vitamin D, and protein each day.",
+                "Diary products and leafy greens(like spinach, bok choy, turnips, etc.) are rich in calcium. Try to eating foods containing them if you want to have stronger bones"
+            ],
+            "fitness" : [
+                "Get active. Choose weight-bearing exercise, such as strength training, walking, hiking, jogging, climbing stairs, tennis, and dancing.",
+                "Make walking a daily ritual.",
+                "Core strengthening is critical, too.",
+                "Include some high-impact exercise into your routine, such as jumping and rope skipping."
+            ]
+        },
+       
+        "Cancer" : {
+            "general":[
+                "Stay positive.",
+                "Create a sense of normalcy in your routine.",
+                "Look after your mental health."
+            ],
+            "diet" : [
+                "Limit high-calorie foods such as pizza, fried foods, foods made with cheese or cream, and desserts.",
+                "Choose lower calorie foods like fresh fruits and vegetables, baked or grilled poultry and fish, and beans.",
+                "Eat higher fiber foods such as whole grains, fruits, vegetables, nuts, and beans to help you feel more full."
+            ],
+            "fitness" : [
+                "Exercise several times a week for at least 10 minutes at a time.",
+                "Include resistance training exercise in your routine at least 2 days per week.",
+                "Do stretching exercises at least 2 days each week.",
+                "Exercise helps with mind fatigue. Keep up the good work!"
+            ]
+        }
     }
 }

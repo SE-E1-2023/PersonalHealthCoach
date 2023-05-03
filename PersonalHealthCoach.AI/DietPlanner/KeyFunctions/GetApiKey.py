@@ -20,16 +20,22 @@ class LeastUsedKey:
 
         min = data["accounts"][0]["requests"]
         for row in data["accounts"]:
-            if row["requests"] < min:
+            if row["requests"] > min:
                 min = row["requests"]
+        if min < 5:
+            return "-1"
         for row in data["accounts"]:
             if row["requests"] == min:
-                row["requests"] += 1
-                with open (f"{abspath}/accounts.json","w") as file:
-                    json.dump(data,file,indent=2)
                 return (row["key"])
-                
-class Request:
-    def __init__(self,type,restrictions):
-        self.type = type
-        self.restrictions = restrictions
+class UpdateKey:
+    def __init__(self,key,usedData):
+        self
+        self.key = key     
+        self.used = float(usedData)
+        with open (f"{abspath}/accounts.json","r") as file:
+            data = json.load(file)
+        for row in data["accounts"]:
+            if row["key"] == key:
+                row["requests"] = self.used
+        with open (f"{abspath}/accounts.json","w") as file:
+            json.dump(data,file,indent=2)        

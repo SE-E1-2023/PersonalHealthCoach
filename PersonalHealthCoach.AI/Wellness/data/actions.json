@@ -1,0 +1,58 @@
+[
+    {
+        "Action": {
+            "Title": "Go for a walk in nature",
+            "Description": "Go outside in nature or in a park. Sunlight helps raise your energy levels. You can also try meditation."
+        },
+        "Categories": [
+            "Physical",
+            "Spiritual",
+            "Environmental"
+        ],
+        "Rules": [
+            "'Diseases' not in query or 'Osteoporosis' not in query['Diseases']",
+            "'QueryHour' not in query or (5 < query['QueryHour'] and query['QueryHour'] < 22)"
+        ]
+    },
+    {
+        "Action": {
+            "Title": "Meditation",
+            "Description": "Take a moment to focus on what's around you. Try to empty your mind, be present in the moment, and percieve the world around you."
+        },
+        "Categories": [
+            "Spiritual",
+            "Emotional",
+            "Mental"
+        ],
+        "Rules": []
+    },
+    {
+        "Action": {
+            "Title": "Sleep more",
+            "Description": "The recommended amount of sleep for the average person is 7-8 hours. Sleep is important for having a healthy body. Not only does it allow the body to recuperate, but it also enhances mental ability and improves mood.",
+            "Parameters": [
+                "get_recommended_amount_of_sleep"
+            ]
+        },
+        "Categories": [
+            "Physical",
+            "Mental"
+        ],
+        "Rules": ["query['HoursOfSleep'] < 7"]
+    },
+    {
+        "Action": {
+            "Title": "TEMPLATE TITLE",
+            "Description": "TEMPLATE DESCRIPTION"
+        },
+        "Categories": [
+            "Physical",
+            "Mental",
+            "Emotional",
+            "Spiritual",
+            "Social",
+            "Environmental"
+        ],
+        "Rules": ["False"]
+    }
+]
