@@ -1,0 +1,30 @@
+    Diet planner endpoint:
+
+Request type:
+    {
+    "idClient" : "123456",      --the key that the client has in the database
+    "alergis" : ["nut","milk"], --all the aliments that the client is alergit too 
+    "dietType" : "vegan",       -- diet type : "vegan", "vegetarian", "dairyFree", "glutenFree"
+    "goal" : "weight loss",     -- the goal that the client has in mind : "weight loss" , 
+                                    "weight gain", "waight maintaining"
+    "requestType" : "soup"      -- the type of data that is requested:
+                                    "diet" gives a single item for the folowing: diet , soup , breakfast, drink, mainCourse, side Dish, snack,
+                                -- one fof the following soup/breakfast/drink/mainCourse/sideDish/snack/soup 
+                                    gives 5 or less(in case there aren't any more) of the given food type     
+
+    }
+
+Error handaling:
+    The variable "NOP" (no output) is used for error handaling.
+    The diferent values signify:
+        0: normal operation 
+        1: there is no diet matching all the criteria
+        10: no idClient provided
+        11: no requestType provided
+        12: no alergies provided
+        13: no dietType provided
+        14: no goal provided 
+        !!NOTE : if the client does not have any alergies: there will be a empty list
+
+
+        

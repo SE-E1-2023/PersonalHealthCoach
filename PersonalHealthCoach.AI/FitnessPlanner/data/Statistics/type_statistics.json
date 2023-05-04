@@ -1,0 +1,326 @@
+{
+  "Strongman": {
+    "total_exercises": 22,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.6,
+      "average_score": 4.718181818181819,
+      "exercises_above_threshold": 5
+    },
+    "muscle_group_distribution": {
+      "Forearms": 2,
+      "Lower Back": 4,
+      "Quadriceps": 10,
+      "Shoulders": 4,
+      "Chest": 1,
+      "Hamstrings": 1,
+      "Abdominals": 0,
+      "Lats": 0,
+      "Middle Back": 0,
+      "Biceps": 0,
+      "Glutes": 0,
+      "Triceps": 0,
+      "Neck": 0,
+      "Traps": 0,
+      "Calves": 0,
+      "Adductors": 0,
+      "Abductors": 0
+    },
+    "equipment_distribution": {
+      "Other": 21,
+      "Barbell": 1,
+      "Body Only": 0,
+      "Dumbbell": 0,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Exercise Ball": 0,
+      "None": 0,
+      "Kettlebells": 0,
+      "Machine": 0,
+      "Bands": 0
+    },
+    "difficulty_distribution": {
+      "Beginner": 16,
+      "Intermediate": 6,
+      "Expert": 0
+    }
+  },
+  "Strength": {
+    "total_exercises": 692,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.6,
+      "average_score": 6.607947976878622,
+      "exercises_above_threshold": 66
+    },
+    "muscle_group_distribution": {
+      "Quadriceps": 96,
+      "Abdominals": 101,
+      "Lats": 34,
+      "Middle Back": 39,
+      "Forearms": 20,
+      "Shoulders": 113,
+      "Biceps": 52,
+      "Triceps": 54,
+      "Hamstrings": 32,
+      "Neck": 6,
+      "Chest": 91,
+      "Traps": 14,
+      "Calves": 13,
+      "Lower Back": 8,
+      "Adductors": 2,
+      "Glutes": 13,
+      "Abductors": 4
+    },
+    "equipment_distribution": {
+      "Machine": 58,
+      "Other": 69,
+      "Barbell": 117,
+      "Dumbbell": 132,
+      "Body Only": 126,
+      "Kettlebells": 59,
+      "Cable": 75,
+      "E-Z Curl Bar": 11,
+      "None": 4,
+      "Bands": 24,
+      "Medicine Ball": 7,
+      "Exercise Ball": 10
+    },
+    "difficulty_distribution": {
+      "Intermediate": 408,
+      "Beginner": 279,
+      "Expert": 5
+    }
+  },
+  "Olympic Weightlifting": {
+    "total_exercises": 35,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.5,
+      "average_score": 5.782857142857142,
+      "exercises_above_threshold": 10
+    },
+    "muscle_group_distribution": {
+      "Quadriceps": 16,
+      "Hamstrings": 11,
+      "Shoulders": 5,
+      "Glutes": 1,
+      "Traps": 2,
+      "Forearms": 0,
+      "Abdominals": 0,
+      "Lats": 0,
+      "Middle Back": 0,
+      "Lower Back": 0,
+      "Biceps": 0,
+      "Triceps": 0,
+      "Neck": 0,
+      "Chest": 0,
+      "Calves": 0,
+      "Adductors": 0,
+      "Abductors": 0
+    },
+    "equipment_distribution": {
+      "Barbell": 35,
+      "Other": 0,
+      "Body Only": 0,
+      "Dumbbell": 0,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Exercise Ball": 0,
+      "None": 0,
+      "Kettlebells": 0,
+      "Machine": 0,
+      "Bands": 0
+    },
+    "difficulty_distribution": {
+      "Beginner": 30,
+      "Intermediate": 4,
+      "Expert": 1
+    }
+  },
+  "Powerlifting": {
+    "total_exercises": 36,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.4,
+      "average_score": 6.041666666666668,
+      "exercises_above_threshold": 6
+    },
+    "muscle_group_distribution": {
+      "Glutes": 4,
+      "Lower Back": 7,
+      "Quadriceps": 5,
+      "Hamstrings": 9,
+      "Triceps": 8,
+      "Chest": 3,
+      "Forearms": 0,
+      "Abdominals": 0,
+      "Lats": 0,
+      "Middle Back": 0,
+      "Shoulders": 0,
+      "Biceps": 0,
+      "Neck": 0,
+      "Traps": 0,
+      "Calves": 0,
+      "Adductors": 0,
+      "Abductors": 0
+    },
+    "equipment_distribution": {
+      "Barbell": 29,
+      "Dumbbell": 1,
+      "Machine": 1,
+      "Bands": 3,
+      "Other": 2,
+      "Body Only": 0,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Exercise Ball": 0,
+      "None": 0,
+      "Kettlebells": 0
+    },
+    "difficulty_distribution": {
+      "Intermediate": 9,
+      "Beginner": 27,
+      "Expert": 0
+    }
+  },
+  "Cardio": {
+    "total_exercises": 27,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.2,
+      "average_score": 5.044444444444445,
+      "exercises_above_threshold": 2
+    },
+    "muscle_group_distribution": {
+      "Quadriceps": 23,
+      "Middle Back": 1,
+      "Hamstrings": 1,
+      "Shoulders": 2,
+      "Forearms": 0,
+      "Abdominals": 0,
+      "Lats": 0,
+      "Lower Back": 0,
+      "Biceps": 0,
+      "Glutes": 0,
+      "Triceps": 0,
+      "Neck": 0,
+      "Chest": 0,
+      "Traps": 0,
+      "Calves": 0,
+      "Adductors": 0,
+      "Abductors": 0
+    },
+    "equipment_distribution": {
+      "Body Only": 15,
+      "Machine": 8,
+      "Other": 4,
+      "Dumbbell": 0,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Barbell": 0,
+      "Exercise Ball": 0,
+      "None": 0,
+      "Kettlebells": 0,
+      "Bands": 0
+    },
+    "difficulty_distribution": {
+      "Intermediate": 18,
+      "Beginner": 9,
+      "Expert": 0
+    }
+  },
+  "Plyometrics": {
+    "total_exercises": 95,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.2,
+      "average_score": 3.1084210526315785,
+      "exercises_above_threshold": 1
+    },
+    "muscle_group_distribution": {
+      "Quadriceps": 52,
+      "Abdominals": 5,
+      "Chest": 15,
+      "Hamstrings": 9,
+      "Triceps": 1,
+      "Lats": 3,
+      "Adductors": 4,
+      "Shoulders": 6,
+      "Forearms": 0,
+      "Middle Back": 0,
+      "Lower Back": 0,
+      "Biceps": 0,
+      "Glutes": 0,
+      "Neck": 0,
+      "Traps": 0,
+      "Calves": 0,
+      "Abductors": 0
+    },
+    "equipment_distribution": {
+      "Other": 20,
+      "Body Only": 52,
+      "Dumbbell": 4,
+      "Medicine Ball": 14,
+      "Exercise Ball": 1,
+      "None": 3,
+      "Kettlebells": 1,
+      "Cable": 0,
+      "Barbell": 0,
+      "Machine": 0,
+      "Bands": 0
+    },
+    "difficulty_distribution": {
+      "Beginner": 35,
+      "Intermediate": 59,
+      "Expert": 1
+    }
+  },
+  "Stretching": {
+    "total_exercises": 125,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 8.8,
+      "average_score": 4.537600000000001,
+      "exercises_above_threshold": 0
+    },
+    "muscle_group_distribution": {
+      "Abductors": 6,
+      "Adductors": 7,
+      "Abdominals": 7,
+      "Shoulders": 10,
+      "Hamstrings": 22,
+      "Lower Back": 11,
+      "Calves": 13,
+      "Biceps": 3,
+      "Glutes": 7,
+      "Quadriceps": 16,
+      "Lats": 8,
+      "Middle Back": 4,
+      "Triceps": 3,
+      "Forearms": 2,
+      "Chest": 4,
+      "Neck": 2,
+      "Traps": 0
+    },
+    "equipment_distribution": {
+      "Body Only": 76,
+      "None": 23,
+      "Foam Roll": 9,
+      "Other": 13,
+      "Bands": 3,
+      "Exercise Ball": 1,
+      "Dumbbell": 0,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Barbell": 0,
+      "Kettlebells": 0,
+      "Machine": 0
+    },
+    "difficulty_distribution": {
+      "Beginner": 64,
+      "Intermediate": 61,
+      "Expert": 0
+    }
+  }
+}

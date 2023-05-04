@@ -54,6 +54,14 @@ public static class BusinessErrors
             public const string FitnessPlanNotFound = $"{Prefix}.{nameof(FitnessPlanNotFound)}";
 
         }
+
+        public static class Report
+        {
+            private const string Prefix = $"{nameof(FitnessPlan)}.{nameof(Report)}";
+
+            public const string ReportAlreadyExists = $"{Prefix}.{nameof(ReportAlreadyExists)}";
+            public const string FitnessPlanDoesNotExist = $"{Prefix}.{nameof(FitnessPlanDoesNotExist)}";
+        }
     }
 
     public static class PersonalTip
@@ -82,6 +90,24 @@ public static class BusinessErrors
             private const string Prefix = $"{nameof(WellnessTip)}.{nameof(GetRandomTip)}";
 
             public const string TipDoesNotExist = $"{Prefix}.{nameof(TipDoesNotExist)}";
+        }
+    }
+
+    public static class DietPlan
+    {
+        public static class Report
+        {
+            private const string Prefix = $"{nameof(DietPlan)}.{nameof(Report)}";
+
+            public const string ReportAlreadyExists = $"{Prefix}.{nameof(ReportAlreadyExists)}";
+            public const string DietPlanDoesNotExist = $"{Prefix}.{nameof(DietPlanDoesNotExist)}";
+        }
+
+        public static class Delete
+        {
+            private const string Prefix = $"{nameof(DietPlan)}.{nameof(Delete)}";
+
+            public const string DietPlanDoesNotExist = $"{Prefix}.{nameof(DietPlanDoesNotExist)}";
         }
     }
 }

@@ -1,0 +1,627 @@
+{
+  "Forearms": {
+    "total_exercises": 24,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.6,
+      "average_score": 7.4333333333333345,
+      "exercises_above_threshold": 8
+    },
+    "difficulty_distribution": {
+      "Beginner": 18,
+      "Intermediate": 6,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Other": 5,
+      "Barbell": 5,
+      "Cable": 2,
+      "Dumbbell": 9,
+      "Kettlebells": 1,
+      "None": 1,
+      "Body Only": 1,
+      "Medicine Ball": 0,
+      "Exercise Ball": 0,
+      "Machine": 0,
+      "Bands": 0
+    },
+    "type_distribution": {
+      "Strongman": 2,
+      "Strength": 20,
+      "Stretching": 2,
+      "Olympic Weightlifting": 0,
+      "Powerlifting": 0,
+      "Cardio": 0,
+      "Plyometrics": 0
+    }
+  },
+  "Quadriceps": {
+    "total_exercises": 218,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.6,
+      "average_score": 4.554128440366972,
+      "exercises_above_threshold": 15
+    },
+    "difficulty_distribution": {
+      "Intermediate": 135,
+      "Beginner": 76,
+      "Expert": 7
+    },
+    "equipment_distribution": {
+      "Machine": 19,
+      "Barbell": 52,
+      "Other": 33,
+      "Body Only": 68,
+      "Kettlebells": 11,
+      "Bands": 4,
+      "Dumbbell": 20,
+      "Cable": 2,
+      "Exercise Ball": 2,
+      "None": 5,
+      "Foam Roll": 1,
+      "Medicine Ball": 1
+    },
+    "type_distribution": {
+      "Strength": 96,
+      "Olympic Weightlifting": 16,
+      "Strongman": 10,
+      "Powerlifting": 5,
+      "Cardio": 23,
+      "Plyometrics": 52,
+      "Stretching": 16
+    }
+  },
+  "Abdominals": {
+    "total_exercises": 113,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.5,
+      "average_score": 6.279646017699116,
+      "exercises_above_threshold": 13
+    },
+    "difficulty_distribution": {
+      "Intermediate": 84,
+      "Beginner": 29,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Other": 12,
+      "Body Only": 58,
+      "Dumbbell": 3,
+      "Cable": 13,
+      "Medicine Ball": 7,
+      "Barbell": 6,
+      "Exercise Ball": 4,
+      "None": 1,
+      "Kettlebells": 6,
+      "Machine": 2,
+      "Bands": 1
+    },
+    "type_distribution": {
+      "Strength": 101,
+      "Plyometrics": 5,
+      "Stretching": 7,
+      "Strongman": 0,
+      "Olympic Weightlifting": 0,
+      "Powerlifting": 0,
+      "Cardio": 0
+    }
+  },
+  "Lats": {
+    "total_exercises": 45,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.5,
+      "average_score": 6.291111111111111,
+      "exercises_above_threshold": 2
+    },
+    "difficulty_distribution": {
+      "Intermediate": 26,
+      "Beginner": 19,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Other": 7,
+      "Body Only": 13,
+      "Cable": 11,
+      "Machine": 4,
+      "Barbell": 2,
+      "Medicine Ball": 2,
+      "Bands": 2,
+      "None": 3,
+      "Foam Roll": 1,
+      "Dumbbell": 0,
+      "Exercise Ball": 0,
+      "Kettlebells": 0
+    },
+    "type_distribution": {
+      "Strength": 34,
+      "Plyometrics": 3,
+      "Stretching": 8,
+      "Strongman": 0,
+      "Olympic Weightlifting": 0,
+      "Powerlifting": 0,
+      "Cardio": 0
+    }
+  },
+  "Middle Back": {
+    "total_exercises": 44,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.5,
+      "average_score": 6.586363636363637,
+      "exercises_above_threshold": 2
+    },
+    "difficulty_distribution": {
+      "Intermediate": 30,
+      "Beginner": 14,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Other": 10,
+      "Barbell": 13,
+      "Dumbbell": 6,
+      "Machine": 3,
+      "Cable": 2,
+      "Kettlebells": 3,
+      "Body Only": 5,
+      "Bands": 2,
+      "Medicine Ball": 0,
+      "Exercise Ball": 0,
+      "None": 0
+    },
+    "type_distribution": {
+      "Strength": 39,
+      "Cardio": 1,
+      "Stretching": 4,
+      "Strongman": 0,
+      "Olympic Weightlifting": 0,
+      "Powerlifting": 0,
+      "Plyometrics": 0
+    }
+  },
+  "Lower Back": {
+    "total_exercises": 30,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.5,
+      "average_score": 5.6800000000000015,
+      "exercises_above_threshold": 4
+    },
+    "difficulty_distribution": {
+      "Intermediate": 10,
+      "Beginner": 20,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Other": 6,
+      "Barbell": 8,
+      "Body Only": 9,
+      "Exercise Ball": 1,
+      "Machine": 1,
+      "None": 4,
+      "Foam Roll": 1,
+      "Dumbbell": 0,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Kettlebells": 0,
+      "Bands": 0
+    },
+    "type_distribution": {
+      "Strongman": 4,
+      "Powerlifting": 7,
+      "Strength": 8,
+      "Stretching": 11,
+      "Olympic Weightlifting": 0,
+      "Cardio": 0,
+      "Plyometrics": 0
+    }
+  },
+  "Shoulders": {
+    "total_exercises": 140,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.5,
+      "average_score": 6.1642857142857155,
+      "exercises_above_threshold": 14
+    },
+    "difficulty_distribution": {
+      "Intermediate": 93,
+      "Beginner": 47,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Dumbbell": 37,
+      "Barbell": 22,
+      "Kettlebells": 20,
+      "Other": 15,
+      "Machine": 5,
+      "Body Only": 15,
+      "Cable": 12,
+      "None": 3,
+      "E-Z Curl Bar": 2,
+      "Bands": 6,
+      "Medicine Ball": 3,
+      "Exercise Ball": 0
+    },
+    "type_distribution": {
+      "Strength": 113,
+      "Olympic Weightlifting": 5,
+      "Stretching": 10,
+      "Strongman": 4,
+      "Plyometrics": 6,
+      "Cardio": 2,
+      "Powerlifting": 0
+    }
+  },
+  "Biceps": {
+    "total_exercises": 55,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.5,
+      "average_score": 7.654545454545454,
+      "exercises_above_threshold": 6
+    },
+    "difficulty_distribution": {
+      "Beginner": 37,
+      "Intermediate": 18,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Dumbbell": 23,
+      "Barbell": 13,
+      "E-Z Curl Bar": 3,
+      "Machine": 2,
+      "Cable": 8,
+      "Other": 4,
+      "Body Only": 1,
+      "Foam Roll": 1,
+      "Medicine Ball": 0,
+      "Exercise Ball": 0,
+      "None": 0,
+      "Kettlebells": 0,
+      "Bands": 0
+    },
+    "type_distribution": {
+      "Strength": 52,
+      "Stretching": 3,
+      "Strongman": 0,
+      "Olympic Weightlifting": 0,
+      "Powerlifting": 0,
+      "Cardio": 0,
+      "Plyometrics": 0
+    }
+  },
+  "Glutes": {
+    "total_exercises": 25,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.4,
+      "average_score": 5.979999999999999,
+      "exercises_above_threshold": 2
+    },
+    "difficulty_distribution": {
+      "Intermediate": 12,
+      "Beginner": 13,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Barbell": 4,
+      "Cable": 2,
+      "Body Only": 12,
+      "Kettlebells": 1,
+      "Exercise Ball": 2,
+      "Bands": 2,
+      "Foam Roll": 1,
+      "Other": 1,
+      "Dumbbell": 0,
+      "Medicine Ball": 0,
+      "None": 0,
+      "Machine": 0
+    },
+    "type_distribution": {
+      "Powerlifting": 4,
+      "Strength": 13,
+      "Olympic Weightlifting": 1,
+      "Stretching": 7,
+      "Strongman": 0,
+      "Cardio": 0,
+      "Plyometrics": 0
+    }
+  },
+  "Triceps": {
+    "total_exercises": 66,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.4,
+      "average_score": 6.822727272727274,
+      "exercises_above_threshold": 5
+    },
+    "difficulty_distribution": {
+      "Intermediate": 42,
+      "Beginner": 24,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Body Only": 13,
+      "E-Z Curl Bar": 4,
+      "Dumbbell": 16,
+      "Cable": 12,
+      "Barbell": 14,
+      "Other": 4,
+      "Medicine Ball": 1,
+      "Machine": 1,
+      "Bands": 1,
+      "Exercise Ball": 0,
+      "None": 0,
+      "Kettlebells": 0
+    },
+    "type_distribution": {
+      "Strength": 54,
+      "Powerlifting": 8,
+      "Plyometrics": 1,
+      "Stretching": 3,
+      "Strongman": 0,
+      "Olympic Weightlifting": 0,
+      "Cardio": 0
+    }
+  },
+  "Hamstrings": {
+    "total_exercises": 85,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.4,
+      "average_score": 5.143529411764704,
+      "exercises_above_threshold": 9
+    },
+    "difficulty_distribution": {
+      "Intermediate": 27,
+      "Beginner": 58,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Barbell": 24,
+      "Dumbbell": 3,
+      "Body Only": 19,
+      "None": 6,
+      "Machine": 6,
+      "Exercise Ball": 1,
+      "Kettlebells": 12,
+      "Other": 11,
+      "Bands": 2,
+      "Foam Roll": 1,
+      "Cable": 0,
+      "Medicine Ball": 0
+    },
+    "type_distribution": {
+      "Strength": 32,
+      "Olympic Weightlifting": 11,
+      "Powerlifting": 9,
+      "Plyometrics": 9,
+      "Stretching": 22,
+      "Cardio": 1,
+      "Strongman": 1
+    }
+  },
+  "Neck": {
+    "total_exercises": 8,
+    "score_distribution": {
+      "min_score": 2.8,
+      "max_score": 9.3,
+      "average_score": 6.55,
+      "exercises_above_threshold": 1
+    },
+    "difficulty_distribution": {
+      "Beginner": 6,
+      "Intermediate": 2,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Other": 3,
+      "Body Only": 5,
+      "Dumbbell": 0,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Barbell": 0,
+      "Exercise Ball": 0,
+      "None": 0,
+      "Kettlebells": 0,
+      "Machine": 0,
+      "Bands": 0
+    },
+    "type_distribution": {
+      "Strength": 6,
+      "Stretching": 2,
+      "Strongman": 0,
+      "Olympic Weightlifting": 0,
+      "Powerlifting": 0,
+      "Cardio": 0,
+      "Plyometrics": 0
+    }
+  },
+  "Chest": {
+    "total_exercises": 114,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.2,
+      "average_score": 6.070175438596491,
+      "exercises_above_threshold": 6
+    },
+    "difficulty_distribution": {
+      "Intermediate": 46,
+      "Beginner": 68,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Dumbbell": 17,
+      "Body Only": 32,
+      "Barbell": 12,
+      "Cable": 9,
+      "Other": 12,
+      "E-Z Curl Bar": 2,
+      "Machine": 11,
+      "Medicine Ball": 7,
+      "Bands": 4,
+      "Kettlebells": 5,
+      "None": 1,
+      "Exercise Ball": 2
+    },
+    "type_distribution": {
+      "Strength": 91,
+      "Plyometrics": 15,
+      "Powerlifting": 3,
+      "Strongman": 1,
+      "Stretching": 4,
+      "Olympic Weightlifting": 0,
+      "Cardio": 0
+    }
+  },
+  "Traps": {
+    "total_exercises": 16,
+    "score_distribution": {
+      "min_score": 6.2,
+      "max_score": 9.2,
+      "average_score": 8.018749999999999,
+      "exercises_above_threshold": 2
+    },
+    "difficulty_distribution": {
+      "Intermediate": 11,
+      "Beginner": 5,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Machine": 5,
+      "Dumbbell": 2,
+      "Kettlebells": 1,
+      "Barbell": 4,
+      "Cable": 2,
+      "Bands": 1,
+      "None": 1,
+      "Other": 0,
+      "Body Only": 0,
+      "Medicine Ball": 0,
+      "Exercise Ball": 0
+    },
+    "type_distribution": {
+      "Strength": 14,
+      "Olympic Weightlifting": 2,
+      "Strongman": 0,
+      "Powerlifting": 0,
+      "Cardio": 0,
+      "Plyometrics": 0,
+      "Stretching": 0
+    }
+  },
+  "Calves": {
+    "total_exercises": 26,
+    "score_distribution": {
+      "min_score": 1.0,
+      "max_score": 9.2,
+      "average_score": 6.2576923076923086,
+      "exercises_above_threshold": 1
+    },
+    "difficulty_distribution": {
+      "Intermediate": 10,
+      "Beginner": 16,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Machine": 6,
+      "Barbell": 3,
+      "Other": 4,
+      "None": 3,
+      "Body Only": 5,
+      "Foam Roll": 1,
+      "Bands": 3,
+      "Dumbbell": 1,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Exercise Ball": 0,
+      "Kettlebells": 0
+    },
+    "type_distribution": {
+      "Strength": 13,
+      "Stretching": 13,
+      "Strongman": 0,
+      "Olympic Weightlifting": 0,
+      "Powerlifting": 0,
+      "Cardio": 0,
+      "Plyometrics": 0
+    }
+  },
+  "Adductors": {
+    "total_exercises": 13,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 9.0,
+      "average_score": 4.823076923076923,
+      "exercises_above_threshold": 0
+    },
+    "difficulty_distribution": {
+      "Intermediate": 6,
+      "Beginner": 7,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Machine": 1,
+      "Body Only": 6,
+      "Bands": 1,
+      "None": 2,
+      "Foam Roll": 1,
+      "Other": 2,
+      "Dumbbell": 0,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Barbell": 0,
+      "Exercise Ball": 0,
+      "Kettlebells": 0
+    },
+    "type_distribution": {
+      "Strength": 2,
+      "Stretching": 7,
+      "Plyometrics": 4,
+      "Strongman": 0,
+      "Olympic Weightlifting": 0,
+      "Powerlifting": 0,
+      "Cardio": 0
+    }
+  },
+  "Abductors": {
+    "total_exercises": 10,
+    "score_distribution": {
+      "min_score": 0.0,
+      "max_score": 8.8,
+      "average_score": 5.19,
+      "exercises_above_threshold": 0
+    },
+    "difficulty_distribution": {
+      "Beginner": 3,
+      "Intermediate": 7,
+      "Expert": 0
+    },
+    "equipment_distribution": {
+      "Body Only": 7,
+      "Foam Roll": 1,
+      "Machine": 1,
+      "Bands": 1,
+      "Other": 0,
+      "Dumbbell": 0,
+      "Cable": 0,
+      "Medicine Ball": 0,
+      "Barbell": 0,
+      "Exercise Ball": 0,
+      "None": 0,
+      "Kettlebells": 0
+    },
+    "type_distribution": {
+      "Stretching": 6,
+      "Strength": 4,
+      "Strongman": 0,
+      "Olympic Weightlifting": 0,
+      "Powerlifting": 0,
+      "Cardio": 0,
+      "Plyometrics": 0
+    }
+  }
+}

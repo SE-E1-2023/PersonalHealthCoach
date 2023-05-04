@@ -63,6 +63,9 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
