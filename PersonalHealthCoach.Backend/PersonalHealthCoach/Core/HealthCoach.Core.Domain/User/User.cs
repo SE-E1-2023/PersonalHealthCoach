@@ -34,4 +34,6 @@ public sealed class User : AggregateRoot
     public string FirstName { get; private set; }
 
     public string EmailAddress { get; private set; }
+
+    public bool HasElevatedRights { get;  set; }
 }
