@@ -6,6 +6,8 @@ public interface IHttpClient
 {
     public IHttpClient OnRoute(string route);
 
+    public IHttpClient WithHeaders(IDictionary<string, string> headers);
+
     public Task<Result<TResult>> Post<TRequest, TResult>(TRequest request) where TRequest : class where TResult : class;
 
     public Task<Result<TResult>> Get<TResult>() where TResult : class;

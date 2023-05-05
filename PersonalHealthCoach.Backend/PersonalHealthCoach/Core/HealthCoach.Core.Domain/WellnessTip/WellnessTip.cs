@@ -1,6 +1,5 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Core;
-
+﻿using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Core.Domain;
 
@@ -22,5 +21,3 @@ public class WellnessTip : AggregateRoot
 
     public string TipText { get; private set; }
 }
-
-

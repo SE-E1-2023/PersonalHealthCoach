@@ -34,8 +34,13 @@ public sealed class FitnessPlanFunctions
     [Function(nameof(DeleteFitnessPlan))]
     public async Task<HttpResponseData> DeleteFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Delete, Route = "v1/plans/fitness/{id}")] HttpRequestData request, Guid id)
     {
+        var headerValue = request.Headers.GetValues("X-User-Id").FirstOrDefault();
+        var userId = string.IsNullOrEmpty(headerValue)
+            ? Guid.Empty
+            : Guid.Parse(headerValue);
+
         return await mediator
-            .Send(new DeleteFitnessPlanCommand(id))
+            .Send(new DeleteFitnessPlanCommand(id, userId))
             .ToResponseData(request);
     }
 }

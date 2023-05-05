@@ -1,8 +1,8 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Core.Domain;
-using HealthCoach.Shared.Infrastructure;
+﻿using MediatR;
 using HealthCoach.Shared.Web;
-using MediatR;
+using HealthCoach.Core.Domain;
+using CSharpFunctionalExtensions;
+using HealthCoach.Shared.Infrastructure;
 
 using Errors = HealthCoach.Core.Business.BusinessErrors.Report.Solve;
 
@@ -21,13 +21,16 @@ internal class SolveReportCommandHandler : IRequestHandler<SolveReportCommand, R
     
     public async Task<Result> Handle(SolveReportCommand request, CancellationToken cancellationToken)
     {
+        var callerResult = await repository
+            .Load<User>(request.CallerId)
+            .ToResult(Errors.UserNotFound)
+            .Ensure(u => u.HasElevatedRights, Errors.UserNotAuthorized);
+        
         var reportResult = await repository
             .Load<Report>(request.ReportId)
             .ToResult(Errors.ReportNotFound)
             .Ensure(r => r.SolvedAt is null, Errors.ReportAlreadySolved);
-        
-        var callerResult = await repository.Load<User>(request.CallerId).ToResult(Errors.UserNotFound);
-        
+
         var destination = reportResult.Map(r =>
         {
             return r.Target switch
@@ -39,23 +42,25 @@ internal class SolveReportCommandHandler : IRequestHandler<SolveReportCommand, R
             };
         });
 
-        return await Result.FirstFailureOrSuccess(reportResult, callerResult, destination)
-            .Bind(() => RouteRequest(request, destination.Value, reportResult.Value.TargetId))
+        return await Result.FirstFailureOrSuccess(callerResult, reportResult, destination)
+            .Bind(() => RouteRequest(destination.Value, reportResult.Value.TargetId, callerResult.Value.Id))
             .Bind(() => reportResult.Value.Solve())
             .Tap(() => repository.Store(reportResult.Value));
     }
 
-    private async Task<Result> RouteRequest(SolveReportCommand request, RequestType destination, Guid targetId)
+    private async Task<Result> RouteRequest(RequestType destination, Guid targetId, Guid callerId)
     {
-        if (destination == RequestType.FitnessPlans)
+        if (destination is RequestType.FitnessPlans)
             return await httpClient
                 .OnRoute(InternalEndpoints.DeleteFitnessPlan)
-                .Delete(new DeleteFitnessPlanCommand(targetId));
+                .WithHeaders(new Dictionary<string, string> { { "X-User-Id", callerId.ToString() } })
+                .Delete(new DeleteFitnessPlanCommand(targetId, callerId));
 
-        if (destination == RequestType.DietPlans)
+        if (destination is RequestType.DietPlans)
             return await httpClient
                 .OnRoute(InternalEndpoints.DeleteDietPlan)
-                .Delete(new DeleteDietPlanCommand(targetId));
+                .WithHeaders(new Dictionary<string, string> { { "X-User-Id", callerId.ToString() } })
+                .Delete(new DeleteDietPlanCommand(targetId, callerId));
 
         // if (destination == RequestType.PersonalTips)
         //     return await httpClient

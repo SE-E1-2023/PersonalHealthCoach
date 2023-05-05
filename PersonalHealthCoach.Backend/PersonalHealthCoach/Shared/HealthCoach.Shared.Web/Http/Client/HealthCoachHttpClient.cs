@@ -1,5 +1,5 @@
-﻿using System.Net.Http.Json;
-using System.Text.Json;
+﻿using System.Text.Json;
+using System.Net.Http.Json;
 using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Shared.Web;
@@ -14,7 +14,7 @@ public class HealthCoachHttpClient : IHttpClient
 
     private HealthCoachHttpClient() { }
 
-    public HealthCoachHttpClient(string baseUrl)
+    internal HealthCoachHttpClient(string baseUrl)
     {
         BaseUrl = baseUrl;
 
@@ -29,9 +29,22 @@ public class HealthCoachHttpClient : IHttpClient
         };
     }
 
+    public string BaseUrl { get; private init; }
+
+    public string Route { get; private set; }
+
+    public IDictionary<string, string> Headers { get; private set; }
+    
     public IHttpClient OnRoute(string route)
     {
         this.Route = route;
+
+        return this;
+    }
+
+    public IHttpClient WithHeaders(IDictionary<string, string> headers)
+    {
+        this.Headers = headers;
 
         return this;
     }
@@ -66,7 +79,7 @@ public class HealthCoachHttpClient : IHttpClient
         var requestMessage = new HttpRequestMessage(HttpMethod.Patch, Route)
         {
             Content = content
-        };
+        }.WithHeaders(Headers);
 
         var response = await httpClient.SendAsync(requestMessage);
 
@@ -84,7 +97,7 @@ public class HealthCoachHttpClient : IHttpClient
         var requestMessage = new HttpRequestMessage(HttpMethod.Patch, Route)
         {
             Content = content
-        };
+        }.WithHeaders(Headers);
 
         var response = await httpClient.SendAsync(requestMessage);
 
@@ -101,8 +114,9 @@ public class HealthCoachHttpClient : IHttpClient
         var content = JsonContent.Create(request, typeof(TRequest), options: jsonSerializerOptions);
         var requestMessage = new HttpRequestMessage(HttpMethod.Delete, Route)
         {
-            Content = content
-        };
+            Content = content,
+        }.WithHeaders(Headers);
+        
 
         var response = await httpClient.SendAsync(requestMessage);
 
@@ -113,8 +127,17 @@ public class HealthCoachHttpClient : IHttpClient
 
         return Result.Success();
     }
+}
 
-    public string BaseUrl { get; private init; }
+internal static class HttpClientExtensions
+{
+    public static HttpRequestMessage WithHeaders(this HttpRequestMessage request, IDictionary<string, string> headers)
+    {
+        foreach (var header in headers)
+        {
+            request.Headers.Add(header.Key, header.Value);
+        }
 
-    public string Route { get; private set; }
+        return request;
+    }
 }

@@ -1,9 +1,9 @@
-﻿using System.Web;
-using MediatR;
+﻿using MediatR;
+using System.Web;
 using HealthCoach.Shared.Web;
+using HealthCoach.Shared.Core;
 using HealthCoach.Core.Business;
 using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Core;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 

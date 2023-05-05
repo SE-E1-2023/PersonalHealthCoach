@@ -1,8 +1,7 @@
-﻿
-using CSharpFunctionalExtensions;
+﻿using MediatR;
 using HealthCoach.Core.Domain;
+using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
-using MediatR;
 
 namespace HealthCoach.Core.Business;
 using Errors = HealthCoach.Core.Business.BusinessErrors.DietPlan.Report;

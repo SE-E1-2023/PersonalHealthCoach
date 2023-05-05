@@ -1,5 +1,5 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Core;
+﻿using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Core.Domain;
 
@@ -7,7 +7,7 @@ public sealed class Report : AggregateRoot
 {
     public Report() { }
 
-    private Report(Guid targetId, string target, string reason)
+    private Report(Guid targetId, string target, string reason) : this()
     {
         TargetId = targetId;
         Target = target;

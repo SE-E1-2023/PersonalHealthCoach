@@ -1,8 +1,8 @@
-﻿using HealthCoach.Core.Business;
+﻿using MediatR;
 using HealthCoach.Shared.Web;
-using MediatR;
-using Microsoft.Azure.Functions.Worker.Http;
+using HealthCoach.Core.Business;
 using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
 
 namespace HealthCoach.Functions.Isolated;
 

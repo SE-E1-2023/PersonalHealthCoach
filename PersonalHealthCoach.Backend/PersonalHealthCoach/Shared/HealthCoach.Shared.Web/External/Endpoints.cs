@@ -2,7 +2,7 @@
 
 public static class ExternalEndpoints
 {
-    public static class AI
+    public static class Ai
     {
         public const string BaseUrl = "http://localhost:8000";
 
