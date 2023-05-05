@@ -23,6 +23,37 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.DietPlan", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<List<string>>("DietType")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<List<string>>("Interdictions")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<List<string>>("Recommandations")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("Scope")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DietPlan");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>
                 {
                     b.Property<Guid>("Id")
@@ -61,9 +92,6 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<Guid>("UserId")
@@ -187,6 +215,9 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<bool>("HasElevatedRights")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("Name")
                         .IsRequired()
