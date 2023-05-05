@@ -1,4 +1,5 @@
-﻿using HealthCoach.Core.Domain;
+﻿
+using HealthCoach.Core.Domain;
 using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
 
@@ -55,7 +56,8 @@ public class DbPopulationService
             User.Create("Stirbu","Larisa","stirbularisa@gmail.com"),
             User.Create("Radeanu","Roxana","roxanaradeanu@gmail.com"),
             User.Create("Rusu","Vlad","rusuvlad@gmail.com"),
-            User.Create("Popa","Stefan","popastefan@gmail.com")
+            User.Create("Popa","Stefan","popastefan@gmail.com"),
+            User.Create("Application","Manager","applicationmanager@gmail.com", true)
         };
 
         var dbUsers = queryProvider.Query<User>().ToList();
@@ -66,7 +68,7 @@ public class DbPopulationService
             {
                 continue;
             }
-            
+
             await user.Tap(u => repository.Store(u));
         }
     }
@@ -184,21 +186,26 @@ public class DbPopulationService
 
 
             PersonalData.Create(users[5].Id,PersonalDataConstants.MinimumDateOfBirth,80.5f,195f,
-                            new List<string> {"Asthma", "Allergies"},
-                            new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                            new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
+                new List<string> {"Asthma", "Allergies"},
+                new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
+                new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
             PersonalData.Create(users[5].Id,PersonalDataConstants.MinimumDateOfBirth,75.5f,195f,
-                            new List<string> {"Asthma", "Allergies"},
-                            new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                            new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
+                new List<string> {"Asthma", "Allergies"},
+                new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
+                new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
             PersonalData.Create(users[5].Id,PersonalDataConstants.MinimumDateOfBirth,80.5f,195f,
-                            new List<string> {"Asthma", "Allergies"},
-                            new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                            new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
+                new List<string> {"Asthma", "Allergies"},
+                new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
+                new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
             PersonalData.Create(users[5].Id,PersonalDataConstants.MinimumDateOfBirth,80.0f,195f,
-                            new List<string> {"Asthma", "Allergies"},
-                            new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
-                            new List<string> { "Boxing", "Cycling"}, 12000, 6, "M")
+                new List<string> {"Asthma", "Allergies"},
+                new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
+                new List<string> { "Boxing", "Cycling"}, 12000, 6, "M"),
+
+            PersonalData.Create(users[6].Id,PersonalDataConstants.MinimumDateOfBirth,80.0f,195f,
+                new List<string> {"Anxiety", "Allergies"},
+                new List<string> {"Acne"},PersonalDataConstants.AllowedGoals.ElementAt(0),
+                new List<string> { "Boxing", "Cycling"}, 12000, 6, "M")
         };
 
         // Query the db for each PersonalData class and check if the objects above exist and if not, add just the missing ones
@@ -251,9 +258,9 @@ public class DbPopulationService
         };
 
         var dbWellnessTipList = queryProvider.Query<WellnessTip>().ToList();
-        foreach(var tip in wellnessTipList)
+        foreach (var tip in wellnessTipList)
         {
-            if(tip.IsSuccess && dbWellnessTipList.Any(dbTip => dbTip.TipText == tip.Value.TipText))
+            if (tip.IsSuccess && dbWellnessTipList.Any(dbTip => dbTip.TipText == tip.Value.TipText))
             {
                 continue;
             }

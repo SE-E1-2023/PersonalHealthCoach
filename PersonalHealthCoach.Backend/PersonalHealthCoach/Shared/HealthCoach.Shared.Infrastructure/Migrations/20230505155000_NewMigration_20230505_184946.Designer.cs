@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     [DbContext(typeof(GenericDbContext))]
-    [Migration("20230429114348_NewMigration_20230429_144342")]
-    partial class NewMigration_20230429_144342
+    [Migration("20230505155000_NewMigration_20230505_184946")]
+    partial class NewMigration_20230505_184946
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,37 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.DietPlan", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<List<string>>("DietType")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<List<string>>("Interdictions")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<List<string>>("Recommandations")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("Scope")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DietPlan");
+                });
 
             modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>
                 {
@@ -187,6 +218,9 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<bool>("HasElevatedRights")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("Name")
                         .IsRequired()
