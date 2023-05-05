@@ -11,3 +11,12 @@ public static class ExternalEndpoints
         public const string FitnessPlanner = $"{nameof(FitnessPlanner)}";
     }
 }
+
+public static class InternalEndpoints
+{
+    public const string BaseUrl = "http://localhost:7071/api";
+
+    public const string DeleteFitnessPlan = "v1/plans/fitness/";
+    public const string DeleteDietPlan = "v1/plans/diet/";
+    public const string DeletePersonalTip = "v1/plans/tips/";
+}

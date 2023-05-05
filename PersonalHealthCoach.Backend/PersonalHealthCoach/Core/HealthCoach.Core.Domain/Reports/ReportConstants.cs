@@ -6,6 +6,6 @@ public static class ReportConstants
     {
         nameof(FitnessPlan),
         nameof(PersonalTip),
-        "DietPlan"
+        nameof(DietPlan)
     };
 }

@@ -66,6 +66,13 @@ public static class DomainErrors
             public const string InvalidTarget = $"{Prefix}.{nameof(InvalidTarget)}";
             public const string ReasonNullOrEmpty = $"{Prefix}.{nameof(ReasonNullOrEmpty)}";
         }
+
+        public static class Solve
+        {
+            private const string Prefix = $"{nameof(Report)}.{nameof(Solve)}";
+
+            public const string AlreadySolved = $"{Prefix}.{nameof(AlreadySolved)}";
+        }
     }
 
     public static class WellnessTip

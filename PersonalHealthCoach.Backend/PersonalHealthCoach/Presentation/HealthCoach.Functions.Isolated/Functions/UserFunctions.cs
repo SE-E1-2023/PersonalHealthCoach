@@ -1,5 +1,4 @@
-﻿using System.Net;
-using System.Web;
+﻿using System.Web;
 using MediatR;
 using HealthCoach.Shared.Web;
 using HealthCoach.Core.Business;

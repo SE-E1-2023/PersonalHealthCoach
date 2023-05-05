@@ -35,4 +35,10 @@ public sealed class Report : AggregateRoot
     public DateTime ReportedAt { get; private set; }
 
     public DateTime? SolvedAt { get; private set; }
+
+    public Result Solve()
+    {
+        return Result.SuccessIf(SolvedAt is null, DomainErrors.Report.Solve.AlreadySolved)
+            .Tap(() => SolvedAt = TimeProvider.Instance().UtcNow);
+    }
 }
