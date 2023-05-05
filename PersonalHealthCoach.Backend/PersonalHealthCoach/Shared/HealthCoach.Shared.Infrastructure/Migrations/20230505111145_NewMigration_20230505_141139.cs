@@ -7,11 +7,27 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class NewMigration_20230421_171453 : Migration
+    public partial class NewMigration_20230505_141139 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "DietPlan",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Scope = table.Column<string>(type: "text", nullable: false),
+                    DietType = table.Column<List<string>>(type: "text[]", nullable: false),
+                    Recommandations = table.Column<List<string>>(type: "text[]", nullable: false),
+                    Interdictions = table.Column<List<string>>(type: "text[]", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DietPlan", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "FitnessPlan",
                 columns: table => new
@@ -38,6 +54,9 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     CurrentIllnesses = table.Column<List<string>>(type: "text[]", nullable: false),
                     Goal = table.Column<string>(type: "text", nullable: false),
                     UnwantedExercises = table.Column<List<string>>(type: "text[]", nullable: false),
+                    DailySteps = table.Column<int>(type: "integer", nullable: true),
+                    HoursOfSleep = table.Column<double>(type: "double precision", nullable: true),
+                    Gender = table.Column<string>(type: "text", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
@@ -82,7 +101,8 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     FirstName = table.Column<string>(type: "text", nullable: false),
-                    EmailAddress = table.Column<string>(type: "text", nullable: false)
+                    EmailAddress = table.Column<string>(type: "text", nullable: false),
+                    HasElevatedRights = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -132,6 +152,9 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "DietPlan");
+
             migrationBuilder.DropTable(
                 name: "Exercise");
 

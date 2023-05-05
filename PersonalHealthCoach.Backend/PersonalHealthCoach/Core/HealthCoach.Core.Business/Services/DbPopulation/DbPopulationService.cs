@@ -57,7 +57,7 @@ public class DbPopulationService
             User.Create("Radeanu","Roxana","roxanaradeanu@gmail.com"),
             User.Create("Rusu","Vlad","rusuvlad@gmail.com"),
             User.Create("Popa","Stefan","popastefan@gmail.com"),
-            User.Create("Application","Manager","applicationmanager@gmail.com").Tap(u => u.HasElevatedRights = true)
+            User.Create("Application","Manager","applicationmanager@gmail.com", true)
         };
 
         var dbUsers = queryProvider.Query<User>().ToList();
