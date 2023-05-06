@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, make_response
 #from collections import OrderedDict
 import json
 import traceback
@@ -34,12 +34,20 @@ def functionWrapper(fn):
             response = fn(dictionary)
         except Exception as e:
             print("Internal exception: ", e )
-            #traceback.print_exc()
-            abort(422)
+            traceback.print_exc()
+            abort(500)
         
         if response is None:
             print("No response")
-            abort(422)
+            abort(400)
+
+        if '__message__' in response:
+            if '__status__' in response:
+                return make_response(response['__message__'], response['__status__'])
+            else:
+                return make_response(response['__message__'], 400)
+        elif isinstance(response, str):
+            return make_response(response, 400)
 
         return jsonify(response)
     
