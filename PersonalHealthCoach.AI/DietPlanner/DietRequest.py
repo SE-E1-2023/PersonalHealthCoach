@@ -88,6 +88,12 @@ def getDiet(input):
             toReturn={}
             toReturn["NOP"] = 10 + fields.index(element)
             return toReturn
+    dietTypes = ["dairyFree","glutenFree","vegan","vegetarian"]
+    for element in input["dietType"]:
+        if element not in dietTypes:
+            toReturn = {}
+            toReturn["NOP"] = 15
+            return toReturn
     if input["requestType"] != "diet":
         return getMultipleMeals(input)
     returnedRequest={}
@@ -163,7 +169,9 @@ def getMultipleMeals(info):
         case "snack":
             path = "Snack.json"
         case _:
-            return
+            di = {}
+            di["NOP"] = 16
+            return di
     with open (os.path.join(os.path.join(abspath,"Databases"),path),"r") as file:
         d = json.load(file)
     minHealthiness = 0

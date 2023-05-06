@@ -24,6 +24,8 @@ Error handaling:
         12: no alergies provided
         13: no dietType provided
         14: no goal provided 
+        15: unknown diet
+        16: unknown food type
         !!NOTE : if the client does not have any alergies: there will be a empty list
 
 

@@ -81,7 +81,7 @@ class TestStringMethods(unittest.TestCase):
         "goal" : "weight loss"
         }
         result = getDiet(input)
-        self.assertEqual(result["NOP"], 1)
+        self.assertEqual(result["NOP"], 15)
     def test_pozitive2(self):
         input = {
         "idClient" : "4",
@@ -95,13 +95,66 @@ class TestStringMethods(unittest.TestCase):
     def test_negative7(self):
         input = {
         "idClient" : "4",
-        "requestType" : "diet",
+        "requestType" : "soup",
         "alergies" : ["nut","milk"],
-        "dietType" : ["vegan","vegetarian","dieryFree","glutenFree"],
+        "dietType" : ["vegan","vegetarian","dairyFree","glutenFree"],
         "goal" : "weight loss"
         }       
         result = getDiet(input)
-        self.assertEqual(result["NOP"],1)
+        self.assertEqual(result["NOP"],0)
+    def test_negative8(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "diet",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["vegn"],
+        "goal" : "weight loss"
+        }       
+        result = getDiet(input)
+        self.assertEqual(result["NOP"],15)
+    def test_negative9(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "sooop",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["vegan"],
+        "goal" : "weight loss"
+        }
+        result = getDiet(input)
+        self.assertEqual(result["NOP"],16)
+    def test_positive3(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "soup",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["vegan"],
+        "goal" : "weight loss"
+        }
+        result = getDiet(input)
+        self.assertEqual(result["NOP"],0)
+    
+    def test_pozitive39(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "soup",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["dairyFree"],
+        "goal" : "weight loss"
+        }
+        result = getDiet(input)
+        self.assertEqual(result["NOP"],0)
+    def test_unknownUser1(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "soup",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["dairyFree"],
+        "goal" : "weight loss"
+        }
+        result = getDiet(input)
+        self.assertEqual(result["NOP"],0)
+
+
 
 def autoTest(): 
     if __name__ == '__main__':
