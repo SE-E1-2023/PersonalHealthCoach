@@ -1,4 +1,5 @@
 ﻿using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace HealthCoach.Shared.Infrastructure;
@@ -12,7 +13,7 @@ public sealed class GenericRepository : IRepository
         this.dbContext = dbContext;
     }
 
-    public async Task<T> Load<T>(Guid id) where T : AggregateRoot
+    public async Task<Maybe<T>> Load<T>(Guid id) where T : AggregateRoot
     {
         return await dbContext.Set<T>().FindAsync(id);
     }
@@ -33,4 +34,9 @@ public sealed class GenericRepository : IRepository
         await dbContext.SaveChangesAsync();
     }
 
+    public async Task Delete<TAggregateRoot>(TAggregateRoot aggregateRoot) where TAggregateRoot : AggregateRoot
+    {
+        dbContext.Set<TAggregateRoot>().Remove(aggregateRoot);
+        await dbContext.SaveChangesAsync();
+    }
 }

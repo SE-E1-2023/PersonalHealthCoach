@@ -1,12 +1,15 @@
-﻿using HealthCoach.Shared.Core;
+﻿using System.Reflection;
+using HealthCoach.Shared.Core;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 namespace HealthCoach.Shared.Infrastructure;
 
 public sealed class GenericDbContext : DbContext
 {
-    public GenericDbContext(DbContextOptions<GenericDbContext> options) : base(options) { }
+    public GenericDbContext(DbContextOptions<GenericDbContext> options) : base(options) 
+    {
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -39,5 +42,12 @@ public sealed class GenericDbContext : DbContext
         }
 
         return aggregateRootTypes;
+    }
+
+    public async Task InitializeDatabase()
+    {
+        await Database.EnsureDeletedAsync();
+        await Database.MigrateAsync();
+        await Database.EnsureCreatedAsync();
     }
 }

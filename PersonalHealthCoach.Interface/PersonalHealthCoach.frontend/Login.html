@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet" />
+    
+    <title>Login</title>
+</head>
+<body> 
+    
+        <div class="container">
+          
+            <!--<form method="GET" action="http://localhost:7071/api/v1/users"> To be replaced with the endpoint. -->
+                <form>
+                    <div class="top-header">
+                    <header>
+                       <img src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="Login" width="80" height="80">
+                        <br /> Login</header>
+                </div>
+                <div class="input-field">
+                    <input type="email" class="input" placeholder="Email" name="email" required>
+                </div>
+                <div class="submit-field">
+                    <input type="submit" class="submit" value="Login">
+                </div>
+            </form>
+            <script>
+              const form = document.querySelector('form');
+              console.log('form:', form);
+              
+              form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = form.email.value;
+                console.log('email:', email);
+        
+                try {
+                  const response = await fetch(`http://localhost:7071/api/v1/users?EmailAddress=${email}`, {
+                    method: 'GET',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    }
+                  });
+                  console.log('response:', response);
+                  
+                  const data = await response.json();
+                  console.log('data:', data);
+                  
+                  if (data.IsFailure) {
+                    window.location.href = 'test-unsuccessful-login.html';
+                  } else {
+                    document.cookie = `user_id=${data};
+                    path=/`;
+                    window.location.href = 'Homepage.html';
+                  }
+                } catch (error) {
+                  console.log('error:', error);
+                  window.location.href = 'test-unsuccessful-login.html';
+                }
+              });
+            </script>                        
+    </div>
+</body>
+</html>

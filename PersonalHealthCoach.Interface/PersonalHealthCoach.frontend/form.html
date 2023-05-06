@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Data Form</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+<h2 class="top-header">Personal Data Form</h2>
+<p>The * fields are necessary.</p>
+<form>
+	<div class="field">
+		<center><label for="name">Username</label></center>
+		<input type="text" id="user" name="name" class="input">
+	</div>
+	<div class="field">
+		<center><label>Height(cm)*</label></center>
+		<input type="number" id="height" name="height" class="input" required>
+	</div>
+	<div class="field">
+		<center><label>Weight(kg)*</label></center>
+		<input type="number" id="weight" name="weight" class="input" required>
+	</div>
+	<div class="field">
+		<center><label>Date of birth*</label></center>
+		<input type="date" id="dob" name="birthdate" class="input" required>
+	</div>
+	<div class="field">
+		<center><label>Medical History</label></center>
+		<input type="text" id="medicalConditions" name="medicalConditions" class="input">
+	</div>
+	<div class="field">
+		<center><label>Allergies</label></center>
+		<input type="text" id="allergies" name="allergies" class="input">
+	</div>
+	<div class="field">
+		<center><label for="goal">Goal</label></center>
+	<select id="goal" name="goal">
+	<option value="Lose Weight">Lose Weight</option>
+
+</select>
+</div>
+	
+	<div class="field">
+		<center><label>Unwanted Exercises</label></center>
+		<input type="text" id="unwantedExercises" name="unw" class="input">
+	</div>
+	<div class="field">
+		<center><label>Current Illnesses</label></center>
+		<input type="text" id="currentIllnesses" name="ill" class="input">
+	</div>
+	<div class="submit">
+		<input type="submit" value="Submit" class="submit">
+	</div>
+</form>
+</div>
+<script>
+const form = document.querySelector('form');
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
+const height = form.height.value;
+const weight = form.weight.value;
+const dob = form.dob.value;
+const medicalConditions = form.medicalConditions.value;
+const goal = form.goal.value;
+const unwantedExercises = form.unwantedExercises.value;
+const currentIllnesses = form.currentIllnesses.value;
+
+const response = await fetch("http://localhost:7071/api/v1/users/00c5de54-15db-4d52-8806-8eacbd9bf6e9/data/personal", {
+	method: 'POST',
+	headers: {
+		'Content-Type': 'application/json'
+	},
+	body: JSON.stringify({
+		UserId: "00c5de54-15db-4d52-8806-8eacbd9bf6e9",
+		Height: height,
+		Weight: weight,
+		DateOfBirth: dob,
+		MedicalHistory: medicalConditions.split(" "),
+		CurrentIllnesses: currentIllnesses.split(" "),
+		Goal: goal,
+		UnwantedExercises: unwantedExercises.split(" "),
+	})
+});
+console.log(response);
+if (response.ok) {
+	window.location.href = 'homepage.html';
+} else {
+	window.location.href = 'submit-unsuccesful.html';
+}
+});
+</script>
+</body>
+</html>

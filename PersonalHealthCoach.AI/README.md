@@ -334,9 +334,11 @@ Recieves a json with the following format:
     }
 }
 ```
+```
 JSON Properties:
-
+    
     pro_user: true | false
+    
     goal: Choose one of the following goals:
         "Lose fat"
         "Increase muscle mass"
@@ -349,125 +351,136 @@ JSON Properties:
     equipment_available: Specify the availability of each equipment type with True | False
 
 Each workout has a fixed number of 8 exercises.
-
-The response is a json with a workout plan as the following:
+```
+The response is a json with a workout plan as the following ( status :  200 | 400):
 ```
 {
-  "workout1": [
-    {
-      "exercise": "Barbell Front Raise",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Stability Ball Pike With Knee Tuck",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Flexor Incline Dumbbell Curls",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Standing Palms In Dumbbell Press",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Monster Walk",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Straight Legged Hip Raise",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Side Bridge",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Sumo Deadlift With Bands",
-      "rep_range": "1-5",
-      "rest_time": "3-5 minutes",
-      "sets": 3,
-      "type": "Powerlifting"
-    }
-  ],
-  "workout2": [
-    {
-      "exercise": "Palms Up Dumbbell Wrist Curl Over A Bench",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Fire Hydrant",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Seated Bent Over One Arm Dumbbell Triceps Extension",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Alternating Deltoid Raise",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Incline Hammer Curls",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Cross Crunch",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Barbell Reverse Lunge",
-      "rep_range": "8-12",
-      "rest_time": "1-2 minutes",
-      "sets": 3,
-      "type": "Strength"
-    },
-    {
-      "exercise": "Pin Presses",
-      "rep_range": "1-5",
-      "rest_time": "3-5 minutes",
-      "sets": 3,
-      "type": "Powerlifting"
-    }
-  ]
-}
+  "status": 200,
+  "workouts": {
+    "workout1": [
+      {
+        "exercise": "Decline Push Up",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Dumbbell One Arm Upright Row",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Dips Triceps Version",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Palms Up Dumbbell Wrist Curl Over A Bench",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "One Arm Flat Bench Dumbbell Flye",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Close Grip Standing Barbell Curl",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Alternate Hammer Curl",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Barbell Hip Thrust",
+        "rep_range": "1-5",
+        "rest_time": "3-5 minutes",
+        "sets": 3,
+        "type": "Powerlifting"
+      }
+    ],
+    "workout2": [
+      {
+        "exercise": "Plank",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Barbell Squat To A Bench",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "One Arm Dumbbell Preacher Curl",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Front Dumbbell Raise",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Stiff Leg Barbell Good Morning",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Decline Dumbbell Bench Press",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Bent Over Two Arm Long Bar Row",
+        "rep_range": "8-12",
+        "rest_time": "1-2 minutes",
+        "sets": 3,
+        "type": "Strength"
+      },
+      {
+        "exercise": "Sumo Deadlift With Chains",
+        "rep_range": "1-5",
+        "rest_time": "3-5 minutes",
+        "sets": 3,
+        "type": "Powerlifting"
+      }
+    ]
+  }
+} 
 ```
+or when there is a problem:
+```
+{
+        "status": 400,
+        "message": "The number of workouts per week must be greater than 0 and less than 7"
+        }
+        
+ ```

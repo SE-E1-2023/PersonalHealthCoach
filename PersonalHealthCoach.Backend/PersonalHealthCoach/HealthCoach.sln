@@ -21,15 +21,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99. Testing", "99. Testing"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Functions.Isolated", "Presentation\HealthCoach.Functions.Isolated\HealthCoach.Functions.Isolated.csproj", "{CAD63576-454A-4EC8-99FA-3E60C15D5694}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Infrastructure", "Infrastructure\HealthCoach.Infrastructure\HealthCoach.Infrastructure.csproj", "{19007A7E-0E09-4D74-8607-3F9CE1897248}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Infrastructure", "Infrastructure\HealthCoach.Infrastructure\HealthCoach.Infrastructure.csproj", "{19007A7E-0E09-4D74-8607-3F9CE1897248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Core.Domain", "Core\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj", "{C1CA8F43-5F82-4F5C-BA67-C7C0A237B914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Core.Domain", "Core\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj", "{C1CA8F43-5F82-4F5C-BA67-C7C0A237B914}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Core.Business", "Core\HealthCoach.Core.Business\HealthCoach.Core.Business.csproj", "{87816C34-5356-4D2C-8100-3D3989525760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Core.Business", "Core\HealthCoach.Core.Business\HealthCoach.Core.Business.csproj", "{87816C34-5356-4D2C-8100-3D3989525760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Core.Domain.Tests", "Testing\HealthCoach.Core.Domain.Tests\HealthCoach.Core.Domain.Tests.csproj", "{6BC7B1C8-9182-47A3-9985-291E7B2B5AE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Core.Domain.Tests", "Testing\HealthCoach.Core.Domain.Tests\HealthCoach.Core.Domain.Tests.csproj", "{6BC7B1C8-9182-47A3-9985-291E7B2B5AE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Core.Business.Tests", "Testing\HealthCoach.Core.Business.Tests\HealthCoach.Core.Business.Tests.csproj", "{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Core.Business.Tests", "Testing\HealthCoach.Core.Business.Tests\HealthCoach.Core.Business.Tests.csproj", "{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

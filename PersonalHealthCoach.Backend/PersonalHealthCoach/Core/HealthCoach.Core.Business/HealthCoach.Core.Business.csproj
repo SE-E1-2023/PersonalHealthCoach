@@ -10,7 +10,13 @@
 		<PackageReference Include="CSharpFunctionalExtensions" Version="2.38.1" />
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Web\HealthCoach.Shared.Web.csproj" />
+	  <ProjectReference Include="..\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj" />
 	</ItemGroup>
 
 </Project>

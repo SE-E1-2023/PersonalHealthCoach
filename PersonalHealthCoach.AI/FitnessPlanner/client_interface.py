@@ -14,10 +14,10 @@ url = f'http://{server_ip}:{server_port}/generate-workout'
   "Increase endurance"
   "Overall health"
 """
-user_data = {
+user_data={
     "pro_user": True,
-    "goal": "Lose fat",
-    "workouts_per_week": 1,
+    "goal": "Increase muscle mass",
+    "workouts_per_week":2,
     "equipment_available": {
         "Other": False,
         "Machine": False,
@@ -34,7 +34,6 @@ user_data = {
         "Body Only": False
     }
 }
-
 response = requests.post(url, json=user_data)
 
 if response.status_code == 200:
