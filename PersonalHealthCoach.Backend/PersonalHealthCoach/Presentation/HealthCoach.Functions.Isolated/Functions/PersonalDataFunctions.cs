@@ -45,5 +45,17 @@ public sealed class PersonalDataFunctions
             .Send(new RetrieveLatestPersonalDataCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
+
+    [Function(nameof(UpdateFoodLog))]
+    public async Task<HttpResponseData> UpdateFoodLog([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/food-log")] HttpRequestData request, Guid id)
+    {
+        var command = await request
+            .DeserializeBodyPayload<UpdateFoodLogCommand>()
+            .Map(c => c with { UserId = id });
+
+        return await command
+            .Bind(c => mediator.Send(c))
+            .ToResponseData(request);
+    }
 }
 
