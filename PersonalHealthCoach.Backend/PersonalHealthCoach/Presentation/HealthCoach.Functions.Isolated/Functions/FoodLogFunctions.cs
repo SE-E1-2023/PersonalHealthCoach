@@ -27,4 +27,12 @@ public sealed class FoodLogFunctions
             .Bind(c => mediator.Send(c))
             .ToResponseData(request);
     }
+
+    [Function(nameof(GetFoodLog))]
+    public async Task<HttpResponseData> GetFoodLog([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/food-log")] HttpRequestData request, Guid id)
+    {
+        return await mediator
+            .Send(new GetFoodLogCommand(id))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+    }
 }

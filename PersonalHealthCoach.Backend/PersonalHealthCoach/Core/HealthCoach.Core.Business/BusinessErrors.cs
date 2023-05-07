@@ -128,5 +128,11 @@ public static class BusinessErrors
             public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
 
         }
+
+        public static class Get
+        {
+            private const string Prefix = $"{nameof(FoodLog)}.{nameof(Get)}";
+            public const string FoodLogNotFound = $"{Prefix}.{nameof(FoodLogNotFound)}";
+        }
     }
 }
