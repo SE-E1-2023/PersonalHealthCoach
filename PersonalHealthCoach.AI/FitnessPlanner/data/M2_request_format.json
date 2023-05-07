@@ -1,7 +1,16 @@
 {
+    "user_id": 132,
     "pro_user": true,
     "goal": "Increase endurance",
     "workouts_per_week": 3,
+    "fitness_score": 3,
+    "diseases": [
+        1,
+        240,
+        401,
+        302,
+        502
+    ],
     "equipment_available": {
         "Other": false,
         "Machine": false,

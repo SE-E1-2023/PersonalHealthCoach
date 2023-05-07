@@ -15,13 +15,22 @@ url = f'http://{server_ip}:{server_port}/generate-workout'
   "Overall health"
 """
 user_data={
-    "pro_user": True,
-    "goal": "Increase muscle mass",
-    "workouts_per_week":2,
+    "user_id": 132,
+    "pro_user": False,
+    "goal": "Increase endurance",
+    "workouts_per_week": 3,
+    "fitness_score": 3,
+    "diseases": [
+        1,
+        240,
+        401,
+        302,
+        502
+    ],
     "equipment_available": {
         "Other": False,
         "Machine": False,
-        "Barbell": True,
+        "Barbell": False,
         "Dumbbell": True,
         "Kettlebells": False,
         "Cable": False,
