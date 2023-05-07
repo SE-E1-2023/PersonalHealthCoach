@@ -74,6 +74,14 @@ public static class BusinessErrors
             public const string PersonalDataNotFound = $"{Prefix}.{nameof(PersonalDataNotFound)}";
         }
 
+        public static class Get
+        {
+            private const string Prefix = $"{nameof(PersonalTip)}.{nameof(Get)}";
+
+            public const string PersonalTipNotFound = $"{Prefix}.{nameof(PersonalTipNotFound)}";
+
+        }
+
         public static class Report
         {
             private const string Prefix = $"{nameof(PersonalTip)}.{nameof(Report)}";

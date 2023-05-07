@@ -35,4 +35,12 @@ public class PersonalTipFunctions
             .Bind(c => mediator.Send(c))
             .ToResponseData(request);
     }
+
+    [Function(nameof(DeletePersonalTip))]
+    public async Task<HttpResponseData> DeletePersonalTip([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Delete, Route = "v1/api/plans/tips/{id}")] HttpRequestData request, Guid id)
+    {
+        return await mediator
+            .Send(new DeletePersonalTipCommand(id))
+            .ToResponseData(request);
+    }
 }
