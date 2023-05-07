@@ -16,6 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="PersonalData\Logs\" />
 	  <Folder Include="Reports\" />
 	  <Folder Include="User\" />
 	</ItemGroup>

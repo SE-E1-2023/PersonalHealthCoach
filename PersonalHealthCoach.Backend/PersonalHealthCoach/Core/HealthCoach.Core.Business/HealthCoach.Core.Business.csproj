@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -17,6 +17,11 @@
 	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj" />
 	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Web\HealthCoach.Shared.Web.csproj" />
 	  <ProjectReference Include="..\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ExerciseLog\Commands\" />
+	  <Folder Include="ExerciseLog\CommandHandlers\" />
 	</ItemGroup>
 
 </Project>

@@ -110,6 +110,16 @@ public static class BusinessErrors
             public const string DietPlanDoesNotExist = $"{Prefix}.{nameof(DietPlanDoesNotExist)}";
         }
     }
+
+    public static class ExerciseLog
+    {
+        public static class AddExercises
+        {
+            private const string Prefix = $"{nameof(ExerciseLog)}.{nameof(AddExercises)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+        }
+    }
     public static class FoodLog
     {
         public static class Create
