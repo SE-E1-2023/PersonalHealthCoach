@@ -314,23 +314,32 @@ RequestType : "soup"
 Recieves a json with the following format:
 ```
 {
-    "pro_user": True,
-    "goal": "Increase muscle mass",
-    "workouts_per_week":2,
+    "user_id": 132,
+    "pro_user": true,
+    "goal": "Increase endurance",
+    "workouts_per_week": 3,
+    "fitness_score": 3,
+    "diseases": [
+        1,
+        240,
+        401,
+        302,
+        502
+    ],
     "equipment_available": {
-        "Other": False,
-        "Machine": False,
-        "Barbell": True,
-        "Dumbbell": True,
-        "Kettlebells": False,
-        "Cable": False,
-        "E-Z Curl Bar": False,
-        "None": False,
-        "Bands": False,
-        "Medicine Ball": False,
-        "Exercise Ball": False,
-        "Foam Roll": False,
-        "Body Only": False
+        "Other": false,
+        "Machine": false,
+        "Barbell": false,
+        "Dumbbell": true,
+        "Kettlebells": false,
+        "Cable": false,
+        "E-Z Curl Bar": false,
+        "None": false,
+        "Bands": false,
+        "Medicine Ball": false,
+        "Exercise Ball": false,
+        "Foam Roll": false,
+        "Body Only": false
     }
 }
 ```
@@ -338,7 +347,8 @@ Recieves a json with the following format:
 JSON Properties:
     
     pro_user: true | false
-    
+    fitness_score:[1,10] - calculat de BE| sau FE la onboarding
+    disease:[] -lista cu id-uri de boli -> TBD
     goal: Choose one of the following goals:
         "Lose fat"
         "Increase muscle mass"
