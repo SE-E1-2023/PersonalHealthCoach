@@ -1,5 +1,6 @@
 import numpy
 import json
+import random
 # from flask import abort
 import traceback
 import os
@@ -106,6 +107,8 @@ def compute_category_score(query, entry):
     return score
 
 def compute_rule_score(query, entry):
+    if 'Rules' not in entry:
+        return 0
     # all rules must pass in order to return >=0
     for rule in entry['Rules']:
         try:
@@ -157,13 +160,17 @@ def choose_action(query):
         else:
             wellness_logger.debug("Entry failed because of score: " + json.dumps(score, indent=2) + " less than current max: " + json.dumps(best_matched_scores[0], indent=2))
     action = numpy.random.choice(best_matched_scores[1])
+    if "Subchoice" in action["Action"]:
+        if "Amount" in action["Action"]["Subchoice"] and "Choices" in action["Action"]["Subchoice"]:
+            subchoice = random.sample(action["Action"]["Subchoice"]["Choices"], action["Action"]["Subchoice"]["Amount"])
+            action["Action"]["Items"] = subchoice
+
     return format_response(action, query)
 
 def format_response(action, query):
     rsp = action
     del rsp['Rules']
-    #TODO replace {?} in text with parameter calls
-    rsp["Action"].pop("Parameters", None)
+    rsp["Action"].pop("Subchoice", None)
     return rsp
 
 
