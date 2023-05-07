@@ -3,18 +3,19 @@ using HealthCoach.Core.Domain;
 using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
 
-using Errors = HealthCoach.Core.Business.BusinessErrors.FoodLog.Create;
-using HealthCoach.Core.Business.FoodLog.Commands;
+using Errors = HealthCoach.Core.Business.BusinessErrors.FoodLog.AddFoods;
 
-namespace HealthCoach.Core.Business.FoodLog.CommandHandlers;
+namespace HealthCoach.Core.Business;
 
-internal class UpdateFoodLogCommandHandler : IRequestHandler<UpdateFoodLogCommand, Result>
+internal sealed class UpdateFoodLogCommandHandler : IRequestHandler<UpdateFoodLogCommand, Result>
 {
     private readonly IRepository repository;
+    private readonly IFoodLogRepository foodLogRepository;
 
-    public UpdateFoodLogCommandHandler(IRepository repository)
+    public UpdateFoodLogCommandHandler(IRepository repository, IFoodLogRepository foodLogRepository)
     {
         this.repository = repository;
+        this.foodLogRepository = foodLogRepository;
     }
 
     public async Task<Result> Handle(UpdateFoodLogCommand request, CancellationToken cancellationToken)
@@ -23,11 +24,6 @@ internal class UpdateFoodLogCommandHandler : IRequestHandler<UpdateFoodLogComman
             .Load<User>(request.UserId)
             .ToResult(Errors.UserNotFound);
 
-        return await userResult
-            .Map(u => repository.Load<FoodLog>(u.Id))
-            .Map(l => l.HasValue ? FoodLog.Instance(userResult.Value.Id).Value : l.Value)
-            .Tap(l => l.AddFoods(request.Foods))
-            .Tap(l => repository.Store(l));
+        return await userResult.Tap(u => foodLogRepository.Store(u.Id, request.Foods));
     }
 }
-

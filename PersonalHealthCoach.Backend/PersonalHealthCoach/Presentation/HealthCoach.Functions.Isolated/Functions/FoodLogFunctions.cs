@@ -17,7 +17,7 @@ public sealed class FoodLogFunctions
     }
 
     [Function(nameof(UpdateFoodLog))]
-    public async Task<HttpResponseData> UpdateFoodLog([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/exercise-log")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> UpdateFoodLog([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/food-log")] HttpRequestData request, Guid id)
     {
         var command = await request
             .DeserializeBodyPayload<UpdateFoodLogCommand>()
