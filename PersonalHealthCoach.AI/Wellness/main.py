@@ -18,8 +18,7 @@ Spiritual: Searching for meaning and higher purpose in human existence.
 Social: Connecting and engaging with others and our communities in meaningful ways.
 Environmental: Fostering positive interrelationships between planetary health and human actions, choices and wellbeing
 """
-WELLNESS_CATEGORIES = ["Physical", "Mental",
-                       "Emotional", "Spiritual", "Social", "Environmental"]
+WELLNESS_CATEGORIES = ["Physical", "Mental", "Emotional", "Spiritual", "Social", "Environmental"]
 
 WELLNESS_ACTIONS_FILE = os.path.join(os.path.join(ABSPATH, 'data'), 'actions.json')
 
@@ -46,9 +45,6 @@ class category_choice:
         for i in self.scores:
             self.scores[i] = self.scores[i] / suma
         print(self.scores)
-
-    def sum_scores(self):
-        return sum(self.scores.values())
 
     def select_categories(self, dictionary_input, amount=-1, prob=1):
         self.compute_priorities(dictionary_input)
@@ -177,7 +173,7 @@ def get(dictionary):
     if "Categories" in dictionary:
         # load requested categories
         if isinstance(dictionary["Categories"], list) and\
-                all((isinstance(v, str) and v in WELLNESS_CATEGORIES) for v in dictionary["Categories"].values()):
+                all((isinstance(v, str) and v in WELLNESS_CATEGORIES) for v in dictionary["Categories"]):
             categories = dictionary["Categories"]
         else:
             return None
