@@ -8,7 +8,7 @@ import TestUtils as tu
 #import unittest
 import pytest
 
-ENDPOINTS = ["Wellness", "TipGenerator", "FitnessPlanner"]#, "DietPlanner"]
+ENDPOINTS = ["Wellness", "TipGenerator", "FitnessPlanner", "DietPlanner"]
 
 @pytest.mark.parametrize("endpoint", ENDPOINTS)
 def test_no_json_mimetype(endpoint):
