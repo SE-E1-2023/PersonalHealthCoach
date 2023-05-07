@@ -434,19 +434,10 @@ class TestGenerateWorkouts(unittest.TestCase):
                         self.user_data["fitness_score"] = fitness_score
                         self.user_data["equipment_available"] = dict(zip(self.equipment_fields, equipment_combination))
                         response = generate_workouts(self.user_data, self.exercise_database, self.main_muscle_groups, self.exercise_types)
-                        try:
-                            self.assertEqual(response["status"], 200)
-                        except:
-                            print(self.user_data)
-                            print(response)
-                            exit(0)
+                        self.assertEqual(response["status"], 200, msg=f"Failed for user_data: {self.user_data}\nResponse: {response}")
                         for workout in response["workouts"]:
-                         try:
-                            self.assertEqual(len(workout),8)
-                         except:
-                             print(self.user_data)
-                             print(response)
-                             exit(0)
+                         self.assertEqual(len(workout), 8, msg=f"Failed for user_data: {self.user_data}\nResponse: {response}")
+
                         test_count+=1
                         print(f"Passed test {test_count}/{2*7*3*2**13}")
 
