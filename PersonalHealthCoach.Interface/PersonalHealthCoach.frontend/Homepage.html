@@ -6,9 +6,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <link href="style-home.css" rel="stylesheet" />
     <title>Home</title>
   </head>
@@ -39,8 +36,36 @@
         <div class="wellness">Wellness</div>
       </div>
       <div class="personal-tip">
-        <button class="tip">Personal Tip</button>
+        <form id="personal-tip-form">
+          <button type="submit" class="tip">Request Personal Tip</button>
+        </form>
       </div>
     </main>
+    <script>
+      const personalTipForm = document.querySelector("#personal-tip-form");
+      personalTipForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const response = await fetch("http://localhost:7071/api/v1/users/0b45677e-0f74-45ff-bb4d-ef8c95c4925e/plans/tips", {
+          method: "POST",
+          body: JSON.stringify({
+            UserId: "0b45677e-0f74-45ff-bb4d-ef8c95c4925e", //de inlocuit cu cookie-ul
+            Type: "First time in app",
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const responseData = await response.json();
+        if (response.ok) {
+          alert(`Your personal tip is: ${responseData.TipText}`);
+        } else if (response.status === 404 && responseData.ErrorCode === "PersonalTip.Create.UserNotFound") {
+          alert("User not found.");
+        } else if (response.status === 404 && responseData.ErrorCode === "PersonalTip.Create.PersonalDataNotFound") {
+          alert("Personal data not found for this user.");
+        } else {
+          alert("An error occurred. Please try again later.");
+        }
+      });
+    </script>
   </body>
 </html>
