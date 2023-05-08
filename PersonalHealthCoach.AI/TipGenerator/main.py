@@ -42,9 +42,9 @@ class TipGenerator:
         with open(tips_file, 'r', encoding='utf-8') as f:
             self.tips_data = json.load(f)
         
-        # with open(profile_file) as f:
-        #     self.profile_data = json.load(f)
-        self.profile_data = profile_json
+        with open(profile_file) as f:
+            self.profile_data = json.load(f)
+        # self.profile_data = profile_json
     
     def generate_tips(self):
         tips = []
@@ -70,15 +70,19 @@ class TipGenerator:
         return tip
 
     def calculate_bmr(self):
-        
-#test if these fields are present in our dictionary
-        if {'Height', 'Weight', 'Age', 'Sex'} <= self.profile_data.keys():
-            return None
-        
-        height = self.profile_data['Height']
-        weight = self.profile_data['Weight']
-        age = self.profile_data['Age']
-        gender = self.profile_data['Sex']
+        height = self.profile_data['Profile']['Height']
+        if height <= 50 or height > 300:
+            raise ValueError("Height should be between 50 and 300.")
+        weight = self.profile_data['Profile']['Weight']
+        if weight <= 30 or weight > 200:
+            raise ValueError("Weight should be between 30 and 200.")
+        age = self.profile_data['Profile']['Age']
+        if age <= 0 or age > 130:
+            raise ValueError("Age should be between 1 and 130.")
+        gender = self.profile_data['Profile']['Sex']
+        gender_list = ["M", "F"]
+        if gender not in gender_list:
+            raise ValueError("Gender not found in list.")
 
         if gender == 'F':
             bmr = 655.1 + (9.563 * weight) + (1.850 * height) - (4.676 * age)
@@ -87,13 +91,8 @@ class TipGenerator:
         return bmr
     
     def calculate_amr(self):
-
-#test if these fields are present in our dictionary
-        if {'Level of activity'} <= self.profile_data.keys():
-            return None
-
         bmr = generator.calculate_bmr()
-        level_of_activity = self.profile_data['Level of activity']
+        level_of_activity = self.profile_data['Profile']['Level of activity']
 
         if level_of_activity == 'Sedentary':
             amr = bmr * 1.2
@@ -108,12 +107,7 @@ class TipGenerator:
         return int(amr)
     
     def generate_amr_tip(self):
-        
-#test if these fields are present in our dictionary
-        if {'Objective'} <= self.profile_data.keys():
-            return None
-
-        objective = self.profile_data['Objective']
+        objective = self.profile_data['Profile']['Objective']
         amr = generator.calculate_amr()
         tip = 'You burn ' + str(amr) + ' calories during a typical day.'
 
@@ -130,18 +124,20 @@ class TipGenerator:
         elif objective == 'Maintain weight':
             tip += ' Use this information to help you figure out how many calories you should be consuming to maintain your weight. On active days, you\'ll need more calories, so it\'s okay to eat a little more than you would on an average day. But on more sedentary days, you may want to reduce your calorie intake.'
 
-        tip_dict = {'tip_type': 'Daily Calories', 'tip': tip}
-        return tip_dict
+        generated_tip = {
+                            "Type": "Daily Calories",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+
+        # tip_dict = {'tip_type': 'Daily Calories', 'tip': tip}
+        # return tip_dict
 
     def generate_bmi_tip(self):
-
-#test if these fields are present in our dictionary
-        if {'Height', 'Weight', 'Objective'} <= self.profile_data.keys():
-            return None
-        
-        height = self.profile_data['Height']
-        weight = self.profile_data['Weight']
-        objective = self.profile_data['Objective']
+        height = self.profile_data['Profile']['Height']
+        weight = self.profile_data['Profile']['Weight']
+        objective = self.profile_data['Profile']['Objective']
 
         height = height / 100
         bmi = weight / (height * height)
@@ -184,7 +180,7 @@ class TipGenerator:
             elif objective == 'Maintain weigth':
                 tip += "It's very good that you want to maintain your weight."
             tip_type = "Normal BMI"
-        elif 0 < diff_weight < 2:
+        elif 0 < diff_weight < 5:
             if objective == 'Lose weight':
                 tip += "You are not far from this range, but your objective shouldn't be to lose weight, but to gain a little more instead."
             elif objective == 'Gain muscular mass':
@@ -198,7 +194,7 @@ class TipGenerator:
             elif objective == 'Maintain weigth':
                 tip += "You are not far from this range, but for now you shouldn't aim to maintain your weight and gain a little in order to get into the Normal range."
             tip_type = "Almost Normal BMI"
-        elif diff_weight > 2:
+        elif diff_weight > 5:
             if objective == 'Lose weight':
                 tip += "Your objective shouldn't be to lose weight, but to gain a little more instead to get into the Normal range."
             elif objective == 'Gain muscular mass':
@@ -212,7 +208,7 @@ class TipGenerator:
             elif objective == 'Maintain weigth':
                 tip += "You shouldn't aim to maintain your weight at the moment. Try to gain some weight in order to get into the Normal range."
             tip_type = "Low BMI"
-        elif -2 < diff_weight < 0:
+        elif -5 < diff_weight < 0:
             if objective == 'Lose weight':
                 tip += "You are not far from this range so it shouldn't be hard for you to achieve your goal of losing a little weight."
             elif objective == 'Gain muscular mass':
@@ -226,7 +222,7 @@ class TipGenerator:
             elif objective == 'Maintain weigth':
                 tip += "You are not far from this range, but for now you shouldn't aim to maintain your weight and lose a little in order to get into the Normal range."
             tip_type = "Almost Normal BMI"
-        elif diff_weight < -2:
+        elif diff_weight < -5:
             if objective == 'Lose weight':
                 tip += "It's good that you want to lose weight so be careful what you eat and do sports as often as possible to get into the Normal range."
             elif objective == 'Gain muscular mass':
@@ -241,37 +237,31 @@ class TipGenerator:
                 tip += "You shouldn't aim to maintain your weight, but make an effort to lose some in order to get into the Normal range."
             tip_type = "High BMI"
 
-        tip_dict = {'tip_type': tip_type, 'tip': tip}
-        return tip_dict
-
-    def generate_level_of_activity_tip(self):
-
-#test if these fields are present in our dictionary
-        if {'Level of activity', 'Objective'} <= self.profile_data.keys():
-            return None
-
-        level_of_activity = self.profile_data['Level of activity']
-        objective = self.profile_data['Objective']
-
-        tip = self.tips_data[objective]['level of activity'][level_of_activity]
-
-        tip_dict = {'tip_type': 'Objective-Level of activity', 'tip': tip}
-        return tip_dict
-
-    def generate_fitness_tip_based_on_objective(self):
-        objective = self.profile_data['Profile']['Objective']
-        if objective not in self.tips_data or 'Fitness' not in self.tips_data[objective]:
-            print(f"No fitness tip found for objective: {objective}")
-            return
-        fitness_tips = self.tips_data[objective]['Fitness']
-        tip = random.choice(fitness_tips)
         generated_tip = {
-                            "Type": "Fitness",
+                            "Type": "BMI",
                             "Importance Level": "Medium",
                             "Tip": tip
                         }
         return generated_tip
+    
+        # tip_dict = {'tip_type': tip_type, 'tip': tip}
+        # return tip_dict
 
+    def generate_level_of_activity_tip(self):
+        level_of_activity = self.profile_data['Profile']['Level of activity']
+        objective = self.profile_data['Profile']['Objective']
+
+        tip = self.tips_data[objective]['Level of activity'][level_of_activity]
+
+        generated_tip = {
+                            "Type": "Level of Activity",
+                            "Importance Level": "High",
+                            "Tip": tip
+                        }
+        return generated_tip
+
+
+    #Last week
     def generate_fitness_tip_based_on_objective(self):
         objective = self.profile_data['Profile']['Objective']
         if objective not in self.tips_data or 'Fitness' not in self.tips_data[objective]:
@@ -791,7 +781,8 @@ def tip(input):
     tips_file = f"{abspath}/tips.json"
     generator = TipGenerator(tips_file, input)
 
-    return generator.generate_tip()
+    return generator.generate_tips()
+
 
 def test_calculate_bmr():
     generator = TipGenerator('tips.json', 'profile.json')
@@ -822,28 +813,39 @@ def test_calculate_amr():
     print('All test passed.')
 
 def test_generate_amr_tip():
-    # create an instance of the class and set the profile data
     generator = TipGenerator(tips_file,profile_file)
-
-    # create a mock function for calculate_amr
     generator.calculate_amr = MagicMock(return_value=2479)
-
     generator.profile_data = {'Objective': 'Lose weight', 'Level of activity': 'Moderately active'}
-    
-    # call the generate_amr_tip method and check the return value
     expected_tip = {'tip_type': 'Daily Calories', 'tip': 'You burn 2479 calories during a typical day. To achieve your goal of losing weight, try to stay below your calorie needs and increase your activity level. However, make sure you are eating nutritious meals and not restricting your calories too much - eating too little or losing weight rapidly can be unhealthy and dangerous.'}
     assert generator.generate_amr_tip() == expected_tip
 
     print('All test passed.')
 
-tips_file = os.path.join(abspath, 'tips.json')
-profile_file = os.path.join(abspath, 'profile.json')
+def test_generate_bmi_tip():
+    generator = TipGenerator(tips_file,profile_file)
+    generator.calculate_amr = MagicMock(return_value=2479)
+    generator.profile_data = {'Objective': 'Lose weight', 'Level of activity': 'Moderately active'}
+    expected_tip = {'tip_type': 'Daily Calories', 'tip': 'You burn 2479 calories during a typical day. To achieve your goal of losing weight, try to stay below your calorie needs and increase your activity level. However, make sure you are eating nutritious meals and not restricting your calories too much - eating too little or losing weight rapidly can be unhealthy and dangerous.'}
+    assert generator.generate_amr_tip() == expected_tip
+
+    print('All test passed.')
+
+def test_generate_generate_level_of_activity_tip():
+    generator = TipGenerator(tips_file,profile_file)
+    generator.calculate_amr = MagicMock(return_value=2479)
+    generator.profile_data = {'Objective': 'Lose weight', 'Level of activity': 'Moderately active'}
+    expected_tip = {'tip_type': 'Daily Calories', 'tip': 'You burn 2479 calories during a typical day. To achieve your goal of losing weight, try to stay below your calorie needs and increase your activity level. However, make sure you are eating nutritious meals and not restricting your calories too much - eating too little or losing weight rapidly can be unhealthy and dangerous.'}
+    assert generator.generate_amr_tip() == expected_tip
+
+    print('All test passed.')
+
+
+tips_file = 'tips.json'
+profile_file = 'profile.json'
 generator = TipGenerator(tips_file, profile_file)
 
-# print(generator.generate_tips())
-    
+# tip = generator.generate_tip()
+# tip_json = json.dumps(tip)
+# print(tip_json)
 
-    
-
-
-
+print(generator.generate_tips())
