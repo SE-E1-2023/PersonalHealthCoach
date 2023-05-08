@@ -11,60 +11,8 @@
 		<h2 class="top-header">Personal Data Form</h2>
 		<p>The * fields are necessary.</p>
 		<script src="form.js"></script>
-		<form>
-			<div class="field">
-				<center><label>Height(cm)*</label></center>
-				<input type="number" id="height" name="height" class="input" required/>
-			</div>
-			<div class="field">
-				<center><label>Weight(kg)*</label></center>
-				<input type="number" id="weight" name="weight" class="input" required/>
-			</div>
-			<div class="field">
-				<center><label>Date of birth*</label></center>
-				<input type="date" id="birthdate" name="birthdate" class="input" required/>
-			</div>
-			<div class="field">
-				<center><label>Medical History</label></center>
-				<input type="text" id="medical-history" name="medical-history" class="input">
-			</div>
-			<div class="field">
-				<center><label>Unwanted Exercises</label></center>
-				<input type="text" id="unwanted-exercises" name="unwanted" class="input">
-			</div>
-			<div class="field">
-				<center><label>Current Illnesses</label></center>
-				<input type="text" id="current-illnesses" name="illnesses" class="input">
-			</div>
-			<div class="field">
-				<center><label>Last Night's Hours of Sleep</label></center>
-				<input type="text" id="sleep" name="sleep" class="input">
-			</div>
-			<div class="field">
-				<center><label>Today's Steps</label></center>
-				<input type="text" id="steps" name="steps" class="input">
-			</div>
-			<div class="field">
-				<center><label for="gender">Gender</label></center>
-				<select id="gender" name="gender">
-					<option value="M">Male</option>
-					<option value="F">Female</option>
-				</select>
-			</div>
-			<div class="field">
-				<center><label for="goal">Goal</label></center>
-				<select id="goal" name="goal">
-					<option value="Lose weight">Lose Weight</option>
-					<option value="Gain muscular mass">Gain muscular mass</option>
-					<option value="Improve overall health">Improve overall health</option>
-					<option value="Improve cardiovascular health">Improve cardiovascular health</option>
-					<option value="Increase strength">Increase strength</option>
-					<option value="Increase endurance">Increase endurance</option>
-					<option value="Maintain weigth">Maintain weigth</option>
-				</select>
-			</div>
-            <div id="error-container" class="error-container"></div>
-			<button type="button" value="Submit" class="submit-form" onClick="createPersonalData()">Submit</button>
+		<form class="insertable-form">
+			<script>displayForm();</script>
 		</form>
 	</div>
 </body>
