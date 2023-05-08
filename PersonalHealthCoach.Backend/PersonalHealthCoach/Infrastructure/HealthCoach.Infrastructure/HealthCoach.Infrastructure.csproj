@@ -16,6 +16,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Infrastructure\HealthCoach.Shared.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Shared\HealthCoach.Shared.Web\HealthCoach.Shared.Web.csproj" />
 	</ItemGroup>
 
 </Project>
