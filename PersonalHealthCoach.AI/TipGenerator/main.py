@@ -272,6 +272,20 @@ class TipGenerator:
                         }
         return generated_tip
 
+    def generate_fitness_tip_based_on_objective(self):
+        objective = self.profile_data['Profile']['Objective']
+        if objective not in self.tips_data or 'Fitness' not in self.tips_data[objective]:
+            print(f"No fitness tip found for objective: {objective}")
+            return
+        fitness_tips = self.tips_data[objective]['Fitness']
+        tip = random.choice(fitness_tips)
+        generated_tip = {
+                            "Type": "Fitness",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+
     def generate_diet_tip_based_on_objective(self):
         objective = self.profile_data['Profile']['Objective']
         diet_tips = self.tips_data[objective]['Diet']
@@ -456,10 +470,14 @@ class TipGenerator:
                         }
         return generated_tip
 
+
+    #This week
     def generate_hours_slept_last_night_tip(self):
         hours_slept_list = []
         for day in self.profile_data['Progress']:
             hours = day['HoursSlept']
+            if hours <= 0 or hours > 24:
+                raise ValueError("Hours should be between 1 and 24.")
             hours_slept_list.append(hours)
         
         if hours_slept_list[len(hours_slept_list) - 1] == "Not added":
@@ -505,6 +523,8 @@ class TipGenerator:
         hours_slept_list = []
         for day in self.profile_data['Progress']:
             hours = day['HoursSlept']
+            if hours < 0 or hours > 24:
+                raise ValueError("Hours should be between 1 and 24.")
             hours_slept_list.append(hours)
 
         if(verify_if_slept_hours_are_introduced(hours_slept_list) == True):
@@ -563,6 +583,10 @@ class TipGenerator:
 
     def generate_weekly_weight_objective_tip(self):
         objective = self.profile_data['Profile']['Objective']
+        objectives_list = ["Lose weight", "Gain muscular mass", "Improve overall health", "Improve cardiovascular health", "Increase endurance", "Maintain weight"]
+        if objective not in objectives_list:
+            raise ValueError("Objective not found in list.")
+
         for day in reversed(self.profile_data["Progress"]):
             if day['Objective'] != objective:
                 objective = day['Objective']
@@ -573,11 +597,13 @@ class TipGenerator:
         weight_list = []
         for day in self.profile_data['Progress']:
             weight = day['Weight']
+            if weight < 30 or weight > 200:
+                raise ValueError("Weight should be between 30 and 200.")
             weight_list.append(weight)
         if(verify_if_weight_introduced(weight_list) == True):
             tip = "Wouldn't you like to weigh yourself and add your weight in the app once a week? In this way, we could better analyze your progress according to your objective. Also, by weighing yourself, you can have better control over your kilograms."
             generated_tip = {
-                            "Type": "Weight Update",
+                            "Type": "Weekly Weight Update",
                             "Importance Level": "High",
                             "Tip": tip
                         }
@@ -696,6 +722,9 @@ class TipGenerator:
 
         
         objective = self.profile_data['Profile']['Objective']
+        objectives_list = ["Lose weight", "Gain muscular mass", "Improve overall health", "Improve cardiovascular health", "Increase endurance", "Maintain weight"]
+        if objective not in objectives_list:
+            raise ValueError("Objective not found in list.")
         for day in reversed(self.profile_data["Progress"]):
             if day['Objective'] != objective:
                 objective = day['Objective']

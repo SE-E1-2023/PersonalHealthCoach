@@ -1,3 +1,4 @@
+import json
 import main
 import unittest
 
@@ -93,6 +94,22 @@ class TestTipGenerator(unittest.TestCase):
     def test_verify_if_steps_are_introduced(self):
         steps_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
         self.assertTrue(main.verify_if_steps_are_introduced(steps_list))
+    
+    def test_verify_if_steps_are_introduced(self):
+        hours_slept_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
+        self.assertTrue(main.verify_if_steps_are_introduced(hours_slept_list))
+
+    def test_verify_if_steps_are_introduced(self):
+        weight_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
+        self.assertTrue(main.verify_if_steps_are_introduced(weight_list))
+
+    def test_verify_if_steps_are_introduced(self):
+        exercise_logs_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
+        self.assertTrue(main.verify_if_steps_are_introduced(exercise_logs_list))
+
+    def test_verify_if_steps_are_introduced(self):
+        food_logs_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
+        self.assertTrue(main.verify_if_steps_are_introduced(food_logs_list))
 
     def setUp(self):
         self.tips_data = {
@@ -301,6 +318,151 @@ class TestTipGenerator(unittest.TestCase):
         self.assertIn(generated_tip["Importance Level"], ["None", "Low", "High"])
         self.assertIsInstance(generated_tip["Tip"], str)
 
+    def test_generate_hours_slept_last_night_tip(self):
+        # Test invalid input
+        profile_data = {
+            "Progress": [
+                {"HoursSlept": -1},
+                {"HoursSlept": 25},
+            ]
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+        with open(main.tips_file, 'r', encoding='utf-8') as f:
+            self.tips_data = json.load(f)
+        generator.tips_data = self.tips_data
+
+        with self.assertRaises(ValueError):
+            generator.generate_hours_slept_last_night_tip()
+
+        # Test valid input
+        profile_data = {
+            "Progress": [
+                {"HoursSlept": 6},
+                {"HoursSlept": 7},
+                {"HoursSlept": 8},
+                {"HoursSlept": 9},
+                {"HoursSlept": 10},
+            ]
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+        with open(main.tips_file, 'r', encoding='utf-8') as f:
+            self.tips_data = json.load(f)
+        generator.tips_data = self.tips_data
+
+        generated_tip = generator.generate_hours_slept_last_night_tip()
+        self.assertEqual(generated_tip["Type"], "Hours Slept Last Night")
+        self.assertIn(generated_tip["Importance Level"], ["None", "Low", "Medium", "High"])
+        self.assertIsInstance(generated_tip["Tip"], str)
+
+    def test_generate_general_tip(self):
+        self.generator = main.TipGenerator(main.tips_file, main.profile_file)
+        self.generator.tips_data = {
+            "General": [
+                "Take care of your mental health.",
+                "Drink plenty of water.",
+                "Don't skip breakfast.",
+                "Practice gratitude daily.",
+                "Find time for physical activity."
+            ]
+        }
+        generated_tip = self.generator.generate_general_tip()
+        self.assertEqual(generated_tip["Type"], "General")
+        self.assertIn(generated_tip["Importance Level"], ["None", "Low", "Medium", "High"])
+        self.assertIn(generated_tip["Tip"], self.generator.tips_data['General'])
     
+    def test_generate_hours_slept_weekly_feedback(self):
+        # Test invalid input
+        profile_data = {
+            'Progress': [
+                {'HoursSlept': 8},
+                {'HoursSlept': 6},
+                {'HoursSlept': 4},
+                {'HoursSlept': 7},
+                {'HoursSlept': 0},
+                {'HoursSlept': 2},
+                {'HoursSlept': 11}
+            ]
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
 
+        with self.assertRaises(ValueError):
+            generator.generate_hours_slept_last_night_tip()
 
+        feedback = generator.generate_hours_slept_weekly_feedback()
+
+        self.assertIsInstance(feedback, dict)
+        self.assertListEqual(sorted(list(feedback.keys())), ['Importance Level', 'Tip', 'Type'])
+
+        self.assertIsInstance(feedback['Importance Level'], str)
+
+        self.assertEqual(feedback['Type'], 'Weekly Slept Hours')
+
+        self.assertIsInstance(feedback['Tip'], str)
+
+        expected_tip = "You had 2 days with 7-9 hours of sleep in the last week. Great job on prioritizing your sleep and maintaining healthy sleep habits! Keep up the good work and continue to prioritize your sleep each night."
+        self.assertEqual(feedback['Tip'], expected_tip)
+
+    def test_generate_weekly_weight_objective_tip(self):
+        # Test invalid input
+        profile_data = {
+            "Profile": {"Objective": "Invalid objective"},
+            "Progress": [
+                {"Weight": 50, "Objective": "Invalid objective"},
+                {"Weight": 60, "Objective": "Invalid objective"},
+                {"Weight": 70, "Objective": "Invalid objective"},
+                {"Weight": 80, "Objective": "Invalid objective"},
+                {"Weight": 90, "Objective": "Invalid objective"},
+                {"Weight": 100, "Objective": "Invalid objective"},
+            ],
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+        generator.tips_data = self.tips_data
+
+        with self.assertRaises(ValueError):
+            generator.generate_weekly_weight_objective_tip()
+
+        # Test valid input - weight added, objective not changed
+        profile_data = {
+            "Profile": {"Objective": "Lose weight", "Weight": 80},
+            "Progress": [
+                {"Weight": 75, "Objective": "Lose weight"},
+                {"Weight": 74, "Objective": "Lose weight"},
+                {"Weight": 73, "Objective": "Lose weight"},
+                {"Weight": 72, "Objective": "Lose weight"},
+                {"Weight": 71, "Objective": "Lose weight"},
+                {"Weight": 70, "Objective": "Lose weight"},
+            ],
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+        generator.tips_data = self.tips_data
+
+        generated_tip = generator.generate_weekly_weight_objective_tip()
+        self.assertEqual(generated_tip["Type"], "Weekly Weight Update")
+        self.assertEqual(generated_tip["Importance Level"], "Low")
+        self.assertIsInstance(generated_tip["Tip"], str)
+
+        # Test valid input - weight added, objective changed
+        profile_data = {
+            "Profile": {"Objective": "Gain muscular mass", "Weight": 80},
+            "Progress": [
+                {"Weight": 75, "Objective": "Gain muscular mass"},
+                {"Weight": 74, "Objective": "Gain muscular mass"},
+                {"Weight": 73, "Objective": "Gain muscular mass"},
+                {"Weight": 72, "Objective": "Lose weight"},
+                {"Weight": 71, "Objective": "Lose weight"},
+                {"Weight": 70, "Objective": "Lose weight"},
+            ],
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+        generator.tips_data = self.tips_data
+
+        generated_tip = generator.generate_weekly_weight_objective_tip()
+        self.assertEqual(generated_tip["Type"], "Weekly Weight Update")
+        self.assertEqual(generated_tip["Importance Level"], "Low")
+        self.assertIsInstance(generated_tip["Tip"], str)
