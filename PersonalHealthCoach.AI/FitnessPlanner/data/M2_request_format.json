@@ -1,0 +1,20 @@
+{
+    "pro_user": true,
+    "goal": "Increase endurance",
+    "workouts_per_week": 3,
+    "equipment_available": {
+        "Other": false,
+        "Machine": false,
+        "Barbell": false,
+        "Dumbbell": true,
+        "Kettlebells": false,
+        "Cable": false,
+        "E-Z Curl Bar": false,
+        "None": false,
+        "Bands": false,
+        "Medicine Ball": false,
+        "Exercise Ball": false,
+        "Foam Roll": false,
+        "Body Only": false
+    }
+}

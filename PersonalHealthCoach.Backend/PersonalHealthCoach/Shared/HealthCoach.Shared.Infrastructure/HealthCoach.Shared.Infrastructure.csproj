@@ -20,7 +20,4 @@
 	<ItemGroup>
 		<ProjectReference Include="..\HealthCoach.Shared.Core\HealthCoach.Shared.Core.csproj" />
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Migrations\" />
-	</ItemGroup>
 </Project>

@@ -1,0 +1,73 @@
+ [
+    {
+      "id": 649886,
+       "title": "Mediterranean Diet"
+
+    },
+      {
+        "id": 649886,
+        "title": "Berry Banana Breakfast Smoothie",
+        "ingredients": [
+          "banana",
+          "graham cracker crumbs",
+          "soy milk",
+          "strawberries",
+          "vanilla yogurt"
+        ],
+        "calories": "457 kcal"
+
+      }, 
+      {
+      "id": 649886,
+      "title": "Five Spice Chai Latte",
+      "ingredients": [
+        "cardamoms",
+        "cardamom",
+        "cinnamon stick",
+        "milk",
+        "peppercorns",
+        "sugar",
+        "tea leaves",
+        "water"
+      ],
+      "calories": "108 kcal"
+    }, 
+    {
+    "id": 649886,
+    "title": "Baked Cheese Manicotti",
+    "ingredients": [
+      "bell pepper",
+        "eggs",
+        "garlic",
+        "marinara sauce",
+        "nutmeg",
+        "parmesan",
+        "parsley",
+        "manicotti shells",
+        "whole-milk ricotta",
+        "butter"
+    ],
+    "calories": "441 kcal"
+  }, 
+  {
+  "id": 649886,
+  "title": "Pastel Caprese",
+  "ingredients": [
+    "beef tomato",
+        "egg",
+        "mozzarella",
+        "oil",
+        "pesto",
+        "flour",
+        "salt",
+        "vegetable oil",
+        "vodka",
+        "warm water",
+        "white wine vinegar"
+  ],
+  "calories": "375 kcal"
+}
+
+
+
+    ]

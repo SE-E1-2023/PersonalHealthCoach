@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "idUser": "1",
+      "idDiet": 7,
+      "idBreakfast": 644044,
+      "idDrink": 644044,
+      "idMainCourse": 644813,
+      "idSideDish": 1096309,
+      "idSnack": 649560,
+      "idSoup": 639910
+    },
+    {
+      "idUser": "3",
+      "idDiet": 7,
+      "idBreakfast": 1096276,
+      "idDrink": 800780,
+      "idMainCourse": 660680,
+      "idSideDish": 661925,
+      "idSnack": 1096220,
+      "idSoup": 651823
+    },
+    {
+      "idUser": "4",
+      "idDiet": 16,
+      "idBreakfast": 1096176,
+      "idDrink": 1096176,
+      "idMainCourse": 640982,
+      "idSideDish": 660108,
+      "idSnack": 1096231,
+      "idSoup": 663314
+    }
+  ]
+}

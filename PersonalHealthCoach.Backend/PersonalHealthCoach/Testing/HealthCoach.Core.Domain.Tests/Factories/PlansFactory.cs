@@ -21,4 +21,9 @@ public static class PlansFactory
             Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength")
         };
     }
+
+    public static class DietPlans
+    {
+        public static DietPlan Any() => DietPlan.Create("nume", "scop", new List<string>(), new List<string>(), new List<string>()).Value;
+    }
 }

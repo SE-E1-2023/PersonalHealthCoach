@@ -29,7 +29,10 @@ internal class AddPersonalDataCommandHandler : IRequestHandler<AddPersonalDataCo
                 request.MedicalHistory,
                 request.CurrentIllnesses,
                 request.Goal,
-                request.UnwantedExercises))
+                request.UnwantedExercises,
+                request.DailySteps,
+                request.HoursOfSleep,
+                request.Gender))
             .Tap(p => repository.Store(p));
     }
 }

@@ -43,4 +43,11 @@ public sealed class GenericDbContext : DbContext
 
         return aggregateRootTypes;
     }
+
+    public async Task InitializeDatabase()
+    {
+        await Database.EnsureDeletedAsync();
+        await Database.MigrateAsync();
+        await Database.EnsureCreatedAsync();
+    }
 }

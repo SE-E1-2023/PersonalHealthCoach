@@ -10,12 +10,16 @@ public partial class PersonalDataTests
     private readonly float goodWeight = 70;
     private readonly float goodHeight = 170;
     private readonly string goodGoal = PersonalDataConstants.AllowedGoals.First();
+    private readonly int goodDailySteps = 12333;
+    private readonly double goodHoursOfSleep = 8.5;
+    private readonly string goodGender = PersonalDataConstants.AllowedGenders.First();
 
     [Fact]
-    public void Given_Create_When_DateOfBirthIsNull_Then_SouldFail()
+    public void Given_Create_When_DateOfBirthIsNull_Then_ShouldFail()
     {
         //Act
-        var result = PersonalData.Create(goodUserId, null, goodWeight, goodHeight, null, null, goodGoal, null);
+        var result = PersonalData.Create(goodUserId, null, goodWeight, goodHeight, null, null, goodGoal, null,
+            goodDailySteps, goodHoursOfSleep, goodGender);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -29,7 +33,8 @@ public partial class PersonalDataTests
         var badDateOfBirth = TimeProviderContext.AdvanceTimeToNow();
 
         //Act
-        var result = PersonalData.Create(goodUserId, badDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null);
+        var result = PersonalData.Create(goodUserId, badDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
+            goodDailySteps, goodHoursOfSleep, goodGender);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -43,7 +48,8 @@ public partial class PersonalDataTests
         var badWeight = -100.0f;
 
         //Act
-        var result = PersonalData.Create(goodUserId, goodDateOfBirth, badWeight, goodHeight, null, null, goodGoal, null);
+        var result = PersonalData.Create(goodUserId, goodDateOfBirth, badWeight, goodHeight, null, null, goodGoal, null,
+            goodDailySteps, goodHoursOfSleep, goodGender);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -57,7 +63,8 @@ public partial class PersonalDataTests
         var badHeight = -100.0f;
 
         //Act
-        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, badHeight, null, null, goodGoal, null);
+        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, badHeight, null, null, goodGoal, null,
+            goodDailySteps, goodHoursOfSleep, goodGender);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -71,7 +78,8 @@ public partial class PersonalDataTests
     public void Given_Create_When_GoalIsNullOrEmpty_Then_ShouldFail(string badGoal)
     {
         //Act
-        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, badGoal, null);
+        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, badGoal, null,
+            goodDailySteps, goodHoursOfSleep, goodGender);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -85,7 +93,8 @@ public partial class PersonalDataTests
         var badGoal = PersonalDataConstants.AllowedGoals.First() + "bad";
 
         //Act
-        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, badGoal, null);
+        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, badGoal, null,
+            goodDailySteps, goodHoursOfSleep, goodGender);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -93,10 +102,57 @@ public partial class PersonalDataTests
     }
 
     [Fact]
+    public void Given_Create_When_StepsIsNegative_Then_ShouldFail()
+    {
+        //Arrange
+        var badSteps = -1;
+
+        //Act
+        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
+            badSteps, goodHoursOfSleep, goodGender);
+
+        //Assert
+        result.IsFailure.Should().BeTrue();
+        result.Error.Should().Be(DomainErrors.PersonalData.Create.InvalidDailySteps);
+    }
+
+    [Fact]
+    public void Given_Create_When_HoursOfSleepIsNegative_Then_ShouldFail()
+    {
+        //Arrange
+        var badHoursOfSleep = -1.0;
+
+        //Act
+        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
+            goodDailySteps, badHoursOfSleep, goodGender);
+
+        //Assert
+        result.IsFailure.Should().BeTrue();
+        result.Error.Should().Be(DomainErrors.PersonalData.Create.InvalidHoursOfSleep);
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("     ")]
+    [InlineData("bad")]
+    public void Given_Create_When_GenderIsInvalid_Then_ShouldFail(string badGender)
+    {
+        //Act
+        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
+            goodDailySteps, goodHoursOfSleep, badGender);
+
+        //Assert
+        result.IsFailure.Should().BeTrue();
+        result.Error.Should().Be(DomainErrors.PersonalData.Create.InvalidGender);
+    }
+
+    [Fact]
     public void Given_Create_When_NotViolatingConstraints_Then_ShouldSucceed()
     {
         //Act
-        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null);
+        var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
+            goodDailySteps, goodHoursOfSleep, goodGender);
 
         //Assert
         result.IsSuccess.Should().BeTrue();

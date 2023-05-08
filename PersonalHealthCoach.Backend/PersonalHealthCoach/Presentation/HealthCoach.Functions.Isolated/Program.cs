@@ -58,7 +58,7 @@ static class HostBuilderExtensions
 
         try
         {
-            await dbContext.Database.MigrateAsync();
+            await dbContext.InitializeDatabase();
         }
         catch (Npgsql.NpgsqlException ex)
         {

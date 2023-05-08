@@ -83,7 +83,10 @@ public class AddPersonalDataCommandHandlerTests
         null,
         null,
         PersonalDataConstants.AllowedGoals.First(),
-        null);
+        null,
+        12333,
+        7.5,
+        "M");
 
     private AddPersonalDataCommandHandler Sut() => new(repositoryMock.Object);
 }

@@ -7,7 +7,10 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddHealthCoachAppBusiness(this IServiceCollection services)
     {
-        return services.AddMediatR(typeof(BusinessAssembly));
+        return services
+            .AddMediatR(typeof(BusinessAssembly))
+            .AddScoped<IExerciseLogRepository, ExerciseLogRepository>()
+            .AddScoped<IFoodLogRepository, FoodLogRepository>();
     }
 
     private static class BusinessAssembly { }

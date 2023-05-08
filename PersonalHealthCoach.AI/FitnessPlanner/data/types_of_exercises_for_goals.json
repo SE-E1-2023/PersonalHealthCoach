@@ -1,0 +1,38 @@
+{
+  "Lose fat": [
+    "Cardio",
+    "Strength",
+    "Plyometrics"
+  ],
+  "Increase muscle mass": [
+    "Strength",
+    "Powerlifting",
+    "Olympic Weightlifting"
+  ],
+  "Body recomposition": [
+    "Strength",
+    "Cardio",
+    "Powerlifting",
+    "Olympic Weightlifting"
+  ],
+  "Improve cardiovascular health": [
+    "Cardio",
+    "Plyometrics"
+  ],
+  "Increase strength": [
+    "Strength",
+    "Powerlifting",
+    "Olympic Weightlifting"
+  ],
+  "Increase endurance": [
+    "Cardio",
+    "Strength",
+    "Plyometrics"
+  ],
+  "Overall health": [
+    "Cardio",
+    "Strength",
+    "Plyometrics",
+    "Stretching"
+  ]
+}
