@@ -27,4 +27,13 @@ public sealed class ExerciseLogFunctions
             .Bind(c => mediator.Send(c))
             .ToResponseData(request);
     }
+
+    [Function(nameof(GetExerciseLog))]
+    public async Task<HttpResponseData> GetExerciseLog([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/exercise-log")] HttpRequestData request, Guid id)
+    {
+
+        return await mediator
+            .Send(new GetExerciseLogCommand(id))
+            .ToResponseData(request , (response,result) => response.WriteAsJsonAsync(result.Value));
+    }
 }
