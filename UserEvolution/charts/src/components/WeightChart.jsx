@@ -8,12 +8,13 @@ const WeightChart = ({ weightData }) => {
 
   useEffect(() => {
     if (weightData.length === 0) return;
+    console.log(weightData); // Add this line to debug the weightData
     const chartData = {
-      labels: weightData.map((item) => item.label),
+      labels: weightData.map((item) => new Date(item.CreatedAt).toLocaleDateString()),
       datasets: [
         {
           label: 'Weight per week',
-          data: weightData.map((item) => item.value),
+          data: weightData.map((item) => item.Weight),
           fill: false,
           tension: 0.2,
           backgroundColor: 'rgba(0,0,0,0)', // set background color to transparent
@@ -49,7 +50,7 @@ const WeightChart = ({ weightData }) => {
 
     if(window.outerWidth>1024){
       Chart.defaults.font.size=15;
-      }else Chart.defaults.font.size=7;
+    }else Chart.defaults.font.size=7;
     const chart = new Chart(chartRef.current, chartConfig);
 
     const resizeObserver = new ResizeObserver(() => {
