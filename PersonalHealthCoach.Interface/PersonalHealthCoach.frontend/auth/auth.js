@@ -1,6 +1,6 @@
 async function signIn() {
     const url = "http://localhost:7071/api/v1/users?EmailAddress=";
-    
+
         const email = document.getElementById("email").value;
 
         await fetch(url + email, {
@@ -19,7 +19,7 @@ async function signIn() {
             })
             .then(data => {
                 setCookie("userId", data);
-                window.location.href = "Homepage.html";
+                window.location.href = "../main/Homepage.html";
             })
             .catch(error => {
                 console.error("Error:", error);
