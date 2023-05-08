@@ -1,61 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="sign-style.css" rel="stylesheet" />
-    
+
     <title>Sign in</title>
 </head>
+
 <body>
-        <div class="container">
-          
-            <form method="POST" action="/signin"> <!-- To be replaced with the endpoint. -->
-                <div class="top-header">
-                    <header>
-                        <img src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="Login" width="80" height="80">
-                        <br /> Sign-in</header>
-                </div>
-                <div class="input-field">
-                    <input type="text" class="input" placeholder="Email" name="email" required>
-                </div>
-                <div class="input-field">
-                    <input type="text" class="input" placeholder="Name" name="name" required>
-                </div>
-                <div class="input-field">
-                    <input type="text" class="input" placeholder="Surname" name="surname" required>
-                </div>
-                <div class="submit-field">
-                    <input type="submit" class="submit" value="Submit">
-                </div>
-            </form>
-            <script>
-                const form = document.querySelector('form');
-                form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const email = form.email.value;
-                const name = form.name.value;
-                const surname = form.surname.value;
-        
-                const response = await fetch("http://localhost:7071/api/v1/users", {
-                    method: 'POST',
-                    headers: {
-                    'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                    Name: name,
-                    FirstName: surname,
-                    EmailAddress: email
-                    })
-                });
-                console.log(response);
-          if (response.ok) {
-            window.location.href = 'form.html';
-          } else {
-            window.location.href = 'test-unsuccessful-signup.html';
-          }
-        });
-            </script>
+    <div class="container">
+        <form>
+            <!-- To be replaced with the endpoint. -->
+            <script src="auth.js"></script>
+            <div class="top-header">
+                <header>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="Login" width="80"
+                        height="80" />
+                    <br />
+                    Sign up
+                </header>
+            </div>
+            <div class="input-field">
+                <input type="text" class="input" placeholder="Email" name="email" id="email" required />
+            </div>
+            <div class="input-field">
+                <input type="text" class="input" placeholder="Name" name="name" id="name" required />
+            </div>
+            <div class="input-field">
+                <input type="text" class="input" placeholder="Surname" name="surname" id="surname" required />
+            </div>
+            <div id="error-container" class="error-container"></div>
+            <div class="submit-field">
+                <button type="button" class="submit" onClick="signUp()">Submit</button>
+            </div>
+        </form>
     </div>
 </body>
+
 </html>
