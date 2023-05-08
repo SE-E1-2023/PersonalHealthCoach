@@ -1,0 +1,122 @@
+{
+    "recipies": [
+      {
+        "id": 649886,
+        "title": "Lemony Greek Lentil Soup",
+        "vegetarian": true,
+        "dairyFree": true,
+        "glutenFree": true,
+        "vegan": true,
+        "healthScore": 100,
+        "image": "https://spoonacular.com/recipeImages/649886-312x231.jpg",
+        "ingredients": [
+          "brown lentils",
+          "carrot",
+          "water",
+          "thyme",
+          "lemon juice",
+          "basil",
+          "thyme",
+          "oregano",
+          "pepper",
+          "salt",
+          "onion",
+          "garlic",
+          "olive oil",
+          "canned tomatoes"
+        ],
+        "kcal": 368.09
+      },
+      {
+        "id": 660109,
+        "title": "Simple lentil soup",
+        "vegetarian": true,
+        "dairyFree": true,
+        "glutenFree": true,
+        "vegan": true,
+        "healthScore": 39,
+        "image": "https://spoonacular.com/recipeImages/660109-312x231.jpg",
+        "ingredients": [
+          "bay leaf",
+          "garlic",
+          "lentils",
+          "olive oil",
+          "onion",
+          "salt & pepper",
+          "tomato",
+          "vinegar",
+          "water"
+        ],
+        "kcal": 261.7
+      },
+      {
+        "id": 631834,
+        "title": "10-Minute Bean Stew",
+        "vegetarian": true,
+        "dairyFree": true,
+        "glutenFree": true,
+        "vegan": true,
+        "healthScore": 75,
+        "image": "https://spoonacular.com/recipeImages/631834-312x231.jpg",
+        "ingredients": [
+          "cherry tomatoes",
+          "juice of lemon",
+          "thyme",
+          "tomato puree",
+          "canned tomatoes",
+          "kidney beans",
+          "garlic gloves",
+          "salt & pepper",
+          "optional: spinach"
+        ],
+        "kcal": 356.73
+      },
+      {
+        "id": 1096231,
+        "title": "Slow Cooker Healthy Sweet Potato Soup with Coconut and Pistachios",
+        "vegetarian": true,
+        "dairyFree": true,
+        "glutenFree": true,
+        "vegan": true,
+        "healthScore": 20,
+        "image": "https://spoonacular.com/recipeImages/1096231-312x231.jpg",
+        "ingredients": [
+          "sweet potatoes",
+          "onion",
+          "celery",
+          "carrot sticks",
+          "garlic cloves",
+          "kettle & fire chicken bone broth",
+          "salt",
+          "ground pepper",
+          "coconut milk",
+          "pistachio nuts"
+        ],
+        "kcal": 427.28
+      },
+      {
+        "id": 636602,
+        "title": "Butternut Squash Soup (In Half An Hour!)",
+        "vegetarian": true,
+        "dairyFree": true,
+        "glutenFree": true,
+        "vegan": true,
+        "healthScore": 86,
+        "image": "https://spoonacular.com/recipeImages/636602-312x231.jpg",
+        "ingredients": [
+          "butternut squash",
+          "black-eyed peas",
+          "collard greens",
+          "quinoa",
+          "kombu",
+          "nutmeg",
+          "olive oil",
+          "salt and pepper",
+          "vegetable broth",
+          "onions"
+        ],
+        "kcal": 251.7
+      }
+    ],
+    "NOP": 0
+  }
