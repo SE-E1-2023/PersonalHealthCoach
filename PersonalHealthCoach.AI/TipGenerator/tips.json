@@ -1,27 +1,27 @@
 {
     "Lose weight": {
-        "level of activity":{
-            "Sedentary": "Your objective is to lose weight, but your level of activity is Sedentary, which means that you exercise very little or not at all. To achieve your goal, you'll have to change this and become a lot more active. For example, you can start having long walks and then you can even try running. Also, respect your diet plan because your activity is in vain if you don't eat properly.",
+        "Level of activity": {
+            "Sedentary": "Your objective is to lose weight, but your level of activity is Sedentary, which means that you exercise very little or not at all. To achieve your goal, you'll have to change this and become a lot more active. For example, you can start having long walks and then you can even try running. Also, respect your Diet plan because your activity is in vain if you don't eat properly.",
             "Lightly active": "Your objective is to lose weight, but your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you'll have to become more active. You may try to exercise constantly 3 days/week and then raise it to 4 days/week. Also, take care of what you eat so that your effort to lose weight will not be in vain.",
-            "Moderately active": "Your level of activity is Moderatly active, which is a good one. To achieve your goal of losing weight, it may be enough to just continue what you do, respect your diet plan and be patient. If you want to see faster changes, you may try to increase the number of exercise days from 3-5 to 6-7 days/week.",
-            "Active": "Your level of activity is Active, which is a very good one. To achieve your goal of losing weight, just continue what you do, respect your diet plan and be patient, the changes will come. If you want to increase this level even more, you can try to increase the hardness of your exercises.",
+            "Moderately active": "Your level of activity is Moderatly active, which is a good one. To achieve your goal of losing weight, it may be enough to just continue what you do, respect your Diet plan and be patient. If you want to see faster changes, you may try to increase the number of exercise days from 3-5 to 6-7 days/week.",
+            "Active": "Your level of activity is Active, which is a very good one. To achieve your goal of losing weight, just continue what you do, respect your Diet plan and be patient, the changes will come. If you want to increase this level even more, you can try to increase the hardness of your exercises.",
             "Very active": "Your level of activity is Very active, which is excellent. To achieve your goal of losing weight, just continue what you do and the changes will come. However, take care not to get injured while exercising so much."
         },
-        "general": [
+        "General": [
             "Track your food intake to ensure you're in a calorie deficit.",
             "Get enough sleep to avoid hormone imbalances that can lead to weight gain.",
             "Reduce stress levels to prevent emotional eating.",
             "Find a support system to keep you motivated and accountable.",
             "Be patient and consistent - weight loss takes time and effort."
-          ],
-        "diet": [
+        ],
+        "Diet": [
             "Eat more protein and fiber to stay full longer.",
             "Drink plenty of water to help reduce cravings.",
             "Try eating smaller, more frequent meals throughout the day.",
             "Avoid sugary drinks and processed foods.",
             "Plan your meals and snacks ahead of time to avoid impulsive eating."
         ],
-        "fitness": [
+        "Fitness": [
             "Incorporate more cardio into your workout routine.",
             "Do high-intensity interval training (HIIT) to burn more calories in less time.",
             "Lift weights to build muscle and increase metabolism.",
@@ -30,28 +30,28 @@
         ]
     },
     "Gain muscular mass": {
-        "level of activity":{
+        "Level of activity": {
             "Sedentary": "Your objective is to gain muscular mass, but your level of activity is Sedentary, which means that you exercise very little or not at all. To achieve your goal, you'll have to change this and become a lot more active. You can't gain muscular mass without exercising. For example, you can start doing some push-ups at home when you have free time.",
             "Lightly active": "Your objective is to gain muscular mass, but your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you'll have exercise more. You may try to exercise constantly 4 days/week. Also, make sure that your meals consist mostly of proteins.",
             "Moderately active": "Your level of activity is Moderatly active, which is a good one. To achieve your goal of gainin muscular mass, it may be enough to just continue what you do, eat a lot of proteins daily and be patient. If you want to see faster changes, you may try to increase the number of exercise days from 3-5 to 6-7 days/week.",
             "Active": "Your level of activity is Active, which is a very good one. To achieve your goal of gaining muscular mass, just continue what you do, eat a lot of proteins and be patient, the changes will come. If you want to increase this level even more, you can try to increase the hardness of your exercises. However, sometimes it may help to take a break on certain days to give the muscles time to recover.",
             "Very active": "Your level of activity is Very active, which is excellent. To achieve your goal of gaining muscular mass, just continue what you do and the changes will come. However, sometimes it may help to take a break on certain days to give the muscles time to recover. "
         },
-        "general": [
+        "General": [
             "Be consistent with your workout routine and nutrition plan.",
             "Track your progress to make sure you're making gains.",
             "Gradually increase the weight and reps you lift to continue challenging your muscles.",
             "Take rest days to allow your muscles to recover and grow.",
             "Get enough sleep to support muscle growth and recovery."
-          ],
-        "diet": [
+        ],
+        "Diet": [
             "Eat more protein to support muscle growth.",
             "Consume enough calories to maintain a calorie surplus.",
-            "Include healthy fats in your diet to support hormone production.",
+            "Include healthy fats in your Diet to support hormone production.",
             "Eat carbohydrates to fuel your workouts and replenish glycogen stores.",
             "Drink plenty of water to support muscle function and recovery."
         ],
-        "fitness": [
+        "Fitness": [
             "Lift weights with heavy resistance to promote muscle growth.",
             "Focus on compound exercises that work multiple muscle groups.",
             "Increase training volume and intensity gradually to avoid injury.",
@@ -59,28 +59,28 @@
         ]
     },
     "Improve overall health": {
-        "level of activity":{
+        "Level of activity": {
             "Sedentary": "Your objective is to improve your overall health, but your level of activity is Sedentary, which means that you exercise very little or not at all. To achieve your goal and live a more healthy life, you'll have to change this and become a more active person. For example, you can start taking long walks or even try jogging.",
             "Lightly active": "Your objective is to improve your overall health and your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you can try raising a little bit the number of exercise days and also, make sure that you eat properly.",
             "Moderately active": "Your level of activity is Moderatly active, which is a good one. Living a healthy life should be possible with this level of activity, but you'll also have to take care of what you eat.",
             "Active": "Your level of activity is Active, which is a very good one. With this level of activity, you can be sure that you are living a healthy life.",
             "Very active": "Your level of activity is Very active, which is excellent. This level of activity puts you in the category of performance athletes."
         },
-        "general": [
+        "General": [
             "Get regular check-ups with your healthcare provider.",
             "Reduce stress levels to prevent chronic disease.",
             "Practice good sleep hygiene to support overall health.",
             "Find a physical activity you enjoy to stay active.",
             "Avoid smoking and limit alcohol consumption."
-          ],
-        "diet": [
+        ],
+        "Diet": [
             "Eat a variety of fruits and vegetables for essential vitamins and minerals.",
             "Choose lean protein sources such as chicken, fish, and legumes.",
             "Limit your intake of processed foods and sugary drinks.",
-            "Include healthy fats such as avocados, nuts, and seeds in your diet.",
+            "Include healthy fats such as avocados, nuts, and seeds in your Diet.",
             "Eat complex carbohydrates such as whole grains, fruits, and vegetables."
         ],
-        "fitness": [
+        "Fitness": [
             "Get at least 150 minutes of moderate-intensity aerobic exercise per week.",
             "Incorporate strength training exercises to maintain muscle mass and bone density.",
             "Stretch regularly to improve flexibility and prevent injury.",
@@ -89,57 +89,57 @@
         ]
     },
     "Improve cardiovascular health": {
-        "level of activity":{
+        "Level of activity": {
             "Sedentary": "Your objective is to improve your cardiovascular health, but your level of activity is Sedentary, which means that you exercise very little or not at all. To improve your cardiovascular system, you'll have to exercise more. The best and easiest cardio workout is running so you can start with that.",
             "Lightly active": "Your objective is to improve your cardiovascular overall health and your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you can try raising a little bit the number of exercise days and try to focus on cardio workouts.",
             "Moderately active": "Your level of activity is Moderatly active, which is a good one. Living a healthy life should be possible with this level of activity and to improve your cardiovascular system, you may just try to focus on cardio workouts.",
             "Active": "Your level of activity is Active, which is a very good one. With this level of activity, you can be sure that your cardiovascular system is more than fine.",
             "Very active": "Your level of activity is Very active, which is excellent. This level of activity puts you in the category of performance athletes."
         },
-        "general": [
+        "General": [
             "Consult with your healthcare provider before starting a new exercise program, especially if you have a history of heart disease or other cardiovascular conditions.",
             "Monitor your heart rate during exercise to ensure you're working at an appropriate intensity level.",
-            "Gradually increase the duration and intensity of your aerobic workouts over time to improve cardiovascular fitness.",
+            "Gradually increase the duration and intensity of your aerobic workouts over time to improve cardiovascular Fitness.",
             "Incorporate both steady-state and interval training into your routine to challenge your heart and lungs in different ways.",
             "Don't forget to warm up and cool down properly before and after exercise."
-          ],
-        "diet": [
+        ],
+        "Diet": [
             "Consume plenty of fruits, vegetables, and whole grains for their heart-healthy nutrients and fiber.",
             "Choose lean sources of protein such as fish and chicken to reduce saturated fat intake.",
             "Limit your intake of sodium and processed foods, which can contribute to high blood pressure.",
             "Eat healthy fats such as avocados, nuts, and olive oil to help maintain healthy cholesterol levels.",
             "Avoid sugary drinks and excessive alcohol consumption."
         ],
-        "fitness": [
+        "Fitness": [
             "Incorporate aerobic exercise such as running, cycling, or swimming to improve cardiovascular health.",
             "Aim for at least 150 minutes of moderate-intensity exercise per week.",
             "Mix in high-intensity interval training (HIIT) to increase heart rate variability and challenge your cardiovascular system.",
-            "Consider adding in resistance training to improve overall fitness and reduce the risk of injury."
+            "Consider adding in resistance training to improve overall Fitness and reduce the risk of injury."
         ]
     },
     "Increase endurance": {
-        "level of activity":{
+        "Level of activity": {
             "Sedentary": "Your objective is to increase your endurance, but your level of activity is Sedentary, which means that you exercise very little or not at all. To achieve your objective, you'll have to change this a lot because you can't increase endurance without constancly exercising.For the beggining, try to increase your resistence with jogging.",
             "Lightly active": "Your objective is to increase your endurance and your level of activity is Lightly active, which means that you exercise 1–3 days/week. To achieve your goal, you should try to raise a little bit this number and exercise harder.",
             "Moderately active": "Your level of activity is Moderatly active, which is a good one. To achieve your goal, you should focus on hard exercises and be patient because endurance takes time to improve.",
             "Active": "Your level of activity is Active, which is a very good one. This means that you exercise 6-7 days/week, which means that your endurance should be just fine. If you want to go to the next level, you may just try harder workouts.",
             "Very active": "Your level of activity is Very active, which is excellent. This level of activity puts you in the category of performance athletes, so your endurance should be already very good."
         },
-        "general": [
+        "General": [
             "Set specific endurance goals, such as completing a certain distance or time in a race.",
             "Be consistent with your workouts, gradually increasing the duration and intensity of your training over time.",
-            "Consider cross-training with other activities such as swimming or cycling to reduce the risk of injury and improve overall fitness.",
+            "Consider cross-training with other activities such as swimming or cycling to reduce the risk of injury and improve overall Fitness.",
             "Make sure to include rest days to allow for recovery.",
             "Don't forget to warm up and cool down properly before and after exercise."
         ],
-        "diet": [
+        "Diet": [
             "Consume plenty of carbohydrates to fuel your workouts and replenish glycogen stores.",
             "Choose lean sources of protein to support muscle recovery.",
             "Eat healthy fats such as avocados, nuts, and seeds to support overall health.",
             "Avoid sugary drinks and processed foods, which can interfere with endurance performance.",
             "Drink plenty of water to stay hydrated and support exercise performance."
         ],
-        "fitness": [
+        "Fitness": [
             "Engage in aerobic activities that elevate your heart rate such as running, cycling, swimming, or rowing. Start with a moderate intensity and gradually increase the duration and intensity of the exercise over time.",
             "Incorporate HIIT into your workout routine by alternating periods of high-intensity exercise with periods of rest or low-intensity exercise. This type of training has been shown to improve cardiovascular health and endurance.",
             "Build muscular endurance by incorporating strength training into your routine. This can include bodyweight exercises such as push-ups, lunges, and squats or using resistance bands, weights or machines.",
@@ -148,34 +148,34 @@
         ]
     },
     "Maintain weight": {
-        "level of activity":{
+        "Level of activity": {
             "Sedentary": "Your objective is to maintain your weight, but your level of activity is Sedentary, which means that you exercise very little or not at all. It may not be a problem for you now, but over time the body will no longer help you maintain your weight without physical activity. You can start easily with some long walks or even jogging. Also, another important part is what you eat, so make sure you do it properly.",
             "Lightly active": "Your objective is to maintain your weight, and your level of activity is Lightly active, which means that you exercise 1–3 days/week. That should be enough to keep your weight as you want it, although it is recommended to try to exercise a little more. Also, another important part is what you eat, so make sure you do it properly.",
             "Moderately active": "Your level of activity is Moderatly active, which is a good one. To maintain your weight, it's enough to just continue what you do and eat properly.",
             "Active": "Your level of activity is Active, which is a very good one. To maintain your weight just continue what you do and make sure you eat properly.",
             "Very active": "Your level of activity is Very active, which is excellent. To maintain your weight just continue what you do and make sure you eat properly. "
         },
-        "general": [
+        "General": [
             "Continue tracking your food intake and monitoring your weight to stay on track.",
             "Stay active by engaging in regular physical activity, such as walking, running, or weight lifting.",
-            "Focus on developing healthy habits that you can maintain long-term, rather than going on fad diets or extreme exercise programs.",
+            "Focus on developing healthy habits that you can maintain long-term, rather than going on fad Diets or extreme exercise programs.",
             "Find a support system to keep you accountable and motivated.",
             "Be mindful of portion sizes and avoid overeating."
-            ],
-            "diet": [
-            "Continue to eat a balanced diet with plenty of fruits, vegetables, whole grains, lean protein, and healthy fats.",
+        ],
+        "Diet": [
+            "Continue to eat a balanced Diet with plenty of fruits, vegetables, whole grains, lean protein, and healthy fats.",
             "Limit your intake of processed foods, sugary drinks, and snacks.",
             "Choose nutrient-dense foods that provide a lot of nutrients for fewer calories, such as leafy greens, berries, and nuts.",
             "Drink plenty of water and avoid drinking excessive alcohol.",
             "Be mindful of portion sizes and practice intuitive eating to listen to your body's hunger and fullness cues."
-            ],
-            "fitness": [
+        ],
+        "Fitness": [
             "Maintain a regular exercise routine that includes both cardio and strength training.",
             "Vary your workouts to keep things interesting and challenge your body in different ways.",
-            "Set new fitness goals to keep you motivated and focused, such as running a 5K or completing a challenging hike.",
-            "Find a workout buddy or join a fitness group to stay accountable and motivated.",
+            "Set new Fitness goals to keep you motivated and focused, such as running a 5K or completing a challenging hike.",
+            "Find a workout buddy or join a Fitness group to stay accountable and motivated.",
             "Don't forget to include rest days in your routine to allow your muscles to recover and prevent injury."
-            ]
+        ]
     },
     "Diseases": {
         "Respiratory Conditions":{
@@ -297,5 +297,187 @@
                 "Exercise helps with mind fatigue. Keep up the good work!"
             ]
         }
-    }
+    },
+    "Sleep": {
+        "No sleep last night": [
+            "Stick to your normal routine: Try to maintain your usual sleep routine as much as possible, even if you didn't get any sleep the night before. This can help signal to your body that it's time to sleep when bedtime comes around.",
+            "Avoid napping: While napping can be helpful for some people, it's Generally not recommended if you didn't sleep at all the previous night. Napping can disrupt your sleep pattern and make it harder to fall asleep at night.",
+            "Use natural light: Exposure to natural light during the day can help regulate your body's internal clock and improve your alertness. Try to spend some time outside or near a window during the day.",
+            "Prioritize rest: If possible, try to go to bed earlier than usual to make up for the missed sleep. Avoid using screens or engaging in stimulating activities for at least an hour before bed to help your mind and body relax.",
+            "Be patient with yourself: It's normal to feel tired and less productive after a night of no sleep, so don't be too hard on yourself if you're not at your best. Just focus on doing your best with the resources you have available."
+        ],
+        "Less than 5 hours": [
+            "Drink water: Dehydration can make you feel even more tired, so make sure to drink plenty of water throughout the day.",
+            "Take a power nap: If possible, try to take a short nap during the day to help you recharge. Aim for 20-30 minutes, as longer naps can make it harder to sleep at night.",
+            "Stay active: Exercise can help improve your mood and energy levels. Even a short walk or stretching can help.",
+            "Limit caffeine and sugar: While caffeine and sugar can provide a quick boost of energy, they can also cause a crash later on. Try to limit your intake of these substances.",
+            "Prioritize rest: Try to go to bed earlier tonight to make up for the lack of sleep. If possible, avoid screens and other stimulating activities for an hour before bed to help your mind and body relax.",
+            "Remember that it's normal to feel tired and groggy after a night of poor sleep, so be kind to yourself and give your body the time it needs to recover. If you continue to have trouble sleeping, consider talking to a healthcare professional for further guidance."
+        ],
+        "5 or 6 hours": [
+            "Eat a balanced breakfast: Starting your day with a nutritious meal can help you feel more alert and energized. Include foods that provide complex carbohydrates, protein, and healthy fats to give you sustained energy throughout the day.",
+            "Stay active: Exercise can help improve your mood and energy levels, so try to incorporate some physical activity into your day. Even a short walk or stretching can help.",
+            "Take breaks: If you have a long day ahead, be sure to take short breaks throughout the day to rest your mind and give your body a chance to recharge.",
+            "Manage your stress: Stress can cause fatigue and make it harder to focus, so try to find ways to manage stress throughout the day. This could include practicing deep breathing exercises or taking short breaks to meditate.",
+            "Stick to a sleep schedule: Going to bed and waking up at the same time each day can help regulate your body's sleep-wake cycle and improve the quality of your sleep. Try to establish a consistent sleep schedule and stick to it as much as possible.",
+            "Remember that getting enough sleep is important for your physical and mental health, so try to prioritize sleep whenever possible. If you continue to have trouble sleeping or experience excessive daytime fatigue, consider talking to a healthcare professional for further guidance."
+        ],
+        "7 - 9 hours": [
+            "When you get enough sleep, you're more likely to feel alert and focused throughout the day, have better mood and mental health, and have a stronger immune system.",
+            "By getting enough sleep on a regular basis, you're also reducing your risk of developing chronic health problems such as obesity, diabetes, and heart disease. In addition, you'll have better cognitive function and memory, which can help you perform better at work or in school.",
+            "It's important to continue to prioritize healthy sleep habits to maintain this good sleep pattern. This includes creating a relaxing bedtime routine, avoiding screens before bed, and keeping your bedroom cool, dark, and quiet.",
+            "Make sure to stay consistent with your sleep schedule as much as possible, even on weekends or holidays. This helps regulate your body's internal clock, making it easier to fall asleep and wake up at the same time each day.",
+            "If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
+        ],
+        "10 or more hours": [
+            "Don't be too hard on yourself: It's okay to have an occasional night of extra sleep, especially if it was due to a special occasion or event. Don't feel guilty for sleeping in a little longer than usual.",
+            "Get some exercise: Even though it may be tempting to lounge around all day, getting some exercise can help wake you up and improve your mood. Try going for a walk, doing some yoga, or going to the gym.",
+            "Stick to a routine: Try to stick to your regular sleep schedule as much as possible, even if you slept in later than usual. This can help regulate your body's internal clock and make it easier to fall asleep at night.",
+            "Avoid caffeine and sugar: While caffeine and sugar may give you a quick burst of energy, they can also lead to crashes later on. Instead, try to eat a balanced Diet with plenty of protein, whole grains, and fruits and vegetables.",
+            "Prioritize your tasks: If you're feeling groggy or unproductive, try making a list of your most important tasks and tackling them first. This can help you feel more accomplished and motivated throughout the day."
+        ]
+    },
+    "General": [
+        "Limit sugary drinks. Sugary drinks like sodas, fruit juices, and sweetened teas are the primary source of added sugar in the American diet. Unfortunately, findings from several studies point to sugar-sweetened beverages increasing risk of heart disease and type 2 diabetes, even in people who are not carrying excess body fat. Sugar-sweetened beverages are also uniquely harmful for children, as they can contribute not only to obesity in children but also to conditions that usually do not develop until adulthood, like type 2 diabetes, high blood pressure, and non-alcoholic fatty liver disease.",
+
+        "Eat nuts and seeds. Some people avoid nuts because they are high in fat. However, nuts and seeds are incredibly nutritious. They are packed with protein, fiber, and a variety of vitamins and minerals. Nuts may help you lose weight and reduce the risk of developing type 2 diabetes and heart disease. Additionally, one large observational study noted that a low intake of nuts and seeds was potentially linked to an increased risk of death from heart disease, stroke, or type 2 diabetes.",
+
+        "Avoid ultra-processed foods. Ultra-processed foods are foods containing ingredients that are significantly modified from their original form. They often contain additives like added sugar, highly refined oil, salt, preservatives, artificial sweeteners, colors, and flavors as well. Examples include: snack cakes, fast food, frozen meals, canned foods, chips. Ultra-processed foods are highly palatable, meaning they are easily overeaten, and activate reward-related regions in the brain, which can lead to excess calorie consumption and weight gain. Studies show that diets high in ultra-processed food can contribute to obesity, type 2 diabetes, heart disease, and other chronic conditions. In addition to low quality ingredients like inflammatory fats, added sugar, and refined grains, they’re usually low in fiber, protein, and micronutrients. Thus, they provide mostly empty calories.",
+
+        "Don’t fear coffee. Despite some controversy over it, coffee is loaded with health benefits. It’s rich in antioxidants, and some studies have linked coffee intake to longevity and a reduced risk of type 2 diabetes, Parkinson’s and Alzheimer’s diseases, and numerous other illnesses. The most beneficial intake amount appears to be 3–4 cups per day, although pregnant people should limit or avoid it completely because it has been linked to low birth weight. However, it’s best to consume coffee and any caffeine-based items in moderation. Excessive caffeine intake may lead to health issues like insomnia and heart palpitations. To enjoy coffee in a safe and healthy way, keep your intake to less than 4 cups per day and avoid high-calorie, high-sugar additives like sweetened creamer.",
+
+        "Eat fatty fish. Fish is a great source of high-quality protein and healthy fat. This is particularly true of fatty fish, such as salmon, which is loaded with anti-inflammatory omega-3 fatty acids and various other nutrients. Studies show that people who eat fish regularly have a lower risk for several conditions, including heart disease, dementia, and inflammatory bowel disease.",
+
+        "Get enough sleep. The importance of getting enough quality sleep cannot be overstated. Poor sleep can drive insulin resistance, can disrupt your appetite hormones, and reduce your physical and mental performance. What’s more, poor sleep is one of the strongest individual risk factors for weight gain and obesity. People who do not get enough sleep tend to make food choices that are higher in fat, sugar, and calories, potentially leading to unwanted weight gain.",
+
+        "Feed your gut bacteria. The bacteria in your gut, collectively called the gut microbiota, are incredibly important for overall health. A disruption in gut bacteria is linked to some chronic diseases, including obesity and a myriad of digestive problems. Good ways to improve gut health include eating probiotic foods like yogurt and sauerkraut, taking probiotic supplements — when indicated — and eating plenty of fiber. Notably, fiber serves as a prebiotic, or a food source for your gut bacteria.",
+
+        "Stay hydrated. Hydration is an important and often overlooked marker of health. Staying hydrated helps ensure that your body is functioning optimally and that your blood volume is sufficient. Drinking water is the best way to stay hydrated, as it’s free of calories, sugar, and additives. Although there’s no set amount that everyone needs per day, aim to drink enough so that your thirst is adequately quenched.",
+
+        "Don’t eat heavily charred meats. Meat can be a nutritious and healthy part of your diet. It’s very high in protein and a rich source of nutrients. However, problems occur when meat is charred or burnt. This charring can lead to the formation of harmful compounds that may increase your risk for certain cancers. When you cook meat, try not to char or burn it. Additionally limit your consumption of red and processed meats like lunch meats and bacon as these are linked to overall cancer risk and colon cancer risk.",
+
+        "Avoid bright lights before sleep. When you’re exposed to bright lights — which contain blue light wavelengths — in the evening, it may disrupt your production of the sleep hormone melatonin. Some ways to help reduce your blue light exposure is to wear blue light blocking glasses — especially if you use a computer or other digital screen for long periods of time — and to avoid digital screens for 30 minutes to an hour before going to bed. This can help your body better produce melatonin naturally as evening progresses, helping you sleep better.",
+
+        "Take vitamin D if you’re deficient. Most people do not get enough vitamin D. While these widespread vitamin D inadequacies are not imminently harmful, maintaining adequate vitamin D levels can help to optimize your health by improving bone strength, reducing symptoms of depression, strengthening your immune system, and lowering your risk for cancer. If you do not spend a lot of time in the sunlight, your vitamin D levels may be low. If you have access, it’s a great idea to have your levels tested, so that you can correct your levels through vitamin D supplementation if necessary.",
+
+        "Eat plenty of fruits and vegetables. Vegetables and fruits are loaded with prebiotic fiber, vitamins, minerals, and antioxidants, many of which have potent health effects. Studies show that people who eat more vegetables and fruits tend to live longer and have a lower risk for heart disease, obesity, and other illnesses.",
+
+        "Eat adequate protein. Eating enough protein is vital for optimal health, as it provides the raw materials your body needs to create new cells and tissues. What’s more, this nutrient is particularly important for maintenance of a moderate body weight. High protein intake may boost your metabolic rate — or calorie burn — while making you feel full. It may also reduce cravings and your desire to snack late at night.",
+
+        "Get moving. Doing aerobic exercise, or cardio, is one of the best things you can do for your mental and physical health. It’s particularly effective at reducing belly fat, the harmful type of fat that builds up around your organs. Reduced belly fat may lead to major improvements in your metabolic health. According to the Physical Activity Guidelines for Americans, we should strive for at least 150 minutes of moderate intensity activity each week.",
+
+        "Don’t smoke or use drugs, and only drink in moderation. Smoking, harmful use of drugs, and alcohol abuse can all seriously negatively affect your health. If you do any of these actions, consider cutting back or quitting to help reduce your risk for chronic diseases. There are resources available online — and likely in your local community, as well — to help with this. Talk with your doctor to learn more about accessing resources.",
+
+        "Use extra virgin olive oil. Extra virgin olive oil is one of the healthiest vegetable oils you can use. It’s loaded with heart-healthy monounsaturated fats and powerful antioxidants that have anti-inflammatory properties. Extra virgin olive oil may benefit heart health, as people who consume it have a lower risk for dying from heart attacks and strokes according to some evidence.",
+
+        "Minimize your sugar intake. Added sugar is extremely prevalent in modern food and drinks. A high intake is linked to obesity, type 2 diabetes, and heart disease. The Dietary Guidelines for Americans recommend keeping added sugar intake below 10% of your daily calorie intake, while the World Health Organization recommends slashing added sugars to 5% or less of your daily calories for optimal health.",
+
+        "Limit refined carbs. Not all carbs are created equal. Refined carbs have been highly processed to remove their fiber. They’re relatively low in nutrients and may harm your health when eaten in excess. Most ultra-processed foods are made from refined carbs, like processed corn, white flour, and added sugars. Studies show that a diet high in refined carbs may be linked to overeating, weight gain, and chronic diseases like type 2 diabetes and heart disease.",
+        
+        "Lift heavy weights. Strength and resistance training are some of the best forms of exercises you can do to strengthen your muscles and improve your body composition. It may also lead to important improvements in metabolic health, including improved insulin sensitivity — meaning your blood sugar levels are easier to manage — and increases in your metabolic rate, or how many calories you burn at rest. If you do not have weights, you can use your own bodyweight or resistance bands to create resistance and get a comparable workout with many of the same benefits. The Physical Activity Guidelines for Americans recommends resistance training twice per week.",
+
+        "Avoid artificial trans fats. Artificial trans fats are harmful, man-made fats that are strongly linked to inflammation and heart disease. Avoiding them should be much easier now that they have been completely banned in the United States and many other countries. Note that you may still encounter some foods that contain small amounts of naturally occurring trans fats, but these are not associated with the same negative effects as artificial trans fats.",
+
+        "Use plenty of herbs and spices. There is a variety of herbs and spices at our disposal these days, more so than ever. They not only provide flavor but also may offer several health benefits as well. For example, ginger and turmeric both have potent anti-inflammatory and antioxidant effects, which may help improve your overall health. Due to their powerful potential health benefits, you should aim to include a wide variety of herbs and spices in your diet.",
+        
+        "Nurture your social relationships. Social relationships — with friends, family, and loved ones you care about — are important not only for your mental well-being but also your physical health. Studies show that people who have close friends and family are healthier and live much longer than those who do not.",
+        
+        "Occasionally track your food intake. The only way to know exactly how many calories you eat is to weigh your food and use a nutrition tracker, as estimating your portion sizes and calorie intake is not unreliable. Tracking can also provide insights into your protein, fiber, and micronutrient intake. Though some studies have found a link between tracking calories and disordered eating tendencies, there is some evidence that suggests that people who track their food intake tend to be more successful at losing weight and maintaining their weight loss.",
+        
+        "Get rid of excess belly fat. Excessive abdominal fat, or visceral fat, is a uniquely harmful type of fat distribution that is linked to an increased risk of cardiometabolic diseases like type 2 diabetes and heart disease. For this reason, your waist size and waist-to-hip ratio may be much stronger markers of health than your weight. Cutting refined carbs, eating more protein and fiber, and reducing stress (which can reduce cortisol, a stress hormone that triggers abdominal fat deposition) are all strategies that may help you get rid of belly fat.",
+        
+        "Avoid restrictive diets. Diets are generally ineffective and rarely work well long term. In fact, past dieting is one of the strongest predictors for future weight gain. This is because overly restrictive diets actually lower your metabolic rate, or the amount of calories you burn, making it more difficult to lose weight. At the same time, they also cause alterations to your hunger and satiety hormones, which make you hungrier and may cause strong food cravings for foods high in fat, calories, and sugar. All of this is a recipe for rebound weight gain, or “yoyo” dieting. Instead of dieting, try adopting a healthier lifestyle. Focus on nourishing your body instead of depriving it. Weight loss should follow as you transition to whole, nutritious foods — which are naturally more filling while containing fewer calories than processed foods.",
+        
+        "Eat whole eggs. Despite the constant back and forth about eggs and health, it’s a myth that eggs are bad for you because of their cholesterol content. Studies show that they have minimal effect on blood cholesterol in the majority of people, and they’re a great source of protein and nutrients, Additionally, a review involving 263,938 people found that egg intake had no association with heart disease risk.",
+        
+        "Meditate. Stress has a negative effect on your health. It can affect your blood sugar levels, food choices, susceptibility to sickness, weight, fat distribution, and more. For this reason, it’s important to find healthy ways to manage your stress. Meditation is one such way, and it has some scientific evidence to support its use for stress management and improving health. In one study involving 48 people with high blood pressure, type 2 diabetes, or both, researchers found that meditation helped lower LDL (bad) cholesterol and inflammation compared with the control group. Additionally, the participants in the meditation group reported improved mental and physical wellness.",
+
+        "Limit your drinking. Alcohol has a ton of calories. It's easy to add 400 or 500 calories to your daily total with booze, and even more if you like liquor combined with sugary mixes. Some nutritionists believe the calories consumed from alcohol are particularly bad for you because when the body receives alcohol, it burns alcohol for fuel first, then burns other fuel.If you’re drinking and eating, the calories from what you are eating may be converted to fat much faster. Alcohol isn’t worth consuming for the serious athlete. It has more drawbacks than benefits.",
+
+        "Drink water. Water is nature’s perfect thirst quencher. Drink plenty of fresh, pure water daily, including with meals. Drink about 16 fluid ounces, or two cups of water, about two hours before a workout. Sip water throughout your workout. If you’re working out in hot weather, be sure to drink more water than you think you need. Thirst is a sign that your body is slightlydehydrated. Drink to stay ahead of your thirst.",
+
+        "Egg protein: In olden days, weight lifters and body builders cracked raw eggs into a glass of milk for a protein shake. Today that’s not recommended due to fears of salmonella contamination from raw eggs. You can eat cooked eggs. Egg whites contain plenty of protein power without the fat and cholesterol of the yolks, the yellow part in the center.",
+
+        "To keep your body in peak condition, eating small meals frequently is considered best for athletes in training. Eating every two or three hours seems to be helpful for keeping energy levels high and providing maximum nutrients for bodybuilding.Avoid eating carbohydrates alone. Pair them with a protein or a fat to blunt the insulin surge associated with a high-carbohydrate meal. The crash afterwards can make you feel hungrier than before you ate. Protein should be your go-to snack of choice.Post-workout, protein will help your body rebuild tissue the fastest. Drink plenty of water before a workout.",
+
+        "Protein is the go-to resource for weightlifting and serious athletes of all sports. Remember that what you put into your body builds your body. If you eat heavily processed foods, you won’t be able to build that lean, muscular look you’re going for.Instead, eat the best-quality foods you can afford, supplement with protein and drink plenty of fresh water. Avoid salt, refined sugar and alcohol. Get plenty of sleep and fresh air, and you’ll support your body as it transforms into your desired fitness level.",
+
+        "Eat a healthy breakfast. If you exercise in the morning, get up early enough to finish breakfast at least one hour before your workout. This will give you energy and raise your blood sugar. If you don’t eat, you might feel sluggish or lightheaded when you exercise. Good breakfast options include whole-grain cereals or bread, bananas and yogurt. A cup of coffee is okay too. Emphasize carbohydrates for maximum energy.",
+
+        "Size matters. You want to be careful not to overeat before exercise. Eat large meals at least three to four hours before exercising. Small meals should be eaten two to three hours before exercising. You can have small snacks an hour before exercising. Eating too much can leave you sluggish, and eating too little may not give you the energy to stay strong during your workout.",
+
+        "Snack well. Most people can eat small snacks right before and during exercise. It’s important to do what feels best for you. Snacks shortly before exercising probably won’t give you an energy boost, but they can help maintain blood sugar levels and prevent distracting hunger pains. Good snack options include energy bars, yogurt, low-fat granola bars and peanut butter sandwiches.",
+
+        "Eat after you exercise. Eating after you exercise will help your muscles recover. You’ll want to eat a meal that contains both protein and carbohydrates within two hours, if possible. Good post-workout food choices include yogurt and fruit, peanut butter sandwiches, pasta with meatballs and chicken with brown rice.",
+
+        "Drink up. Remember to drink fluids. You need adequate fluids before, during and after exercise to help prevent dehydration. The American College of Sports Medicine recommends you drink two to three cups of water before your workout, half to one cup of water every 15 to 20 minutes during your workout and two to three cups after your workout for every pound of weight you lose during the workout.",
+
+        "Wear Comfortable Sneakers. Your shoes should feel comfortable from the first step. Your feet swell during the day and stop in the late afternoon, so if you need sneakers, you'll want to shop when your feet are biggest. Also, make sure the shoes are a little roomy—enough to wiggle your toes, but no more than that. They should be comfy from the get-go, but they'll be even more so once you've walked or ran 20 to 40 miles in them.",
+
+        "Pick Your Perfect Tunes. Running with music is a great way to get in a good workout groove. To pick the ultimate playlist, think about what gets you going and that you find uplifting. The best part about music during a workout is that the right music can make you feel better emotionally, help you perform better, and improve how much oxygen you take in.",
+
+        "Know When To Weigh Yourself—And How Often. It's normal to want to weigh yourself soon after starting a new diet or fitness routine. It's best to step on the scale in the morning before eating or drinking—and before plunging into your daily activities. If you're wondering how often to weigh yourself, be sure to check your weight at a consistent time—possibly every week—for the most reliable number, and don't let yourself get too discouraged by different results since weight fluctuations are normal.",
+
+        "Keep Your Portions in Check. When you change your diet, portion control can help with weight management. Portion control requires special attention to your current eating habits. For example, if your steak takes up more than half of your plate, you may want to consider cutting your serving of beef in half. That's because it's best to try and fill half your plate with veggies or a mixture of veggies and fresh fruit so you can get a healthy mix of proteins, fats, and carbs.",
+
+        "Plan Your Runs Ahead of Time. When you have a 5K or 10K (or just a regular run) on your calendar, it's important to plan out what you're going to eat the morning of—something that will keep you fueled and go down easy. While everyone is different, we tend to have good luck with a high-carbohydrate breakfast such as a small bowl of oatmeal with fruit or a couple of pieces of toast with peanut butter or cream cheese. Also, eat around 200 to 250 (primarily carb) calories about 90 minutes before you warm up for your run, advised Kastor. And don't worry about nixing your caffeine fix on race day. Coffee is great for athletic performances, as it makes you sharper and may even give you extended energy.",
+
+        "Don't Stress if You Go Beyond Your Calorie Needs. A healthy eating plan has a few characteristics. One of those characteristics is staying within your daily calorie needs when it comes to what you eat and drink. If you have a day when you consume more calories than your body needs to function, try not to stress. Keep in mind that it takes a lot of calories to gain a pound of body fat. That one off day doesn't usually result in any significant weight gain. What you do the next day and the day after is really important. Also, remember that starvation and excessive exercise are not healthy answers for an off day. If you get off track, you can set up a personal reminder (e.g., on a sticky note or mobile device) to ensure you eat more mindfully on future days. You can also consider doing some meal planning for home or when you're on the go and aim to maintain a healthy exercise schedule.",
+
+        "Add Some Spice to Your Food. It's easy to get in a diet rut, even if you're loading up on flavorful fruits and veggies. Fortunately, having plenty of spices, fresh herbs, and citrus at your cooking beck and call can help. It's amazing what a little dash of spice, sprinkle of herbs, pinch of lemon zest, or squirt of lime juice can do to liven up a dish—and your diet.",
+
+        "Know When To Make Changes to Your Exercise Routine. If your weight on the scale plateaus or your muscles don't feel as fatigued, it might be time to increase the intensity of your exercise. Take if you decide to change your running routine: The general rule of thumb is to up the amount of miles run, for races half-marathon length and longer, by 5 to 10% each week. You might also want to switch up your routine if you've been doing the same thing repeatedly, such as using the elliptical, cycling, or exercising with a workout DVD. While these are all great ways to work out, it's best to add some variety. You could also do a different type of exercise every time you work out or dedicate specific days or times for different exercises. That way, you can have more variety throughout your week.",
+
+        "Relieve Those Side Stitches. You know the feeling: a sharp pain just below the rib cage that always seems to pop up when you're working out your hardest. It's called the side stitch, also medically known as exercise-related transient abdominal pain. Side stitches can be a major nuisance—especially when they keep you from completing a workout. Suggested ways to ease the ache have included actions such as: deep breathing, pushing on the area that hurts, stopping exercise. However, out of those methods, stopping a workout is the most helpful way to get relief from side stitches. You might also be able to prevent side stitches from happening in the first place. Waiting at least two to four hours to do any physical activity after consuming a lot of foods or drinks can help.",
+
+        "Say Goodbye to Peer Pressure. Even if you've been eating healthy and exercising, it may be tough to stay on track if your partner, coworkers, or friends don't share your healthy eating habits. If your partner loves pizza, try ordering a pie that's heavy on the veggies and light on the cheese—then supplement it with a side salad. Also, instead of bringing a super sweet dessert on baked goods day at work, you could take baked pears with cinnamon or mini fruit-and-nut muffins to substitute for brownies and blondies.",
+
+        "Savor Your Carbs. At times, you may consider cutting out your carbs to lose weight. But before adding dinner rolls and chips to your 'no' list, remember that yummy foods like brown rice, pumpernickel bread, and even potato chips contain resistant starch. This type of starch has been said to help with weight management by keeping a person feeling fuller for longer. This means you won't have to eat as much to feel satiated.",
+
+        "Opt for Healthier Snack and Fast-food Options. It's hard to avoid that 3 p.m. stomach rumble. While eating something to hold you over until dinner is fine, some choices may be better than others. As often as possible, try to have some fruit, veggies, or snacks with a lot of protein handy. However, if you find fast food is your only option, pull up the restaurant's nutrition facts online. You can make an informed decision ahead of time about what to order. Nearly every quick-service restaurant has a relatively healthful option or two. Salads, chili, or grilled chicken are all good options.",
+
+        "Up Your Fiber Intake. Along with protein and healthy fats, fiber is one of those nutritional elements that keeps you full and fueled all day long. If you're trying to lose weight, fiber is your best friend. For most adults, the recommended amount of fiber you should consume daily is between 21 grams to 30 grams.",
+
+        "Work Out Consistently. Working out at the same time during the week or on the same days can have its benefits. Researchers of a 2020 review found that for people with overweight or obesity, having consistent exercise times (particularly in the morning) was associated with the experience of weight loss and the creation of exercise habits. Although it may take a lot to get into the habit of exercise, planning to workout at a set time or place can be advantageous for your health.",
+
+        "Carbs aren’t the enemy. Carbohydrates are considered the new “enemy” by a lot of people (right there after fats, which were blasted as bad for you not so long ago and they’re starting to get some “good press” nowadays). They’re not. They’re actually quite good for you as long as you use them in the right way, and choose the right ones. It’s more important to monitor the amount of calories you’re consuming and ensure you’re in deficit (if you want to lose weight) or that you’re eating a hell of a lot more than you should if your objective is to gain weight/muscle). Myfitnesspal can help you do this and we’ve written about it previously.",
+
+        "Cheat meals are important. While we don’t tend to like the notion of “cheat” meals, we understand that the human mind will want to be naughty from time to time: that’s just the way things work. So, we do give advice on what’s the best mindset to be in, when to have cheat meals, and what you should be thinking about around the whole ethos of “cheating”. Your body is going to be negatively affected by it, but by how much is entirely up to how you treat it.",
+
+        "Healthy fats are important. Having a healthy mind and body are important. One key area that can help with that is the consumption of healthy fats: coconut oil, avocados and omega 3 (the latter being super important and found in oily fish). Healthy fats help with focus and aid the body in a whole host of different things. But, just keep in mind that you can easily overeat them, so track how much they’re adding to your overall calorie intake for the day.",
+
+        "Lifestyle changes are needed. You are where you are now because of the choices you made in your life. For you to move forward and progress, changes in your lifestyle need to be made. That means moving away from some of the bad habits you might have picked up and forming some new ones. This part is what many people struggle with at first. It’s easy to sit down in front of the TV at night and have a glass of wine and some junk food: when you’re on a mission to change your body shape (whether that’s fat loss or gaining muscle) changes in habitual actions are needed.",
+
+        "Sleep heals everything. When we sleep the body is still working. You’ve probably heard about losing weight as you sleep (which isn’t misleading). The body does a multitude of different things when we’re asleep, and as long as you’re properly hydrated, have consumed the right amount of calories for your goal (and the right ratio of fats, proteins and carbs) then your body will do as you wish when you’re asleep (we’re assuming you’re working out as hard and as much as is required for your goal here). Having a great night’s sleep can also place you in a good mental mood for the day ahead and is especially important if you have a fitness training session that day too: you’ll find that you’ll be able to push further and for longer.",
+
+        "Planning and Preparation help. When you go on holiday you have a plan: where you’ve got to be and when, who’s going with you, what you’re taking, and what you’re going to experience. Well, it’s the same when you want to make positive changes to your body. You need to plan out what you want and then prepare yourself mentally (and physically) for what you’re going to be undertaking.",
+
+        "Understand the basics of building muscle. First, increase your caloric and complete protein intake, so your body has enough building blocks to get bigger. Then, when you enter the gym, focus on your form. Perform compound movements and train with weights on average around four times a week. Never underestimate the importance of rest. Remember, muscle tissue grows outside of the gym when you’re giving your body time to relax and recover following your workouts.",
+
+        "Work your full range of motion. Don’t take any shortcuts. Aim for the largest range of motion you can achieve in your exercises. Your muscles will do more work per rep, and it will result in your breaking down more tissue by the end of the workout.",
+
+        "Prepare yourself for endurance training. When it comes to training for endurance, you’ll need to be hydrated and be sure you’re eating properly because, by its very nature, this form of training is very demanding on your body. You should be doing a good mix of cardio and weight training. And, to increase your aerobic capacity, you should incorporate high-intensity interval training, or HIIT. You’ll likely be sweating buckets and burning calories galore, so be prepared.",
+
+        "Consider reducing rest time. It’s always tempting to take a break when training, but you should stick with rest times of 30 to 45 seconds between sets, because this will help increase your overall endurance. If you are strength training, lift moderate to heavy weight and keep your rep range between 8–15 reps. If you’re running, mix low-intensity, steady-state cardio with sprinting.",
+
+        "Learn how to fight fatigue. Fatigue may be your biggest enemy when endurance training, but there are some ways to combat it. First, drink beet juice, which is packed with healthy nitrates that can improve your cardiovascular functioning. Beets can actually increase stamina by up to 16%, and it helps your muscles produce more energy, more efficiently, making exercise less exhausting. Another way to boost your performance is by carefully selecting your music. When people listen to favorable music their blood vessels expanded 26%.",
+
+        "Find your motivation. Motivation is key. Some good ways to stay motivated while you're working out: Count down, not up, when performing reps. Another trick: Look at your dominant hand while you’re pushing up. That automatically includes a positive reinforcement because the dominant hand more easily and quickly moves the weight.",
+
+        "Take photographic evidence. Can’t get the scale to budge? It’s possible you’re gaining muscle and shedding body fat—and that means your net weight change will seem stuck, even though you're making progress. Take pictures on a weekly basis—front, back, (and) side pictures all from the same angle, same lighting, same clothing. That way, you'll see change over time, even though it may not look like it day to day.",
+
+        "Attack your lower body to burn fat. To flatten your belly, go below your navel. In a Syracuse University study, people burned more calories the day after they did a lower-body resistance training exercise than after they worked their upper bodies, simply because legs have more mass.",
+
+        " Find exercise you enjoy. This is important when it comes to staying consistent with your workouts. If you are continually doing exercises you don't enjoy, and they leave you feeling drained physically and emotionally, it’s only going to last so long. You are better off finding exercises that make you feel good, and you can stick to long term, even if it's not the most intense. Consistent low-intensity exercise will always triumph inconsistent high-intensity exercise.",
+
+        "Be patient when it comes to reaching your physical goals. Remember, results take time. Be easy on yourself. Nothing good comes easy. Learn to fall in love with the process and the person you become throughout the journey.",
+
+        "Don't give up the foods you love. Find a way to make your favorite foods healthier. If pizza is your favorite food, don't give it up. This will leave you feeling deprived. Get creative and use clean ingredients to make your healthy version.",
+
+        "Don't compete with anyone. This is your life and your journey. No two people are the same, so you should never compare yourself to others. As long as you wake up every day and try to be better than you were yesterday, you are on the right track.",
+
+        "Try new things. Step out of your comfort zone. Try a new fitness class with a friend and explore different foods. Grocery shopping based on what's in season is an easy way to begin experimenting with different foods and exposing yourself to a wide variety of fruits and vegetables. If you have never meal prepped before, try it out! Stepping out of your comfort zone and switching things up will keep things interesting and help you stay motivated and inspired to make this way of living a permanent lifestyle.",
+
+        "Try the 80/20 rule. A happy couple eating cookies in the living room Overindulgence is not good for health, but so is over limiting your foods. There are so many amazing foods out there. Give yourself a break by following the 80/20 rule. This diet plan allows you to indulge – but only 20% of the time! Meaning, you will follow a well-balanced diet 80% of the time (six days a week). During that one “cheat” day, you can treat yourself to foods you like but may not be necessarily healthy – such as cookies, cakes, ice cream, or chips. This allows for balance, fun, and variety in your diet. It also encourages you to focus on the “big picture” plan of eating healthy while also offering flexibility when you need it."
+    ]
 }
