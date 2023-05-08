@@ -8,12 +8,13 @@ const StepsChart = ({ stepsData }) => {
 
   useEffect(() => {
     if (stepsData.length === 0) return;
+    console.log(stepsData); // Add this line to debug the stepsData
     const chartData = {
-      labels: stepsData.map((item) => item.label),
+      labels: stepsData.map((item) => new Date(item.CreatedAt).toLocaleDateString()),
       datasets: [
         {
           label: 'Steps per day',
-          data: stepsData.map((item) => item.value),
+          data: stepsData.map((item) => item.Steps),          
           fill: false,
           tension: 0.2,
           backgroundColor: 'rgba(0,0,0,0)', // set background color to transparent

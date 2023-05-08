@@ -7,12 +7,13 @@ const SleepChart = ({ sleepData }) => {
   const chartRef = useRef(null);
   useEffect(() => {
     if (sleepData.length === 0) return;
+    console.log(sleepData);
     const chartData = {
-      labels: sleepData.map((item) => item.label),
+      labels: sleepData.map((item) => new Date(item.CreatedAt).toLocaleDateString()),
       datasets: [
         {
           label: 'Sleep Hours',
-          data: sleepData.map((item) => item.value),
+          data: sleepData.map((item) => item.HoursOfSleep),
           fill: false,
           tension: 0.2,
           backgroundColor: 'rgba(0,0,0,0)', // set background color to transparent
