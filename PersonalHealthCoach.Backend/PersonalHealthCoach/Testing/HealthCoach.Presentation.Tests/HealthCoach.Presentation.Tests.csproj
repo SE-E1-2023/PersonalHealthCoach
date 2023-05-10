@@ -24,8 +24,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\Core\HealthCoach.Core.Domain\HealthCoach.Core.Domain.csproj" />
 		<ProjectReference Include="..\..\Presentation\HealthCoach.Functions.Isolated\HealthCoach.Functions.Isolated.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="DomainMocks\" />
+	  <Folder Include="WellnessPlan\" />
 	</ItemGroup>
 
 </Project>

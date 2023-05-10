@@ -1,6 +1,4 @@
-﻿using System.Text;
-using FluentAssertions;
-using HealthCoach.Core.Business;
+﻿using FluentAssertions;
 using Newtonsoft.Json;
 using Xunit;
 
@@ -26,7 +24,7 @@ public partial class UserFunctionsTests
     public void Given_GetUserByEmailAddress_When_UserFound_Then_ShouldSendSuccessAndUserId()
     {
         // Arrange
-        var user = SetupUser();
+        var user = MockSetups.SetupUser();
 
         // Act
         var response = client.GetAsync(string.Format(Routes.User.GetUserByEmailAddress, user.EmailAddress)).GetAwaiter().GetResult();
@@ -38,22 +36,5 @@ public partial class UserFunctionsTests
         var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
         var userId = JsonConvert.DeserializeObject<Guid>(responseBody);
         userId.Should().Be(user.Id);
-    }
-
-    private UserMock SetupUser()
-    {
-        var guidPrefix = Guid.NewGuid().ToString().Substring(0, 8);
-        var randomEmail = $"{guidPrefix}@EMAIL.com";
-        
-        var createUserCommand = new CreateUserCommand("Name", "FirstName", randomEmail);
-        var json = JsonConvert.SerializeObject(createUserCommand);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-        var response = client.PostAsync(Routes.User.CreateUser, content).GetAwaiter().GetResult();
-
-        var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-        var user = JsonConvert.DeserializeObject<UserMock>(responseBody);
-
-        return user;
     }
 }

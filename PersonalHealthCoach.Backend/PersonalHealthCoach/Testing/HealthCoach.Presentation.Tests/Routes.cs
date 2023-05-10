@@ -16,4 +16,9 @@ internal static class Routes
         public const string GetAllPersonalData = $"{Prefix}/users/{{0}}/data/personal";
         public const string RetrieveLatestPersonalData = $"{Prefix}/users/{{0}}/data/personal/latest";
     }
+
+    public static class WellnessPlan
+    {
+        public const string CreateWellnessPlan = $"{Prefix}/users/{{0}}/plans/wellness";
+    }
 }

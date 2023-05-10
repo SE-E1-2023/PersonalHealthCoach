@@ -152,4 +152,14 @@ public static class BusinessErrors
             public const string FoodLogNotFound = $"{Prefix}.{nameof(FoodLogNotFound)}";
         }
     }
+
+    public static class WellnessPlan
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(WellnessPlan)}.{nameof(Create)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+        }
+    }
 }
