@@ -32,6 +32,7 @@
 
 	<ItemGroup>
 	  <Folder Include="ExerciseLog\" />
+	  <Folder Include="PersonalPlans\Wellness\" />
 	</ItemGroup>
 
 </Project>
