@@ -63,7 +63,7 @@ class TipGenerator:
         tips.append(generator.generate_weekly_weight_objective_tip())
         tips.append(generator.generate_food_logs_weekly_feedback())
 
-        with open('generated_tips.json', 'w') as tips_file:
+        with open(f"{abspath}/generated_tips.json", 'w') as tips_file:
             json.dump(tips, tips_file, indent=4)
 
         tip = random.choice(tips)
@@ -143,7 +143,7 @@ class TipGenerator:
         bmi = weight / (height * height)
         bmi = round(bmi, 1)
 
-        with open('bmi_categories.json') as f:
+        with open(f"{abspath}/bmi_categories.json") as f:
             bmi_categories = json.load(f)['categories']
         
         for category in bmi_categories:
@@ -261,7 +261,6 @@ class TipGenerator:
         return generated_tip
 
 
-    #Last week
     def generate_fitness_tip_based_on_objective(self):
         objective = self.profile_data['Profile']['Objective']
         if objective not in self.tips_data or 'Fitness' not in self.tips_data[objective]:
@@ -460,8 +459,6 @@ class TipGenerator:
                         }
         return generated_tip
 
-
-    #This week
     def generate_hours_slept_last_night_tip(self):
         hours_slept_list = []
         for day in self.profile_data['Progress']:
@@ -840,8 +837,8 @@ def test_generate_generate_level_of_activity_tip():
     print('All test passed.')
 
 
-tips_file = 'tips.json'
-profile_file = 'profile.json'
+tips_file = f"{abspath}/tips.json"
+profile_file = f"{abspath}/profile.json"
 generator = TipGenerator(tips_file, profile_file)
 
 # tip = generator.generate_tip()

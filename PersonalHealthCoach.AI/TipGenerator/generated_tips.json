@@ -1,0 +1,72 @@
+[
+    {
+        "Type": "General",
+        "Importance Level": "High",
+        "Tip": "Occasionally track your food intake. The only way to know exactly how many calories you eat is to weigh your food and use a nutrition tracker, as estimating your portion sizes and calorie intake is not unreliable. Tracking can also provide insights into your protein, fiber, and micronutrient intake. Though some studies have found a link between tracking calories and disordered eating tendencies, there is some evidence that suggests that people who track their food intake tend to be more successful at losing weight and maintaining their weight loss."
+    },
+    {
+        "Type": "Fitness",
+        "Importance Level": "Medium",
+        "Tip": "Do high-intensity interval training (HIIT) to burn more calories in less time."
+    },
+    {
+        "Type": "Diet",
+        "Importance Level": "Medium",
+        "Tip": "Drink plenty of water to help reduce cravings."
+    },
+    {
+        "Type": "General",
+        "Importance Level": "Medium",
+        "Tip": "Get enough sleep to avoid hormone imbalances that can lead to weight gain."
+    },
+    {
+        "Type": "Daily Calories",
+        "Importance Level": "Medium",
+        "Tip": "You burn 2637 calories during a typical day. To achieve your goal of losing weight, try to stay below your calorie needs and increase your activity level. However, make sure you are eating nutritious meals and not restricting your calories too much - eating too little or losing weight rapidly can be unhealthy and dangerous."
+    },
+    {
+        "Type": "BMI",
+        "Importance Level": "Medium",
+        "Tip": "Your BMI (Body Mass Index) is 19.0, this means that you fall into the category of Normal weight. The Normal range is 18.5-24.9. It is not necessary for you to lose weight but if you want to do that, make sure not to cross the lower bound of this range."
+    },
+    {
+        "Type": "Level of Activity",
+        "Importance Level": "High",
+        "Tip": "Your level of activity is Moderatly active, which is a good one. To achieve your goal of losing weight, it may be enough to just continue what you do, respect your Diet plan and be patient. If you want to see faster changes, you may try to increase the number of exercise days from 3-5 to 6-7 days/week."
+    },
+    {
+        "Type": "Weekly Steps",
+        "Importance Level": "High",
+        "Tip": "You managed to complete your Steps Goal on 7 days this week achieving an average of 12714 steps per day. Congratulations! You're doing fine! If you'd like to step up to the next level, the goal of 10,000 steps is the recommended daily step target for healthy adults to achieve health benefits. You can try to set this goal for better benefits."
+    },
+    {
+        "Type": "Daily Steps",
+        "Importance Level": "Low",
+        "Tip": "Congratulations! You managed to fulfill your step goal for today by managing to take 13000 steps. This is much more than your goal. Would you consider increasing your goal starting from tomorrow?"
+    },
+    {
+        "Type": "Objective-Steps Goal",
+        "Importance Level": "Low",
+        "Tip": "A goal of 8000 steps per day is very good for your weight loss goal. Be sure to do it in as many days as possible and you will definitely notice the differences."
+    },
+    {
+        "Type": "Hours Slept Last Night",
+        "Importance Level": "Low",
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
+    },
+    {
+        "Type": "Weekly Slept Hours",
+        "Importance Level": "Medium",
+        "Tip": "You had 7 days with 7-9 hours of sleep in the last week. Great job on prioritizing your sleep and maintaining healthy sleep habits! Keep up the good work and continue to prioritize your sleep each night."
+    },
+    {
+        "Type": "Weekly Weight Update",
+        "Importance Level": "Low",
+        "Tip": "You gained 2.2 kg in the last 7 days. Gaining 2 kg can be discouraging, but don't let it derail your weight loss goals. Reassess your diet and exercise routine and make any necessary adjustments to ensure that you are in a calorie deficit. Focus on consuming a balanced diet of whole foods and avoid processed and sugary foods. Increase the intensity and frequency of your workouts to burn more calories and build muscle. Remember that weight loss is a journey and it's important to stay committed and patient as you work towards your goals. Celebrate your progress along the way and stay motivated by setting new goals for yourself."
+    },
+    {
+        "Type": "Weekly Food Logs",
+        "Importance Level": "High",
+        "Tip": "Our recommendation is to consume a total of 2637 calories per day. In the last week you had 1 day(s) in which you consumed enough calories, 6 day(s) in which you consumed fewer calories and 0 day(s) in which you consumed more calories. Great job on implementing a calorie deficit of 250-500 calories per day in the last week! Consistency is key when it comes to weight loss, and it's important to remember that progress may not always be linear. Keep up the great work and remember to prioritize sustainable and gradual changes to your lifestyle for long-term success. Remember, it's a journey, and every small step counts towards your goal."
+    }
+]
