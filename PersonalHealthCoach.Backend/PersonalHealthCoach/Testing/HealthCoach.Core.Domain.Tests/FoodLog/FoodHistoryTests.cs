@@ -27,10 +27,10 @@ public sealed class FoodHistoryTests
         //Arrange
         var foodsList = new List<ConsumedFood>
         {
-            ConsumedFood.Create("Food no. 1", 100, 1),
-            ConsumedFood.Create("Food no. 2", 101, 2),
-            ConsumedFood.Create("Food no. 3", 102, 1),
-            ConsumedFood.Create("Food no. 4", 1001, 2)
+            ConsumedFood.Create("Food no. 1", "Breakfast", 100, 1),
+            ConsumedFood.Create("Food no. 2", "Breakfast", 101, 2),
+            ConsumedFood.Create("Food no. 3", "Breakfast", 102, 1),
+            ConsumedFood.Create("Food no. 4", "Breakfast", 1001, 2)
         };
         var foodLog = FoodHistoryFactory.Any();
         var now = TimeProviderContext.AdvanceTimeToNow();

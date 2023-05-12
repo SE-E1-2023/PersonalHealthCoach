@@ -20,7 +20,7 @@ public sealed class FoodHistoryFunctions
     public async Task<HttpResponseData> UpdateFoodHistory([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/food-history")] HttpRequestData request, Guid id)
     {
         var command = await request
-            .DeserializeBodyPayload<UpdateFoodHistory>()
+            .DeserializeBodyPayload<UpdateFoodHistoryCommand>()
             .Map(c => c with { UserId = id });
 
         return await command
