@@ -73,6 +73,10 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.Property<bool>("IsNew")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("Meal")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
@@ -105,7 +109,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<List<string>>("Recommandations")
+                    b.Property<List<string>>("Recommendations")
                         .IsRequired()
                         .HasColumnType("text[]");
 

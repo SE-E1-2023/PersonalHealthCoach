@@ -21,12 +21,17 @@ internal sealed class DeleteDietPlanCommandHandler : IRequestHandler<DeleteDietP
 
     public async Task<Result> Handle(DeleteDietPlanCommand request, CancellationToken cancellationToken)
     {
+        var callerResult = await repository
+            .Load<User>(request.CallerId)
+            .ToResult(Errors.UserNotFound)
+            .Ensure(u => u.HasElevatedRights, Errors.UserNotAuthorized);
+
         var planResult = queryProvider
             .Query<DietPlan>()
             .FirstOrDefault(p => p.Id == request.DietPlanId)
             .EnsureNotNull(Errors.DietPlanDoesNotExist);
 
-        return await planResult
-            .Tap(p => repository.Delete(p!));
+        return await Result.FirstFailureOrSuccess(callerResult, planResult)
+            .Tap(() => repository.Delete(planResult.Value!));
     }
 }

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class NewMigration_20230512_123328 : Migration
+    public partial class NewMigration_20230512_132403 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -20,7 +20,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     Scope = table.Column<string>(type: "text", nullable: false),
                     DietType = table.Column<List<string>>(type: "text[]", nullable: false),
-                    Recommandations = table.Column<List<string>>(type: "text[]", nullable: false),
+                    Recommendations = table.Column<List<string>>(type: "text[]", nullable: false),
                     Interdictions = table.Column<List<string>>(type: "text[]", nullable: false)
                 },
                 constraints: table =>
@@ -195,6 +195,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Title = table.Column<string>(type: "text", nullable: false),
+                    Meal = table.Column<string>(type: "text", nullable: false),
                     ConsumedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     Calories = table.Column<int>(type: "integer", nullable: false),
                     Quantity = table.Column<int>(type: "integer", nullable: false),

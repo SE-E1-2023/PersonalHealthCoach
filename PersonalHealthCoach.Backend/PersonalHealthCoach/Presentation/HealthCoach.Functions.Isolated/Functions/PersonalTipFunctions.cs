@@ -1,9 +1,9 @@
-﻿using HealthCoach.Core.Business;
-using HealthCoach.Shared.Web;
+﻿using CSharpFunctionalExtensions;
 using MediatR;
-using Microsoft.Azure.Functions.Worker.Http;
+using HealthCoach.Shared.Web;
+using HealthCoach.Core.Business;
 using Microsoft.Azure.Functions.Worker;
-using CSharpFunctionalExtensions;
+using Microsoft.Azure.Functions.Worker.Http;
 
 namespace HealthCoach.Functions.Isolated;
 
@@ -17,7 +17,7 @@ public class PersonalTipFunctions
     }
 
     [Function(nameof(CreatePersonalTip))]
-    public async Task<HttpResponseData> CreatePersonalTip([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/api/users/{id}/plans/tips")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> CreatePersonalTip([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/plans/tips")] HttpRequestData request, Guid id)
     {
         return await mediator
             .Send(new CreatePersonalTipCommand(id))

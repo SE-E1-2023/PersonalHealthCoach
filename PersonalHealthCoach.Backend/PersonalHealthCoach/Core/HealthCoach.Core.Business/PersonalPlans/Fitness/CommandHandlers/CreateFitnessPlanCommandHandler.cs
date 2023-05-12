@@ -6,7 +6,7 @@ using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
 
 using Errors = HealthCoach.Core.Business.BusinessErrors.FitnessPlan.Create;
-using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.AI;
+using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.Ai;
 using FitnessExercise = HealthCoach.Core.Domain.Exercise;
 
 namespace HealthCoach.Core.Business;
@@ -22,8 +22,8 @@ internal sealed class CreateFitnessPlanCommandHandler : IRequestHandler<CreateFi
         this.repository = repository;
         this.queryProvider = queryProvider;
         httpClient = httpClientFactory
-            .OnBaseUrl(AIApi.BaseUrl)
-            .OnRoute(AIApi.FitnessPlanner);
+            .OnBaseUrl(ExternalEndpoints.Ai.BaseUrl)
+            .OnRoute(ExternalEndpoints.Ai.FitnessPlanner);
     }
 
     public async Task<Result<FitnessPlan>> Handle(CreateFitnessPlanCommand request, CancellationToken cancellationToken)

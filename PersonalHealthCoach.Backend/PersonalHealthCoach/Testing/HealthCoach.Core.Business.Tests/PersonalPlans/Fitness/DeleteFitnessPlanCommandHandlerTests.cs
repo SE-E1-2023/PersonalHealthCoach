@@ -1,7 +1,8 @@
 ﻿using Moq;
 using Xunit;
-using FluentAssertions;
 using HealthCoach.Core.Domain;
+using CSharpFunctionalExtensions;
+using FluentAssertions;
 using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
 
@@ -11,13 +12,15 @@ public class DeleteFitnessPlanCommandHandlerTests
 {
     private readonly Mock<IRepository> repositoryMock = new();
     private readonly Mock<IEfQueryProvider> queryProviderMock = new();
+    private readonly User manager = UsersFactory.AnyManager();
 
     [Fact]
     public void When_FitnessPlanDoesNotExist_Then_ShouldFail()
     {
         //Arrange
-        var command = new DeleteFitnessPlanCommand(Guid.NewGuid());
-        
+        var command = Command() with { CallerId = manager.Id };
+
+        repositoryMock.Setup(x => x.Load<User>(manager.Id)).ReturnsAsync(manager);
         queryProviderMock.Setup(x => x.Query<FitnessPlan>()).Returns(new List<FitnessPlan>().AsQueryable());
 
         //Act
@@ -25,9 +28,53 @@ public class DeleteFitnessPlanCommandHandlerTests
 
         //Assert
         result.IsFailure.Should().BeTrue();
-        result.Error.Should().Be(BusinessErrors.FitnessPlan.Get.FitnessPlanNotFound);
+        result.Error.Should().Be(BusinessErrors.FitnessPlan.Delete.FitnessPlanNotFound);
 
         repositoryMock.Verify(r => r.Delete(It.IsAny<FitnessPlan>()), Times.Never);
+        repositoryMock.Verify(x => x.Delete(It.IsAny<Domain.Exercise>()), Times.Never);
+    }
+
+    [Fact]
+    public void When_UserIsNotFound_Then_ShouldFail()
+    {
+        //Arrange
+        var fitnessPlan = PlansFactory.FitnessPlans.Any();
+        var command = Command() with { FitnessPlanId = fitnessPlan.Id };
+
+        repositoryMock.Setup(x => x.Load<User>(command.CallerId)).ReturnsAsync(Maybe<User>.None);
+        queryProviderMock.Setup(x => x.Query<FitnessPlan>()).Returns(new List<FitnessPlan> { fitnessPlan }.AsQueryable());
+
+        //Act
+        var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
+
+        //Assert
+        result.IsFailure.Should().BeTrue();
+        result.Error.Should().Be(BusinessErrors.FitnessPlan.Delete.UserNotFound);
+
+        repositoryMock.Verify(r => r.Delete(It.IsAny<FitnessPlan>()), Times.Never);
+        repositoryMock.Verify(x => x.Delete(It.IsAny<Domain.Exercise>()), Times.Never);
+    }
+
+    [Fact]
+    public void When_UserIsNotAuthorized_Then_ShouldFail()
+    {
+        //Arrange
+        var user = UsersFactory.Any();
+        var fitnessPlan = PlansFactory.FitnessPlans.Any();
+        var command = Command() with { CallerId = manager.Id, FitnessPlanId = fitnessPlan.Id };
+
+        repositoryMock.Setup(x => x.Load<User>(command.CallerId)).ReturnsAsync(user);
+        queryProviderMock.Setup(x => x.Query<FitnessPlan>()).Returns(new List<FitnessPlan> { fitnessPlan }.AsQueryable());
+
+        //Act
+        var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
+
+        //Assert
+        result.IsFailure.Should().BeTrue();
+        result.Error.Should().Be(BusinessErrors.FitnessPlan.Delete.UserNotAuthorized);
+
+        repositoryMock.Verify(r => r.Delete(It.IsAny<FitnessPlan>()), Times.Never);
+        repositoryMock.Verify(x => x.Delete(It.IsAny<Domain.Exercise>()), Times.Never);
     }
 
     [Fact]
@@ -37,8 +84,9 @@ public class DeleteFitnessPlanCommandHandlerTests
         var fitnessPlan = PlansFactory.FitnessPlans.Any();
         var exerciseCount = fitnessPlan.Exercises.Count;
 
-        var command = Command() with { FitnessPlanId = fitnessPlan.Id };
-        
+        var command = Command() with { FitnessPlanId = fitnessPlan.Id, CallerId = manager.Id };
+
+        repositoryMock.Setup(x => x.Load<User>(manager.Id)).ReturnsAsync(manager);
         queryProviderMock.Setup(x => x.Query<FitnessPlan>()).Returns(new List<FitnessPlan> { fitnessPlan }.AsQueryable());
 
         //Act
@@ -51,7 +99,7 @@ public class DeleteFitnessPlanCommandHandlerTests
         repositoryMock.Verify(x => x.Delete(It.IsAny<Domain.Exercise>()), Times.Exactly(exerciseCount));
     }
 
-    private DeleteFitnessPlanCommand Command() => new(Guid.NewGuid());
+    private DeleteFitnessPlanCommand Command() => new(Guid.NewGuid(), manager.Id);
 
     private DeleteFitnessPlanCommandHandler Sut() => new(repositoryMock.Object, queryProviderMock.Object);
 }

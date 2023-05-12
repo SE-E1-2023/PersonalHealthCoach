@@ -1,5 +1,4 @@
-﻿
-using HealthCoach.Core.Domain;
+﻿using HealthCoach.Core.Domain;
 using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Core;
 using HealthCoach.Shared.Infrastructure;

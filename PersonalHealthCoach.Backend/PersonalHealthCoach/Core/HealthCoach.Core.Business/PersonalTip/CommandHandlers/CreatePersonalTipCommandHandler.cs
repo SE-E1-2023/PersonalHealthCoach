@@ -1,10 +1,8 @@
-﻿using CSharpFunctionalExtensions;
+﻿using MediatR;
 using HealthCoach.Core.Domain;
-using HealthCoach.Shared.Infrastructure;
 using HealthCoach.Shared.Web;
-using MediatR;
-
-using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.AI;
+using CSharpFunctionalExtensions;
+using HealthCoach.Shared.Infrastructure;
 using Errors = HealthCoach.Core.Business.BusinessErrors.PersonalTip.Create;
 
 
@@ -21,8 +19,8 @@ internal class CreatePersonalTipCommandHandler : IRequestHandler<CreatePersonalT
         this.repository = repository;
         this.queryProvider = queryProvider;
         this.httpClient = httpClientFactory
-            .OnBaseUrl(AIApi.BaseUrl)
-            .OnRoute(AIApi.TipGenerator);
+            .OnBaseUrl(ExternalEndpoints.Ai.BaseUrl)
+            .OnRoute(ExternalEndpoints.Ai.TipGenerator);
     }
 
     public async Task<Result<PersonalTip>> Handle(CreatePersonalTipCommand request, CancellationToken cancellationToken)

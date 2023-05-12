@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     [DbContext(typeof(GenericDbContext))]
-    [Migration("20230512093331_NewMigration_20230512_123328")]
-    partial class NewMigration_20230512_123328
+    [Migration("20230512102407_NewMigration_20230512_132403")]
+    partial class NewMigration_20230512_132403
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -76,6 +76,10 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.Property<bool>("IsNew")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("Meal")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
@@ -108,7 +112,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<List<string>>("Recommandations")
+                    b.Property<List<string>>("Recommendations")
                         .IsRequired()
                         .HasColumnType("text[]");
 

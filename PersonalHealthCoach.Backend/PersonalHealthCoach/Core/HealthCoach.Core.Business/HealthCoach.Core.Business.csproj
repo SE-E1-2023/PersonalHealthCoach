@@ -26,4 +26,9 @@
 	  <Folder Include="PersonalPlans\Wellness\Commands\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Report\Commands\" />
+	  <Folder Include="Report\CommandHandlers\" />
+	</ItemGroup>
+
 </Project>

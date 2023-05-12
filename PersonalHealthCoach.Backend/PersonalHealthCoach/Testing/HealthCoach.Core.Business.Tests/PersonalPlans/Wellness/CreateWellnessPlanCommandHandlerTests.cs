@@ -1,11 +1,11 @@
-﻿using CSharpFunctionalExtensions;
+﻿using Moq;
+using Xunit;
 using FluentAssertions;
+using HealthCoach.Shared.Web;
 using HealthCoach.Core.Domain;
+using CSharpFunctionalExtensions;
 using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
-using HealthCoach.Shared.Web;
-using Moq;
-using Xunit;
 
 namespace HealthCoach.Core.Business.Tests;
 
@@ -19,7 +19,7 @@ public sealed class CreateWellnessPlanCommandHandlerTests
     public CreateWellnessPlanCommandHandlerTests()
     {
         httpClientFactoryMock
-            .Setup(f => f.OnBaseUrl(ExternalEndpoints.AI.BaseUrl).OnRoute(ExternalEndpoints.AI.Wellness))
+            .Setup(f => f.OnBaseUrl(ExternalEndpoints.Ai.BaseUrl).OnRoute(ExternalEndpoints.Ai.Wellness))
             .Returns(httpClientMock.Object);
     }
 

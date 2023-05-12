@@ -52,7 +52,6 @@ public static class BusinessErrors
             private const string Prefix = $"{nameof(FitnessPlan)}.{nameof(Get)}";
 
             public const string FitnessPlanNotFound = $"{Prefix}.{nameof(FitnessPlanNotFound)}";
-
         }
 
         public static class Report
@@ -61,6 +60,15 @@ public static class BusinessErrors
 
             public const string ReportAlreadyExists = $"{Prefix}.{nameof(ReportAlreadyExists)}";
             public const string FitnessPlanDoesNotExist = $"{Prefix}.{nameof(FitnessPlanDoesNotExist)}";
+        }
+
+        public static class Delete
+        {
+            private const string Prefix = $"{nameof(FitnessPlan)}.{nameof(Delete)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+            public const string FitnessPlanNotFound = $"{Prefix}.{nameof(FitnessPlanNotFound)}";
+            public const string UserNotAuthorized = $"{Prefix}.{nameof(UserNotAuthorized)}";
         }
     }
 
@@ -116,6 +124,22 @@ public static class BusinessErrors
             private const string Prefix = $"{nameof(DietPlan)}.{nameof(Delete)}";
 
             public const string DietPlanDoesNotExist = $"{Prefix}.{nameof(DietPlanDoesNotExist)}";
+            public const string UserNotAuthorized = $"{Prefix}.{nameof(UserNotAuthorized)}";
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+        }
+    }
+
+    public static class Report
+    {
+        public static class Solve
+        {
+            private const string Prefix = $"{nameof(Report)}.{nameof(Solve)}";
+
+            public const string ReportNotFound = $"{Prefix}.{nameof(ReportNotFound)}";
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+            public const string InvalidReportType = $"{Prefix}.{nameof(InvalidReportType)}";
+            public const string ReportAlreadySolved = $"{Prefix}.{nameof(ReportAlreadySolved)}";
+            public const string UserNotAuthorized = $"{Prefix}.{nameof(UserNotAuthorized)}";
         }
     }
 

@@ -2,7 +2,7 @@
 
 public static class ExternalEndpoints
 {
-    public static class AI
+    public static class Ai
     {
         public const string BaseUrl = "http://localhost:8000";
 
@@ -11,4 +11,13 @@ public static class ExternalEndpoints
         public const string FitnessPlanner = $"{nameof(FitnessPlanner)}";
         public const string Wellness = $"{nameof(Wellness)}";
     }
+}
+
+public static class InternalEndpoints
+{
+    public const string BaseUrl = "http://localhost:7071/api";
+
+    public const string DeleteFitnessPlan = "v1/plans/fitness/";
+    public const string DeleteDietPlan = "v1/plans/diet/";
+    public const string DeletePersonalTip = "v1/plans/tips/";
 }
