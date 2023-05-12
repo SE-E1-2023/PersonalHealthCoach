@@ -62,10 +62,10 @@ internal class SolveReportCommandHandler : IRequestHandler<SolveReportCommand, R
                 .WithHeaders(new Dictionary<string, string> { { "X-User-Id", callerId.ToString() } })
                 .Delete(new DeleteDietPlanCommand(targetId, callerId));
 
-        // if (destination == RequestType.PersonalTips)
-        //     return await httpClient
-        //         .OnRoute(InternalEndpoints.DeletePersonalTip)
-        //         .Delete(new DeletePersonalTipCommand(targetId));
+        if (destination == RequestType.PersonalTips)
+            return await httpClient
+                .OnRoute(InternalEndpoints.DeletePersonalTip)
+                .Delete(new DeletePersonalTipCommand(targetId));
         
         return Result.Failure(Errors.InvalidReportType);
     }
