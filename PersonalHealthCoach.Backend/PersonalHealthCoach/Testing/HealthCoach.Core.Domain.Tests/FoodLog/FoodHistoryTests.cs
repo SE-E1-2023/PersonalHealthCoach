@@ -4,7 +4,7 @@ using HealthCoach.Shared.Core;
 
 namespace HealthCoach.Core.Domain.Tests;
 
-public sealed class FoodLogTests
+public sealed class FoodHistoryTests
 {
     [Fact]
     public void Given_Instance_Then_ShouldCreateInstance()
@@ -13,7 +13,7 @@ public sealed class FoodLogTests
         var id = Guid.NewGuid();
 
         //Act
-        var result = FoodLog.Instance(id);
+        var result = FoodHistory.Instance(id);
 
         //Assert
         result.IsSuccess.Should().BeTrue();
@@ -27,12 +27,12 @@ public sealed class FoodLogTests
         //Arrange
         var foodsList = new List<ConsumedFood>
         {
-            ConsumedFood.Create("Food no. 1"),
-            ConsumedFood.Create("Food no. 2"),
-            ConsumedFood.Create("Food no. 3"),
-            ConsumedFood.Create("Food no. 4")
+            ConsumedFood.Create("Food no. 1", 100, 1),
+            ConsumedFood.Create("Food no. 2", 101, 2),
+            ConsumedFood.Create("Food no. 3", 102, 1),
+            ConsumedFood.Create("Food no. 4", 1001, 2)
         };
-        var foodLog = FoodLogsFactory.Any();
+        var foodLog = FoodHistoryFactory.Any();
         var now = TimeProviderContext.AdvanceTimeToNow();
 
         //Act
@@ -41,5 +41,6 @@ public sealed class FoodLogTests
         //Assert
         foodLog.ConsumedFoods.Should().HaveCount(4);
         foodLog.ConsumedFoods.Should().BeEquivalentTo(foodsList);
+        foodLog.UpdatedAt.Should().Be(now);
     }
 }

@@ -48,7 +48,7 @@ public class DeleteFitnessPlanCommandHandlerTests
         result.IsSuccess.Should().BeTrue();
         
         repositoryMock.Verify(x => x.Delete(It.IsAny<FitnessPlan>()), Times.Once);
-        repositoryMock.Verify(x => x.Delete(It.IsAny<Exercise>()), Times.Exactly(exerciseCount));
+        repositoryMock.Verify(x => x.Delete(It.IsAny<Domain.Exercise>()), Times.Exactly(exerciseCount));
     }
 
     private DeleteFitnessPlanCommand Command() => new(Guid.NewGuid());

@@ -4,7 +4,7 @@ using HealthCoach.Shared.Core;
 
 namespace HealthCoach.Core.Domain.Tests;
 
-public sealed class ExerciseLogTests
+public sealed class ExerciseHistoryTests
 {
     [Fact]
     public void Given_Instance_Then_ShouldCreateInstance()
@@ -13,7 +13,7 @@ public sealed class ExerciseLogTests
         var id = Guid.NewGuid();
 
         //Act
-        var result = ExerciseLog.Instance(id);
+        var result = ExerciseHistory.Instance(id);
 
         //Assert
         result.IsSuccess.Should().BeTrue();
@@ -27,11 +27,11 @@ public sealed class ExerciseLogTests
         //Arrange
         var exerciseList = new List<CompletedExercise>
         {
-            CompletedExercise.Create("Exercise 1"),
-            CompletedExercise.Create("Exercise 2"),
-            CompletedExercise.Create("Exercise 3"),
+            CompletedExercise.Create("Exercise 1", 100, 1),
+            CompletedExercise.Create("Exercise 2", 100, 1),
+            CompletedExercise.Create("Exercise 3", 100, 1)
         };
-        var exerciseLog = ExerciseLogsFactory.Any();
+        var exerciseLog = ExerciseHistoryFactory.Any();
         var now = TimeProviderContext.AdvanceTimeToNow();
 
         //Act

@@ -6,21 +6,21 @@ using HealthCoach.Shared.Core;
 
 namespace HealthCoach.Core.Business;
 
-using Errors = HealthCoach.Core.Business.BusinessErrors.ExerciseLog.GetExercices;
+using Errors = HealthCoach.Core.Business.BusinessErrors.ExerciseHistory.GetExercices;
 
-public class GetExerciseLogCommandHandler : IRequestHandler<GetExerciseLogCommand, Result<ExerciseLog> >
+public class GetExerciseHistoryCommandHandler : IRequestHandler<GetExerciseHistoryCommand, Result<ExerciseHistory> >
 {
     private readonly IEfQueryProvider queryProvider;
 
-    public GetExerciseLogCommandHandler(IEfQueryProvider queryProvider)
+    public GetExerciseHistoryCommandHandler(IEfQueryProvider queryProvider)
     {
         this.queryProvider = queryProvider;
     }
 
-    public Task<Result<ExerciseLog> > Handle(GetExerciseLogCommand request, CancellationToken cancellationToken)
+    public Task<Result<ExerciseHistory> > Handle(GetExerciseHistoryCommand request, CancellationToken cancellationToken)
     {
         return Task.FromResult(queryProvider
-               .Query<ExerciseLog>()
+               .Query<ExerciseHistory>()
                .FirstOrDefault(log => log.Id == request.UserId)!
                .EnsureNotNull(Errors.LogIsEmpty));
     }

@@ -119,37 +119,37 @@ public static class BusinessErrors
         }
     }
 
-    public static class ExerciseLog
+    public static class ExerciseHistory
     {
         public static class AddExercises
         {
-            private const string Prefix = $"{nameof(ExerciseLog)}.{nameof(AddExercises)}";
+            private const string Prefix = $"{nameof(ExerciseHistory)}.{nameof(AddExercises)}";
 
             public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
         }
 
         public static class GetExercices
         {
-            private const string Prefix = $"{nameof(ExerciseLog)}.{nameof(GetExercices)}";
+            private const string Prefix = $"{nameof(ExerciseHistory)}.{nameof(GetExercices)}";
 
             public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
 
             public const string LogIsEmpty = $"{Prefix}.{nameof(LogIsEmpty)}";
         }
     }
-    public static class FoodLog
+    public static class FoodHistory
     {
         public static class AddFoods
         {
-            private const string Prefix = $"{nameof(FoodLog)}.{nameof(AddFoods)}";
+            private const string Prefix = $"{nameof(FoodHistory)}.{nameof(AddFoods)}";
             public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
 
         }
 
         public static class Get
         {
-            private const string Prefix = $"{nameof(FoodLog)}.{nameof(Get)}";
-            public const string FoodLogNotFound = $"{Prefix}.{nameof(FoodLogNotFound)}";
+            private const string Prefix = $"{nameof(FoodHistory)}.{nameof(Get)}";
+            public const string FoodHistoryNotFound = $"{Prefix}.{nameof(FoodHistoryNotFound)}";
         }
     }
 

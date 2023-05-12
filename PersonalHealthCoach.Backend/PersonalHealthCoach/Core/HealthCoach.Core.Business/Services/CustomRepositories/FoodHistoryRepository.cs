@@ -5,46 +5,46 @@ using HealthCoach.Shared.Infrastructure;
 
 namespace HealthCoach.Core.Business;
 
-public class FoodLogRepository : IFoodLogRepository
+public class FoodHistoryRepository : IFoodHistoryRepository
 {
     private readonly GenericDbContext dbContext;
 
-    public FoodLogRepository(GenericDbContext dbContext)
+    public FoodHistoryRepository(GenericDbContext dbContext)
     {
         this.dbContext = dbContext;
     }
 
-    public async Task Store(Guid userId, IReadOnlyCollection<string> foods)
+    public async Task Store(Guid userId, IReadOnlyCollection<Food> foods)
     {
-        // Try to load the existing FoodLog from the database, including its ConsumedFoods
-        var existingFoodLog = await dbContext.Set<FoodLog>()
+        // Try to load the existing FoodHistory from the database, including its Foods
+        var existingFoodLog = await dbContext.Set<FoodHistory>()
             .AsNoTracking()
             .Include(e => e.ConsumedFoods)
             .FirstOrDefaultAsync(e => e.Id == userId);
 
         if (existingFoodLog == null)
         {
-            // Create a new FoodLog using Instance method
-            var newFoodLogResult = FoodLog.Instance(userId);
+            // Create a new FoodHistory using Instance method
+            var newFoodLogResult = FoodHistory.Instance(userId);
             if (newFoodLogResult.IsFailure)
             {
                 // Handle the failure case if necessary, e.g., throw an exception or return an error
-                throw new InvalidOperationException("Failed to create a new FoodLog instance.");
+                throw new InvalidOperationException("Failed to create a new FoodHistory instance.");
             }
 
             var newFoodLog = newFoodLogResult.Value;
 
-            //create the new foods
+            //create the new foodsAndCalories
             var newFoods = new List<ConsumedFood>();
             foreach (var food in foods)
             {
-                var stringResult = food.EnsureNotNullOrEmpty("Empty");
+                var stringResult = food.Title.EnsureNotNullOrEmpty("Empty");
                 if (stringResult.IsFailure)
                 {
                     continue;
                 }
 
-                var consumedFood = ConsumedFood.Create(stringResult.Value);
+                var consumedFood = ConsumedFood.Create(food.Title, food.Calories, food.Quantity);
                 newFoods.Add(consumedFood);
             }
 
@@ -53,38 +53,38 @@ public class FoodLogRepository : IFoodLogRepository
                 consumedFood.ResetIsNew();
             }
 
-            // Add the foods to the new FoodLog
+            // Add the foodsAndCalories to the new FoodHistory
             newFoodLog.AddFoods(newFoods);
 
-            // Add the new FoodLog to the database
-            dbContext.Set<FoodLog>().Add(newFoodLog);
+            // Add the new FoodHistory to the database
+            dbContext.Set<FoodHistory>().Add(newFoodLog);
         }
         else
         {
-            // Create the new foods
+            // Create the new foodsAndCalories
             var newFoods = new List<ConsumedFood>();
             foreach (var food in foods)
             {
-                var stringResult = food.EnsureNotNullOrEmpty("Empty");
+                var stringResult = food.Title.EnsureNotNullOrEmpty("Empty");
                 if (stringResult.IsFailure)
                 {
                     continue;
                 }
 
-                var consumedFood = ConsumedFood.Create(stringResult.Value);
+                var consumedFood = ConsumedFood.Create(food.Title, food.Calories, food.Quantity);
                 newFoods.Add(consumedFood);
             }
 
-            // Add the foods to the existing FoodLog
+            // Add the foodsAndCalories to the existing FoodHistory
             existingFoodLog.AddFoods(newFoods);
 
-            // Attach the updated FoodLog to the dbContext
-            dbContext.Set<FoodLog>().Attach(existingFoodLog);
+            // Attach the updated FoodHistory to the dbContext
+            dbContext.Set<FoodHistory>().Attach(existingFoodLog);
 
-            // Mark the FoodLog as modified
+            // Mark the FoodHistory as modified
             dbContext.Entry(existingFoodLog).State = EntityState.Modified;
 
-            // Mark new ConsumedFoods as added
+            // Mark new Foods as added
             foreach (var consumedFood in newFoods)
             {
                 dbContext.Entry(consumedFood).State = EntityState.Added;

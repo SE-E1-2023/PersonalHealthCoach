@@ -7,10 +7,11 @@ using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
 
 namespace HealthCoach.Core.Business.Tests;
-public sealed class UpdateFoodLogCommandHandlerTests
+
+public sealed class UpdateExerciseHistoryCommandHandlerTests
 {
     private readonly Mock<IRepository> repositoryMock = new();
-    private readonly Mock<IFoodLogRepository> foodLogRepositoryMock = new();
+    private readonly Mock<IExerciseHistoryRepository> exerciseLogRepositoryMock = new();
 
     [Fact]
     public void When_UserNotFound_Then_ShouldFail()
@@ -27,7 +28,7 @@ public sealed class UpdateFoodLogCommandHandlerTests
 
         //Assert
         result.IsFailure.Should().BeTrue();
-        result.Error.Should().Be(BusinessErrors.FoodLog.AddFoods.UserNotFound);
+        result.Error.Should().Be(BusinessErrors.ExerciseHistory.AddExercises.UserNotFound);
     }
 
     [Fact]
@@ -45,10 +46,15 @@ public sealed class UpdateFoodLogCommandHandlerTests
         //Assert
         result.IsSuccess.Should().BeTrue();
 
-        foodLogRepositoryMock.Verify(r => r.Store(user.Id, command.Foods), Times.Once);
+        exerciseLogRepositoryMock.Verify(r => r.Store(user.Id, command.Exercises), Times.Once);
     }
 
-    private UpdateFoodLogCommand Command() => new(Guid.NewGuid(), new List<string> { "Food 1", "Food 2" });
+    private UpdateExerciseHistoryCommand Command() => new(Guid.NewGuid(), new List<Exercise>
+    {
+        new("Exercise no. 1", 100, 1),
+        new("Exercise no. 2", 101, 2),
+        new("Exercise no. 3", 102, 1)
+    });
 
-    private UpdateFoodLogCommandHandler Sut() => new(repositoryMock.Object, foodLogRepositoryMock.Object);
+    private UpdateExerciseHistoryCommandHandler Sut() => new(repositoryMock.Object, exerciseLogRepositoryMock.Object);
 }

@@ -5,6 +5,6 @@ using HealthCoach.Core.Domain;
 
 namespace HealthCoach.Core.Business;
 
-public record GetFoodLogCommand(Guid UserId) : IRequest<Result<FoodLog>>;
+public record GetFoodHistoryCommand(Guid UserId) : IRequest<Result<FoodHistory>>;
 
 

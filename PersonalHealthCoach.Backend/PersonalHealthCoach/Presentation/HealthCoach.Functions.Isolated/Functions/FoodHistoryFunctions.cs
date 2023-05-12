@@ -7,20 +7,20 @@ using Microsoft.Azure.Functions.Worker.Http;
 
 namespace HealthCoach.Functions.Isolated;
 
-public sealed class FoodLogFunctions
+public sealed class FoodHistoryFunctions
 {
     private readonly IMediator mediator;
 
-    public FoodLogFunctions(IMediator mediator)
+    public FoodHistoryFunctions(IMediator mediator)
     {
         this.mediator = mediator;
     }
 
-    [Function(nameof(UpdateFoodLog))]
-    public async Task<HttpResponseData> UpdateFoodLog([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/food-log")] HttpRequestData request, Guid id)
+    [Function(nameof(UpdateFoodHistory))]
+    public async Task<HttpResponseData> UpdateFoodHistory([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/food-history")] HttpRequestData request, Guid id)
     {
         var command = await request
-            .DeserializeBodyPayload<UpdateFoodLogCommand>()
+            .DeserializeBodyPayload<UpdateFoodHistory>()
             .Map(c => c with { UserId = id });
 
         return await command
@@ -28,11 +28,11 @@ public sealed class FoodLogFunctions
             .ToResponseData(request);
     }
 
-    [Function(nameof(GetFoodLog))]
-    public async Task<HttpResponseData> GetFoodLog([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/food-log")] HttpRequestData request, Guid id)
+    [Function(nameof(GetFoodHistory))]
+    public async Task<HttpResponseData> GetFoodHistory([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/food-history")] HttpRequestData request, Guid id)
     {
         return await mediator
-            .Send(new GetFoodLogCommand(id))
+            .Send(new GetFoodHistoryCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 }
