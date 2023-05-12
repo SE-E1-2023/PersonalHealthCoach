@@ -20,6 +20,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="PersonalPlans\Wellness\Api\Commands\" />
+	  <Folder Include="PersonalPlans\Wellness\Api\CommandResponses\" />
+	  <Folder Include="PersonalPlans\Wellness\CommandHandlers\" />
+	  <Folder Include="PersonalPlans\Wellness\Commands\" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Folder Include="Report\Commands\" />
 	  <Folder Include="Report\CommandHandlers\" />
 	</ItemGroup>

@@ -9,6 +9,7 @@ public static class ExternalEndpoints
         public const string TipGenerator = $"{nameof(TipGenerator)}";
         public const string DietPlanner = $"{nameof(DietPlanner)}";
         public const string FitnessPlanner = $"{nameof(FitnessPlanner)}";
+        public const string Wellness = $"{nameof(Wellness)}";
     }
 }
 

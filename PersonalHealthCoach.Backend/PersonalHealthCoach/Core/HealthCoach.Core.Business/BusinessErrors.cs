@@ -82,6 +82,14 @@ public static class BusinessErrors
             public const string PersonalDataNotFound = $"{Prefix}.{nameof(PersonalDataNotFound)}";
         }
 
+        public static class Get
+        {
+            private const string Prefix = $"{nameof(PersonalTip)}.{nameof(Get)}";
+
+            public const string PersonalTipNotFound = $"{Prefix}.{nameof(PersonalTipNotFound)}";
+
+        }
+
         public static class Report
         {
             private const string Prefix = $"{nameof(PersonalTip)}.{nameof(Report)}";
@@ -132,6 +140,50 @@ public static class BusinessErrors
             public const string InvalidReportType = $"{Prefix}.{nameof(InvalidReportType)}";
             public const string ReportAlreadySolved = $"{Prefix}.{nameof(ReportAlreadySolved)}";
             public const string UserNotAuthorized = $"{Prefix}.{nameof(UserNotAuthorized)}";
+        }
+    }
+
+    public static class ExerciseHistory
+    {
+        public static class AddExercises
+        {
+            private const string Prefix = $"{nameof(ExerciseHistory)}.{nameof(AddExercises)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+        }
+
+        public static class GetExercices
+        {
+            private const string Prefix = $"{nameof(ExerciseHistory)}.{nameof(GetExercices)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+
+            public const string LogIsEmpty = $"{Prefix}.{nameof(LogIsEmpty)}";
+        }
+    }
+    public static class FoodHistory
+    {
+        public static class AddFoods
+        {
+            private const string Prefix = $"{nameof(FoodHistory)}.{nameof(AddFoods)}";
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+
+        }
+
+        public static class Get
+        {
+            private const string Prefix = $"{nameof(FoodHistory)}.{nameof(Get)}";
+            public const string FoodHistoryNotFound = $"{Prefix}.{nameof(FoodHistoryNotFound)}";
+        }
+    }
+
+    public static class WellnessPlan
+    {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(WellnessPlan)}.{nameof(Create)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
         }
     }
 }
