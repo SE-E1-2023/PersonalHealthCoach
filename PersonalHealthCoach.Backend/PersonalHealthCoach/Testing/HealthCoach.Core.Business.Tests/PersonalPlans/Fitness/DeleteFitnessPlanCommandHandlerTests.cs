@@ -1,8 +1,8 @@
 ﻿using Moq;
 using Xunit;
-using FluentAssertions;
 using HealthCoach.Core.Domain;
 using CSharpFunctionalExtensions;
+using FluentAssertions;
 using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
 
@@ -31,7 +31,7 @@ public class DeleteFitnessPlanCommandHandlerTests
         result.Error.Should().Be(BusinessErrors.FitnessPlan.Delete.FitnessPlanNotFound);
 
         repositoryMock.Verify(r => r.Delete(It.IsAny<FitnessPlan>()), Times.Never);
-        repositoryMock.Verify(x => x.Delete(It.IsAny<Exercise>()), Times.Never);
+        repositoryMock.Verify(x => x.Delete(It.IsAny<Domain.Exercise>()), Times.Never);
     }
 
     [Fact]
@@ -52,7 +52,7 @@ public class DeleteFitnessPlanCommandHandlerTests
         result.Error.Should().Be(BusinessErrors.FitnessPlan.Delete.UserNotFound);
 
         repositoryMock.Verify(r => r.Delete(It.IsAny<FitnessPlan>()), Times.Never);
-        repositoryMock.Verify(x => x.Delete(It.IsAny<Exercise>()), Times.Never);
+        repositoryMock.Verify(x => x.Delete(It.IsAny<Domain.Exercise>()), Times.Never);
     }
 
     [Fact]
@@ -74,7 +74,7 @@ public class DeleteFitnessPlanCommandHandlerTests
         result.Error.Should().Be(BusinessErrors.FitnessPlan.Delete.UserNotAuthorized);
 
         repositoryMock.Verify(r => r.Delete(It.IsAny<FitnessPlan>()), Times.Never);
-        repositoryMock.Verify(x => x.Delete(It.IsAny<Exercise>()), Times.Never);
+        repositoryMock.Verify(x => x.Delete(It.IsAny<Domain.Exercise>()), Times.Never);
     }
 
     [Fact]

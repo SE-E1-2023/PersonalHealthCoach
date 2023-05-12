@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using CSharpFunctionalExtensions;
+using MediatR;
 using HealthCoach.Shared.Web;
 using HealthCoach.Core.Business;
 using Microsoft.Azure.Functions.Worker;

@@ -6,7 +6,7 @@ using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
 
 using Errors = HealthCoach.Core.Business.BusinessErrors.FitnessPlan.Create;
-using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.AI;
+using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.Ai;
 using FitnessExercise = HealthCoach.Core.Domain.Exercise;
 
 namespace HealthCoach.Core.Business;

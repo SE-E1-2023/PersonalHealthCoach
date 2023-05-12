@@ -4,7 +4,7 @@ using HealthCoach.Core.Domain;
 using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
 
-using Routes = HealthCoach.Shared.Web.ExternalEndpoints.AI;
+using Routes = HealthCoach.Shared.Web.ExternalEndpoints.Ai;
 using Errors = HealthCoach.Core.Business.BusinessErrors.WellnessPlan.Create;
 
 namespace HealthCoach.Core.Business;
