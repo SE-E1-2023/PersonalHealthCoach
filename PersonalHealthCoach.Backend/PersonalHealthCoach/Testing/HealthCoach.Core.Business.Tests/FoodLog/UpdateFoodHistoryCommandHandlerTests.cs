@@ -48,12 +48,12 @@ public sealed class UpdateFoodHistoryCommandHandlerTests
         foodHistoryRepositoryMock.Verify(r => r.Store(user.Id, command.Foods), Times.Once);
     }
 
-    private UpdateFoodHistory Command() => new(Guid.NewGuid(), new List<Food>
+    private UpdateFoodHistoryCommand Command() => new(Guid.NewGuid(), new List<Food>
         {
-            new("Food no. 1", 100, 1),
-            new("Food no. 2", 101, 2),
-            new("Food no. 3", 102, 1),
-            new("Food no. 4", 1001, 2)
+            new("Food no. 1", "Breakfast", 100, 1),
+            new("Food no. 2", "Breakfast", 101, 2),
+            new("Food no. 3", "Breakfast", 102, 1),
+            new("Food no. 4", "Breakfast", 1001, 2)
         }
     );
 

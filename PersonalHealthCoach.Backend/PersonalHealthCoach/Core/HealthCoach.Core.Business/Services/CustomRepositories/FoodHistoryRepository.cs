@@ -44,7 +44,7 @@ public class FoodHistoryRepository : IFoodHistoryRepository
                     continue;
                 }
 
-                var consumedFood = ConsumedFood.Create(food.Title, food.Calories, food.Quantity);
+                var consumedFood = ConsumedFood.Create(food.Title, food.Meal, food.Calories, food.Quantity);
                 newFoods.Add(consumedFood);
             }
 
@@ -71,7 +71,7 @@ public class FoodHistoryRepository : IFoodHistoryRepository
                     continue;
                 }
 
-                var consumedFood = ConsumedFood.Create(food.Title, food.Calories, food.Quantity);
+                var consumedFood = ConsumedFood.Create(food.Title, food.Meal, food.Calories, food.Quantity);
                 newFoods.Add(consumedFood);
             }
 

@@ -7,7 +7,7 @@ using Errors = HealthCoach.Core.Business.BusinessErrors.FoodHistory.AddFoods;
 
 namespace HealthCoach.Core.Business;
 
-internal sealed class UpdateFoodHistoryCommandHandler : IRequestHandler<UpdateFoodHistory, Result>
+internal sealed class UpdateFoodHistoryCommandHandler : IRequestHandler<UpdateFoodHistoryCommand, Result>
 {
     private readonly IRepository repository;
     private readonly IFoodHistoryRepository foodHistoryRepository;
@@ -18,7 +18,7 @@ internal sealed class UpdateFoodHistoryCommandHandler : IRequestHandler<UpdateFo
         this.foodHistoryRepository = foodHistoryRepository;
     }
 
-    public async Task<Result> Handle(UpdateFoodHistory request, CancellationToken cancellationToken)
+    public async Task<Result> Handle(UpdateFoodHistoryCommand request, CancellationToken cancellationToken)
     {
         var userResult = await repository
             .Load<User>(request.UserId)
