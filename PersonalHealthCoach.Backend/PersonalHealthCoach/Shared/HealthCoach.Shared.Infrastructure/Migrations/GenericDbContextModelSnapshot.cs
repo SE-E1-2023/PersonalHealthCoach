@@ -29,10 +29,16 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<int>("CaloriesBurned")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("CompletedAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<Guid?>("ExerciseLogId")
+                    b.Property<int>("DurationInMinutes")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid?>("ExerciseHistoryId")
                         .HasColumnType("uuid");
 
                     b.Property<bool>("IsNew")
@@ -44,7 +50,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ExerciseLogId");
+                    b.HasIndex("ExerciseHistoryId");
 
                     b.ToTable("CompletedExercise");
                 });
@@ -55,14 +61,20 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<int>("Calories")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("ConsumedAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<Guid?>("FoodLogId")
+                    b.Property<Guid?>("FoodHistoryId")
                         .HasColumnType("uuid");
 
                     b.Property<bool>("IsNew")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -70,7 +82,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodLogId");
+                    b.HasIndex("FoodHistoryId");
 
                     b.ToTable("ConsumedFood");
                 });
@@ -137,7 +149,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.ToTable("Exercise");
                 });
 
-            modelBuilder.Entity("HealthCoach.Core.Domain.ExerciseLog", b =>
+            modelBuilder.Entity("HealthCoach.Core.Domain.ExerciseHistory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -148,7 +160,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ExerciseLog");
+                    b.ToTable("ExerciseHistory");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Domain.FitnessPlan", b =>
@@ -168,7 +180,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.ToTable("FitnessPlan");
                 });
 
-            modelBuilder.Entity("HealthCoach.Core.Domain.FoodLog", b =>
+            modelBuilder.Entity("HealthCoach.Core.Domain.FoodHistory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -179,7 +191,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FoodLog");
+                    b.ToTable("FoodHistory");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Domain.PersonalData", b =>
@@ -325,16 +337,16 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             modelBuilder.Entity("HealthCoach.Core.Domain.CompletedExercise", b =>
                 {
-                    b.HasOne("HealthCoach.Core.Domain.ExerciseLog", null)
+                    b.HasOne("HealthCoach.Core.Domain.ExerciseHistory", null)
                         .WithMany("CompletedExercises")
-                        .HasForeignKey("ExerciseLogId");
+                        .HasForeignKey("ExerciseHistoryId");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Domain.ConsumedFood", b =>
                 {
-                    b.HasOne("HealthCoach.Core.Domain.FoodLog", null)
+                    b.HasOne("HealthCoach.Core.Domain.FoodHistory", null)
                         .WithMany("ConsumedFoods")
-                        .HasForeignKey("FoodLogId");
+                        .HasForeignKey("FoodHistoryId");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>
@@ -344,7 +356,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .HasForeignKey("FitnessPlanId");
                 });
 
-            modelBuilder.Entity("HealthCoach.Core.Domain.ExerciseLog", b =>
+            modelBuilder.Entity("HealthCoach.Core.Domain.ExerciseHistory", b =>
                 {
                     b.Navigation("CompletedExercises");
                 });
@@ -354,7 +366,7 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.Navigation("Exercises");
                 });
 
-            modelBuilder.Entity("HealthCoach.Core.Domain.FoodLog", b =>
+            modelBuilder.Entity("HealthCoach.Core.Domain.FoodHistory", b =>
                 {
                     b.Navigation("ConsumedFoods");
                 });

@@ -5,31 +5,31 @@ using HealthCoach.Shared.Infrastructure;
 
 namespace HealthCoach.Core.Business;
 
-public class ExerciseLogRepository : IExerciseLogRepository
+public class ExerciseHistoryRepository : IExerciseHistoryRepository
 {
     private readonly GenericDbContext dbContext;
 
-    public ExerciseLogRepository(GenericDbContext dbContext)
+    public ExerciseHistoryRepository(GenericDbContext dbContext)
     {
         this.dbContext = dbContext;
     }
 
-    public async Task Store(Guid userId, IReadOnlyCollection<string> exercises)
+    public async Task Store(Guid userId, IReadOnlyCollection<Exercise> exercises)
     {
-        // Try to load the existing ExerciseLog from the database, including its CompletedExercises
-        var existingExerciseLog = await dbContext.Set<ExerciseLog>()
+        // Try to load the existing ExerciseHistory from the database, including its CompletedExercises
+        var existingExerciseLog = await dbContext.Set<ExerciseHistory>()
             .AsNoTracking()
             .Include(e => e.CompletedExercises)
             .FirstOrDefaultAsync(e => e.Id == userId);
 
         if (existingExerciseLog == null)
         {
-            // Create a new ExerciseLog using Instance method
-            var newExerciseLogResult = ExerciseLog.Instance(userId);
+            // Create a new ExerciseHistory using Instance method
+            var newExerciseLogResult = ExerciseHistory.Instance(userId);
             if (newExerciseLogResult.IsFailure)
             {
                 // Handle the failure case if necessary, e.g., throw an exception or return an error
-                throw new InvalidOperationException("Failed to create a new ExerciseLog instance.");
+                throw new InvalidOperationException("Failed to create a new ExerciseHistory instance.");
             }
 
             var newExerciseLog = newExerciseLogResult.Value;
@@ -38,13 +38,13 @@ public class ExerciseLogRepository : IExerciseLogRepository
             var newExercises = new List<CompletedExercise>();
             foreach (var exercise in exercises)
             {
-                var stringResult = exercise.EnsureNotNullOrEmpty("Empty");
+                var stringResult = exercise.Title.EnsureNotNullOrEmpty("Empty");
                 if (stringResult.IsFailure)
                 {
                     continue;
                 }
 
-                var completedExercise = CompletedExercise.Create(stringResult.Value);
+                var completedExercise = CompletedExercise.Create(exercise.Title, exercise.Calories, exercise.Duration);
                 newExercises.Add(completedExercise);
             }
             
@@ -53,11 +53,11 @@ public class ExerciseLogRepository : IExerciseLogRepository
                 completedExercise.ResetIsNew();
             }
 
-            // Add the exercises to the new ExerciseLog
+            // Add the exercises to the new ExerciseHistory
             newExerciseLog.AddExercises(newExercises);
 
-            // Add the new ExerciseLog to the database
-            dbContext.Set<ExerciseLog>().Add(newExerciseLog);
+            // Add the new ExerciseHistory to the database
+            dbContext.Set<ExerciseHistory>().Add(newExerciseLog);
         }
         else
         {
@@ -65,23 +65,23 @@ public class ExerciseLogRepository : IExerciseLogRepository
             var newExercises = new List<CompletedExercise>();
             foreach (var exercise in exercises)
             {
-                var stringResult = exercise.EnsureNotNullOrEmpty("Empty");
+                var stringResult = exercise.Title.EnsureNotNullOrEmpty("Empty");
                 if (stringResult.IsFailure)
                 {
                     continue;
                 }
 
-                var completedExercise = CompletedExercise.Create(stringResult.Value);
+                var completedExercise = CompletedExercise.Create(exercise.Title, exercise.Calories, exercise.Duration);
                 newExercises.Add(completedExercise);
             }
 
-            // Add the exercises to the existing ExerciseLog
+            // Add the exercises to the existing ExerciseHistory
             existingExerciseLog.AddExercises(newExercises);
 
-            // Attach the updated ExerciseLog to the dbContext
-            dbContext.Set<ExerciseLog>().Attach(existingExerciseLog);
+            // Attach the updated ExerciseHistory to the dbContext
+            dbContext.Set<ExerciseHistory>().Attach(existingExerciseLog);
 
-            // Mark the ExerciseLog as modified
+            // Mark the ExerciseHistory as modified
             dbContext.Entry(existingExerciseLog).State = EntityState.Modified;
 
             // Mark new CompletedExercises as added

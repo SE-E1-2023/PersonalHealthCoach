@@ -7,6 +7,7 @@ using HealthCoach.Shared.Infrastructure;
 
 using Errors = HealthCoach.Core.Business.BusinessErrors.FitnessPlan.Create;
 using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.AI;
+using FitnessExercise = HealthCoach.Core.Domain.Exercise;
 
 namespace HealthCoach.Core.Business;
 
@@ -40,7 +41,7 @@ internal sealed class CreateFitnessPlanCommandHandler : IRequestHandler<CreateFi
             .Bind(async command => await httpClient.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(command))
             .Bind(response => FitnessPlan.Create(
                 request.UserId,
-                response.workout.workout.Select(e => Exercise.Create(e.exercise, e.rep_range, e.rest_time, e.sets, e.type)).ToList()))
+                response.workout.workout.Select(e => FitnessExercise.Create(e.exercise, e.rep_range, e.rest_time, e.sets, e.type)).ToList()))
             .Tap(p => repository.Store(p));
     }
 }

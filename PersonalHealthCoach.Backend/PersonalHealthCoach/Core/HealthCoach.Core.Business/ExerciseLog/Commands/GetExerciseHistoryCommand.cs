@@ -4,4 +4,4 @@ using MediatR;
 
 namespace HealthCoach.Core.Business;
 
-public record GetExerciseLogCommand(Guid UserId) : IRequest<Result<ExerciseLog>>;
+public record GetExerciseHistoryCommand(Guid UserId) : IRequest<Result<ExerciseHistory>>;

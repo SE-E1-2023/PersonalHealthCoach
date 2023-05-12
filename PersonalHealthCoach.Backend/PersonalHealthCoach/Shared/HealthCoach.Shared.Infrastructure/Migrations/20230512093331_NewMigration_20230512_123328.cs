@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HealthCoach.Shared.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class NewMigration_20230505_141139 : Migration
+    public partial class NewMigration_20230512_123328 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -29,6 +29,18 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ExerciseHistory",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExerciseHistory", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FitnessPlan",
                 columns: table => new
                 {
@@ -39,6 +51,18 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FitnessPlan", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FoodHistory",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FoodHistory", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -122,6 +146,28 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CompletedExercise",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Title = table.Column<string>(type: "text", nullable: false),
+                    CompletedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    CaloriesBurned = table.Column<int>(type: "integer", nullable: false),
+                    DurationInMinutes = table.Column<int>(type: "integer", nullable: false),
+                    IsNew = table.Column<bool>(type: "boolean", nullable: false),
+                    ExerciseHistoryId = table.Column<Guid>(type: "uuid", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CompletedExercise", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CompletedExercise_ExerciseHistory_ExerciseHistoryId",
+                        column: x => x.ExerciseHistoryId,
+                        principalTable: "ExerciseHistory",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Exercise",
                 columns: table => new
                 {
@@ -143,6 +189,38 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ConsumedFood",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Title = table.Column<string>(type: "text", nullable: false),
+                    ConsumedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    Calories = table.Column<int>(type: "integer", nullable: false),
+                    Quantity = table.Column<int>(type: "integer", nullable: false),
+                    IsNew = table.Column<bool>(type: "boolean", nullable: false),
+                    FoodHistoryId = table.Column<Guid>(type: "uuid", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ConsumedFood", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ConsumedFood_FoodHistory_FoodHistoryId",
+                        column: x => x.FoodHistoryId,
+                        principalTable: "FoodHistory",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CompletedExercise_ExerciseHistoryId",
+                table: "CompletedExercise",
+                column: "ExerciseHistoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ConsumedFood_FoodHistoryId",
+                table: "ConsumedFood",
+                column: "FoodHistoryId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_Exercise_FitnessPlanId",
                 table: "Exercise",
@@ -152,6 +230,12 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "CompletedExercise");
+
+            migrationBuilder.DropTable(
+                name: "ConsumedFood");
+
             migrationBuilder.DropTable(
                 name: "DietPlan");
 
@@ -172,6 +256,12 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "WellnessTip");
+
+            migrationBuilder.DropTable(
+                name: "ExerciseHistory");
+
+            migrationBuilder.DropTable(
+                name: "FoodHistory");
 
             migrationBuilder.DropTable(
                 name: "FitnessPlan");
