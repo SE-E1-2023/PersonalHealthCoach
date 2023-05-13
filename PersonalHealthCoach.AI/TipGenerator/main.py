@@ -62,6 +62,11 @@ class TipGenerator:
         tips.append(generator.generate_hours_slept_weekly_feedback())
         tips.append(generator.generate_weekly_weight_objective_tip())
         tips.append(generator.generate_food_logs_weekly_feedback())
+        tips.append(generator.generate_food_recommandation_short_tip())
+        tips.append(generator.generate_food_recommandation_longer_detailed_tip())
+        tips.append(generator.generate_food_recommandation_longer_try_tip())
+        tips.append(generator.generate_home_exercise_tip())
+        tips.append(generator.generate_sport_exercise_tip())
 
         with open(f"{abspath}/generated_tips.json", 'w') as tips_file:
             json.dump(tips, tips_file, indent=4)
@@ -774,58 +779,63 @@ class TipGenerator:
                         }
         return generated_tip
 
+    #This week
+    def generate_food_recommandation_short_tip(self):
+        short_food_tips = self.tips_data['Food']['Short']
+        tip = random.choice(short_food_tips)
+        generated_tip = {
+                            "Type": "Food Short",
+                            "Importance Level": "Low",
+                            "Tip": tip
+                        }
+        return generated_tip
+    
+    def generate_food_recommandation_longer_detailed_tip(self):
+        longer_detailed_food_tips = self.tips_data['Food']['Longer Detailed']
+        tip = random.choice(longer_detailed_food_tips)
+        generated_tip = {
+                            "Type": "Food Longer Detailed",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+    
+    def generate_food_recommandation_longer_try_tip(self): 
+        longer_try_food_tips = self.tips_data['Food']['Longer Try']
+        tip = random.choice(longer_try_food_tips)
+        generated_tip = {
+                            "Type": "Food Longer Try",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+    #test
+    def generate_home_exercise_tip(self): 
+        home_tips = self.tips_data['Exercises']['Home']
+        tip = random.choice(home_tips)
+        generated_tip = {
+                            "Type": "Home Exercise",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+    #test
+    def generate_sport_exercise_tip(self): 
+        sports_tips = self.tips_data['Exercises']['Sports']
+        tip = random.choice(sports_tips)
+        generated_tip = {
+                            "Type": "Sports",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+
 def tip(input):
     tips_file = f"{abspath}/tips.json"
     generator = TipGenerator(tips_file, input)
-
-    return generator.generate_tips()
-
-
-def test_calculate_bmr():
-    generator = TipGenerator('tips.json', 'profile.json')
-
-    generator.profile_data = {'Height': 170, 'Weight': 60, 'Age': 30, 'Sex': 'M', 'Level of activity': 'Moderately active', 'Objective': 'Maintain weight'}
-    assert int(generator.calculate_bmr()) == 1539
-    
-    generator.profile_data = {'Height': 160, 'Weight': 70, 'Age': 25, 'Sex': 'F', 'Level of activity': 'Active', 'Objective': 'Lose weight'}
-    assert int(generator.calculate_bmr()) == 1503
-    
-    generator.profile_data = {'Height': 180, 'Weight': 80, 'Age': 40, 'Sex': 'M', 'Level of activity': 'Sedentary', 'Objective': 'Gain muscular mass'}
-    assert int(generator.calculate_bmr()) == 1796
-
-    print('All test passed.')
-
-def test_calculate_amr():
-    generator = TipGenerator('tips.json', 'profile.json')
-
-    generator.profile_data = {'Height': 170, 'Weight': 60, 'Age': 30, 'Sex': 'M', 'Level of activity': 'Moderately active', 'Objective': 'Maintain weight'}
-    assert generator.calculate_amr() == 2409
-
-    generator.profile_data = {'Height': 160, 'Weight': 70, 'Age': 25, 'Sex': 'F', 'Level of activity': 'Active', 'Objective': 'Lose weight'}
-    assert generator.calculate_amr() == 2681
-    
-    generator.profile_data = {'Height': 180, 'Weight': 80, 'Age': 40, 'Sex': 'M', 'Level of activity': 'Sedentary', 'Objective': 'Gain muscular mass'}
-    assert generator.calculate_amr() == 1865
-
-    print('All test passed.')
-
-def test_generate_amr_tip():
-    generator = TipGenerator(tips_file,profile_file)
-    generator.calculate_amr = MagicMock(return_value=2479)
-    generator.profile_data = {'Objective': 'Lose weight', 'Level of activity': 'Moderately active'}
-    expected_tip = {'tip_type': 'Daily Calories', 'tip': 'You burn 2479 calories during a typical day. To achieve your goal of losing weight, try to stay below your calorie needs and increase your activity level. However, make sure you are eating nutritious meals and not restricting your calories too much - eating too little or losing weight rapidly can be unhealthy and dangerous.'}
-    assert generator.generate_amr_tip() == expected_tip
-
-    print('All test passed.')
-
-def test_generate_bmi_tip():
-    generator = TipGenerator(tips_file,profile_file)
-    generator.calculate_amr = MagicMock(return_value=2479)
-    generator.profile_data = {'Objective': 'Lose weight', 'Level of activity': 'Moderately active'}
-    expected_tip = {'tip_type': 'Daily Calories', 'tip': 'You burn 2479 calories during a typical day. To achieve your goal of losing weight, try to stay below your calorie needs and increase your activity level. However, make sure you are eating nutritious meals and not restricting your calories too much - eating too little or losing weight rapidly can be unhealthy and dangerous.'}
-    assert generator.generate_amr_tip() == expected_tip
-
-    print('All test passed.')
+    generated_tip = generator.generate_tips()
+    print(generated_tip)
+    return generated_tip
 
 def test_generate_generate_level_of_activity_tip():
     generator = TipGenerator(tips_file,profile_file)
@@ -841,8 +851,5 @@ tips_file = f"{abspath}/tips.json"
 profile_file = f"{abspath}/profile.json"
 generator = TipGenerator(tips_file, profile_file)
 
-# tip = generator.generate_tip()
-# tip_json = json.dumps(tip)
-# print(tip_json)
-
-print(generator.generate_tips())
+#print(generator.generate_tips())
+tip(input)

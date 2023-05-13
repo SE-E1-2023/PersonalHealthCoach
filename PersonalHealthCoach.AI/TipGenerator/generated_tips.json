@@ -2,22 +2,22 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Occasionally track your food intake. The only way to know exactly how many calories you eat is to weigh your food and use a nutrition tracker, as estimating your portion sizes and calorie intake is not unreliable. Tracking can also provide insights into your protein, fiber, and micronutrient intake. Though some studies have found a link between tracking calories and disordered eating tendencies, there is some evidence that suggests that people who track their food intake tend to be more successful at losing weight and maintaining their weight loss."
+        "Tip": "Know When To Weigh Yourself\u2014And How Often. It's normal to want to weigh yourself soon after starting a new diet or fitness routine. It's best to step on the scale in the morning before eating or drinking\u2014and before plunging into your daily activities. If you're wondering how often to weigh yourself, be sure to check your weight at a consistent time\u2014possibly every week\u2014for the most reliable number, and don't let yourself get too discouraged by different results since weight fluctuations are normal."
     },
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Do high-intensity interval training (HIIT) to burn more calories in less time."
+        "Tip": "Add resistance training to tone your body and burn more calories."
     },
     {
         "Type": "Diet",
         "Importance Level": "Medium",
-        "Tip": "Drink plenty of water to help reduce cravings."
+        "Tip": "Plan your meals and snacks ahead of time to avoid impulsive eating."
     },
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Get enough sleep to avoid hormone imbalances that can lead to weight gain."
+        "Tip": "Find a support system to keep you motivated and accountable."
     },
     {
         "Type": "Daily Calories",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. It's important to continue to prioritize healthy sleep habits to maintain this good sleep pattern. This includes creating a relaxing bedtime routine, avoiding screens before bed, and keeping your bedroom cool, dark, and quiet."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -68,5 +68,30 @@
         "Type": "Weekly Food Logs",
         "Importance Level": "High",
         "Tip": "Our recommendation is to consume a total of 2637 calories per day. In the last week you had 1 day(s) in which you consumed enough calories, 6 day(s) in which you consumed fewer calories and 0 day(s) in which you consumed more calories. Great job on implementing a calorie deficit of 250-500 calories per day in the last week! Consistency is key when it comes to weight loss, and it's important to remember that progress may not always be linear. Keep up the great work and remember to prioritize sustainable and gradual changes to your lifestyle for long-term success. Remember, it's a journey, and every small step counts towards your goal."
+    },
+    {
+        "Type": "Food Short",
+        "Importance Level": "Low",
+        "Tip": "Yogurt is made from milk that is fermented through the addition of live bacteria. It has many of the same health effects as milk, but yogurt with live cultures has the added benefit of friendly probiotic bacteria."
+    },
+    {
+        "Type": "Food Longer Detailed",
+        "Importance Level": "Medium",
+        "Tip": "Apples are an excellent source of antioxidants, which combat free radicals. Free radicals are damaging substances that the body generates. They cause undesirable changes in the body and may contribute to chronic conditions, as well as the aging process. However, some studies have suggested that an antioxidant in apples might extend a person\u2019s life span and reduce the risk of chronic disease."
+    },
+    {
+        "Type": "Food Longer Try",
+        "Importance Level": "Medium",
+        "Tip": "Edamame. These young soybeans pack more fiber per serving than shredded-wheat cereal and are one of the few plant-based sources of complete protein, meaning they have all nine essential amino acids that our bodies can't produce on their own. Try this: Puree cooked edamame with garlic, olive oil, and fresh lemon juice for a quick hummus-like spread. Or try Risotto With Edamame, Lemon, and Tarragon."
+    },
+    {
+        "Type": "Home Exercise",
+        "Importance Level": "Medium",
+        "Tip": ""
+    },
+    {
+        "Type": "Sports",
+        "Importance Level": "Medium",
+        "Tip": "Tennis. Did you know that one hour of tennis burns 600 calories? That puts it on top of the list of the best aerobic activities. All the little sprints, pivots, slams, and serves in tennis channel your strength and require you to exert energy in short but powerful bursts. This type of activity is incredibly effective in developing fitness and expanding lung capacity. A great feature off tennis off the court is the club aspect. Tennis is popular worldwide, so no matter where you are, what level you play or what age bracket you belong to, there are clubs everywhere to cater to your needs."
     }
 ]
