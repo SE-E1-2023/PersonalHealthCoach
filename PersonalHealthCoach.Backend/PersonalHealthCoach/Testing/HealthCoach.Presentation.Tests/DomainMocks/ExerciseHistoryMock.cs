@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HealthCoach.Core.Business;
+namespace HealthCoach.Presentation.Tests;
 
-namespace HealthCoach.Presentation.Tests.DomainMocks
-{
-    internal class ExerciseHistoryMock
-    {
-    }
-}
+public sealed record ExerciseHistoryMock(Guid UserId, IReadOnlyCollection<Exercise> CompletedExercises, DateTime UpdateAt);
