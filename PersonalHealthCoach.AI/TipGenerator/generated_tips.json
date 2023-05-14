@@ -2,12 +2,12 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Know When To Weigh Yourself\u2014And How Often. It's normal to want to weigh yourself soon after starting a new diet or fitness routine. It's best to step on the scale in the morning before eating or drinking\u2014and before plunging into your daily activities. If you're wondering how often to weigh yourself, be sure to check your weight at a consistent time\u2014possibly every week\u2014for the most reliable number, and don't let yourself get too discouraged by different results since weight fluctuations are normal."
+        "Tip": "Take photographic evidence. Can\u2019t get the scale to budge? It\u2019s possible you\u2019re gaining muscle and shedding body fat\u2014and that means your net weight change will seem stuck, even though you're making progress. Take pictures on a weekly basis\u2014front, back, (and) side pictures all from the same angle, same lighting, same clothing. That way, you'll see change over time, even though it may not look like it day to day."
     },
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Add resistance training to tone your body and burn more calories."
+        "Tip": "Do high-intensity interval training (HIIT) to burn more calories in less time."
     },
     {
         "Type": "Diet",
@@ -17,7 +17,7 @@
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Find a support system to keep you motivated and accountable."
+        "Tip": "Get enough sleep to avoid hormone imbalances that can lead to weight gain."
     },
     {
         "Type": "Daily Calories",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. It's important to continue to prioritize healthy sleep habits to maintain this good sleep pattern. This includes creating a relaxing bedtime routine, avoiding screens before bed, and keeping your bedroom cool, dark, and quiet."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -72,26 +72,26 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Yogurt is made from milk that is fermented through the addition of live bacteria. It has many of the same health effects as milk, but yogurt with live cultures has the added benefit of friendly probiotic bacteria."
+        "Tip": "Cauliflower is a very versatile cruciferous vegetable. It can be used to make a multitude of healthy dishes and also tastes good on its own."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "Apples are an excellent source of antioxidants, which combat free radicals. Free radicals are damaging substances that the body generates. They cause undesirable changes in the body and may contribute to chronic conditions, as well as the aging process. However, some studies have suggested that an antioxidant in apples might extend a person\u2019s life span and reduce the risk of chronic disease."
+        "Tip": "One 2019 study in rats showed that consuming leafy greens for 6 weeks led to a significant reduction in cardiovascular risk factors. Spinach is an example of a leafy green with antioxidant content, especially when it is raw, steamed, or very lightly boiled."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Edamame. These young soybeans pack more fiber per serving than shredded-wheat cereal and are one of the few plant-based sources of complete protein, meaning they have all nine essential amino acids that our bodies can't produce on their own. Try this: Puree cooked edamame with garlic, olive oil, and fresh lemon juice for a quick hummus-like spread. Or try Risotto With Edamame, Lemon, and Tarragon."
+        "Tip": "You'll get nearly 20 percent of your daily dose of fiber in one 1/2 cup serving of avocado, plus cholesterol-lowering monounsaturated fats. Try this: For a side dish, halve an avocado, drizzle with soy sauce and fresh lime juice, and sprinkle with toasted sesame seeds. Or try avocado toast."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": ""
+        "Tip": "Lunges. Challenging your balance is an essential part of a well-rounded exercise routine. Lunges do just that, promoting functional movement while also increasing strength in your legs and glutes. 1. Start by standing with your feet shoulder-width apart and arms down at your sides. 2.Take a step forward with your right leg and bend your right knee as you do so, stopping when your thigh is parallel to the ground. Ensure that your right knee doesn\u2019t extend past your right foot. 3. Push up off your right foot and return to the starting position. Repeat with your left leg. This is one rep.4. Complete 3 sets of 10 reps."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Tennis. Did you know that one hour of tennis burns 600 calories? That puts it on top of the list of the best aerobic activities. All the little sprints, pivots, slams, and serves in tennis channel your strength and require you to exert energy in short but powerful bursts. This type of activity is incredibly effective in developing fitness and expanding lung capacity. A great feature off tennis off the court is the club aspect. Tennis is popular worldwide, so no matter where you are, what level you play or what age bracket you belong to, there are clubs everywhere to cater to your needs."
+        "Tip": "Swimming. If it\u2019s your heart you\u2019re looking after there are few ways better to do it than swimming. Perfect for all ages and levels due to its low-stress nature, swimming keeps you at a healthy body weight, improves lung capacity, and builds muscles, all in addition to burning calories. Best of all, swimming can be done any time of year at an indoor pool, and often there are clubs to be joined and classes to be taken, which means the social aspect is never far behind the health. Away from the swimming pool, sea swimming is hugely popular all over the world. With sea swimming, you get the same exercise free of charge, all the while enjoying the beauty that surrounds you. Add all this up and swimming is definitely one of the healthiest sports."
     }
 ]
