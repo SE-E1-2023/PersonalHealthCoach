@@ -2,12 +2,12 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Know When To Weigh Yourself\u2014And How Often. It's normal to want to weigh yourself soon after starting a new diet or fitness routine. It's best to step on the scale in the morning before eating or drinking\u2014and before plunging into your daily activities. If you're wondering how often to weigh yourself, be sure to check your weight at a consistent time\u2014possibly every week\u2014for the most reliable number, and don't let yourself get too discouraged by different results since weight fluctuations are normal."
+        "Tip": "Use extra virgin olive oil. Extra virgin olive oil is one of the healthiest vegetable oils you can use. It\u2019s loaded with heart-healthy monounsaturated fats and powerful antioxidants that have anti-inflammatory properties. Extra virgin olive oil may benefit heart health, as people who consume it have a lower risk for dying from heart attacks and strokes according to some evidence."
     },
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Add resistance training to tone your body and burn more calories."
+        "Tip": "Incorporate more cardio into your workout routine."
     },
     {
         "Type": "Diet",
@@ -17,7 +17,7 @@
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Find a support system to keep you motivated and accountable."
+        "Tip": "Track your food intake to ensure you're in a calorie deficit."
     },
     {
         "Type": "Daily Calories",
@@ -72,7 +72,7 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Yogurt is made from milk that is fermented through the addition of live bacteria. It has many of the same health effects as milk, but yogurt with live cultures has the added benefit of friendly probiotic bacteria."
+        "Tip": "Oranges are well known for their vitamin C content. What\u2019s more, they\u2019re high in fiber and antioxidants."
     },
     {
         "Type": "Food Longer Detailed",
@@ -82,16 +82,26 @@
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Edamame. These young soybeans pack more fiber per serving than shredded-wheat cereal and are one of the few plant-based sources of complete protein, meaning they have all nine essential amino acids that our bodies can't produce on their own. Try this: Puree cooked edamame with garlic, olive oil, and fresh lemon juice for a quick hummus-like spread. Or try Risotto With Edamame, Lemon, and Tarragon."
+        "Tip": "Kale. The payoff from this leafy green: loads of calcium, vitamin C, beta-carotene, and a variety of other antioxidants. Kale is also a good source of lutein, an eye-friendly nutrient that may slow the development of macular degeneration. Try this: Make kale chips by tearing the leaves into pieces and tossing them with olive oil, salt, and pepper. Spread on a baking sheet and bake at 300 degrees F until crisp, 20 to 30 minutes. Or try Quinoa With Mushrooms, Kale, and Sweet Potatoes."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": ""
+        "Tip": "Planks. Planks are an effective way to target both your abdominal muscles and your whole body. Planking stabilizes your core without straining your back the way situps or crunches might. 1. Begin in a pushup position with your hand and toes firmly planted on the ground, your back straight, and your core tight. 2. Keep your chin slightly tucked and your gaze just in front of your hands. 3. Take deep, controlled breaths while maintaining tension throughout your entire body, so your abs, shoulders, triceps, glutes, and quads are all engaged. 4. Complete 2-3 sets of 30-second holds to start."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Tennis. Did you know that one hour of tennis burns 600 calories? That puts it on top of the list of the best aerobic activities. All the little sprints, pivots, slams, and serves in tennis channel your strength and require you to exert energy in short but powerful bursts. This type of activity is incredibly effective in developing fitness and expanding lung capacity. A great feature off tennis off the court is the club aspect. Tennis is popular worldwide, so no matter where you are, what level you play or what age bracket you belong to, there are clubs everywhere to cater to your needs."
+        "Tip": "Gym. Going to the gym is great because of the classes on offer. Whether it\u2019s spinning, TRX, kettlebells or yoga, the gym caters for all ages and abilities so you can feel comfortable in your surroundings and get a great workout whenever you want it. Due to a rise in popularity, gyms offer specific classes for the likes of fat burning, muscle toning, aerobic exercise etc., so there really is something for everyone. In addition, going to classes means you can meet people of the same level and encourage each other to get the most from your classes, while also enjoying their company."
+    },
+    {
+        "Type": "Daily Calories Burned",
+        "Importance Level": "Medium",
+        "Tip": "None"
+    },
+    {
+        "Type": "Weekly Steps Calories Burned",
+        "Importance Level": "High",
+        "Tip": "Congratulations! With a total of 89000 steps you managed to burn 3043 calories in the last week. Keep up the good work also in the next weeks!"
     }
 ]
