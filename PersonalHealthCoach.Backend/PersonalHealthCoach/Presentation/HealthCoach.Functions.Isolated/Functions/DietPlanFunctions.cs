@@ -3,16 +3,19 @@ using HealthCoach.Shared.Web;
 using HealthCoach.Core.Business;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
+using HealthCoach.Shared.Infrastructure;
 
 namespace HealthCoach.Functions.Isolated;
 
 public class DietPlanFunctions
 {
     private readonly IMediator mediator;
+    private readonly IEfQueryProvider queryProvider;
 
-    public DietPlanFunctions(IMediator mediator)
+    public DietPlanFunctions(IMediator mediator, IEfQueryProvider queryProvider)
     {
         this.mediator = mediator;
+        this.queryProvider = queryProvider;
     }
 
     [Function(nameof(DeleteDietPlan))]
@@ -26,6 +29,23 @@ public class DietPlanFunctions
         return await mediator
             .Send(new DeleteDietPlanCommand(id, userId))
             .ToResponseData(request);
+    }
+
+    [Function(nameof(CreateDietPlan))]
+    public async Task<HttpResponseData> CreateDietPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/plans/diet")] HttpRequestData request, Guid id)
+    {
+        var res = await mediator.Send(new CreateDietPlanCommand(id));
+        return await mediator
+            .Send(new CreateDietPlanCommand(id))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+    }
+
+    [Function(nameof(GetDietPlan))]
+    public async Task<HttpResponseData> GetDietPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/plans/diet")] HttpRequestData request, Guid id)
+    {
+        return await mediator
+            .Send(new GetDietPlanCommand(id))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 }
 
