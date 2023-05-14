@@ -21,7 +21,7 @@ class TestStringMethods(unittest.TestCase):
         }
         result = getDiet(input)
         
-        self.assertEqual(result["NOP"], 10)
+        self.assertEqual(result,"no idClient provided" )
     def test_negative2(self):
         input = {
         "idClient" : "4",
@@ -31,7 +31,7 @@ class TestStringMethods(unittest.TestCase):
         }
         result = getDiet(input)
         
-        self.assertEqual(result["NOP"], 11)
+        self.assertEqual(result, "no requestType provided")
     def test_negative3(self):
         input = {
         "idClient" : "4",
@@ -41,7 +41,7 @@ class TestStringMethods(unittest.TestCase):
         }
         result = getDiet(input)
         
-        self.assertEqual(result["NOP"], 12)
+        self.assertEqual(result, "no alergies provided")
     def test_negative4(self):
         input = {
         "idClient" : "4",
@@ -51,7 +51,7 @@ class TestStringMethods(unittest.TestCase):
         }
         result = getDiet(input)
         
-        self.assertEqual(result["NOP"], 13)
+        self.assertEqual(result, "no dietType provided")
     def test_negative5(self):
         input = {
         "idClient" : "4",
@@ -61,7 +61,7 @@ class TestStringMethods(unittest.TestCase):
         }
         result = getDiet(input)
         
-        self.assertEqual(result["NOP"], 14)
+        self.assertEqual(result, "no goal provided")
     def test_pozitive(self):
         input = {
         "idClient" : "4",
@@ -81,7 +81,7 @@ class TestStringMethods(unittest.TestCase):
         "goal" : "weight loss"
         }
         result = getDiet(input)
-        self.assertEqual(result["NOP"], 1)
+        self.assertEqual(result,"unknown diet")
     def test_pozitive2(self):
         input = {
         "idClient" : "4",
@@ -95,13 +95,66 @@ class TestStringMethods(unittest.TestCase):
     def test_negative7(self):
         input = {
         "idClient" : "4",
-        "requestType" : "diet",
+        "requestType" : "soup",
         "alergies" : ["nut","milk"],
-        "dietType" : ["vegan","vegetarian","dieryFree","glutenFree"],
+        "dietType" : ["vegan","vegetarian","dairyFree","glutenFree"],
         "goal" : "weight loss"
         }       
         result = getDiet(input)
-        self.assertEqual(result["NOP"],1)
+        self.assertEqual(result["NOP"],0)
+    def test_negative8(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "diet",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["vegn"],
+        "goal" : "weight loss"
+        }       
+        result = getDiet(input)
+        self.assertEqual(result,"unknown diet")
+    def test_negative9(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "sooop",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["vegan"],
+        "goal" : "weight loss"
+        }
+        result = getDiet(input)
+        self.assertEqual(result,"unknown food type")
+    def test_positive3(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "soup",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["vegan"],
+        "goal" : "weight loss"
+        }
+        result = getDiet(input)
+        self.assertEqual(result["NOP"],0)
+    
+    def test_pozitive39(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "soup",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["dairyFree"],
+        "goal" : "weight loss"
+        }
+        result = getDiet(input)
+        self.assertEqual(result["NOP"],0)
+    def test_unknownUser1(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "soup",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["dairyFree"],
+        "goal" : "weight loss"
+        }
+        result = getDiet(input)
+        self.assertEqual(result["NOP"],0)
+
+
 
 def autoTest(): 
     if __name__ == '__main__':

@@ -78,7 +78,7 @@ def unknownUser(input):
     return knownUser(input)
 
 
-def getDiet(input):
+def getDietInternal(input):
     with open (os.path.join(os.path.join(abspath,"Databases"),"Users.json"),"r") as file:
         users = json.load(file)
     good = 0
@@ -87,6 +87,12 @@ def getDiet(input):
         if element not in input.keys():
             toReturn={}
             toReturn["NOP"] = 10 + fields.index(element)
+            return toReturn
+    dietTypes = ["dairyFree","glutenFree","vegan","vegetarian"]
+    for element in input["dietType"]:
+        if element not in dietTypes:
+            toReturn = {}
+            toReturn["NOP"] = 15
             return toReturn
     if input["requestType"] != "diet":
         return getMultipleMeals(input)
@@ -163,7 +169,9 @@ def getMultipleMeals(info):
         case "snack":
             path = "Snack.json"
         case _:
-            return
+            di = {}
+            di["NOP"] = 16
+            return di
     with open (os.path.join(os.path.join(abspath,"Databases"),path),"r") as file:
         d = json.load(file)
     minHealthiness = 0
@@ -204,4 +212,26 @@ def getMultipleMeals(info):
         di["NOP"] = 1 
     return di
     
+
+def getDiet(input):
+    dic = getDietInternal(input)
+    if dic["NOP"] == 0 or dic["NOP"] == 1:
+        return dic
+    message = ""
+    match dic["NOP"]:
+        case 10:
+            message = "no idClient provided"
+        case 11:
+            message = "no requestType provided"
+        case 12:
+            message = "no alergies provided"
+        case 13:
+            message = "no dietType provided"
+        case 14:
+            message = "no goal provided"
+        case 15:
+            message = "unknown diet"
+        case 16:
+            message = "unknown food type"
+    return message
 

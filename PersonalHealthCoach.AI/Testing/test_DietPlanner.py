@@ -5,10 +5,7 @@ import requests
 import unittest
 from unittest.mock import patch, mock_open
 
-
-
 abspath = os.path.dirname(__file__)
-
 
 def test_no_params():
     response = tu.get_response("DietPlanner", "{}")
@@ -128,6 +125,18 @@ class TestStringMethods(unittest.TestCase):
         }       
         result = tu.get_response("DietPlanner",input).json()
         self.assertEqual(result["NOP"],1)
+    def test_negative8(self):
+        input = {
+        "idClient" : "4",
+        "requestType" : "diet",
+        "alergies" : ["nut","milk"],
+        "dietType" : ["vega"],
+        "goal" : "weight loss"
+        }       
+        result = tu.get_response("DietPlanner",input).json()
+        self.assertEqual(result["NOP"],1)
+
+
 
 def autoTest(): 
     if __name__ == '__main__':
@@ -146,6 +155,6 @@ def testFunction():
 
 
 #testFunction()
-#autoTest()
+autoTest()
 
 

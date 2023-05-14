@@ -2,7 +2,7 @@
     {
         "Action": {
             "Title": "Go for a walk in nature",
-            "Description": "Go outside in nature or in a park. Sunlight helps raise your energy levels. You can also try meditation."
+            "Description": "Go outside in nature or in a park. Sunlight helps raise your energy levels."
         },
         "Categories": [
             "Physical",
@@ -10,14 +10,56 @@
             "Environmental"
         ],
         "Rules": [
-            "'Diseases' not in query or 'Osteoporosis' not in query['Diseases']",
+            "'Osteoporosis' not in query['Diseases']",
             "'QueryHour' not in query or (5 < query['QueryHour'] and query['QueryHour'] < 22)"
         ]
     },
     {
         "Action": {
             "Title": "Meditation",
-            "Description": "Take a moment to focus on what's around you. Try to empty your mind, be present in the moment, and percieve the world around you."
+            "Description": "Meditation is an excercise meant to calm emotions and improve awareness. It usually involves picking a focus, such as your breath, environment or even a mental image. When you get distracted, notice your thoughts without judgement, and get back to your focus. Be present in the moment, and percieve the world around you.",
+            "Subchoice": {
+                "Amount" : 3,
+                "Choices": [
+                    {
+                        "Title": "Focused attention",
+                        "Description": "This form of meditation is fairly straightforward because it uses the object of our breath to focus attention, to anchor the mind and maintain awareness. Notice your mind starting to wander? Simply return to the breath."
+                    },
+                    {
+                        "Title": "Body scan",
+                        "Description": "Often, our body is doing one thing while our mind is elsewhere. This technique is designed to sync body and mind by performing a mental scan, from the top of the head to the end of your toes. Imagine a photocopier light slowly moving over your body, bringing attention to any discomfort, sensations, tensions, or aches that exist."
+                    },
+                    {
+                        "Title": "Noting",
+                        "Description": "Whether you are focusing on the breath or simply sitting in quiet, this technique involves specifically 'noting' what's distracting the mind, to the extent that we are so caught up in a thought or emotion that we've lost our awareness of the breath (or whatever the object of focus is). We 'note' the thought or feeling to restore awareness, create a bit of space, as a way of letting go, and to learn more about our thought patterns, tendencies, and conditioning."
+                        
+                    },
+                    {
+                        "Title": "Visualization",
+                        "Description": "This type of meditation invites you to picture something or someone in your mind - we are essentially replacing the breath with a mental image as the object of focus. It can feel challenging to some, but it's really no different than vividly recalling the face of an old friend naturally, without effort. And so it is with meditation. By conjuring a specific visualization, we not only get to observe the mind, but we also get to focus on any physical sensations."
+                        
+                    },
+                    {
+                        "Title": "Loving kindness",
+                        "Description": "Focusing on the image of different people - it doesn't matter if we know them or not, if we like them or not - is integral to this technique. We direct positive energy and goodwill first to ourselves, and then, as a ripple effect, to others, which helps us let go of unhappy feelings we may be experiencing. Below is a video with more instruction on how to use the loving kindness meditation technique."
+                        
+                    },
+                    {
+                        "Title": "Skillful compassion",
+                        "Description": "Focus on a person you know or love and pay attention to the sensations arising from the heart. By opening our hearts and minds for the benefit of other people, we have the opportunity to foster a feeling of happiness in our own mind."
+                        
+                    },
+                    {
+                        "Title": "Resting awareness",
+                        "Description": "Rather than focusing on the breath or a visualization, this technique involves letting the mind truly rest; thoughts may enter, but instead of distracting you and pulling you away from the present moment, they simply drift away."
+                        
+                    },
+                    {
+                        "Title": "Reflection",
+                        "Description": "This technique invites you to ask yourself a question: perhaps something such as, 'What are you most grateful for?' (Note that asking yourself a question using the second person - you - will discourage the intellectual mind from trying to answer it rationally.) Be aware of the feelings, not the thoughts, that arise when you focus on the question."
+                    }
+                ]
+            }
         },
         "Categories": [
             "Spiritual",
@@ -26,19 +68,31 @@
         ],
         "Rules": []
     },
+        {
+            "Action": {
+                "Title": "Sleep more",
+                "Description": "The recommended amount of sleep for the average person is 7-8 hours. Sleep is important for having a healthy body. Not only does it allow the body to recuperate, but it also enhances mental ability and improves mood."
+            },
+            "Categories": [
+                "Physical",
+                "Mental"
+            ],
+            "Rules": [
+                "'HoursOfSleep' in query and query['HoursOfSleep'] < 7", 
+                "'QueryHour' not in query or (21 > query['QueryHour'] or query['QueryHour'] < 5)"
+            ]
+    },
     {
         "Action": {
-            "Title": "Sleep more",
-            "Description": "The recommended amount of sleep for the average person is 7-8 hours. Sleep is important for having a healthy body. Not only does it allow the body to recuperate, but it also enhances mental ability and improves mood.",
-            "Parameters": [
-                "get_recommended_amount_of_sleep"
-            ]
+            "Title": "Write a journal",
+            "Description": "Journaling your day to day can help relieve stress, have a moment to consume your feelings, and put things into perspective."
         },
         "Categories": [
-            "Physical",
-            "Mental"
+            "Mental",
+            "Emotional",
+            "Spiritual"
         ],
-        "Rules": ["query['HoursOfSleep'] < 7"]
+        "Rules": []
     },
     {
         "Action": {

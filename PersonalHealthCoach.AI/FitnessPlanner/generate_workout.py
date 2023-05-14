@@ -2,6 +2,30 @@ import json
 import random
 import copy
 
+def filter_exercises_by_difficulty_and_pro_status(user_data, exercise_database):
+    fitness_score = user_data["fitness_score"]
+    pro_user = user_data["pro_user"]
+    
+    filtered_exercises = []
+    for exercise in exercise_database:
+        if fitness_score < 3 and exercise["level"] == "Beginner":
+            if pro_user and exercise["score"] > 6:
+                filtered_exercises.append(exercise)
+            elif not pro_user:
+                filtered_exercises.append(exercise)
+        elif 3 <= fitness_score < 6 and exercise["level"] in ["Beginner", "Intermediate"]:
+            if pro_user and exercise["score"] > 6:
+                filtered_exercises.append(exercise)
+            elif not pro_user:
+                filtered_exercises.append(exercise)
+        elif fitness_score >= 6 and exercise["level"] in ["Intermediate", "Expert"]:
+            if pro_user and exercise["score"] > 6:
+                filtered_exercises.append(exercise)
+            elif not pro_user:
+                filtered_exercises.append(exercise)
+    return filtered_exercises
+
+
 def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise_types):
     try:
         goal = user_data["goal"]
@@ -18,6 +42,12 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
             "status": 400,
             "message": "Must select a number of workouts per week"
         }
+    #sa fie de tip int
+    if not isinstance(workouts_per_week, int):
+        return {
+            "status": 400,
+            "message": "The number of workouts per week must be an integer"
+        }
 
     try:
         equipment_available = user_data["equipment_available"]
@@ -30,6 +60,12 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
             "status": 400,
             "message": "Invalid goal. Please choose from the available goals."
         }
+    #sa fie de tip dictionar
+    if not isinstance(equipment_available, dict):
+        return {
+            "status": 400,
+            "message": "Equipment available must be a dictionary"
+        }
 
     if workouts_per_week <= 0 or workouts_per_week>7:
         return {
@@ -37,16 +73,20 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
             "message": "The number of workouts per week must be greater than 0 and less than 7"
         }
  
-    # cazul in care useruul nu a selectat si nu avem suficiente exercitii sa-i dam
+    # cazul in care userul nu a selectat si nu avem suficiente exercitii sa-i dam
     equipment_available["None"] = True
     equipment_available["Body Only"] = True
 
     # eliminam exercitiile pe care useruul nu le poate face
-    available_exercises = []
+    #print(user_data)
+    available_exercises = filter_exercises_by_difficulty_and_pro_status(user_data, exercise_database) # filtrare dupa scor, si nivel de dificultate mai intai
     for exercise in exercise_database:
-        if exercise["equipment"] in equipment_available:
-            if equipment_available[exercise["equipment"]]:
-                available_exercises.append(exercise)
+        if exercise["equipment"] not in equipment_available:
+            try:
+                if equipment_available[exercise["equipment"]]:
+                 available_exercises.remove(exercise)
+            except:
+                useless=1
 
     if not available_exercises:
         return {
@@ -71,12 +111,37 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
         "Increase endurance": {"Cardio": 5, "Strength": 1, "Plyometrics": 2, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
         "Overall health": {"Cardio": 2, "Strength": 3, "Plyometrics": 2, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1}
     }
+    insufficient_exercises = False
+
     for exercise_type, num in exercises_for_goal[goal].items():
         if len(organized_exercises.get(exercise_type, [])) < num:
-            return {
-                "status": 400,
-                "message": "Not enough exercises available for the selected goal. Please update the exercise database."
-            }
+            insufficient_exercises = True
+            break
+
+    if insufficient_exercises and user_data["pro_user"]:
+        # reincercam cu exercitii si cu scor mai prost decat 6 daca nu sunt suficiente exercitii pentru a crea un workout
+        available_exercises = filter_exercises_by_difficulty_and_pro_status(
+            {**user_data, "pro_user": False}, exercise_database
+        )
+        organized_exercises = {}
+        for exercise in available_exercises:
+            exercise_type = exercise["type"]
+            if exercise_type not in organized_exercises:
+                organized_exercises[exercise_type] = []
+            organized_exercises[exercise_type].append(exercise)
+
+        insufficient_exercises = False
+        for exercise_type, num in exercises_for_goal[goal].items():
+            if len(organized_exercises.get(exercise_type, [])) < num:
+                insufficient_exercises = True
+                break
+
+    if insufficient_exercises:
+        return {
+            "status": 400,
+            "message": "Not enough exercises available for the selected goal. Please update the exercise database."
+    }
+
     exercise_type_info = {
     "Cardio": {"rep_range": "10-15", "sets": 3, "rest_time": "1-2 minutes"},
     "Strength": {"rep_range": "8-12", "sets": 3, "rest_time": "1-2 minutes"},
@@ -115,9 +180,9 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
         "status": 200,
         "workouts": workouts
     }
-
+#ignoram
 def main():
     """"""
 if __name__ == '__main__':
-    main()
+    main() # pragma: no cover
 

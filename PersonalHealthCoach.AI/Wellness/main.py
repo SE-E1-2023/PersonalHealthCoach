@@ -1,5 +1,6 @@
 import numpy
 import json
+import random
 # from flask import abort
 import traceback
 import os
@@ -18,8 +19,7 @@ Spiritual: Searching for meaning and higher purpose in human existence.
 Social: Connecting and engaging with others and our communities in meaningful ways.
 Environmental: Fostering positive interrelationships between planetary health and human actions, choices and wellbeing
 """
-WELLNESS_CATEGORIES = ["Physical", "Mental",
-                       "Emotional", "Spiritual", "Social", "Environmental"]
+WELLNESS_CATEGORIES = ["Physical", "Mental", "Emotional", "Spiritual", "Social", "Environmental"]
 
 WELLNESS_ACTIONS_FILE = os.path.join(os.path.join(ABSPATH, 'data'), 'actions.json')
 
@@ -46,9 +46,6 @@ class category_choice:
         for i in self.scores:
             self.scores[i] = self.scores[i] / suma
         print(self.scores)
-
-    def sum_scores(self):
-        return sum(self.scores.values())
 
     def select_categories(self, dictionary_input, amount=-1, prob=1):
         self.compute_priorities(dictionary_input)
@@ -110,6 +107,8 @@ def compute_category_score(query, entry):
     return score
 
 def compute_rule_score(query, entry):
+    if 'Rules' not in entry:
+        return 0
     # all rules must pass in order to return >=0
     for rule in entry['Rules']:
         try:
@@ -161,13 +160,17 @@ def choose_action(query):
         else:
             wellness_logger.debug("Entry failed because of score: " + json.dumps(score, indent=2) + " less than current max: " + json.dumps(best_matched_scores[0], indent=2))
     action = numpy.random.choice(best_matched_scores[1])
+    if "Subchoice" in action["Action"]:
+        if "Amount" in action["Action"]["Subchoice"] and "Choices" in action["Action"]["Subchoice"]:
+            subchoice = random.sample(action["Action"]["Subchoice"]["Choices"], action["Action"]["Subchoice"]["Amount"])
+            action["Action"]["Items"] = subchoice
+
     return format_response(action, query)
 
 def format_response(action, query):
     rsp = action
     del rsp['Rules']
-    #TODO replace {?} in text with parameter calls
-    rsp["Action"].pop("Parameters", None)
+    rsp["Action"].pop("Subchoice", None)
     return rsp
 
 
@@ -177,7 +180,7 @@ def get(dictionary):
     if "Categories" in dictionary:
         # load requested categories
         if isinstance(dictionary["Categories"], list) and\
-                all((isinstance(v, str) and v in WELLNESS_CATEGORIES) for v in dictionary["Categories"].values()):
+                all((isinstance(v, str) and v in WELLNESS_CATEGORIES) for v in dictionary["Categories"]):
             categories = dictionary["Categories"]
         else:
             return None
