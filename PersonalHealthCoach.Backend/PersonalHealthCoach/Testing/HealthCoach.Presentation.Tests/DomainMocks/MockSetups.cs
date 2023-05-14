@@ -1,6 +1,8 @@
 ﻿using System.Text;
 using HealthCoach.Core.Business;
+using HealthCoach.Core.Domain;
 using Newtonsoft.Json;
+using Exercise = HealthCoach.Core.Business.Exercise;
 
 namespace HealthCoach.Presentation.Tests;
 
@@ -23,6 +25,24 @@ public static class MockSetups
         var user = JsonConvert.DeserializeObject<UserMock>(responseBody);
 
         return user;
+    }
+
+    public static ExerciseHistoryMock SetupExerciseMistory(Guid id)
+    {
+        var client = new HttpClient();
+        var completedExercise = new Exercise("exercise 1", 100, 10);
+        IReadOnlyCollection<Exercise> randomExercises = new List<Exercise>() { completedExercise };
+
+        var updateExerciseHistoryCommand = new UpdateExerciseHistoryCommand(id, randomExercises);
+        var json = JsonConvert.SerializeObject(updateExerciseHistoryCommand);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var response = client.PostAsync(string.Format(Routes.ExerciseHistory.UpdateExerciseHistory,id), content).GetAwaiter().GetResult();
+
+        var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+        var exerciseHistory = JsonConvert.DeserializeObject<ExerciseHistoryMock>(responseBody);
+
+        return exerciseHistory;
     }
 
     public static FoodHistoryMock SetupFoodHistory()
