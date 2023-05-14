@@ -1,17 +1,13 @@
 [
     {
         "Action": {
-            "Title": "Go for a walk in nature",
-            "Description": "Go outside in nature or in a park. Sunlight helps raise your energy levels."
+            "Title": "Mindfulness Walk",
+            "Description": "While mindful walking has no single definition, the goal is clear: to be consciously aware while moving through the environment.  The journey becomes less about the destination and more about an awareness of what is outside and inside us. When moving - perhaps to an even greater degree - it is possible to find stillness, to become aware, and be present. Find somewhere safe to walk where you will not be disturbed: your garden, a city park, country lane, or a busy street and wear comfortable clothing and shoes for walking. Stand still and become aware of how you feel. Consider your posture, the weight of your body, feet in your shoes, and your muscles as you balance. Take a few deep breaths and slowly bring your awareness into the present. Begin walking, a little slower than normal. Maintain awareness of each footstep as it rolls from heel to toe, the muscles and tendons in your feet and legs and the movement and muscles elsewhere in your body. Pay attention to your senses as you walk: Hear the wind blow in the trees, smell the cut grass, feel the light touch of rain on your face, see the car lights reflected on the windows of shops, the shadows moving as you walk Be aware of each breath. Breathe easily, but deeply. When your mind drifts from walking and breathing, gently guide your thoughts back. Continue walking for as long as you feel safe and comfortable. Remember, wherever you walk, whether a bustling street or a windy hillside, there is a myriad of stimuli with which to flood your senses. Become aware; savor the sensations.  When your meditation is at an end, stop and stand still. Take a few deep breaths."
         },
         "Categories": [
             "Physical",
             "Spiritual",
             "Environmental"
-        ],
-        "Rules": [
-            "'Osteoporosis' not in query['Diseases']",
-            "'QueryHour' not in query or (5 < query['QueryHour'] and query['QueryHour'] < 22)"
         ]
     },
     {
@@ -19,43 +15,42 @@
             "Title": "Meditation",
             "Description": "Meditation is an excercise meant to calm emotions and improve awareness. It usually involves picking a focus, such as your breath, environment or even a mental image. When you get distracted, notice your thoughts without judgement, and get back to your focus. Be present in the moment, and percieve the world around you.",
             "Subchoice": {
-                "Amount" : 3,
                 "Choices": [
                     {
-                        "Title": "Focused attention",
+                        "Title": "Focused attention Meditation",
                         "Description": "This form of meditation is fairly straightforward because it uses the object of our breath to focus attention, to anchor the mind and maintain awareness. Notice your mind starting to wander? Simply return to the breath."
                     },
                     {
-                        "Title": "Body scan",
+                        "Title": "Body scan Meditation",
                         "Description": "Often, our body is doing one thing while our mind is elsewhere. This technique is designed to sync body and mind by performing a mental scan, from the top of the head to the end of your toes. Imagine a photocopier light slowly moving over your body, bringing attention to any discomfort, sensations, tensions, or aches that exist."
                     },
                     {
-                        "Title": "Noting",
+                        "Title": "Noting Meditation",
                         "Description": "Whether you are focusing on the breath or simply sitting in quiet, this technique involves specifically 'noting' what's distracting the mind, to the extent that we are so caught up in a thought or emotion that we've lost our awareness of the breath (or whatever the object of focus is). We 'note' the thought or feeling to restore awareness, create a bit of space, as a way of letting go, and to learn more about our thought patterns, tendencies, and conditioning."
                         
                     },
                     {
-                        "Title": "Visualization",
+                        "Title": "Visualization Meditation",
                         "Description": "This type of meditation invites you to picture something or someone in your mind - we are essentially replacing the breath with a mental image as the object of focus. It can feel challenging to some, but it's really no different than vividly recalling the face of an old friend naturally, without effort. And so it is with meditation. By conjuring a specific visualization, we not only get to observe the mind, but we also get to focus on any physical sensations."
                         
                     },
                     {
-                        "Title": "Loving kindness",
+                        "Title": "Loving Kindness Meditation",
                         "Description": "Focusing on the image of different people - it doesn't matter if we know them or not, if we like them or not - is integral to this technique. We direct positive energy and goodwill first to ourselves, and then, as a ripple effect, to others, which helps us let go of unhappy feelings we may be experiencing. Below is a video with more instruction on how to use the loving kindness meditation technique."
                         
                     },
                     {
-                        "Title": "Skillful compassion",
+                        "Title": "Skillful Compassion Meditation",
                         "Description": "Focus on a person you know or love and pay attention to the sensations arising from the heart. By opening our hearts and minds for the benefit of other people, we have the opportunity to foster a feeling of happiness in our own mind."
                         
                     },
                     {
-                        "Title": "Resting awareness",
+                        "Title": "Resting Awareness Meditation",
                         "Description": "Rather than focusing on the breath or a visualization, this technique involves letting the mind truly rest; thoughts may enter, but instead of distracting you and pulling you away from the present moment, they simply drift away."
                         
                     },
                     {
-                        "Title": "Reflection",
+                        "Title": "Reflection Meditation",
                         "Description": "This technique invites you to ask yourself a question: perhaps something such as, 'What are you most grateful for?' (Note that asking yourself a question using the second person - you - will discourage the intellectual mind from trying to answer it rationally.) Be aware of the feelings, not the thoughts, that arise when you focus on the question."
                     }
                 ]
@@ -65,48 +60,92 @@
             "Spiritual",
             "Emotional",
             "Mental"
-        ],
-        "Rules": []
-    },
-        {
-            "Action": {
-                "Title": "Sleep more",
-                "Description": "The recommended amount of sleep for the average person is 7-8 hours. Sleep is important for having a healthy body. Not only does it allow the body to recuperate, but it also enhances mental ability and improves mood."
-            },
-            "Categories": [
-                "Physical",
-                "Mental"
-            ],
-            "Rules": [
-                "'HoursOfSleep' in query and query['HoursOfSleep'] < 7", 
-                "'QueryHour' not in query or (21 > query['QueryHour'] or query['QueryHour'] < 5)"
-            ]
+        ]
     },
     {
         "Action": {
-            "Title": "Write a journal",
-            "Description": "Journaling your day to day can help relieve stress, have a moment to consume your feelings, and put things into perspective."
+            "Title": "Journaling",
+            "Description": "Journaling your day to day can help relieve stress, have a moment to consume your feelings, and put things into perspective. You can create a variety of journaling styles, and you don't have to stick with just one. In fact, changing up how you journal can give you new insights into yourself, and that is exactly what journaling is all about.",
+            "Subchoice": {
+                "Choices": [
+                    {
+                        "Title": "Art Journaling",
+                        "Description": "In art journaling, the journal is more focused on expressing yourself through art, rather than words. You can try all sorts of art forms: Visual (drawing, painting, caligraphy, photography, mixed media, etc.), Auditory (soundscapes, jingles, music, etc.), or anything you might be passionate about. This can also be a great opportunity to focus more on your hobbies! Remember to keep a record of your creations, so you can look back and reflect upon your journey and your mental state."
+                    },
+                    {
+                        "Title": "Gratitude Journaling",
+                        "Description": "When you are doing gratitude journaling, you can write down things in your life that you are thankful for, or things that make you happy or content. Sometimes people go with a once-daily 'write five things that I am thankful for', while others write in the morning and in the evening. The purpose is not to minimize the challenges you are going through, but to help your brain refocus for a little while."
+                    },
+                    {
+                        "Title": "Intuition Journaling",
+                        "Description": "When we are under stress, we tend to get out of touch with our intuition. Our intuitions are right more often than not. You may find yourself 'stuck' or feeling off-kilter when you don't listen to your intuition. In intuition journaling, you write down a question you would like answered. Then you respond as if your intuition is answering. For example, you would write, 'Is this relationship worth saving?' and by channeling your intuition you may get the response, 'Life is short, it is time to move on.'"
+                    },
+                    {
+                        "Title": "Stream-of-Consciousness Journaling",
+                        "Description": "Stream-of-consciousness journaling is particularly helpful if you are critical of yourself or if you have perfectionistic tendencies. In this style of journaling, you start writing and just keep going. You write free of judgment. Even if your writing turns into a scrawl, keep going until you are ready to stop. Remind yourself that whatever you write is fine, no matter how grammatically incorrect, 'out there', or indecipherable you think it is. A larger journal is handy for this type of journaling, as stream-of-consciousness journaling can take up a whole page very quickly. Turning a page can temporarily get you out of the stream-of-consciousness flow, so the less turned pages, the better."
+                    },
+                    {
+                        "Title": "Mentor Journaling",
+                        "Description": "Write about the people that inspire you. They could be people that you know personally, or people that you've never met but have helped you become a better person. This technique tends to be more future-oriented than looking back at the past. In other words, you are writing to the people that are helping you become who you want to be. These are people that lift you higher. Write about what inspired you, how you have taken those principles into your own life. This type of journaling gets you in touch with your 'higher self' and creates goals for better living."
+                    },
+                    {
+                        "Title": "Unsent Letter Journaling",
+                        "Description": "We all have things we would like to say to someone but we aren't able to for various reasons. In 'unsent letter' journaling, you write down what you would like to tell the person. It can be whatever you want since you aren't sending it anyway. You can tell someone how much you appreciate them, how angry they made you, or how you want or don't want to forgive them. Writing a letter to someone, even if you don't send it, can be a cathartic experience."
+                    },
+                    {
+                        "Title": "What-is-Going-Well Journaling",
+                        "Description": "In this style of journaling, you note what has gone well during your day. This could be done through bullet points or paragraphs. We tend to focus on what doesn't go well, so changing your focus can result in feeling less burdened. When you realize how much things have worked in your favor during the day, those not-so-great things tend to pale in comparison. What-is-going-well journaling tends to focus on daily events."
+                    }
+                ]
+            }
         },
         "Categories": [
             "Mental",
             "Emotional",
             "Spiritual"
-        ],
-        "Rules": []
+        ]
     },
     {
         "Action": {
-            "Title": "TEMPLATE TITLE",
-            "Description": "TEMPLATE DESCRIPTION"
+            "Title": "Anti-anxiety techniques",
+            "Description": "When you're feeling anxious, you might notice that your heart rate and breathing get a bit faster. You may also begin to sweat and feel dizzy or lightheaded.",
+            "Subchoice": {
+                "Choices": [
+                    {
+                        "Title": "Relax by breathing",
+                        "Description": "Sit in a quiet and comfortable place. Put one of your hands on your chest and the other on your stomach. Your stomach should move more than your chest when you breathe in deeply. Take a slow and regular breath in through your nose. Watch and sense your hands as you breathe in. The hand on your chest should remain still while the hand on your stomach will move slightly. Breathe out through your mouth slowly. Repeat this process at least 10 times or until you begin to feel your anxiety lessen."
+                    },
+                    {
+                        "Title": "Relax by visualizing",
+                        "Description": "Have you ever heard the 'finding your happy place' expression? Painting a mental picture of a place that makes you feel relaxed can actually calm your brain and body. When you start to feel anxious, sit in a quiet and comfortable place. Think of your ideal place to relax. While it can be any place in the world, real or imaginary, it should be an image that you find very calming, happy, peaceful, and safe. Make sure it's easy enough to think about so you can return to it in your mind when you feel anxious in the future. Think of all the small details you'd find if you were there. Think about how the place would smell, feel, and sound. Envision yourself in that place, enjoying it comfortably. Once you have a good picture of your 'happy place', close your eyes and take slow and regular breaths through your nose and out of your mouth. Be aware of your breathing and continue focusing on the place you've imagined in your mind until you feel your anxiety lifting. Visit this place in your mind whenever you feel anxious."
+                    },
+                    {
+                        "Title": "Relax your muscles",
+                        "Description": "When you feel anxious, you might notice strain or tension in your muscles. This muscle stress can make your anxiety more difficult to manage in the moment you're experiencing it. By relieving the stress in your muscles, you can usually reduce your anxiety levels. Sit in a quiet and comfortable place. Close your eyes and focus on your breathing. Breathe slowly into your nose and out of your mouth. Use your hand to make a tight fist. Squeeze your fist tightly. Hold your squeezed fist for a few seconds. Notice all the tension you feel in your hand. Slowly open your fingers and be aware of how you feel. You may notice a feeling of tension leaving your hand. Eventually, your hand will feel lighter and more relaxed. Continue tensing and then releasing various muscle groups in your body, from your hands, legs, shoulders, or feet. You may want to work your way up and down your body tensing various muscle groups. Avoid tensing the muscles in any area of your body where you're injured or in pain, as that may further aggravate your injury."
+                    },
+                    {
+                        "Title": "Relax by counting",
+                        "Description": "Counting is a simple way to ease your anxiety. When you feel anxiety washing over you, find a quiet and comfortable place to sit. Close your eyes and slowly count to 10. If necessary, repeat and count to 20 or an even higher number. Keep counting until you feel your anxiety subsiding. Sometimes this relief occurs quickly, but other times it might take a while. Stay calm and patient. Counting can relax you because it gives you something to focus on besides your anxiety. It's a great tool to use in a crowded or busy space like a store or train where other anxiety exercises might be more challenging to carry out."
+                    },
+                    {
+                        "Title": "Relax by staying present",
+                        "Description": "Mindfulness is the practice of being present in your current state and surroundings, gently and without judgment. Staying present can help you create a calm state of mind when you feel your thoughts racing and anxiety building. To bring yourself outside your thoughts into the present, find a quiet and comfortable place to sit and close your eyes. Notice how your breathing and body feel. Now shift your awareness to the sensations you observe in your surroundings. Ask yourself What's happening outside of my body? Notice what you hear, smell, and feel in your environment. Change your awareness several times from your body to your environment and back again until your anxiety starts to fade."
+                    },
+                    {
+                        "Title": "Relax by interrupting your anxious thinking",
+                        "Description": "It can be hard to think clearly when you feel anxious. Sometimes anxious thinking can make us believe harmful thoughts that are untrue or make us do things that make our anxiety worse. It can be helpful to break or interrupt your anxious thoughts so you can think clearly and react appropriately to your thoughts. Try different ways of interrupting your anxious thought process, such as: Choose a nice thought to focus on instead of your anxiety. This could be a person you love, your happy place, or even something you look forward to doing later that day, such as eating a nice dinner. You could also listen to music or read a book. You can try to be conscious when you shift your attention from your anxiety to a task at hand and notice how you feel."
+                    },
+                    {
+                        "Title": "Physical Grounding",
+                        "Description": "Pick up an object and make an observation over it. How heavy or light is it? Is it soft or hard, smooth or rough? What does the texture look like? Is there an edge to it? Does it have a flavor? Focus on the feel of what touches your body. If you are standing, what does the ground beneath your feet look like? If you are sitting in a chair, is it soft, hard, or cozy? What do the clothes you wear feel like? Hold your hands under running water. Notice how the liquid moves through your palms and between your fingers. Is it warm or cold? Is it a gentle trickle or a heavy stream? Breathe in your favorite scent. Maybe it'’'s a candle, a piece of clothing, a fresh flower, or perfume."
+                    }
+                ]
+            }
         },
         "Categories": [
-            "Physical",
-            "Mental",
-            "Emotional",
             "Spiritual",
-            "Social",
-            "Environmental"
-        ],
-        "Rules": ["False"]
+            "Mental",
+            "Emotional"
+        ]
     }
 ]
