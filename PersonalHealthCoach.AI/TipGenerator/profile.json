@@ -1,11 +1,499 @@
 {
+  "Profile": {
     "Name": "Alex",
-    "ID" : "38284",
-    "Age": 30,
-    "Height" : 182,
-    "Weight" : 60,
-    "Sex" : "M",
-    "Objective" : "Maintain weight",
-    "Disease" : ["Cancer", "Osteoporosis"],
-    "Level of activity" : "Moderately active"
+    "ID": "38284",
+    "Age": 21,
+    "Height": 182,
+    "Weight": 63,
+    "Sex": "M",
+    "Objective": "Lose weight",
+    "Level of activity": "Moderately active",
+    "Steps Goal": 8000
+  },
+  "Progress": [
+    {
+      "Day": "Day 1",
+      "Date": "2023-05-01",
+      "Weight": 63.5,
+      "Objective": "Gain muscular mass",
+      "FoodLogs": [
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Whole Wheat Toast",
+          "Quantity": "2 slices",
+          "Calories": 200
+        },
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Egg Omelet",
+          "Quantity": "2 large eggs",
+          "Calories": 140
+        },
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Cheddar Cheese",
+          "Quantity": "1 oz",
+          "Calories": 114
+        },
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Turkey Bacon",
+          "Quantity": "2 slices",
+          "Calories": 70
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Banana",
+          "Quantity": "1 medium",
+          "Calories": 105
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Grilled Chicken Breast",
+          "Quantity": "4 oz",
+          "Calories": 120
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Whole Grain Pasta",
+          "Quantity": "1 cup cooked",
+          "Calories": 200
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Tomato Sauce",
+          "Quantity": "1/2 cup",
+          "Calories": 40
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Mixed Vegetables",
+          "Quantity": "1 cup",
+          "Calories": 70
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Hummus",
+          "Quantity": "1/4 cup",
+          "Calories": 100
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Baby Carrots",
+          "Quantity": "1 cup",
+          "Calories": 52
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Salmon",
+          "Quantity": "6 oz",
+          "Calories": 350
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Brown Rice",
+          "Quantity": "1 cup cooked",
+          "Calories": 220
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Roasted Brussels Sprouts",
+          "Quantity": "1 cup",
+          "Calories": 56
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Greek Yogurt",
+          "Quantity": "1 cup",
+          "Calories": 120
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Almonds",
+          "Quantity": "1 oz",
+          "Calories": 160
+        }
+      ],
+      "ExerciseLogs": [
+        {
+          "Exercise": "Bench Press",
+          "Duration": "30 mins",
+          "CaloriesBurned": 250
+        },
+        {
+          "Exercise": "Cardio",
+          "Duration": "20 mins",
+          "CaloriesBurned": 150
+        }
+      ],
+      "Steps": 12000,
+      "HoursSlept": 8
+    },
+    {
+      "Day": "Day 2",
+      "Date": "2023-05-02",
+      "Weight": 64,
+      "Objective": "Gain muscular mass",
+      "FoodLogs": [
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Whole wheat toast",
+          "Quantity": "2 slices",
+          "Calories": 160
+        },
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Scrambled eggs",
+          "Quantity": "2 eggs",
+          "Calories": 140
+        },
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Banana",
+          "Quantity": "1 medium",
+          "Calories": 105
+        },
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Orange juice",
+          "Quantity": "1 cup",
+          "Calories": 120
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Apple",
+          "Quantity": "1 medium",
+          "Calories": 95
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Almonds",
+          "Quantity": "1 oz",
+          "Calories": 170
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Grilled chicken breast",
+          "Quantity": "6 oz",
+          "Calories": 400
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Brown rice",
+          "Quantity": "1 cup",
+          "Calories": 250
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Steamed broccoli",
+          "Quantity": "1 cup",
+          "Calories": 70
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Greek yogurt",
+          "Quantity": "2 cup",
+          "Calories": 240
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Salmon fillet",
+          "Quantity": "6 oz",
+          "Calories": 350
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Baked sweet potato",
+          "Quantity": "2 medium",
+          "Calories": 260
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Steamed asparagus",
+          "Quantity": "1 cup",
+          "Calories": 30
+        }
+      ],
+      "ExerciseLogs": [
+        {
+          "Exercise": "Deadlifts",
+          "Duration": "40 mins",
+          "CaloriesBurned": 400
+        },
+        {
+          "Exercise": "Walking",
+          "Duration": "30 mins",
+          "CaloriesBurned": 150
+        }
+      ],
+      "Steps": 10000,
+      "HoursSlept": 7
+    },
+    {
+      "Day": "Day 3",
+      "Date": "2023-05-03",
+      "Weight": 64.5,
+      "Objective": "Gain muscular mass",
+      "FoodLogs": [
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Egg whites",
+          "Quantity": "4 eggs",
+          "Calories": 130
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Protein Shake",
+          "Quantity": "1 scoop",
+          "Calories": 120
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Grilled Chicken Salad",
+          "Quantity": "1 serving",
+          "Calories": 350
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Apple",
+          "Quantity": "1 medium",
+          "Calories": 80
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Salmon",
+          "Quantity": "8 oz",
+          "Calories": 500
+        }
+      ],
+      "ExerciseLogs": [
+        {
+          "Exercise": "Squats",
+          "Duration": "40 mins",
+          "CaloriesBurned": 350
+        },
+        {
+          "Exercise": "Cycling",
+          "Duration": "30 mins",
+          "CaloriesBurned": 200
+        }
+      ],
+      "Steps": 15000,
+      "HoursSlept": 8
+    },
+    {
+      "Day": "Day 4",
+      "Date": "2023-05-04",
+      "Weight": 64,
+      "Objective": "Gain muscular mass",
+      "FoodLogs": [
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Egg whites",
+          "Quantity": "3 eggs",
+          "Calories": 100
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Peanut Butter",
+          "Quantity": "1 tbsp",
+          "Calories": 90
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Grilled Chicken",
+          "Quantity": "6 oz",
+          "Calories": 300
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Almonds",
+          "Quantity": "1 handful",
+          "Calories": 50
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Beef Stir Fry",
+          "Quantity": "1 serving",
+          "Calories": 450
+        }
+      ],
+      "ExerciseLogs": [
+        {
+          "Exercise": "Bench Press",
+          "Duration": "30 mins",
+          "CaloriesBurned": 250
+        },
+        {
+          "Exercise": "Walking",
+          "Duration": "45 mins",
+          "CaloriesBurned": 200
+        }
+      ],
+      "Steps": 12000,
+      "HoursSlept": 7
+    },
+    {
+      "Day": "Day 5",
+      "Date": "2023-05-05",
+      "Weight": 65,
+      "Objective": "Gain muscular mass",
+      "FoodLogs": [
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Oatmeal",
+          "Quantity": "1 cup",
+          "Calories": 150
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Peanut Butter",
+          "Quantity": "1 tbsp",
+          "Calories": 90
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Grilled Chicken",
+          "Quantity": "6 oz",
+          "Calories": 300
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Protein Shake",
+          "Quantity": "1 serving",
+          "Calories": 120
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Salmon",
+          "Quantity": "8 oz",
+          "Calories": 500
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Grilled Shrimp Skewers",
+          "Quantity": "8 skewers",
+          "Calories": 500
+        }
+      ],
+      "ExerciseLogs": [
+        {
+          "Exercise": "Squats",
+          "Duration": "45 mins",
+          "CaloriesBurned": 450
+        },
+        {
+          "Exercise": "Cycling",
+          "Duration": "30 mins",
+          "CaloriesBurned": 200
+        }
+      ],
+      "Steps": 15000,
+      "HoursSlept": 8
+    },
+    {
+      "Day": "Day 6",
+      "Date": "2023-05-06",
+      "Weight": 65,
+      "Objective": "Gain muscular mass",
+      "FoodLogs": [
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Egg whites",
+          "Quantity": "4 eggs",
+          "Calories": 100
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Banana",
+          "Quantity": "1 medium",
+          "Calories": 100
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Grilled Chicken",
+          "Quantity": "6 oz",
+          "Calories": 300
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Protein Shake",
+          "Quantity": "1 scoop",
+          "Calories": 120
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Beef Fajitas",
+          "Quantity": "1 serving",
+          "Calories": 450
+        }
+      ],
+      "ExerciseLogs": [
+        {
+          "Exercise": "Push-ups",
+          "Duration": "20 mins",
+          "CaloriesBurned": 200
+        },
+        {
+          "Exercise": "Hiking",
+          "Duration": "60 mins",
+          "CaloriesBurned": 400
+        }
+      ],
+      "Steps": 12000,
+      "HoursSlept": 7
+    },
+    {
+      "Day": "Day 7",
+      "Date": "2023-05-07",
+      "Weight": 65.2,
+      "Objective": "Lose weight",
+      "FoodLogs": [
+        {
+          "Meal": "Breakfast",
+          "FoodItem": "Scrambled Eggs",
+          "Quantity": "3 eggs",
+          "Calories": 200
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Greek Yogurt",
+          "Quantity": "1 cup",
+          "Calories": 120
+        },
+        {
+          "Meal": "Lunch",
+          "FoodItem": "Grilled Chicken",
+          "Quantity": "6 oz",
+          "Calories": 300
+        },
+        {
+          "Meal": "Snack",
+          "FoodItem": "Almonds",
+          "Quantity": "1 handful",
+          "Calories": 50
+        },
+        {
+          "Meal": "Dinner",
+          "FoodItem": "Salmon",
+          "Quantity": "8 oz",
+          "Calories": 500
+        }
+      ],
+      "ExerciseLogs": [
+        {
+          "Exercise": "Cycling",
+          "Duration": "30 mins",
+          "CaloriesBurned": 200
+        },
+        {
+          "Exercise": "Strength Training",
+          "Duration": "45 mins",
+          "CaloriesBurned": 400
+        }
+      ],
+      "Steps": 13000,
+      "HoursSlept": 8
+    }
+  ]
 }

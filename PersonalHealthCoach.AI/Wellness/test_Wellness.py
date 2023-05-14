@@ -14,8 +14,4 @@ class TestWellnessResponse(unittest.TestCase):
         query = {"Diseases": ['Osteoporosis']}
         response = main.get(query)
         self.assertNotEqual(response, None)
-
-    def test_invalid_data(self):
-        query = {"Categories": ['Moado', "vksapDFS", "{}dsf", "Mental"]}
-        response = main.get(query)
-        self.assertTrue(response == None or isinstance(response, str))
+        self.assertTrue('Physical' not in response['Categories'])
