@@ -28,7 +28,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="DomainMocks\" />
 	  <Folder Include="WellnessPlan\" />
 	</ItemGroup>
 
