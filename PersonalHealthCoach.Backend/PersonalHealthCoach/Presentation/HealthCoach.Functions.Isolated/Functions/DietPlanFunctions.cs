@@ -34,7 +34,6 @@ public class DietPlanFunctions
     [Function(nameof(CreateDietPlan))]
     public async Task<HttpResponseData> CreateDietPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/plans/diet")] HttpRequestData request, Guid id)
     {
-        var res = await mediator.Send(new CreateDietPlanCommand(id));
         return await mediator
             .Send(new CreateDietPlanCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
@@ -45,6 +44,14 @@ public class DietPlanFunctions
     {
         return await mediator
             .Send(new GetDietPlanCommand(id))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+    }
+
+    [Function(nameof(CreateSingleUseDietPlan))]
+    public async Task<HttpResponseData> CreateSingleUseDietPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/plans/diet/single-use")] HttpRequestData request, Guid id)
+    {
+        return await mediator
+            .Send(new CreateDietPlanCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 }
