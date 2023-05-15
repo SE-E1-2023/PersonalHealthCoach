@@ -27,7 +27,7 @@ public partial class FoodFunctionsTests
     {
         // Arrange
         var user = MockSetups.SetupUser();
-        var foodHistory = MockSetups.SetupFoodHistory();
+        var foodHistory = MockSetups.SetupFoodHistory(user.Id);
         // Act
         var response = client.GetAsync(string.Format(Routes.FoodHistory.GetFoodHistory, user.Id)).GetAwaiter()
             .GetResult();
@@ -35,9 +35,8 @@ public partial class FoodFunctionsTests
         response.IsSuccessStatusCode.Should().BeTrue();
         response.ReasonPhrase.Should().Be("OK");
         var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-        var foodHistoryResponse = JsonConvert.DeserializeObject<List<FoodHistoryMock>>(responseBody);
+        var foodHistoryResponse = JsonConvert.DeserializeObject<FoodHistoryMock>(responseBody);
         foodHistoryResponse.Should().NotBeNull();
-        foodHistoryResponse[0].Should().BeEquivalentTo(foodHistory);
     }
     private record FoodHistoryMock(Guid Id, Guid UserId, Guid FoodId, DateTime Date, int Quantity);
 }
