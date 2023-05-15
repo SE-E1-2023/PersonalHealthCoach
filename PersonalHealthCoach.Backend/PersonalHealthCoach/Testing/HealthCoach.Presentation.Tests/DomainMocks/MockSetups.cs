@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel;
+using System.Text;
 using HealthCoach.Core.Business;
 using HealthCoach.Core.Domain;
 using Newtonsoft.Json;
@@ -25,6 +26,33 @@ public static class MockSetups
         var user = JsonConvert.DeserializeObject<UserMock>(responseBody);
 
         return user;
+    }
+
+    public static PersonalDataMock SetupPersonalData(Guid userId)
+    {
+        var client = new HttpClient();
+
+        var addPersonalDataCommand = new AddPersonalDataCommand(userId, 
+            PersonalDataConstants.MinimumDateOfBirth, 
+            80.5f, 
+            120, 
+            null, 
+            null, 
+            PersonalDataConstants.AllowedGoals.First(), 
+            null, 
+            14, 
+            6, 
+            "M");
+
+        var json = JsonConvert.SerializeObject(addPersonalDataCommand);
+        var content = new StringContent(json, Encoding .UTF8, "application/json");
+
+        var response = client.PostAsync(string.Format(Routes.PersonalData.AddPersonalData, userId), content).GetAwaiter().GetResult();
+        var respnseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+        var personalData = JsonConvert.DeserializeObject<PersonalDataMock>(respnseBody);
+
+        return personalData;
     }
 
     public static ExerciseHistoryMock SetupExerciseMistory(Guid id)
