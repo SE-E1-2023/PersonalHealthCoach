@@ -44,4 +44,19 @@ public static class MockSetups
 
         return exerciseHistory;
     }
+
+    public static void SetupPersonalData(Guid id)
+    {
+        var personalDataCommand = new AddPersonalDataCommand(id,PersonalDataConstants.MinimumDateOfBirth,80.5f,195f, new List<string> { "Asthma", "Allergies" },
+                new List<string> { "Acne" }, PersonalDataConstants.AllowedGoals.ElementAt(0),
+                new List<string> { "Boxing", "Cycling" }, 100 , 8, PersonalDataConstants.AllowedGenders.ElementAt(0));
+
+        var json = JsonConvert.SerializeObject(personalDataCommand);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var client = new HttpClient();
+        var response = client.PostAsync(string.Format(Routes.PersonalData.AddPersonalData, id), content).GetAwaiter().GetResult();
+        var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+    }
 }

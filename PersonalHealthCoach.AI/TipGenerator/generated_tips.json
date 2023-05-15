@@ -7,7 +7,7 @@
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Add resistance training to tone your body and burn more calories."
+        "Tip": "Take the stairs instead of the elevator to burn extra calories."
     },
     {
         "Type": "Diet",
@@ -17,7 +17,7 @@
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Find a support system to keep you motivated and accountable."
+        "Tip": "Track your food intake to ensure you're in a calorie deficit."
     },
     {
         "Type": "Daily Calories",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. It's important to continue to prioritize healthy sleep habits to maintain this good sleep pattern. This includes creating a relaxing bedtime routine, avoiding screens before bed, and keeping your bedroom cool, dark, and quiet."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. By getting enough sleep on a regular basis, you're also reducing your risk of developing chronic health problems such as obesity, diabetes, and heart disease. In addition, you'll have better cognitive function and memory, which can help you perform better at work or in school."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -72,26 +72,26 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Yogurt is made from milk that is fermented through the addition of live bacteria. It has many of the same health effects as milk, but yogurt with live cultures has the added benefit of friendly probiotic bacteria."
+        "Tip": "Salmon is a type of oily fish that\u2019s incredibly popular because of its excellent taste and high nutrient content, including protein and omega-3 fatty acids. It also contains some vitamin D."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "Apples are an excellent source of antioxidants, which combat free radicals. Free radicals are damaging substances that the body generates. They cause undesirable changes in the body and may contribute to chronic conditions, as well as the aging process. However, some studies have suggested that an antioxidant in apples might extend a person\u2019s life span and reduce the risk of chronic disease."
+        "Tip": "Wheat germ is the part of wheat that grows into a plant. It is essentially the embryo of a seed. Germ, along with bran, is a byproduct of milling. Refining cereals often removes the germ and bran content. Whole grain products, however, still contain the germ and bran. This makes them a more healthful choice."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Edamame. These young soybeans pack more fiber per serving than shredded-wheat cereal and are one of the few plant-based sources of complete protein, meaning they have all nine essential amino acids that our bodies can't produce on their own. Try this: Puree cooked edamame with garlic, olive oil, and fresh lemon juice for a quick hummus-like spread. Or try Risotto With Edamame, Lemon, and Tarragon."
+        "Tip": "Bulgur. Made from wheat that has been steamed, dried, and cracked, bulgur delivers more fiber than brown rice, plus you get a boost of potassium, B vitamins, and calcium. Try this: Cook bulgur as you would oatmeal. Top it with honey and chopped nuts for breakfast or a hearty snack. Or try Minty Bulgur Salad With Salmon and Cucumbers."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": ""
+        "Tip": "Dumbbell rows. Not only will these make your back look killer in that dress, but dumbbell rows are also another compound exercise that strengthens multiple muscles in your upper body. Choose a moderate-weight dumbbell and ensure that you\u2019re squeezing at the top of the movement. Equipment: 10-pound dumbbells. 1. Start with a dumbbell in each hand. We recommend no more than 10 pounds for beginners. 2. Bend forward at the waist, so your back is at a 45-degree angle to the ground. Be certain not to arch your back. Let your arms hang straight down. Ensure your neck is in line with your back and your core is engaged. 3. Starting with your right arm, bend your elbow and pull the weight straight up toward your chest, making sure to engage your lat and stopping just below your chest. 4.Return to the starting position and repeat with the left arm. This is one rep. Repeat 10 times for 3 sets."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Tennis. Did you know that one hour of tennis burns 600 calories? That puts it on top of the list of the best aerobic activities. All the little sprints, pivots, slams, and serves in tennis channel your strength and require you to exert energy in short but powerful bursts. This type of activity is incredibly effective in developing fitness and expanding lung capacity. A great feature off tennis off the court is the club aspect. Tennis is popular worldwide, so no matter where you are, what level you play or what age bracket you belong to, there are clubs everywhere to cater to your needs."
+        "Tip": "Cycling. Thankfully, you don\u2019t need to be trying to win the Tour de France to reap the rewards of this fantastic sport. Cycling classes are great fun, an even better workout and are available everywhere. Cycling is a low-impact way to burn a tonne of calories, but it also makes you feel happier and makes your brain perform much better. Our research finds that after only three months, people who exercised had the brain volume of those three years younger."
     }
 ]
