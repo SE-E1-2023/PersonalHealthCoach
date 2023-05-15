@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Xunit;
 using HealthCoach.Core.Domain;
 using HealthCoach.Core.Business;
+using System;
 
 namespace HealthCoach.Presentation.Tests;
 
@@ -54,6 +55,21 @@ public partial class PersonalDataTests
         response.ReasonPhrase.Should().Be("OK");
     }
 
+    [Fact]
+    public void Given_GetLatestPersonalData_When_UserNotFound_Then_ShouldSendBadRequest()
+    {
+        //Arrange
+        Guid badGuid = Guid.NewGuid();
+
+        //Act
+        var response = client.GetAsync(string.Format(Routes.PersonalData.RetrieveLatestPersonalData, badGuid)).GetAwaiter().GetResult();
+
+        //Assert
+        response.IsSuccessStatusCode.Should().BeFalse();
+        response.ReasonPhrase.Should().Be("Bad Request");
+    }
+
+    [Fact]
     public void Given_GetLatestPersonalData_When_UserFoundAndPersonalDataNotFound_Then_ShouldSendBadRequest()
     {
         // Arrange
@@ -85,7 +101,7 @@ public partial class PersonalDataTests
         response.ReasonPhrase.Should().Be("OK");
 
         var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-        var personalData= JsonConvert.DeserializeObject<PersonalDataMock>(responseBody);
+        var personalData = JsonConvert.DeserializeObject<PersonalDataMock>(responseBody);
         personalData.Should().NotBeNull();
 
     }
