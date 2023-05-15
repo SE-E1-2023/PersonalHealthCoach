@@ -2,12 +2,12 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Know When To Weigh Yourself\u2014And How Often. It's normal to want to weigh yourself soon after starting a new diet or fitness routine. It's best to step on the scale in the morning before eating or drinking\u2014and before plunging into your daily activities. If you're wondering how often to weigh yourself, be sure to check your weight at a consistent time\u2014possibly every week\u2014for the most reliable number, and don't let yourself get too discouraged by different results since weight fluctuations are normal."
+        "Tip": "Take photographic evidence. Can\u2019t get the scale to budge? It\u2019s possible you\u2019re gaining muscle and shedding body fat\u2014and that means your net weight change will seem stuck, even though you're making progress. Take pictures on a weekly basis\u2014front, back, (and) side pictures all from the same angle, same lighting, same clothing. That way, you'll see change over time, even though it may not look like it day to day."
     },
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Take the stairs instead of the elevator to burn extra calories."
+        "Tip": "Do high-intensity interval training (HIIT) to burn more calories in less time."
     },
     {
         "Type": "Diet",
@@ -17,7 +17,7 @@
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Track your food intake to ensure you're in a calorie deficit."
+        "Tip": "Get enough sleep to avoid hormone imbalances that can lead to weight gain."
     },
     {
         "Type": "Daily Calories",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. By getting enough sleep on a regular basis, you're also reducing your risk of developing chronic health problems such as obesity, diabetes, and heart disease. In addition, you'll have better cognitive function and memory, which can help you perform better at work or in school."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -72,26 +72,26 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Salmon is a type of oily fish that\u2019s incredibly popular because of its excellent taste and high nutrient content, including protein and omega-3 fatty acids. It also contains some vitamin D."
+        "Tip": "Cauliflower is a very versatile cruciferous vegetable. It can be used to make a multitude of healthy dishes and also tastes good on its own."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "Wheat germ is the part of wheat that grows into a plant. It is essentially the embryo of a seed. Germ, along with bran, is a byproduct of milling. Refining cereals often removes the germ and bran content. Whole grain products, however, still contain the germ and bran. This makes them a more healthful choice."
+        "Tip": "One 2019 study in rats showed that consuming leafy greens for 6 weeks led to a significant reduction in cardiovascular risk factors. Spinach is an example of a leafy green with antioxidant content, especially when it is raw, steamed, or very lightly boiled."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Bulgur. Made from wheat that has been steamed, dried, and cracked, bulgur delivers more fiber than brown rice, plus you get a boost of potassium, B vitamins, and calcium. Try this: Cook bulgur as you would oatmeal. Top it with honey and chopped nuts for breakfast or a hearty snack. Or try Minty Bulgur Salad With Salmon and Cucumbers."
+        "Tip": "You'll get nearly 20 percent of your daily dose of fiber in one 1/2 cup serving of avocado, plus cholesterol-lowering monounsaturated fats. Try this: For a side dish, halve an avocado, drizzle with soy sauce and fresh lime juice, and sprinkle with toasted sesame seeds. Or try avocado toast."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": "Dumbbell rows. Not only will these make your back look killer in that dress, but dumbbell rows are also another compound exercise that strengthens multiple muscles in your upper body. Choose a moderate-weight dumbbell and ensure that you\u2019re squeezing at the top of the movement. Equipment: 10-pound dumbbells. 1. Start with a dumbbell in each hand. We recommend no more than 10 pounds for beginners. 2. Bend forward at the waist, so your back is at a 45-degree angle to the ground. Be certain not to arch your back. Let your arms hang straight down. Ensure your neck is in line with your back and your core is engaged. 3. Starting with your right arm, bend your elbow and pull the weight straight up toward your chest, making sure to engage your lat and stopping just below your chest. 4.Return to the starting position and repeat with the left arm. This is one rep. Repeat 10 times for 3 sets."
+        "Tip": "Lunges. Challenging your balance is an essential part of a well-rounded exercise routine. Lunges do just that, promoting functional movement while also increasing strength in your legs and glutes. 1. Start by standing with your feet shoulder-width apart and arms down at your sides. 2.Take a step forward with your right leg and bend your right knee as you do so, stopping when your thigh is parallel to the ground. Ensure that your right knee doesn\u2019t extend past your right foot. 3. Push up off your right foot and return to the starting position. Repeat with your left leg. This is one rep.4. Complete 3 sets of 10 reps."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Cycling. Thankfully, you don\u2019t need to be trying to win the Tour de France to reap the rewards of this fantastic sport. Cycling classes are great fun, an even better workout and are available everywhere. Cycling is a low-impact way to burn a tonne of calories, but it also makes you feel happier and makes your brain perform much better. Our research finds that after only three months, people who exercised had the brain volume of those three years younger."
+        "Tip": "Swimming. If it\u2019s your heart you\u2019re looking after there are few ways better to do it than swimming. Perfect for all ages and levels due to its low-stress nature, swimming keeps you at a healthy body weight, improves lung capacity, and builds muscles, all in addition to burning calories. Best of all, swimming can be done any time of year at an indoor pool, and often there are clubs to be joined and classes to be taken, which means the social aspect is never far behind the health. Away from the swimming pool, sea swimming is hugely popular all over the world. With sea swimming, you get the same exercise free of charge, all the while enjoying the beauty that surrounds you. Add all this up and swimming is definitely one of the healthiest sports."
     }
 ]

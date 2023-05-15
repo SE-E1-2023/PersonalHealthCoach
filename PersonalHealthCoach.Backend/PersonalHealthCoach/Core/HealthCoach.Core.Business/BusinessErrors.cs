@@ -111,6 +111,13 @@ public static class BusinessErrors
 
     public static class DietPlan
     {
+        public static class Create
+        {
+            private const string Prefix = $"{nameof(DietPlan)}.{nameof(Create)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+            public const string PersonalDataNotFound = $"{Prefix}.{nameof(PersonalDataNotFound)}";
+        }
         public static class Report
         {
             private const string Prefix = $"{nameof(DietPlan)}.{nameof(Report)}";
