@@ -42,9 +42,9 @@ class TipGenerator:
         with open(tips_file, 'r', encoding='utf-8') as f:
             self.tips_data = json.load(f)
         
-        with open(profile_file) as f:
-            self.profile_data = json.load(f)
-        # self.profile_data = profile_json
+        # with open(profile_file) as f:
+        #     self.profile_data = json.load(f)
+        self.profile_data = profile_json
     
     def generate_tips(self):
         tips = []
@@ -266,7 +266,6 @@ class TipGenerator:
                             "Tip": tip
                         }
         return generated_tip
-
 
     def generate_fitness_tip_based_on_objective(self):
         objective = self.profile_data['Profile']['Objective']
@@ -952,4 +951,4 @@ profile_file = f"{abspath}/profile.json"
 generator = TipGenerator(tips_file, profile_file)
 
 #print(generator.generate_tips())
-tip(input)
+#tip(input)
