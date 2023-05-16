@@ -47,26 +47,41 @@ async function displayForm() {
     const userId = getCookie("userId");
     const url = "http://localhost:7071/api/v1/users/" + userId + "/data/personal/latest";
 
-    //get latest personal data first
-    const latestPersonalData = await fetch(url, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(async response => {
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error);
-        }
+    var latestPersonalData = {
+        DateOfBirth: "",
+        Weight: "",
+        Height: "",
+        MedicalHistory: [""],
+        CurrentIllnesses: [""],
+        Goal: "",
+        UnwantedExercises: [""],
+        DailySteps: "",
+        HoursOfSleep: "",
+        CreatedAt: "",
+    };
 
-        return response.json();
-    })
-    .then(data => {
-        return data;
-    })
-    .catch(error => {
-    });
+    //get latest personal data first
+    if (userId != "" && userId != null) {
+        latestPersonalData = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(async response => {
+            if (!response.ok) {
+                const error = await response.json();
+                throw new Error(error);
+            }
+
+            return response.json();
+        })
+        .then(data => {
+            return data;
+        })
+        .catch(error => {
+        });
+    }
 
     //if any of the fields are null, replace with empty string
     if (latestPersonalData.DateOfBirth == null) {

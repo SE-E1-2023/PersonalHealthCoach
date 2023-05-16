@@ -1,5 +1,4 @@
-﻿
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 using HealthCoach.Core.Domain;
 using HealthCoach.Shared.Infrastructure;
 using MediatR;
@@ -17,6 +16,6 @@ internal sealed class GetDietPlanCommandHandler : IRequestHandler<GetDietPlanCom
 
     public async Task<Result<DietPlan>> Handle(GetDietPlanCommand request, CancellationToken cancellationToken)
     {
-        return Result.Success(queryProvider.Query<DietPlan>().OrderBy(x => x.CreatedAt).FirstOrDefault(x => x.UserId == request.UserId));
+        return Result.Success(queryProvider.Query<DietPlan>().OrderByDescending(x => x.CreatedAt).FirstOrDefault(x => x.UserId == request.UserId));
     }
 }
