@@ -3,19 +3,16 @@ using HealthCoach.Shared.Web;
 using HealthCoach.Core.Business;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
-using HealthCoach.Shared.Infrastructure;
 
 namespace HealthCoach.Functions.Isolated;
 
 public class DietPlanFunctions
 {
     private readonly IMediator mediator;
-    private readonly IEfQueryProvider queryProvider;
 
-    public DietPlanFunctions(IMediator mediator, IEfQueryProvider queryProvider)
+    public DietPlanFunctions(IMediator mediator)
     {
         this.mediator = mediator;
-        this.queryProvider = queryProvider;
     }
 
     [Function(nameof(DeleteDietPlan))]

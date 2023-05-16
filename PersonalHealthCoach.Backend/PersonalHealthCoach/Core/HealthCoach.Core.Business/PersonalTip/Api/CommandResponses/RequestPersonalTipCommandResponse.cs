@@ -1,12 +1,13 @@
-﻿namespace HealthCoach.Core.Business;
+﻿using Newtonsoft.Json;
+
+namespace HealthCoach.Core.Business;
 
 internal class RequestPersonalTipCommandResponse
 {
-    public string status { get; set; }
+    public string Type { get; set; }
 
-    public string message { get; set; }
+    [JsonProperty("Importance Level")]
+    public string ImportanceLevel { get; set; }
 
-    public string tip_type {  get; set; }
-
-    public string tip { get; set; }
+    public string Tip { get; set; } 
 }
