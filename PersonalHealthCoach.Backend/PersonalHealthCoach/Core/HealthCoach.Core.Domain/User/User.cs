@@ -1,6 +1,7 @@
-﻿using CSharpFunctionalExtensions;
-using EmailValidation;
+﻿using EmailValidation;
 using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
+
 using Errors = HealthCoach.Core.Domain.DomainErrors.User.Create;
 
 namespace HealthCoach.Core.Domain;
@@ -9,7 +10,7 @@ public sealed class User : AggregateRoot
 {
     public User() { }
 
-    private User(string name, string firstName, string emailAddress, bool hasElevatedRights)
+    private User(string name, string firstName, string emailAddress, bool hasElevatedRights) : this()
     {
         Name = name;
         FirstName = firstName;

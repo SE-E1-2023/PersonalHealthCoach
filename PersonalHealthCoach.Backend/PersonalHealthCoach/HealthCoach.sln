@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Core.Domain.Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCoach.Core.Business.Tests", "Testing\HealthCoach.Core.Business.Tests\HealthCoach.Core.Business.Tests.csproj", "{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCoach.Presentation.Tests", "Testing\HealthCoach.Presentation.Tests\HealthCoach.Presentation.Tests.csproj", "{C81D3450-7361-4557-BA4C-F82645819436}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81D3450-7361-4557-BA4C-F82645819436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81D3450-7361-4557-BA4C-F82645819436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81D3450-7361-4557-BA4C-F82645819436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81D3450-7361-4557-BA4C-F82645819436}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +93,7 @@ Global
 		{87816C34-5356-4D2C-8100-3D3989525760} = {FED23E47-F2E5-4B55-BCC4-492B2CD96480}
 		{6BC7B1C8-9182-47A3-9985-291E7B2B5AE7} = {4FA5D4D2-A2CF-468E-B97E-90B53AE275A3}
 		{FB5253AA-20FC-41FC-8526-80BD8CBFE7F0} = {4FA5D4D2-A2CF-468E-B97E-90B53AE275A3}
+		{C81D3450-7361-4557-BA4C-F82645819436} = {4FA5D4D2-A2CF-468E-B97E-90B53AE275A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5322EA3E-2B90-45C6-8E47-8CA0DA2C9788}

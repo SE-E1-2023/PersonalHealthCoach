@@ -6,7 +6,8 @@ using CSharpFunctionalExtensions;
 using HealthCoach.Shared.Infrastructure;
 
 using Errors = HealthCoach.Core.Business.BusinessErrors.FitnessPlan.Create;
-using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.AI;
+using AIApi = HealthCoach.Shared.Web.ExternalEndpoints.Ai;
+using FitnessExercise = HealthCoach.Core.Domain.Exercise;
 
 namespace HealthCoach.Core.Business;
 
@@ -21,8 +22,8 @@ internal sealed class CreateFitnessPlanCommandHandler : IRequestHandler<CreateFi
         this.repository = repository;
         this.queryProvider = queryProvider;
         httpClient = httpClientFactory
-            .OnBaseUrl(AIApi.BaseUrl)
-            .OnRoute(AIApi.FitnessPlanner);
+            .OnBaseUrl(ExternalEndpoints.Ai.BaseUrl)
+            .OnRoute(ExternalEndpoints.Ai.FitnessPlanner);
     }
 
     public async Task<Result<FitnessPlan>> Handle(CreateFitnessPlanCommand request, CancellationToken cancellationToken)
@@ -40,7 +41,7 @@ internal sealed class CreateFitnessPlanCommandHandler : IRequestHandler<CreateFi
             .Bind(async command => await httpClient.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(command))
             .Bind(response => FitnessPlan.Create(
                 request.UserId,
-                response.workout.workout.Select(e => Exercise.Create(e.exercise, e.rep_range, e.rest_time, e.sets, e.type)).ToList()))
+                response.workout.workout.Select(e => FitnessExercise.Create(e.exercise, e.rep_range, e.rest_time, e.sets, e.type)).ToList()))
             .Tap(p => repository.Store(p));
     }
 }

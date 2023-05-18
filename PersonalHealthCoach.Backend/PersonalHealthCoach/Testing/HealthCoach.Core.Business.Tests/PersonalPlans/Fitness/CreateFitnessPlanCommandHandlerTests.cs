@@ -20,7 +20,7 @@ public class CreateFitnessPlanCommandHandlerTests
     public CreateFitnessPlanCommandHandlerTests()
     {
         httpClientFactoryMock
-            .Setup(f => f.OnBaseUrl(ExternalEndpoints.AI.BaseUrl).OnRoute(ExternalEndpoints.AI.FitnessPlanner))
+            .Setup(f => f.OnBaseUrl(ExternalEndpoints.Ai.BaseUrl).OnRoute(ExternalEndpoints.Ai.FitnessPlanner))
             .Returns(httpClientMock.Object);
     }
 

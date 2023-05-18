@@ -1,16 +1,13 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Core;
+﻿using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Core.Domain;
 
 public class PersonalTip : AggregateRoot
 {
-    public PersonalTip()
-    {
-            
-    }
+    public PersonalTip() { }
 
-    public PersonalTip(Guid userId, string type, string tipText)
+    private PersonalTip(Guid userId, string type, string tipText) : this()
     {
         UserId = userId;
         Type = type;
@@ -32,4 +29,3 @@ public class PersonalTip : AggregateRoot
 
     public string? TipText { get; private set; }
 }
-

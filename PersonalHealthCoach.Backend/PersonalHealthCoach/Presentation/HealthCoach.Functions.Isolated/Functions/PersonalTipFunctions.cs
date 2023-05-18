@@ -1,9 +1,9 @@
-﻿using HealthCoach.Core.Business;
-using HealthCoach.Shared.Web;
+﻿using CSharpFunctionalExtensions;
 using MediatR;
-using Microsoft.Azure.Functions.Worker.Http;
+using HealthCoach.Shared.Web;
+using HealthCoach.Core.Business;
 using Microsoft.Azure.Functions.Worker;
-using CSharpFunctionalExtensions;
+using Microsoft.Azure.Functions.Worker.Http;
 
 namespace HealthCoach.Functions.Isolated;
 
@@ -17,22 +17,18 @@ public class PersonalTipFunctions
     }
 
     [Function(nameof(CreatePersonalTip))]
-    public async Task<HttpResponseData> CreatePersonalTip([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/api/users/{id}/plans/tips")] HttpRequestData request, Guid id)
+    public async Task<HttpResponseData> CreatePersonalTip([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/plans/tips")] HttpRequestData request, Guid id)
     {
         return await mediator
             .Send(new CreatePersonalTipCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 
-    [Function(nameof(ReportPersonalTip))]
-    public async Task<HttpResponseData> ReportPersonalTip([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/api/plans/tips/{id}/report")] HttpRequestData request, Guid id)
+    [Function(nameof(DeletePersonalTip))]
+    public async Task<HttpResponseData> DeletePersonalTip([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Delete, Route = "v1/api/plans/tips/{id}")] HttpRequestData request, Guid id)
     {
-        var command = await request
-            .DeserializeBodyPayload<ReportPersonalTipCommand>()
-            .Map(c => c with { PersonalTipId = id });
-       
-        return await command
-            .Bind(c => mediator.Send(c))
+        return await mediator
+            .Send(new DeletePersonalTipCommand(id))
             .ToResponseData(request);
     }
 }

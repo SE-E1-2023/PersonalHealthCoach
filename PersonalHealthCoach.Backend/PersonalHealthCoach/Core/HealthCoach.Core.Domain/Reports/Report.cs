@@ -1,5 +1,5 @@
-﻿using CSharpFunctionalExtensions;
-using HealthCoach.Shared.Core;
+﻿using HealthCoach.Shared.Core;
+using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Core.Domain;
 
@@ -7,7 +7,7 @@ public sealed class Report : AggregateRoot
 {
     public Report() { }
 
-    private Report(Guid targetId, string target, string reason)
+    private Report(Guid targetId, string target, string reason) : this()
     {
         TargetId = targetId;
         Target = target;
@@ -35,4 +35,10 @@ public sealed class Report : AggregateRoot
     public DateTime ReportedAt { get; private set; }
 
     public DateTime? SolvedAt { get; private set; }
+
+    public Result Solve()
+    {
+        return Result.SuccessIf(SolvedAt is null, DomainErrors.Report.Solve.AlreadySolved)
+            .Tap(() => SolvedAt = TimeProvider.Instance().UtcNow);
+    }
 }
