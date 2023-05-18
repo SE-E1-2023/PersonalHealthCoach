@@ -7,7 +7,7 @@
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Add resistance training to tone your body and burn more calories."
+        "Tip": "Incorporate more cardio into your workout routine."
     },
     {
         "Type": "Diet",
@@ -17,7 +17,7 @@
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Find a support system to keep you motivated and accountable."
+        "Tip": "Track your food intake to ensure you're in a calorie deficit."
     },
     {
         "Type": "Daily Calories",
@@ -93,5 +93,15 @@
         "Type": "Sports",
         "Importance Level": "Medium",
         "Tip": "Gym. Going to the gym is great because of the classes on offer. Whether it\u2019s spinning, TRX, kettlebells or yoga, the gym caters for all ages and abilities so you can feel comfortable in your surroundings and get a great workout whenever you want it. Due to a rise in popularity, gyms offer specific classes for the likes of fat burning, muscle toning, aerobic exercise etc., so there really is something for everyone. In addition, going to classes means you can meet people of the same level and encourage each other to get the most from your classes, while also enjoying their company."
+    },
+    {
+        "Type": "Daily Calories Burned",
+        "Importance Level": "Medium",
+        "Tip": "None"
+    },
+    {
+        "Type": "Weekly Steps Calories Burned",
+        "Importance Level": "High",
+        "Tip": "Congratulations! With a total of 89000 steps you managed to burn 3043 calories in the last week. Keep up the good work also in the next weeks!"
     }
 ]

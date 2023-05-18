@@ -42,9 +42,9 @@ class TipGenerator:
         with open(tips_file, 'r', encoding='utf-8') as f:
             self.tips_data = json.load(f)
         
-        with open(profile_file) as f:
-            self.profile_data = json.load(f)
-        # self.profile_data = profile_json
+        # with open(profile_file) as f:
+        #     self.profile_data = json.load(f)
+        self.profile_data = profile_json
     
     def generate_tips(self):
         tips = []
@@ -67,6 +67,8 @@ class TipGenerator:
         tips.append(generator.generate_food_recommandation_longer_try_tip())
         tips.append(generator.generate_home_exercise_tip())
         tips.append(generator.generate_sport_exercise_tip())
+        tips.append(generator.generate_calories_burned_by_steps_today_tip())
+        tips.append(generator.generate_weekly_steps_calories_burned_feedback())
 
         with open(f"{abspath}/generated_tips.json", 'w') as tips_file:
             json.dump(tips, tips_file, indent=4)
@@ -264,7 +266,6 @@ class TipGenerator:
                             "Tip": tip
                         }
         return generated_tip
-
 
     def generate_fitness_tip_based_on_objective(self):
         objective = self.profile_data['Profile']['Objective']
@@ -809,7 +810,7 @@ class TipGenerator:
                             "Tip": tip
                         }
         return generated_tip
-    #test
+
     def generate_home_exercise_tip(self): 
         home_tips = self.tips_data['Exercises']['Home']
         tip = random.choice(home_tips)
@@ -819,13 +820,121 @@ class TipGenerator:
                             "Tip": tip
                         }
         return generated_tip
-    #test
+
     def generate_sport_exercise_tip(self): 
         sports_tips = self.tips_data['Exercises']['Sports']
         tip = random.choice(sports_tips)
         generated_tip = {
                             "Type": "Sports",
                             "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+    
+    def calculate_calories_burned_by_steps(self,steps):
+        height = self.profile_data['Profile']['Height']
+        if height <= 50 or height > 300:
+            raise ValueError("Height should be between 50 and 300.")
+        weight = self.profile_data['Profile']['Weight']
+        if weight <= 30 or weight > 200:
+            raise ValueError("Weight should be between 30 and 200.")
+        age = self.profile_data['Profile']['Age']
+        if age <= 0 or age > 130:
+            raise ValueError("Age should be between 1 and 130.")
+        gender = self.profile_data['Profile']['Sex']
+        gender_list = ["M", "F"]
+        if gender not in gender_list:
+            raise ValueError("Gender not found in list.")
+        
+        if steps < 0 or steps > 50000:
+            raise ValueError("Steps should be between 0 and 50000.")
+
+        if gender == "M":
+            s = -0.547 * age + 0.315 * height + 0.183 * weight + 20.17
+        elif gender == "F":
+            s = -0.621 * age + 0.401 * height + 0.279 * weight + 8.95
+
+        cal_per_step = weight * 0.7 / 100000
+        calories_burned = steps * cal_per_step * s
+
+        return round(calories_burned,3)
+
+    def calculate_calories_burned_by_steps_today(self):
+        steps = self.profile_data['Progress'][-1]['Steps']
+        if steps == "Not added":
+            steps = 0
+        if steps < 0 or steps > 50000:
+            raise ValueError("Steps should be between 0 and 50000.")
+
+        return generator.calculate_calories_burned_by_steps(steps)
+    
+    def generate_calories_burned_by_steps_today_tip(self):
+        steps = self.profile_data['Progress'][-1]['Steps']
+        if steps == "Not added":
+            steps = 0
+        if steps < 0 or steps > 50000:
+            raise ValueError("Steps should be between 0 and 50000.")
+        
+        steps_goal = self.profile_data['Profile']['Steps Goal']
+        if steps_goal <= 0 or steps_goal > 100000:
+            raise ValueError("Steps Goal should be between 1 and 100000.")
+
+        if steps > steps_goal:
+            generated_tip = {
+                            "Type": "Daily Calories Burned",
+                            "Importance Level": "Medium",
+                            "Tip": "None"
+                        }
+            return generated_tip
+        else:
+            steps_remaining = steps_goal - steps
+            calories_burned = generator.calculate_calories_burned_by_steps_today()
+            tip = "You managed to burn " + str(calories_burned) + " calories today but for sure you can burn more if you do the remaining " + str(steps_remaining) + " steps to achieve your daily steps goal of " + str(steps_goal) + ". Just keep moving!"
+            generated_tip = {
+                            "Type": "Daily Calories Burned",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+            return generated_tip
+    
+    def generate_weekly_steps_calories_burned_feedback(self):
+        progress = self.profile_data['Progress']
+        for i in range(len(progress)):
+            if progress[i]['Steps'] != "Not added":
+                if progress[i]['Steps'] < 0 or progress[i]['Steps'] > 50000:
+                    raise ValueError("Steps should be between 0 and 50000.")
+        
+        steps_list = []
+        calories_burned_list = []
+        for day in self.profile_data['Progress']:
+            steps = day['Steps']
+            if str(steps) == "Not added":
+                steps = 0
+            calories_burned = generator.calculate_calories_burned_by_steps(steps)
+            calories_burned_list.append(calories_burned)
+            steps_list.append(steps)
+        
+        tip = ""
+        total_steps_last_week = sum(steps_list)
+        total_calories_burned_last_week = round(sum(calories_burned_list))
+        if(verify_if_steps_are_introduced(steps_list) == True):
+            tip = "Have you considered using a tracking app to count your daily steps? By using this type of app, we could track your progress better. The app works by using your phone's built-in sensors to count your steps automatically and then you can introduce the value in our app at the end of the day. We recommend using Google Fit, Fitbit or Apple Health. They are free to download from the app store on your phone."
+            generated_tip = {
+                                "Type": "Weekly Steps",
+                                "Importance Level": "High",
+                                "Tip": tip
+                            }
+            return generated_tip
+
+        if total_calories_burned_last_week > 2000:
+            tip = "Congratulations! With a total of " + str(total_steps_last_week) + " steps you managed to burn " + str(total_calories_burned_last_week) + " calories in the last week. Keep up the good work also in the next weeks!"
+        else:
+            tip = "ceva"
+
+
+        generated_tip = {
+                            "Type": "Weekly Steps Calories Burned",
+                            "Importance Level": "High",
                             "Tip": tip
                         }
         return generated_tip
@@ -837,19 +946,9 @@ def tip(input):
     print(generated_tip)
     return generated_tip
 
-def test_generate_generate_level_of_activity_tip():
-    generator = TipGenerator(tips_file,profile_file)
-    generator.calculate_amr = MagicMock(return_value=2479)
-    generator.profile_data = {'Objective': 'Lose weight', 'Level of activity': 'Moderately active'}
-    expected_tip = {'tip_type': 'Daily Calories', 'tip': 'You burn 2479 calories during a typical day. To achieve your goal of losing weight, try to stay below your calorie needs and increase your activity level. However, make sure you are eating nutritious meals and not restricting your calories too much - eating too little or losing weight rapidly can be unhealthy and dangerous.'}
-    assert generator.generate_amr_tip() == expected_tip
-
-    print('All test passed.')
-
-
 tips_file = f"{abspath}/tips.json"
 profile_file = f"{abspath}/profile.json"
 generator = TipGenerator(tips_file, profile_file)
 
 #print(generator.generate_tips())
-tip(input)
+#tip(input)
