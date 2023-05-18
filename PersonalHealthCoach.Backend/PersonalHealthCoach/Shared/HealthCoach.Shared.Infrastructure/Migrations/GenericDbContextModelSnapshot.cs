@@ -164,9 +164,6 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("FitnessPlanId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
@@ -182,9 +179,12 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.Property<string>("Type")
                         .HasColumnType("text");
 
+                    b.Property<Guid?>("WorkoutId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("FitnessPlanId");
+                    b.HasIndex("WorkoutId");
 
                     b.ToTable("Exercise");
                 });
@@ -401,6 +401,22 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.ToTable("WellnessTip");
                 });
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.Workout", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("FitnessPlanId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FitnessPlanId");
+
+                    b.ToTable("Workout");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.CompletedExercise", b =>
                 {
                     b.HasOne("HealthCoach.Core.Domain.ExerciseHistory", null)
@@ -468,8 +484,15 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>
                 {
-                    b.HasOne("HealthCoach.Core.Domain.FitnessPlan", null)
+                    b.HasOne("HealthCoach.Core.Domain.Workout", null)
                         .WithMany("Exercises")
+                        .HasForeignKey("WorkoutId");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.Workout", b =>
+                {
+                    b.HasOne("HealthCoach.Core.Domain.FitnessPlan", null)
+                        .WithMany("Workouts")
                         .HasForeignKey("FitnessPlanId");
                 });
 
@@ -480,12 +503,17 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             modelBuilder.Entity("HealthCoach.Core.Domain.FitnessPlan", b =>
                 {
-                    b.Navigation("Exercises");
+                    b.Navigation("Workouts");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Domain.FoodHistory", b =>
                 {
                     b.Navigation("ConsumedFoods");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.Workout", b =>
+                {
+                    b.Navigation("Exercises");
                 });
 #pragma warning restore 612, 618
         }
