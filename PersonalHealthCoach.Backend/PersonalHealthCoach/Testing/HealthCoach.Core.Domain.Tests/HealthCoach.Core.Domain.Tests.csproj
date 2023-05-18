@@ -26,7 +26,6 @@
 	<ItemGroup>
 	  <Folder Include="Factories\User\" />
 	  <Folder Include="Report\" />
-	  <Folder Include="PersonalPlans\Fitness\" />
 	  <Folder Include="User\" />
 	</ItemGroup>
 

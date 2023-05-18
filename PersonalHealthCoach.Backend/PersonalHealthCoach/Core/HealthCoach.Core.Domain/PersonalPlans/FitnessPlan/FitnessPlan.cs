@@ -22,7 +22,7 @@ public sealed class FitnessPlan : AggregateRoot
 
     public Guid UserId { get; private set; }
 
-    public IReadOnlyCollection<Workout> Workouts { get; private set; }
+    public IReadOnlyCollection<Workout> Workouts { get; set; }
 
     public DateTime CreatedAt { get; private set; }
 }

@@ -19,6 +19,17 @@ public sealed class FitnessPlanRepository : IFitnessPlanRepository
             .Include(e => e.Workouts)
             .FirstOrDefaultAsync(f => f.UserId == userId);
 
+        var newWorkouts = new List<Workout>();
+        foreach(var workout in plan.Workouts)
+        {
+            var db = await dbContext.Set<Workout>()
+                .Include(w => w.Exercises)
+                .FirstOrDefaultAsync(w => w.Id == workout.Id);
+
+            newWorkouts.Add(workout);
+        }
+        plan.Workouts = newWorkouts;
+
         return plan;
     }
 }

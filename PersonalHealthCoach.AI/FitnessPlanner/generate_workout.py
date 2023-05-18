@@ -168,33 +168,33 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
     # distributie exercitii pentru obiectiv #new
     if user_data["fitness_score"]<3:
         exercises_for_goal = {
-        "Lose fat": {"Cardio": 4, "Strength": 3, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
-        "Increase muscle mass": {"Cardio": 1, "Strength": 5, "Plyometrics": 0, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 1},
-        "Body recomposition": {"Cardio": 3, "Strength": 4, "Plyometrics": 0, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
+        "Lose weight": {"Cardio": 4, "Strength": 3, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
+        "Gain muscular mass": {"Cardio": 1, "Strength": 5, "Plyometrics": 0, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 1},
+        "Maintain weigth": {"Cardio": 3, "Strength": 4, "Plyometrics": 0, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
         "Improve cardiovascular health": {"Cardio": 5, "Strength": 2, "Plyometrics": 0, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
         "Increase strength": {"Cardio": 1, "Strength": 4, "Plyometrics": 0, "Powerlifting": 2, "Olympic Weightlifting": 0, "Stretching": 1},
         "Increase endurance": {"Cardio": 5, "Strength": 1, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
-        "Overall health": {"Cardio": 3, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 2}
+        "Improve overall health": {"Cardio": 3, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 2}
     }
     elif user_data["fitness_score"]>=3 and user_data["fitness_score"]<=3:
          exercises_for_goal = {
-        "Lose fat": {"Cardio": 3, "Strength": 4, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
-        "Increase muscle mass": {"Cardio": 1, "Strength": 4, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 1, "Stretching": 0},
-        "Body recomposition": {"Cardio": 2, "Strength": 4, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 1, "Stretching": 0},
+        "Lose weight": {"Cardio": 3, "Strength": 4, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
+        "Gain muscular mass": {"Cardio": 1, "Strength": 4, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 1, "Stretching": 0},
+        "Maintain weigth": {"Cardio": 2, "Strength": 4, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 1, "Stretching": 0},
         "Improve cardiovascular health": {"Cardio": 4, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
         "Increase strength": {"Cardio": 0, "Strength": 4, "Plyometrics": 1, "Powerlifting": 2, "Olympic Weightlifting": 1, "Stretching": 0},
         "Increase endurance": {"Cardio": 4, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
-        "Overall health": {"Cardio": 2, "Strength": 3, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 2}
+        "Improve overall health": {"Cardio": 2, "Strength": 3, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 2}
     }
     else:
         exercises_for_goal={
-    "Lose fat": {"Cardio": 3, "Strength": 3, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 1, "Stretching": 0},
-    "Increase muscle mass": {"Cardio": 1, "Strength": 4, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 1, "Stretching": 0},
-    "Body recomposition": {"Cardio": 2, "Strength": 4, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 0},
+    "Lose weight": {"Cardio": 3, "Strength": 3, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 1, "Stretching": 0},
+    "Gain muscular mass": {"Cardio": 1, "Strength": 4, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 1, "Stretching": 0},
+    "Maintain weigth": {"Cardio": 2, "Strength": 4, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 0},
     "Improve cardiovascular health": {"Cardio": 4, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
     "Increase strength": {"Cardio": 1, "Strength": 3, "Plyometrics": 0, "Powerlifting": 2, "Olympic Weightlifting": 2, "Stretching": 0},
     "Increase endurance": {"Cardio": 4, "Strength": 1, "Plyometrics": 2, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
-    "Overall health": {"Cardio": 2, "Strength": 3, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 1}
+    "Improve overall health": {"Cardio": 2, "Strength": 3, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 1}
 }
 
 

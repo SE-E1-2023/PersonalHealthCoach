@@ -33,6 +33,6 @@ internal class GetLatestFitnessPlanCommandHandler : IRequestHandler<GetLatestFit
             return planResult;
         }
 
-        return Result.Success()
+        return await Result.Success().Map(() => repository.Load(request.UserId));
     }
 }

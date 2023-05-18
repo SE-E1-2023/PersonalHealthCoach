@@ -82,7 +82,7 @@ public class DeleteFitnessPlanCommandHandlerTests
     {
         //Arrange
         var fitnessPlan = PlansFactory.FitnessPlans.Any();
-        var exerciseCount = fitnessPlan.Exercises.Count;
+        var exerciseCount = fitnessPlan.Workouts.Count;
 
         var command = Command() with { FitnessPlanId = fitnessPlan.Id, CallerId = manager.Id };
 
