@@ -8,6 +8,10 @@ Iteratia 1 (saptamanile 6 si 7):
 * AI:
   - modalitate de comunicare cu backend. AI va returna un raspusn calculat random pe baza dataset-ului de mai jos
   - json dataset cu mancare si alte date tip facts
+ 
+Iteratia 2 (saptamanile 8 si 9):
+* AI:
+  - Diet Planner functii pentru cerere de dieta si de diferite tipuri de mancare
 
 Guideline pentru lucru pe branch-uri.
 

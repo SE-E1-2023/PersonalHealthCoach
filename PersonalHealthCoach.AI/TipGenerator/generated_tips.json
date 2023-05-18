@@ -2,7 +2,7 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Learn how to fight fatigue. Fatigue may be your biggest enemy when endurance training, but there are some ways to combat it. First, drink beet juice, which is packed with healthy nitrates that can improve your cardiovascular functioning. Beets can actually increase stamina by up to 16%, and it helps your muscles produce more energy, more efficiently, making exercise less exhausting. Another way to boost your performance is by carefully selecting your music. When people listen to favorable music their blood vessels expanded 26%."
+        "Tip": "Opt for Healthier Snack and Fast-food Options. It's hard to avoid that 3 p.m. stomach rumble. While eating something to hold you over until dinner is fine, some choices may be better than others. As often as possible, try to have some fruit, veggies, or snacks with a lot of protein handy. However, if you find fast food is your only option, pull up the restaurant's nutrition facts online. You can make an informed decision ahead of time about what to order. Nearly every quick-service restaurant has a relatively healthful option or two. Salads, chili, or grilled chicken are all good options."
     },
     {
         "Type": "Fitness",
@@ -12,12 +12,12 @@
     {
         "Type": "Diet",
         "Importance Level": "Medium",
-        "Tip": "Drink plenty of water to help reduce cravings."
+        "Tip": "Eat more protein and fiber to stay full longer."
     },
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Find a support system to keep you motivated and accountable."
+        "Tip": "Track your food intake to ensure you're in a calorie deficit."
     },
     {
         "Type": "Daily Calories",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. By getting enough sleep on a regular basis, you're also reducing your risk of developing chronic health problems such as obesity, diabetes, and heart disease. In addition, you'll have better cognitive function and memory, which can help you perform better at work or in school."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -72,26 +72,36 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Coconuts are loaded with fiber and powerful fatty acids called medium-chain triglycerides (MCTs)."
+        "Tip": "Ezekiel bread may be the healthiest bread you can buy. It\u2019s made from organic sprouted whole grains, as well as several legumes."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "Wheat germ is the part of wheat that grows into a plant. It is essentially the embryo of a seed. Germ, along with bran, is a byproduct of milling. Refining cereals often removes the germ and bran content. Whole grain products, however, still contain the germ and bran. This makes them a more healthful choice."
+        "Tip": "One 2019 study in rats showed that consuming leafy greens for 6 weeks led to a significant reduction in cardiovascular risk factors. Spinach is an example of a leafy green with antioxidant content, especially when it is raw, steamed, or very lightly boiled."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Oranges. Your go-to source for vitamin C, which, among other useful traits, may stimulate collagen synthesis to keep skin looking supple. Try this: Roast orange wedges along with salmon. Or try Salmon Fillet With Citrus and Thyme."
+        "Tip": "Kiwi. Ounce for ounce, this fuzzy fruit contains more vitamin C than an orange and is a good source of potassium and fiber. Try this: Thinly slice, then drizzle with honey and sprinkle with toasted, unsweetened coconut."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": "Pushups. Drop and give me 20! Pushups are one of the most basic yet effective bodyweight moves you can perform because of the number of muscles that are recruited to perform them. 1. Start in a plank position. Your core should be tight, shoulders pulled down and back, and your neck neutral. 2. Bend your elbows and begin to lower your body down to the floor. When your chest grazes it, extend your elbows and return to the start. Focus on keeping your elbows close to your body during the movement. 3. Complete 3 sets of as many reps as possible. If you can\u2019t quite perform a standard pushup with good form, drop down to a modified stance on your knees \u2014 you\u2019ll still reap many of the benefits from this exercise while building strength."
+        "Tip": "Side planks. A healthy body requires a strong core at its foundation, so don\u2019t neglect core-specific moves like the side plank. Focus on the mind-muscle connection and controlled movements to ensure you\u2019re completing this move effectively. 1. Lie on your right side with your left leg and foot stacked on top of your right leg and foot. Prop your upper body up by placing your right forearm on the ground and elbow directly under your shoulder. 2. Contract your core to stiffen your spine and lift your hips and knees off the ground, forming a straight line with your body. 3. Return to start in a controlled manner. Repeat 3 sets of 10\u201315 reps on one side, then switch."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Running. Running is a sport for all ages: people who run regularly are less likely to experience bone and muscle loss as they get older compared to those who do not. Through running, bones grow stronger by responding to physical demands. Running is also great for mental and overall physical health. Going for a run causes a release of endorphins which creates a well-known sensation referred to commonly as \u201crunner\u2019s high.\u201d"
+        "Tip": "Gym. Going to the gym is great because of the classes on offer. Whether it\u2019s spinning, TRX, kettlebells or yoga, the gym caters for all ages and abilities so you can feel comfortable in your surroundings and get a great workout whenever you want it. Due to a rise in popularity, gyms offer specific classes for the likes of fat burning, muscle toning, aerobic exercise etc., so there really is something for everyone. In addition, going to classes means you can meet people of the same level and encourage each other to get the most from your classes, while also enjoying their company."
+    },
+    {
+        "Type": "Daily Calories Burned",
+        "Importance Level": "Medium",
+        "Tip": "None"
+    },
+    {
+        "Type": "Weekly Steps Calories Burned",
+        "Importance Level": "High",
+        "Tip": "Congratulations! With a total of 89000 steps you managed to burn 3043 calories in the last week. Keep up the good work also in the next weeks!"
     }
 ]
