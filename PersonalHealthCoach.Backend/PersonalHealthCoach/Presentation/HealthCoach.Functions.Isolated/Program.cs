@@ -7,7 +7,7 @@ using HealthCoach.Shared.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-await HostBuilderExtensions.CreateAndApplyMigrationAsync();
+//await HostBuilderExtensions.CreateAndApplyMigrationAsync();
 
 var host = new HostBuilder()
     .ConfigureAppConfiguration(config =>
@@ -22,7 +22,7 @@ var host = new HostBuilder()
 using (var scope = host.Services.CreateScope())
 {
     var databaseSeeder = scope.ServiceProvider.GetRequiredService<DbPopulationService>();
-    await databaseSeeder.PopulateDb();
+    //await databaseSeeder.PopulateDb();
 }
 
 host.Run();

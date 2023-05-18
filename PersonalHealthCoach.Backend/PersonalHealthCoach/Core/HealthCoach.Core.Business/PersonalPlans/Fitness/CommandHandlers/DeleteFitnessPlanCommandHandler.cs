@@ -34,10 +34,10 @@ internal sealed class DeleteFitnessPlanCommandHandler : IRequestHandler<DeleteFi
         return await Result.FirstFailureOrSuccess(callerResult, planResult)
             .Tap(async () =>
             {
-                foreach (var ex in planResult.Value!.Exercises)
-                {
-                    await repository.Delete(ex);
-                }
+                //foreach (var ex in planResult.Value!.FirstWorkout)
+                //{
+                //    await repository.Delete(ex);
+                //}
             })
             .Tap(() => repository.Delete(planResult.Value!));
     }

@@ -7,26 +7,37 @@ public sealed class FitnessPlan : AggregateRoot
 {
     public FitnessPlan() { }
 
-    private FitnessPlan(Guid userId, IReadOnlyCollection<Exercise> exercises) : this()
+    private FitnessPlan(Guid userId, IReadOnlyCollection<Workout> workouts) : this()
     {
         UserId = userId;
-        Exercises = exercises;
         CreatedAt = TimeProvider.Instance().UtcNow;
+        Workouts = workouts;
     }
 
-    public static Result<FitnessPlan> Create(Guid userId, IReadOnlyCollection<Exercise> exercises)
+    public static Result<FitnessPlan> Create(Guid userId, IReadOnlyCollection<Workout> workout)
     {
-        var exercisesResult = exercises
-            .EnsureNotNull(DomainErrors.FitnessPlan.Create.NoExercises)
-            .Ensure(e => e.Any(), DomainErrors.FitnessPlan.Create.NoExercises);
-
-        return exercisesResult
-            .Map(e => new FitnessPlan(userId, e));
+        return Result.Success()
+            .Map(() => new FitnessPlan(userId, workout));
     }
 
     public Guid UserId { get; private set; }
 
-    public IReadOnlyCollection<Exercise> Exercises { get; private set; }
+    public IReadOnlyCollection<Workout> Workouts { get; set; }
 
     public DateTime CreatedAt { get; private set; }
+}
+
+public sealed class Workout : AggregateRoot
+{
+    public Workout()
+    {
+        
+    }
+
+    public Workout(IReadOnlyCollection<Exercise> exercises)
+    {
+        Exercises = exercises;
+    }
+
+    public IReadOnlyCollection<Exercise> Exercises { get; set; }
 }
