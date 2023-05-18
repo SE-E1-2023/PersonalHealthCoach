@@ -1,0 +1,184 @@
+@media screen and (min-width:992px) 
+{
+
+    body {
+      display: block;
+      
+      min-height: 100vh;
+      background: linear-gradient(#a0def5,#74d0f1, #4284be);
+      overflow-y: scroll;
+  overflow-x: hidden;
+    }
+    .bg-color
+    {
+      background-color: aliceblue;
+    }
+   
+      .logo-a {
+        font-size: 150%;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000000;
+        font-family: 'Oswald', sans-serif;    
+        margin-left: 10px;
+      }
+  
+  
+ 
+    
+      .submit{
+        font-size: 110%;
+        height: 45px;
+        width: 100%;
+        background: linear-gradient(45deg, #1bc4be, #220dc0);
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        padding: 12%;
+    
+    }
+    .submit:hover {
+        background: linear-gradient(45deg, #220dc0, #0b349b, #1a69ae, #74d0f1, #1a69ae, #0b349b, #220dc0);
+        background-size: 300% 300%;
+        animation: gradient 2s ease infinite; 
+        box-shadow: 0px 5px 10px rgba(48, 3, 172, 0.2);
+        transform: translateY(-2px);
+    }
+    
+
+    .submit_history{
+      font-size: 110%;
+      height: 45px;
+      width: 100%;
+      background: linear-gradient(45deg, #1bc4be, #220dc0);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      padding: 19%;
+  
+  }
+  .submit_history:hover {
+      background: linear-gradient(45deg, #220dc0, #0b349b, #1a69ae, #74d0f1, #1a69ae, #0b349b, #220dc0);
+      background-size: 300% 300%;
+      animation: gradient 2s ease infinite; 
+      box-shadow: 0px 5px 10px rgba(48, 3, 172, 0.2);
+      transform: translateY(-2px);
+  }
+  
+
+
+    .text_diet {  
+      font-size: 30px;
+      text-align: center;
+      font-family: 'Source Sans Pro', sans-serif;
+      
+
+      
+  
+  }
+
+    .margin_row {
+      margin-top: 40px;
+    }
+
+    .history_margin_left {
+      margin-left: 10px;
+    }
+
+  
+  
+  .foodhistory-header {
+    text-align: center;
+    justify-content: center;
+    font-size: 200%;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    margin-top: 30px;
+    
+
+  }
+
+  .foodhistory-div {
+    text-align: center;
+    justify-content: center;
+    font-size: 200%;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    margin-top: 30px;
+
+  }
+
+}
+
+
+
+
+@media screen and (min-width:100px) {
+
+
+
+    body {
+      display: block;
+      
+      min-height: 100vh;
+      background: linear-gradient(#a0def5,#74d0f1, #4284be);
+      overflow-y: scroll;
+  overflow-x: hidden;
+    }
+    .bg-color
+    {
+      background-color: aliceblue;
+    }
+   
+      .logo-a {
+        font-size: 150%;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000000;
+        font-family: 'Oswald', sans-serif;    
+        margin-left: 10px;
+      }
+  
+
+      
+  
+  
+
+  
+    .margin_row {
+      margin-top: 40px;
+    }
+    .history_margin_left{
+      margin-left: 10px;
+    }
+    
+    .features_margin_left {
+      margin-left: 10px;
+    }
+    .foodhistory-header {
+      text-align: center;
+      font-size: 200%;
+      text-decoration: none;
+      color: #000000;
+      margin-top: 30px;
+      font-family: 'Oswald', sans-serif; 
+      
+  
+    }
+    .foodhistory-div {
+      text-align: center;
+      justify-content: center;
+      font-size: 200%;
+      font-weight: bold;
+      text-decoration: none;
+      color: #000000;
+      margin-top: 30px;
+  
+    }
+  }
