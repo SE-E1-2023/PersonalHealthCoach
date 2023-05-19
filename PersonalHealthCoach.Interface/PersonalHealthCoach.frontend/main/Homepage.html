@@ -1,91 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
-      rel="stylesheet"
-      />
-    <link href="style-home.css" rel="stylesheet" />
-    <title>Home</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="logo">
-        <a href="Homepage.html">Personal Health Coach</a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="style-home.css" rel="stylesheet" />
+  <!-- <script src="logout.js"></script> -->
+  <title>Home</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="Homepage.html">Personal Health Coach</a>
+    </div>
+    <div class="help-myaccount">
+      <div class="help">
+        <a href="help.html">Help</a>
       </div>
-      <div class="help-myaccount">
-        <div class="help">
-          <a href="help.html">Help</a>
-        </div>
-        <div class="myaccount">
-          <a href="myaccount.html">My&nbsp;Account</a>
-        </div>
+      <div class="myaccount">
+        <a href="myaccount.html">My&nbsp;Account</a>
       </div>
-    </header>
-    <main>
-      <div class="welcome">
-        <h1>Hello, <span id="name"></span>!</h1>
+      <div class="log-out">
+        <a href="../auth/Login.html">Logout</a>
       </div>
-      <div class="features">
-        <a href="nutrition.html"><img src="yogurt.jpg" width="370" height="250"
-            /></a>
-        <div class="nutrition">Nutrition</div>
-        <a href="fitness.html"><img src="health.jpg" width="370" height="250"
-            /></a>
-        <div class="fitness">Fitness</div>
-        <a href="wellness.html"><img src="spa.jpg" width="370" height="250"
-            /></a>
-        <div class="wellness">Wellness</div>
-      </div>
-      <div class="personal-tip">
-        <form id="personal-tip-form">
-          <button type="submit" class="tip">
-            Request Personal Tip
-          </button>
-        </form>
-      </div>
-    </main>
-    <script>
-            const personalTipForm =
-                document.querySelector("#personal-tip-form");
-            personalTipForm.addEventListener("submit", async (event) => {
-                event.preventDefault();
-                const response = await fetch(
-                    "http://localhost:7071/api/v1/users/0b45677e-0f74-45ff-bb4d-ef8c95c4925e/plans/tips",
-                    {
-                        method: "POST",
-                        body: JSON.stringify({
-                            UserId: "0b45677e-0f74-45ff-bb4d-ef8c95c4925e", //de inlocuit cu cookie-ul
-                            Type: "First time in app",
-                        }),
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                    }
-                );
-                const responseData = await response.json();
-                if (response.ok) {
-                    alert(`Your personal tip is: ${responseData.TipText}`);
-                } else if (
-                    response.status === 404 &&
-                    responseData.ErrorCode === "PersonalTip.Create.UserNotFound"
-                ) {
-                    alert("User not found.");
-                } else if (
-                    response.status === 404 &&
-                    responseData.ErrorCode ===
-                        "PersonalTip.Create.PersonalDataNotFound"
-                ) {
-                    alert("Personal data not found for this user.");
-                } else {
-                    alert("An error occurred. Please try again later.");
-                }
-            });
-        </script>
-  </body>
+    </div>
+  </header>
+  <main>
+    <div class="welcome">
+      <h1>Hello, <span id="name"></span>!</h1>
+    </div>
+    <div class="features">
+      <a href="nutrition.html"><img src="yogurt.jpg" width="370" height="250" /></a>
+      <div class="nutrition">Nutrition</div>
+      <a href="fitness.html"><img src="health.jpg" width="370" height="250" /></a>
+      <div class="fitness">Fitness</div>
+      <a href="wellness.html"><img src="spa.jpg" width="370" height="250" /></a>
+      <div class="wellness">Wellness</div>
+    </div>
+    <div class="personal-tip">
+      <form id="personal-tip-form">
+        <button type="submit" class="tip">
+          Request Personal Tip
+        </button>
+      </form>
+    </div>
+  </main>
+  <script>
+    const personalTipForm =
+      document.querySelector("#personal-tip-form");
+    personalTipForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const response = await fetch(
+        "http://localhost:7071/api/v1/users/0b45677e-0f74-45ff-bb4d-ef8c95c4925e/plans/tips",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            UserId: "0b45677e-0f74-45ff-bb4d-ef8c95c4925e", //de inlocuit cu cookie-ul
+            Type: "First time in app",
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const responseData = await response.json();
+      if (response.ok) {
+        alert(`Your personal tip is: ${responseData.TipText}`);
+      } else if (
+        response.status === 404 &&
+        responseData.ErrorCode === "PersonalTip.Create.UserNotFound"
+      ) {
+        alert("User not found.");
+      } else if (
+        response.status === 404 &&
+        responseData.ErrorCode ===
+        "PersonalTip.Create.PersonalDataNotFound"
+      ) {
+        alert("Personal data not found for this user.");
+      } else {
+        alert("An error occurred. Please try again later.");
+      }
+    });
+  </script>
+</body>
+
 </html>
