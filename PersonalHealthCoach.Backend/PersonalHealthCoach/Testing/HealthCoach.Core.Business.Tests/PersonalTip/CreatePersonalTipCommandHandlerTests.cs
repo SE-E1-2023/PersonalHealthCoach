@@ -1,11 +1,11 @@
-﻿using CSharpFunctionalExtensions;
+﻿using Moq;
+using Xunit;
 using FluentAssertions;
+using HealthCoach.Shared.Web;
 using HealthCoach.Core.Domain;
+using CSharpFunctionalExtensions;
 using HealthCoach.Core.Domain.Tests;
 using HealthCoach.Shared.Infrastructure;
-using HealthCoach.Shared.Web;
-using Moq;
-using Xunit;
 
 namespace HealthCoach.Core.Business.Tests;
 
@@ -15,11 +15,13 @@ public class CreatePersonalTipCommandHandlerTests
     private readonly Mock<IEfQueryProvider> queryProviderMock = new();
     private readonly Mock<IHttpClient> httpClientMock = new();
     private readonly Mock<IHttpClientFactory> httpClientFactoryMock = new();
+    private readonly Mock<IFoodHistoryRepository> foodHistoryRepositoryMock = new();
+    private readonly Mock<IExerciseHistoryRepository> exerciseHistoryRepositoryMock = new();
 
     public CreatePersonalTipCommandHandlerTests()
     {
         httpClientFactoryMock
-            .Setup(f => f.OnBaseUrl(ExternalEndpoints.AI.BaseUrl).OnRoute(ExternalEndpoints.AI.TipGenerator))
+            .Setup(f => f.OnBaseUrl(ExternalEndpoints.Ai.BaseUrl).OnRoute(ExternalEndpoints.Ai.TipGenerator))
             .Returns(httpClientMock.Object);
     }
 
@@ -93,10 +95,9 @@ public class CreatePersonalTipCommandHandlerTests
 
         var apiResponse = new RequestPersonalTipCommandResponse
         {
-            message = "success",
-            status = "ok",
-            tip_type = "general",
-            tip = ""
+            ImportanceLevel = "big",
+            Tip = "",
+            Type = "type"
         };
 
         repositoryMock.Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(user);
@@ -123,10 +124,9 @@ public class CreatePersonalTipCommandHandlerTests
 
         var apiResponse = new RequestPersonalTipCommandResponse
         {
-            message = "success",
-            status = "ok",
-            tip_type = "general",
-            tip = "test"
+            ImportanceLevel = "big",
+            Tip = "test",
+            Type = "general"
         };
 
         repositoryMock.Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(user);
@@ -148,6 +148,5 @@ public class CreatePersonalTipCommandHandlerTests
 
     private static CreatePersonalTipCommand Command() => new(Guid.NewGuid());
 
-    private CreatePersonalTipCommandHandler Sut() => new(repositoryMock.Object, queryProviderMock.Object, httpClientFactoryMock.Object);
+    private CreatePersonalTipCommandHandler Sut() => new(repositoryMock.Object, queryProviderMock.Object, httpClientFactoryMock.Object, foodHistoryRepositoryMock.Object, exerciseHistoryRepositoryMock.Object);
 }
-

@@ -7,7 +7,7 @@ public sealed class FitnessPlan : AggregateRoot
 {
     public FitnessPlan() { }
 
-    public FitnessPlan(Guid userId, IReadOnlyCollection<Exercise> exercises) : this()
+    private FitnessPlan(Guid userId, IReadOnlyCollection<Exercise> exercises) : this()
     {
         UserId = userId;
         Exercises = exercises;

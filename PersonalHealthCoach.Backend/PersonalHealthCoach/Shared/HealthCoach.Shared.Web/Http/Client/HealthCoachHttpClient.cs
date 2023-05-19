@@ -1,5 +1,5 @@
-﻿using System.Net.Http.Json;
-using System.Text.Json;
+﻿using System.Text.Json;
+using System.Net.Http.Json;
 using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Shared.Web;
@@ -14,7 +14,7 @@ public class HealthCoachHttpClient : IHttpClient
 
     private HealthCoachHttpClient() { }
 
-    public HealthCoachHttpClient(string baseUrl)
+    internal HealthCoachHttpClient(string baseUrl)
     {
         BaseUrl = baseUrl;
 
@@ -29,9 +29,22 @@ public class HealthCoachHttpClient : IHttpClient
         };
     }
 
+    public string BaseUrl { get; private init; }
+
+    public string Route { get; private set; }
+
+    public IDictionary<string, string> Headers { get; private set; }
+    
     public IHttpClient OnRoute(string route)
     {
         this.Route = route;
+
+        return this;
+    }
+
+    public IHttpClient WithHeaders(IDictionary<string, string> headers)
+    {
+        this.Headers = headers;
 
         return this;
     }
@@ -60,7 +73,71 @@ public class HealthCoachHttpClient : IHttpClient
         return Result.Success(await response.Content.ReadFromJsonAsync<TResult>());
     }
 
-    public string BaseUrl { get; private init; }
+    public async Task<Result<TResult>> Patch<TRequest, TResult>(TRequest request) where TRequest : class where TResult : class
+    {
+        var content = JsonContent.Create(request, typeof(TRequest), options: jsonSerializerOptions);
+        var requestMessage = new HttpRequestMessage(HttpMethod.Patch, Route)
+        {
+            Content = content
+        }.WithHeaders(Headers);
 
-    public string Route { get; private set; }
+        var response = await httpClient.SendAsync(requestMessage);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            return Result.Failure<TResult>($"Request failed with status code {response.StatusCode}");
+        }
+
+        return Result.Success(await response.Content.ReadFromJsonAsync<TResult>(jsonSerializerOptions));
+    }
+
+    public async Task<Result> Patch<TRequest>(TRequest request) where TRequest : class
+    {
+        var content = JsonContent.Create(request, typeof(TRequest), options: jsonSerializerOptions);
+        var requestMessage = new HttpRequestMessage(HttpMethod.Patch, Route)
+        {
+            Content = content
+        }.WithHeaders(Headers);
+
+        var response = await httpClient.SendAsync(requestMessage);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            return Result.Failure($"Request failed with status code {response.StatusCode}");
+        }
+
+        return Result.Success();
+    }
+
+    public async Task<Result> Delete<TRequest>(TRequest request) where TRequest : class
+    {
+        var content = JsonContent.Create(request, typeof(TRequest), options: jsonSerializerOptions);
+        var requestMessage = new HttpRequestMessage(HttpMethod.Delete, Route)
+        {
+            Content = content,
+        }.WithHeaders(Headers);
+        
+
+        var response = await httpClient.SendAsync(requestMessage);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            return Result.Failure($"Request failed with status code {response.StatusCode}");
+        }
+
+        return Result.Success();
+    }
+}
+
+internal static class HttpClientExtensions
+{
+    public static HttpRequestMessage WithHeaders(this HttpRequestMessage request, IDictionary<string, string> headers)
+    {
+        foreach (var header in headers)
+        {
+            request.Headers.Add(header.Key, header.Value);
+        }
+
+        return request;
+    }
 }

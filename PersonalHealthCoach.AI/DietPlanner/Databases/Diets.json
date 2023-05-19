@@ -4,7 +4,7 @@
             "name" : "Pegan diet",
             "use" : "weight loss",
             "tag" : ["dairyFree"],
-            "do":[
+            "todo":[
             "Fruits",
             "Vegetables, mostly those that have low starch or rank low on the glycemic index, such as broccoli, carrots, peas, and tomatoes",
             "Nuts like almonds, pistachios, and walnuts",
@@ -25,7 +25,7 @@
             "name" : "Gluten free diet",
             "use" : "weight loss",
             "tag" : ["glutenFree"],
-            "do":[
+            "todo":[
             "Fruits and vegetables",
             "Beans, seeds, legumes and nuts in their natural, unprocessed forms",
             "Eggs",
@@ -44,7 +44,7 @@
             "name" : "Francese diet",
             "use" : "weight loss",
             "tag" : [],
-            "do":[
+            "todo":[
             "Fruit, vegetables, legumes (e.g. lentils and beans), nuts and whole grains (e.g. unprocessed maize, millet, oats, wheat and brown rice).",
             "At least 400 g (i.e. five portions) of fruit and vegetables per day (2), excluding potatoes, sweet potatoes, cassava and other starchy roots.",
             "Less than 5  g of salt (equivalent to about one teaspoon) per day (8).  Salt should be iodized.",
@@ -58,7 +58,7 @@
             "name" : "Intermittent fasting",
             "use" : "weight loss",
             "tag" : [],
-            "do":[
+            "todo":[
             "Fruit, vegetables, legumes (e.g. lentils and beans), nuts and whole grains (e.g. unprocessed maize, millet, oats, wheat and brown rice).",
             "At least 400 g (i.e. five portions) of fruit and vegetables per day (2), excluding potatoes, sweet potatoes, cassava and other starchy roots.",
             "Less than 5  g of salt (equivalent to about one teaspoon) per day (8).  Salt should be iodized.",
@@ -72,7 +72,7 @@
             "name" : "Mediterranean Diet",
             "use" : "weight loss",
             "tag" : [],
-            "do":[
+            "todo":[
             "Fruits", "vegetables",
             "Nuts, seeds, and nut butters",
             "Eggs",
@@ -95,7 +95,7 @@
             "name" : "Volumetrics Diet",
             "use" : "weight loss",
             "tag" : ["dairyFree"],
-            "do":[
+            "todo":[
             "Fresh fruits", "Fresh or frozen vegetables",
             "Beans and legumes",
             "Whole grains",
@@ -113,7 +113,7 @@
             "name" : "Pescatarian Diet",
             "use" : "weight loss",
             "tag" : ["glutenFree"],
-            "do":[
+            "todo":[
             "Fresh fish (salmon, cod, sardines, pollock, and catfish)",
             "Fresh shellfish (clams, crab, oysters, shrimp, and scallops)",
             "Canned fish (salmon, tuna, mackerel, sardines)",
@@ -141,7 +141,7 @@
             "name" : "TLC Diet",
             "use" : "weight loss",
             "tag" : ["vegetarian"],
-            "do":[
+            "todo":[
             "Vegetables",
             "Fruit",
             "Whole grains",
@@ -165,7 +165,7 @@
             "name" : "MIND Diet",
             "use" : "weight loss",
             "tag" : [],
-            "do":[
+            "todo":[
             "Green, leafy vegetables(kale, spinach, cooked greens, and salads)",
             "All other vegetables",
             "Berries(strawberries, blueberries, raspberries, blackberrie)",
@@ -190,7 +190,7 @@
             "name" : "Dr. Weil’s Anti-Inflammatory Diet",
             "use" : "weight loss",
             "tag" : [],
-            "do":[
+            "todo":[
             "Dark, leafy greens such as spinach or kale",
             "Cruciferous vegetables such as cabbage and broccoli",
             "Berries(strawberries, blueberries, raspberries, blackberrie)",
@@ -217,7 +217,7 @@
             "name" : "Ornish Diet",
             "use" : "weight loss",
             "tag" : ["vegetarian"],
-            "do":[
+            "todo":[
             "Fruits and vegetables",
             "Legumes",
             "Soy products",
@@ -245,7 +245,7 @@
             "name" : "Paleo Diet",
             "use" : "weight loss",
             "tag" : ["dairyFree"],
-            "do":[
+            "todo":[
             "Fruits",
             "Vegetables",
             "Legumes",
@@ -270,7 +270,7 @@
             "name" : "Keto Diet",
             "use" : "weight loss",
             "tag" : [],
-            "do":[
+            "todo":[
             "Fish and Seafood(Salmon, sardines, mackerel, albacore tuna)",
             "Low-Carb Veggies(Broccoli, cauliflower, green beans, bell peppers, zucchini, spinach)",
             "Cheese",
@@ -296,7 +296,7 @@
             "name" : "Sirtfood Diet",
             "use" : "weight loss",
             "tag" : ["vegan"],
-            "do":[
+            "todo":[
             "Arugula",
             "Buckwheat",
             "Capers",
@@ -331,7 +331,7 @@
             "name" : "Intermittent fasting",
             "use" : "weight loss",
             "tag" : ["vegan","vegetarian","glutenFree","dairyFree"],
-            "do":[
+            "todo":[
             "The rules for this diet are simple. A person needs to decide on and adhere to a 12-hour fasting window every day.",
             "Fasting for 16 hours a day, leaving an eating window of 8 hours, is called the 16:8 method or the Leangains diet.",
             "People following the 5:2 diet eat standard amounts of healthful food for 5 days and reduce calorie intake on the other 2 days.",

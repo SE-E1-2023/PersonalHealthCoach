@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abs Training Workout Plan</title>
+  <link rel="stylesheet" href="fit.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="top-header">Abs Training Workout Plan</h1>
+    <form>
+      <fieldset>
+        <h2>Select your training level:</h2>
+        <br>
+        <label>
+          <input type="radio" name="level" value="beginner" checked>
+          Beginner
+        </label>
+        <label>
+          <input type="radio" name="level" value="intermediate">
+          Intermediate
+        </label>
+        <label>
+          <input type="radio" name="level" value="advanced">
+          Advanced
+        </label>
+      </fieldset>
+
+      <div class="submit-field">
+        <button type="button" class="submit">Generate Workout Plan</button>
+      </div>
+
+      <div id="workout-plan"></div>
+      
+    </form>
+  </div>
+  
+  <script>
+    const workoutPlans = {
+      beginner: [
+    "Crunches 20 reps X 3 sets",
+    "Reverse crunches 15 reps X 3 sets",
+    "Plank 30 seconds X 3 sets",
+    "Russian twists 10 reps X 3 sets"
+],
+      intermediate: [
+    "Hanging leg raises 12 reps X 4 sets",
+    "Bicycle crunches 20 reps X 4 sets",
+    "Side plank 30 seconds each side X 4 sets",
+    "Lying leg raises 12 reps X 4 sets"
+],
+      advanced: [
+    "Dragon flags 8 reps X 5 sets",
+    "Weighted crunches 20 reps X 5 sets",
+    "Windshield wipers 10 reps X 5 sets",
+    "Plank with leg lifts 12 reps X 5 sets"
+]
+    };
+    
+    const submitBtn = document.querySelector('.submit');
+    const workoutPlanEl = document.querySelector('#workout-plan');
+    const radioBtns = document.querySelectorAll('input[name="level"]');
+
+    submitBtn.addEventListener('click', () => {
+      let level;
+
+      for (let i = 0; i < radioBtns.length; i++) {
+        if (radioBtns[i].checked) {
+          level = radioBtns[i].value;
+          break;
+        }
+      }
+
+      let workoutPlan = "<h2>Your Workout Plan:</h2><ul>";
+
+      for (let i = 0; i < workoutPlans[level].length; i++) {
+        workoutPlan += "<li>" + workoutPlans[level][i] + "</li>";
+      }
+
+      workoutPlan += "</ul>";
+
+      workoutPlanEl.innerHTML = workoutPlan;
+    });
+  </script>
+</body>
+</html>

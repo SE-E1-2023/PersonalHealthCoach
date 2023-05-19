@@ -6,7 +6,7 @@ public sealed class Exercise : AggregateRoot
 {
     public Exercise() { }
 
-    public Exercise(string name, string repRange, string restTime, int sets, string type)
+    private Exercise(string name, string repRange, string restTime, int sets, string type)
     {
         Name = name;
         RepRange = repRange;

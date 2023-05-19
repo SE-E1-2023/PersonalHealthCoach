@@ -23,25 +23,105 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.CompletedExercise", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("CaloriesBurned")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CompletedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("DurationInMinutes")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid?>("ExerciseHistoryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsNew")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExerciseHistoryId");
+
+                    b.ToTable("CompletedExercise");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.ConsumedFood", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Calories")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("ConsumedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<Guid?>("FoodHistoryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsNew")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Meal")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FoodHistoryId");
+
+                    b.ToTable("ConsumedFood");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.DietPlan", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("BreakfastId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<List<string>>("DietType")
                         .IsRequired()
                         .HasColumnType("text[]");
+
+                    b.Property<Guid>("DrinkId")
+                        .HasColumnType("uuid");
 
                     b.Property<List<string>>("Interdictions")
                         .IsRequired()
                         .HasColumnType("text[]");
 
+                    b.Property<Guid>("MainCourseId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<List<string>>("Recommandations")
+                    b.Property<List<string>>("Recommendations")
                         .IsRequired()
                         .HasColumnType("text[]");
 
@@ -49,7 +129,31 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<Guid>("SideDishId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("SnackId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("SoupId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("BreakfastId");
+
+                    b.HasIndex("DrinkId");
+
+                    b.HasIndex("MainCourseId");
+
+                    b.HasIndex("SideDishId");
+
+                    b.HasIndex("SnackId");
+
+                    b.HasIndex("SoupId");
 
                     b.ToTable("DietPlan");
                 });
@@ -85,6 +189,20 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.ToTable("Exercise");
                 });
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.ExerciseHistory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ExerciseHistory");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.FitnessPlan", b =>
                 {
                     b.Property<Guid>("Id")
@@ -100,6 +218,46 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FitnessPlan");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.FoodHistory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FoodHistory");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.Meal", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<double>("Calories")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<List<string>>("Ingredients")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Meal");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Domain.PersonalData", b =>
@@ -243,6 +401,71 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.ToTable("WellnessTip");
                 });
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.CompletedExercise", b =>
+                {
+                    b.HasOne("HealthCoach.Core.Domain.ExerciseHistory", null)
+                        .WithMany("CompletedExercises")
+                        .HasForeignKey("ExerciseHistoryId");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.ConsumedFood", b =>
+                {
+                    b.HasOne("HealthCoach.Core.Domain.FoodHistory", null)
+                        .WithMany("ConsumedFoods")
+                        .HasForeignKey("FoodHistoryId");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.DietPlan", b =>
+                {
+                    b.HasOne("HealthCoach.Core.Domain.Meal", "Breakfast")
+                        .WithMany()
+                        .HasForeignKey("BreakfastId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HealthCoach.Core.Domain.Meal", "Drink")
+                        .WithMany()
+                        .HasForeignKey("DrinkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HealthCoach.Core.Domain.Meal", "MainCourse")
+                        .WithMany()
+                        .HasForeignKey("MainCourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HealthCoach.Core.Domain.Meal", "SideDish")
+                        .WithMany()
+                        .HasForeignKey("SideDishId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HealthCoach.Core.Domain.Meal", "Snack")
+                        .WithMany()
+                        .HasForeignKey("SnackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HealthCoach.Core.Domain.Meal", "Soup")
+                        .WithMany()
+                        .HasForeignKey("SoupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Breakfast");
+
+                    b.Navigation("Drink");
+
+                    b.Navigation("MainCourse");
+
+                    b.Navigation("SideDish");
+
+                    b.Navigation("Snack");
+
+                    b.Navigation("Soup");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>
                 {
                     b.HasOne("HealthCoach.Core.Domain.FitnessPlan", null)
@@ -250,9 +473,19 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .HasForeignKey("FitnessPlanId");
                 });
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.ExerciseHistory", b =>
+                {
+                    b.Navigation("CompletedExercises");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.FitnessPlan", b =>
                 {
                     b.Navigation("Exercises");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.FoodHistory", b =>
+                {
+                    b.Navigation("ConsumedFoods");
                 });
 #pragma warning restore 612, 618
         }

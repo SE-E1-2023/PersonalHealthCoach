@@ -1,6 +1,6 @@
 ﻿using MediatR;
-using CSharpFunctionalExtensions;
 using HealthCoach.Core.Domain;
+using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Core.Business;
 

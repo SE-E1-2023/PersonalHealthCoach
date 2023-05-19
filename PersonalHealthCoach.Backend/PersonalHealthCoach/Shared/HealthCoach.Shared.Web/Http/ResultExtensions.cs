@@ -6,8 +6,7 @@ namespace HealthCoach.Shared.Web;
 
 public static class ResultExtensions
 {
-    public static async Task<HttpResponseData> ToResponseData<T>(this Task<Result<T>> resultTask,
-        HttpRequestData request, Action<HttpResponseData, ApiResult> onOk)
+    public static async Task<HttpResponseData> ToResponseData<T>(this Task<Result<T>> resultTask, HttpRequestData request, Action<HttpResponseData, ApiResult> onOk)
     {
         var response = request.CreateResponse();
 
@@ -24,8 +23,7 @@ public static class ResultExtensions
         return response;
     }
 
-    public static async Task<HttpResponseData> ToResponseData(this Result result, HttpRequestData request,
-        Action<HttpResponseData, ApiResult> onOk = null)
+    public static async Task<HttpResponseData> ToResponseData(this Result result, HttpRequestData request, Action<HttpResponseData, ApiResult> onOk = null)
     {
         var response = request.CreateResponse(HttpStatusCode.NoContent);
 
@@ -42,7 +40,6 @@ public static class ResultExtensions
         return response;
     }
 
-    public static async Task<HttpResponseData> ToResponseData(this Task<Result> resultTask, HttpRequestData request,
-        Action<HttpResponseData, ApiResult> onOk = null)
+    public static async Task<HttpResponseData> ToResponseData(this Task<Result> resultTask, HttpRequestData request, Action<HttpResponseData, ApiResult> onOk = null)
         => await (await resultTask).ToResponseData(request, onOk);
 }
