@@ -80,9 +80,9 @@ class TipGenerator:
         with open(tips_file, 'r', encoding='utf-8') as f:
             self.tips_data = json.load(f)
         
-        # with open(profile_file) as f:
-        #     self.profile_data = json.load(f)
-        self.profile_data = profile_json
+        with open(profile_file) as f:
+            self.profile_data = json.load(f)
+        # self.profile_data = profile_json
     
     def generate_tips(self):
         tips = []
