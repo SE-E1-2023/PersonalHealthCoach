@@ -119,7 +119,7 @@ public class CreateFitnessPlanCommandHandlerTests
         repositoryMock.Verify(r => r.Store(It.IsAny<FitnessPlan>()), Times.Once);
     }
 
-    private static CreateFitnessPlanCommand Command() => new(Guid.NewGuid());
+    private static CreateFitnessPlanCommand Command() => new(Guid.NewGuid(), 6);
 
     private CreateFitnessPlanCommandHandler Sut() => new(repositoryMock.Object, queryProviderMock.Object, httpClientFactoryMock.Object);
 }

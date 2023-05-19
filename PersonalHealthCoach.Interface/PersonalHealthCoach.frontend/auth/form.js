@@ -4,15 +4,30 @@ async function createPersonalData() {
 
     const createPersonalDataCommand = {
         DateOfBirth: getFormItem("birthdate"),
-        Weight: getFormItem("weight"),
-        Height: getFormItem("height"),
+        Weight: getFormItem("weight") == "" ? -1 : getFormItem("weight"),
+        Height: getFormItem("height") == "" ? -1 : getFormItem("height"),
         MedicalHistory: getFormItem("medical-history").split(", "),
         CurrentIllnesses: getFormItem("current-illnesses").split(", "),
         Goal: getFormItem("goal"),
         UnwantedExercises: getFormItem("unwanted-exercises").split(", "),
-        DailySteps: getFormItem("steps"),
-        HoursOfSleep: getFormItem("sleep"),
+        DailySteps: getFormItem("steps") == "" ? 1 : getFormItem("steps"),
+        HoursOfSleep: getFormItem("sleep") == "" ? 1 : getFormItem("sleep"),
         Gender: getFormItem("gender"),
+        IsProUser: getFormItem("isProUser") == "on" ? true : false,
+        WorkoutsPerWeek: getFormItem("workouts") == "" ? 3 : getFormItem("workouts"),
+        HasOther: getFormItem("hasOther") == "on" ? true : false,
+        HasMachine: getFormItem("hasMachine") == "on" ? true : false,
+        HasBarbell: getFormItem("hasBarbell") == "on" ? true : false,
+        HasDumbbell: getFormItem("hasDumbbell") == "on" ? true : false,
+        HasKettlebells: getFormItem("hasKettlebells") == "on" ? true : false,
+        HasCable: getFormItem("hasCable") == "on" ? true : false,
+        hasEasyCurlBar: getFormItem("hasEasyCurlBar") == "on" ? true : false,
+        HasNone: getFormItem("hasNone") == "on" ? true : false,
+        HasBands: getFormItem("hasBands") == "on" ? true : false,
+        HasMedicineBall: getFormItem("hasMedicineBall") == "on" ? true : false,
+        HasExerciseBall: getFormItem("hasExerciseBall") == "on" ? true : false,
+        HasFoamRoll: getFormItem("hasFoamRoll") == "on" ? true : false,
+        WantsBodyOnly: getFormItem("wantsBodyOnly") == "on" ? true : false
     };
 	
 	await fetch(url, {
@@ -58,6 +73,22 @@ async function displayForm() {
         DailySteps: "",
         HoursOfSleep: "",
         CreatedAt: "",
+        Gender: "",
+        IsProUser: false,
+        WorkoutsPerWeek: "",
+        HasOther: false,
+        HasMachine: false,
+        HasBarbell: false,
+        HasDumbbell: false,
+        HasKettlebells: false,
+        HasCable: false,
+        hasEasyCurlBar: false,
+        HasNone: true,
+        HasBands: false,
+        HasMedicineBall: false,
+        HasExerciseBall: false,
+        HasFoamRoll: false,
+        WantsBodyOnly: false
     };
 
     //get latest personal data first
@@ -71,7 +102,6 @@ async function displayForm() {
         .then(async response => {
             if (!response.ok) {
                 const error = await response.json();
-                throw new Error(error);
             }
 
             return response.json();
@@ -84,6 +114,36 @@ async function displayForm() {
     }
 
     //if any of the fields are null, replace with empty string
+    if (latestPersonalData == null) {
+        latestPersonalData = {
+            DateOfBirth: "",
+            Weight: "",
+            Height: "",
+            MedicalHistory: [""],
+            CurrentIllnesses: [""],
+            Goal: "",
+            UnwantedExercises: [""],
+            DailySteps: "",
+            HoursOfSleep: "",
+            CreatedAt: "",
+            Gender: "",
+            IsProUser: false,
+            WorkoutsPerWeek: "",
+            HasOther: false,
+            HasMachine: false,
+            HasBarbell: false,
+            HasDumbbell: false,
+            HasKettlebells: false,
+            HasCable: false,
+            hasEasyCurlBar: false,
+            HasNone: true,
+            HasBands: false,
+            HasMedicineBall: false,
+            HasExerciseBall: false,
+            HasFoamRoll: false,
+            WantsBodyOnly: false
+        }
+    }
     if (latestPersonalData.DateOfBirth == null) {
         latestPersonalData.DateOfBirth = "";
     }
@@ -122,6 +182,51 @@ async function displayForm() {
     }
     if (latestPersonalData.CreatedAt == null) {
         latestPersonalData.CreatedAt = "";
+    }
+    if (latestPersonalData.IsProUser == null) {
+        latestPersonalData.IsProUser = false;
+    }
+    if (latestPersonalData.WorkoutsPerWeek == null) {
+        latestPersonalData.WorkoutsPerWeek = "";
+    }
+    if (latestPersonalData.HasOther == null) {
+        latestPersonalData.HasOther = false;
+    }
+    if (latestPersonalData.HasMachine == null) {
+        latestPersonalData.HasMachine = false;
+    }
+    if (latestPersonalData.HasBarbell == null) {
+        latestPersonalData.HasBarbell = false;
+    }
+    if (latestPersonalData.HasDumbbell == null) {
+        latestPersonalData.HasDumbbell = false;
+    }
+    if (latestPersonalData.HasKettlebells == null) {
+        latestPersonalData.HasKettlebells = false;
+    }
+    if (latestPersonalData.HasCable == null) {
+        latestPersonalData.HasCable = false;
+    }
+    if (latestPersonalData.hasEasyCurlBar == null) {
+        latestPersonalData.hasEasyCurlBar = false;
+    }
+    if (latestPersonalData.HasNone == null) {
+        latestPersonalData.HasNone = false;
+    }
+    if (latestPersonalData.HasBands == null) {
+        latestPersonalData.HasBands = false;
+    }
+    if (latestPersonalData.HasMedicineBall == null) {
+        latestPersonalData.HasMedicineBall = false;
+    }
+    if (latestPersonalData.HasExerciseBall == null) {
+        latestPersonalData.HasExerciseBall = false;
+    }
+    if (latestPersonalData.HasFoamRoll == null) {
+        latestPersonalData.HasFoamRoll = false;
+    }
+    if (latestPersonalData.WantsBodyOnly == null) {
+        latestPersonalData.WantsBodyOnly = false;
     }
 
     await drawForm(latestPersonalData);
@@ -162,6 +267,10 @@ async function drawForm(latestPersonalData) {
 				<center><label>Today's Steps</label></center>
 				<input type="text" id="steps" name="steps" value="${latestPersonalData.DailySteps}" class="input">
 			</div>
+            <div class="field">
+				<center><label>Workouts per Week</label></center>
+				<input type="text" id="workouts" name="workouts" value="${latestPersonalData.WorkoutsPerWeek}" class="input">
+			</div>
 			<div class="field">
 				<center><label for="gender">Gender</label></center>
 				<select id="gender" name="gender" selected="${latestPersonalData.Gender}">
@@ -181,6 +290,62 @@ async function drawForm(latestPersonalData) {
 					<option value="Maintain weigth">Maintain weigth</option>
 				</select>
 			</div>
+            <div class="field">
+                <center><label for="isProUser">Pro User</label></center>
+                <input type="checkbox" id="isProUser" name="isProUser" ${latestPersonalData.IsProUser ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasOther">Has Other</label></center>
+                <input type="checkbox" id="hasOther" name="hasOther" ${latestPersonalData.HasOther ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasMachine">Has Machine</label></center>
+                <input type="checkbox" id="hasMachine" name="hasMachine" ${latestPersonalData.HasMachine ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasBarbell">Has Barbell</label></center>
+                <input type="checkbox" id="hasBarbell" name="hasBarbell" ${latestPersonalData.HasBarbell ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasDumbbell">Has Dumbbell</label></center>
+                <input type="checkbox" id="hasDumbbell" name="hasDumbbell" ${latestPersonalData.HasDumbbell ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasKettlebells">Has Kettlebells</label></center>
+                <input type="checkbox" id="hasKettlebells" name="hasKettlebells" ${latestPersonalData.HasKettlebells ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasCable">Has Cable</label></center>
+                <input type="checkbox" id="hasCable" name="hasCable" ${latestPersonalData.HasCable ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasEasyCurlBar">Has Easy Curl Bar</label></center>
+                <input type="checkbox" id="hasEasyCurlBar" name="hasEasyCurlBar" ${latestPersonalData.hasEasyCurlBar ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasNone">Has None</label></center>
+                <input type="checkbox" id="hasNone" name="hasNone" ${latestPersonalData.HasNone ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasBands">Has Bands</label></center>
+                <input type="checkbox" id="hasBands" name="hasBands" ${latestPersonalData.HasBands ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasMedicineBall">Has Medicine Ball</label></center>
+                <input type="checkbox" id="hasMedicineBall" name="hasMedicineBall" ${latestPersonalData.HasMedicineBall ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasMedicineBall">Has Exercise Ball</label></center>
+                <input type="checkbox" id="hasExerciseBall" name="hasExerciseBall" ${latestPersonalData.HasExerciseBall ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="hasFoamRoll">Has Foam Roll</label></center>
+                <input type="checkbox" id="hasFoamRoll" name="hasFoamRoll" ${latestPersonalData.HasFoamRoll ? 'checked' : ''}>
+            </div>
+            <div class="field">
+                <center><label for="wantsBodyOnly">Body Only</label></center>
+                <input type="checkbox" id="wantsBodyOnly" name="wantsBodyOnly" ${latestPersonalData.WantsBodyOnly ? 'checked' : ''}>
+            </div>
             <div id="error-container" class="error-container"></div>
 			<button type="button" value="Submit" class="submit-form" onClick="createPersonalData()">Submit</button>
 		`;

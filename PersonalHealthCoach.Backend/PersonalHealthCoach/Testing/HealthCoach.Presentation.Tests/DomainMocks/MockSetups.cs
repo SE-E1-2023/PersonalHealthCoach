@@ -42,7 +42,7 @@ public static class MockSetups
             null, 
             14, 
             6, 
-            "M");
+            "M", true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         var json = JsonConvert.SerializeObject(addPersonalDataCommand);
         var content = new StringContent(json, Encoding .UTF8, "application/json");

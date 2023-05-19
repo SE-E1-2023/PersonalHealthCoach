@@ -65,6 +65,7 @@ async function signUp() {
             })
             .then(data => {
                 clearCookie("userId");
+                setCookie("userId", data.Id);
                 window.location.href = "form.html";
             })
             .catch(error => {

@@ -1,3 +1,4 @@
+using CSharpFunctionalExtensions;
 using MediatR;
 using HealthCoach.Shared.Web;
 using HealthCoach.Core.Business;
@@ -18,8 +19,10 @@ public sealed class FitnessPlanFunctions
     [Function(nameof(CreateFitnessPlan))]
     public async Task<HttpResponseData> CreateFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/plans/fitness")] HttpRequestData request, Guid id)
     {
-        return await mediator
-            .Send(new CreateFitnessPlanCommand(id))
+        return await request
+            .DeserializeBodyPayload<CreateFitnessPlanCommand>()
+            .Map(c => c with { UserId = id })
+            .Bind(c => mediator.Send(c))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 

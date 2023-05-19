@@ -47,7 +47,27 @@ internal sealed class CreateFitnessPlanCommandHandler : IRequestHandler<CreateFi
         }
 
         return await Result.FirstFailureOrSuccess(userResult, dataResult)
-            .Map(() => new RequestFitnessPlanCommand(userResult.Value.Id.ToString(), true, dataResult.Value.Goal, 3, 7, new RequestExercises(true, true, true, true, true, true, true, true, true, true, true, true, true)))
+            .Map(() => new RequestFitnessPlanCommand(userResult.Value.Id.ToString(),
+                dataResult.Value.IsProUser,
+                dataResult.Value.Goal,
+                dataResult.Value.WorkoutsPerWeek,
+                request.FitnessScore,
+                new RequestExercises(dataResult.Value.HasOther,
+                    dataResult.Value.HasMachine,
+                    dataResult.Value.HasBarbell,
+                    dataResult.Value.HasDumbbell,
+                    dataResult.Value.HasKettlebells,
+                    dataResult.Value.HasCable,
+                    dataResult.Value.HasEasyCurlBar,
+                    dataResult.Value.HasNone,
+                    dataResult.Value.HasBands,
+                    dataResult.Value.HasMedicineBall,
+                    dataResult.Value.HasExerciseBall,
+                    dataResult.Value.HasFoamRoll,
+                    dataResult.Value.WantsBodyOnly
+                    )
+                )
+            )
             .Bind(async command => await httpClient.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(command))
             .Bind(response =>
             {
