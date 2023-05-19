@@ -26,7 +26,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchPersonalData = async () => {
-      const userId = "965c2326-088a-4395-9f45-644d8626040c";
+      const userId = "4c6b3a40-023d-4b0d-b6c2-e7da1b2cf71d";
       const url = `http://localhost:7071/api/v1/users/${userId}/data/personal`;
 
       try {
