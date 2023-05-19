@@ -22,6 +22,11 @@ internal static class Routes
         public const string CreateWellnessPlan = $"{Prefix}/users/{{0}}/plans/wellness";
     }
 
+    public static class FoodHistory
+    {
+        public const string GetFoodHistory = $"{Prefix}/users/{{0}}/food-history";
+    }
+
     public static class ExerciseHistory
     {
         public const string UpdateExerciseHistory = $"{Prefix}/users/{{0}}/exercise-history";

@@ -138,6 +138,9 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.Property<Guid>("SoupId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BreakfastId");
@@ -161,27 +164,42 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("FitnessPlanId")
-                        .HasColumnType("uuid");
+                    b.Property<List<string>>("Images")
+                        .IsRequired()
+                        .HasColumnType("text[]")
+                        .HasAnnotation("Relational:JsonPropertyName", "images");
+
+                    b.Property<List<string>>("Instructions")
+                        .IsRequired()
+                        .HasColumnType("text[]")
+                        .HasAnnotation("Relational:JsonPropertyName", "instructions");
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasAnnotation("Relational:JsonPropertyName", "exercise");
 
                     b.Property<string>("RepRange")
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasAnnotation("Relational:JsonPropertyName", "rep_range");
 
                     b.Property<string>("RestTime")
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasAnnotation("Relational:JsonPropertyName", "rest_time");
 
                     b.Property<int?>("Sets")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasAnnotation("Relational:JsonPropertyName", "sets");
 
                     b.Property<string>("Type")
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasAnnotation("Relational:JsonPropertyName", "type");
+
+                    b.Property<Guid?>("WorkoutId")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FitnessPlanId");
+                    b.HasIndex("WorkoutId");
 
                     b.ToTable("Exercise");
                 });
@@ -284,11 +302,50 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("HasBands")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasBarbell")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasCable")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasDumbbell")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasEasyCurlBar")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasExerciseBall")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasFoamRoll")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasKettlebells")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasMachine")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasMedicineBall")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasNone")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("HasOther")
+                        .HasColumnType("boolean");
+
                     b.Property<float>("Height")
                         .HasColumnType("real");
 
                     b.Property<double?>("HoursOfSleep")
                         .HasColumnType("double precision");
+
+                    b.Property<bool>("IsProUser")
+                        .HasColumnType("boolean");
 
                     b.Property<List<string>>("MedicalHistory")
                         .IsRequired()
@@ -301,8 +358,14 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
+                    b.Property<bool>("WantsBodyOnly")
+                        .HasColumnType("boolean");
+
                     b.Property<float>("Weight")
                         .HasColumnType("real");
+
+                    b.Property<int>("WorkoutsPerWeek")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -398,6 +461,22 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
                     b.ToTable("WellnessTip");
                 });
 
+            modelBuilder.Entity("HealthCoach.Core.Domain.Workout", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("FitnessPlanId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FitnessPlanId");
+
+                    b.ToTable("Workout");
+                });
+
             modelBuilder.Entity("HealthCoach.Core.Domain.CompletedExercise", b =>
                 {
                     b.HasOne("HealthCoach.Core.Domain.ExerciseHistory", null)
@@ -465,8 +544,15 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             modelBuilder.Entity("HealthCoach.Core.Domain.Exercise", b =>
                 {
-                    b.HasOne("HealthCoach.Core.Domain.FitnessPlan", null)
+                    b.HasOne("HealthCoach.Core.Domain.Workout", null)
                         .WithMany("Exercises")
+                        .HasForeignKey("WorkoutId");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.Workout", b =>
+                {
+                    b.HasOne("HealthCoach.Core.Domain.FitnessPlan", null)
+                        .WithMany("Workouts")
                         .HasForeignKey("FitnessPlanId");
                 });
 
@@ -477,12 +563,17 @@ namespace HealthCoach.Shared.Infrastructure.Migrations
 
             modelBuilder.Entity("HealthCoach.Core.Domain.FitnessPlan", b =>
                 {
-                    b.Navigation("Exercises");
+                    b.Navigation("Workouts");
                 });
 
             modelBuilder.Entity("HealthCoach.Core.Domain.FoodHistory", b =>
                 {
                     b.Navigation("ConsumedFoods");
+                });
+
+            modelBuilder.Entity("HealthCoach.Core.Domain.Workout", b =>
+                {
+                    b.Navigation("Exercises");
                 });
 #pragma warning restore 612, 618
         }

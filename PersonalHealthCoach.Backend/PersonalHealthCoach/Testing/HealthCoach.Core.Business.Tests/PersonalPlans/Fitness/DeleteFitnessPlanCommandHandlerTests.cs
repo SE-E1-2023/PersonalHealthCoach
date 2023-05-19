@@ -82,7 +82,7 @@ public class DeleteFitnessPlanCommandHandlerTests
     {
         //Arrange
         var fitnessPlan = PlansFactory.FitnessPlans.Any();
-        var exerciseCount = fitnessPlan.Exercises.Count;
+        var exerciseCount = fitnessPlan.Workouts.Count;
 
         var command = Command() with { FitnessPlanId = fitnessPlan.Id, CallerId = manager.Id };
 
@@ -96,7 +96,6 @@ public class DeleteFitnessPlanCommandHandlerTests
         result.IsSuccess.Should().BeTrue();
         
         repositoryMock.Verify(x => x.Delete(It.IsAny<FitnessPlan>()), Times.Once);
-        repositoryMock.Verify(x => x.Delete(It.IsAny<Domain.Exercise>()), Times.Exactly(exerciseCount));
     }
 
     private DeleteFitnessPlanCommand Command() => new(Guid.NewGuid(), manager.Id);

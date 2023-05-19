@@ -21,9 +21,8 @@ with open(os.path.join(os.path.join(abspath,"data"), "exercise_database.json"), 
 
 app = Flask(__name__)
 
-@app.route('/generate-workout', methods=['POST'])
-def generate_workout_endpoint():    
-    user_data = request.json
+#@app.route('/generate-workout', methods=['POST'])
+def generate_workout_endpoint(user_data):
     workouts = gk.generate_workouts(user_data, exercise_database, main_muscle_groups, exercise_types)
     return workouts
 

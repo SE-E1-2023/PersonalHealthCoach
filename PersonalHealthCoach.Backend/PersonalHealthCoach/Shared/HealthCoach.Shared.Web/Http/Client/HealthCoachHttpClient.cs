@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Net.Http.Json;
+using Newtonsoft.Json;
 using CSharpFunctionalExtensions;
 
 namespace HealthCoach.Shared.Web;
@@ -56,6 +57,12 @@ public class HealthCoachHttpClient : IHttpClient
         if (!response.IsSuccessStatusCode)
         {
             return Result.Failure<TResult>($"Request failed with status code {response.StatusCode}");
+        }
+
+        var rspString = await response.Content.ReadAsStringAsync();
+        if (rspString.Contains("Invalid goal")) 
+        {
+            return Result.Failure<TResult>("Unknown error");
         }
 
         return Result.Success(await response.Content.ReadFromJsonAsync<TResult>());

@@ -69,6 +69,16 @@
       "idSideDish": 641723,
       "idSnack": 646575,
       "idSoup": 1697745
+    },
+    {
+      "idUser": "9b7e16bc-5dad-499d-a036-b397c8cda42c",
+      "idDiet": 1,
+      "idBreakfast": 650431,
+      "idDrink": 1098357,
+      "idMainCourse": 657312,
+      "idSideDish": 1095687,
+      "idSnack": 662663,
+      "idSoup": 661433
     }
   ]
 }

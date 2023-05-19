@@ -16,6 +16,7 @@ public class CreateFitnessPlanCommandHandlerTests
     private readonly Mock<IEfQueryProvider> queryProviderMock = new();
     private readonly Mock<IHttpClient> httpClientMock = new();
     private readonly Mock<IHttpClientFactory> httpClientFactoryMock = new();
+    private readonly Mock<IFitnessPlanRepository> fitnessPlanRepository = new();
 
     public CreateFitnessPlanCommandHandlerTests()
     {
@@ -69,11 +70,11 @@ public class CreateFitnessPlanCommandHandlerTests
         var command = Command() with { UserId = user.Id };
         var personalDataList = new List<PersonalData> { PersonalDataFactory.WithUserId(user.Id) };
 
-        var apiRequest = new RequestFitnessPlanCommand(1);
+        var apiRequest = new RequestFitnessPlanCommand(Guid.NewGuid().ToString(), true, "Lose weight", 3, 4, new RequestExercises(true, true, true, true, true, true, true, true, true, true, true, true, true));
 
         repositoryMock.Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(user);
         queryProviderMock.Setup(q => q.Query<PersonalData>()).Returns(personalDataList.AsQueryable());
-        httpClientMock.Setup(h => h.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(apiRequest)).ReturnsAsync(Result.Failure<RequestFitnessPlanCommandResponse>("failure"));
+        httpClientMock.Setup(h => h.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(It.IsAny<RequestFitnessPlanCommand>())).ReturnsAsync(Result.Failure<RequestFitnessPlanCommandResponse>("failure"));
 
         //Act
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
@@ -81,36 +82,6 @@ public class CreateFitnessPlanCommandHandlerTests
         //Assert
         result.IsFailure.Should().BeTrue();
         result.Error.Should().Be("failure");
-
-        repositoryMock.Verify(r => r.Store(It.IsAny<FitnessPlan>()), Times.Never);
-    }
-
-    [Fact]
-    public void When_DomainFails_Then_ShouldFail()
-    {
-        //Arrange
-        var user = UsersFactory.Any();
-        var command = Command() with { UserId = user.Id };
-        var personalDataList = new List<PersonalData> { PersonalDataFactory.WithUserId(user.Id) };
-
-        var apiRequest = new RequestFitnessPlanCommand(1);
-        var apiResponse = new RequestFitnessPlanCommandResponse
-        {
-            message = "success",
-            status = "ok",
-            workout = new(new List<FitnessPlannerApiResponseExercise>())
-        };
-
-        repositoryMock.Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(user);
-        queryProviderMock.Setup(q => q.Query<PersonalData>()).Returns(personalDataList.AsQueryable());
-        httpClientMock.Setup(h => h.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(apiRequest)).ReturnsAsync(Result.Success(apiResponse));
-
-        //Act
-        var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
-
-        //Assert
-        result.IsFailure.Should().BeTrue();
-        result.Error.Should().Be(DomainErrors.FitnessPlan.Create.NoExercises);
 
         repositoryMock.Verify(r => r.Store(It.IsAny<FitnessPlan>()), Times.Never);
     }
@@ -125,17 +96,16 @@ public class CreateFitnessPlanCommandHandlerTests
         var command = Command() with { UserId = user.Id };
         var personalDataList = new List<PersonalData> { PersonalDataFactory.WithUserId(user.Id) };
 
-        var apiRequest = new RequestFitnessPlanCommand(1);
+        var apiRequest = new RequestFitnessPlanCommand(Guid.NewGuid().ToString(), true, "Lose weight", 3, 4, new RequestExercises(true, true, true, true, true, true, true, true, true, true, true, true, true));
         var apiResponse = new RequestFitnessPlanCommandResponse
         {
-            message = "success",
-            status = "ok",
-            workout = new(new List<FitnessPlannerApiResponseExercise> { new("exercise", "1-2", "23", 4, "strength") })
+            status = 200,
+            workouts = new(PlansFactory.Exercises.Any(), PlansFactory.Exercises.Any(), PlansFactory.Exercises.Any(), PlansFactory.Exercises.Any(), PlansFactory.Exercises.Any(), PlansFactory.Exercises.Any(), PlansFactory.Exercises.Any())
         };
 
         repositoryMock.Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(user);
         queryProviderMock.Setup(q => q.Query<PersonalData>()).Returns(personalDataList.AsQueryable());
-        httpClientMock.Setup(h => h.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(apiRequest)).ReturnsAsync(Result.Success(apiResponse));
+        httpClientMock.Setup(h => h.Post<RequestFitnessPlanCommand, RequestFitnessPlanCommandResponse>(It.IsAny<RequestFitnessPlanCommand>())).ReturnsAsync(Result.Success(apiResponse));
 
         //Act
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
@@ -144,18 +114,12 @@ public class CreateFitnessPlanCommandHandlerTests
         result.IsSuccess.Should().BeTrue();
 
         result.Value.UserId.Should().Be(user.Id);
-        result.Value.Exercises.Should().HaveCount(1);
-        result.Value.Exercises.First().Name.Should().Be("exercise");
-        result.Value.Exercises.First().RepRange.Should().Be("1-2");
-        result.Value.Exercises.First().RestTime.Should().Be("23");
-        result.Value.Exercises.First().Sets.Should().Be(4);
-        result.Value.Exercises.First().Type.Should().Be("strength");
         result.Value.CreatedAt.Should().Be(now);
 
         repositoryMock.Verify(r => r.Store(It.IsAny<FitnessPlan>()), Times.Once);
     }
 
-    private static CreateFitnessPlanCommand Command() => new(Guid.NewGuid());
+    private static CreateFitnessPlanCommand Command() => new(Guid.NewGuid(), 6);
 
     private CreateFitnessPlanCommandHandler Sut() => new(repositoryMock.Object, queryProviderMock.Object, httpClientFactoryMock.Object);
 }

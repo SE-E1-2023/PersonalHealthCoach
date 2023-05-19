@@ -3,19 +3,16 @@ using HealthCoach.Shared.Web;
 using HealthCoach.Core.Business;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
-using HealthCoach.Shared.Infrastructure;
 
 namespace HealthCoach.Functions.Isolated;
 
 public class DietPlanFunctions
 {
     private readonly IMediator mediator;
-    private readonly IEfQueryProvider queryProvider;
 
-    public DietPlanFunctions(IMediator mediator, IEfQueryProvider queryProvider)
+    public DietPlanFunctions(IMediator mediator)
     {
         this.mediator = mediator;
-        this.queryProvider = queryProvider;
     }
 
     [Function(nameof(DeleteDietPlan))]
@@ -34,7 +31,6 @@ public class DietPlanFunctions
     [Function(nameof(CreateDietPlan))]
     public async Task<HttpResponseData> CreateDietPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/plans/diet")] HttpRequestData request, Guid id)
     {
-        var res = await mediator.Send(new CreateDietPlanCommand(id));
         return await mediator
             .Send(new CreateDietPlanCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
@@ -45,6 +41,14 @@ public class DietPlanFunctions
     {
         return await mediator
             .Send(new GetDietPlanCommand(id))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+    }
+
+    [Function(nameof(CreateSingleUseDietPlan))]
+    public async Task<HttpResponseData> CreateSingleUseDietPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/plans/diet/single-use")] HttpRequestData request, Guid id)
+    {
+        return await mediator
+            .Send(new CreateDietPlanCommand(id))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
 }

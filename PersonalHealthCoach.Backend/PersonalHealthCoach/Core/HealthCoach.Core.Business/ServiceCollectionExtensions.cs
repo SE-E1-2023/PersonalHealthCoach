@@ -10,7 +10,8 @@ public static class ServiceCollectionExtensions
         return services
             .AddMediatR(typeof(BusinessAssembly))
             .AddScoped<IExerciseHistoryRepository, ExerciseHistoryRepository>()
-            .AddScoped<IFoodHistoryRepository, FoodHistoryRepository>();
+            .AddScoped<IFoodHistoryRepository, FoodHistoryRepository>()
+            .AddScoped<IFitnessPlanRepository, FitnessPlanRepository>();
     }
 
     private static class BusinessAssembly { }

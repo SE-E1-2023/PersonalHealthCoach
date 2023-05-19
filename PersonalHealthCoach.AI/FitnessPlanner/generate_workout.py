@@ -2,6 +2,70 @@ import json
 import random
 import copy
 
+#new
+def customize_exercise_parameters(fitness_score, exercise_type_info):
+    modified_exercise_type_info = copy.deepcopy(exercise_type_info)
+
+    # Adjust rep range, sets, and rest time based on the user's fitness_score
+    if fitness_score < 3:
+        for key, value in modified_exercise_type_info.items():
+            value["sets"] = 2
+            if key == "Cardio":
+                value["rep_range"] = "8-12"
+                value["rest_time"] = "1-1.5 minutes"
+            elif key == "Strength":
+                value["rep_range"] = "6-10"
+                value["rest_time"] = "1-1.5 minutes"
+            elif key == "Plyometrics":
+                value["rep_range"] = "5-10"
+                value["rest_time"] = "1-1.5 minutes"
+            elif key == "Powerlifting" or key == "Olympic Weightlifting":
+                value["rep_range"] = "3-5"
+                value["rest_time"] = "3-4 minutes"
+            elif key == "Stretching":
+                value["rep_range"] = "Hold for 20-40 seconds"
+                value["rest_time"] = "20-30 seconds"
+
+    elif 3 <= fitness_score < 6:
+        for key, value in modified_exercise_type_info.items():
+            if key == "Cardio":
+                value["rep_range"] = "12-18"
+                value["rest_time"] = "1-1.5 minutes"
+            elif key == "Strength":
+                value["rep_range"] = "8-12"
+                value["rest_time"] = "1-1.5 minutes"
+            elif key == "Plyometrics":
+                value["rep_range"] = "10-14"
+                value["rest_time"] = "1-1.5 minutes"
+            elif key == "Powerlifting" or key == "Olympic Weightlifting":
+                value["rep_range"] = "2-4"
+                value["rest_time"] = "3-4 minutes"
+            elif key == "Stretching":
+                value["rep_range"] = "Hold for 30-45 seconds"
+                value["rest_time"] = "20-30 seconds"
+
+    elif fitness_score >= 6:
+        for key, value in modified_exercise_type_info.items():
+            value["sets"] = 4
+            if key == "Cardio":
+                value["rep_range"] = "15-20"
+                value["rest_time"] = "45 seconds-1 minute"
+            elif key == "Strength":
+                value["rep_range"] = "10-15"
+                value["rest_time"] = "45 seconds-1 minute"
+            elif key == "Plyometrics":
+                value["rep_range"] = "12-15"
+                value["rest_time"] = "45 seconds-1 minute"
+            elif key == "Powerlifting" or key == "Olympic Weightlifting":
+                value["rep_range"] = "1-3"
+                value["rest_time"] = "4-5 minutes"
+            elif key == "Stretching":
+                value["rep_range"] = "Hold for 40-60 seconds"
+                value["rest_time"] = "15-20 seconds"
+
+    return modified_exercise_type_info
+
+
 def filter_exercises_by_difficulty_and_pro_status(user_data, exercise_database):
     fitness_score = user_data["fitness_score"]
     pro_user = user_data["pro_user"]
@@ -77,7 +141,7 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
     equipment_available["None"] = True
     equipment_available["Body Only"] = True
 
-    # eliminam exercitiile pe care useruul nu le poate face
+    # eliminam exercitiile pe care userul nu le poate face
     #print(user_data)
     available_exercises = filter_exercises_by_difficulty_and_pro_status(user_data, exercise_database) # filtrare dupa scor, si nivel de dificultate mai intai
     for exercise in exercise_database:
@@ -101,16 +165,39 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
             organized_exercises[exercise_type] = []
         organized_exercises[exercise_type].append(exercise)
 
-    # distributie exercitii pentru obiectiv
-    exercises_for_goal = {
-        "Lose fat": {"Cardio": 2, "Strength": 5, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
-        "Increase muscle mass": {"Cardio": 0, "Strength": 7, "Plyometrics": 0, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 0},
-        "Body recomposition": {"Cardio": 1, "Strength": 5, "Plyometrics": 0, "Powerlifting": 1, "Olympic Weightlifting": 1, "Stretching": 0},
-        "Improve cardiovascular health": {"Cardio": 5, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
-        "Increase strength": {"Cardio": 0, "Strength": 7, "Plyometrics": 0, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 0},
-        "Increase endurance": {"Cardio": 5, "Strength": 1, "Plyometrics": 2, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
-        "Overall health": {"Cardio": 2, "Strength": 3, "Plyometrics": 2, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1}
+    # distributie exercitii pentru obiectiv #new
+    if user_data["fitness_score"]<3:
+        exercises_for_goal = {
+        "Lose weight": {"Cardio": 4, "Strength": 3, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
+        "Gain muscular mass": {"Cardio": 1, "Strength": 5, "Plyometrics": 0, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 1},
+        "Maintain weigth": {"Cardio": 3, "Strength": 4, "Plyometrics": 0, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
+        "Improve cardiovascular health": {"Cardio": 5, "Strength": 2, "Plyometrics": 0, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
+        "Increase strength": {"Cardio": 1, "Strength": 4, "Plyometrics": 0, "Powerlifting": 2, "Olympic Weightlifting": 0, "Stretching": 1},
+        "Increase endurance": {"Cardio": 5, "Strength": 1, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
+        "Improve overall health": {"Cardio": 3, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 2}
     }
+    elif user_data["fitness_score"]>=3 and user_data["fitness_score"]<=3:
+         exercises_for_goal = {
+        "Lose weight": {"Cardio": 3, "Strength": 4, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 0},
+        "Gain muscular mass": {"Cardio": 1, "Strength": 4, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 1, "Stretching": 0},
+        "Maintain weigth": {"Cardio": 2, "Strength": 4, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 1, "Stretching": 0},
+        "Improve cardiovascular health": {"Cardio": 4, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
+        "Increase strength": {"Cardio": 0, "Strength": 4, "Plyometrics": 1, "Powerlifting": 2, "Olympic Weightlifting": 1, "Stretching": 0},
+        "Increase endurance": {"Cardio": 4, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
+        "Improve overall health": {"Cardio": 2, "Strength": 3, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 2}
+    }
+    else:
+        exercises_for_goal={
+    "Lose weight": {"Cardio": 3, "Strength": 3, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 1, "Stretching": 0},
+    "Gain muscular mass": {"Cardio": 1, "Strength": 4, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 1, "Stretching": 0},
+    "Maintain weigth": {"Cardio": 2, "Strength": 4, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 0},
+    "Improve cardiovascular health": {"Cardio": 4, "Strength": 2, "Plyometrics": 1, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
+    "Increase strength": {"Cardio": 1, "Strength": 3, "Plyometrics": 0, "Powerlifting": 2, "Olympic Weightlifting": 2, "Stretching": 0},
+    "Increase endurance": {"Cardio": 4, "Strength": 1, "Plyometrics": 2, "Powerlifting": 0, "Olympic Weightlifting": 0, "Stretching": 1},
+    "Improve overall health": {"Cardio": 2, "Strength": 3, "Plyometrics": 1, "Powerlifting": 1, "Olympic Weightlifting": 0, "Stretching": 1}
+}
+
+
     insufficient_exercises = False
 
     for exercise_type, num in exercises_for_goal[goal].items():
@@ -150,8 +237,10 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
     "Olympic Weightlifting": {"rep_range": "1-5", "sets": 3, "rest_time": "3-5 minutes"},
     "Stretching": {"rep_range": "Hold for 30-60 seconds", "sets": 3, "rest_time": "30 seconds to 1 minute"}
     }
+    #new
+    exercise_type_info=customize_exercise_parameters(user_data["fitness_score"],exercise_type_info)
 
-    
+
     exercise_goal = exercises_for_goal[goal]
 
     # initializare obiecte de tip workout
@@ -168,11 +257,14 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
 
         # adaugam exercitiile
         for exercise in selected_exercises:
-            exercise_info = {
-                "exercise": exercise["name"],
-                "type": exercise["type"],
-            }
+            exercise_info = {}
+            exercise_info["exercise"] = exercise["name"]
+            exercise_info["type"] = exercise["type"]
             exercise_info.update(exercise_type_info[exercise["type"]])
+            exercise_info["images"] = exercise.get("images", [])
+            exercise_info["instructions"] = exercise.get("instructions", [])
+
+        
             workouts[workout_key].append(exercise_info)
 
     

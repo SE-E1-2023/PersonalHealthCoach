@@ -2,22 +2,22 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Take photographic evidence. Can\u2019t get the scale to budge? It\u2019s possible you\u2019re gaining muscle and shedding body fat\u2014and that means your net weight change will seem stuck, even though you're making progress. Take pictures on a weekly basis\u2014front, back, (and) side pictures all from the same angle, same lighting, same clothing. That way, you'll see change over time, even though it may not look like it day to day."
+        "Tip": "If you notice yourself breezing through exercising and barely breaking a sweat, focus on progressive overload by making each move more challenging by: adding 5 more reps, adding more weight, tacking on a jump to moves like squats and lunges. Another way to switch it up? Turn the routine into a time-under-tension workout, completing each move for a set amount of time instead of for a set number of reps."
     },
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Do high-intensity interval training (HIIT) to burn more calories in less time."
+        "Tip": "Lift weights to build muscle and increase metabolism."
     },
     {
         "Type": "Diet",
         "Importance Level": "Medium",
-        "Tip": "Plan your meals and snacks ahead of time to avoid impulsive eating."
+        "Tip": "Try eating smaller, more frequent meals throughout the day."
     },
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Get enough sleep to avoid hormone imbalances that can lead to weight gain."
+        "Tip": "Track your food intake to ensure you're in a calorie deficit."
     },
     {
         "Type": "Daily Calories",
@@ -37,12 +37,12 @@
     {
         "Type": "Weekly Steps",
         "Importance Level": "High",
-        "Tip": "You managed to complete your Steps Goal on 7 days this week achieving an average of 12714 steps per day. Congratulations! You're doing fine! If you'd like to step up to the next level, the goal of 10,000 steps is the recommended daily step target for healthy adults to achieve health benefits. You can try to set this goal for better benefits."
+        "Tip": "You managed to complete your Steps Goal on 5 days this week achieving an average of 9142 steps per day. Congratulations! You're doing fine! If you'd like to step up to the next level, the goal of 10,000 steps is the recommended daily step target for healthy adults to achieve health benefits. You can try to set this goal for better benefits. Also, make sure that you enter at the end of each day the number of steps you took that day so that we can better analyze your progress."
     },
     {
-        "Type": "Daily Steps",
-        "Importance Level": "Low",
-        "Tip": "Congratulations! You managed to fulfill your step goal for today by managing to take 13000 steps. This is much more than your goal. Would you consider increasing your goal starting from tomorrow?"
+        "Type": "Daily Steps Calories Burned",
+        "Importance Level": "Medium",
+        "Tip": "You haven't added your steps today. Check your steps counter app and let us know about your achievement!"
     },
     {
         "Type": "Objective-Steps Goal",
@@ -52,46 +52,82 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. Make sure to stay consistent with your sleep schedule as much as possible, even on weekends or holidays. This helps regulate your body's internal clock, making it easier to fall asleep and wake up at the same time each day."
     },
     {
         "Type": "Weekly Slept Hours",
         "Importance Level": "Medium",
-        "Tip": "You had 7 days with 7-9 hours of sleep in the last week. Great job on prioritizing your sleep and maintaining healthy sleep habits! Keep up the good work and continue to prioritize your sleep each night."
+        "Tip": "You had 6 days with 7-9 hours of sleep in the last week. Great job on prioritizing your sleep and maintaining healthy sleep habits! Keep up the good work and continue to prioritize your sleep each night."
     },
     {
         "Type": "Weekly Weight Update",
         "Importance Level": "Low",
-        "Tip": "You gained 2.2 kg in the last 7 days. Gaining 2 kg can be discouraging, but don't let it derail your weight loss goals. Reassess your diet and exercise routine and make any necessary adjustments to ensure that you are in a calorie deficit. Focus on consuming a balanced diet of whole foods and avoid processed and sugary foods. Increase the intensity and frequency of your workouts to burn more calories and build muscle. Remember that weight loss is a journey and it's important to stay committed and patient as you work towards your goals. Celebrate your progress along the way and stay motivated by setting new goals for yourself."
+        "Tip": "You gained 2.2 kg in the last week. Gaining 2 kg can be discouraging, but don't let it derail your weight loss goals. Reassess your diet and exercise routine and make any necessary adjustments to ensure that you are in a calorie deficit. Focus on consuming a balanced diet of whole foods and avoid processed and sugary foods. Increase the intensity and frequency of your workouts to burn more calories and build muscle. Remember that weight loss is a journey and it's important to stay committed and patient as you work towards your goals. Celebrate your progress along the way and stay motivated by setting new goals for yourself."
     },
     {
         "Type": "Weekly Food Logs",
         "Importance Level": "High",
-        "Tip": "Our recommendation is to consume a total of 2637 calories per day. In the last week you had 1 day(s) in which you consumed enough calories, 6 day(s) in which you consumed fewer calories and 0 day(s) in which you consumed more calories. Great job on implementing a calorie deficit of 250-500 calories per day in the last week! Consistency is key when it comes to weight loss, and it's important to remember that progress may not always be linear. Keep up the great work and remember to prioritize sustainable and gradual changes to your lifestyle for long-term success. Remember, it's a journey, and every small step counts towards your goal."
+        "Tip": "Our recommendation is to consume a total of 2637 calories per day. In the last week you had 1 day(s) in which you consumed enough calories, 4 day(s) in which you consumed fewer calories, 0 day(s) in which you consumed more calories and 2 day(s) in which you didn't add the food you ate. Try adding it every day so that we can analize your progress better.Great job on implementing a calorie deficit of 250-500 calories per day in the last week! Consistency is key when it comes to weight loss, and it's important to remember that progress may not always be linear. Keep up the great work and remember to prioritize sustainable and gradual changes to your lifestyle for long-term success. Remember, it's a journey, and every small step counts towards your goal."
     },
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Cauliflower is a very versatile cruciferous vegetable. It can be used to make a multitude of healthy dishes and also tastes good on its own."
+        "Tip": "Blueberries are not only delicious but also among the most powerful sources of antioxidants in the world."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "One 2019 study in rats showed that consuming leafy greens for 6 weeks led to a significant reduction in cardiovascular risk factors. Spinach is an example of a leafy green with antioxidant content, especially when it is raw, steamed, or very lightly boiled."
+        "Tip": "Broccoli provides good amounts of fiber, calcium, potassium, folate, and phytonutrients. Phytonutrients are compounds that reduce the risk of developing heart disease, diabetes, and some cancers. Broccoli also provides essential antioxidants such as vitamin C and beta-carotene. In fact, a single half-cup serving of broccoli can provide around 85% of a person`s daily vitamin C value. Another compound in broccoli, called sulforaphane, may have anticancer and anti-inflammatory qualities, according to one 2019 study. However, overcooking broccoli can destroy many of its key nutrients. For this reason, it is best to eat it raw or lightly steamed."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "You'll get nearly 20 percent of your daily dose of fiber in one 1/2 cup serving of avocado, plus cholesterol-lowering monounsaturated fats. Try this: For a side dish, halve an avocado, drizzle with soy sauce and fresh lime juice, and sprinkle with toasted sesame seeds. Or try avocado toast."
+        "Tip": "Kiwi. Ounce for ounce, this fuzzy fruit contains more vitamin C than an orange and is a good source of potassium and fiber. Try this: Thinly slice, then drizzle with honey and sprinkle with toasted, unsweetened coconut."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": "Lunges. Challenging your balance is an essential part of a well-rounded exercise routine. Lunges do just that, promoting functional movement while also increasing strength in your legs and glutes. 1. Start by standing with your feet shoulder-width apart and arms down at your sides. 2.Take a step forward with your right leg and bend your right knee as you do so, stopping when your thigh is parallel to the ground. Ensure that your right knee doesn\u2019t extend past your right foot. 3. Push up off your right foot and return to the starting position. Repeat with your left leg. This is one rep.4. Complete 3 sets of 10 reps."
+        "Tip": "Side planks. A healthy body requires a strong core at its foundation, so don`t neglect core-specific moves like the side plank. Focus on the mind-muscle connection and controlled movements to ensure you`re completing this move effectively. 1. Lie on your right side with your left leg and foot stacked on top of your right leg and foot. Prop your upper body up by placing your right forearm on the ground and elbow directly under your shoulder. 2. Contract your core to stiffen your spine and lift your hips and knees off the ground, forming a straight line with your body. 3. Return to start in a controlled manner. Repeat 3 sets of 10-15 reps on one side, then switch."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Swimming. If it\u2019s your heart you\u2019re looking after there are few ways better to do it than swimming. Perfect for all ages and levels due to its low-stress nature, swimming keeps you at a healthy body weight, improves lung capacity, and builds muscles, all in addition to burning calories. Best of all, swimming can be done any time of year at an indoor pool, and often there are clubs to be joined and classes to be taken, which means the social aspect is never far behind the health. Away from the swimming pool, sea swimming is hugely popular all over the world. With sea swimming, you get the same exercise free of charge, all the while enjoying the beauty that surrounds you. Add all this up and swimming is definitely one of the healthiest sports."
+        "Tip": "Tennis. Did you know that one hour of tennis burns 600 calories? That puts it on top of the list of the best aerobic activities. All the little sprints, pivots, slams, and serves in tennis channel your strength and require you to exert energy in short but powerful bursts. This type of activity is incredibly effective in developing fitness and expanding lung capacity. A great feature off tennis off the court is the club aspect. Tennis is popular worldwide, so no matter where you are, what level you play or what age bracket you belong to, there are clubs everywhere to cater to your needs."
+    },
+    {
+        "Type": "Daily Steps Calories Burned",
+        "Importance Level": "Medium",
+        "Tip": "You haven't added your steps today. Check your steps counter app and let us know about your achievement!"
+    },
+    {
+        "Type": "Weekly Steps Calories Burned",
+        "Importance Level": "High",
+        "Tip": "Congratulations! With a total of 64000 steps you managed to burn 2189 calories in the last week. Keep up the good work also in the next weeks!"
+    },
+    {
+        "Type": "Prevent Diseases",
+        "Importance Level": "Medium",
+        "Tip": "Get tested. Getting yourself tested is an important step in knowing your health status, especially when it comes to HIV, hepatitis B, sexually-transmitted infections (STIs) and tuberculosis (TB). Left untreated, these diseases can lead to serious complications and even death. Knowing your status means you will know how to either continue preventing these diseases or, if you find out that you`re positive, get the care and treatment that you need. Go to a public or private health facility, wherever you are comfortable, to have yourself tested."
+    },
+    {
+        "Type": "Recover From Illness",
+        "Importance Level": "Medium",
+        "Tip": "Be a beginner again, temporarily. Spend a few minutes each day completing some dynamic flexibility and mobility exercises. This will increase the mobility of muscles and joints which will help improve posture and decrease the risk of injury. Yoga`s always a good option as it`ll get your body moving again without going too far."
+    },
+    {
+        "Type": "Daily Workout Feedback",
+        "Importance Level": "Medium",
+        "Tip": "You managed to burn 120.56 calories during your workout that lasted 8 minutes. Good job! We are waiting for you again tomorrow for the daily training."
+    }
+]   },
+    {
+        "Type": "Recover From Illness",
+        "Importance Level": "Medium",
+        "Tip": "Seek Help When Necessary. Lastly, know that there`s no need to go through this alone. As we briefly mentioned, you can discuss your worries with someone who can help you, or you can trust. In addition, everyone understands that when someone is recovering, assistance is highly needed. Don`t be shy to ask for help even with the smallest things, such as getting a glass of water, taking a shower, changing clothes, or setting daily reminders to take prescribed medicine."
+    },
+    {
+        "Type": "Daily Workout Feedback",
+        "Importance Level": "Medium",
+        "Tip": "You managed to burn 120.56 calories during your workout that lasted 8 minutes. Good job! We are waiting for you again tomorrow for the daily training."
     }
 ]

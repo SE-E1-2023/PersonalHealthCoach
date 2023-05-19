@@ -4,22 +4,30 @@ public static class PlansFactory
 {
     public static class FitnessPlans
     {
-        public static FitnessPlan Any() => FitnessPlan.Create(Guid.NewGuid(), Exercises.Any()).Value;
+        public static FitnessPlan Any() => FitnessPlan.Create(Guid.NewGuid(), new List<Workout> { Workouts.Any() }).Value;
     }
 
     public static class Exercises
     {
-        public static IReadOnlyCollection<Exercise> Any() => new List<Exercise>
+        public static List<Exercise> Any() => new List<Exercise>
         {
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength")
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>())
         };
+    }
+
+    public static class Workouts
+    {
+        public static Workout Any()
+        {
+            return new Workout(Exercises.Any());
+        }
     }
 
     public static class DietPlans

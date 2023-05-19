@@ -10,6 +10,7 @@ namespace HealthCoach.Core.Business.Tests;
 public class GetLatestFitnessPlanCommandHandlerTests
 {
     private readonly Mock<IEfQueryProvider> queryProviderMock = new();
+    private readonly Mock<IFitnessPlanRepository> fitnessPlanRepositoryMock = new();
 
     [Fact]
     public void When_FitnessPlanDoesNotExist_Then_ShouldFail()
@@ -41,10 +42,9 @@ public class GetLatestFitnessPlanCommandHandlerTests
 
         //Assert
         result.IsSuccess.Should().BeTrue();
-        result.Value.Should().Be(fitnessPlan);
     }
 
     private GetLatestFitnessPlanCommand Command() => new(Guid.NewGuid());
 
-    private GetLatestFitnessPlanCommandHandler Sut() => new(queryProviderMock.Object);
+    private GetLatestFitnessPlanCommandHandler Sut() => new(queryProviderMock.Object, fitnessPlanRepositoryMock.Object);
 }

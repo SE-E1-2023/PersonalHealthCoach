@@ -58,12 +58,14 @@ async function signUp() {
             .then(async response => {
                 if (!response.ok) {
                     const error = await response.json();
-                    throw new Error(error);
+                    throw new Error(error.ErrorCode);
                 }
 
                 return response.json();
             })
             .then(data => {
+                clearCookie("userId");
+                setCookie("userId", data.Id);
                 window.location.href = "form.html";
             })
             .catch(error => {
@@ -104,6 +106,10 @@ function setCookie(name, value) {
     date.setTime(date.getTime() + (1000 * 24 * 60 * 60 * 1000));
     expires = '; expires=' + date.toUTCString();
     document.cookie = name + '=' + (value || '') + expires + '; path=/';
+}
+
+function clearCookie(name) {
+    setCookie(name, '', -1);
 }
 
 function displayError(errorMessage) {
