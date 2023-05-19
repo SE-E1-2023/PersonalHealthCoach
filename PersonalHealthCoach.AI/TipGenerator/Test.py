@@ -380,7 +380,7 @@ class TestTipGenerator(unittest.TestCase):
                 {'HoursSlept': 6},
                 {'HoursSlept': 4},
                 {'HoursSlept': 7},
-                {'HoursSlept': 0},
+                {'HoursSlept': -1},
                 {'HoursSlept': 2},
                 {'HoursSlept': 11}
             ]
@@ -389,8 +389,20 @@ class TestTipGenerator(unittest.TestCase):
         generator.profile_data = profile_data
 
         with self.assertRaises(ValueError):
-            generator.generate_hours_slept_last_night_tip()
+            generator.generate_hours_slept_weekly_feedback()
 
+        profile_data = {
+            'Progress': [
+                {'HoursSlept': 8},
+                {'HoursSlept': 6},
+                {'HoursSlept': 4},
+                {'HoursSlept': 7},
+                {'HoursSlept': 0},
+                {'HoursSlept': 2},
+                {'HoursSlept': 11}
+            ]
+        }
+        generator.profile_data = profile_data
         feedback = generator.generate_hours_slept_weekly_feedback()
 
         self.assertIsInstance(feedback, dict)
@@ -670,7 +682,6 @@ class TestTipGenerator(unittest.TestCase):
             "Tip": "You burn 2637 calories during a typical day. To achieve your goal of losing weight, try to stay below your calorie needs and increase your activity level. However, make sure you are eating nutritious meals and not restricting your calories too much - eating too little or losing weight rapidly can be unhealthy and dangerous."
         }
         generated_tip = self.generator.generate_amr_tip()
-        print(generated_tip)
         self.assertEqual(generated_tip, expected_tip)
 
     def test_generate_bmi_tip(self):
@@ -796,6 +807,7 @@ class TestTipGenerator(unittest.TestCase):
         }
         generator = main.TipGenerator(main.tips_file, main.profile_file)
         generator.profile_data = profile_data
+
         with self.assertRaises(ValueError):
             profile_data['Progress'][-1]['Steps'] = -1000
             generator.calculate_calories_burned_by_steps_today()
@@ -805,6 +817,17 @@ class TestTipGenerator(unittest.TestCase):
             generator.calculate_calories_burned_by_steps_today()
 
     def test_generate_calories_burned_by_steps_today_tip(self):
+        profile_data = {
+            "Profile": {
+                "Steps Goal": 5000
+            }
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+
+        with self.assertRaises(KeyError):
+            generator.calculate_calories_burned_by_steps_last_week()
+
         profile_data = {
             "Profile": {
                 "Steps Goal": 5000
@@ -819,7 +842,6 @@ class TestTipGenerator(unittest.TestCase):
                 {"Date": "2022-05-07", "Steps": 8000}
             ]
         }
-        generator = main.TipGenerator(main.tips_file, main.profile_file)
         generator.profile_data = profile_data
         invalid_profile_data = profile_data.copy()
         with self.assertRaises(ValueError):
@@ -854,17 +876,28 @@ class TestTipGenerator(unittest.TestCase):
                 {"Date": "2022-05-04", "Steps": 2000},
                 {"Date": "2022-05-05", "Steps": 5000},
                 {"Date": "2022-05-06", "Steps": 10000},
-                {"Date": "2022-05-07", "Steps": 8000}
+                {"Date": "2022-05-07", "Steps": 4000}
             ]
         }
         generator.profile_data = profile_data
         generated_tip = generator.generate_calories_burned_by_steps_today_tip()
 
-        self.assertEqual(generated_tip["Type"], "Daily Calories Burned")
+        self.assertEqual(generated_tip["Type"], "Daily Steps Calories Burned")
         self.assertIn(generated_tip["Importance Level"], ["None", "Low", "Medium", "High"])
         self.assertIsInstance(generated_tip["Tip"], str)
 
     def test_generate_weekly_steps_calories_burned_feedback(self):
+        profile_data = {
+            "Profile": {
+                "Steps Goal": 5000
+            }
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+
+        with self.assertRaises(KeyError):
+            generator.calculate_calories_burned_by_steps_last_week()
+
         profile_data = {
             "Progress": [
                 {"Steps": 1000},
@@ -877,7 +910,6 @@ class TestTipGenerator(unittest.TestCase):
             ]
         }
 
-        generator = main.TipGenerator(main.tips_file,main.profile_file)
         generator.profile_data = profile_data
         generator.tips_data = self.tips_data
 
@@ -907,11 +939,10 @@ class TestTipGenerator(unittest.TestCase):
         }
         generator.profile_data = profile_data
         generated_tip = generator.generate_weekly_steps_calories_burned_feedback()
-        print(generated_tip)
 
         self.assertEqual(generated_tip["Type"], "Weekly Steps Calories Burned")
         self.assertEqual(generated_tip["Importance Level"], "High")
-        self.assertEqual(generated_tip["Tip"], "ceva")
+        self.assertEqual(generated_tip["Tip"], "With a total of 13500 steps you managed to burn 462 calories in the last week. As a challenge, you may try to aim for a bigger amount of burned calories in the next weeks!")
 
     def test_generate_level_of_activity_tip(self):
         profile_data = {
@@ -955,67 +986,73 @@ class TestTipGenerator(unittest.TestCase):
 
         self.assertIn(profile_data["Profile"]["Objective"], tips_data)
 
+    def test_generate_prevent_diseases_tip(self):
+        self.generator = main.TipGenerator(main.tips_file, main.profile_file)
+        self.generator.tips_data = {
+            "Diseases": {
+                "Prevent Diseases": [
+                    "Get vaccinated.",
+                    "Eat a healthy diet.",
+                    "Consume less salt and sugar."
+                ]
+            }
+        }
+        generated_tip = self.generator.generate_prevent_diseases_tip()
+        self.assertEqual(generated_tip["Type"], "Prevent Diseases")
+        self.assertEqual(generated_tip["Importance Level"], "Medium")
+        self.assertIn(generated_tip["Tip"], self.generator.tips_data['Diseases']['Prevent Diseases'])
 
-        # Test invalid input
+    def test_generate_recover_from_illness_tip(self):
+        self.generator = main.TipGenerator(main.tips_file, main.profile_file)
+        self.generator.tips_data = {
+            "Diseases": {
+                "Recover from Ilness": [
+                    "Worrying or negative thinking.",
+                    "Stress and tension.",
+                    "Diet, exercise and sleep."
+                ]
+            }
+        }
+        generated_tip = self.generator.generate_recover_from_illness_tip()
+        self.assertEqual(generated_tip["Type"], "Recover From Illness")
+        self.assertEqual(generated_tip["Importance Level"], "Medium")
+        self.assertIn(generated_tip["Tip"], self.generator.tips_data['Diseases']['Recover from Ilness'])
+
+    def test_calculate_calories_burned_by_steps_last_week(self):
         profile_data = {
-            "Profile": {"Objective": "Invalid objective"},
-            "Progress": [
-                {"Weight": 50, "Objective": "Invalid objective"},
-                {"Weight": 60, "Objective": "Invalid objective"},
-                {"Weight": 70, "Objective": "Invalid objective"},
-                {"Weight": 80, "Objective": "Invalid objective"},
-                {"Weight": 90, "Objective": "Invalid objective"},
-                {"Weight": 100, "Objective": "Invalid objective"},
-            ],
+            "Profile": {
+                "Steps Goal": 5000
+            }
         }
         generator = main.TipGenerator(main.tips_file, main.profile_file)
         generator.profile_data = profile_data
-        generator.tips_data = self.tips_data
+
+        with self.assertRaises(KeyError):
+            generator.calculate_calories_burned_by_steps_last_week()
+
+
+        profile_data = {
+            "Profile": {
+                "Steps Goal": 5000
+            },
+            "Progress": [
+                {"Date": "2022-05-01", "Steps": 1000},
+                {"Date": "2022-05-02", "Steps": 6000},
+                {"Date": "2022-05-03", "Steps": 3000},
+                {"Date": "2022-05-04", "Steps": 2000},
+                {"Date": "2022-05-05", "Steps": 5000},
+                {"Date": "2022-05-06", "Steps": 10000},
+                {"Date": "2022-05-07", "Steps": 8000}
+            ]
+        }
+        generator.profile_data = profile_data
+        
+        with self.assertRaises(ValueError):
+            profile_data['Progress'][-1]['Steps'] = -1000
+            generator.calculate_calories_burned_by_steps_last_week()
 
         with self.assertRaises(ValueError):
-            generator.generate_weekly_weight_objective_tip()
-
-        # Test valid input - weight added, objective not changed
-        profile_data = {
-            "Profile": {"Objective": "Lose weight", "Weight": 80},
-            "Progress": [
-                {"Weight": 75, "Objective": "Lose weight"},
-                {"Weight": 74, "Objective": "Lose weight"},
-                {"Weight": 73, "Objective": "Lose weight"},
-                {"Weight": 72, "Objective": "Lose weight"},
-                {"Weight": 71, "Objective": "Lose weight"},
-                {"Weight": 70, "Objective": "Lose weight"},
-            ],
-        }
-        generator = main.TipGenerator(main.tips_file, main.profile_file)
-        generator.profile_data = profile_data
-        generator.tips_data = self.tips_data
-
-        generated_tip = generator.generate_weekly_weight_objective_tip()
-        self.assertEqual(generated_tip["Type"], "Weekly Weight Update")
-        self.assertEqual(generated_tip["Importance Level"], "Low")
-        self.assertIsInstance(generated_tip["Tip"], str)
-
-        # Test valid input - weight added, objective changed
-        profile_data = {
-            "Profile": {"Objective": "Gain muscular mass", "Weight": 80},
-            "Progress": [
-                {"Weight": 75, "Objective": "Gain muscular mass"},
-                {"Weight": 74, "Objective": "Gain muscular mass"},
-                {"Weight": 73, "Objective": "Gain muscular mass"},
-                {"Weight": 72, "Objective": "Lose weight"},
-                {"Weight": 71, "Objective": "Lose weight"},
-                {"Weight": 70, "Objective": "Lose weight"},
-            ],
-        }
-        generator = main.TipGenerator(main.tips_file, main.profile_file)
-        generator.profile_data = profile_data
-        generator.tips_data = self.tips_data
-
-        generated_tip = generator.generate_weekly_weight_objective_tip()
-        self.assertEqual(generated_tip["Type"], "Weekly Weight Update")
-        self.assertEqual(generated_tip["Importance Level"], "Low")
-        self.assertIsInstance(generated_tip["Tip"], str)
-
+            profile_data['Progress'][-1]['Steps'] = 60000
+            generator.calculate_calories_burned_by_steps_last_week()
 
         

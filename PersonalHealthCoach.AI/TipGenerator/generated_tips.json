@@ -2,22 +2,22 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Use extra virgin olive oil. Extra virgin olive oil is one of the healthiest vegetable oils you can use. It\u2019s loaded with heart-healthy monounsaturated fats and powerful antioxidants that have anti-inflammatory properties. Extra virgin olive oil may benefit heart health, as people who consume it have a lower risk for dying from heart attacks and strokes according to some evidence."
+        "Tip": "Carbs aren`t the enemy. Carbohydrates are considered the new \u201cenemy`` by a lot of people (right there after fats, which were blasted as bad for you not so long ago and they`re starting to get some \u201cgood press`` nowadays). They`re not. They`re actually quite good for you as long as you use them in the right way, and choose the right ones. It`s more important to monitor the amount of calories you`re consuming and ensure you`re in deficit (if you want to lose weight) or that you`re eating a hell of a lot more than you should if your objective is to gain weight/muscle). Myfitnesspal can help you do this and we`ve written about it previously."
     },
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Incorporate more cardio into your workout routine."
+        "Tip": "Lift weights to build muscle and increase metabolism."
     },
     {
         "Type": "Diet",
         "Importance Level": "Medium",
-        "Tip": "Plan your meals and snacks ahead of time to avoid impulsive eating."
+        "Tip": "Eat more protein and fiber to stay full longer."
     },
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Track your food intake to ensure you're in a calorie deficit."
+        "Tip": "Be patient and consistent - weight loss takes time and effort."
     },
     {
         "Type": "Daily Calories",
@@ -37,12 +37,12 @@
     {
         "Type": "Weekly Steps",
         "Importance Level": "High",
-        "Tip": "You managed to complete your Steps Goal on 7 days this week achieving an average of 12714 steps per day. Congratulations! You're doing fine! If you'd like to step up to the next level, the goal of 10,000 steps is the recommended daily step target for healthy adults to achieve health benefits. You can try to set this goal for better benefits."
+        "Tip": "You managed to complete your Steps Goal on 5 days this week achieving an average of 9142 steps per day. Congratulations! You're doing fine! If you'd like to step up to the next level, the goal of 10,000 steps is the recommended daily step target for healthy adults to achieve health benefits. You can try to set this goal for better benefits. Also, make sure that you enter at the end of each day the number of steps you took that day so that we can better analyze your progress."
     },
     {
-        "Type": "Daily Steps",
-        "Importance Level": "Low",
-        "Tip": "Congratulations! You managed to fulfill your step goal for today by managing to take 13000 steps. This is much more than your goal. Would you consider increasing your goal starting from tomorrow?"
+        "Type": "Daily Steps Calories Burned",
+        "Importance Level": "Medium",
+        "Tip": "You haven't added your steps today. Check your steps counter app and let us know about your achievement!"
     },
     {
         "Type": "Objective-Steps Goal",
@@ -52,56 +52,71 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. It's important to continue to prioritize healthy sleep habits to maintain this good sleep pattern. This includes creating a relaxing bedtime routine, avoiding screens before bed, and keeping your bedroom cool, dark, and quiet."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. By getting enough sleep on a regular basis, you're also reducing your risk of developing chronic health problems such as obesity, diabetes, and heart disease. In addition, you'll have better cognitive function and memory, which can help you perform better at work or in school."
     },
     {
         "Type": "Weekly Slept Hours",
         "Importance Level": "Medium",
-        "Tip": "You had 7 days with 7-9 hours of sleep in the last week. Great job on prioritizing your sleep and maintaining healthy sleep habits! Keep up the good work and continue to prioritize your sleep each night."
+        "Tip": "You had 6 days with 7-9 hours of sleep in the last week. Great job on prioritizing your sleep and maintaining healthy sleep habits! Keep up the good work and continue to prioritize your sleep each night."
     },
     {
         "Type": "Weekly Weight Update",
         "Importance Level": "Low",
-        "Tip": "You gained 2.2 kg in the last 7 days. Gaining 2 kg can be discouraging, but don't let it derail your weight loss goals. Reassess your diet and exercise routine and make any necessary adjustments to ensure that you are in a calorie deficit. Focus on consuming a balanced diet of whole foods and avoid processed and sugary foods. Increase the intensity and frequency of your workouts to burn more calories and build muscle. Remember that weight loss is a journey and it's important to stay committed and patient as you work towards your goals. Celebrate your progress along the way and stay motivated by setting new goals for yourself."
+        "Tip": "You gained 2.2 kg in the last week. Gaining 2 kg can be discouraging, but don't let it derail your weight loss goals. Reassess your diet and exercise routine and make any necessary adjustments to ensure that you are in a calorie deficit. Focus on consuming a balanced diet of whole foods and avoid processed and sugary foods. Increase the intensity and frequency of your workouts to burn more calories and build muscle. Remember that weight loss is a journey and it's important to stay committed and patient as you work towards your goals. Celebrate your progress along the way and stay motivated by setting new goals for yourself."
     },
     {
         "Type": "Weekly Food Logs",
         "Importance Level": "High",
-        "Tip": "Our recommendation is to consume a total of 2637 calories per day. In the last week you had 1 day(s) in which you consumed enough calories, 6 day(s) in which you consumed fewer calories and 0 day(s) in which you consumed more calories. Great job on implementing a calorie deficit of 250-500 calories per day in the last week! Consistency is key when it comes to weight loss, and it's important to remember that progress may not always be linear. Keep up the great work and remember to prioritize sustainable and gradual changes to your lifestyle for long-term success. Remember, it's a journey, and every small step counts towards your goal."
+        "Tip": "Our recommendation is to consume a total of 2637 calories per day. In the last week you had 1 day(s) in which you consumed enough calories, 4 day(s) in which you consumed fewer calories, 0 day(s) in which you consumed more calories and 2 day(s) in which you didn't add the food you ate. Try adding it every day so that we can analize your progress better.Great job on implementing a calorie deficit of 250-500 calories per day in the last week! Consistency is key when it comes to weight loss, and it's important to remember that progress may not always be linear. Keep up the great work and remember to prioritize sustainable and gradual changes to your lifestyle for long-term success. Remember, it's a journey, and every small step counts towards your goal."
     },
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Oranges are well known for their vitamin C content. What\u2019s more, they\u2019re high in fiber and antioxidants."
+        "Tip": "Whole milk is very high in vitamins, minerals, quality animal protein, and healthy fats. What`s more, it`s one of the best dietary sources of calcium."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "Apples are an excellent source of antioxidants, which combat free radicals. Free radicals are damaging substances that the body generates. They cause undesirable changes in the body and may contribute to chronic conditions, as well as the aging process. However, some studies have suggested that an antioxidant in apples might extend a person\u2019s life span and reduce the risk of chronic disease."
+        "Tip": "Oily fish. Some examples of oily fish include salmon, trout, mackerel, herring, sardines, and anchovies. These types of fish have oil in their tissues and around their gut. Their lean fillets contain high levels of omega-3 fatty acids. These oils may provide benefits for the heart and nervous system, according to the Office of Dietary Supplements (ODS). The ODS also suggest that omega-3 fatty acids can help with inflammatory conditions such as arthritis. They are also plentiful in vitamins A and D. One 2014 study suggested that fatty acids can significantly reduce the risk of rheumatoid arthritis."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Kale. The payoff from this leafy green: loads of calcium, vitamin C, beta-carotene, and a variety of other antioxidants. Kale is also a good source of lutein, an eye-friendly nutrient that may slow the development of macular degeneration. Try this: Make kale chips by tearing the leaves into pieces and tossing them with olive oil, salt, and pepper. Spread on a baking sheet and bake at 300 degrees F until crisp, 20 to 30 minutes. Or try Quinoa With Mushrooms, Kale, and Sweet Potatoes."
+        "Tip": "Bulgur. Made from wheat that has been steamed, dried, and cracked, bulgur delivers more fiber than brown rice, plus you get a boost of potassium, B vitamins, and calcium. Try this: Cook bulgur as you would oatmeal. Top it with honey and chopped nuts for breakfast or a hearty snack. Or try Minty Bulgur Salad With Salmon and Cucumbers."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": "Planks. Planks are an effective way to target both your abdominal muscles and your whole body. Planking stabilizes your core without straining your back the way situps or crunches might. 1. Begin in a pushup position with your hand and toes firmly planted on the ground, your back straight, and your core tight. 2. Keep your chin slightly tucked and your gaze just in front of your hands. 3. Take deep, controlled breaths while maintaining tension throughout your entire body, so your abs, shoulders, triceps, glutes, and quads are all engaged. 4. Complete 2-3 sets of 30-second holds to start."
+        "Tip": "Single-leg deadlifts. This is an exercise that challenges your balance. Single-leg deadlifts require stability and leg strength. Grab a light to moderate dumbbell to complete this move. Equipment: dumbbell. 1. Begin standing with a dumbbell in your right hand, and your knees slightly bent. 2. Hinging at the hips, begin to kick your left leg straight back behind you, lowering the dumbbell down toward the ground. 3. When you reach a comfortable height with your left leg, slowly return to the starting position in a controlled motion, squeezing your right glute. Ensure that your pelvis stays square to the ground during the movement. 4. Repeat 10 to 12 reps before moving the weight to your left hand and repeating the same steps on the left leg. It`s suggested to do 3 sets of 10-12 reps per side."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Gym. Going to the gym is great because of the classes on offer. Whether it\u2019s spinning, TRX, kettlebells or yoga, the gym caters for all ages and abilities so you can feel comfortable in your surroundings and get a great workout whenever you want it. Due to a rise in popularity, gyms offer specific classes for the likes of fat burning, muscle toning, aerobic exercise etc., so there really is something for everyone. In addition, going to classes means you can meet people of the same level and encourage each other to get the most from your classes, while also enjoying their company."
+        "Tip": "Cycling. Thankfully, you don`t need to be trying to win the Tour de France to reap the rewards of this fantastic sport. Cycling classes are great fun, an even better workout and are available everywhere. Cycling is a low-impact way to burn a tonne of calories, but it also makes you feel happier and makes your brain perform much better. Our research finds that after only three months, people who exercised had the brain volume of those three years younger."
     },
     {
-        "Type": "Daily Calories Burned",
+        "Type": "Daily Steps Calories Burned",
         "Importance Level": "Medium",
-        "Tip": "None"
+        "Tip": "You haven't added your steps today. Check your steps counter app and let us know about your achievement!"
     },
     {
         "Type": "Weekly Steps Calories Burned",
         "Importance Level": "High",
-        "Tip": "Congratulations! With a total of 89000 steps you managed to burn 3043 calories in the last week. Keep up the good work also in the next weeks!"
+        "Tip": "Congratulations! With a total of 64000 steps you managed to burn 2189 calories in the last week. Keep up the good work also in the next weeks!"
+    },
+    {
+        "Type": "Prevent Diseases",
+        "Importance Level": "Medium",
+        "Tip": "Practice safe sex. Looking after your sexual health is important for your overall health and well-being. Practice safe sex to prevent HIV and other sexually transmitted infections like gonorrhoea and syphilis. There are available prevention measures such as pre-exposure prophylaxis (PrEP) that will protect you from HIV and condoms that will protect you from HIV and other STIs."
+    },
+    {
+        "Type": "Recover From Illness",
+        "Importance Level": "Medium",
+        "Tip": "Get The Active Life Back Slowly and Steadily. Taking some time to recover means not pushing yourself too fast and too hard. You might think it`s okay to go back to heavy activities since you`re feeling better, but the body needs proper rest to heal properly. So when your doctor prescribes bed rest for a while, it`s because it helps you with the recovery process. Take short walks or work only for an hour or less, if you must. Increase your physical activity little by little until you can feel that your body can handle more."
+    },
+    {
+        "Type": "Daily Workout Feedback",
+        "Importance Level": "Medium",
+        "Tip": "You managed to burn 120.56 calories during your workout that lasted 8 minutes. Good job! We are waiting for you again tomorrow for the daily training."
     }
 ]
