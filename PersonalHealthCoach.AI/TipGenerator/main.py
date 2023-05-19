@@ -1,11 +1,10 @@
 import json
 import random
-
+import re
 import os
 abspath = os.path.dirname(__file__)
 import sys
 sys.path.append(abspath)
-from unittest.mock import MagicMock
 
 def verify_if_steps_are_introduced(steps_list):
         for steps_per_day in steps_list:
@@ -36,6 +35,45 @@ def verify_if_food_logs_introduced(food_logs_list):
             if food_log != "Not added":
                 return False;
         return True;
+
+#test
+def extract_minutes(time_string):
+    minutes = int(time_string.split()[0])
+    return minutes
+#test
+def extract_number(sentence):
+    pattern = r"\d+-(\d+) seconds"
+    match = re.search(pattern, sentence)
+    if match:
+        number_str = match.group(1)
+        return int(number_str)
+    return None
+#test
+def calculate_minutes_per_workout(workout):
+    total_time = 0
+    for exercise in workout:
+        rep_range = exercise["rep_range"]
+        sets = exercise["sets"]
+
+        if rep_range.isdigit():
+            max_reps = int(rep_range)
+        elif exercise["type"] != "Stretching":
+            max_reps = int(rep_range.split("-")[1])
+
+        if exercise["type"] == "Stretching":
+            hold_time = extract_number(rep_range)
+            total_time += (hold_time * sets)
+        else:
+            rep_time = 2  # Assuming 2 seconds per repetition
+            exercise_time = rep_time * max_reps * sets
+            total_time += exercise_time
+
+    total_time_minutes = total_time / 60
+    return total_time_minutes + 2
+#test
+def calculate_calories_per_workout(minutes,MET,weight):
+    calories_burned = minutes * (MET * 3.5 * weight) / 200
+    return calories_burned
 
 class TipGenerator:
     def __init__(self, tips_file, profile_json):
@@ -69,6 +107,10 @@ class TipGenerator:
         tips.append(generator.generate_sport_exercise_tip())
         tips.append(generator.generate_calories_burned_by_steps_today_tip())
         tips.append(generator.generate_weekly_steps_calories_burned_feedback())
+        tips.append(generator.generate_prevent_diseases_tip())
+        tips.append(generator.generate_recover_from_illness_tip())
+        tips.append(generator.generate_daily_exerciselog_tip())
+        #tips.append(generator.generate_weekly_exercise_logs_feedback())
 
         with open(f"{abspath}/generated_tips.json", 'w') as tips_file:
             json.dump(tips, tips_file, indent=4)
@@ -309,15 +351,23 @@ class TipGenerator:
         steps_goal = self.profile_data['Profile']['Steps Goal']
         if steps_goal <= 0 or steps_goal > 100000:
             raise ValueError("Steps Goal should be between 1 and 100000.")
-            
-        progress = self.profile_data['Progress']
+
+        if 'Progress' in self.profile_data:    
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
+        
         for i in range(len(progress)):
-            if progress[i]['Steps'] < 0 or progress[i]['Steps'] > 50000:
-                raise ValueError("Steps should be between 0 and 50000.")
+            if 'Steps' in progress[i]:
+                if progress[i]['Steps'] < 0 or progress[i]['Steps'] > 50000:
+                    raise ValueError("Steps should be between 0 and 50000.")
         
         steps_list = []
         for day in self.profile_data['Progress']:
-            steps = day['Steps']
+            if 'Steps' in day:
+                steps = day['Steps']
+            else:
+                steps = "Not added"
             steps_list.append(steps)
         
         tip = ""
@@ -334,14 +384,7 @@ class TipGenerator:
         count_days_objective_completed = 0
         average_number_of_steps = 0
         for steps_per_day in steps_list:
-            if steps_per_day < 0:
-                generated_tip = {
-                            "Type": "Weekly Steps",
-                            "Importance Level": "Low",
-                            "Tip": "Not generated"
-                        }
-                return generated_tip
-            elif steps_per_day == "Not added":
+            if steps_per_day == "Not added":
                 count_days_not_introduced += 1
             elif steps_per_day >= steps_goal:
                 average_number_of_steps += steps_per_day
@@ -379,37 +422,37 @@ class TipGenerator:
 
     def generate_daily_number_of_steps_tip(self):
         steps_goal = self.profile_data['Profile']['Steps Goal']
-
         if steps_goal <= 0 or steps_goal > 100000:
             raise ValueError("Steps Goal should be between 1 and 100000.")
-            
-        progress = self.profile_data['Progress']
-        for i in range(len(progress)):
-            if progress[i]['Steps'] < 0 or progress[i]['Steps'] > 50000:
+
+        if 'Progress' in self.profile_data:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError('Progress key doesn\'t exist')
+
+        if 'Steps' in progress[-1]: 
+            steps = self.profile_data['Progress'][-1]['Steps']
+            if steps < 0 or steps > 50000:
                 raise ValueError("Steps should be between 0 and 50000.")
-
-        steps_list = []
-        for day in self.profile_data['Progress']:
-            steps = day['Steps']
-            steps_list.append(steps)
-
-        if steps_list[len(steps_list)-1] == "Not added":
+        else:
+            tip = "You haven't added your steps today. Check your steps counter app and let us know about your achievement!"
             generated_tip = {
-                            "Type": "Daily Steps",
-                            "Importance Level": "None",
-                            "Tip": "Not generated"
+                            "Type": "Daily Steps Calories Burned",
+                            "Importance Level": "Medium",
+                            "Tip": tip
                         }
             return generated_tip
-        
+           
         tip = ""
         importance_level = "Low"
-        steps_difference = steps_list[len(steps_list)-1] - steps_goal
+        steps_difference = steps - steps_goal
+        calories_burned = generator.calculate_calories_burned_by_steps_today()
         if steps_difference > 4000:
-            tip = "Congratulations! You managed to fulfill your step goal for today by managing to take " + str(steps_list[len(steps_list)-1]) + " steps. This is much more than your goal. Would you consider increasing your goal starting from tomorrow?"
+            tip = "Congratulations! You managed to fulfill your step goal for today by managing to take " + str(steps) + " steps and burning " + str(calories_burned) + " calories. This is much more than your goal. Would you consider increasing your goal starting from tomorrow?"
         elif 2000 < steps_difference <= 4000:
-            tip = "Congratulations! You managed to fulfill your step goal for today by managing to take " + str(steps_list[len(steps_list)-1]) + " steps. This is actually more than your goal. Keep going like this and if you feel that you can achieve more, try to increase your daily steps goal."
+            tip = "Congratulations! You managed to fulfill your step goal for today by managing to take " + str(steps) + " steps and burning " + str(calories_burned) + " calories. This is actually more than your goal. Keep going like this and if you feel that you can achieve more, try to increase your daily steps goal."
         elif 0 <= steps_difference <= 2000:
-            tip = "Congratulations! You managed to fulfill your step goal for today by managing to take " + str(steps_list[len(steps_list)-1]) + " steps. Keep going!"
+            tip = "Congratulations! You managed to fulfill your step goal for today by managing to take " + str(steps) + " steps and burning " + str(calories_burned) + " calories. Keep going!"
         elif 0 > steps_difference:
             tip = "You haven't achieved your steps goal for today yet. But maybe it's not too late to take a relaxing walk outside and do that."
             importance_level = "High"
@@ -423,12 +466,10 @@ class TipGenerator:
 
     def generate_steps_goal_objective_age_tip(self):
         steps_goal = self.profile_data['Profile']['Steps Goal']
-
         if steps_goal <= 0 or steps_goal > 100000:
             raise ValueError("Steps Goal should be between 1 and 100000.")
 
         objective = self.profile_data['Profile']['Objective']
-
         objectives_list = ["Lose weight", "Gain muscular mass", "Improve overall health", "Improve cardiovascular health", "Increase endurance", "Maintain weight"]
         if objective not in objectives_list:
             raise ValueError("Objective not found in list.")
@@ -466,24 +507,26 @@ class TipGenerator:
         return generated_tip
 
     def generate_hours_slept_last_night_tip(self):
-        hours_slept_list = []
-        for day in self.profile_data['Progress']:
-            hours = day['HoursSlept']
-            if hours <= 0 or hours > 24:
-                raise ValueError("Hours should be between 1 and 24.")
-            hours_slept_list.append(hours)
+        if 'Progress' in self.profile_data and self.profile_data['Progress']:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
         
-        if hours_slept_list[len(hours_slept_list) - 1] == "Not added":
+        if 'HoursSlept' in progress[-1]:
+            hours_slept_last_night = progress[-1]['HoursSlept']
+            if hours_slept_last_night < 0 or hours_slept_last_night > 24:
+                raise ValueError("Hours should be between 1 and 24.")
+        else:
+            tip = "You did not add the number of hours you slept last night. You can do it now to help us better analyze your progress."
             generated_tip = {
                             "Type": "Hours Slept Last Night",
-                            "Importance Level": "None",
-                            "Tip": "Not generated"
+                            "Importance Level": "Low",
+                            "Tip": tip
                         }
             return generated_tip
-
+        
         tip = ""
         importance_level = "Low"
-        hours_slept_last_night = hours_slept_list[len(hours_slept_list) - 1]
         if hours_slept_last_night == 0:
             tip = "You didn't sleep at all last night. If it was due to a rare occasion, such as a special event or unexpected situation, it may not be necessary to worry too much about the immediate effects. However, it's still important to prioritize healthy sleep habits moving forward to prevent any negative impacts on long-term health and productivity. "
             tip += random.choice(self.tips_data['Sleep']['No sleep last night'])
@@ -513,11 +556,19 @@ class TipGenerator:
         return generated_tip
 
     def generate_hours_slept_weekly_feedback(self):
+        if 'Progress' in self.profile_data and self.profile_data['Progress']:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
+        
         hours_slept_list = []
-        for day in self.profile_data['Progress']:
-            hours = day['HoursSlept']
-            if hours < 0 or hours > 24:
-                raise ValueError("Hours should be between 1 and 24.")
+        for day in progress:
+            if 'HoursSlept' in day:
+                hours = day['HoursSlept']
+                if hours < 0 or hours > 24:
+                    raise ValueError("Hours should be between 1 and 24.")
+            else:
+                hours = "Not added"    
             hours_slept_list.append(hours)
 
         if(verify_if_slept_hours_are_introduced(hours_slept_list) == True):
@@ -580,18 +631,25 @@ class TipGenerator:
         if objective not in objectives_list:
             raise ValueError("Objective not found in list.")
 
-        for day in reversed(self.profile_data["Progress"]):
-            if day['Objective'] != objective:
-                objective = day['Objective']
-                break
-            else:
+        if 'Progress' in self.profile_data and self.profile_data['Progress']:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
+        
+        for day in reversed(progress):
+            if 'Objective' in day:
+                if day['Objective'] != objective:
+                    objective = day['Objective']
                 break
         
         weight_list = []
-        for day in self.profile_data['Progress']:
-            weight = day['Weight']
-            if weight < 30 or weight > 200:
-                raise ValueError("Weight should be between 30 and 200.")
+        for day in progress:
+            if 'Weight' in day:
+                weight = day['Weight']
+                if weight < 30 or weight > 200:
+                    raise ValueError("Weight should be between 30 and 200.")
+            else:
+                weight = "Not added"
             weight_list.append(weight)
         if(verify_if_weight_introduced(weight_list) == True):
             tip = "Wouldn't you like to weigh yourself and add your weight in the app once a week? In this way, we could better analyze your progress according to your objective. Also, by weighing yourself, you can have better control over your kilograms."
@@ -603,8 +661,8 @@ class TipGenerator:
             return generated_tip
         
         start_weight = self.profile_data['Profile']['Weight']
-        for day in reversed(self.profile_data["Progress"]):
-            if day['Weight'] != "Not added":
+        for day in reversed(progress):
+            if 'Weight' in day:
                 last_weight_added = day['Weight']
                 break
         weight_change = start_weight - last_weight_added
@@ -612,7 +670,7 @@ class TipGenerator:
         tip = ""
         importance_level = "Low"
         if weight_change > 0:
-            tip = "You lost " + str(round(weight_change, 1)) + " kg in the last " + str(len(weight_list)) + " days. "
+            tip = "You lost " + str(round(weight_change, 1)) + " kg in the last week. "
             if objective == "Lose weight":
                 if weight_change <= 0.5:
                     tip += "Congratulations on your progress! To continue losing weight, focus on maintaining a calorie deficit by consuming fewer calories than your body needs and engaging in regular physical activity. Try to avoid sugary and processed foods and choose nutritious, whole foods instead. Remember that weight loss is a journey, so stay committed and patient as you work towards your goals."
@@ -642,7 +700,7 @@ class TipGenerator:
                 elif 2 <= weight_change:
                     tip += "Losing a large amount of weight while trying to live a healthy lifestyle may be concerning. Consider reviewing your diet and ensuring that you are consuming enough calories and nutrients to meet your body's needs. Additionally, prioritize regular physical activity to support cardiovascular health, strength, and endurance. Finally, consider consulting with a healthcare professional to rule out any underlying medical conditions that may be contributing to weight loss and to discuss a personalized approach to living a healthy lifestyle."
         elif weight_change < 0:
-            tip = "You gained " + str(abs(round(weight_change, 1))) + " kg in the last " + str(len(weight_list)) + " days. "
+            tip = "You gained " + str(abs(round(weight_change, 1))) + " kg in the last week. "
             if objective == "Lose weight":
                 if abs(weight_change) <= 0.5:
                     tip += "Gaining weight can be frustrating, but don't let it discourage you from your weight loss goals. Take a moment to reassess your diet and exercise routine. Make sure you are consuming a balanced diet of whole foods and avoiding processed and sugary foods. Additionally, consider increasing the intensity and frequency of your workouts to burn more calories. Remember that weight loss is a journey and small setbacks are normal. Stay committed to your goals and celebrate your progress along the way."
@@ -672,7 +730,7 @@ class TipGenerator:
                 elif 2 <= abs(weight_change):
                     tip += "Gaining a large amount of weight while trying to live a healthy lifestyle may be concerning. Consider reviewing your diet and ensuring that you are consuming an appropriate amount of calories to support your energy needs. Additionally, focus on a balanced diet with plenty of nutrient-dense foods like fruits, vegetables, lean protein, and healthy fats. Prioritize regular physical activity to support cardiovascular health, strength, and endurance, and consider consulting with a healthcare professional to rule out any underlying medical conditions that may be contributing to weight gain. Finally, consider working with a registered dietitian or health coach to develop a personalized approach to achieving your health goals."
         else:
-            tip = "Your weight remained the same in the last " + str(len(weight_list)) + " days. "
+            tip = "Your weight remained the same in the last week. "
             if objective == "Lose weight":
                 tip += "While it can be frustrating not to see progress on the scale, don't get discouraged. Remember that weight loss is not always linear and can vary day to day. Evaluate your diet and exercise routine and look for areas where you can make adjustments. Make sure you are consuming a balanced diet of whole foods and avoiding processed and sugary foods. Consider increasing the intensity and frequency of your workouts to burn more calories. Finally, stay patient and consistent in your efforts and celebrate non-scale victories such as increased energy and improved fitness."
             elif objective == "Gain muscular mass":
@@ -700,9 +758,17 @@ class TipGenerator:
         return generated_tip
 
     def generate_food_logs_weekly_feedback(self):
+        if 'Progress' in self.profile_data and self.profile_data['Progress']:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
+        
         food_logs_list = []
-        for day in self.profile_data['Progress']:
-            food = day['FoodLogs']
+        for day in progress:
+            if 'FoodLogs' in day:
+                food = day['FoodLogs']
+            else:
+                food = "Not added"
             food_logs_list.append(food)
         if verify_if_food_logs_introduced(food_logs_list) == True:
             tip = "Wouldn't you like to try to enter in the application what you eat every day? It would only take a few seconds after each meal and in this way you could get a real-time record of the calories you consume. Also, by doing this we will be able to offer you personalized advice on a daily basis."
@@ -718,25 +784,38 @@ class TipGenerator:
         objectives_list = ["Lose weight", "Gain muscular mass", "Improve overall health", "Improve cardiovascular health", "Increase endurance", "Maintain weight"]
         if objective not in objectives_list:
             raise ValueError("Objective not found in list.")
-        for day in reversed(self.profile_data["Progress"]):
-            if day['Objective'] != objective:
-                objective = day['Objective']
+        for day in reversed(progress):
+            if 'Objective' in day:
+                if day['Objective'] != objective:
+                    objective = day['Objective']
                 break
-            else:
-                break
+            
 
         exercise_logs_list = []
-        for day in self.profile_data['Progress']:
-            exercise = day['ExerciseLogs']
+        for day in reversed(progress):
+            if 'ExerciseLogs' in day:
+                exercise = day['ExerciseLogs']
+            else:
+                exercise = "Not added"
             exercise_logs_list.append(exercise)
 
         calories_required = generator.calculate_amr()
         count_days_too_few_calories = 0
         count_days_too_many_calories = 0
         count_days_enough_calories = 0 
+        count_days_not_added = 0
 
-        for day in self.profile_data['Progress']:
-            total_calories = sum([food['Calories'] for food in day['FoodLogs']])
+        count_days = 7
+        for day in reversed(progress):
+            if count_days == 0:
+                break
+            if 'FoodLogs' in day:
+                total_calories = sum([food['Calories'] for food in day['FoodLogs']])
+                count_days -= 1
+            else: 
+                count_days_not_added += 1
+                count_days -= 1
+                continue
             if calories_required - total_calories > 250:
                 count_days_too_few_calories += 1
             elif calories_required - total_calories < -250:
@@ -744,7 +823,10 @@ class TipGenerator:
             else:
                 count_days_enough_calories += 1
 
-        tip = "Our recommendation is to consume a total of " + str(calories_required) + " calories per day. In the last week you had " + str(count_days_enough_calories) + " day(s) in which you consumed enough calories, " + str(count_days_too_few_calories) + " day(s) in which you consumed fewer calories and " + str(count_days_too_many_calories) + " day(s) in which you consumed more calories. "
+        if count_days_not_added == 0:
+            tip = "Our recommendation is to consume a total of " + str(calories_required) + " calories per day. In the last week you had " + str(count_days_enough_calories) + " day(s) in which you consumed enough calories, " + str(count_days_too_few_calories) + " day(s) in which you consumed fewer calories and " + str(count_days_too_many_calories) + " day(s) in which you consumed more calories. "
+        else:
+            tip = "Our recommendation is to consume a total of " + str(calories_required) + " calories per day. In the last week you had " + str(count_days_enough_calories) + " day(s) in which you consumed enough calories, " + str(count_days_too_few_calories) + " day(s) in which you consumed fewer calories, " + str(count_days_too_many_calories) + " day(s) in which you consumed more calories and " + str(count_days_not_added) + " day(s) in which you didn't add the food you ate. Try adding it every day so that we can analize your progress better." 
 
         if objective == "Lose weight":
             if count_days_too_few_calories < 4:
@@ -780,7 +862,6 @@ class TipGenerator:
                         }
         return generated_tip
 
-    #This week
     def generate_food_recommandation_short_tip(self):
         short_food_tips = self.tips_data['Food']['Short']
         tip = random.choice(short_food_tips)
@@ -860,55 +941,97 @@ class TipGenerator:
         return round(calories_burned,3)
 
     def calculate_calories_burned_by_steps_today(self):
-        steps = self.profile_data['Progress'][-1]['Steps']
-        if steps == "Not added":
-            steps = 0
-        if steps < 0 or steps > 50000:
-            raise ValueError("Steps should be between 0 and 50000.")
-
-        return generator.calculate_calories_burned_by_steps(steps)
-    
-    def generate_calories_burned_by_steps_today_tip(self):
-        steps = self.profile_data['Progress'][-1]['Steps']
-        if steps == "Not added":
-            steps = 0
-        if steps < 0 or steps > 50000:
-            raise ValueError("Steps should be between 0 and 50000.")
+        if 'Progress' in self.profile_data:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesnt exist.")
         
+        if 'Steps' in progress[-1]:
+            steps = progress[-1]['Steps']
+            if steps < 0 or steps > 50000:
+                raise ValueError("Steps should be between 0 and 50000.")
+        else:
+            steps = 0
+        print(steps)
+        return generator.calculate_calories_burned_by_steps(steps)
+
+    def calculate_calories_burned_by_steps_last_week(self):
+        if 'Progress' in self.profile_data:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
+        
+        for i in range(7):
+            if 'Steps' in progress[i]:
+                if progress[i]['Steps'] < 0 or progress[i]['Steps'] > 50000:
+                    raise ValueError("Steps should be between 0 and 50000.")
+        
+        count_number_of_days = 7
+        total_calories_burned_by_steps_last_week = 0
+        for day in reversed(self.profile_data['Progress']):
+            if count_number_of_days != 0:
+                if 'Steps' not in day:
+                    steps = 0
+                else:
+                    steps = day['Steps']
+                total_calories_burned_by_steps_last_week += generator.calculate_calories_burned_by_steps(steps)
+                count_number_of_days -= 1
+            else:
+                break
+
+        return round(total_calories_burned_by_steps_last_week)
+
+    def generate_calories_burned_by_steps_today_tip(self):
+        if 'Progress' in self.profile_data:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
+        
+        if 'Steps' in progress[-1]:
+            steps = self.profile_data['Progress'][-1]['Steps']
+            if steps < 0 or steps > 50000:
+                raise ValueError("Steps should be between 0 and 50000.")
+        else:
+            tip = "You haven't added your steps today. Check your steps counter app and let us know about your achievement!"
+            generated_tip = {
+                            "Type": "Daily Steps Calories Burned",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+            return generated_tip
+
         steps_goal = self.profile_data['Profile']['Steps Goal']
         if steps_goal <= 0 or steps_goal > 100000:
             raise ValueError("Steps Goal should be between 1 and 100000.")
 
-        if steps > steps_goal:
-            generated_tip = {
-                            "Type": "Daily Calories Burned",
-                            "Importance Level": "Medium",
-                            "Tip": "None"
-                        }
-            return generated_tip
-        else:
+        if steps < steps_goal:
             steps_remaining = steps_goal - steps
             calories_burned = generator.calculate_calories_burned_by_steps_today()
             tip = "You managed to burn " + str(calories_burned) + " calories today but for sure you can burn more if you do the remaining " + str(steps_remaining) + " steps to achieve your daily steps goal of " + str(steps_goal) + ". Just keep moving!"
             generated_tip = {
-                            "Type": "Daily Calories Burned",
+                            "Type": "Daily Steps Calories Burned",
                             "Importance Level": "Medium",
                             "Tip": tip
                         }
             return generated_tip
     
     def generate_weekly_steps_calories_burned_feedback(self):
-        progress = self.profile_data['Progress']
+        if 'Progress' in self.profile_data and self.profile_data['Progress']:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
+        
         for i in range(len(progress)):
-            if progress[i]['Steps'] != "Not added":
+            if 'Steps' in progress[i]:
                 if progress[i]['Steps'] < 0 or progress[i]['Steps'] > 50000:
                     raise ValueError("Steps should be between 0 and 50000.")
         
         steps_list = []
         calories_burned_list = []
-        for day in self.profile_data['Progress']:
-            steps = day['Steps']
-            if str(steps) == "Not added":
+        for day in progress:
+            if 'Steps' in day:
+                steps = day['Steps']
+            else:
                 steps = 0
             calories_burned = generator.calculate_calories_burned_by_steps(steps)
             calories_burned_list.append(calories_burned)
@@ -928,8 +1051,10 @@ class TipGenerator:
 
         if total_calories_burned_last_week > 2000:
             tip = "Congratulations! With a total of " + str(total_steps_last_week) + " steps you managed to burn " + str(total_calories_burned_last_week) + " calories in the last week. Keep up the good work also in the next weeks!"
+        elif total_calories_burned_last_week == 0:
+            tip = "None"
         else:
-            tip = "ceva"
+            tip = "With a total of " + str(total_steps_last_week) + " steps you managed to burn " + str(total_calories_burned_last_week) + " calories in the last week. As a challenge, you may try to aim for a bigger amount of burned calories in the next weeks!"
 
 
         generated_tip = {
@@ -939,11 +1064,101 @@ class TipGenerator:
                         }
         return generated_tip
 
+    def generate_prevent_diseases_tip(self):
+        prevent_tips = self.tips_data['Diseases']['Prevent Diseases']
+        tip = random.choice(prevent_tips)
+        generated_tip = {
+                            "Type": "Prevent Diseases",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+
+    def generate_recover_from_illness_tip(self):
+        recover_tips = self.tips_data['Diseases']['Recover from Ilness']
+        tip = random.choice(recover_tips)
+        generated_tip = {
+                            "Type": "Recover From Illness",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+
+    #THIS WEEK
+    #test si trebuie completat
+    def generate_daily_exerciselog_tip(self):
+        MET = 8.0
+        if 'Progress' in self.profile_data:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
+        
+        if 'ExerciseLogs' in progress[-1]:
+            workout = self.profile_data['Progress'][-1]['ExerciseLogs']
+        else:
+            tip = "Even if you didn't do your workout today, it's never too late to get moving. Check your generated workout, do it and mark it as done. Set realistic goals, stay motivated, and remember that consistency is key. Your health and well-being will thank you."
+            generated_tip = {
+                                "Type": "Daily Workout Feedback",
+                                "Importance Level": "Medium",
+                                "Tip": tip
+                            }
+            return generated_tip
+        
+        weight = self.profile_data['Profile']['Weight']
+        if weight <= 30 or weight > 200:
+            raise ValueError("Weight should be between 30 and 200.")
+        minutes = round(calculate_minutes_per_workout(workout))
+        calories_burned = calculate_calories_per_workout(minutes,MET,weight) + 50
+
+        tip = "You managed to burn " + str(calories_burned) + " calories during your workout that lasted " + str(minutes) + " minutes. Good job! We are waiting for you again tomorrow for the daily training."
+        generated_tip = {
+                            "Type": "Daily Workout Feedback",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
+
+    # #test
+    # def generate_weekly_exercise_logs_feedback(self):
+    #     objective = self.profile_data['Profile']['Objective']
+    #     objectives_list = ["Lose weight", "Gain muscular mass", "Improve overall health", "Improve cardiovascular health", "Increase endurance", "Maintain weight"]
+    #     if objective not in objectives_list:
+    #         raise ValueError("Objective not found in list.")
+    #     for day in reversed(self.profile_data["Progress"]):
+    #         if day['Objective'] != objective:
+    #             objective = day['Objective']
+    #         break
+        
+    #     exercise_logs_list = []
+    #     count_number_of_days = 7
+    #     total_exercise_duration_last_week = 0
+    #     for day in reversed(self.profile_data["Progress"]):
+    #         if count_number_of_days != 0:
+    #             exercise = day['ExerciseLogs']
+    #             if exercise == "Not added":
+    #                 exercise_duration = 0
+    #             else:
+    #                 exercise_duration = sum([extract_minutes(exercise['Duration']) for exercise in day['ExerciseLogs']])
+    #             total_exercise_duration_last_week += exercise_duration
+    #             exercise_logs_list.append(exercise)
+    #             count_number_of_days -= 1
+    #         else:
+    #             break
+        
+    #     if verify_if_exercise_logs_introduced(exercise_logs_list) == True:
+    #         tip = "Wouldn't you like to try to enter in the application the exercises you do every day? It would only take a few seconds after each activity and in this way you could get a real-time record of the calories you burned. Also, by doing this we will be able to offer you personalized advice on a daily basis."
+    #         generated_tip = {
+    #                         "Type": "Weekly Exercise Logs",
+    #                         "Importance Level": "High",
+    #                         "Tip": tip
+    #                     }
+    #         return generated_tip
+
 def tip(input):
     tips_file = f"{abspath}/tips.json"
     generator = TipGenerator(tips_file, input)
     generated_tip = generator.generate_tips()
-    print(generated_tip)
+    #print(generated_tip)
     return generated_tip
 
 tips_file = f"{abspath}/tips.json"
