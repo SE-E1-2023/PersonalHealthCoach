@@ -257,11 +257,14 @@ def generate_workouts(user_data, exercise_database, main_muscle_groups, exercise
 
         # adaugam exercitiile
         for exercise in selected_exercises:
-            exercise_info = {
-                "exercise": exercise["name"],
-                "type": exercise["type"],
-            }
+            exercise_info = {}
+            exercise_info["exercise"] = exercise["name"]
+            exercise_info["type"] = exercise["type"]
             exercise_info.update(exercise_type_info[exercise["type"]])
+            exercise_info["images"] = exercise.get("images", [])
+            exercise_info["instructions"] = exercise.get("instructions", [])
+
+        
             workouts[workout_key].append(exercise_info)
 
     
