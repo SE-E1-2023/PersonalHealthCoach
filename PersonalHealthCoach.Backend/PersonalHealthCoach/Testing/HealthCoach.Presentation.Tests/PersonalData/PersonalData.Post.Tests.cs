@@ -34,7 +34,7 @@ public partial class PersonalDataTests
         //Act
         var personalDataCommand = new AddPersonalDataCommand(user.Id, PersonalDataConstants.MinimumDateOfBirth, 80.5f, 195f, new List<string> { "Asthma", "Allergies" },
                 new List<string> { "Acne" }, PersonalDataConstants.AllowedGoals.ElementAt(0),
-                new List<string> { "Boxing", "Cycling" }, 100, 8, PersonalDataConstants.AllowedGenders.ElementAt(0));
+                new List<string> { "Boxing", "Cycling" }, 100, 8, PersonalDataConstants.AllowedGenders.ElementAt(0), true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         var json = JsonConvert.SerializeObject(personalDataCommand);
         var content = new StringContent(json, Encoding.UTF8, "application/json");

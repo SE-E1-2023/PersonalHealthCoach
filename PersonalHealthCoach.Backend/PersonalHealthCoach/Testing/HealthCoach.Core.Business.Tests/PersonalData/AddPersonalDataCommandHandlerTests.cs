@@ -86,7 +86,7 @@ public class AddPersonalDataCommandHandlerTests
         null,
         12333,
         7.5,
-        "M");
+        "M", true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
     private AddPersonalDataCommandHandler Sut() => new(repositoryMock.Object);
 }

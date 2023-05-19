@@ -15,4 +15,20 @@ public record AddPersonalDataCommand(
     List<string> UnwantedExercises,
     int? DailySteps,
     double? HoursOfSleep,
-    string Gender) : IRequest<Result<PersonalData>>;
+    string Gender,
+    bool IsProUser,
+    int WorkoutsPerWeek,
+    bool HasOther,
+    bool HasMachine,
+    bool HasBarbell,
+    bool HasDumbbell,
+    bool HasKettlebell,
+    bool HasCable,
+    bool HasEasyCurlBar,
+    bool HasNone,
+    bool HasBands,
+    bool HasMedicineBall,
+    bool HasExerciseBall,
+    bool HasFoamRoll,
+    bool WantsBodyOnly
+) : IRequest<Result<PersonalData>>;

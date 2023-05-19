@@ -32,7 +32,23 @@ internal class AddPersonalDataCommandHandler : IRequestHandler<AddPersonalDataCo
                 request.UnwantedExercises,
                 request.DailySteps,
                 request.HoursOfSleep,
-                request.Gender))
+                request.Gender,
+                request.IsProUser,
+                request.WorkoutsPerWeek,
+                request.HasOther,
+                request.HasMachine,
+                request.HasBarbell,
+                request.HasDumbbell,
+                request.HasKettlebell,
+                request.HasCable,
+                request.HasEasyCurlBar,
+                request.HasNone,
+                request.HasBands,
+                request.HasMedicineBall,
+                request.HasExerciseBall,
+                request.HasFoamRoll,
+                request.WantsBodyOnly
+            ))
             .Tap(p => repository.Store(p));
     }
 }
