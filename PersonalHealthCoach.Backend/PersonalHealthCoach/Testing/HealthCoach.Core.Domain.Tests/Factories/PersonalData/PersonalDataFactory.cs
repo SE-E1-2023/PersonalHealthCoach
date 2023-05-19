@@ -12,7 +12,8 @@ public static class PersonalDataFactory
             null,
             12333,
             8.5,
-            "M"
+            "M",
+            true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false
         ).Value;
 
     public static PersonalData WithUserId(Guid userId) => PersonalData.Create(userId,
@@ -25,6 +26,7 @@ public static class PersonalDataFactory
             null,
             12333,
             8.5,
-            "M"
+            "M",
+            true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false
         ).Value;
 }

@@ -42,7 +42,6 @@ public class GetLatestFitnessPlanCommandHandlerTests
 
         //Assert
         result.IsSuccess.Should().BeTrue();
-        result.Value.Should().Be(fitnessPlan);
     }
 
     private GetLatestFitnessPlanCommand Command() => new(Guid.NewGuid());

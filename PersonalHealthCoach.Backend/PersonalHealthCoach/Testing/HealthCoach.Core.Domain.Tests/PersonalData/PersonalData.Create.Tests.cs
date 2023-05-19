@@ -19,7 +19,7 @@ public partial class PersonalDataTests
     {
         //Act
         var result = PersonalData.Create(goodUserId, null, goodWeight, goodHeight, null, null, goodGoal, null,
-            goodDailySteps, goodHoursOfSleep, goodGender);
+            goodDailySteps, goodHoursOfSleep, goodGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -34,7 +34,7 @@ public partial class PersonalDataTests
 
         //Act
         var result = PersonalData.Create(goodUserId, badDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
-            goodDailySteps, goodHoursOfSleep, goodGender);
+            goodDailySteps, goodHoursOfSleep, goodGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -49,7 +49,7 @@ public partial class PersonalDataTests
 
         //Act
         var result = PersonalData.Create(goodUserId, goodDateOfBirth, badWeight, goodHeight, null, null, goodGoal, null,
-            goodDailySteps, goodHoursOfSleep, goodGender);
+            goodDailySteps, goodHoursOfSleep, goodGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -64,7 +64,7 @@ public partial class PersonalDataTests
 
         //Act
         var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, badHeight, null, null, goodGoal, null,
-            goodDailySteps, goodHoursOfSleep, goodGender);
+            goodDailySteps, goodHoursOfSleep, goodGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -79,7 +79,7 @@ public partial class PersonalDataTests
     {
         //Act
         var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, badGoal, null,
-            goodDailySteps, goodHoursOfSleep, goodGender);
+            goodDailySteps, goodHoursOfSleep, goodGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -94,7 +94,7 @@ public partial class PersonalDataTests
 
         //Act
         var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, badGoal, null,
-            goodDailySteps, goodHoursOfSleep, goodGender);
+            goodDailySteps, goodHoursOfSleep, goodGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -109,7 +109,7 @@ public partial class PersonalDataTests
 
         //Act
         var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
-            badSteps, goodHoursOfSleep, goodGender);
+            badSteps, goodHoursOfSleep, goodGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -124,7 +124,7 @@ public partial class PersonalDataTests
 
         //Act
         var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
-            goodDailySteps, badHoursOfSleep, goodGender);
+            goodDailySteps, badHoursOfSleep, goodGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -140,7 +140,7 @@ public partial class PersonalDataTests
     {
         //Act
         var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
-            goodDailySteps, goodHoursOfSleep, badGender);
+            goodDailySteps, goodHoursOfSleep, badGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsFailure.Should().BeTrue();
@@ -152,7 +152,7 @@ public partial class PersonalDataTests
     {
         //Act
         var result = PersonalData.Create(goodUserId, goodDateOfBirth, goodWeight, goodHeight, null, null, goodGoal, null,
-            goodDailySteps, goodHoursOfSleep, goodGender);
+            goodDailySteps, goodHoursOfSleep, goodGender, true, 5, true, true, true, true, true, true, true, true, false, true, true, true, false);
 
         //Assert
         result.IsSuccess.Should().BeTrue();

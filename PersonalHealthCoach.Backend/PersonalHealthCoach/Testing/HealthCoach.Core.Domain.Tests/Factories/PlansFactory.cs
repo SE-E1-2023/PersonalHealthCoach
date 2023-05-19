@@ -11,14 +11,14 @@ public static class PlansFactory
     {
         public static List<Exercise> Any() => new List<Exercise>
         {
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength"),
-            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength")
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>()),
+            Exercise.Create("Exercise 1", "Description 1", "1-2 min", 10, "Strength", new List<string>(), new List<string>())
         };
     }
 
