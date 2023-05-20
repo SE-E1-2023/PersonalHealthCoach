@@ -11,6 +11,7 @@ public class GetDietPlanCommandHandlerTests
 {
     private readonly Mock<IEfQueryProvider> queryProviderMock = new();
     private readonly Mock<IRepository> repositoryMock = new();
+
     [Fact]
     public void When_UserIsNotFound_Then_ShouldFail()
     {
@@ -18,9 +19,10 @@ public class GetDietPlanCommandHandlerTests
         
         var command = new GetDietPlanCommand(Guid.NewGuid());
 
+        repositoryMock
+            .Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(Maybe<User>.None);
         queryProviderMock
-            .Setup(x => x.Query<DietPlan>())
-            .Returns(new List<DietPlan>().AsQueryable());
+            .Setup(x => x.Query<DietPlan>()).Returns(new List<DietPlan>().AsQueryable());
 
         //Act
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
@@ -34,27 +36,28 @@ public class GetDietPlanCommandHandlerTests
     [Fact]
     public void When_DietPlanDoesNotExist_Then_ShouldFail()
     {
+        //Arrange
         var command = new GetDietPlanCommand(Guid.NewGuid());
-        var user = UsersFactory.Any();
+        queryProviderMock
+            .Setup(x => x.Query<DietPlan>())
+            .Returns(new List<DietPlan>().AsQueryable());
 
-        repositoryMock.Setup(r => r.Load<User>(command.UserId)).ReturnsAsync(user);
-        queryProviderMock.Setup(x => x.Query<DietPlan>()).Returns(new List<DietPlan>().AsQueryable());
-
-
+        //Act
         var result = Sut().Handle(command, CancellationToken.None).GetAwaiter().GetResult();
 
+        //Assert
         result.IsFailure.Should().BeTrue();
         result.Error.Should().Be(BusinessErrors.DietPlan.Get.DietPlanDoesNotExist);
     }
 
     [Fact]
-    public void When_DietPlanDoesExist_Then_ShouldSucced()
+    public void When_DietPlanDoesExist_Then_ShouldSucceed()
     {
         //Arrange
-        var userId = Guid.NewGuid();
-        var dietPlan = PlansFactory.DietPlans.Any();
+        var user = UsersFactory.Any();
+        var dietPlan = PlansFactory.DietPlans.WithUserId(user.Id);
 
-        var command = new GetDietPlanCommand(userId);
+        var command = new GetDietPlanCommand(user.Id);
         queryProviderMock
             .Setup(x => x.Query<DietPlan>())
             .Returns(new List<DietPlan> { dietPlan }.AsQueryable());
@@ -67,8 +70,6 @@ public class GetDietPlanCommandHandlerTests
         result.Value.Should().NotBeNull();
         result.Value.Should().Be(dietPlan);
     }
-
-    private GetDietPlanCommand Command() => new(Guid.NewGuid());
 
     private GetDietPlanCommandHandler Sut() => new(queryProviderMock.Object);
 
