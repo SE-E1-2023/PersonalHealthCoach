@@ -2,22 +2,22 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Add Some Spice to Your Food. It's easy to get in a diet rut, even if you're loading up on flavorful fruits and veggies. Fortunately, having plenty of spices, fresh herbs, and citrus at your cooking beck and call can help. It's amazing what a little dash of spice, sprinkle of herbs, pinch of lemon zest, or squirt of lime juice can do to liven up a dish\u2014and your diet."
+        "Tip": "Take vitamin D if you`re deficient. Most people do not get enough vitamin D. While these widespread vitamin D inadequacies are not imminently harmful, maintaining adequate vitamin D levels can help to optimize your health by improving bone strength, reducing symptoms of depression, strengthening your immune system, and lowering your risk for cancer. If you do not spend a lot of time in the sunlight, your vitamin D levels may be low. If you have access, it`s a great idea to have your levels tested, so that you can correct your levels through vitamin D supplementation if necessary."
     },
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Incorporate more cardio into your workout routine."
+        "Tip": "Lift weights to build muscle and increase metabolism."
     },
     {
         "Type": "Diet",
         "Importance Level": "Medium",
-        "Tip": "Avoid sugary drinks and processed foods."
+        "Tip": "Plan your meals and snacks ahead of time to avoid impulsive eating."
     },
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Reduce stress levels to prevent emotional eating."
+        "Tip": "Track your food intake to ensure you're in a calorie deficit."
     },
     {
         "Type": "Daily Calories",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. It's important to continue to prioritize healthy sleep habits to maintain this good sleep pattern. This includes creating a relaxing bedtime routine, avoiding screens before bed, and keeping your bedroom cool, dark, and quiet."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. Make sure to stay consistent with your sleep schedule as much as possible, even on weekends or holidays. This helps regulate your body's internal clock, making it easier to fall asleep and wake up at the same time each day."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -72,17 +72,17 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Tuna is very popular in Western countries and tends to be low in fat and calories and high in protein. It`s perfect for people who need to add more protein to their diets but keep calories low. However, you should make sure to buy low mercury varieties."
+        "Tip": "Onions have a very strong flavor and are very popular in many recipes. They contain a number of bioactive compounds believed to have health benefits."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "Wheat germ is the part of wheat that grows into a plant. It is essentially the embryo of a seed. Germ, along with bran, is a byproduct of milling. Refining cereals often removes the germ and bran content. Whole grain products, however, still contain the germ and bran. This makes them a more healthful choice."
+        "Tip": "Oily fish. Some examples of oily fish include salmon, trout, mackerel, herring, sardines, and anchovies. These types of fish have oil in their tissues and around their gut. Their lean fillets contain high levels of omega-3 fatty acids. These oils may provide benefits for the heart and nervous system, according to the Office of Dietary Supplements (ODS). The ODS also suggest that omega-3 fatty acids can help with inflammatory conditions such as arthritis. They are also plentiful in vitamins A and D. One 2014 study suggested that fatty acids can significantly reduce the risk of rheumatoid arthritis."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Kale. The payoff from this leafy green: loads of calcium, vitamin C, beta-carotene, and a variety of other antioxidants. Kale is also a good source of lutein, an eye-friendly nutrient that may slow the development of macular degeneration. Try this: Make kale chips by tearing the leaves into pieces and tossing them with olive oil, salt, and pepper. Spread on a baking sheet and bake at 300 degrees F until crisp, 20 to 30 minutes. Or try Quinoa With Mushrooms, Kale, and Sweet Potatoes."
+        "Tip": "Edamame. These young soybeans pack more fiber per serving than shredded-wheat cereal and are one of the few plant-based sources of complete protein, meaning they have all nine essential amino acids that our bodies can't produce on their own. Try this: Puree cooked edamame with garlic, olive oil, and fresh lemon juice for a quick hummus-like spread. Or try Risotto With Edamame, Lemon, and Tarragon."
     },
     {
         "Type": "Home Exercise",
@@ -92,7 +92,7 @@
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Swimming. If it`s your heart you`re looking after there are few ways better to do it than swimming. Perfect for all ages and levels due to its low-stress nature, swimming keeps you at a healthy body weight, improves lung capacity, and builds muscles, all in addition to burning calories. Best of all, swimming can be done any time of year at an indoor pool, and often there are clubs to be joined and classes to be taken, which means the social aspect is never far behind the health. Away from the swimming pool, sea swimming is hugely popular all over the world. With sea swimming, you get the same exercise free of charge, all the while enjoying the beauty that surrounds you. Add all this up and swimming is definitely one of the healthiest sports."
+        "Tip": "Basketball: Not only is basketball an incredibly tiring game to play, but it strengthens your health on many levels. Our research shows that it increases spatial awareness, fosters decision-making capabilities, reduces stress, helps immensely with coordination, and develops confidence. For each hour of competitive basketball, a 165-pound person can expect to burn around 600 calories, while a 250-pound person can burn up to 900 calories."
     },
     {
         "Type": "Daily Steps Calories Burned",
@@ -107,12 +107,12 @@
     {
         "Type": "Prevent Diseases",
         "Importance Level": "Medium",
-        "Tip": "Consume less salt and sugar. Filipinos consume twice the recommended amount of sodium, putting them at risk of high blood pressure, which in turn increases the risk of heart disease and stroke. Most people get their sodium through salt. Reduce your salt intake to 5g per day, equivalent to about one teaspoon. It`s easier to do this by limiting the amount of salt, soy sauce, fish sauce and other high-sodium condiments when preparing meals; removing salt, seasonings and condiments from your meal table; avoiding salty snacks; and choosing low-sodium products. On the other hand, consuming excessive amounts of sugars increases the risk of tooth decay and unhealthy weight gain. In both adults and children, the intake of free sugars should be reduced to less than 10% of total energy intake. This is equivalent to 50g or about 12 teaspoons for an adult. WHO recommends consuming less than 5% of total energy intake for additional health benefits. You can reduce your sugar intake by limiting the consumption of sugary snacks, candies and sugar-sweetened beverages."
+        "Tip": "Get vaccinated. Vaccination is one of the most effective ways to prevent diseases. Vaccines work with your body`s natural defences to build protection against diseases like cervical cancer, cholera, diphtheria, hepatitis B, influenza, measles, mumps, pneumonia, polio, rabies, rubella, tetanus, typhoid, and yellow fever."
     },
     {
         "Type": "Recover From Illness",
         "Importance Level": "Medium",
-        "Tip": "Get Lots of Sleep. When you`re sick, you`re usually sleep-deprived. The recovery stage is a chance for you to take back all the sleep you need. Go to bed early and extend your usual sleep hours to at least one or two more. Napping during the day will also help. If you`re having trouble getting ready for bed, you may do some light exercises during the day. That way, your body will feel more conditioned to rest."
+        "Tip": "Keep active. Regular exercise promotes health and wellbeing and helps prevent injury. Do some physical activity every day, even if it is only a small amount. See your specialist for advice on exercise that will suit your condition."
     },
     {
         "Type": "Daily Workout Feedback",
