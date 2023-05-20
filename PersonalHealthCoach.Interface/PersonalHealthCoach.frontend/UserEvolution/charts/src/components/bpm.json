@@ -1,0 +1,23 @@
+[ 
+  {    "label": "Monday",    "value": 70  }, 
+  {    "label": "Tuesday",    "value": 80  }, 
+  {    "label": "Wednesday",    "value": 89  },
+  {    "label": "Thursday",    "value": 90  },
+  {    "label": "Friday",    "value": 78  },  
+  {    "label": "Saturday",    "value": 80  }, 
+  {    "label": "Sunday",    "value": 100  },
+  {    "label": "Monday",    "value": 70  }, 
+  {    "label": "Tuesday",    "value": 80  }, 
+  {    "label": "Wednesday",    "value": 89  },
+  {    "label": "Thursday",    "value": 90  },
+  {    "label": "Friday",    "value": 78  },  
+  {    "label": "Saturday",    "value": 80  }, 
+  {    "label": "Sunday",    "value": 100  },
+  {    "label": "Monday",    "value": 70  }, 
+  {    "label": "Tuesday",    "value": 80  }, 
+  {    "label": "Wednesday",    "value": 89  },
+  {    "label": "Thursday",    "value": 90  },
+  {    "label": "Friday",    "value": 78  },  
+  {    "label": "Saturday",    "value": 80  }, 
+  {    "label": "Sunday",    "value": 100  }
+]
