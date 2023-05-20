@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="buttons.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <title>Nutrition</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="homepage.html">Personal Health Coach</a>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Features</button>
+      <div class="dropdown-content">
+        <a href="#">Nutrition</a>
+        <a href="#">Fitness</a>
+        <a href="#">Wellness</a>
+      </div>
+    </div>
+    <!-- start1  -->
+    <!-- puse ambele butoane in acelasi div pt a putea fi afisate unul langa celalalt in partea din dreapta a header-ului  -->
+
+    <div class="leftside-buttons">
+
+      <div class="lnk-button">
+        <div class="lnk">
+          <a href="../homepage_remake/index.html">Back</a>
+        </div>
+      </div>
+
+      <div class="lnk">
+        <a href="../homepage_remake/index.html" onclick='clearCookie("userId")'>Logout</a>
+      </div>
+
+      
+    </div>
+    <!-- end1  -->
+
+
+  </header>
+
+
+  <!-- start2  -->
+  <script>
+
+    function setCookie(name, value) {
+      let expires = '';
+      const date = new Date();
+      date.setTime(date.getTime() + (1000 * 24 * 60 * 60 * 1000));
+      expires = '; expires=' + date.toUTCString();
+      document.cookie = name + '=' + (value || '') + expires + '; path=/';
+    }
+
+    function clearCookie(name) {
+      setCookie(name, '', -1);
+      //window.location.href = "../main/index.html";
+
+    }
+  </script>
+<!-- end2  -->
+
+  <a href="weight_loss.html"><img src="photos/1.png" alt="" class="pic_lose_weight"></a>
+  <a href=""><img src="photos/2.png" alt="" class="pic_gain_weight"></a>
+  <div class="text_lose_weight">LOSE WEIGHT</div>
+  <div class="text_gain_weight">GAIN WEIGHT</div>
+</body>
+
+</html>
