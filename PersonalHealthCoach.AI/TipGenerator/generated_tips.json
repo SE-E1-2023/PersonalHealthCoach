@@ -1,0 +1,128 @@
+[
+    {
+        "Type": "General",
+        "Importance Level": "High",
+        "Tip": "Many of the things we do for fun (and work) count as exercise. Raking the yard counts as physical activity. So does ballroom dancing and playing with your kids or grandkids. As long as you're doing some form of aerobic exercise for at least 30 minutes a day, and you include two days of strength training a week, you can consider yourself an \"active\" person."
+    },
+    {
+        "Type": "Fitness",
+        "Importance Level": "Medium",
+        "Tip": "Incorporate more cardio into your workout routine."
+    },
+    {
+        "Type": "Diet",
+        "Importance Level": "Medium",
+        "Tip": "Avoid sugary drinks and processed foods."
+    },
+    {
+        "Type": "General",
+        "Importance Level": "Medium",
+        "Tip": "Be patient and consistent - weight loss takes time and effort."
+    },
+    {
+        "Type": "Daily Calories",
+        "Importance Level": "Medium",
+        "Tip": "You burn 2637 calories during a typical day. To achieve your goal of losing weight, try to stay below your calorie needs and increase your activity level. However, make sure you are eating nutritious meals and not restricting your calories too much - eating too little or losing weight rapidly can be unhealthy and dangerous."
+    },
+    {
+        "Type": "BMI",
+        "Importance Level": "Medium",
+        "Tip": "Your BMI (Body Mass Index) is 19.0, this means that you fall into the category of Normal weight. The Normal range is 18.5-24.9. It is not necessary for you to lose weight but if you want to do that, make sure not to cross the lower bound of this range."
+    },
+    {
+        "Type": "Level of Activity",
+        "Importance Level": "High",
+        "Tip": "Your level of activity is Moderatly active, which is a good one. To achieve your goal of losing weight, it may be enough to just continue what you do, respect your Diet plan and be patient. If you want to see faster changes, you may try to increase the number of exercise days from 3-5 to 6-7 days/week."
+    },
+    {
+        "Type": "Weekly Steps",
+        "Importance Level": "High",
+        "Tip": "You managed to complete your Steps Goal on 6 days this week achieving an average of 10571 steps per day. Congratulations! You're doing fine! If you'd like to step up to the next level, the goal of 10,000 steps is the recommended daily step target for healthy adults to achieve health benefits. You can try to set this goal for better benefits. Also, make sure that you enter at the end of each day the number of steps you took that day so that we can better analyze your progress."
+    },
+    {
+        "Type": "Daily Steps",
+        "Importance Level": "Low",
+        "Tip": "Congratulations! You managed to fulfill your step goal for today by managing to take 10000 steps and burning 341.96 calories. Keep going!"
+    },
+    {
+        "Type": "Objective-Steps Goal",
+        "Importance Level": "Low",
+        "Tip": "A goal of 8000 steps per day is very good for your weight loss goal. Be sure to do it in as many days as possible and you will definitely notice the differences."
+    },
+    {
+        "Type": "Hours Slept Last Night",
+        "Importance Level": "Low",
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. By getting enough sleep on a regular basis, you're also reducing your risk of developing chronic health problems such as obesity, diabetes, and heart disease. In addition, you'll have better cognitive function and memory, which can help you perform better at work or in school."
+    },
+    {
+        "Type": "Weekly Slept Hours",
+        "Importance Level": "Medium",
+        "Tip": "You had 6 days with 7-9 hours of sleep in the last week. Great job on prioritizing your sleep and maintaining healthy sleep habits! Keep up the good work and continue to prioritize your sleep each night."
+    },
+    {
+        "Type": "Weekly Weight Update",
+        "Importance Level": "Low",
+        "Tip": "You gained 2.2 kg in the last week. Gaining 2 kg can be discouraging, but don't let it derail your weight loss goals. Reassess your diet and exercise routine and make any necessary adjustments to ensure that you are in a calorie deficit. Focus on consuming a balanced diet of whole foods and avoid processed and sugary foods. Increase the intensity and frequency of your workouts to burn more calories and build muscle. Remember that weight loss is a journey and it's important to stay committed and patient as you work towards your goals. Celebrate your progress along the way and stay motivated by setting new goals for yourself."
+    },
+    {
+        "Type": "Weekly Food Logs",
+        "Importance Level": "High",
+        "Tip": "Our recommendation is to consume a total of 2637 calories per day. In the last week you had 1 day(s) in which you consumed enough calories, 4 day(s) in which you consumed fewer calories, 0 day(s) in which you consumed more calories and 2 day(s) in which you didn't add the food you ate. Try adding it every day so that we can analize your progress better.Great job on implementing a calorie deficit of 250-500 calories per day in the last week! Consistency is key when it comes to weight loss, and it's important to remember that progress may not always be linear. Keep up the great work and remember to prioritize sustainable and gradual changes to your lifestyle for long-term success. Remember, it's a journey, and every small step counts towards your goal."
+    },
+    {
+        "Type": "Food Short",
+        "Importance Level": "Low",
+        "Tip": "Chicken breast is low in fat and calories but extremely high in protein. It`s a great source of many nutrients. Again, feel free to eat fattier cuts of chicken if you`re not eating many carbs."
+    },
+    {
+        "Type": "Food Longer Detailed",
+        "Importance Level": "Medium",
+        "Tip": "Brazil nuts (Bertholletia excelsa) are some of the most healthful nuts available. They are an excellent source of both protein and carbohydrates, and they also provide good amounts of vitamin B-1, vitamin E, magnesium, and zinc. Brazil nuts also contain more selenium than many other foods. Selenium is a vital mineral for maintaining thyroid function, and it is a great antioxidant for the human body. These nuts come in a hard shell and are usually available ready to eat, making them a quick, nutritious snack."
+    },
+    {
+        "Type": "Food Longer Try",
+        "Importance Level": "Medium",
+        "Tip": "Broccoli. A vitamin C gold mine\u2014a 1/2 cup of cooked broccoli satisfies 80 percent of the U.S. Food and Drug Administration's recommended daily dose.12 It's also a key source of vitamin K, which helps blood clot properly. Try this: Toss with olive oil, garlic, and crushed red pepper. Roast at 375 degrees F until tender. Sprinkle with grated Parmesan before serving. Or try Orecchiette With Roasted Broccoli and Walnuts."
+    },
+    {
+        "Type": "Home Exercise",
+        "Importance Level": "Medium",
+        "Tip": "Burpees. An exercise we love to hate, burpees are a super-effective, whole-body move that provides great bang for your buck for cardiovascular endurance and muscle strength. 1. Start by standing upright with your feet shoulder-width apart and your arms down at your sides. 2. With your hands out in front of you, start to squat down. When your hands reach the ground, pop your legs straight back into a pushup position. 3. Jump your feet up to your palms by hinging at the waist. Get your feet as close to your hands as you can get, landing them outside your hands if necessary. 4. Stand up straight, bringing your arms above your head, and jump. 5. This is one rep. Complete 3 sets of 10 reps as a beginner."
+    },
+    {
+        "Type": "Sports",
+        "Importance Level": "Medium",
+        "Tip": "Hiking. Hiking outdoors has plenty of perks: nice views, fresh air, and the sounds and smells of nature. It`s good for you, too. Hiking is a powerful cardio workout that lowers blood pressure, decreases the likelihood of heart disease, builds strength in your core muscles and improves balance. Research shows that hiking has a positive impact on combating the symptoms of stress and anxiety. Being in nature is ingrained in our DNA, and we sometimes forget that."
+    },
+    null,
+    {
+        "Type": "Weekly Steps Calories Burned",
+        "Importance Level": "High",
+        "Tip": "Congratulations! With a total of 74000 steps you managed to burn 2531 calories in the last week. Keep up the good work also in the next weeks!"
+    },
+    {
+        "Type": "Prevent Diseases",
+        "Importance Level": "Medium",
+        "Tip": "Be active. Physical activity is defined as any bodily movement produced by skeletal muscles that requires energy expenditure. This includes exercise and activities undertaken while working, playing, carrying out household chores, travelling, and engaging in recreational pursuits. The amount of physical activity you need depends on your age group but adults aged 18-64 years should do at least 150 minutes of moderate-intensity physical activity throughout the week. Increase moderate-intensity physical activity to 300 minutes per week for additional health benefits."
+    },
+    {
+        "Type": "Recover From Illness",
+        "Importance Level": "Medium",
+        "Tip": "Stress and tension. Stress and tension can affect you physically in many ways, including increased muscle tension and chronic contraction. This may be experienced as tension in the eyes, jaw, neck, shoulders, lower back and stomach. Prolonged muscle tension can lead to aches and pains, such as headaches, migraine, backache, muscular spasm and injury. To help reduce stress and physical tension: Learn to recognise the signs of tension in your body. Stop regularly and think about how muscles in your body feel. Identify those muscles that seem most tense when you feel stressed. Regularly practise slow and deep breathing, particularly when you feel tense or stressed. Deep breathing using abdominal muscles is preferable to shallow breathing relying on chest muscles. Learn to take time out to relax - for example, think of pleasant images and listen to music to calm you. Learn a deep muscle relaxation technique, such as progressive muscle relaxation - that is, a method of systematically contracting and relaxing your muscles. See a psychologist for training."
+    },
+    {
+        "Type": "Daily Workout Feedback",
+        "Importance Level": "Medium",
+        "Tip": "You managed to burn 120.56 calories today during your workout that lasted 8 minutes. Good job! Make sure you exercise 3-5 times a week to reach your goal."
+    },
+    {
+        "Type": "Weekly Exercise Logs",
+        "Importance Level": "High",
+        "Tip": "You managed to burn 843.92 calories in the last week thanks to the 7 days with exercises that lasted a total of 56 minutes. While your dedication to exercise is commendable, be mindful of overexertion. Allow for proper rest and recovery to optimize results. Aim for a balanced approach with 3-5 days of exercise per week, incorporating cardio and strength training. Listen to your body's signals and adjust accordingly. Embrace self-care and find a sustainable balance. Keep up the great work on your weight loss journey!"
+    },
+    {
+        "Type": "Recover from Injury",
+        "Importance Level": "Medium",
+        "Tip": "Immobilize The Injured Part Of The Body. If an injured body part is frequently utilized after an accident, it will have a difficult time healing. Pain is a good sign of a continuing injury, and it should not be disregarded, even if it means taking a break from everyday activities or sports. To facilitate full healing, it is generally essential to immobilize the damaged region using a splint or brace and rest it entirely. Continuing to utilize the damaged body part may exacerbate an acute injury, making it more likely to reoccur and more difficult to cure."
+    }
+]

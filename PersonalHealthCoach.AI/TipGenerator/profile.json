@@ -161,14 +161,60 @@
       ],
       "ExerciseLogs": [
         {
-          "Exercise": "Deadlifts",
-          "Duration": "40 mins",
-          "CaloriesBurned": 400
+          "exercise": "Prowler Sprint",
+          "rep_range": "8-12",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Cardio"
         },
         {
-          "Exercise": "Walking",
-          "Duration": "30 mins",
-          "CaloriesBurned": 150
+          "exercise": "One Arm Pronated Dumbbell Triceps Extension",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Clock Push Up",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Janda Sit Up",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Leverage Chest Press",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Floor Glute Ham Raise",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Rack Pull With Bands",
+          "rep_range": "3-5",
+          "rest_time": "3-4 minutes",
+          "sets": 2,
+          "type": "Powerlifting"
+        },
+        {
+          "exercise": "Ankle Circles",
+          "rep_range": "Hold for 20-40 seconds",
+          "rest_time": "20-30 seconds",
+          "sets": 2,
+          "type": "Stretching"
         }
       ],
       "Steps": 10000,
@@ -213,14 +259,60 @@
       ],
       "ExerciseLogs": [
         {
-          "Exercise": "Squats",
-          "Duration": "40 mins",
-          "CaloriesBurned": 350
+          "exercise": "Skating",
+          "rep_range": "8-12",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Cardio"
         },
         {
-          "Exercise": "Cycling",
-          "Duration": "30 mins",
-          "CaloriesBurned": 200
+          "exercise": "Yates Row Reverse Grip",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Seated Back Extension",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Full Range Of Motion Lat Pulldown",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Kettlebell Pistol Squat",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Seated Head Harness Neck Resistance",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Deficit Deadlift",
+          "rep_range": "3-5",
+          "rest_time": "3-4 minutes",
+          "sets": 2,
+          "type": "Powerlifting"
+        },
+        {
+          "exercise": "Groin And Back Stretch",
+          "rep_range": "Hold for 20-40 seconds",
+          "rest_time": "20-30 seconds",
+          "sets": 2,
+          "type": "Stretching"
         }
       ],
       "Steps": 15000,
@@ -265,14 +357,60 @@
       ],
       "ExerciseLogs": [
         {
-          "Exercise": "Bench Press",
-          "Duration": "30 mins",
-          "CaloriesBurned": 250
+          "exercise": "Recumbent Bike",
+          "rep_range": "8-12",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Cardio"
         },
         {
-          "Exercise": "Walking",
-          "Duration": "45 mins",
-          "CaloriesBurned": 200
+          "exercise": "One Arm Plank Dumbbell Biceps Curl",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Middle Back Shrug",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Low Cable Triceps Extension",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Seated Head Harness Neck Resistance",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Standing Dumbbell Reverse Curl",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Rack Pull With Bands",
+          "rep_range": "3-5",
+          "rest_time": "3-4 minutes",
+          "sets": 2,
+          "type": "Powerlifting"
+        },
+        {
+          "exercise": "Inchworm",
+          "rep_range": "Hold for 20-40 seconds",
+          "rest_time": "20-30 seconds",
+          "sets": 2,
+          "type": "Stretching"
         }
       ],
       "Steps": 12000,
@@ -323,14 +461,60 @@
       ],
       "ExerciseLogs": [
         {
-          "Exercise": "Squats",
-          "Duration": "45 mins",
-          "CaloriesBurned": 450
+          "exercise": "Skating",
+          "rep_range": "8-12",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Cardio"
         },
         {
-          "Exercise": "Cycling",
-          "Duration": "30 mins",
-          "CaloriesBurned": 200
+          "exercise": "Gironda Sternum Chins",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Seated Bent Over Two Arm Dumbbell Triceps Extension",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Machine Bicep Curl",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Two Arm Kettlebell Clean",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Wide Grip Standing Barbell Curl",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Kneeling Squat",
+          "rep_range": "3-5",
+          "rest_time": "3-4 minutes",
+          "sets": 2,
+          "type": "Powerlifting"
+        },
+        {
+          "exercise": "Side Leg Raises",
+          "rep_range": "Hold for 20-40 seconds",
+          "rest_time": "20-30 seconds",
+          "sets": 2,
+          "type": "Stretching"
         }
       ],
       "Steps": 15000,
@@ -375,14 +559,60 @@
       ],
       "ExerciseLogs": [
         {
-          "Exercise": "Push-ups",
-          "Duration": "20 mins",
-          "CaloriesBurned": 200
+          "exercise": "Recumbent Bike",
+          "rep_range": "8-12",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Cardio"
         },
         {
-          "Exercise": "Hiking",
-          "Duration": "60 mins",
-          "CaloriesBurned": 400
+          "exercise": "Seated Two Arm Palms Up Low Pulley Wrist Curl",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Close Hands Push Up",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Band Hip Adductions",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Glute Kickback",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "One Arm Flat Bench Dumbbell Flye",
+          "rep_range": "6-10",
+          "rest_time": "1-1.5 minutes",
+          "sets": 2,
+          "type": "Strength"
+        },
+        {
+          "exercise": "Chain Handle Extension",
+          "rep_range": "3-5",
+          "rest_time": "3-4 minutes",
+          "sets": 2,
+          "type": "Powerlifting"
+        },
+        {
+          "exercise": "Groiners ",
+          "rep_range": "Hold for 20-40 seconds",
+          "rest_time": "20-30 seconds",
+          "sets": 2,
+          "type": "Stretching"
         }
       ],
       "Steps": 12000,
@@ -402,56 +632,57 @@
           "type": "Cardio"
         },
         {
-          "exercise": "One Arm Kettlebell Clean",
+          "exercise": "Cable Chest Press",
           "rep_range": "6-10",
           "rest_time": "1-1.5 minutes",
           "sets": 2,
           "type": "Strength"
         },
         {
-          "exercise": "Lying Face Down Plate Neck Resistance",
+          "exercise": "Barbell Curls Lying Against An Incline",
           "rep_range": "6-10",
           "rest_time": "1-1.5 minutes",
           "sets": 2,
           "type": "Strength"
         },
         {
-          "exercise": "Standing Leg Curl",
+          "exercise": "Lying Close Grip Bar Curl On High Pulley",
           "rep_range": "6-10",
           "rest_time": "1-1.5 minutes",
           "sets": 2,
           "type": "Strength"
         },
         {
-          "exercise": "Leverage Iso Row",
+          "exercise": "Seated Head Harness Neck Resistance",
           "rep_range": "6-10",
           "rest_time": "1-1.5 minutes",
           "sets": 2,
           "type": "Strength"
         },
         {
-          "exercise": "Alternating Cable Shoulder Press",
+          "exercise": "Standing Olympic Plate Hand Squeeze",
           "rep_range": "6-10",
           "rest_time": "1-1.5 minutes",
           "sets": 2,
           "type": "Strength"
         },
         {
-          "exercise": "Band Good Morning Pull Through",
+          "exercise": "Pin Presses",
           "rep_range": "3-5",
           "rest_time": "3-4 minutes",
           "sets": 2,
           "type": "Powerlifting"
         },
         {
-          "exercise": "Groiners ",
+          "exercise": "Lying Hamstring",
           "rep_range": "Hold for 20-40 seconds",
           "rest_time": "20-30 seconds",
           "sets": 2,
           "type": "Stretching"
         }
       ],
-      "HoursSlept": 8
+      "HoursSlept": 8,
+      "Steps" : 10000
     }
   ]
 }

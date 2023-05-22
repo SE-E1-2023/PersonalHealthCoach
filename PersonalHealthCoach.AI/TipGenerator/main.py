@@ -36,11 +36,9 @@ def verify_if_food_logs_introduced(food_logs_list):
                 return False;
         return True;
 
-#test
-def extract_minutes(time_string):
-    minutes = int(time_string.split()[0])
-    return minutes
-#test
+def is_within_interval(variable, lower_bound, upper_bound):
+    return lower_bound <= variable <= upper_bound
+
 def extract_number(sentence):
     pattern = r"\d+-(\d+) seconds"
     match = re.search(pattern, sentence)
@@ -48,7 +46,7 @@ def extract_number(sentence):
         number_str = match.group(1)
         return int(number_str)
     return None
-#test
+
 def calculate_minutes_per_workout(workout):
     total_time = 0
     for exercise in workout:
@@ -70,7 +68,28 @@ def calculate_minutes_per_workout(workout):
 
     total_time_minutes = total_time / 60
     return total_time_minutes + 2
-#test
+
+def convert_minutes_to_hours_minutes(minutes):
+    if minutes >= 60:
+        hours = minutes // 60
+        remaining_minutes = minutes % 60
+
+        if hours == 1:
+            hours_string = "1 hour"
+        else:
+            hours_string = f"{hours} hours"
+
+        if remaining_minutes == 0:
+            return hours_string
+        elif remaining_minutes == 1:
+            minutes_string = "1 minute"
+        else:
+            minutes_string = f"{remaining_minutes} minutes"
+
+        return f"{hours_string} and {minutes_string}"
+    else: 
+        return str(minutes) + " minutes" 
+
 def calculate_calories_per_workout(minutes,MET,weight):
     calories_burned = minutes * (MET * 3.5 * weight) / 200
     return calories_burned
@@ -110,7 +129,8 @@ class TipGenerator:
         tips.append(generator.generate_prevent_diseases_tip())
         tips.append(generator.generate_recover_from_illness_tip())
         tips.append(generator.generate_daily_exerciselog_tip())
-        #tips.append(generator.generate_weekly_exercise_logs_feedback())
+        tips.append(generator.generate_weekly_exerciselogs_feedback())
+        tips.append(generator.generate_recover_from_injury_tip())
 
         with open(f"{abspath}/generated_tips.json", 'w') as tips_file:
             json.dump(tips, tips_file, indent=4)
@@ -952,7 +972,6 @@ class TipGenerator:
                 raise ValueError("Steps should be between 0 and 50000.")
         else:
             steps = 0
-        print(steps)
         return generator.calculate_calories_burned_by_steps(steps)
 
     def calculate_calories_burned_by_steps_last_week(self):
@@ -1085,7 +1104,6 @@ class TipGenerator:
         return generated_tip
 
     #THIS WEEK
-    #test si trebuie completat
     def generate_daily_exerciselog_tip(self):
         MET = 8.0
         if 'Progress' in self.profile_data:
@@ -1096,7 +1114,7 @@ class TipGenerator:
         if 'ExerciseLogs' in progress[-1]:
             workout = self.profile_data['Progress'][-1]['ExerciseLogs']
         else:
-            tip = "Even if you didn't do your workout today, it's never too late to get moving. Check your generated workout, do it and mark it as done. Set realistic goals, stay motivated, and remember that consistency is key. Your health and well-being will thank you."
+            tip = "Even if you didn't do your workout today, it's never too late to get moving. Check your generated workout, do it and mark it as done. Set realistic goals, stay motivated, and remember that consistency is key. Your health and well-being will thank you. If you have already met your exercise goal this week, then you can take a day off because breaks are also important in your process of reaching your goal."
             generated_tip = {
                                 "Type": "Daily Workout Feedback",
                                 "Importance Level": "Medium",
@@ -1110,55 +1128,119 @@ class TipGenerator:
         minutes = round(calculate_minutes_per_workout(workout))
         calories_burned = calculate_calories_per_workout(minutes,MET,weight) + 50
 
-        tip = "You managed to burn " + str(calories_burned) + " calories during your workout that lasted " + str(minutes) + " minutes. Good job! We are waiting for you again tomorrow for the daily training."
+        tip = "You managed to burn " + str(calories_burned) + " calories today during your workout that lasted " + str(minutes) + " minutes. Good job! Make sure you exercise 3-5 times a week to reach your goal."
         generated_tip = {
                             "Type": "Daily Workout Feedback",
                             "Importance Level": "Medium",
                             "Tip": tip
                         }
         return generated_tip
+    
+    def generate_weekly_exerciselogs_feedback(self):
+        if 'Progress' in self.profile_data:
+            progress = self.profile_data['Progress']
+        else:
+            raise KeyError("Progress key doesn't exist.")
+        
+        MET = 8.0
+        weight = self.profile_data['Profile']['Weight']
+        if weight <= 30 or weight > 200:
+            raise ValueError("Weight should be between 30 and 200.")
+        objective = self.profile_data['Profile']['Objective']
+        objectives_list = ["Lose weight", "Gain muscular mass", "Improve overall health", "Improve cardiovascular health", "Increase endurance", "Maintain weight"]
+        if objective not in objectives_list:
+            raise ValueError("Objective not found in list.")
+        for day in reversed(progress):
+            if 'Objective' in day:
+                if day['Objective'] != objective:
+                    objective = day['Objective']
+                break
+        
+        total_calories_burned = 0
+        total_exercise_duration_last_week = 0
+        count_days_no_exercise = 0
+        for day in progress:
+            if 'ExerciseLogs' in day:
+                minutes = round(calculate_minutes_per_workout(day['ExerciseLogs']))
+                calories_burned = calculate_calories_per_workout(minutes,MET,weight) + 50
+            else:
+                count_days_no_exercise += 1
 
-    # #test
-    # def generate_weekly_exercise_logs_feedback(self):
-    #     objective = self.profile_data['Profile']['Objective']
-    #     objectives_list = ["Lose weight", "Gain muscular mass", "Improve overall health", "Improve cardiovascular health", "Increase endurance", "Maintain weight"]
-    #     if objective not in objectives_list:
-    #         raise ValueError("Objective not found in list.")
-    #     for day in reversed(self.profile_data["Progress"]):
-    #         if day['Objective'] != objective:
-    #             objective = day['Objective']
-    #         break
+            total_calories_burned += calories_burned
+            total_exercise_duration_last_week += minutes
+
+        if count_days_no_exercise == 7:
+            if objective == "Gain muscular mass":
+                tip = "Consistency is crucial for building muscular mass, even if you haven't exercised this week. Aim for at least 3-4 strength training sessions per week to effectively stimulate muscle growth. Don't be discouraged by a missed week; instead, view it as a fresh start. Commit to a regular exercise routine in the upcoming weeks, knowing that your dedication and effort will yield positive changes in your muscular mass over time. Stay motivated, strive for progress, and remember that each workout brings you closer to your goals. You've got this!"
+            elif objective == "Lose weight":
+                tip = "Consistency is key when it comes to achieving weight loss goals, even if you haven't exercised this week. Aim for at least five days of moderate-intensity cardio exercises, such as brisk walking or cycling, for 30-60 minutes per session. Don't be discouraged by a missed week; instead, use it as a fresh start. Commit to establishing a regular exercise routine in the upcoming weeks, knowing that your dedication and effort will lead to positive changes in your weight and overall well-being. Stay motivated, focus on making healthier choices in both exercise and diet, and believe in yourself. You have the ability to achieve your weight loss goals. Keep pushing forward!"
+            elif objective == "Maintain weight":
+                tip = "Consistency is essential for maintaining weight, even if you haven't exercised this week. Aim for three to five days of moderate-intensity cardio exercises or strength training, for about 30-60 minutes per session. Treat this as an opportunity to prioritize self-care and establish a consistent exercise routine. Stay motivated, make exercise a part of your daily life, and focus on healthy choices in both exercise and diet. With dedication and effort, you can successfully maintain your weight and enjoy a healthy lifestyle. Keep up the good work!"
+            elif objective == "Increase endurance":
+                tip = "Consistency is key when it comes to increasing endurance. If you haven't exercised this week, don't worry, it's never too late to start. Aim for at least three to four days of cardiovascular exercises, such as running, cycling, or swimming, for about 30-60 minutes per session. Gradually increase the intensity and duration of your workouts to challenge your cardiovascular system and build endurance. Push yourself a little further each week, but listen to your body and allow for proper rest and recovery. Stay motivated, set realistic goals, and embrace the journey of improving your endurance. With dedication and persistence, you'll see noticeable progress in your stamina and ability to go the distance. Keep pushing your limits and enjoy the exhilarating feeling of improved endurance!"
+            else:
+                tip = "Prioritize a balanced approach to exercise and nutrition for a healthy life, even if you haven't exercised in the last week. Aim for regular moderate-intensity exercise, combining cardio and strength training. Nourish your body with wholesome foods and stay hydrated. Embrace self-care, listen to your body, and make choices that support your physical and mental health. It's never too late to start living a healthier life. Let go of any discouragement and take this as a fresh opportunity to prioritize your well-being. Live a fulfilling and vibrant life!"
+            generated_tip = {
+                            "Type": "Weekly Exercise Logs",
+                            "Importance Level": "High",
+                            "Tip": tip
+                        }
+            return generated_tip
         
-    #     exercise_logs_list = []
-    #     count_number_of_days = 7
-    #     total_exercise_duration_last_week = 0
-    #     for day in reversed(self.profile_data["Progress"]):
-    #         if count_number_of_days != 0:
-    #             exercise = day['ExerciseLogs']
-    #             if exercise == "Not added":
-    #                 exercise_duration = 0
-    #             else:
-    #                 exercise_duration = sum([extract_minutes(exercise['Duration']) for exercise in day['ExerciseLogs']])
-    #             total_exercise_duration_last_week += exercise_duration
-    #             exercise_logs_list.append(exercise)
-    #             count_number_of_days -= 1
-    #         else:
-    #             break
-        
-    #     if verify_if_exercise_logs_introduced(exercise_logs_list) == True:
-    #         tip = "Wouldn't you like to try to enter in the application the exercises you do every day? It would only take a few seconds after each activity and in this way you could get a real-time record of the calories you burned. Also, by doing this we will be able to offer you personalized advice on a daily basis."
-    #         generated_tip = {
-    #                         "Type": "Weekly Exercise Logs",
-    #                         "Importance Level": "High",
-    #                         "Tip": tip
-    #                     }
-    #         return generated_tip
+        days_with_workout = 7 - count_days_no_exercise
+        total_duration = convert_minutes_to_hours_minutes(total_exercise_duration_last_week)
+        tip = "You managed to burn " + str(round(total_calories_burned,2)) + " calories in the last week thanks to the " + str(days_with_workout) + " days with exercises that lasted a total of " + total_duration + ". "
+
+        if is_within_interval(days_with_workout,3,5) == True:
+            if objective == "Gain muscular mass":
+                tip += "Congratulations on your performance in the last week on your journey to gain muscular mass! Your dedication and consistency are commendable. To further maximize your progress, consider progressively increasing the intensity or weight of your strength training exercises. Focus on compound movements that target multiple muscle groups, and ensure proper form and technique for optimal results. Remember to prioritize rest and recovery to allow your muscles to heal and grow. Keep up the great work and stay motivated! Your commitment will lead you to the muscular mass you desire."
+            elif objective == "Lose weight":
+                tip += "Congratulations on your commitment to exercise and working towards your weight loss goal by consistently exercising in the last week! Keep up the great work! Incorporate a mix of cardio and strength training exercises to optimize your progress. Focus on a balanced diet to complement your exercise routine. Stay motivated and enjoy the positive changes on your weight loss journey. You're on the right track, so keep going!"
+            elif objective == "Increase endurance":
+                tip += "Congratulations on consistently working out for 3-4 days last week to increase your endurance! Keep up the great work! Gradually increase intensity or duration to further improve. Mix cardio exercises and listen to your body. Stay motivated and celebrate milestones. With determination, you'll reach new levels of endurance. Keep pushing and enjoy the journey!"
+            else:
+                tip += "Congratulations on prioritizing a healthy lifestyle! Keep up the great work! Continue to vary your workouts, prioritize rest, and nourish your body. By making consistent healthy choices, you're on the path to a vibrant life. Keep going and enjoy the benefits of your commitment to health!"
+        elif is_within_interval(days_with_workout,1,2) == True:
+            if objective == "Gain muscular mass":
+                tip += "Don't be discouraged. Consistency is key, so use this as a fresh start to recommit yourself. Aim to gradually increase the frequency of your workouts to reach the recommended 3-5 days per week. Focus on challenging yourself during each session and maintaining proper form and technique. Remember, building muscle takes time and consistency. Stay motivated, keep pushing yourself, and believe in your ability to achieve your goals. You have the potential to make significant progress on your path to gaining muscular mass. Keep going and don't give up!"
+            elif objective == "Lose weight":
+                tip += "However, every effort counts on your weight loss journey. Aim to gradually increase your workout frequency to reach your goal of 3-5 days per week. Mix cardio and strength training exercises for optimal results. Stay motivated, set achievable goals, and celebrate each step forward. With determination, you can make significant progress. Keep going and embrace the positive changes ahead!"
+            elif objective == "Increase endurance":
+                tip += "However, every effort contributes to improving your endurance. Use this as motivation to gradually increase your workout frequency. Incorporate a mix of cardio exercises and listen to your body's signals. Stay motivated, celebrate each milestone, and keep pushing forward. With determination, you can reach new levels of endurance. Embrace the journey and enjoy the progress you'll make along the way!"
+            else:
+                tip += "However, every effort contributes to a healthier lifestyle. Use this as motivation to gradually increase your workout frequency. Remember to prioritize rest and recovery for overall well-being. Keep making healthy choices and stay committed to your goals. You're on the right track to living a vibrant life!"
+        elif is_within_interval(days_with_workout,6,7) == True:
+            if objective == "Gain muscular mass":
+                tip += "While your dedication is commendable, it's important to find a balance when working towards gaining muscular mass. Overtraining can hinder progress and increase the risk of injury. Consider allowing yourself enough rest and recovery time. Aim for 3-5 days of focused strength training sessions per week, allowing your muscles time to repair and grow. Listen to your body's signals and be mindful of any signs of fatigue or decreased performance. Remember, rest is an integral part of the muscle-building process. By finding the right balance between exercise and recovery, you'll optimize your progress and minimize the risk of overtraining. Keep up the commitment, but also prioritize self-care and allow yourself adequate rest to achieve your goals effectively."
+            elif objective == "Lose weight":
+                tip += "While your dedication to exercise is commendable, be mindful of overexertion. Allow for proper rest and recovery to optimize results. Aim for a balanced approach with 3-5 days of exercise per week, incorporating cardio and strength training. Listen to your body's signals and adjust accordingly. Embrace self-care and find a sustainable balance. Keep up the great work on your weight loss journey!"
+            elif objective == "Increase endurance":
+                tip += "While your dedication to increasing endurance is commendable, be mindful of overexertion. Prioritize rest and recovery for progress and injury prevention. Aim for a balanced approach with 3-5 focused workouts per week. Listen to your body and embrace self-care. Keep up the great work, but also prioritize balance in your fitness journey."
+            else:
+                tip += "While your dedication to exercise is commendable, prioritize balance in your healthy lifestyle. Allow for rest and recovery to avoid overexertion. Aim for a sustainable routine of 3-5 days of activity per week. Listen to your body and practice self-care. Keep up the great work, but remember to find harmony in all aspects of well-being."
+                     
+        generated_tip = {
+                            "Type": "Weekly Exercise Logs",
+                            "Importance Level": "High",
+                            "Tip": tip
+                        }
+        return generated_tip
+
+    def generate_recover_from_injury_tip(self):
+        recover_tips = self.tips_data['Diseases']['Recover from Injury']
+        tip = random.choice(recover_tips)
+        generated_tip = {
+                            "Type": "Recover from Injury",
+                            "Importance Level": "Medium",
+                            "Tip": tip
+                        }
+        return generated_tip
 
 def tip(input):
     tips_file = f"{abspath}/tips.json"
     generator = TipGenerator(tips_file, input)
     generated_tip = generator.generate_tips()
-    #print(generated_tip)
+    # print(generated_tip)
     return generated_tip
 
 tips_file = f"{abspath}/tips.json"
