@@ -229,6 +229,13 @@ async function displayForm() {
         latestPersonalData.WantsBodyOnly = false;
     }
 
+    //format date of birth from
+    var datetime = new Date(latestPersonalData.DateOfBirth);
+    var day = String(datetime.getDate()).padStart(2, '0');
+    var month = String(datetime.getMonth() + 1).padStart(2, '0');
+    var year = datetime.getFullYear();
+    latestPersonalData.DateOfBirth = year + '-' + month + '-' + day;
+
     await drawForm(latestPersonalData);
 }
 
@@ -320,7 +327,7 @@ async function drawForm(latestPersonalData) {
             </div>
             <div class="field">
                 <center><label for="hasEasyCurlBar">Has Easy Curl Bar</label></center>
-                <input type="checkbox" id="hasEasyCurlBar" name="hasEasyCurlBar" ${latestPersonalData.hasEasyCurlBar ? 'checked' : ''}>
+                <input type="checkbox" id="hasEasyCurlBar" name="hasEasyCurlBar" ${latestPersonalData.HasEasyCurlBar ? 'checked' : ''}>
             </div>
             <div class="field">
                 <center><label for="hasNone">Has None</label></center>

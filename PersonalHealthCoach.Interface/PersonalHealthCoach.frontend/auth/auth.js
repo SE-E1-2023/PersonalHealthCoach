@@ -19,7 +19,7 @@ async function signIn() {
             })
             .then(data => {
                 setCookie("userId", data);
-                window.location.href = "../main/Homepage.html";
+                window.location.href = "../main/index.html";
             })
             .catch(error => {
                 console.error("Error:", error);

@@ -2,7 +2,7 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "If you notice yourself breezing through exercising and barely breaking a sweat, focus on progressive overload by making each move more challenging by: adding 5 more reps, adding more weight, tacking on a jump to moves like squats and lunges. Another way to switch it up? Turn the routine into a time-under-tension workout, completing each move for a set amount of time instead of for a set number of reps."
+        "Tip": "Prepare yourself for endurance training. When it comes to training for endurance, you`ll need to be hydrated and be sure you`re eating properly because, by its very nature, this form of training is very demanding on your body. You should be doing a good mix of cardio and weight training. And, to increase your aerobic capacity, you should incorporate high-intensity interval training, or HIIT. You`ll likely be sweating buckets and burning calories galore, so be prepared."
     },
     {
         "Type": "Fitness",
@@ -12,12 +12,12 @@
     {
         "Type": "Diet",
         "Importance Level": "Medium",
-        "Tip": "Try eating smaller, more frequent meals throughout the day."
+        "Tip": "Drink plenty of water to help reduce cravings."
     },
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Track your food intake to ensure you're in a calorie deficit."
+        "Tip": "Find a support system to keep you motivated and accountable."
     },
     {
         "Type": "Daily Calories",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. Make sure to stay consistent with your sleep schedule as much as possible, even on weekends or holidays. This helps regulate your body's internal clock, making it easier to fall asleep and wake up at the same time each day."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -72,27 +72,27 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Blueberries are not only delicious but also among the most powerful sources of antioxidants in the world."
+        "Tip": "Salmon is a type of oily fish that`s incredibly popular because of its excellent taste and high nutrient content, including protein and omega-3 fatty acids. It also contains some vitamin D."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "Broccoli provides good amounts of fiber, calcium, potassium, folate, and phytonutrients. Phytonutrients are compounds that reduce the risk of developing heart disease, diabetes, and some cancers. Broccoli also provides essential antioxidants such as vitamin C and beta-carotene. In fact, a single half-cup serving of broccoli can provide around 85% of a person`s daily vitamin C value. Another compound in broccoli, called sulforaphane, may have anticancer and anti-inflammatory qualities, according to one 2019 study. However, overcooking broccoli can destroy many of its key nutrients. For this reason, it is best to eat it raw or lightly steamed."
+        "Tip": "One 2019 study in rats showed that consuming leafy greens for 6 weeks led to a significant reduction in cardiovascular risk factors. Spinach is an example of a leafy green with antioxidant content, especially when it is raw, steamed, or very lightly boiled."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Kiwi. Ounce for ounce, this fuzzy fruit contains more vitamin C than an orange and is a good source of potassium and fiber. Try this: Thinly slice, then drizzle with honey and sprinkle with toasted, unsweetened coconut."
+        "Tip": "Chicken Breasts. A dinner staple from the leanest part of the bird: half a breast has around 2.5 grams of fat and more than 28 grams of protein. Try this: Shred cooked chicken and toss with olive oil, raisins, curry powder, and fresh lime juice. Or try Stuffed Chicken Breasts With Tomato Salad."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": "Side planks. A healthy body requires a strong core at its foundation, so don`t neglect core-specific moves like the side plank. Focus on the mind-muscle connection and controlled movements to ensure you`re completing this move effectively. 1. Lie on your right side with your left leg and foot stacked on top of your right leg and foot. Prop your upper body up by placing your right forearm on the ground and elbow directly under your shoulder. 2. Contract your core to stiffen your spine and lift your hips and knees off the ground, forming a straight line with your body. 3. Return to start in a controlled manner. Repeat 3 sets of 10-15 reps on one side, then switch."
+        "Tip": "Dumbbell rows. Not only will these make your back look killer in that dress, but dumbbell rows are also another compound exercise that strengthens multiple muscles in your upper body. Choose a moderate-weight dumbbell and ensure that you`re squeezing at the top of the movement. Equipment: 10-pound dumbbells. 1. Start with a dumbbell in each hand. We recommend no more than 10 pounds for beginners. 2. Bend forward at the waist, so your back is at a 45-degree angle to the ground. Be certain not to arch your back. Let your arms hang straight down. Ensure your neck is in line with your back and your core is engaged. 3. Starting with your right arm, bend your elbow and pull the weight straight up toward your chest, making sure to engage your lat and stopping just below your chest. 4.Return to the starting position and repeat with the left arm. This is one rep. Repeat 10 times for 3 sets."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Tennis. Did you know that one hour of tennis burns 600 calories? That puts it on top of the list of the best aerobic activities. All the little sprints, pivots, slams, and serves in tennis channel your strength and require you to exert energy in short but powerful bursts. This type of activity is incredibly effective in developing fitness and expanding lung capacity. A great feature off tennis off the court is the club aspect. Tennis is popular worldwide, so no matter where you are, what level you play or what age bracket you belong to, there are clubs everywhere to cater to your needs."
+        "Tip": "Volleyball: Serve`s up! Volleyball makes our list for healthiest sports because it increases metabolic rate, builds agility, strengthens coordination, and boosts mood, Oh, and it also burns plenty of calories. Harvard Medical School reports a person can burn between 90 to 133 calories during a half-hour game of non-competitive, non-beach volleyball, depending on a person`s weight, while a competitive gym game of volleyball burns between 120 to 178 calories."
     },
     {
         "Type": "Daily Steps Calories Burned",
@@ -107,23 +107,12 @@
     {
         "Type": "Prevent Diseases",
         "Importance Level": "Medium",
-        "Tip": "Get tested. Getting yourself tested is an important step in knowing your health status, especially when it comes to HIV, hepatitis B, sexually-transmitted infections (STIs) and tuberculosis (TB). Left untreated, these diseases can lead to serious complications and even death. Knowing your status means you will know how to either continue preventing these diseases or, if you find out that you`re positive, get the care and treatment that you need. Go to a public or private health facility, wherever you are comfortable, to have yourself tested."
+        "Tip": "Avoid harmful use of alcohol. There is no safe level for drinking alcohol. Consuming alcohol can lead to health problems such as mental and behavioural disorders, including alcohol dependence, major NCDs such as liver cirrhosis, some cancers and heart diseases, as well as injuries resulting from violence and road clashes and collisions."
     },
     {
         "Type": "Recover From Illness",
         "Importance Level": "Medium",
-        "Tip": "Be a beginner again, temporarily. Spend a few minutes each day completing some dynamic flexibility and mobility exercises. This will increase the mobility of muscles and joints which will help improve posture and decrease the risk of injury. Yoga`s always a good option as it`ll get your body moving again without going too far."
-    },
-    {
-        "Type": "Daily Workout Feedback",
-        "Importance Level": "Medium",
-        "Tip": "You managed to burn 120.56 calories during your workout that lasted 8 minutes. Good job! We are waiting for you again tomorrow for the daily training."
-    }
-]   },
-    {
-        "Type": "Recover From Illness",
-        "Importance Level": "Medium",
-        "Tip": "Seek Help When Necessary. Lastly, know that there`s no need to go through this alone. As we briefly mentioned, you can discuss your worries with someone who can help you, or you can trust. In addition, everyone understands that when someone is recovering, assistance is highly needed. Don`t be shy to ask for help even with the smallest things, such as getting a glass of water, taking a shower, changing clothes, or setting daily reminders to take prescribed medicine."
+        "Tip": "Drink hot water with True Lemon. A cup of plain hot water (rather than tea) goes a long way in re-balancing your body. Many cultures believe that warm water is better to drink than cold as its more easily absorbed by our naturally warm bodies. Since after an illness there is a good chance that you're dehydrated, every little bit helps with replenishing the water in your body. Add True Lemon and increase the alkalizing effects."
     },
     {
         "Type": "Daily Workout Feedback",
