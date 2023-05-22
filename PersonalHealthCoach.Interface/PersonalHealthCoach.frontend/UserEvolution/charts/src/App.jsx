@@ -32,7 +32,6 @@ const App = () => {
         return acc;
     }, {});
       const userId = cookies["userId"];
-
       const url = `http://localhost:7071/api/v1/users/${userId}/data/personal`;
 
       try {
