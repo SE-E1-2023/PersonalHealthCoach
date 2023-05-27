@@ -8,7 +8,6 @@ namespace HealthCoach.Presentation.Tests;
 
 public partial class FoodFunctionsTests
 {
-    //private readonly HttpClient client = new();
 
     [Fact]
     public void Given_UpdateFoodHistory_When_RequestIsInvalid_Then_ShouldSendBadResponse()
