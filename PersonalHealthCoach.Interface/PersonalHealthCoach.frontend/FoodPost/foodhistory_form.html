@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Food History</title>
+	<link rel="stylesheet" type="text/css" href="foodhistory_form_css.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="foodhistory_form_js.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <script src="../../session.js"></script>
+    <script>checkSession()</script>
+	<div class="container">
+        <form id="foodForm" class="col-6">
+            <div class="form-group food-group">
+                <label for="foodName0">Food Name:</label>
+                <input type="text" class="form-control" id="foodName0" name="foodName0" required>
+
+                <label for="foodType0">Food Type:</label>
+                <select class="form-control" id="foodType0" name="foodType0" required>
+                    <option value="">Select Type</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Drink">Drink</option>
+                    <option value="Main Course">Main Course</option>
+                    <option value="Side Dish">Side Dish</option>
+                    <option value="Snack">Snack</option>
+                    <option value="Soup">Soup</option>
+                </select>
+
+                <label for="calories0">Calories:</label>
+                <input type="number" class="form-control" id="calories0" name="calories0" required>
+
+                <label for="quantity0">Quantity:</label>
+                <input type="number" class="form-control" id="quantity0" name="quantity0" required>
+            </div>
+
+            <button type="button" class="btn btn-secondary add-food">Add More Foods</button>
+            <button type="button" class="btn btn-secondary remove-food">Remove Last Food</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <script>FoodForm();</script>
+    </div>
+</body>
+</html>
