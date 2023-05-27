@@ -66,3 +66,5 @@ static class HostBuilderExtensions
         }
     }
 }
+
+public partial class Program{ }
