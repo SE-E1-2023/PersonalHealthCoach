@@ -134,6 +134,14 @@ public static class BusinessErrors
             public const string UserNotAuthorized = $"{Prefix}.{nameof(UserNotAuthorized)}";
             public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
         }
+
+        public static class Get
+        {
+            private const string Prefix = $"{nameof(DietPlan)}.{nameof(Get)}";
+
+            public const string UserNotFound = $"{Prefix}.{nameof(UserNotFound)}";
+            public const string DietPlanDoesNotExist = $"{Prefix}.{nameof(DietPlanDoesNotExist)}";
+        }
     }
 
     public static class Report
