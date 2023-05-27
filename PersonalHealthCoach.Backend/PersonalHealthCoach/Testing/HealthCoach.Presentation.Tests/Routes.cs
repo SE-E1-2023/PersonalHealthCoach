@@ -37,5 +37,6 @@ internal static class Routes
     public static class DietPlan
     {
         public const string CreateDietPlan = $"{Prefix}/users/{{0}}/plans/diet";
+        public const string GetDietPlan = $"{Prefix}/users/{{0}}/plans/diet";
     }
 }
