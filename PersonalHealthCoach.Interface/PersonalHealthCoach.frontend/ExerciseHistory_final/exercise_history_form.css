@@ -1,0 +1,10 @@
+.container_exercise {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.exercise-group {
+    margin-top: 50px;
+}

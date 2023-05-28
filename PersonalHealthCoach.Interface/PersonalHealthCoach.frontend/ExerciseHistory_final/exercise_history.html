@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Exercise History</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
+    rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="exercise_history_form.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="exercise_history_form.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="hero_area">
+    
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="container">
+        <div class="custom_nav2">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex  flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="service.html">Exercise log </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="service.html"> Food Log</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="service.html">My Profile </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      
+    <script src="../../session.js"></script>
+    <script>checkSession()</script>
+    <div class="container_exercise" style="color: white;">
+        <form id="exerciseForm" class="col-6">
+            <div class="form-group exercise-group">
+                <label for="exerciseName0">Exercise Name:</label>
+                <input type="text" class="form-control" id="exerciseName0" name="exerciseName0" required>
+
+                <label for="duration0">Duration (minutes):</label>
+                <input type="number" class="form-control" id="duration0" name="duration0" required>
+
+                <label for="caloriesBurned0">Calories Burned:</label>
+                <input type="number" class="form-control" id="caloriesBurned0" name="caloriesBurned0" required>
+            </div>
+
+            <button type="button" class="btn btn-secondary add-exercise">Add More Exercises</button>
+            <button type="button" class="btn btn-secondary remove-exercise">Remove Last Exercise</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <script>ExerciseForm();</script>
+    </div>
+
+
+</body>
+
+</html>
