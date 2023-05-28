@@ -28,6 +28,23 @@ body {
   padding-bottom: 90px;
 }
 
+.general_tip {
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  align-self: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tip_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
 .heading_container {
   display: -webkit-box;
   display: -ms-flexbox;
