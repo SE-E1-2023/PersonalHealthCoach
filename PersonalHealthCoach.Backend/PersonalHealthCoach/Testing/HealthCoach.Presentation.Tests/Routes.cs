@@ -34,6 +34,17 @@ internal static class Routes
         public const string GetExerciseHistory = $"{Prefix}/users/{{0}}/exercise-history";
     }
 
+    public static class PersonalTip
+    {
+        public const string CreatePersonalTip = $"{Prefix}/users/{{0}}/plans/tips";
+        public const string DeletePersonalTip = $"{Prefix}/api/plans/tips/{{0}}";
+    }
+    
+    public static class GeneralWellnessTip
+    {
+        public const string GetGeneralWellnessTip = $"{Prefix}/tips/general";
+    }
+  
     public static class DietPlan
     {
         public const string CreateDietPlan = $"{Prefix}/users/{{0}}/plans/diet";
