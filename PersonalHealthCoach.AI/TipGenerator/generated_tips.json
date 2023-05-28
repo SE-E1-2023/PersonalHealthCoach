@@ -2,22 +2,22 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Prepare yourself for endurance training. When it comes to training for endurance, you`ll need to be hydrated and be sure you`re eating properly because, by its very nature, this form of training is very demanding on your body. You should be doing a good mix of cardio and weight training. And, to increase your aerobic capacity, you should incorporate high-intensity interval training, or HIIT. You`ll likely be sweating buckets and burning calories galore, so be prepared."
+        "Tip": "Understand the basics of building muscle. First, increase your caloric and complete protein intake, so your body has enough building blocks to get bigger. Then, when you enter the gym, focus on your form. Perform compound movements and train with weights on average around four times a week. Never underestimate the importance of rest. Remember, muscle tissue grows outside of the gym when you`re giving your body time to relax and recover following your workouts."
     },
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Lift weights to build muscle and increase metabolism."
+        "Tip": "Take the stairs instead of the elevator to burn extra calories."
     },
     {
         "Type": "Diet",
         "Importance Level": "Medium",
-        "Tip": "Drink plenty of water to help reduce cravings."
+        "Tip": "Plan your meals and snacks ahead of time to avoid impulsive eating."
     },
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Find a support system to keep you motivated and accountable."
+        "Tip": "Track your food intake to ensure you're in a calorie deficit."
     },
     {
         "Type": "Daily Calories",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. By getting enough sleep on a regular basis, you're also reducing your risk of developing chronic health problems such as obesity, diabetes, and heart disease. In addition, you'll have better cognitive function and memory, which can help you perform better at work or in school."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -72,27 +72,27 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Salmon is a type of oily fish that`s incredibly popular because of its excellent taste and high nutrient content, including protein and omega-3 fatty acids. It also contains some vitamin D."
+        "Tip": "Chicken breast is low in fat and calories but extremely high in protein. It`s a great source of many nutrients. Again, feel free to eat fattier cuts of chicken if you`re not eating many carbs."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "One 2019 study in rats showed that consuming leafy greens for 6 weeks led to a significant reduction in cardiovascular risk factors. Spinach is an example of a leafy green with antioxidant content, especially when it is raw, steamed, or very lightly boiled."
+        "Tip": "Apples are an excellent source of antioxidants, which combat free radicals. Free radicals are damaging substances that the body generates. They cause undesirable changes in the body and may contribute to chronic conditions, as well as the aging process. However, some studies have suggested that an antioxidant in apples might extend a person`s life span and reduce the risk of chronic disease."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Chicken Breasts. A dinner staple from the leanest part of the bird: half a breast has around 2.5 grams of fat and more than 28 grams of protein. Try this: Shred cooked chicken and toss with olive oil, raisins, curry powder, and fresh lime juice. Or try Stuffed Chicken Breasts With Tomato Salad."
+        "Tip": "Lentils. A protein powerhouse, lentils are flush with folate, a nutrient that supports healthy cell growth and function, and may prevent certain birth defects. Try this: Toss cooked lentils with extra-virgin olive oil, red wine vinegar, chopped celery, and fresh thyme. Serve over salad greens. Or try Winter Lentil Soup."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": "Dumbbell rows. Not only will these make your back look killer in that dress, but dumbbell rows are also another compound exercise that strengthens multiple muscles in your upper body. Choose a moderate-weight dumbbell and ensure that you`re squeezing at the top of the movement. Equipment: 10-pound dumbbells. 1. Start with a dumbbell in each hand. We recommend no more than 10 pounds for beginners. 2. Bend forward at the waist, so your back is at a 45-degree angle to the ground. Be certain not to arch your back. Let your arms hang straight down. Ensure your neck is in line with your back and your core is engaged. 3. Starting with your right arm, bend your elbow and pull the weight straight up toward your chest, making sure to engage your lat and stopping just below your chest. 4.Return to the starting position and repeat with the left arm. This is one rep. Repeat 10 times for 3 sets."
+        "Tip": "Planks. Planks are an effective way to target both your abdominal muscles and your whole body. Planking stabilizes your core without straining your back the way situps or crunches might. 1. Begin in a pushup position with your hand and toes firmly planted on the ground, your back straight, and your core tight. 2. Keep your chin slightly tucked and your gaze just in front of your hands. 3. Take deep, controlled breaths while maintaining tension throughout your entire body, so your abs, shoulders, triceps, glutes, and quads are all engaged. 4. Complete 2-3 sets of 30-second holds to start."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Volleyball: Serve`s up! Volleyball makes our list for healthiest sports because it increases metabolic rate, builds agility, strengthens coordination, and boosts mood, Oh, and it also burns plenty of calories. Harvard Medical School reports a person can burn between 90 to 133 calories during a half-hour game of non-competitive, non-beach volleyball, depending on a person`s weight, while a competitive gym game of volleyball burns between 120 to 178 calories."
+        "Tip": "Hiking. Hiking outdoors has plenty of perks: nice views, fresh air, and the sounds and smells of nature. It`s good for you, too. Hiking is a powerful cardio workout that lowers blood pressure, decreases the likelihood of heart disease, builds strength in your core muscles and improves balance. Research shows that hiking has a positive impact on combating the symptoms of stress and anxiety. Being in nature is ingrained in our DNA, and we sometimes forget that."
     },
     {
         "Type": "Daily Steps Calories Burned",
@@ -107,12 +107,12 @@
     {
         "Type": "Prevent Diseases",
         "Importance Level": "Medium",
-        "Tip": "Avoid harmful use of alcohol. There is no safe level for drinking alcohol. Consuming alcohol can lead to health problems such as mental and behavioural disorders, including alcohol dependence, major NCDs such as liver cirrhosis, some cancers and heart diseases, as well as injuries resulting from violence and road clashes and collisions."
+        "Tip": "Prepare your food correctly. Unsafe food containing harmful bacteria, viruses, parasites or chemical substances, causes more than 200 diseases - ranging from diarrhoea to cancers. When buying food at the market or store, check the labels or the actual produce to ensure it is safe to eat. If you are preparing food, make sure you follow the Five Keys to Safer Food: (1) keep clean; (2) separate raw and cooked; (3) cook thoroughly; (4) keep food at safe temperatures; and (5) use safe water and raw materials."
     },
     {
         "Type": "Recover From Illness",
         "Importance Level": "Medium",
-        "Tip": "Drink hot water with True Lemon. A cup of plain hot water (rather than tea) goes a long way in re-balancing your body. Many cultures believe that warm water is better to drink than cold as its more easily absorbed by our naturally warm bodies. Since after an illness there is a good chance that you're dehydrated, every little bit helps with replenishing the water in your body. Add True Lemon and increase the alkalizing effects."
+        "Tip": "Eat restorative foods. Just as with that nutrient-dense smoothie, your body needs extra vitamins and minerals during this time. Eat a wide range of colorful fruits and vegetables, avoid dairy for a little while, and increase your intake of water, anti-inflammatory foods, and whole foods that are easy to digest. Chew every bite thoroughly to increase absorption of all those good nutrients! Also, avoid drinking alcohol for at least 2-weeks during the healing process. Alcohol will slow your recovery time, and can conflict with certain prescriptions and antibiotics."
     },
     {
         "Type": "Daily Workout Feedback",

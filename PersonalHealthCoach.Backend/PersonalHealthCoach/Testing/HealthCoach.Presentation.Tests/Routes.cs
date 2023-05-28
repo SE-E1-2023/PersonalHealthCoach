@@ -50,4 +50,10 @@ internal static class Routes
         public const string CreateDietPlan = $"{Prefix}/users/{{0}}/plans/diet";
         public const string GetDietPlan = $"{Prefix}/users/{{0}}/plans/diet";
     }
+
+    public static class FitnessPlan
+    {
+        public const string CreateFitnessPlan = $"{Prefix}/users/{{0}}/plans/fitness";
+        public const string GetLatestFitnessPlan = $"{Prefix}/users/{{0}}/plans/fitness/latest";
+    }
 }
