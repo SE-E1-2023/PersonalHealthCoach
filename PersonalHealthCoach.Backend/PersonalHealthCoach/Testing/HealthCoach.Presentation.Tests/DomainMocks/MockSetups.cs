@@ -87,5 +87,17 @@ public static class MockSetups
         var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
         var foodHistory = JsonConvert.DeserializeObject<FoodHistoryMock>(responseBody);
         return foodHistory;
+    }
+
+    public static FitnessPlanMock SetupFitnessPlan(Guid id)
+    {
+        var client = new HttpClient();
+        var command = new CreateFitnessPlanCommand(id, 5);
+        var json = JsonConvert.SerializeObject(command);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = client.PostAsync(string.Format(Routes.FitnessPlan.UpdateFitnessPlan, id), content).GetAwaiter().GetResult();
+        var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+        var fitnessPlan = JsonConvert.DeserializeObject<FitnessPlanMock>(responseBody);
+        return fitnessPlan;
     }   
 }
