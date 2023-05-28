@@ -93,14 +93,14 @@ public static class MockSetups
     public static FitnessPlanMock SetupFitnessPlan(Guid id)
     {
         var client = new HttpClient();
+        MockSetups.SetupPersonalData(id);
         var command = new CreateFitnessPlanCommand(id, 5);
         var json = JsonConvert.SerializeObject(command);
         var content = new StringContent(json, Encoding.UTF8, "application/json");
-        var response = client.PostAsync(string.Format(Routes.FitnessPlan.UpdateFitnessPlan, id), content).GetAwaiter().GetResult();
+        var response = client.PostAsync(string.Format(Routes.FitnessPlan.CreateFitnessPlan, id), content).GetAwaiter().GetResult();
         var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
         var fitnessPlan = JsonConvert.DeserializeObject<FitnessPlanMock>(responseBody);
         return fitnessPlan;
-    }   
     }
 
     public static DietPlanMock SetupDietPlan(Guid id)

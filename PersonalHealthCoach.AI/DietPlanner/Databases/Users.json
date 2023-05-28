@@ -159,6 +159,46 @@
       "idSideDish": 637919,
       "idSnack": 636571,
       "idSoup": 637633
+    },
+    {
+      "idUser": "8208c7ce-cbac-4278-b21a-b04f335012aa",
+      "idDiet": 1,
+      "idBreakfast": 665279,
+      "idDrink": 659248,
+      "idMainCourse": 639954,
+      "idSideDish": 648641,
+      "idSnack": 663822,
+      "idSoup": 658531
+    },
+    {
+      "idUser": "170bdf26-7232-4e6a-8c55-02052ba757cc",
+      "idDiet": 1,
+      "idBreakfast": 655313,
+      "idDrink": 716301,
+      "idMainCourse": 157458,
+      "idSideDish": 1697521,
+      "idSnack": 642610,
+      "idSoup": 665653
+    },
+    {
+      "idUser": "5569f979-6ea5-4878-b6ff-e65907aee06e",
+      "idDiet": 1,
+      "idBreakfast": 649378,
+      "idDrink": 635215,
+      "idMainCourse": 652591,
+      "idSideDish": 636356,
+      "idSnack": 1095699,
+      "idSoup": 632957
+    },
+    {
+      "idUser": "b8c60d03-1552-411a-b2ba-5c62b814afff",
+      "idDiet": 1,
+      "idBreakfast": 643143,
+      "idDrink": 665480,
+      "idMainCourse": 643789,
+      "idSideDish": 658512,
+      "idSnack": 649886,
+      "idSoup": 643809
     }
   ]
 }

@@ -53,7 +53,7 @@ internal static class Routes
 
     public static class FitnessPlan
     {
-        public const string UpdateFitnessPlan = $"{Prefix}/users/{{0}}/fitness-plan";
-        public const string GetFitnessPlan = $"{Prefix}/users/{{0}}/fitness-plan";
+        public const string CreateFitnessPlan = $"{Prefix}/users/{{0}}/plans/fitness";
+        public const string GetLatestFitnessPlan = $"{Prefix}/users/{{0}}/plans/fitness/latest";
     }
 }

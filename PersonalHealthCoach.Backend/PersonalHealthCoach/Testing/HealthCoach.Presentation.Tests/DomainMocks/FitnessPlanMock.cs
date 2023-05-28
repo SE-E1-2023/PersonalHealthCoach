@@ -1,3 +1,5 @@
-﻿namespace HealthCoach.Presentation.Tests;
+﻿using HealthCoach.Core.Domain;
 
-public sealed record FitnessPlanMock(Guid Id, Guid UserId, DateTime Date, List<ExerciseHistoryMock> Exercises);
+namespace HealthCoach.Presentation.Tests;
+
+public sealed record FitnessPlanMock(Guid userId, IReadOnlyCollection<Workout> workout);
