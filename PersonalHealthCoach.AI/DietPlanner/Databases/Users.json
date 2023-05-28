@@ -79,6 +79,86 @@
       "idSideDish": 1095687,
       "idSnack": 662663,
       "idSoup": 661433
+    },
+    {
+      "idUser": "3795e37c-c248-4e5b-908d-bf2a398e7234",
+      "idDiet": 1,
+      "idBreakfast": 641411,
+      "idDrink": 646486,
+      "idMainCourse": 652442,
+      "idSideDish": 633837,
+      "idSnack": 646976,
+      "idSoup": 639843
+    },
+    {
+      "idUser": "44b4010f-0872-4889-96dc-cb272c063121",
+      "idDiet": 2,
+      "idBreakfast": 638825,
+      "idDrink": 644595,
+      "idMainCourse": 663357,
+      "idSideDish": 661925,
+      "idSnack": 653025,
+      "idSoup": 632835
+    },
+    {
+      "idUser": "2e623cdd-48ab-4ba9-8585-6a08f8e65229",
+      "idDiet": 1,
+      "idBreakfast": 633399,
+      "idDrink": 658778,
+      "idMainCourse": 715385,
+      "idSideDish": 632778,
+      "idSnack": 660405,
+      "idSoup": 650855
+    },
+    {
+      "idUser": "f9b4c6ff-9525-4e8a-92be-e98b4da25ead",
+      "idDiet": 1,
+      "idBreakfast": 716417,
+      "idDrink": 661740,
+      "idMainCourse": 1697533,
+      "idSideDish": 634481,
+      "idSnack": 659147,
+      "idSoup": 1096219
+    },
+    {
+      "idUser": "57b5611b-a236-410b-8096-53ed0600e223",
+      "idDiet": 1,
+      "idBreakfast": 647555,
+      "idDrink": 635111,
+      "idMainCourse": 648713,
+      "idSideDish": 642395,
+      "idSnack": 638512,
+      "idSoup": 657723
+    },
+    {
+      "idUser": "192246d5-461b-4570-b6b7-0ac8ab3d22cc",
+      "idDiet": 1,
+      "idBreakfast": 911158,
+      "idDrink": 648452,
+      "idMainCourse": 729366,
+      "idSideDish": 651448,
+      "idSnack": 648713,
+      "idSoup": 665301
+    },
+    {
+      "idUser": "959c99c8-e004-48ba-80cc-b897db07b350",
+      "idDiet": 1,
+      "idBreakfast": 637792,
+      "idDrink": 640026,
+      "idMainCourse": 715523,
+      "idSideDish": 1095987,
+      "idSnack": 649926,
+      "idSoup": 651979
+    },
+    {
+      "idUser": "e70e3cfc-0d11-4be0-a153-cddd322846c0",
+      "idDiet": 1,
+      "idBreakfast": 1021260,
+      "idDrink": 716252,
+      "idMainCourse": 646034,
+      "idSideDish": 637919,
+      "idSnack": 636571,
+      "idSoup": 637633
     }
   ]
 }

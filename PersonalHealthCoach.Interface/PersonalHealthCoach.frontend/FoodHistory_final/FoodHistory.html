@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Food History</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
+    rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="foodhistory_form_css.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="foodhistory_form_js.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="hero_area">
+    
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="container">
+        <div class="custom_nav2">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex  flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="service.html">Exercise log </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="service.html"> Food Log</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="service.html">My Profile </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      
+  <script src="../../session.js"></script>
+  <script>checkSession()</script>
+	<div class="container_food" style="color: white;">
+        <form id="foodForm" class="col-6">
+            <div class="form-group food-group">
+                <label for="foodName0">Food Name:</label>
+                <input type="text" class="form-control" id="foodName0" name="foodName0" required>
+
+                <label for="foodType0">Food Type:</label>
+                <select class="form-control" id="foodType0" name="foodType0" required>
+                    <option value="">Select Type</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Drink">Drink</option>
+                    <option value="Main Course">Main Course</option>
+                    <option value="Side Dish">Side Dish</option>
+                    <option value="Snack">Snack</option>
+                    <option value="Soup">Soup</option>
+                </select>
+
+                <label for="calories0">Calories:</label>
+                <input type="number" class="form-control" id="calories0" name="calories0" required>
+
+                <label for="quantity0">Quantity:</label>
+                <input type="number" class="form-control" id="quantity0" name="quantity0" required>
+            </div>
+
+            <button type="button" class="btn btn-secondary add-food">Add More Foods</button>
+            <button type="button" class="btn btn-secondary remove-food">Remove Last Food</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <script>FoodForm();</script>
+    </div>
+
+
+</body>
+
+</html>

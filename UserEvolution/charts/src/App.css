@@ -3,14 +3,15 @@
   justify-content: center;
   align-items: center;
   background-color: lavenderblush;
-  position:relative;
+  position: relative;
   width: 80vw;
   margin-left: 10vw;
   border-radius: 20px;
   margin-bottom: 30px;
 }
+
 #chart-container-2 {
- 
+
   background-color: lavenderblush;
   margin-top: 0%;
   position: relative;
@@ -19,6 +20,7 @@
   margin-left: 10vw;
   margin-bottom: 30px;
 }
+
 #chart-container-3 {
   background-color: lavenderblush;
   margin-top: 0%;
@@ -28,20 +30,22 @@
   margin-left: 10vw;
   margin-bottom: 30px;
 }
-@media(min-width:1024px){
+
+@media(min-width:1024px) {
   #chart-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: lavenderblush;
-    position:relative;
+    position: relative;
     width: 80vw;
     margin-left: 10vw;
     border-radius: 20px;
     margin-bottom: 100px;
   }
+
   #chart-container-2 {
-   
+
     background-color: lavenderblush;
     margin-top: 0%;
     position: relative;
@@ -50,6 +54,7 @@
     margin-left: 10vw;
     margin-bottom: 100px;
   }
+
   #chart-container-3 {
     background-color: lavenderblush;
     margin-top: 0%;
@@ -60,28 +65,33 @@
     margin-bottom: 100px;
   }
 }
-h2{
+
+h2 {
   text-align: center;
-  font-size:   16px;
+  font-size: 16px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-style: italic;
-  color: darkslategrey;
+  color: whitesmoke;
   margin-bottom: 20px;
 
 }
-@media (min-width:1024px){
-  h2{
-    font-size: 50px;;
+
+@media (min-width:1024px) {
+  h2 {
+    font-size: 50px;
+    ;
     margin-bottom: 100px;
   }
 }
-.bar{
+
+.bar {
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 12px;
 }
-@media (min-width:1024px){
-  .bar{
+
+@media (min-width:1024px) {
+  .bar {
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 40px;
