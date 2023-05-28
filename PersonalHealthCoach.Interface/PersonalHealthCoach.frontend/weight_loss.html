@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,42 +13,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <title>Nutrition</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
-          <a href="index.html">Personal Health Coach</a> 
+            <a href="index.html">Personal Health Coach</a>
         </div>
 
-                <div class="dropdown">
-                    <button class="dropbtn"><span class="submit">Features</span></button>
-                    <div class="dropdown-content">
-                      <a href="nutrition.html">Nutrition</a>
-                      <a href="#">Fitness</a>
-                      <a href="#">Wellness</a>
-                    </div>
-                  </div> 
+        <div class="dropdown">
+            <button class="dropbtn"><span class="submit">Features</span></button>
+            <div class="dropdown-content">
+                <a href="nutrition.html">Nutrition</a>
+                <a href="#">Fitness</a>
+                <a href="#">Wellness</a>
+            </div>
+        </div>
+        <div class="back-buton">
+            <div class="back">
+                <a href="./main/index.html">Back</a>
+            </div>
+
+        </div>
     </header>
     <h1 class="diet_h">DIET:</h1>
     <p id="data" class="text_diet"></p>
     <script type="text/javascript">
 
         fetch("data.json")
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function (data) {
-            for(var i=0; i<data.length; i++) {
-                document.getElementById("data").innerHTML +=
-                "Dish " + i + ": " + data[i].title + "<br />  Ingredients: " + data[i].ingredients + "<br />" +"<br />" ;
-            }
-        })
-        .catch(function (err) {
-            console.log(err);
-        });
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    document.getElementById("data").innerHTML +=
+                        "Dish " + i + ": " + data[i].title + "<br />  Ingredients: " + data[i].ingredients + "<br />" + "<br />";
+                }
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
 
 
     </script>
 
-    
+
 </body>
+
 </html>

@@ -2,7 +2,7 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Take vitamin D if you`re deficient. Most people do not get enough vitamin D. While these widespread vitamin D inadequacies are not imminently harmful, maintaining adequate vitamin D levels can help to optimize your health by improving bone strength, reducing symptoms of depression, strengthening your immune system, and lowering your risk for cancer. If you do not spend a lot of time in the sunlight, your vitamin D levels may be low. If you have access, it`s a great idea to have your levels tested, so that you can correct your levels through vitamin D supplementation if necessary."
+        "Tip": "Prepare yourself for endurance training. When it comes to training for endurance, you`ll need to be hydrated and be sure you`re eating properly because, by its very nature, this form of training is very demanding on your body. You should be doing a good mix of cardio and weight training. And, to increase your aerobic capacity, you should incorporate high-intensity interval training, or HIIT. You`ll likely be sweating buckets and burning calories galore, so be prepared."
     },
     {
         "Type": "Fitness",
@@ -12,12 +12,12 @@
     {
         "Type": "Diet",
         "Importance Level": "Medium",
-        "Tip": "Plan your meals and snacks ahead of time to avoid impulsive eating."
+        "Tip": "Drink plenty of water to help reduce cravings."
     },
     {
         "Type": "General",
         "Importance Level": "Medium",
-        "Tip": "Track your food intake to ensure you're in a calorie deficit."
+        "Tip": "Find a support system to keep you motivated and accountable."
     },
     {
         "Type": "Daily Calories",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. Make sure to stay consistent with your sleep schedule as much as possible, even on weekends or holidays. This helps regulate your body's internal clock, making it easier to fall asleep and wake up at the same time each day."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -72,27 +72,27 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Onions have a very strong flavor and are very popular in many recipes. They contain a number of bioactive compounds believed to have health benefits."
+        "Tip": "Salmon is a type of oily fish that`s incredibly popular because of its excellent taste and high nutrient content, including protein and omega-3 fatty acids. It also contains some vitamin D."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "Oily fish. Some examples of oily fish include salmon, trout, mackerel, herring, sardines, and anchovies. These types of fish have oil in their tissues and around their gut. Their lean fillets contain high levels of omega-3 fatty acids. These oils may provide benefits for the heart and nervous system, according to the Office of Dietary Supplements (ODS). The ODS also suggest that omega-3 fatty acids can help with inflammatory conditions such as arthritis. They are also plentiful in vitamins A and D. One 2014 study suggested that fatty acids can significantly reduce the risk of rheumatoid arthritis."
+        "Tip": "One 2019 study in rats showed that consuming leafy greens for 6 weeks led to a significant reduction in cardiovascular risk factors. Spinach is an example of a leafy green with antioxidant content, especially when it is raw, steamed, or very lightly boiled."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Edamame. These young soybeans pack more fiber per serving than shredded-wheat cereal and are one of the few plant-based sources of complete protein, meaning they have all nine essential amino acids that our bodies can't produce on their own. Try this: Puree cooked edamame with garlic, olive oil, and fresh lemon juice for a quick hummus-like spread. Or try Risotto With Edamame, Lemon, and Tarragon."
+        "Tip": "Chicken Breasts. A dinner staple from the leanest part of the bird: half a breast has around 2.5 grams of fat and more than 28 grams of protein. Try this: Shred cooked chicken and toss with olive oil, raisins, curry powder, and fresh lime juice. Or try Stuffed Chicken Breasts With Tomato Salad."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": "Glute bridge. The glute bridge effectively works your entire posterior chain, which isn`t only good for you, but it`ll make your booty look perkier, too. 1. Start by lying on the floor with your knees bent, feet flat on the ground, and arms straight at your sides with your palms facing down. 2. Pushing through your heels, raise your hips off the ground by squeezing your core, glutes, and hamstrings. Your upper back and shoulders should still be in contact with the ground, and your core down to your knees should form a straight line. 3. Pause 1-2 seconds at the top and return to the starting position. 4. Complete 10-12 reps for 3 sets."
+        "Tip": "Dumbbell rows. Not only will these make your back look killer in that dress, but dumbbell rows are also another compound exercise that strengthens multiple muscles in your upper body. Choose a moderate-weight dumbbell and ensure that you`re squeezing at the top of the movement. Equipment: 10-pound dumbbells. 1. Start with a dumbbell in each hand. We recommend no more than 10 pounds for beginners. 2. Bend forward at the waist, so your back is at a 45-degree angle to the ground. Be certain not to arch your back. Let your arms hang straight down. Ensure your neck is in line with your back and your core is engaged. 3. Starting with your right arm, bend your elbow and pull the weight straight up toward your chest, making sure to engage your lat and stopping just below your chest. 4.Return to the starting position and repeat with the left arm. This is one rep. Repeat 10 times for 3 sets."
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Basketball: Not only is basketball an incredibly tiring game to play, but it strengthens your health on many levels. Our research shows that it increases spatial awareness, fosters decision-making capabilities, reduces stress, helps immensely with coordination, and develops confidence. For each hour of competitive basketball, a 165-pound person can expect to burn around 600 calories, while a 250-pound person can burn up to 900 calories."
+        "Tip": "Volleyball: Serve`s up! Volleyball makes our list for healthiest sports because it increases metabolic rate, builds agility, strengthens coordination, and boosts mood, Oh, and it also burns plenty of calories. Harvard Medical School reports a person can burn between 90 to 133 calories during a half-hour game of non-competitive, non-beach volleyball, depending on a person`s weight, while a competitive gym game of volleyball burns between 120 to 178 calories."
     },
     {
         "Type": "Daily Steps Calories Burned",
@@ -107,12 +107,12 @@
     {
         "Type": "Prevent Diseases",
         "Importance Level": "Medium",
-        "Tip": "Get vaccinated. Vaccination is one of the most effective ways to prevent diseases. Vaccines work with your body`s natural defences to build protection against diseases like cervical cancer, cholera, diphtheria, hepatitis B, influenza, measles, mumps, pneumonia, polio, rabies, rubella, tetanus, typhoid, and yellow fever."
+        "Tip": "Avoid harmful use of alcohol. There is no safe level for drinking alcohol. Consuming alcohol can lead to health problems such as mental and behavioural disorders, including alcohol dependence, major NCDs such as liver cirrhosis, some cancers and heart diseases, as well as injuries resulting from violence and road clashes and collisions."
     },
     {
         "Type": "Recover From Illness",
         "Importance Level": "Medium",
-        "Tip": "Keep active. Regular exercise promotes health and wellbeing and helps prevent injury. Do some physical activity every day, even if it is only a small amount. See your specialist for advice on exercise that will suit your condition."
+        "Tip": "Drink hot water with True Lemon. A cup of plain hot water (rather than tea) goes a long way in re-balancing your body. Many cultures believe that warm water is better to drink than cold as its more easily absorbed by our naturally warm bodies. Since after an illness there is a good chance that you're dehydrated, every little bit helps with replenishing the water in your body. Add True Lemon and increase the alkalizing effects."
     },
     {
         "Type": "Daily Workout Feedback",

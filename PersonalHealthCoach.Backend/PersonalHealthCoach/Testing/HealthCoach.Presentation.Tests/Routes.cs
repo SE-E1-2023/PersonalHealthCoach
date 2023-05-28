@@ -24,6 +24,7 @@ internal static class Routes
 
     public static class FoodHistory
     {
+        public const string UpdateFoodHistory = $"{Prefix}/users/{{0}}/food-history";
         public const string GetFoodHistory = $"{Prefix}/users/{{0}}/food-history";
     }
 
@@ -42,5 +43,11 @@ internal static class Routes
     public static class GeneralWellnessTip
     {
         public const string GetGeneralWellnessTip = $"{Prefix}/tips/general";
+    }
+  
+    public static class DietPlan
+    {
+        public const string CreateDietPlan = $"{Prefix}/users/{{0}}/plans/diet";
+        public const string GetDietPlan = $"{Prefix}/users/{{0}}/plans/diet";
     }
 }

@@ -25,6 +25,16 @@ public sealed class FitnessPlanFunctions
             .Bind(c => mediator.Send(c))
             .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
     }
+    
+    [Function(nameof(CreateSingleUseFitnessPlan))]
+    public async Task<HttpResponseData> CreateSingleUseFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Post, Route = "v1/users/{id}/plans/fitness/single-use")] HttpRequestData request, Guid id)
+    {
+        return await request
+            .DeserializeBodyPayload<CreateFitnessPlanCommand>()
+            .Map(c => c with { UserId = id })
+            .Bind(c => mediator.Send(c))
+            .ToResponseData(request, (response, result) => response.WriteAsJsonAsync(result.Value));
+    }
 
     [Function(nameof(GetLatestFitnessPlan))]
     public async Task<HttpResponseData> GetLatestFitnessPlan([HttpTrigger(AuthorizationLevel.Function, HttpVerbs.Get, Route = "v1/users/{id}/plans/fitness/latest")] HttpRequestData request, Guid id)

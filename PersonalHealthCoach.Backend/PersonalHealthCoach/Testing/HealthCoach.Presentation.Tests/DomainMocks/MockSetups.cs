@@ -3,6 +3,7 @@ using System.Text;
 using HealthCoach.Core.Business;
 using HealthCoach.Core.Domain;
 using Newtonsoft.Json;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using Exercise = HealthCoach.Core.Business.Exercise;
 
 namespace HealthCoach.Presentation.Tests;
@@ -87,5 +88,19 @@ public static class MockSetups
         var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
         var foodHistory = JsonConvert.DeserializeObject<FoodHistoryMock>(responseBody);
         return foodHistory;
-    }   
+    }
+
+    public static DietPlanMock SetupDietPlan(Guid id)
+    {
+        var client = new HttpClient();
+        MockSetups.SetupPersonalData(id);
+        var command = new CreateDietPlanCommand(id);
+
+        var json = JsonConvert.SerializeObject(command);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = client.PostAsync(string.Format(Routes.DietPlan.GetDietPlan, id), content).GetAwaiter().GetResult();
+        var responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+        var dietPlan = JsonConvert.DeserializeObject<DietPlanMock>(responseBody);
+        return dietPlan;
+    }
 }

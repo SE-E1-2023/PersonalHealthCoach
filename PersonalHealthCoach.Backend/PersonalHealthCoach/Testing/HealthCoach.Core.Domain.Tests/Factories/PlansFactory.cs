@@ -33,5 +33,7 @@ public static class PlansFactory
     public static class DietPlans
     {
         public static DietPlan Any() => DietPlan.Create(Guid.NewGuid(), "name", "lol", new List<string>(), new List<string>(), new List<string>(), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a")).Value;
+        public static DietPlan WithUserId(Guid userId) => DietPlan.Create(userId, "name", "lol", new List<string>(), new List<string>(), new List<string>(), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a"), new Meal("a", new List<string>(), 100, "a")).Value;
+
     }
 }

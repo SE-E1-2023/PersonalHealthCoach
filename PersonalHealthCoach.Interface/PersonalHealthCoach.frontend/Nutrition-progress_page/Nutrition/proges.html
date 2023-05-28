@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Personal Health Coach</title>
-	<link rel="stylesheet" href="progres.css">
+  <title>Personal Health Coach</title>
+  <link rel="stylesheet" href="progres.css">
 </head>
+
 <body>
-	<header>
-		<div class="logo">
-			<a href="index.html">Personal Health Coach</a>
-		</div>
+  <header>
+    <div class="logo">
+      <a href="index.html">Personal Health Coach</a>
+    </div>
     <div class="dropdown">
       <button class="dropbtn"><span class="submit">Features</span></button>
       <div class="dropdown-content">
@@ -17,33 +19,49 @@
         <a href="#">Wellness</a>
       </div>
     </div>
+    <div class="back-buton">
+      <div class="back">
+        <a href="../../main/index.html">Back</a>
+      </div>
+
+    </div>
   </header>
-  
+
   <h1>Urmărește-ți progresul în greutate</h1>
   <form>
     <label for="greutate">Introduceți greutatea curentă:</label>
     <input type="number" id="greutate" name="greutate"><br><br>
     <input type="button" value="Adaugă" onclick="addData()"><br><br>
   </form>
-  
+
   <canvas id="myChart"></canvas>
-  
+
   <h2>Sfaturi pentru a pierde greutate</h2>
   <ul>
-    <li>Mănâncă mai multe proteine și mai puține carbohidrați: Proteinele sunt importante pentru a-ți menține masa musculară și pentru a-ți crește metabolismul.</li>
-    <li>Bea suficientă apă pe tot parcursul zilei: Consumul de apă poate ajuta la menținerea hidratării corpului, la eliminarea toxinelor și la reducerea senzației de foame.</li>
-    <li>Fă exerciții fizice în mod regulat: Exercițiile fizice sunt esențiale pentru sănătatea fizică și mentală și pot ajuta la arderea caloriilor și la pierderea în greutate.</li>
-    <li>Încearcă să reduci stresul și să dormi suficient: Stresul și lipsa somnului pot duce la creșterea în greutate și la dificultăți în pierderea acesteia. </li>
+    <li>Mănâncă mai multe proteine și mai puține carbohidrați: Proteinele sunt importante pentru a-ți menține masa
+      musculară și pentru a-ți crește metabolismul.</li>
+    <li>Bea suficientă apă pe tot parcursul zilei: Consumul de apă poate ajuta la menținerea hidratării corpului, la
+      eliminarea toxinelor și la reducerea senzației de foame.</li>
+    <li>Fă exerciții fizice în mod regulat: Exercițiile fizice sunt esențiale pentru sănătatea fizică și mentală și pot
+      ajuta la arderea caloriilor și la pierderea în greutate.</li>
+    <li>Încearcă să reduci stresul și să dormi suficient: Stresul și lipsa somnului pot duce la creșterea în greutate și
+      la dificultăți în pierderea acesteia. </li>
   </ul>
 
   <h3>Sfaturi pentru a creste in greutate</h3>
   <ul>
-    <li>Consumă mai multe calorii decât arzi: Pentru a câștiga în greutate, trebuie să mănânci mai mult decât consumi. </li>
-    <li>Mănâncă alimente bogate în nutrienți: În loc să mănânci alimente procesate și pline de zahăr, alege alimente bogate în nutrienți, cum ar fi carne, ouă, nuci și semințe, lactate integrale, cereale integrale și fructe și legume proaspete.</li>
-    <li>Adaugă gustări în alimentația ta: Dacă îți este greu să mănânci suficiente calorii în timpul meselor principale, adaugă gustări sănătoase în programul tău alimentar.</li>
-    <li>Crește masa musculară: Exercițiile de forță te pot ajuta să câștigi în greutate într-un mod sănătos. Înlocuiește exercițiile cardio cu antrenamentele de forță, cum ar fi ridicarea greutăților sau folosirea propriului corp ca greutate. </li>
+    <li>Consumă mai multe calorii decât arzi: Pentru a câștiga în greutate, trebuie să mănânci mai mult decât consumi.
+    </li>
+    <li>Mănâncă alimente bogate în nutrienți: În loc să mănânci alimente procesate și pline de zahăr, alege alimente
+      bogate în nutrienți, cum ar fi carne, ouă, nuci și semințe, lactate integrale, cereale integrale și fructe și
+      legume proaspete.</li>
+    <li>Adaugă gustări în alimentația ta: Dacă îți este greu să mănânci suficiente calorii în timpul meselor principale,
+      adaugă gustări sănătoase în programul tău alimentar.</li>
+    <li>Crește masa musculară: Exercițiile de forță te pot ajuta să câștigi în greutate într-un mod sănătos. Înlocuiește
+      exercițiile cardio cu antrenamentele de forță, cum ar fi ridicarea greutăților sau folosirea propriului corp ca
+      greutate. </li>
   </ul>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     var data = [];
@@ -70,7 +88,7 @@
         }
       }
     });
-  
+
     function addData() {
       var input = document.getElementById('greutate');
       var value = parseFloat(input.value);
@@ -82,5 +100,6 @@
       }
     }
   </script>
-  </body>
-  </html>
+</body>
+
+</html>

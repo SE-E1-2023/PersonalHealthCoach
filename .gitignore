@@ -394,3 +394,4 @@ yarn-error.log
 # User specific bazel settings
 .bazelrc.user
 appsettings.private.json
+/PersonalHealthCoach.AI/TipGenerator/generated_tips.json
