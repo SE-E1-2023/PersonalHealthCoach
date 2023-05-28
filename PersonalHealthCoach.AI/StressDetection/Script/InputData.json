@@ -1,0 +1,53 @@
+{
+    "days":[
+    {
+        "day":1,
+        "heartrate":96,
+        "breathingrate":16,
+        "sleepinhours":10
+        
+    },
+    {
+        "day":2,
+        "heartrate":78,
+        "breathingrate":12,
+        "sleepinhours":6.5
+        
+    },
+    {
+        "day":3,
+        "heartrate":101,
+        "breathingrate":17,
+        "sleepinhours":4
+        
+    },
+    {
+        "day":4,
+        "heartrate":112,
+        "breathingrate":19,
+        "sleepinhours":8
+        
+    },
+    {
+        "day":5,
+        "heartrate":84,
+        "breathingrate":12,
+        "sleepinhours":7.5
+        
+    },
+    {
+        "day":6,
+        "heartrate":118,
+        "breathingrate":20,
+        "sleepinhours":5
+        
+    },
+    {
+        "day":7,
+        "heartrate":88,
+        "breathingrate":13,
+        "sleepinhours":4.5
+        
+    }
+]
+}
