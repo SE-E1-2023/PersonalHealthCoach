@@ -2,8 +2,11 @@ from flask import Flask, jsonify, request, abort, make_response
 #from collections import OrderedDict
 import json
 import traceback
-
+from flask import Flask
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 def functionWrapper(fn):
     def fun():
@@ -62,6 +65,8 @@ import DietPlanner.DietRequest
 app.add_url_rule("/DietPlanner", "DietPlanner", functionWrapper(DietPlanner.DietRequest.getDiet) , None, methods=['POST'])
 import Wellness.main
 app.add_url_rule("/Wellness", "Wellness", functionWrapper(Wellness.main.get) , None, methods=['POST'])
+import StressDetection.Script.Stress_detec
+app.add_url_rule("/StressDetection","Stress",functionWrapper(StressDetection.Script.Stress_detec.getStress), None, methods = ['POST'])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='8000', debug=True)
