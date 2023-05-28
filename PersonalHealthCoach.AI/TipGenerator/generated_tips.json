@@ -2,17 +2,17 @@
     {
         "Type": "General",
         "Importance Level": "High",
-        "Tip": "Prepare yourself for endurance training. When it comes to training for endurance, you`ll need to be hydrated and be sure you`re eating properly because, by its very nature, this form of training is very demanding on your body. You should be doing a good mix of cardio and weight training. And, to increase your aerobic capacity, you should incorporate high-intensity interval training, or HIIT. You`ll likely be sweating buckets and burning calories galore, so be prepared."
+        "Tip": "Wear Comfortable Sneakers. Your shoes should feel comfortable from the first step. Your feet swell during the day and stop in the late afternoon, so if you need sneakers, you'll want to shop when your feet are biggest. Also, make sure the shoes are a little roomy\u2014enough to wiggle your toes, but no more than that. They should be comfy from the get-go, but they'll be even more so once you've walked or ran 20 to 40 miles in them."
     },
     {
         "Type": "Fitness",
         "Importance Level": "Medium",
-        "Tip": "Lift weights to build muscle and increase metabolism."
+        "Tip": "Incorporate more cardio into your workout routine."
     },
     {
         "Type": "Diet",
         "Importance Level": "Medium",
-        "Tip": "Drink plenty of water to help reduce cravings."
+        "Tip": "Try eating smaller, more frequent meals throughout the day."
     },
     {
         "Type": "General",
@@ -37,12 +37,12 @@
     {
         "Type": "Weekly Steps",
         "Importance Level": "High",
-        "Tip": "You managed to complete your Steps Goal on 5 days this week achieving an average of 9142 steps per day. Congratulations! You're doing fine! If you'd like to step up to the next level, the goal of 10,000 steps is the recommended daily step target for healthy adults to achieve health benefits. You can try to set this goal for better benefits. Also, make sure that you enter at the end of each day the number of steps you took that day so that we can better analyze your progress."
+        "Tip": "You managed to complete your Steps Goal on 6 days this week achieving an average of 10571 steps per day. Congratulations! You're doing fine! If you'd like to step up to the next level, the goal of 10,000 steps is the recommended daily step target for healthy adults to achieve health benefits. You can try to set this goal for better benefits. Also, make sure that you enter at the end of each day the number of steps you took that day so that we can better analyze your progress."
     },
     {
-        "Type": "Daily Steps Calories Burned",
-        "Importance Level": "Medium",
-        "Tip": "You haven't added your steps today. Check your steps counter app and let us know about your achievement!"
+        "Type": "Daily Steps",
+        "Importance Level": "Low",
+        "Tip": "Congratulations! You managed to fulfill your step goal for today by managing to take 10000 steps and burning 341.96 calories. Keep going!"
     },
     {
         "Type": "Objective-Steps Goal",
@@ -52,7 +52,7 @@
     {
         "Type": "Hours Slept Last Night",
         "Importance Level": "Low",
-        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. If you find yourself struggling to stay awake or focused during the day, try taking short breaks to stretch or move around. This can help increase blood flow and boost energy levels."
+        "Tip": "Congratulations on getting a good night's sleep! Sleeping for 8 hours is great for your health and well-being. Make sure to stay consistent with your sleep schedule as much as possible, even on weekends or holidays. This helps regulate your body's internal clock, making it easier to fall asleep and wake up at the same time each day."
     },
     {
         "Type": "Weekly Slept Hours",
@@ -72,51 +72,67 @@
     {
         "Type": "Food Short",
         "Importance Level": "Low",
-        "Tip": "Salmon is a type of oily fish that`s incredibly popular because of its excellent taste and high nutrient content, including protein and omega-3 fatty acids. It also contains some vitamin D."
+        "Tip": "Cheese is incredibly nutritious \u2014 a single slice may offer about the same amount of nutrients as an entire cup (240 ml) of milk. Many people also consider it one of the most delicious foods."
     },
     {
         "Type": "Food Longer Detailed",
         "Importance Level": "Medium",
-        "Tip": "One 2019 study in rats showed that consuming leafy greens for 6 weeks led to a significant reduction in cardiovascular risk factors. Spinach is an example of a leafy green with antioxidant content, especially when it is raw, steamed, or very lightly boiled."
+        "Tip": "Sweet potatoes provide dietary fiber, vitamin A, vitamin C, vitamin B-6, and potassium. The Center for Science in the Public Interest compared the nutritional value of sweet potatoes with that of several other vegetables. Sweet potatoes ranked number one for their vitamin A, vitamin C, iron, calcium, protein, and complex carbohydrate content."
     },
     {
         "Type": "Food Longer Try",
         "Importance Level": "Medium",
-        "Tip": "Chicken Breasts. A dinner staple from the leanest part of the bird: half a breast has around 2.5 grams of fat and more than 28 grams of protein. Try this: Shred cooked chicken and toss with olive oil, raisins, curry powder, and fresh lime juice. Or try Stuffed Chicken Breasts With Tomato Salad."
+        "Tip": "Black Beans. These burrito mainstays boast antioxidants and magnesium, which help maintain nerve and muscle function.6 They're also a source of potassium and fiber. Try this: On a baking sheet, toss canned black beans with olive oil, ground cumin, and salt. Roast at 450 degrees F until crispy, about 10 minutes, for a tasty snack. Or try Cuban Black Beans and Rice."
     },
     {
         "Type": "Home Exercise",
         "Importance Level": "Medium",
-        "Tip": "Dumbbell rows. Not only will these make your back look killer in that dress, but dumbbell rows are also another compound exercise that strengthens multiple muscles in your upper body. Choose a moderate-weight dumbbell and ensure that you`re squeezing at the top of the movement. Equipment: 10-pound dumbbells. 1. Start with a dumbbell in each hand. We recommend no more than 10 pounds for beginners. 2. Bend forward at the waist, so your back is at a 45-degree angle to the ground. Be certain not to arch your back. Let your arms hang straight down. Ensure your neck is in line with your back and your core is engaged. 3. Starting with your right arm, bend your elbow and pull the weight straight up toward your chest, making sure to engage your lat and stopping just below your chest. 4.Return to the starting position and repeat with the left arm. This is one rep. Repeat 10 times for 3 sets."
+        "Tip": ""
     },
     {
         "Type": "Sports",
         "Importance Level": "Medium",
-        "Tip": "Volleyball: Serve`s up! Volleyball makes our list for healthiest sports because it increases metabolic rate, builds agility, strengthens coordination, and boosts mood, Oh, and it also burns plenty of calories. Harvard Medical School reports a person can burn between 90 to 133 calories during a half-hour game of non-competitive, non-beach volleyball, depending on a person`s weight, while a competitive gym game of volleyball burns between 120 to 178 calories."
+        "Tip": "Swimming. If it`s your heart you`re looking after there are few ways better to do it than swimming. Perfect for all ages and levels due to its low-stress nature, swimming keeps you at a healthy body weight, improves lung capacity, and builds muscles, all in addition to burning calories. Best of all, swimming can be done any time of year at an indoor pool, and often there are clubs to be joined and classes to be taken, which means the social aspect is never far behind the health. Away from the swimming pool, sea swimming is hugely popular all over the world. With sea swimming, you get the same exercise free of charge, all the while enjoying the beauty that surrounds you. Add all this up and swimming is definitely one of the healthiest sports."
     },
-    {
-        "Type": "Daily Steps Calories Burned",
-        "Importance Level": "Medium",
-        "Tip": "You haven't added your steps today. Check your steps counter app and let us know about your achievement!"
-    },
+    null,
     {
         "Type": "Weekly Steps Calories Burned",
         "Importance Level": "High",
-        "Tip": "Congratulations! With a total of 64000 steps you managed to burn 2189 calories in the last week. Keep up the good work also in the next weeks!"
+        "Tip": "Congratulations! With a total of 74000 steps you managed to burn 2531 calories in the last week. Keep up the good work also in the next weeks!"
     },
     {
         "Type": "Prevent Diseases",
         "Importance Level": "Medium",
-        "Tip": "Avoid harmful use of alcohol. There is no safe level for drinking alcohol. Consuming alcohol can lead to health problems such as mental and behavioural disorders, including alcohol dependence, major NCDs such as liver cirrhosis, some cancers and heart diseases, as well as injuries resulting from violence and road clashes and collisions."
+        "Tip": "Talk to someone you trust if you're feeling down. Depression is a common illness worldwide with over 260 million people affected. Depression can manifest in different ways, but it might make you feel hopeless or worthless, or you might think about negative and disturbing thoughts a lot or have an overwhelming sense of pain. If you`re going through this, remember that you are not alone. Talk to someone you trust such as a family member, friend, colleague or mental health professional about how you feel."
     },
     {
         "Type": "Recover From Illness",
         "Importance Level": "Medium",
-        "Tip": "Drink hot water with True Lemon. A cup of plain hot water (rather than tea) goes a long way in re-balancing your body. Many cultures believe that warm water is better to drink than cold as its more easily absorbed by our naturally warm bodies. Since after an illness there is a good chance that you're dehydrated, every little bit helps with replenishing the water in your body. Add True Lemon and increase the alkalizing effects."
+        "Tip": "Reduce your rate of perceived exertion (RPE). If you simply can`t resist going back to gym, the RPE scale is a measurement of the intensity of your workout and runs from 0 - 10. 0 means you`re at a very low level (i.e. not moving at all) and 10 means you`re working at your maximum level. When returning to exercise aim to maintain at an RPE scale of 6` as this way you`ll know you`re not pushing your body too hard."
     },
     {
         "Type": "Daily Workout Feedback",
         "Importance Level": "Medium",
-        "Tip": "You managed to burn 120.56 calories during your workout that lasted 8 minutes. Good job! We are waiting for you again tomorrow for the daily training."
+        "Tip": "You managed to burn 120.56 calories today during your workout that lasted 8 minutes. Good job! Make sure you exercise 3-5 times a week to reach your goal."
+    },
+    {
+        "Type": "Weekly Exercise Logs",
+        "Importance Level": "High",
+        "Tip": "You managed to burn 843.92 calories in the last week thanks to the 7 days with exercises that lasted a total of 56 minutes. While your dedication to exercise is commendable, be mindful of overexertion. Allow for proper rest and recovery to optimize results. Aim for a balanced approach with 3-5 days of exercise per week, incorporating cardio and strength training. Listen to your body's signals and adjust accordingly. Embrace self-care and find a sustainable balance. Keep up the great work on your weight loss journey!"
+    },
+    {
+        "Type": "Recover from Injury",
+        "Importance Level": "Medium",
+        "Tip": "REMEMBER TO FOCUS ON YOUR MENTAL RECOVERY TOO. Physical injuries can negatively affect one\u2019s mental health. It\u2019s common for people to feel frustrated, angry, or isolated after experiencing an injury. Some athletes even experience depression or anxiety. That\u2019s why it\u2019s important to look after your mental health during your recovery. Some people seek out emotional support or make temporary lifestyle changes to keep themselves occupied. Setting new goals can also help you stay positive and make a successful recovery."
+    },
+    {
+        "Type": "Daily Calories Burned",
+        "Importance Level": "Medium",
+        "Tip": "You managed to burn 462.52 calories today from walking and exercising. These two activities together bring you the greatest benefits and if you practice them constantly you will see the changes in your life."
+    },
+    {
+        "Type": "Interesting",
+        "Importance Level": "Medium",
+        "Tip": "You're Using Public Makeup Testers. Touching public brushes and lipsticks to your eyes, face and mouth \u2014 what could go wrong? Well, one woman sued the makeup chain Sephora in 2017, claiming she contracted oral herpes from a lipstick tester. And a 2005 study found between 67 and 100 percent of makeup-counter testers were contaminated with bacteria, including E. coli, staph and strep. All those bugs can cause skin and eye infections. Never use a public makeup tester. Ask for a single-use sample that's sealed. If those aren't available, test a new shade on the back of your hand, then wash it off promptly."
     }
 ]

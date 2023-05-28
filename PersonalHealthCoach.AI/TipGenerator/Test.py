@@ -94,22 +94,37 @@ class TestTipGenerator(unittest.TestCase):
     def test_verify_if_steps_are_introduced(self):
         steps_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
         self.assertTrue(main.verify_if_steps_are_introduced(steps_list))
+
+        steps_list = [100, "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
+        self.assertFalse(main.verify_if_steps_are_introduced(steps_list))
     
-    def test_verify_if_steps_are_introduced(self):
+    def test_verify_if_slept_hours_are_introduced(self):
         hours_slept_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
-        self.assertTrue(main.verify_if_steps_are_introduced(hours_slept_list))
+        self.assertTrue(main.verify_if_slept_hours_are_introduced(hours_slept_list))
 
-    def test_verify_if_steps_are_introduced(self):
+        hours_slept_list = [8, "Not added", "Not added", "Not added", 7, "Not added", "Not added"]
+        self.assertFalse(main.verify_if_slept_hours_are_introduced(hours_slept_list))
+
+    def test_verify_if_weight_introduced(self):
         weight_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
-        self.assertTrue(main.verify_if_steps_are_introduced(weight_list))
+        self.assertTrue(main.verify_if_weight_introduced(weight_list))
 
-    def test_verify_if_steps_are_introduced(self):
+        weight_list = ["Not added", 56, "Not added", "Not added", "Not added", "Not added", "Not added"]
+        self.assertFalse(main.verify_if_weight_introduced(weight_list))
+
+    def test_verify_if_exercise_logs_introduced(self):
         exercise_logs_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
-        self.assertTrue(main.verify_if_steps_are_introduced(exercise_logs_list))
+        self.assertTrue(main.verify_if_exercise_logs_introduced(exercise_logs_list))
 
-    def test_verify_if_steps_are_introduced(self):
+        exercise_logs_list = ["Not added", "exercise", "Not added", "Not added", "Not added", "Not added", "Not added"]
+        self.assertFalse(main.verify_if_exercise_logs_introduced(exercise_logs_list))
+
+    def test_verify_if_food_logs_introduced(self):
         food_logs_list = ["Not added", "Not added", "Not added", "Not added", "Not added", "Not added", "Not added"]
-        self.assertTrue(main.verify_if_steps_are_introduced(food_logs_list))
+        self.assertTrue(main.verify_if_food_logs_introduced(food_logs_list))
+
+        food_logs_list = ["Not added", "Not added", "mar", "Not added", "Not added", "Not added", "Not added"]
+        self.assertFalse(main.verify_if_food_logs_introduced(food_logs_list))
 
     def setUp(self):
         self.tips_data = {
@@ -123,6 +138,17 @@ class TestTipGenerator(unittest.TestCase):
         }
     
     def test_generate_weekly_number_of_steps_feedback(self):
+        profile_data = {
+                "Profile": {
+                    "Weight": 100
+                }
+            }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+
+        with self.assertRaises(KeyError):
+            generator.generate_weekly_number_of_steps_feedback()
+
         profile_data = {
             "Profile": {
                 "Steps Goal": 5000
@@ -676,6 +702,7 @@ class TestTipGenerator(unittest.TestCase):
                 "Activity Level": "Moderate"
             }
         }
+
         expected_tip = {
             "Type": "Daily Calories",
             "Importance Level": "Medium",
@@ -684,11 +711,61 @@ class TestTipGenerator(unittest.TestCase):
         generated_tip = self.generator.generate_amr_tip()
         self.assertEqual(generated_tip, expected_tip)
 
+        self.generator.profile_data['Profile']['Objective'] = "Gain muscular mass"
+        expected_tip = {
+            "Type": "Daily Calories",
+            "Importance Level": "Medium",
+            "Tip": "You burn 2637 calories during a typical day. To achieve your goal of gaining muscular mass, you should try bulking, which involves eating more calories than you need, in order to put on weight, then building muscle via resistance training. A high proportion of your extra calories should come from foods containing protein, which will give you the necessary amino acids to build muscle mass. Without protein, you will just gain fat and little muscle."
+        }
+        generated_tip = self.generator.generate_amr_tip()
+        self.assertEqual(generated_tip, expected_tip)
+
+        self.generator.profile_data['Profile']['Objective'] = "Improve overall health"
+        expected_tip = {
+            "Type": "Daily Calories",
+            "Importance Level": "Medium",
+            "Tip": "You burn 2637 calories during a typical day. To improve your overall health, use this information to help you figure out how many calories you should be consuming to maintain your weight. On active days, you\'ll need more calories, so it\'s okay to eat a little more than you would on an average day. But on more sedentary days, you may want to reduce your calorie intake."
+        }
+        generated_tip = self.generator.generate_amr_tip()
+        self.assertEqual(generated_tip, expected_tip)
+
+        self.generator.profile_data['Profile']['Objective'] = "Improve cardiovascular health"
+        expected_tip = {
+            "Type": "Daily Calories",
+            "Importance Level": "Medium",
+            "Tip": "You burn 2637 calories during a typical day. To improve your cardiovascular health, it\'s okay to eat a little more than you would on an average day when you do aerobic workouts. However, make sure you don\'t eat too much because you may get fat."
+        }
+        generated_tip = self.generator.generate_amr_tip()
+        self.assertEqual(generated_tip, expected_tip)
+
+        self.generator.profile_data['Profile']['Objective'] = "Increase endurance"
+        expected_tip = {
+            "Type": "Daily Calories",
+            "Importance Level": "Medium",
+            "Tip": "You burn 2637 calories during a typical day. To increase your endurance, you\'ll need to increase carbohydrate consumption up to 70% of total daily calories to support the high volume of glucose needed for that level of physical activity. Carbohydrates have 4 calories per gram. Endurance athletes should eat 8 to 10 grams of carbohydrate per kilogram of body weight per day."
+        }
+        generated_tip = self.generator.generate_amr_tip()
+        self.assertEqual(generated_tip, expected_tip)
+
+        self.generator.profile_data['Profile']['Objective'] = "Maintain weight"
+        expected_tip = {
+            "Type": "Daily Calories",
+            "Importance Level": "Medium",
+            "Tip": "You burn 2637 calories during a typical day. Use this information to help you figure out how many calories you should be consuming to maintain your weight. On active days, you\'ll need more calories, so it\'s okay to eat a little more than you would on an average day. But on more sedentary days, you may want to reduce your calorie intake."
+        }
+        generated_tip = self.generator.generate_amr_tip()
+        self.assertEqual(generated_tip, expected_tip)
+
+
+        with self.assertRaises(ValueError):
+            self.generator.profile_data['Profile']['Objective'] = "Invalid Objective"
+            self.generator.generate_amr_tip()
+
     def test_generate_bmi_tip(self):
         self.generator = main.TipGenerator(main.tips_file, main.profile_file)
         self.generator.profile_data = {
             "Profile": {
-                "Gender": "Female",
+                "Gender": "F",
                 "Age": 25,
                 "Height": 165,
                 "Weight": 65,
@@ -703,6 +780,18 @@ class TestTipGenerator(unittest.TestCase):
         
         generated_tip = self.generator.generate_bmi_tip()
         self.assertEqual(generated_tip, expected_tip)
+
+        with self.assertRaises(ValueError):
+            self.generator.profile_data['Profile']['Objective'] = "Invalid Objective"
+            self.generator.generate_bmi_tip()
+
+        with self.assertRaises(ValueError):
+            self.generator.profile_data['Profile']['Height'] = 10
+            self.generator.generate_bmi_tip()
+        
+        with self.assertRaises(ValueError):
+            self.generator.profile_data['Profile']['Weight'] = 10
+            self.generator.generate_bmi_tip()
 
     def test_generate_home_exercise_tip(self):
         self.generator = main.TipGenerator(main.tips_file, main.profile_file)
@@ -986,6 +1075,14 @@ class TestTipGenerator(unittest.TestCase):
 
         self.assertIn(profile_data["Profile"]["Objective"], tips_data)
 
+        with self.assertRaises(ValueError):
+            generator.profile_data['Profile']['Objective'] = "Invalid Objective"
+            generator.generate_level_of_activity_tip()
+
+        with self.assertRaises(ValueError):
+            generator.profile_data['Profile']['Level of activity'] = "Invalid Level"
+            generator.generate_level_of_activity_tip()
+
     def test_generate_prevent_diseases_tip(self):
         self.generator = main.TipGenerator(main.tips_file, main.profile_file)
         self.generator.tips_data = {
@@ -1055,4 +1152,298 @@ class TestTipGenerator(unittest.TestCase):
             profile_data['Progress'][-1]['Steps'] = 60000
             generator.calculate_calories_burned_by_steps_last_week()
 
+    def test_is_within_interval(self):
+        self.assertTrue(main.is_within_interval(5, 0, 10))
+        self.assertTrue(main.is_within_interval(0, -5, 5))
+        self.assertTrue(main.is_within_interval(-10, -20, 0))
         
+        self.assertFalse(main.is_within_interval(15, 0, 10))
+        self.assertFalse(main.is_within_interval(-5, 0, 10))
+        self.assertFalse(main.is_within_interval(0, 10, 20))
+
+    def test_extract_number(self):
+        self.assertEqual(main.extract_number("2-10 seconds"), 10)
+        self.assertEqual(main.extract_number("5-20 seconds"), 20)
+        self.assertEqual(main.extract_number("1-5 seconds"), 5)
+        
+        self.assertEqual(main.extract_number("10 seconds"), None)
+        self.assertEqual(main.extract_number("15-30 minutes"), None)
+        self.assertEqual(main.extract_number("1 hour"), None)
+
+    def test_calculate_minutes_per_workout(self):
+        workout_1 = [
+            {"type": "Stretching", "rep_range": "Hold for 20-40 seconds", "sets": 3},
+            {"type": "Strength", "rep_range": "8-12", "sets": 4},
+            {"type": "Cardio", "rep_range": "30-40", "sets": 2}
+        ]
+        self.assertEqual(main.calculate_minutes_per_workout(workout_1), 8.266666666666666)
+        
+        workout_2 = [
+            {"type": "Stretching", "rep_range": "Hold for 25-45 seconds", "sets": 2},
+            {"type": "Strength", "rep_range": "10-15", "sets": 3}
+        ]
+        self.assertEqual(main.calculate_minutes_per_workout(workout_2), 5.0)
+        
+        workout_3 = [
+            {"type": "Strength", "rep_range": "6-10", "sets": 5},
+            {"type": "Stretching", "rep_range": "Hold for 50-60 seconds", "sets": 2}
+        ]
+        self.assertEqual(main.calculate_minutes_per_workout(workout_3), 5.666666666666666)
+        
+    def test_convert_minutes_to_hours_minutes(self):
+        self.assertEqual(main.convert_minutes_to_hours_minutes(75), "1 hour and 15 minutes")
+        self.assertEqual(main.convert_minutes_to_hours_minutes(120), "2 hours")
+        self.assertEqual(main.convert_minutes_to_hours_minutes(30), "30 minutes")
+        
+        self.assertEqual(main.convert_minutes_to_hours_minutes(60), "1 hour")
+        self.assertEqual(main.convert_minutes_to_hours_minutes(45), "45 minutes")
+        self.assertEqual(main.convert_minutes_to_hours_minutes(90), "1 hour and 30 minutes")
+        
+    def test_calculate_calories_per_workout(self):
+        self.assertAlmostEqual(main.calculate_calories_per_workout(30, 5.0, 70), 183.75, places=2)
+        self.assertAlmostEqual(main.calculate_calories_per_workout(60, 6.0, 65), 409.5, places=2)
+        self.assertAlmostEqual(main.calculate_calories_per_workout(45, 4.5, 80), 283.5, places=2)
+        
+        self.assertAlmostEqual(main.calculate_calories_per_workout(90, 7.0, 75), 826.875, places=2)
+        self.assertAlmostEqual(main.calculate_calories_per_workout(20, 3.0, 60), 63.0, places=2)
+        self.assertAlmostEqual(main.calculate_calories_per_workout(15, 4.0, 70), 73.5, places=2)
+        
+    def test_generate_daily_exerciselog_tip(self):
+        profile_data = {
+            "Profile": {
+                "Weight": 100
+            }
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+
+        with self.assertRaises(KeyError):
+            generator.generate_daily_exerciselog_tip()
+
+        profile_data_1 = {
+            "Profile": {"Weight": 70},
+            "Progress": [
+                {
+                    "ExerciseLogs": [
+                        {"type": "Stretching", "rep_range": "10-15 seconds", "sets": 3},
+                        {"type": "Strength", "rep_range": "8-12", "sets": 4},
+                        {"type": "Cardio", "rep_range": "30-40", "sets": 2}
+                    ]
+                }
+            ]
+        }
+        generator.profile_data = profile_data_1
+        tip_1 = generator.generate_daily_exerciselog_tip()
+        expected_tip_1 = {
+            "Type": "Daily Workout Feedback",
+            "Importance Level": "Medium",
+            "Tip": "You managed to burn 118.6 calories today during your workout that lasted 7 minutes. Good job! Make sure you exercise 3-5 times a week to reach your goal."
+        }
+        self.assertEqual(tip_1, expected_tip_1)
+        
+        profile_data_2 = {
+            "Profile": {"Weight": 85},
+            "Progress": [{},{}]
+        }
+        generator.profile_data = profile_data_2
+        tip_2 = generator.generate_daily_exerciselog_tip()
+        expected_tip_2 = {
+            "Type": "Daily Workout Feedback",
+            "Importance Level": "Medium",
+            "Tip": "Even if you didn't do your workout today, it's never too late to get moving. Check your generated workout, do it and mark it as done. Set realistic goals, stay motivated, and remember that consistency is key. Your health and well-being will thank you. If you have already met your exercise goal this week, then you can take a day off because breaks are also important in your process of reaching your goal."
+        }
+        self.assertEqual(tip_2, expected_tip_2)
+        
+        profile_data_3 = {
+            "Profile": {"Weight": 20},
+            "Progress": [
+                {
+                    "ExerciseLogs": [
+                        {"type": "Stretching", "rep_range": "Hold for 20-40 seconds", "sets": 2},
+                        {"type": "Strength", "rep_range": "10-15", "sets": 3}
+                    ]
+                }
+            ]
+        }
+        generator.profile_data = profile_data_3
+        with self.assertRaises(ValueError):
+            generator.generate_daily_exerciselog_tip()
+        
+        profile_data_4 = {
+            "Profile": {"Weight": 210},
+            "Progress": [
+                {
+                    "ExerciseLogs": [
+                        {"type": "Strength", "rep_range": "6-10", "sets": 5},
+                        {"type": "Stretching", "rep_range": "Hold for 15-30 seconds", "sets": 2}
+                    ]
+                }
+            ]
+        }
+        generator.profile_data = profile_data_4
+        with self.assertRaises(ValueError):
+            generator.generate_daily_exerciselog_tip()
+
+    def test_generate_weekly_exerciselogs_feedback(self):
+        profile_data = {
+                "Profile": {
+                    "Weight": 100
+                }
+            }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+
+        with self.assertRaises(KeyError):
+            generator.generate_daily_exerciselog_tip()
+
+        profile_data = {
+                "Profile": {
+                    "Weight": 150,
+                    "Objective": "Lose weight"
+                },
+                "Progress": [
+                    {
+                        "ExerciseLogs": [
+                            {
+                                "exercise": "Pin Presses",
+                                "rep_range": "3-5",
+                                "rest_time": "3-4 minutes",
+                                "sets": 2,
+                                "type": "Powerlifting"
+                            },
+                            {
+                                "exercise": "Standing Olympic Plate Hand Squeeze",
+                                "rep_range": "6-10",
+                                "rest_time": "1-1.5 minutes",
+                                "sets": 2,
+                                "type": "Strength"
+                            }
+                        ],
+                        "Objective": "Lose weight"
+                    },
+                    {
+                        "ExerciseLogs": [
+                            {
+                                "exercise": "Standing Olympic Plate Hand Squeeze",
+                                "rep_range": "6-10",
+                                "rest_time": "1-1.5 minutes",
+                                "sets": 2,
+                                "type": "Strength"
+                            }
+                        ],
+                        "Objective": "Lose weight"
+                    },
+                    {
+                        "Objective": "Lose weight"
+                    }
+                ]
+            }
+
+        # Create an instance of the class and set the profile_data
+        generator.profile_data = profile_data
+
+        # Call the function being tested
+        result = generator.generate_weekly_exerciselogs_feedback()
+        print(result)
+
+        # Assert the expected tip based on the given profile data
+        expected_tip = {
+            "Type": "Weekly Exercise Logs",
+            "Importance Level": "High",
+            "Tip": "You managed to burn 339.0 calories in the last week thanks to the 6 days with exercises that lasted a total of 9 minutes. While your dedication to exercise is commendable, be mindful of overexertion. Allow for proper rest and recovery to optimize results. Aim for a balanced approach with 3-5 days of exercise per week, incorporating cardio and strength training. Listen to your body's signals and adjust accordingly. Embrace self-care and find a sustainable balance. Keep up the great work on your weight loss journey!"
+        }
+        self.assertEqual(result, expected_tip)
+
+    def test_generate_recover_from_injury_tip(self):
+        self.generator = main.TipGenerator(main.tips_file, main.profile_file)
+        self.generator.tips_data = {
+            "Diseases": {
+                "Recover from Injury": [
+                    "RICE.",
+                    "Eat a healthy diet.",
+                    "GET LOOSE AND STRETCH."
+                ]
+            }
+        }
+        generated_tip = self.generator.generate_recover_from_injury_tip()
+        self.assertEqual(generated_tip["Type"], "Recover from Injury")
+        self.assertEqual(generated_tip["Importance Level"], "Medium")
+        self.assertIn(generated_tip["Tip"], self.generator.tips_data['Diseases']['Recover from Injury'])
+
+    def test_generate_daily_calories_burned_tip(self):
+        profile_data = {
+            "Profile": {
+                "Steps Goal": 5000
+            }
+        }
+        generator = main.TipGenerator(main.tips_file, main.profile_file)
+        generator.profile_data = profile_data
+
+        with self.assertRaises(KeyError):
+            generator.generate_daily_calories_burned_tip()
+
+        profile_data = {
+            "Profile": {
+                "Steps Goal": 5000
+            },
+            "Progress": [
+                {"Date": "2022-05-01", "Steps": 4000},
+                {"Date": "2022-05-02", "Steps": 6000},
+                {"Date": "2022-05-03", "Steps": 3000},
+                {"Date": "2022-05-04", "Steps": 2000},
+                {"Date": "2022-05-05", "Steps": 5000},
+                {"Date": "2022-05-06", "Steps": 10000},
+                {"Date": "2022-05-07", "Steps": 8000}
+            ]
+        }
+        generator.profile_data = profile_data
+        invalid_profile_data = profile_data.copy()
+        with self.assertRaises(ValueError):
+            invalid_profile_data['Progress'][-1]['Steps'] = -1000
+            generator.profile_data = invalid_profile_data
+            generator.generate_daily_calories_burned_tip()
+
+        with self.assertRaises(ValueError):
+            invalid_profile_data['Progress'][-1]['Steps'] = 60000
+            generator.profile_data = invalid_profile_data
+            generator.generate_daily_calories_burned_tip()
+
+        invalid_profile_data['Profile']['Steps Goal'] = -10000
+        generator.profile_data = invalid_profile_data
+        with self.assertRaises(ValueError):
+            generator.generate_daily_calories_burned_tip()
+
+        with self.assertRaises(ValueError):
+            invalid_profile_data['Profile']['Steps Goal'] = 2000000
+            generator.profile_data = invalid_profile_data
+            generator.generate_daily_calories_burned_tip()
+
+        profile_data_3 = {
+            "Profile": {"Weight": 20},
+            "Progress": [
+                {
+                    "ExerciseLogs": [
+                        {"type": "Stretching", "rep_range": "Hold for 20-40 seconds", "sets": 2},
+                        {"type": "Strength", "rep_range": "10-15", "sets": 3}
+                    ]
+                }
+            ]
+        }
+        generator.profile_data = profile_data_3
+        with self.assertRaises(ValueError):
+            generator.generate_daily_calories_burned_tip()
+        
+        profile_data_4 = {
+            "Profile": {"Weight": 210},
+            "Progress": [
+                {
+                    "ExerciseLogs": [
+                        {"type": "Strength", "rep_range": "6-10", "sets": 5},
+                        {"type": "Stretching", "rep_range": "Hold for 15-30 seconds", "sets": 2}
+                    ]
+                }
+            ]
+        }
+        generator.profile_data = profile_data_4
+        with self.assertRaises(ValueError):
+            generator.generate_daily_calories_burned_tip()
