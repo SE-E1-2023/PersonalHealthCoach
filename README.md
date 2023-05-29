@@ -1,3 +1,8 @@
+*Raport tehnic*
+https://docs.google.com/document/d/1-VKtDISBvp2tDijN3gJvNTfmMeW1xWfJDMnEDhWwiVE/edit#
+
+
+
 Iteratia 1 (saptamanile 6 si 7): 
 * Front-end:
   - sign-up si sign-in devin aceeasi chestie. doar se va introduce o adresa de mail pe baza careia se va oferi acces
@@ -12,14 +17,3 @@ Iteratia 1 (saptamanile 6 si 7):
 Iteratia 2 (saptamanile 8 si 9):
 * AI:
   - Diet Planner functii pentru cerere de dieta si de diferite tipuri de mancare
-
-Guideline pentru lucru pe branch-uri.
-
-- Recomand sa va uitati la asta: https://www.youtube.com/watch?v=hwP7WQkmECE
-- Si sa cititi putin asta: https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners
-
-Important:
-  - pls nu faceti commit direct in branch-ul main.
-  - cand faceti un task, faceti un branch bazat pe main. Branch-ul e recomandat sa-l numiti intuitiv, dupa task (ex.: daca implementezi pagina de login pe front end, branch-ul tau o sa fie "feature/login-page"). Dupa ce terminati task-ul, faceti un pull request (vezi in articol detalii)
-  - la pull request o sa primiti comentarii (fie de la lider, fie si de la ceilalti colegi) si stabiliti cum e mai ok sa fie facut
-  - cand sunt rezolvate toate comentariile, se va face merge la pull request
